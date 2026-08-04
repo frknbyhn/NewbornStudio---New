@@ -4,40 +4,33 @@ import RevenueCat
 final class PaywallViewController: UIViewController {
     var onDismiss: (() -> Void)?
 
-    private let scrollView = UIScrollView()
+    /// Every paywall in the app is presented modally (never pushed), full screen, with a
+    /// self-dismissing close button — this factory is the one place that wiring lives.
+    static func presented() -> PaywallViewController {
+        let paywall = PaywallViewController()
+        paywall.modalPresentationStyle = .fullScreen
+        paywall.onDismiss = { [weak paywall] in
+            paywall?.dismiss(animated: true)
+        }
+        return paywall
+    }
+
     private let spinner = UIActivityIndicatorView(style: .large)
     private let errorLabel = UILabel()
+    private let contentContainer = UIView()
     private var plansStack: UIStackView!
     private var planCards: [PlanCardView] = []
     private var plans: [SubscriptionPlan] = []
     private var selectedPlan: SubscriptionPlan?
-    private let billedCaption = UILabel()
     private let cta = GradientPillButton(title: "Subscribe Now", icon: nil)
-    private var heroImageViews: [UIImageView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
-        setUpScrollContent()
+        setUpContent()
         setUpCloseButton()
         setUpLoadingState()
         loadOffering()
-        loadHeroPreviews()
-    }
-
-    private func loadHeroPreviews() {
-        ThemeService.fetchThemes(categoryId: nil, limit: 3) { [weak self] result in
-            guard let self, case .success(let cards) = result else { return }
-            for (imageView, card) in zip(self.heroImageViews, cards) {
-                guard let url = card.previewImageUrl else { continue }
-                RemoteImageLoader.load(url) { image in
-                    guard let image else { return }
-                    UIView.transition(with: imageView, duration: 0.25, options: .transitionCrossDissolve) {
-                        imageView.image = image
-                    }
-                }
-            }
-        }
     }
 
     private func setUpLoadingState() {
@@ -62,7 +55,7 @@ final class PaywallViewController: UIViewController {
             errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         spinner.startAnimating()
-        scrollView.isHidden = true
+        contentContainer.isHidden = true
     }
 
     private func loadOffering() {
@@ -86,7 +79,7 @@ final class PaywallViewController: UIViewController {
                 .map(SubscriptionPlan.init(package:))
             selectedPlan = plans.first(where: \.isFeatured) ?? plans.first
             populatePlanCards()
-            scrollView.isHidden = false
+            contentContainer.isHidden = false
         case .failure(let error):
             // Real offline/error state — never an infinite spinner (Stability Gate rule).
             errorLabel.text = "Couldn't load plans. Check your connection and try again."
@@ -112,80 +105,18 @@ final class PaywallViewController: UIViewController {
         ])
     }
 
-    private func setUpScrollContent() {
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.showsVerticalScrollIndicator = false
-        view.addSubview(scrollView)
+    /// Deliberately not a UIScrollView — the whole paywall must fit on one non-scrolling
+    /// screen. Bottom-up anchoring (footer -> CTA -> plans) so those stay pinned to the bottom
+    /// regardless of how tall the top content (hero/title/bullets) ends up being.
+    private func setUpContent() {
+        contentContainer.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contentContainer)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            contentContainer.topAnchor.constraint(equalTo: view.topAnchor),
+            contentContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            contentContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            contentContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
-        let content = UIStackView()
-        content.axis = .vertical
-        content.alignment = .fill
-        content.spacing = 0
-        content.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(content)
-        NSLayoutConstraint.activate([
-            content.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            content.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            content.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            content.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            content.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
-
-        content.addArrangedSubview(heroView())
-
-        let body = UIStackView()
-        body.axis = .vertical
-        body.alignment = .fill
-        body.spacing = 20
-        body.isLayoutMarginsRelativeArrangement = true
-        body.layoutMargins = UIEdgeInsets(top: 20, left: 24, bottom: 40, right: 24)
-        body.translatesAutoresizingMaskIntoConstraints = false
-        content.addArrangedSubview(body)
-
-        let title = UILabel()
-        title.text = "Unlock Unlimited Creativity"
-        title.font = Theme.Font.heading(26, weight: 700)
-        title.textColor = Theme.Color.textPrimaryAlt
-        title.textAlignment = .center
-        title.numberOfLines = 0
-
-        let subtitle = UILabel()
-        subtitle.text = "Everything you need to make forever memories."
-        subtitle.font = Theme.Font.body(13.5, weight: 600)
-        subtitle.textColor = Theme.Color.textSecondary
-        subtitle.textAlignment = .center
-        subtitle.numberOfLines = 0
-
-        body.addArrangedSubview(title)
-        body.addArrangedSubview(subtitle)
-        body.setCustomSpacing(4, after: title)
-
-        let bullets = UIStackView(arrangedSubviews: SubscriptionPlan.benefits.map(benefitRow))
-        bullets.axis = .vertical
-        bullets.spacing = 11
-        body.addArrangedSubview(bullets)
-
-        plansStack = UIStackView()
-        plansStack.axis = .horizontal
-        plansStack.spacing = 10
-        plansStack.distribution = .fillEqually
-        body.addArrangedSubview(plansStack)
-        body.setCustomSpacing(24, after: plansStack)
-
-        cta.addTarget(self, action: #selector(subscribeTapped), for: .touchUpInside)
-        body.addArrangedSubview(cta)
-
-        billedCaption.font = Theme.Font.body(11, weight: 600)
-        billedCaption.textColor = UIColor(hex: 0xB4A6A2)
-        billedCaption.textAlignment = .center
-        body.addArrangedSubview(billedCaption)
-        body.setCustomSpacing(10, after: cta)
 
         let restoreLink = footerLink("Restore")
         (restoreLink as? UIButton)?.addTarget(self, action: #selector(restoreTapped), for: .touchUpInside)
@@ -195,13 +126,76 @@ final class PaywallViewController: UIViewController {
         (privacyLink as? UIButton)?.addTarget(self, action: #selector(privacyTapped), for: .touchUpInside)
         let footer = UIStackView(arrangedSubviews: [restoreLink, termsLink, privacyLink])
         footer.axis = .horizontal
-        footer.spacing = 18
         footer.alignment = .center
-        let footerWrap = UIStackView(arrangedSubviews: [footer])
-        footerWrap.axis = .horizontal
-        footerWrap.alignment = .center
-        body.addArrangedSubview(footerWrap)
-        body.setCustomSpacing(14, after: billedCaption)
+        footer.distribution = .equalSpacing
+        footer.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(footer)
+
+        cta.addTarget(self, action: #selector(subscribeTapped), for: .touchUpInside)
+        cta.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(cta)
+
+        plansStack = UIStackView()
+        plansStack.axis = .horizontal
+        plansStack.spacing = 10
+        plansStack.distribution = .fillEqually
+        plansStack.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(plansStack)
+
+        let topStack = UIStackView(arrangedSubviews: [heroView(), textBlock()])
+        topStack.axis = .vertical
+        topStack.alignment = .fill
+        topStack.spacing = 16
+        topStack.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(topStack)
+
+        NSLayoutConstraint.activate([
+            footer.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 40),
+            footer.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -40),
+            footer.bottomAnchor.constraint(equalTo: contentContainer.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+
+            cta.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 24),
+            cta.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -24),
+            cta.bottomAnchor.constraint(equalTo: footer.topAnchor, constant: -16),
+
+            plansStack.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 24),
+            plansStack.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -24),
+            plansStack.bottomAnchor.constraint(equalTo: cta.topAnchor, constant: -18),
+
+            topStack.topAnchor.constraint(equalTo: contentContainer.topAnchor),
+            topStack.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor),
+            topStack.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor),
+            topStack.bottomAnchor.constraint(lessThanOrEqualTo: plansStack.topAnchor, constant: -14)
+        ])
+    }
+
+    private func textBlock() -> UIView {
+        let title = UILabel()
+        title.text = "Unlock Unlimited Creativity"
+        title.font = Theme.Font.heading(24, weight: 700)
+        title.textColor = Theme.Color.textPrimaryAlt
+        title.textAlignment = .center
+        title.numberOfLines = 0
+
+        let subtitle = UILabel()
+        subtitle.text = "Everything you need to make forever memories."
+        subtitle.font = Theme.Font.body(13, weight: 600)
+        subtitle.textColor = Theme.Color.textSecondary
+        subtitle.textAlignment = .center
+        subtitle.numberOfLines = 0
+
+        let bullets = UIStackView(arrangedSubviews: SubscriptionPlan.benefits.map(benefitRow))
+        bullets.axis = .vertical
+        bullets.spacing = 9
+
+        let body = UIStackView(arrangedSubviews: [title, subtitle, bullets])
+        body.axis = .vertical
+        body.alignment = .fill
+        body.spacing = 8
+        body.setCustomSpacing(16, after: subtitle)
+        body.isLayoutMarginsRelativeArrangement = true
+        body.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 0, right: 24)
+        return body
     }
 
     private func populatePlanCards() {
@@ -214,7 +208,6 @@ final class PaywallViewController: UIViewController {
             planCards.append(card)
             plansStack.addArrangedSubview(card)
         }
-        updateBilledCaption()
     }
 
     private func heroView() -> UIView {
@@ -242,32 +235,32 @@ final class PaywallViewController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [deck, badge])
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 16
+        stack.spacing = 14
         stack.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(stack)
         NSLayoutConstraint.activate([
-            deck.heightAnchor.constraint(equalToConstant: 112),
-            badge.heightAnchor.constraint(equalToConstant: 28),
+            deck.heightAnchor.constraint(equalToConstant: 96),
+            badge.heightAnchor.constraint(equalToConstant: 26),
             stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             // Pinned relative to the safe area (not a fixed container height) so the fanned,
             // rotated deck never renders under the status bar / Dynamic Island on any device.
-            stack.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 14),
-            stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -18)
+            stack.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 10),
+            stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -12)
         ])
         return container
     }
 
-    /// Three fanned, rotated preview cards — matches the design mockup's photo-stack hero,
-    /// filled with real generated portraits (fetched async) rather than a static illustration.
+    /// Bundled in the app (Assets.xcassets) rather than fetched over the network — these are
+    /// the same real AI-generated illustrations already shipped for onboarding, so the paywall
+    /// hero renders instantly and never depends on a Firestore/Storage round trip.
     private func fannedPhotoDeck() -> UIView {
-        let sizes: [(CGSize, CGFloat)] = [
-            (CGSize(width: 74, height: 96), -6),
-            (CGSize(width: 82, height: 112), 0),
-            (CGSize(width: 74, height: 96), 6)
+        let specs: [(String, CGSize, CGFloat)] = [
+            ("OnboardingThemedPortraits", CGSize(width: 64, height: 82), -6),
+            ("OnboardingSleepingBaby", CGSize(width: 70, height: 92), 0),
+            ("OnboardingMilestoneAlbum", CGSize(width: 64, height: 82), 6)
         ]
-        heroImageViews = []
-        let cardViews: [UIView] = sizes.map { size, rotation in
-            let imageView = UIImageView()
+        let cardViews: [UIView] = specs.map { imageName, size, rotation in
+            let imageView = UIImageView(image: UIImage(named: imageName))
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             imageView.backgroundColor = UIColor(hex: 0xEDE7FB)
@@ -275,7 +268,6 @@ final class PaywallViewController: UIViewController {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.widthAnchor.constraint(equalToConstant: size.width).isActive = true
             imageView.heightAnchor.constraint(equalToConstant: size.height).isActive = true
-            heroImageViews.append(imageView)
 
             let shadowWrap = UIView()
             shadowWrap.layer.shadowColor = Theme.Color.textPrimary.cgColor
@@ -304,10 +296,10 @@ final class PaywallViewController: UIViewController {
     private func benefitRow(_ text: String) -> UIView {
         let iconBackground = UIView()
         iconBackground.backgroundColor = Theme.Color.successBackground
-        iconBackground.layer.cornerRadius = 13
+        iconBackground.layer.cornerRadius = 12
         iconBackground.translatesAutoresizingMaskIntoConstraints = false
-        iconBackground.widthAnchor.constraint(equalToConstant: 26).isActive = true
-        iconBackground.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        iconBackground.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        iconBackground.heightAnchor.constraint(equalToConstant: 24).isActive = true
 
         let check = UIImageView(image: UIImage(systemName: "checkmark"))
         check.tintColor = Theme.Color.success
@@ -317,18 +309,18 @@ final class PaywallViewController: UIViewController {
         NSLayoutConstraint.activate([
             check.centerXAnchor.constraint(equalTo: iconBackground.centerXAnchor),
             check.centerYAnchor.constraint(equalTo: iconBackground.centerYAnchor),
-            check.widthAnchor.constraint(equalToConstant: 13),
-            check.heightAnchor.constraint(equalToConstant: 13)
+            check.widthAnchor.constraint(equalToConstant: 12),
+            check.heightAnchor.constraint(equalToConstant: 12)
         ])
 
         let label = UILabel()
         label.text = text
-        label.font = Theme.Font.body(14.5, weight: 600)
+        label.font = Theme.Font.body(13.5, weight: 600)
         label.textColor = Theme.Color.textSecondaryAlt
 
         let row = UIStackView(arrangedSubviews: [iconBackground, label])
         row.axis = .horizontal
-        row.spacing = 11
+        row.spacing = 10
         row.alignment = .center
         return row
     }
@@ -341,26 +333,19 @@ final class PaywallViewController: UIViewController {
         return button
     }
 
-    private func updateBilledCaption() {
-        guard let selectedPlan else { return }
-        let periodWord = selectedPlan.title == "Weekly" ? "weekly" : selectedPlan.title == "Monthly" ? "monthly" : "yearly"
-        billedCaption.text = "Billed \(selectedPlan.priceLabel) \(periodWord) · Cancel anytime"
-    }
-
     @objc private func planTapped(_ sender: PlanCardView) {
         HapticFeedback.selection()
         selectedPlan = sender.plan
         for card in planCards { card.isSelectedPlan = card.plan.productId == sender.plan.productId }
-        updateBilledCaption()
     }
 
     @objc private func subscribeTapped() {
         guard let selectedPlan else { return }
         HapticFeedback.light()
-        cta.isEnabled = false
+        cta.setLoading(true)
         RevenueCatService.purchase(package: selectedPlan.package) { [weak self] result in
             DispatchQueue.main.async {
-                self?.cta.isEnabled = true
+                self?.cta.setLoading(false)
                 switch result {
                 case .success:
                     HapticFeedback.success()

@@ -20,9 +20,7 @@ final class AppCoordinator {
             case "paywall": window.rootViewController = UIViewController(); showPaywall(); return
             case "home": showHome(); return
             case "coins":
-                let nav = UINavigationController(rootViewController: CoinPackageViewController())
-                nav.navigationBar.isHidden = true
-                window.rootViewController = nav
+                window.rootViewController = CoinPackageViewController.presented()
                 return
             case "splash": showSplash(); return
             case "creditgate":
@@ -75,8 +73,7 @@ final class AppCoordinator {
     }
 
     private func showPaywall() {
-        let paywall = PaywallViewController()
-        paywall.modalPresentationStyle = .fullScreen
+        let paywall = PaywallViewController.presented()
         paywall.onDismiss = { [weak self] in
             self?.showHome()
         }

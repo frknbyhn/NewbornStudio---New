@@ -2,10 +2,9 @@ import UIKit
 
 final class OnboardingPageViewController: UIViewController {
     let pageIndex: Int
-    private let page: OnboardingPage
+    let page: OnboardingPage
     private let totalPages: Int
     var onSkip: (() -> Void)?
-    var onContinue: (() -> Void)?
 
     private let backgroundLayer = CAGradientLayer()
 
@@ -94,20 +93,6 @@ final class OnboardingPageViewController: UIViewController {
         contentStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(contentStack)
 
-        let dots = PageDotsView(count: totalPages)
-        dots.activeIndex = pageIndex
-
-        let cta = GradientPillButton(title: page.ctaTitle)
-        cta.addTarget(self, action: #selector(ctaTapped), for: .touchUpInside)
-        cta.translatesAutoresizingMaskIntoConstraints = false
-
-        let bottomStack = UIStackView(arrangedSubviews: [dots, cta])
-        bottomStack.axis = .vertical
-        bottomStack.alignment = .center
-        bottomStack.spacing = 26
-        bottomStack.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bottomStack)
-
         NSLayoutConstraint.activate([
             circle.widthAnchor.constraint(equalToConstant: 250),
             circle.heightAnchor.constraint(equalToConstant: 250),
@@ -116,28 +101,19 @@ final class OnboardingPageViewController: UIViewController {
             illustration.centerXAnchor.constraint(equalTo: circle.centerXAnchor),
             illustration.centerYAnchor.constraint(equalTo: circle.centerYAnchor),
 
-            contentStack.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
+            // Bottom inset (dots + CTA height + spacing) reserved so this content stays clear
+            // of the container's persistent, non-sliding controls overlaid on top.
+            contentStack.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -60),
             contentStack.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 34),
             contentStack.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -34),
             contentStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             title.widthAnchor.constraint(lessThanOrEqualToConstant: 330),
-            subtitle.widthAnchor.constraint(lessThanOrEqualToConstant: 290),
-
-            bottomStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 34),
-            bottomStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -34),
-            bottomStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            cta.leadingAnchor.constraint(equalTo: bottomStack.leadingAnchor),
-            cta.trailingAnchor.constraint(equalTo: bottomStack.trailingAnchor)
+            subtitle.widthAnchor.constraint(lessThanOrEqualToConstant: 290)
         ])
     }
 
     @objc private func skipTapped() {
         HapticFeedback.selection()
         onSkip?()
-    }
-
-    @objc private func ctaTapped() {
-        HapticFeedback.light()
-        onContinue?()
     }
 }

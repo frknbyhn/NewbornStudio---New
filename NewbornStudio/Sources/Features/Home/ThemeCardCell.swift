@@ -72,6 +72,7 @@ final class ThemeCardCell: UICollectionViewCell {
 
             nameLabel.topAnchor.constraint(equalTo: tintView.bottomAnchor, constant: 9),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: heartButton.leadingAnchor, constant: -4),
             nameLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10),
 
             heartButton.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),

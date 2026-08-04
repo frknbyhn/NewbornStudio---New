@@ -30,7 +30,7 @@ struct SubscriptionPlan {
             title = "Monthly"
             periodLabel = "per month"
             creditsLabel = "50 credits / month"
-            badge = "3-day trial"
+            badge = nil
             isFeatured = false
         case .annual:
             title = "Yearly"

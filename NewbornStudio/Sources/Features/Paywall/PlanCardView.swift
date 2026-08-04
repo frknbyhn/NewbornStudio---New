@@ -6,6 +6,7 @@ final class PlanCardView: UIControl {
     private let titleLabel = UILabel()
     private let priceLabel = UILabel()
     private let periodLabel = UILabel()
+    private let creditsLabel = UILabel()
 
     var isSelectedPlan: Bool = false {
         didSet { updateSelection() }
@@ -28,7 +29,7 @@ final class PlanCardView: UIControl {
         titleLabel.textAlignment = .center
 
         priceLabel.text = plan.priceLabel
-        priceLabel.font = Theme.Font.heading(22, weight: 700)
+        priceLabel.font = Theme.Font.heading(17, weight: 700)
         priceLabel.textColor = Theme.Color.textPrimaryAlt
         priceLabel.textAlignment = .center
 
@@ -37,10 +38,19 @@ final class PlanCardView: UIControl {
         periodLabel.textColor = Theme.Color.textSecondary
         periodLabel.textAlignment = .center
 
-        let stack = UIStackView(arrangedSubviews: [titleLabel, priceLabel, periodLabel])
+        creditsLabel.text = plan.creditsLabel
+        creditsLabel.font = Theme.Font.body(11, weight: 700)
+        creditsLabel.textColor = Theme.Color.accentEnd
+        creditsLabel.textAlignment = .center
+        creditsLabel.numberOfLines = 1
+        creditsLabel.adjustsFontSizeToFitWidth = true
+        creditsLabel.minimumScaleFactor = 0.8
+
+        let stack = UIStackView(arrangedSubviews: [titleLabel, priceLabel, periodLabel, creditsLabel])
         stack.axis = .vertical
         stack.alignment = .center
         stack.spacing = 4
+        stack.setCustomSpacing(8, after: periodLabel)
         stack.isUserInteractionEnabled = false
         stack.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stack)
@@ -67,6 +77,7 @@ final class PlanCardView: UIControl {
             badgeLabel.layer.masksToBounds = true
             badgeLabel.translatesAutoresizingMaskIntoConstraints = false
             addSubview(badgeLabel)
+            bringSubviewToFront(badgeLabel)
             NSLayoutConstraint.activate([
                 badgeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
                 badgeLabel.topAnchor.constraint(equalTo: topAnchor, constant: -10),

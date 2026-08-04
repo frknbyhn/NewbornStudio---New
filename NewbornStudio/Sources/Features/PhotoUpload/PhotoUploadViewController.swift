@@ -8,6 +8,9 @@ final class PhotoUploadViewController: UIViewController {
     init(theme: ThemeCard) {
         self.theme = theme
         super.init(nibName: nil, bundle: nil)
+        // Stays hidden for every screen pushed after this one too (generation loading, result)
+        // until the user pops back before this point in the stack.
+        hidesBottomBarWhenPushed = true
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -19,6 +22,7 @@ final class PhotoUploadViewController: UIViewController {
         setUpContent()
         debugAutoGenerateIfNeeded()
     }
+
 
     private func debugAutoGenerateIfNeeded() {
         #if DEBUG

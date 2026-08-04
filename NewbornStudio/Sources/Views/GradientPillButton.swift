@@ -5,6 +5,8 @@ final class GradientPillButton: UIControl {
     private let gradientLayer = CAGradientLayer.accentPill()
     private let titleLabel = UILabel()
     private let iconView = UIImageView()
+    private let contentStack = UIStackView()
+    private let spinner = UIActivityIndicatorView(style: .medium)
 
     var title: String = "" {
         didSet { titleLabel.text = title }
@@ -36,22 +38,42 @@ final class GradientPillButton: UIControl {
         iconView.isUserInteractionEnabled = false
         iconView.contentMode = .scaleAspectFit
 
-        let stack = UIStackView(arrangedSubviews: icon == nil ? [titleLabel] : [titleLabel, iconView])
-        stack.axis = .horizontal
-        stack.spacing = 8
-        stack.alignment = .center
-        stack.isUserInteractionEnabled = false
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(stack)
+        contentStack.addArrangedSubview(titleLabel)
+        if icon != nil { contentStack.addArrangedSubview(iconView) }
+        contentStack.axis = .horizontal
+        contentStack.spacing = 8
+        contentStack.alignment = .center
+        contentStack.isUserInteractionEnabled = false
+        contentStack.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(contentStack)
+
+        spinner.color = .white
+        spinner.hidesWhenStopped = true
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(spinner)
 
         NSLayoutConstraint.activate([
-            stack.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo: centerYAnchor),
+            contentStack.centerXAnchor.constraint(equalTo: centerXAnchor),
+            contentStack.centerYAnchor.constraint(equalTo: centerYAnchor),
+            spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
             heightAnchor.constraint(equalToConstant: 56)
         ])
 
         addTarget(self, action: #selector(touchDown), for: .touchDown)
         addTarget(self, action: #selector(touchUp), for: [.touchUpInside, .touchUpOutside, .touchCancel])
+    }
+
+    /// Swaps the title/icon for a spinner and disables interaction — used while an in-flight
+    /// purchase call is running, so the CTA never looks tappable-but-inert.
+    func setLoading(_ loading: Bool) {
+        isEnabled = !loading
+        contentStack.alpha = loading ? 0 : 1
+        if loading {
+            spinner.startAnimating()
+        } else {
+            spinner.stopAnimating()
+        }
     }
 
     override func layoutSubviews() {

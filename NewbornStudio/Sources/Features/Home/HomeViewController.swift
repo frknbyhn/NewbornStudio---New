@@ -16,6 +16,16 @@ final class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presentLimitedOfferIfNeeded()
+        refreshCoinBalance()
+    }
+
+    private func refreshCoinBalance() {
+        CreditsService.fetchStatus { [weak self] result in
+            guard let self, case .success(let status) = result else { return }
+            DispatchQueue.main.async {
+                self.coinLabel.text = "\(status.totalCredits)"
+            }
+        }
     }
 
     private func presentLimitedOfferIfNeeded() {
@@ -39,6 +49,10 @@ final class HomeViewController: UIViewController {
 
     private func openDebugCategoryIfNeeded() {
         #if DEBUG
+        if ProcessInfo.processInfo.environment["NS_DEBUG_OPEN_CUSTOM_STYLE"] != nil {
+            navigationController?.pushViewController(CustomStyleViewController(), animated: false)
+            return
+        }
         guard let debugCategoryId = ProcessInfo.processInfo.environment["NS_DEBUG_CATEGORY"],
               let category = categories.first(where: { $0.id == debugCategoryId }) else { return }
         navigationController?.pushViewController(CategoryStylesViewController(category: category), animated: false)
@@ -49,7 +63,7 @@ final class HomeViewController: UIViewController {
         let logo = UIView()
         logo.backgroundColor = Theme.Color.accentEnd
         logo.layer.cornerRadius = 10
-        let logoIcon = UIImageView(image: UIImage(systemName: "figure.child"))
+        let logoIcon = UIImageView(image: UIImage(named: "splashIcon"))
         logoIcon.tintColor = .white
         logoIcon.translatesAutoresizingMaskIntoConstraints = false
         logo.addSubview(logoIcon)
@@ -67,7 +81,7 @@ final class HomeViewController: UIViewController {
 
         let coinIcon = UIImageView(image: UIImage(systemName: "dollarsign.circle.fill"))
         coinIcon.tintColor = Theme.Color.coin
-        coinLabel.text = "48"
+        coinLabel.text = "—"
         coinLabel.font = Theme.Font.body(13, weight: 800)
         coinLabel.textColor = UIColor(hex: 0xB07E1E)
         let coinPill = UIStackView(arrangedSubviews: [coinIcon, coinLabel])
@@ -92,6 +106,8 @@ final class HomeViewController: UIViewController {
             logo.heightAnchor.constraint(equalToConstant: 30),
             logoIcon.centerXAnchor.constraint(equalTo: logo.centerXAnchor),
             logoIcon.centerYAnchor.constraint(equalTo: logo.centerYAnchor),
+            logoIcon.heightAnchor.constraint(equalToConstant: 40),
+            logoIcon.widthAnchor.constraint(equalToConstant: 40),
             header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             header.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             header.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
@@ -111,6 +127,7 @@ final class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(CategoryListCell.self, forCellWithReuseIdentifier: CategoryListCell.reuseId)
+        collectionView.register(CreateYourOwnStyleCell.self, forCellWithReuseIdentifier: CreateYourOwnStyleCell.reuseId)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
 
@@ -125,27 +142,44 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        categories.count
+        categories.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == 0 {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: CreateYourOwnStyleCell.reuseId, for: indexPath)
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryListCell.reuseId, for: indexPath) as! CategoryListCell
-        cell.configure(with: categories[indexPath.item])
+        cell.configure(with: categories[indexPath.item - 1])
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width - 44, height: 190)
+        CGSize(width: collectionView.bounds.width - 44, height: indexPath.item == 0 ? 96 : 190)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         HapticFeedback.selection()
-        let styles = CategoryStylesViewController(category: categories[indexPath.item])
+        if indexPath.item == 0 {
+            navigationController?.pushViewController(CustomStyleViewController(), animated: true)
+            return
+        }
+        let styles = CategoryStylesViewController(category: categories[indexPath.item - 1])
         navigationController?.pushViewController(styles, animated: true)
     }
 
     @objc private func coinPillTapped() {
         HapticFeedback.selection()
-        navigationController?.pushViewController(CoinPackageViewController(), animated: true)
+        CreditsService.fetchStatus { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                let isPremium = (try? result.get())?.isPremium ?? false
+                if isPremium {
+                    self.present(CoinPackageViewController.presented(), animated: true)
+                } else {
+                    self.present(PaywallViewController.presented(), animated: true)
+                }
+            }
+        }
     }
 }

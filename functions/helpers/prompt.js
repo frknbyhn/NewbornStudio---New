@@ -24,4 +24,16 @@ function buildCategoryPrompt({ categoryName, mood }) {
   );
 }
 
-module.exports = { buildPrompt, buildCategoryPrompt };
+// Used for the Result screen's "edit this portrait" flow — the source image is already the
+// styled result, so this must ask for a targeted change rather than re-describing the whole
+// theme from scratch (which would risk regenerating an unrelated portrait).
+function buildEditPrompt({ instruction }) {
+  return (
+    `Apply this specific edit to the uploaded studio portrait: ${instruction}. ` +
+    `Preserve the baby's exact face, expression, proportions and skin tone, and keep the ` +
+    `overall studio-portrait style intact; only make the requested change. ` +
+    `Photorealistic, high detail, no text, no watermark, no logos, safe and wholesome, no adult content.`
+  );
+}
+
+module.exports = { buildPrompt, buildCategoryPrompt, buildEditPrompt };

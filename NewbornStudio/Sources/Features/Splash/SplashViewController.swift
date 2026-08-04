@@ -4,7 +4,7 @@ final class SplashViewController: UIViewController {
     var onFinished: (() -> Void)?
 
     private let logoBadge = UIView()
-    private let logoIcon = UIImageView(image: UIImage(systemName: "figure.child"))
+    private let logoIcon = UIImageView(image: UIImage(named: "splashIcon"))
     private let ring = UIView()
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
@@ -23,18 +23,18 @@ final class SplashViewController: UIViewController {
     }
 
     private func setUpViews() {
+        // Logo/title/subtitle are fully static from frame 1 — deliberately not animated in.
+        // They must render identically to the native LaunchScreen's UIImageName (same badge,
+        // same centering) so the launch -> splash transition shows no pop-in for anything
+        // except the loading dots below.
         ring.layer.cornerRadius = 46
         ring.layer.borderWidth = 2
         ring.layer.borderColor = Theme.Color.accentEnd.withAlphaComponent(0.25).cgColor
         ring.translatesAutoresizingMaskIntoConstraints = false
-        ring.alpha = 0
-        ring.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
 
         logoBadge.backgroundColor = Theme.Color.accentEnd
         logoBadge.layer.cornerRadius = 30
         logoBadge.translatesAutoresizingMaskIntoConstraints = false
-        logoBadge.alpha = 0
-        logoBadge.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         logoBadge.layer.shadowColor = Theme.Color.accentEnd.cgColor
         logoBadge.layer.shadowOpacity = 0.35
         logoBadge.layer.shadowRadius = 18
@@ -47,15 +47,11 @@ final class SplashViewController: UIViewController {
         titleLabel.text = "Newborn Studio"
         titleLabel.font = Theme.Font.heading(24, weight: 700)
         titleLabel.textColor = Theme.Color.textPrimaryAlt
-        titleLabel.alpha = 0
-        titleLabel.transform = CGAffineTransform(translationX: 0, y: 10)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         subtitleLabel.text = "AI baby photo studio"
         subtitleLabel.font = Theme.Font.body(14, weight: 600)
         subtitleLabel.textColor = Theme.Color.textSecondary
-        subtitleLabel.alpha = 0
-        subtitleLabel.transform = CGAffineTransform(translationX: 0, y: 10)
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         dotsStack.axis = .horizontal
@@ -81,8 +77,10 @@ final class SplashViewController: UIViewController {
         view.addSubview(dotsStack)
 
         NSLayoutConstraint.activate([
+            // Dead-center, matching where UILaunchScreen's UIImageName renders LaunchLogo —
+            // no vertical offset, since the native launch screen can't replicate one.
             logoBadge.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoBadge.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            logoBadge.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             logoBadge.widthAnchor.constraint(equalToConstant: 92),
             logoBadge.heightAnchor.constraint(equalToConstant: 92),
 
@@ -93,8 +91,8 @@ final class SplashViewController: UIViewController {
 
             logoIcon.centerXAnchor.constraint(equalTo: logoBadge.centerXAnchor),
             logoIcon.centerYAnchor.constraint(equalTo: logoBadge.centerYAnchor),
-            logoIcon.widthAnchor.constraint(equalToConstant: 44),
-            logoIcon.heightAnchor.constraint(equalToConstant: 44),
+            logoIcon.widthAnchor.constraint(equalToConstant: 80),
+            logoIcon.heightAnchor.constraint(equalToConstant: 80),
 
             titleLabel.topAnchor.constraint(equalTo: logoBadge.bottomAnchor, constant: 22),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -108,29 +106,9 @@ final class SplashViewController: UIViewController {
     }
 
     private func animateIn() {
-        UIView.animate(withDuration: 0.55, delay: 0, usingSpringWithDamping: 0.62, initialSpringVelocity: 0.4, options: [.curveEaseOut]) {
-            self.logoBadge.alpha = 1
-            self.logoBadge.transform = .identity
-        }
+        pulseRing()
 
-        UIView.animate(withDuration: 0.6, delay: 0.1, options: [.curveEaseOut]) {
-            self.ring.alpha = 1
-            self.ring.transform = .identity
-        } completion: { _ in
-            self.pulseRing()
-        }
-
-        UIView.animate(withDuration: 0.4, delay: 0.3, options: [.curveEaseOut]) {
-            self.titleLabel.alpha = 1
-            self.titleLabel.transform = .identity
-        }
-
-        UIView.animate(withDuration: 0.4, delay: 0.4, options: [.curveEaseOut]) {
-            self.subtitleLabel.alpha = 1
-            self.subtitleLabel.transform = .identity
-        }
-
-        UIView.animate(withDuration: 0.3, delay: 0.55, options: []) {
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: []) {
             self.dotsStack.alpha = 1
         } completion: { _ in
             self.animateDots()

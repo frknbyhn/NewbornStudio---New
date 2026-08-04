@@ -29,6 +29,7 @@
 		4A0BB859F9403CB20DE527E6 /* GenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */; };
 		4B0A8765F67962890859A60C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A76CDB5F21897BE615473238 /* FirebaseFirestore */; };
 		55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D217EC357D10BBD06523A /* AppCoordinator.swift */; };
+		563A13B7689A72132CBE6986 /* CreateYourOwnStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */; };
 		609C3425900374E6A62AEC58 /* LegalDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E2CC2727250F73C84155DF /* LegalDocumentViewController.swift */; };
 		65857A19D43A9D37613D935C /* LimitedOfferPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E089CFB1B50604ECD1ED4 /* LimitedOfferPopupViewController.swift */; };
 		65B4BD6EDDB3F7DDFBA647D6 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */; };
@@ -56,6 +57,7 @@
 		C8776A891601103C3EC06B52 /* GenerationLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E0ABDD733E1503E3E7B30F /* GenerationLoadingViewController.swift */; };
 		CCCADF412FDF8D3424402E57 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 60A91B98E7246E44EF56D078 /* GoogleSignIn */; };
 		CE5C91CD28A5BB002572C526 /* PageDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */; };
+		D271597F73536994493C5042 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224CAE5CB657B6ED69449B3 /* CustomStyleViewController.swift */; };
 		D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */; };
 		DF66B2C0F2DEA665170BCFD0 /* SubscriptionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */; };
 		E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2906789AA10EA365194D60 /* GalleryViewController.swift */; };
@@ -78,6 +80,7 @@
 		31A54B59B4A755B9D53423BB /* CategoryStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStylesViewController.swift; sourceTree = "<group>"; };
 		33710312F2AFFDB4D756679E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		39809759245896589A20F080 /* ThemeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCategory.swift; sourceTree = "<group>"; };
+		4224CAE5CB657B6ED69449B3 /* CustomStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStyleViewController.swift; sourceTree = "<group>"; };
 		548B61AFFA7C1482FB5B77B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		58E0ABDD733E1503E3E7B30F /* GenerationLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationLoadingViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		D19CCDF721E36711C5C2F478 /* CoinPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackageViewController.swift; sourceTree = "<group>"; };
 		DCE374D091E4F8D353D9D2B5 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
 		DD5174FCAB01C88CAD7E4E7C /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
+		DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateYourOwnStyleCell.swift; sourceTree = "<group>"; };
 		ED76ADBE497505557988ABC2 /* CoinPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackage.swift; sourceTree = "<group>"; };
 		EFF5C9D3E57E0B14666A51E6 /* NewbornStudio.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NewbornStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F004B5EC583D5D6EAF640DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 			children = (
 				DD5174FCAB01C88CAD7E4E7C /* CategoryListCell.swift */,
 				31A54B59B4A755B9D53423BB /* CategoryStylesViewController.swift */,
+				DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */,
+				4224CAE5CB657B6ED69449B3 /* CustomStyleViewController.swift */,
 				B4FAF8B5C5CBC6712AC74516 /* GalleryDetailViewController.swift */,
 				CF2906789AA10EA365194D60 /* GalleryViewController.swift */,
 				69FCED30A8A30320D88603AB /* HomeViewController.swift */,
@@ -455,7 +461,9 @@
 				C660DDE533369A4C79932F42 /* CoinPackage.swift in Sources */,
 				EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */,
 				88CCB4F182212328974B04E4 /* CoinPackageViewController.swift in Sources */,
+				563A13B7689A72132CBE6986 /* CreateYourOwnStyleCell.swift in Sources */,
 				B2D3FA887578BABAB7FB10C5 /* CreditsService.swift in Sources */,
+				D271597F73536994493C5042 /* CustomStyleViewController.swift in Sources */,
 				2B3C0865CCEFF10B2E1178E2 /* FavoritesService.swift in Sources */,
 				1E5A1B431E59708C33497B34 /* GalleryDetailViewController.swift in Sources */,
 				E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */,

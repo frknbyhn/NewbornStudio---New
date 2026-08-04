@@ -5,47 +5,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hex: 0xF6EFEA)
-        setUpAvatar()
         setUpList()
-    }
-
-    private var avatarBottom: NSLayoutYAxisAnchor!
-
-    private func setUpAvatar() {
-        let avatar = UIView()
-        avatar.backgroundColor = UIColor(hex: 0xEDE7FB)
-        avatar.layer.cornerRadius = 41
-        avatar.translatesAutoresizingMaskIntoConstraints = false
-
-        let icon = UIImageView(image: UIImage(systemName: "person.fill"))
-        icon.tintColor = Theme.Color.purpleAccent
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        avatar.addSubview(icon)
-
-        let name = UILabel()
-        name.text = "Guest"
-        name.font = Theme.Font.heading(20, weight: 700)
-        name.textColor = Theme.Color.textPrimaryAlt
-        name.textAlignment = .center
-
-        let stack = UIStackView(arrangedSubviews: [avatar, name])
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.spacing = 12
-        stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 14, left: 0, bottom: 0, right: 0)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stack)
-
-        NSLayoutConstraint.activate([
-            avatar.widthAnchor.constraint(equalToConstant: 82),
-            avatar.heightAnchor.constraint(equalToConstant: 82),
-            icon.centerXAnchor.constraint(equalTo: avatar.centerXAnchor),
-            icon.centerYAnchor.constraint(equalTo: avatar.centerYAnchor),
-            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            stack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        avatarBottom = stack.bottomAnchor
     }
 
     private func setUpList() {
@@ -67,8 +27,7 @@ final class ProfileViewController: UIViewController {
         ]))
 
         stack.addArrangedSubview(card([
-            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: "Language", trailingText: "English", action: nil),
-            row(icon: "bell.fill", tint: Theme.Color.coin, tintBg: Theme.Color.coinBackground, title: "Notifications", action: nil)
+            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: "Language", trailingText: "English", action: nil)
         ]))
 
         stack.addArrangedSubview(card([
@@ -79,7 +38,7 @@ final class ProfileViewController: UIViewController {
         ]))
 
         NSLayoutConstraint.activate([
-            scroll.topAnchor.constraint(equalTo: avatarBottom, constant: 6),
+            scroll.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
             scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scroll.bottomAnchor.constraint(equalTo: view.bottomAnchor),

@@ -2,6 +2,17 @@ import UIKit
 import RevenueCat
 
 final class CoinPackageViewController: UIViewController {
+    /// Every paywall in the app is presented modally (never pushed), full screen, with a
+    /// self-dismissing close button — this factory is the one place that wiring lives.
+    /// Wrapped in its own hidden-bar UINavigationController so backTapped()'s dismiss path
+    /// (used when there's no push-navigation ancestor) always applies.
+    static func presented() -> UIViewController {
+        let nav = UINavigationController(rootViewController: CoinPackageViewController())
+        nav.modalPresentationStyle = .fullScreen
+        nav.navigationBar.isHidden = true
+        return nav
+    }
+
     private var rows: [CoinPackageRow] = []
     private var packages: [CoinPackage] = []
     private var selected: CoinPackage?
@@ -300,10 +311,10 @@ final class CoinPackageViewController: UIViewController {
     @objc private func purchaseTapped() {
         guard let selected else { return }
         HapticFeedback.light()
-        ctaButton.isEnabled = false
+        ctaButton.setLoading(true)
         RevenueCatService.purchase(package: selected.package) { [weak self] result in
             DispatchQueue.main.async {
-                self?.ctaButton.isEnabled = true
+                self?.ctaButton.setLoading(false)
                 switch result {
                 case .success:
                     HapticFeedback.success()

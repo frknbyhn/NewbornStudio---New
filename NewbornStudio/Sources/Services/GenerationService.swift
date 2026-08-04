@@ -19,7 +19,7 @@ struct GenerationResult {
 /// through as base64 in the callable payload — Wiro accepts a real multipart file attachment
 /// directly (verified empirically), so there's no Storage upload step for the source photo.
 enum GenerationService {
-    static func generate(styleId: String, sourceImage: UIImage, completion: @escaping (Result<GenerationResult, Error>) -> Void) {
+    static func generate(styleId: String, sourceImage: UIImage, editInstruction: String? = nil, completion: @escaping (Result<GenerationResult, Error>) -> Void) {
         guard AuthService.currentUserId != nil else {
             completion(.failure(GenerationServiceError.notSignedIn))
             return
@@ -30,7 +30,9 @@ enum GenerationService {
         }
 
         let imageBase64 = data.base64EncodedString()
-        Functions.functions().httpsCallable("generateContent").call(["styleId": styleId, "imageBase64": imageBase64]) { result, error in
+        var payload: [String: Any] = ["styleId": styleId, "imageBase64": imageBase64]
+        if let editInstruction { payload["editInstruction"] = editInstruction }
+        Functions.functions().httpsCallable("generateContent").call(payload) { result, error in
             if let error {
                 completion(.failure(error))
                 return

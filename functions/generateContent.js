@@ -5,6 +5,7 @@ const { getStorage } = require("firebase-admin/storage");
 const { randomUUID } = require("crypto");
 const { generateImage } = require("./helpers/wiro");
 const { ensureUserDoc, spendCredits } = require("./helpers/credits");
+const { buildEditPrompt } = require("./helpers/prompt");
 
 // Firebase's own download-token scheme (what client SDKs' getDownloadURL() produces) instead of
 // a GCS signed URL — the runtime service account doesn't have iam.serviceAccounts.signBlob, and
@@ -28,9 +29,12 @@ exports.generateContent = onCall(
     const uid = request.auth && request.auth.uid;
     if (!uid) throw new HttpsError("unauthenticated", "Sign-in required.");
 
-    const { styleId, imageBase64 } = request.data || {};
+    const { styleId, imageBase64, editInstruction } = request.data || {};
     if (!styleId || !imageBase64) {
       throw new HttpsError("invalid-argument", "styleId and imageBase64 are required.");
+    }
+    if (editInstruction !== undefined && (typeof editInstruction !== "string" || !editInstruction.trim())) {
+      throw new HttpsError("invalid-argument", "editInstruction must be a non-empty string.");
     }
 
     const imageBuffer = Buffer.from(imageBase64, "base64");
@@ -64,6 +68,7 @@ exports.generateContent = onCall(
       styleName: style.name,
       status: "generating",
       createdAt: FieldValue.serverTimestamp(),
+      ...(editInstruction ? { editInstruction } : {}),
     });
 
     // Everything from here on can fail (Wiro outage, a bug) and every one of those paths must
@@ -72,7 +77,7 @@ exports.generateContent = onCall(
       const { buffer, contentType } = await generateImage({
         apiKey: WIRO_API_KEY.value(),
         apiSecret: WIRO_API_SECRET.value(),
-        prompt: style.prompt,
+        prompt: editInstruction ? buildEditPrompt({ instruction: editInstruction }) : style.prompt,
         // Sent directly to Wiro as a multipart file attachment — no Storage round-trip for the
         // user's source photo. Verified empirically that Wiro actually uses the attached file
         // (undocumented in Wiro's own docs, which only show URL-string examples).

@@ -62,21 +62,6 @@ final class LimitedOfferPopupViewController: UIViewController {
             card.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             card.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28)
         ])
-
-        let close = UIButton(type: .system)
-        close.setImage(UIImage(systemName: "xmark"), for: .normal)
-        close.tintColor = Theme.Color.textSecondaryAlt
-        close.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        close.layer.cornerRadius = 14
-        close.addTarget(self, action: #selector(dismissTapped), for: .touchUpInside)
-        close.translatesAutoresizingMaskIntoConstraints = false
-        card.addSubview(close)
-        NSLayoutConstraint.activate([
-            close.topAnchor.constraint(equalTo: card.topAnchor, constant: 14),
-            close.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -14),
-            close.widthAnchor.constraint(equalToConstant: 28),
-            close.heightAnchor.constraint(equalToConstant: 28)
-        ])
     }
 
     private func populateActiveState() {
@@ -312,11 +297,11 @@ final class LimitedOfferPopupViewController: UIViewController {
     @objc private func claimTapped() {
         guard let limitedPackage else { return }
         HapticFeedback.light()
-        cta.isEnabled = false
+        cta.setLoading(true)
         RevenueCatService.purchase(package: limitedPackage.package) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self else { return }
-                self.cta.isEnabled = true
+                self.cta.setLoading(false)
                 switch result {
                 case .success:
                     HapticFeedback.success()

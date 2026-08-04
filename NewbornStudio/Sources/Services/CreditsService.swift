@@ -58,14 +58,9 @@ enum CreditsService {
                     if status.hasCredits {
                         onAllowed()
                     } else if status.isPremium {
-                        viewController.navigationController?.pushViewController(CoinPackageViewController(), animated: true)
+                        viewController.present(CoinPackageViewController.presented(), animated: true)
                     } else {
-                        let paywall = PaywallViewController()
-                        paywall.modalPresentationStyle = .fullScreen
-                        paywall.onDismiss = { [weak paywall] in
-                            paywall?.dismiss(animated: true)
-                        }
-                        viewController.present(paywall, animated: true)
+                        viewController.present(PaywallViewController.presented(), animated: true)
                     }
                 case .failure(let error):
                     print("CreditsService.fetchStatus failed: \(error)")
