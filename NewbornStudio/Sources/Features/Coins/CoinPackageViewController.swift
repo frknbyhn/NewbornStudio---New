@@ -297,8 +297,7 @@ final class CoinPackageViewController: UIViewController {
     }
 
     private func updateCTA() {
-        guard let selected else { return }
-        ctaButton.title = "Buy \(selected.credits) coins · \(selected.priceLabel)"
+        ctaButton.title = "Continue"
     }
 
     @objc private func rowTapped(_ sender: CoinPackageRow) {
