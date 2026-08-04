@@ -1,6 +1,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseFunctions
+import FirebaseFirestore
 
 enum GenerationServiceError: Error {
     case notSignedIn
@@ -60,5 +61,32 @@ enum GenerationService {
             let remainingCredits = (dict["remainingCredits"] as? Int) ?? 0
             completion(.success(GenerationResult(generationId: generationId, resultUrl: resultUrl, remainingCredits: remainingCredits)))
         }
+    }
+
+    static func fetchGenerations(completion: @escaping (Result<[Generation], Error>) -> Void) {
+        guard let uid = AuthService.currentUserId else {
+            completion(.failure(GenerationServiceError.notSignedIn))
+            return
+        }
+        Firestore.firestore()
+            .collection("users").document(uid).collection("generations")
+            .whereField("status", isEqualTo: "complete")
+            .order(by: "completedAt", descending: true)
+            .getDocuments { snapshot, error in
+                if let error {
+                    completion(.failure(error))
+                    return
+                }
+                let generations = (snapshot?.documents ?? []).compactMap { doc -> Generation? in
+                    let data = doc.data()
+                    guard
+                        let resultUrlString = data["resultUrl"] as? String,
+                        let resultUrl = URL(string: resultUrlString)
+                    else { return nil }
+                    let styleName = data["styleName"] as? String ?? "Portrait"
+                    return Generation(id: doc.documentID, styleName: styleName, resultUrl: resultUrl)
+                }
+                completion(.success(generations))
+            }
     }
 }

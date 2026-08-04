@@ -3,7 +3,10 @@ import UIKit
 final class HomeViewController: UIViewController {
     private let coinLabel = UILabel()
     private var collectionView: UICollectionView!
-    private let filters = ["New", "Trending", "Milestones", "Fantasy", "Seasonal"]
+    private var filtersStack: UIStackView!
+    private var filterChips: [FilterChipButton] = []
+    private var categories: [ThemeCategory] = []
+    private var selectedCategoryId: String?
     private var themes: [ThemeCard] = []
 
     override func viewDidLoad() {
@@ -12,11 +15,25 @@ final class HomeViewController: UIViewController {
         setUpHeader()
         setUpFilters()
         setUpGrid()
+        loadCategories()
         loadThemes()
     }
 
+    private func loadCategories() {
+        ThemeService.fetchCategories { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let categories):
+                self.categories = categories
+                self.populateFilterChips()
+            case .failure(let error):
+                print("ThemeService.fetchCategories failed: \(error)")
+            }
+        }
+    }
+
     private func loadThemes() {
-        ThemeService.fetchThemes { [weak self] result in
+        ThemeService.fetchThemes(categoryId: selectedCategoryId) { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let cards):
@@ -93,45 +110,55 @@ final class HomeViewController: UIViewController {
         scroll.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scroll)
 
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 8
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        scroll.addSubview(stack)
-
-        for (index, filter) in filters.enumerated() {
-            let chip = PaddedLabel()
-            chip.text = filter
-            chip.font = Theme.Font.heading(13, weight: 600)
-            chip.textAlignment = .center
-            chip.isUserInteractionEnabled = false
-            if index == 0 {
-                chip.backgroundColor = Theme.Color.accentEnd
-                chip.textColor = .white
-            } else {
-                chip.backgroundColor = Theme.Color.backgroundWarm
-                chip.textColor = Theme.Color.textSecondaryAlt
-            }
-            chip.horizontalPadding = 15
-            chip.layer.cornerRadius = 15.5
-            chip.layer.masksToBounds = true
-            chip.translatesAutoresizingMaskIntoConstraints = false
-            stack.addArrangedSubview(chip)
-            chip.heightAnchor.constraint(equalToConstant: 31).isActive = true
-            chip.setContentHuggingPriority(.required, for: .horizontal)
-        }
+        filtersStack = UIStackView()
+        filtersStack.axis = .horizontal
+        filtersStack.spacing = 8
+        filtersStack.translatesAutoresizingMaskIntoConstraints = false
+        scroll.addSubview(filtersStack)
 
         NSLayoutConstraint.activate([
             scroll.topAnchor.constraint(equalTo: headerBottomAnchor, constant: 14),
             scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scroll.heightAnchor.constraint(equalToConstant: 31),
-            stack.topAnchor.constraint(equalTo: scroll.topAnchor),
-            stack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
-            stack.leadingAnchor.constraint(equalTo: scroll.leadingAnchor, constant: 22),
-            stack.trailingAnchor.constraint(equalTo: scroll.trailingAnchor, constant: -22)
+            filtersStack.topAnchor.constraint(equalTo: scroll.topAnchor),
+            filtersStack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
+            filtersStack.leadingAnchor.constraint(equalTo: scroll.leadingAnchor, constant: 22),
+            filtersStack.trailingAnchor.constraint(equalTo: scroll.trailingAnchor, constant: -22)
         ])
         filtersBottomAnchor = scroll.bottomAnchor
+    }
+
+    private func populateFilterChips() {
+        filterChips.forEach { $0.removeFromSuperview() }
+        filterChips = []
+
+        let allChip = FilterChipButton(title: "All", categoryId: nil)
+        allChip.addTarget(self, action: #selector(filterTapped(_:)), for: .touchUpInside)
+        filtersStack.addArrangedSubview(allChip)
+        filterChips.append(allChip)
+
+        for category in categories {
+            let chip = FilterChipButton(title: category.name, categoryId: category.id)
+            chip.addTarget(self, action: #selector(filterTapped(_:)), for: .touchUpInside)
+            filtersStack.addArrangedSubview(chip)
+            filterChips.append(chip)
+        }
+        updateChipSelection()
+    }
+
+    private func updateChipSelection() {
+        for chip in filterChips {
+            chip.isSelectedChip = chip.categoryId == selectedCategoryId
+        }
+    }
+
+    @objc private func filterTapped(_ sender: FilterChipButton) {
+        guard sender.categoryId != selectedCategoryId else { return }
+        HapticFeedback.selection()
+        selectedCategoryId = sender.categoryId
+        updateChipSelection()
+        loadThemes()
     }
 
     private func setUpGrid() {
@@ -196,5 +223,50 @@ final class PaddedLabel: UILabel {
 
     override func drawText(in rect: CGRect) {
         super.drawText(in: rect.insetBy(dx: horizontalPadding, dy: 0))
+    }
+}
+
+/// A tappable pill chip for Home's category filter row.
+final class FilterChipButton: UIControl {
+    let categoryId: String?
+    private let label = PaddedLabel()
+
+    var isSelectedChip: Bool = false {
+        didSet { updateAppearance() }
+    }
+
+    init(title: String, categoryId: String?) {
+        self.categoryId = categoryId
+        super.init(frame: .zero)
+        label.text = title
+        label.font = Theme.Font.heading(13, weight: 600)
+        label.textAlignment = .center
+        label.horizontalPadding = 15
+        label.isUserInteractionEnabled = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(label)
+        layer.cornerRadius = 15.5
+        layer.masksToBounds = true
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: topAnchor),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+        heightAnchor.constraint(equalToConstant: 31).isActive = true
+        setContentHuggingPriority(.required, for: .horizontal)
+        updateAppearance()
+    }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
+    private func updateAppearance() {
+        if isSelectedChip {
+            backgroundColor = Theme.Color.accentEnd
+            label.textColor = .white
+        } else {
+            backgroundColor = Theme.Color.backgroundWarm
+            label.textColor = Theme.Color.textSecondaryAlt
+        }
     }
 }

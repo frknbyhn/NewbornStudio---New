@@ -13,7 +13,9 @@
 		0B8F57D37A271FB28331A2BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004B5EC583D5D6EAF640DD8 /* SceneDelegate.swift */; };
 		19E6BEFCE889FDA0C800D8B7 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 07682BE50C2C84C3B373157D /* RevenueCat */; };
 		1C305EF571A030C84CCD2B9F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F5C8EF66A78375A1A5C78 /* OnboardingPage.swift */; };
+		1E5A1B431E59708C33497B34 /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FAF8B5C5CBC6712AC74516 /* GalleryDetailViewController.swift */; };
 		1EB9D11353340D5C62E14CF7 /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677D2EE43C0A50451D4561FD /* ThemeCard.swift */; };
+		23CEF94056FF8C2F545F5BA5 /* ThemeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39809759245896589A20F080 /* ThemeCategory.swift */; };
 		24ECD51C45E858C57D974648 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2252ECD08EF287944198F72 /* ThemeService.swift */; };
 		2B3825A1040995155892DB94 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCED30A8A30320D88603AB /* HomeViewController.swift */; };
 		358DE3B132AF9A93CA69FABA /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */; };
@@ -26,6 +28,7 @@
 		55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D217EC357D10BBD06523A /* AppCoordinator.swift */; };
 		609C3425900374E6A62AEC58 /* LegalDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E2CC2727250F73C84155DF /* LegalDocumentViewController.swift */; };
 		65B4BD6EDDB3F7DDFBA647D6 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */; };
+		708478A6299AB9DA0DAC810D /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC08B8E2A5886007925282F /* Generation.swift */; };
 		848081CB357AED00BB173314 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9A0D8D69C677AA06E26C7A96 /* FirebaseStorage */; };
 		867F71C7DE4FFBEBC3B81FFA /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 5499EA09F4C6C0E34CF10CEA /* FirebaseFunctions */; };
 		88CCB4F182212328974B04E4 /* CoinPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CCDF721E36711C5C2F478 /* CoinPackageViewController.swift */; };
@@ -63,6 +66,7 @@
 		18D7E68295C3C9B0BA195AB3 /* PaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewController.swift; sourceTree = "<group>"; };
 		2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationService.swift; sourceTree = "<group>"; };
 		33710312F2AFFDB4D756679E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		39809759245896589A20F080 /* ThemeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCategory.swift; sourceTree = "<group>"; };
 		548B61AFFA7C1482FB5B77B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		58E0ABDD733E1503E3E7B30F /* GenerationLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationLoadingViewController.swift; sourceTree = "<group>"; };
@@ -82,9 +86,11 @@
 		A75301CAE2D5DCFC4E515169 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlan.swift; sourceTree = "<group>"; };
 		B05772657177A97F85C5741F /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
+		B4FAF8B5C5CBC6712AC74516 /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
 		BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2906789AA10EA365194D60 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		CFC08B8E2A5886007925282F /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		D19CCDF721E36711C5C2F478 /* CoinPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackageViewController.swift; sourceTree = "<group>"; };
 		DCE374D091E4F8D353D9D2B5 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
 		ED76ADBE497505557988ABC2 /* CoinPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackage.swift; sourceTree = "<group>"; };
@@ -152,9 +158,11 @@
 			isa = PBXGroup;
 			children = (
 				ED76ADBE497505557988ABC2 /* CoinPackage.swift */,
+				CFC08B8E2A5886007925282F /* Generation.swift */,
 				FF642C9515BCC467F834E8B4 /* Milestone.swift */,
 				ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */,
 				677D2EE43C0A50451D4561FD /* ThemeCard.swift */,
+				39809759245896589A20F080 /* ThemeCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 		9532FA1F2D5A1606829BEFD0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B4FAF8B5C5CBC6712AC74516 /* GalleryDetailViewController.swift */,
 				CF2906789AA10EA365194D60 /* GalleryViewController.swift */,
 				69FCED30A8A30320D88603AB /* HomeViewController.swift */,
 				7F48A625E7B92612094F0D3F /* ThemeCardCell.swift */,
@@ -412,7 +421,9 @@
 				C660DDE533369A4C79932F42 /* CoinPackage.swift in Sources */,
 				EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */,
 				88CCB4F182212328974B04E4 /* CoinPackageViewController.swift in Sources */,
+				1E5A1B431E59708C33497B34 /* GalleryDetailViewController.swift in Sources */,
 				E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */,
+				708478A6299AB9DA0DAC810D /* Generation.swift in Sources */,
 				C8776A891601103C3EC06B52 /* GenerationLoadingViewController.swift in Sources */,
 				4A0BB859F9403CB20DE527E6 /* GenerationService.swift in Sources */,
 				ACF762EEB669872A21FFF619 /* GradientPillButton.swift in Sources */,
@@ -438,6 +449,7 @@
 				94FD16A2149F5302AD599136 /* Theme.swift in Sources */,
 				1EB9D11353340D5C62E14CF7 /* ThemeCard.swift in Sources */,
 				C646C0E509D938D6E1A455C0 /* ThemeCardCell.swift in Sources */,
+				23CEF94056FF8C2F545F5BA5 /* ThemeCategory.swift in Sources */,
 				24ECD51C45E858C57D974648 /* ThemeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

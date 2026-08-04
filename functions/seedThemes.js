@@ -16,11 +16,28 @@ exports.seedThemes = onRequest({ secrets: [SEED_TOKEN], timeoutSeconds: 120 }, a
 
   const db = getFirestore();
   let written = 0;
+
+  // Small standalone collection so Home can list categories cheaply (Firestore has no
+  // distinct-query support, so deriving this from 300 ai_models docs client-side would mean
+  // fetching all 300 just to build a 20-item filter chip list).
+  const categoriesBatch = db.batch();
+  catalog.categories.forEach((category, index) => {
+    categoriesBatch.set(db.collection("categories").doc(category.id), {
+      name: category.name,
+      mood: category.mood,
+      position: index,
+    });
+  });
+  await categoriesBatch.commit();
+
   for (const category of catalog.categories) {
     let batch = db.batch();
     let inBatch = 0;
     for (const style of category.styles) {
       const ref = db.collection("ai_models").doc(style.id);
+      // merge: true — a plain .set() here would silently wipe fields this doc has picked up
+      // since the catalog was first seeded (previewImageUrl, most notably) since fixed the
+      // hard way after re-running this to add the categories collection.
       batch.set(ref, {
         categoryId: category.id,
         categoryName: category.name,
@@ -30,7 +47,7 @@ exports.seedThemes = onRequest({ secrets: [SEED_TOKEN], timeoutSeconds: 120 }, a
         prompt: buildPrompt({ styleName: style.name, descriptor: style.descriptor, mood: category.mood }),
         creditCost: 1,
         aspectRatio: "3:4",
-      });
+      }, { merge: true });
       inBatch += 1;
       written += 1;
       if (inBatch === 200) {
@@ -42,5 +59,5 @@ exports.seedThemes = onRequest({ secrets: [SEED_TOKEN], timeoutSeconds: 120 }, a
     if (inBatch > 0) await batch.commit();
   }
 
-  res.status(200).send(`Seeded ${written} styles across ${catalog.categories.length} categories.`);
+  res.status(200).send(`Seeded ${written} styles and ${catalog.categories.length} categories.`);
 });

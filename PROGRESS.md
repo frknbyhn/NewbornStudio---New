@@ -89,5 +89,11 @@
 - [x] 299/300 succeeded first pass; 1 hit a non-deterministic Wiro content-safety false-positive on an entirely ordinary prompt and succeeded on immediate retry — documented in memory, script is resumable specifically for this class of flake.
 - [x] Swift: `ThemeCard`/`ThemeService` carry `previewImageUrl`, `ThemeCardCell` loads it async via a new small `RemoteImageLoader` (NSCache-backed). Verified visually on simulator with the full live catalog.
 
+## Gallery + Home Filters (done, verified live)
+- [x] Home's 5 fake filter chips replaced with the 20 real categories (+ "All") from a new `categories` Firestore collection, seeded alongside `ai_models`. Verified: tapping through categories returns correctly filtered results (checked directly via a Firestore query, e.g. `space-astronaut` → exactly its 15 styles).
+- [x] Gallery tab loads the user's real `generations` (complete, newest first) via a new Firestore composite index; still shows the proper empty state with none. Verified on simulator (empty state renders correctly, no crash, no infinite spinner).
+- [x] Added `GalleryDetailViewController` (full-screen viewer + share) for tapping a gallery result.
+- [x] **Real data-loss incident, caught and fully recovered same-session:** re-running `seedThemes` to add categories used `.set()` without merge, wiping `previewImageUrl` off all 300 `ai_models` docs. Caught immediately (Home reverted to placeholder tints), recovered in one merge-only write from the local `theme_preview_progress.json` record (no regeneration needed — the actual images were untouched in Storage). Fixed `seedThemes.js` to always merge. Documented in DECISIONS.md, the playbook pitfalls table, and covered by re-verifying Home showed real images again afterward.
+
 ## Next
-- Phase 8/9: iOS signing + App Store Connect submission prep, or continue polishing Phase 5/6 open items (Gallery tab showing real generations, Home filter chips wired to categories, legal text from Firestore).
+- Phase 8/9: iOS signing + App Store Connect submission prep, or continue polishing remaining open items (legal text from Firestore, real device purchase testing, monthly subscription pricing).
