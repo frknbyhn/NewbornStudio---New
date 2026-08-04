@@ -40,8 +40,9 @@ final class LimitedOfferPopupViewController: UIViewController {
             populateActiveState()
             startCountdown()
             loadPackage()
-        case .justExpired:
-            populateExpiredState()
+        case .lastChance:
+            populateLastChanceState()
+            loadPackage()
         }
     }
 
@@ -165,39 +166,71 @@ final class LimitedOfferPopupViewController: UIViewController {
         ])
     }
 
-    private func populateExpiredState() {
-        let badgeIcon = medallion(symbol: "hourglass", diameter: 76, tint: UIColor(hex: 0xB4A6A2), background: Theme.Color.backgroundWarm)
+    /// The timer already hit zero, but this is still purchasable — one final, still-live shot
+    /// at the deal. Closing this screen (X or dim tap) is what permanently retires the offer;
+    /// LimitedOfferService has already recorded that before this view even appears.
+    private func populateLastChanceState() {
+        let badgeIcon = medallion(symbol: "flame.fill", diameter: 76)
+
+        let badge = PaddedLabel()
+        badge.text = "LAST CHANCE"
+        badge.horizontalPadding = 12
+        badge.font = Theme.Font.heading(11, weight: 700)
+        badge.textColor = Theme.Color.accentEnd
+        badge.backgroundColor = Theme.Color.purpleBackground
+        badge.layer.cornerRadius = 12
+        badge.layer.masksToBounds = true
+        badge.textAlignment = .center
 
         let title = UILabel()
-        title.text = "You Missed It!"
+        title.text = "Your Final Chance!"
         title.font = Theme.Font.heading(21, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
         title.textAlignment = .center
+        title.numberOfLines = 0
 
         let subtitle = UILabel()
-        subtitle.text = "That limited-time offer has expired. Keep an eye out — new offers pop up from time to time."
+        subtitle.text = "This exclusive bundle won't be offered again. Grab it now, or it's gone for good."
         subtitle.font = Theme.Font.body(13.5, weight: 600)
         subtitle.textColor = Theme.Color.textSecondary
         subtitle.textAlignment = .center
         subtitle.numberOfLines = 0
 
-        let okButton = GradientPillButton(title: "Got It", icon: nil)
-        okButton.addTarget(self, action: #selector(dismissTapped), for: .touchUpInside)
+        priceLabel.font = Theme.Font.heading(15, weight: 700)
+        priceLabel.textColor = Theme.Color.textSecondaryAlt
+        priceLabel.textAlignment = .center
+        priceLabel.text = " "
 
-        let stack = UIStackView(arrangedSubviews: [badgeIcon, title, subtitle, okButton])
+        spinner.color = Theme.Color.accentEnd
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+
+        cta.isHidden = true
+        cta.addTarget(self, action: #selector(claimTapped), for: .touchUpInside)
+
+        let footer = UILabel()
+        footer.text = "Close this and it's gone for good."
+        footer.font = Theme.Font.body(11, weight: 600)
+        footer.textColor = UIColor(hex: 0xB4A6A2)
+        footer.textAlignment = .center
+        footer.numberOfLines = 0
+
+        let stack = UIStackView(arrangedSubviews: [badgeIcon, badge, title, subtitle, priceLabel, spinner, cta, footer])
         stack.axis = .vertical
         stack.alignment = .center
         stack.spacing = 12
         stack.setCustomSpacing(18, after: badgeIcon)
         stack.setCustomSpacing(6, after: title)
-        stack.setCustomSpacing(26, after: subtitle)
+        stack.setCustomSpacing(20, after: subtitle)
+        stack.setCustomSpacing(20, after: priceLabel)
+        stack.setCustomSpacing(10, after: cta)
         stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 54, left: 26, bottom: 30, right: 26)
+        stack.layoutMargins = UIEdgeInsets(top: 54, left: 26, bottom: 26, right: 26)
         stack.translatesAutoresizingMaskIntoConstraints = false
         card.addSubview(stack)
 
         NSLayoutConstraint.activate([
-            okButton.widthAnchor.constraint(equalTo: stack.widthAnchor, constant: -52),
+            cta.widthAnchor.constraint(equalTo: stack.widthAnchor, constant: -52),
             stack.topAnchor.constraint(equalTo: card.topAnchor),
             stack.leadingAnchor.constraint(equalTo: card.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo: card.trailingAnchor),

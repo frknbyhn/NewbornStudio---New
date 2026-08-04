@@ -2,7 +2,8 @@ import Foundation
 
 /// Drives the one-time "Limited Time Offer" coin pack popup: a real 6-hour deadline that
 /// persists across app launches/sessions (not reset each session), shown at most once per
-/// session, plus one final "you missed it" showing right after the deadline passes.
+/// session, plus one final "last chance" showing — still purchasable — right after the
+/// deadline passes. Closing that one (without buying) suppresses the offer for good.
 enum LimitedOfferService {
     private static let defaults = UserDefaults.standard
     private static let deadlineKey = "limitedOfferDeadline"
@@ -15,7 +16,7 @@ enum LimitedOfferService {
 
     enum PopupState {
         case active(remaining: TimeInterval)
-        case justExpired
+        case lastChance
     }
 
     static func popupStateForThisLaunch() -> PopupState? {
@@ -55,7 +56,7 @@ enum LimitedOfferService {
         guard !defaults.bool(forKey: expiredShownKey) else { return nil }
         shownThisLaunch = true
         defaults.set(true, forKey: expiredShownKey)
-        return .justExpired
+        return .lastChance
     }
 
     static func markPurchased() {
