@@ -44,9 +44,10 @@ final class CreateYourOwnStyleCell: UICollectionViewCell {
 
         let subtitle = UILabel()
         subtitle.text = "Describe any idea — we'll bring it to life"
+        subtitle.adjustsFontSizeToFitWidth = true
         subtitle.font = Theme.Font.body(12.5, weight: 600)
         subtitle.textColor = UIColor.white.withAlphaComponent(0.85)
-        subtitle.numberOfLines = 1
+        subtitle.numberOfLines = 2
 
         let textStack = UIStackView(arrangedSubviews: [title, subtitle])
         textStack.axis = .vertical

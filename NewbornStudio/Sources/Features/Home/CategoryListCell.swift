@@ -38,9 +38,10 @@ final class CategoryListCell: UICollectionViewCell {
         spinner.color = Theme.Color.accentEnd
         spinner.translatesAutoresizingMaskIntoConstraints = false
 
-        nameLabel.font = Theme.Font.heading(16, weight: 700)
+        nameLabel.font = Theme.Font.heading(14.5, weight: 700)
         nameLabel.textColor = Theme.Color.textPrimaryAlt
         nameLabel.numberOfLines = 2
+        nameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 
         chevron.tintColor = UIColor(hex: 0xCBBDB8)
         chevron.setContentHuggingPriority(.required, for: .horizontal)

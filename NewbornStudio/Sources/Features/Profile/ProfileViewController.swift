@@ -112,6 +112,13 @@ final class ProfileViewController: UIViewController {
         stack.alignment = .center
         stack.isLayoutMarginsRelativeArrangement = true
         stack.layoutMargins = UIEdgeInsets(top: 15, left: 16, bottom: 15, right: 16)
+        // A UIStackView's hitTest returns nil for points in the gaps/margins between its
+        // arranged subviews (by design, so taps can pass through to whatever's behind it) —
+        // that "behind it" was never reliably `control` for every point in the row, which is
+        // why taps landing outside the icon/label/chevron's own frames did nothing. Disabling
+        // interaction on the stack (and everything in it) forces every tap in the row's full
+        // bounds to hit `control` directly.
+        stack.isUserInteractionEnabled = false
 
         let control = UIControl()
         control.translatesAutoresizingMaskIntoConstraints = false

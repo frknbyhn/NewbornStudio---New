@@ -11,6 +11,7 @@ final class ResultViewController: UIViewController {
     private let editPlaceholder = UILabel()
     private let editSendButton = UIButton(type: .system)
     private let scrollView = UIScrollView()
+    private var imageAspectConstraint: NSLayoutConstraint?
 
     /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
     /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
@@ -26,8 +27,9 @@ final class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .white
         view.backgroundColor = UIColor(hex: 0x2E2530)
-        setUpTopBar()
         setUpScrollContent()
         loadResultImage()
 
@@ -39,27 +41,31 @@ final class ResultViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
+    /// This screen is the one place in the app with a real, visible UINavigationBar (every
+    /// other pushed screen draws its own back button and keeps the tab's navigation bar
+    /// hidden) — the close button needs to live in an actual nav bar per design, and doing
+    /// that also sidesteps the z-order bug a floating overlay button had (it could end up
+    /// underneath the scroll view depending on subview add order and go untappable).
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(hex: 0x2E2530)
+        appearance.shadowColor = .clear
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = .white
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-    private func setUpTopBar() {
-        // Overlaid on top of the scroll content (not inside it) so it stays fixed while scrolling.
-        let close = circleButton(icon: "xmark")
-        close.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
-        view.addSubview(close)
-        NSLayoutConstraint.activate([
-            close.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 6),
-            close.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
-        ])
-        closeButtonBottom = close.bottomAnchor
-    }
-
-    /// Cross-hierarchy anchor (close button is a direct child of view; image container lives
-    /// inside scrollView's content) — NSLayoutConstraint supports this as long as both share
-    /// `view` as a common ancestor, and it's what keeps the image correctly clear of the fixed
-    /// close button on every device instead of a guessed constant.
-    private var closeButtonBottom: NSLayoutYAxisAnchor!
 
     private func circleButton(icon: String) -> UIButton {
         let button = UIButton(type: .system)
@@ -93,7 +99,11 @@ final class ResultViewController: UIViewController {
             content.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             content.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             content.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            content.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            content.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            // Content fills at least the visible area, so on a short result (small image) the
+            // Save/Share row still ends up flush with the screen's bottom instead of floating
+            // in the middle — see the flexible gap above `actions` in setUpActions().
+            content.heightAnchor.constraint(greaterThanOrEqualTo: scrollView.frameLayoutGuide.heightAnchor)
         ])
 
         setUpImage(in: content)
@@ -119,22 +129,19 @@ final class ResultViewController: UIViewController {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(spinner)
 
-        let watermark = UILabel()
-        watermark.text = "Newborn Studio"
-        watermark.font = Theme.Font.heading(12, weight: 700)
-        watermark.textColor = UIColor.white.withAlphaComponent(0.45)
-        watermark.translatesAutoresizingMaskIntoConstraints = false
-        container.addSubview(watermark)
-
         let expand = circleButton(icon: "arrow.up.left.and.arrow.down.right")
         expand.addTarget(self, action: #selector(expandTapped), for: .touchUpInside)
         container.addSubview(expand)
 
         content.addSubview(container)
+        // Placeholder 3:4 aspect while loading — swapped for the real ratio once the image
+        // arrives (see loadResultImage), rather than a fixed guessed height.
+        imageAspectConstraint = container.heightAnchor.constraint(equalTo: container.widthAnchor, multiplier: 4.0 / 3.0)
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: closeButtonBottom, constant: 6),
+            container.topAnchor.constraint(equalTo: content.topAnchor, constant: 16),
             container.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 22),
             container.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -22),
+            imageAspectConstraint!,
 
             resultImageView.topAnchor.constraint(equalTo: container.topAnchor),
             resultImageView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
@@ -143,9 +150,6 @@ final class ResultViewController: UIViewController {
 
             spinner.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             spinner.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-
-            watermark.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -14),
-            watermark.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16),
 
             expand.topAnchor.constraint(equalTo: container.topAnchor, constant: 12),
             expand.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12)
@@ -197,7 +201,7 @@ final class ResultViewController: UIViewController {
             card.topAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: 16),
             card.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 22),
             card.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -22),
-            card.heightAnchor.constraint(equalToConstant: 140),
+            card.heightAnchor.constraint(equalToConstant: 80),
 
             editTextView.topAnchor.constraint(equalTo: card.topAnchor, constant: 12),
             editTextView.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 14),
@@ -227,13 +231,25 @@ final class ResultViewController: UIViewController {
                 if let data, let image = UIImage(data: data) {
                     self.resultImage = image
                     self.resultImageView.image = image
+                    self.applyRealAspectRatio(for: image)
                 } else {
                     // Real network failure state, not a silent blank — matches the offline-state rule.
                     print("Failed to load result image: \(error?.localizedDescription ?? "unknown error")")
                     self.resultImageView.image = self.sourceImage
+                    if let sourceImage = self.sourceImage {
+                        self.applyRealAspectRatio(for: sourceImage)
+                    }
                 }
             }
         }.resume()
+    }
+
+    private func applyRealAspectRatio(for image: UIImage) {
+        guard image.size.height > 0 else { return }
+        imageAspectConstraint?.isActive = false
+        imageAspectConstraint = imageContainer.heightAnchor.constraint(equalTo: imageContainer.widthAnchor, multiplier: image.size.height / image.size.width)
+        imageAspectConstraint?.isActive = true
+        UIView.animate(withDuration: 0.2) { self.view.layoutIfNeeded() }
     }
 
     private func setUpActions(in content: UIView) {
@@ -247,7 +263,9 @@ final class ResultViewController: UIViewController {
         content.addSubview(actions)
 
         NSLayoutConstraint.activate([
-            actions.topAnchor.constraint(equalTo: editCard.bottomAnchor, constant: 20),
+            // Flexible (>=) rather than fixed, so this row is free to sit lower — flush with
+            // content's bottom — when content.heightAnchor stretches to fill a short screen.
+            actions.topAnchor.constraint(greaterThanOrEqualTo: editCard.bottomAnchor, constant: 20),
             actions.centerXAnchor.constraint(equalTo: content.centerXAnchor),
             actions.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -30)
         ])

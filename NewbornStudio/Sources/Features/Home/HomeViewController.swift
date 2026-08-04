@@ -120,6 +120,7 @@ final class HomeViewController: UIViewController {
     private func setUpGrid() {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
+        layout.minimumInteritemSpacing = 14
         layout.sectionInset = UIEdgeInsets(top: 16, left: 22, bottom: 24, right: 22)
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -155,7 +156,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width - 44, height: indexPath.item == 0 ? 96 : 190)
+        // "Create Your Own Style" stays a full-width header row; categories below it flow 2-up.
+        if indexPath.item == 0 {
+            return CGSize(width: collectionView.bounds.width - 44, height: 96)
+        }
+        let columnWidth = (collectionView.bounds.width - 44 - 14) / 2
+        return CGSize(width: columnWidth, height: 190)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

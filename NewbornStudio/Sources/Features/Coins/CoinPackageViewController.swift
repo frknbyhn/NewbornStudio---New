@@ -20,15 +20,13 @@ final class CoinPackageViewController: UIViewController {
     private var listStack: UIStackView!
     private let spinner = UIActivityIndicatorView(style: .large)
     private let errorLabel = UILabel()
-    private let scroll = UIScrollView()
-    private let bottomBar = UIView()
+    private let contentContainer = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
-        setUpScroll()
+        setUpContent()
         setUpCloseButton()
-        setUpBottomBar()
         setUpLoadingState()
         loadOffering()
     }
@@ -72,8 +70,7 @@ final class CoinPackageViewController: UIViewController {
             errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         spinner.startAnimating()
-        scroll.isHidden = true
-        bottomBar.isHidden = true
+        contentContainer.isHidden = true
     }
 
     private func loadOffering() {
@@ -98,8 +95,7 @@ final class CoinPackageViewController: UIViewController {
             selected = packages.first(where: \.isPopular) ?? packages.first
             populateRows()
             updateCTA()
-            scroll.isHidden = false
-            bottomBar.isHidden = false
+            contentContainer.isHidden = false
         case .failure(let error):
             errorLabel.text = "Couldn't load coin packages. Check your connection and try again."
             errorLabel.isHidden = false
@@ -107,37 +103,137 @@ final class CoinPackageViewController: UIViewController {
         }
     }
 
-    private func setUpScroll() {
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(scroll)
+    /// Mirrors PaywallViewController's structure: non-scrolling, bottom-anchored
+    /// (packages -> Continue -> secure-payment footer pinned to the bottom), hero/title/
+    /// subtitle/benefit bullets filling the space above.
+    private func setUpContent() {
+        contentContainer.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contentContainer)
         NSLayoutConstraint.activate([
-            scroll.topAnchor.constraint(equalTo: view.topAnchor),
-            scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scroll.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            contentContainer.topAnchor.constraint(equalTo: view.topAnchor),
+            contentContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            contentContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            contentContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        let content = UIStackView()
-        content.axis = .vertical
-        content.spacing = 20
-        content.translatesAutoresizingMaskIntoConstraints = false
-        scroll.addSubview(content)
-        NSLayoutConstraint.activate([
-            content.topAnchor.constraint(equalTo: scroll.topAnchor),
-            content.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
-            content.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
-            content.bottomAnchor.constraint(equalTo: scroll.bottomAnchor, constant: -140),
-            content.widthAnchor.constraint(equalTo: scroll.widthAnchor)
-        ])
+        let lockIcon = UIImageView(image: UIImage(systemName: "lock.fill"))
+        lockIcon.tintColor = UIColor(hex: 0xB4A6A2)
+        lockIcon.contentMode = .scaleAspectFit
+        lockIcon.translatesAutoresizingMaskIntoConstraints = false
+        lockIcon.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        lockIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
 
-        content.addArrangedSubview(heroView())
+        let secureLabel = UILabel()
+        secureLabel.text = "Secure payment · Apple Pay · Google Pay"
+        secureLabel.font = Theme.Font.body(11.5, weight: 600)
+        secureLabel.textColor = UIColor(hex: 0xB4A6A2)
+
+        let secureRow = UIStackView(arrangedSubviews: [lockIcon, secureLabel])
+        secureRow.axis = .horizontal
+        secureRow.spacing = 5
+        secureRow.alignment = .center
+        secureRow.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(secureRow)
+
+        ctaButton.addTarget(self, action: #selector(purchaseTapped), for: .touchUpInside)
+        ctaButton.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(ctaButton)
 
         listStack = UIStackView()
         listStack.axis = .vertical
         listStack.spacing = 12
-        listStack.isLayoutMarginsRelativeArrangement = true
-        listStack.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 24, right: 24)
-        content.addArrangedSubview(listStack)
+        listStack.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(listStack)
+
+        let topStack = UIStackView(arrangedSubviews: [heroView(), textBlock()])
+        topStack.axis = .vertical
+        topStack.alignment = .fill
+        topStack.spacing = 16
+        topStack.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(topStack)
+
+        NSLayoutConstraint.activate([
+            secureRow.centerXAnchor.constraint(equalTo: contentContainer.centerXAnchor),
+            secureRow.bottomAnchor.constraint(equalTo: contentContainer.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+
+            ctaButton.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 24),
+            ctaButton.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -24),
+            ctaButton.bottomAnchor.constraint(equalTo: secureRow.topAnchor, constant: -12),
+
+            listStack.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 24),
+            listStack.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -24),
+            listStack.bottomAnchor.constraint(equalTo: ctaButton.topAnchor, constant: -18),
+
+            topStack.topAnchor.constraint(equalTo: contentContainer.topAnchor),
+            topStack.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor),
+            topStack.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor),
+            topStack.bottomAnchor.constraint(lessThanOrEqualTo: listStack.topAnchor, constant: -14)
+        ])
+    }
+
+    private func textBlock() -> UIView {
+        let title = UILabel()
+        title.text = "Top up your coins"
+        title.font = Theme.Font.heading(22, weight: 700)
+        title.textColor = Theme.Color.textPrimaryAlt
+        title.textAlignment = .center
+
+        let subtitle = UILabel()
+        subtitle.text = "Spend coins to generate any portrait — no subscription needed."
+        subtitle.font = Theme.Font.body(13, weight: 600)
+        subtitle.textColor = UIColor(hex: 0xB08A3E)
+        subtitle.textAlignment = .center
+        subtitle.numberOfLines = 0
+
+        let bullets = UIStackView(arrangedSubviews: [
+            benefitRow("Use on any theme or your own custom prompt"),
+            benefitRow("Credits never expire"),
+            benefitRow("No subscription or recurring charge")
+        ])
+        bullets.axis = .vertical
+        bullets.spacing = 9
+
+        let body = UIStackView(arrangedSubviews: [title, subtitle, bullets])
+        body.axis = .vertical
+        body.alignment = .fill
+        body.spacing = 6
+        body.setCustomSpacing(14, after: subtitle)
+        body.isLayoutMarginsRelativeArrangement = true
+        body.layoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+        return body
+    }
+
+    private func benefitRow(_ text: String) -> UIView {
+        let iconBackground = UIView()
+        iconBackground.backgroundColor = Theme.Color.successBackground
+        iconBackground.layer.cornerRadius = 12
+        iconBackground.translatesAutoresizingMaskIntoConstraints = false
+        iconBackground.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        iconBackground.heightAnchor.constraint(equalToConstant: 24).isActive = true
+
+        let check = UIImageView(image: UIImage(systemName: "checkmark"))
+        check.tintColor = Theme.Color.success
+        check.contentMode = .scaleAspectFit
+        check.translatesAutoresizingMaskIntoConstraints = false
+        iconBackground.addSubview(check)
+        NSLayoutConstraint.activate([
+            check.centerXAnchor.constraint(equalTo: iconBackground.centerXAnchor),
+            check.centerYAnchor.constraint(equalTo: iconBackground.centerYAnchor),
+            check.widthAnchor.constraint(equalToConstant: 12),
+            check.heightAnchor.constraint(equalToConstant: 12)
+        ])
+
+        let label = UILabel()
+        label.text = text
+        label.font = Theme.Font.body(13, weight: 600)
+        label.textColor = Theme.Color.textSecondaryAlt
+        label.numberOfLines = 0
+
+        let row = UIStackView(arrangedSubviews: [iconBackground, label])
+        row.axis = .horizontal
+        row.spacing = 10
+        row.alignment = .center
+        return row
     }
 
     private func populateRows() {
@@ -158,36 +254,14 @@ final class CoinPackageViewController: UIViewController {
         container.translatesAutoresizingMaskIntoConstraints = false
 
         let deck = fannedCoinDeck()
-
-        let title = UILabel()
-        title.text = "Top up your coins"
-        title.font = Theme.Font.heading(24, weight: 700)
-        title.textColor = Theme.Color.textPrimaryAlt
-        title.textAlignment = .center
-
-        let subtitle = UILabel()
-        subtitle.text = "Spend coins to generate any portrait — no subscription needed."
-        subtitle.font = Theme.Font.body(13, weight: 600)
-        subtitle.textColor = UIColor(hex: 0xB08A3E)
-        subtitle.textAlignment = .center
-        subtitle.numberOfLines = 0
-
-        let stack = UIStackView(arrangedSubviews: [deck, title, subtitle])
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.spacing = 10
-        stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        container.addSubview(stack)
+        deck.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(deck)
 
         NSLayoutConstraint.activate([
-            deck.heightAnchor.constraint(equalToConstant: 88),
-            stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            // Pinned relative to the safe area (not a fixed container height) so the fanned,
-            // rotated deck never renders under the status bar / Dynamic Island on any device.
-            stack.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 14),
-            stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -18)
+            deck.heightAnchor.constraint(equalToConstant: 80),
+            deck.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            deck.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 10),
+            deck.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8)
         ])
         return container
     }
@@ -195,14 +269,14 @@ final class CoinPackageViewController: UIViewController {
     /// Three fanned, rotated coin-medallion cards — matches the design mockup's icon-stack hero.
     private func fannedCoinDeck() -> UIView {
         let specs: [(CGSize, CGFloat, String, CGFloat)] = [
-            (CGSize(width: 52, height: 64), -8, "dollarsign.circle.fill", 26),
-            (CGSize(width: 72, height: 88), 0, "banknote.fill", 34),
-            (CGSize(width: 52, height: 64), 8, "dollarsign.circle.fill", 26)
+            (CGSize(width: 46, height: 58), -8, "dollarsign.circle.fill", 22),
+            (CGSize(width: 64, height: 80), 0, "banknote.fill", 30),
+            (CGSize(width: 46, height: 58), 8, "dollarsign.circle.fill", 22)
         ]
         let cardViews: [UIView] = specs.map { size, rotation, symbol, iconSize in
             let card = UIView()
             card.backgroundColor = UIColor(hex: 0xFFE4A6)
-            card.layer.cornerRadius = 16
+            card.layer.cornerRadius = 14
             card.translatesAutoresizingMaskIntoConstraints = false
             card.widthAnchor.constraint(equalToConstant: size.width).isActive = true
             card.heightAnchor.constraint(equalToConstant: size.height).isActive = true
@@ -241,59 +315,6 @@ final class CoinPackageViewController: UIViewController {
         deck.alignment = .bottom
         deck.spacing = 10
         return deck
-    }
-
-    private func setUpBottomBar() {
-        bottomBar.backgroundColor = Theme.Color.backgroundCream
-        bottomBar.translatesAutoresizingMaskIntoConstraints = false
-
-        ctaButton.addTarget(self, action: #selector(purchaseTapped), for: .touchUpInside)
-        ctaButton.translatesAutoresizingMaskIntoConstraints = false
-
-        let lockIcon = UIImageView(image: UIImage(systemName: "lock.fill"))
-        lockIcon.tintColor = UIColor(hex: 0xB4A6A2)
-        lockIcon.contentMode = .scaleAspectFit
-        lockIcon.translatesAutoresizingMaskIntoConstraints = false
-        lockIcon.widthAnchor.constraint(equalToConstant: 12).isActive = true
-        lockIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
-
-        let secureLabel = UILabel()
-        secureLabel.text = "Secure payment · Apple Pay · Google Pay"
-        secureLabel.font = Theme.Font.body(11.5, weight: 600)
-        secureLabel.textColor = UIColor(hex: 0xB4A6A2)
-
-        let secureRow = UIStackView(arrangedSubviews: [lockIcon, secureLabel])
-        secureRow.axis = .horizontal
-        secureRow.spacing = 5
-        secureRow.alignment = .center
-
-        let secureContainer = UIView()
-        secureRow.translatesAutoresizingMaskIntoConstraints = false
-        secureContainer.addSubview(secureRow)
-        NSLayoutConstraint.activate([
-            secureRow.centerXAnchor.constraint(equalTo: secureContainer.centerXAnchor),
-            secureRow.topAnchor.constraint(equalTo: secureContainer.topAnchor),
-            secureRow.bottomAnchor.constraint(equalTo: secureContainer.bottomAnchor)
-        ])
-
-        let stack = UIStackView(arrangedSubviews: [ctaButton, secureContainer])
-        stack.axis = .vertical
-        stack.spacing = 10
-        stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 20, right: 24)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        bottomBar.addSubview(stack)
-        view.addSubview(bottomBar)
-
-        NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: bottomBar.topAnchor),
-            stack.leadingAnchor.constraint(equalTo: bottomBar.leadingAnchor),
-            stack.trailingAnchor.constraint(equalTo: bottomBar.trailingAnchor),
-            stack.bottomAnchor.constraint(equalTo: bottomBar.safeAreaLayoutGuide.bottomAnchor),
-            bottomBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            bottomBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bottomBar.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
     }
 
     private func updateCTA() {

@@ -23,7 +23,6 @@ final class PhotoUploadViewController: UIViewController {
         debugAutoGenerateIfNeeded()
     }
 
-
     private func debugAutoGenerateIfNeeded() {
         #if DEBUG
         // Screenshot/E2E-verification aid only — never reachable in a release build. Lets a
@@ -83,7 +82,7 @@ final class PhotoUploadViewController: UIViewController {
         dropZone.layer.borderWidth = 2
         dropZone.layer.borderColor = UIColor(hex: 0xEBC3CC).cgColor
         dropZone.isUserInteractionEnabled = true
-        dropZone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chooseGalleryTapped)))
+        dropZone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dropZoneTapped)))
 
         let circle = UIView()
         circle.backgroundColor = .white
@@ -240,6 +239,19 @@ final class PhotoUploadViewController: UIViewController {
     @objc private func chooseGalleryTapped() {
         HapticFeedback.light()
         presentPicker(sourceType: .photoLibrary)
+    }
+
+    @objc private func dropZoneTapped() {
+        HapticFeedback.light()
+        let alert = UIAlertController(title: "Add a Photo", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Take Photo", style: .default) { [weak self] _ in
+            self?.presentPicker(sourceType: .camera)
+        })
+        alert.addAction(UIAlertAction(title: "Choose from Gallery", style: .default) { [weak self] _ in
+            self?.presentPicker(sourceType: .photoLibrary)
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
     }
 
     private func presentPicker(sourceType: UIImagePickerController.SourceType) {
