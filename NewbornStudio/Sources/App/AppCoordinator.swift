@@ -25,6 +25,22 @@ final class AppCoordinator {
                 window.rootViewController = nav
                 return
             case "splash": showSplash(); return
+            case "creditgate":
+                let root = UIViewController()
+                root.view.backgroundColor = .white
+                window.rootViewController = UINavigationController(rootViewController: root)
+                CreditsService.requireCredits(presentingFrom: root) {
+                    let label = UILabel()
+                    label.text = "ALLOWED"
+                    label.font = .boldSystemFont(ofSize: 32)
+                    label.translatesAutoresizingMaskIntoConstraints = false
+                    root.view.addSubview(label)
+                    NSLayoutConstraint.activate([
+                        label.centerXAnchor.constraint(equalTo: root.view.centerXAnchor),
+                        label.centerYAnchor.constraint(equalTo: root.view.centerYAnchor)
+                    ])
+                }
+                return
             default: break
             }
         }

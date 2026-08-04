@@ -45,6 +45,7 @@
 		ACF762EEB669872A21FFF619 /* GradientPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C23104D1B350C7A6FC4B1 /* GradientPillButton.swift */; };
 		ADE08F5F94BC4B386322EA1D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DC661031709EF5F8A124E9 /* SplashViewController.swift */; };
 		B28B6842C572FE3C3830A8A8 /* Quicksand-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AAD7418AB21B909339A47B1 /* Quicksand-Variable.ttf */; };
+		B2D3FA887578BABAB7FB10C5 /* CreditsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E5ADA9E63E84A499201B7 /* CreditsService.swift */; };
 		B41FE525ADF1784F9B0AB241 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75301CAE2D5DCFC4E515169 /* MainTabBarController.swift */; };
 		B6A8F1F45D732C43CEA9AC1E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CE9552E1A8F3EF6EC37479F2 /* FirebaseMessaging */; };
 		B7DBE0ED6AA31C15AEC5B594 /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5174FCAB01C88CAD7E4E7C /* CategoryListCell.swift */; };
@@ -96,6 +97,7 @@
 		A2252ECD08EF287944198F72 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDotsView.swift; sourceTree = "<group>"; };
 		A75301CAE2D5DCFC4E515169 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		AB5E5ADA9E63E84A499201B7 /* CreditsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsService.swift; sourceTree = "<group>"; };
 		ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlan.swift; sourceTree = "<group>"; };
 		B05772657177A97F85C5741F /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		B4FAF8B5C5CBC6712AC74516 /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */,
+				AB5E5ADA9E63E84A499201B7 /* CreditsService.swift */,
 				5A8BF08F841E1AA95C6083A5 /* FavoritesService.swift */,
 				2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */,
 				B68349B26C3022F6579A9279 /* LimitedOfferService.swift */,
@@ -452,6 +455,7 @@
 				C660DDE533369A4C79932F42 /* CoinPackage.swift in Sources */,
 				EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */,
 				88CCB4F182212328974B04E4 /* CoinPackageViewController.swift in Sources */,
+				B2D3FA887578BABAB7FB10C5 /* CreditsService.swift in Sources */,
 				2B3C0865CCEFF10B2E1178E2 /* FavoritesService.swift in Sources */,
 				1E5A1B431E59708C33497B34 /* GalleryDetailViewController.swift in Sources */,
 				E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */,

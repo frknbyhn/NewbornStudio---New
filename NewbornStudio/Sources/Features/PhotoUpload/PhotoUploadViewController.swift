@@ -213,8 +213,13 @@ extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigati
         picker.dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
         pickedImage = image
-        let loading = GenerationLoadingViewController(theme: theme, sourceImage: image)
-        navigationController?.pushViewController(loading, animated: true)
+        // Gate right here — the moment generation is actually requested — rather than earlier
+        // at style-selection, so it reflects the user's real-time credit/subscription state.
+        CreditsService.requireCredits(presentingFrom: self) { [weak self] in
+            guard let self else { return }
+            let loading = GenerationLoadingViewController(theme: self.theme, sourceImage: image)
+            self.navigationController?.pushViewController(loading, animated: true)
+        }
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
