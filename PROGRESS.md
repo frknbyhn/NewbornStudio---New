@@ -15,10 +15,11 @@
 - [ ] Main screens / social layer question still open.
 
 ## Phase 2 — Design
-- [ ] Blocked: user referenced a Claude Design project ("Newborn Studio", id `9c003995-88f6-4dd1-bd8a-ac345052d187`) that does not appear in `DesignSync list_projects` (only "Modernist" is visible). Waiting on user to confirm/share the correct project.
+- [x] Design pulled from Claude Design project "Newborn Studio App Design" (`9c003995-88f6-4dd1-bd8a-ac345052d187`) via `DesignSync get_file`, saved to `Design/Newborn Studio.dc.html`. Note: `list_projects` doesn't show this project because it's `PROJECT_TYPE_PROJECT`, not a design-system project — `get_project`/`list_files`/`get_file` by id work directly.
+- [x] Tokens (colors, fonts, shape language) extracted into DECISIONS.md.
+- [ ] Next: build `lib/app/theme` equivalent in Swift (colors, fonts, reusable button/card styles) from these tokens, then implement screens 1:1.
 
 ## Open questions for the user
-1. Which Claude Design project has the actual screens — "Modernist", or another one not yet shared with me?
-2. Weekly and yearly subscription prices (only monthly $14.99 given so far).
-3. Prices (not just credit amounts) for the small/medium/big/limited credit packs.
-4. Main screens beyond the core upload→theme→generate→result flow — any gallery/history, social/discover layer, or is it fully personal/private?
+1. Weekly and yearly subscription prices (only monthly $14.99 given so far; design mockup shows Weekly $4.99 / Yearly $39.99 as placeholder prices — confirm real prices or keep these).
+2. Prices (not just credit amounts) for the small/medium/big/limited credit packs (design mockup shows an example "550 coins · $7.99" — confirm real prices).
+3. Main screens beyond the core upload→theme→generate→result flow — the design already includes a Milestone Tracker (baby milestones/photo timeline) as a social-ish personal feature. Confirm: is there any actual social/discover layer (seeing other users' content), or is everything private per-user like the mockup suggests?
