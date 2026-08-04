@@ -39,5 +39,12 @@
 - [x] `FirebaseApp.configure()` added to `AppDelegate`. Verified end-to-end: clean install + launch on simulator, no crash (previously crashed with "could not find a valid GoogleService-Info.plist" until the XcodeGen resources bug above was fixed).
 - [ ] Still open from the original Phase 4 checklist: enable Google + Apple sign-in providers in Firebase Console (🙋 human gate), Firestore/Storage rules deploy, Cloud Functions for the actual generation flow — comes with Phase 5/6 once the real screens exist.
 
+## Phase 5 — App Architecture (in progress)
+- [x] `AppCoordinator` — single place deciding onboarding vs. home routing, anonymous-first (no login wall), reads/writes `hasCompletedOnboarding` in `UserDefaults`.
+- [x] Onboarding (3 slides) built 1:1 from the design mockup: `OnboardingPage` (data model), `OnboardingPageViewController` (per-slide UI: gradient background, circular illustration, title/subtitle, dots, CTA, skip), `OnboardingContainerViewController` (`UIPageViewController` host, swipeable).
+- [x] Shared components started: `GradientPillButton`, `PageDotsView`, `HapticFeedback` (centralized tactile feedback per playbook rule).
+- [x] Verified: page 1 screenshot matches the mockup closely (gradient, illustration, type, dots, CTA). Verified the onboarding-complete → home-placeholder routing by forcing the UserDefaults flag via `simctl spawn defaults write` and relaunching (no way to script simulator taps, so page 2/3 swipe + Skip/Next button taps were verified by code review, not a live screenshot — flag this to the user for a manual check).
+- [ ] Not built yet: real Home (tab bar + theme gallery), Paywall, Photo Upload, AI Generation, Result, Milestone Tracker, Coin Package, Profile screens. Currently `RootViewController` (a bare placeholder label) stands in for Home.
+
 ## Next
-- Phase 5: build the real screen flow (splash → onboarding → paywall → home) replacing the placeholder `RootViewController`, 1:1 from the design mockups.
+- Continue Phase 5: replace the `RootViewController` placeholder with the real tab-bar Home + remaining screens, wiring the Paywall right after onboarding per the playbook's onboarding→paywall rule.

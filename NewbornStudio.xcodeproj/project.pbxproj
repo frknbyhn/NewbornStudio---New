@@ -10,26 +10,40 @@
 		03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */; };
 		0B8F57D37A271FB28331A2BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004B5EC583D5D6EAF640DD8 /* SceneDelegate.swift */; };
 		19E6BEFCE889FDA0C800D8B7 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 07682BE50C2C84C3B373157D /* RevenueCat */; };
+		1C305EF571A030C84CCD2B9F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F5C8EF66A78375A1A5C78 /* OnboardingPage.swift */; };
+		3D82FAA48CE9715BF31C007C /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */; };
 		407AEA6DD0C6F9ECA403C209 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9E46D0EFAC0384D4EBD59E80 /* FirebaseAuth */; };
 		423AF0CEEC10B36DDFDC69A2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 513939B4DE09955E9FCD3746 /* FirebaseCore */; };
 		4B0A8765F67962890859A60C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A76CDB5F21897BE615473238 /* FirebaseFirestore */; };
+		55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D217EC357D10BBD06523A /* AppCoordinator.swift */; };
+		65B4BD6EDDB3F7DDFBA647D6 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */; };
 		848081CB357AED00BB173314 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9A0D8D69C677AA06E26C7A96 /* FirebaseStorage */; };
 		867F71C7DE4FFBEBC3B81FFA /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 5499EA09F4C6C0E34CF10CEA /* FirebaseFunctions */; };
 		94FD16A2149F5302AD599136 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33710312F2AFFDB4D756679E /* Theme.swift */; };
 		9AFB90380FE66463ACB1D561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */; };
 		A10F5B8EAB21BD6A43D29CC7 /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8127E93B6D5B70FD24EB30 /* Nunito-Variable.ttf */; };
+		ACF762EEB669872A21FFF619 /* GradientPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C23104D1B350C7A6FC4B1 /* GradientPillButton.swift */; };
 		B28B6842C572FE3C3830A8A8 /* Quicksand-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AAD7418AB21B909339A47B1 /* Quicksand-Variable.ttf */; };
 		B6A8F1F45D732C43CEA9AC1E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CE9552E1A8F3EF6EC37479F2 /* FirebaseMessaging */; };
+		B8FF3B0E609467A1E24CAA74 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */; };
 		BA9350417CDCE200CD5CCEEC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D266D3AA9152F7DE9CF90 /* RootViewController.swift */; };
 		CCCADF412FDF8D3424402E57 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 60A91B98E7246E44EF56D078 /* GoogleSignIn */; };
+		CE5C91CD28A5BB002572C526 /* PageDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */; };
 		D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C8127E93B6D5B70FD24EB30 /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		33710312F2AFFDB4D756679E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		5AAD7418AB21B909339A47B1 /* Quicksand-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Variable.ttf"; sourceTree = "<group>"; };
+		650C23104D1B350C7A6FC4B1 /* GradientPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPillButton.swift; sourceTree = "<group>"; };
+		723F5C8EF66A78375A1A5C78 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		731D217EC357D10BBD06523A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDotsView.swift; sourceTree = "<group>"; };
 		BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D95D266D3AA9152F7DE9CF90 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E487D35150FB764C9C87036 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				DD13FBEAD0E8358B4DA85336 /* Onboarding */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		511B9620ECC5FE6BD61B0E84 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +94,15 @@
 				EFF5C9D3E57E0B14666A51E6 /* NewbornStudio.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B32BFBA98F29E98ED5193536 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				650C23104D1B350C7A6FC4B1 /* GradientPillButton.swift */,
+				A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B4803ED4B390AFE0045BEB47 /* Fonts */ = {
@@ -104,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				D3E84D030461F9F3AE158A25 /* App */,
+				4E487D35150FB764C9C87036 /* Features */,
+				B32BFBA98F29E98ED5193536 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -111,12 +144,24 @@
 		D3E84D030461F9F3AE158A25 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				731D217EC357D10BBD06523A /* AppCoordinator.swift */,
 				09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */,
+				781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */,
 				D95D266D3AA9152F7DE9CF90 /* RootViewController.swift */,
 				F004B5EC583D5D6EAF640DD8 /* SceneDelegate.swift */,
 				33710312F2AFFDB4D756679E /* Theme.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		DD13FBEAD0E8358B4DA85336 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */,
+				723F5C8EF66A78375A1A5C78 /* OnboardingPage.swift */,
+				01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */,
 				03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */,
+				ACF762EEB669872A21FFF619 /* GradientPillButton.swift in Sources */,
+				B8FF3B0E609467A1E24CAA74 /* HapticFeedback.swift in Sources */,
+				3D82FAA48CE9715BF31C007C /* OnboardingContainerViewController.swift in Sources */,
+				1C305EF571A030C84CCD2B9F /* OnboardingPage.swift in Sources */,
+				65B4BD6EDDB3F7DDFBA647D6 /* OnboardingPageViewController.swift in Sources */,
+				CE5C91CD28A5BB002572C526 /* PageDotsView.swift in Sources */,
 				BA9350417CDCE200CD5CCEEC /* RootViewController.swift in Sources */,
 				0B8F57D37A271FB28331A2BE /* SceneDelegate.swift in Sources */,
 				94FD16A2149F5302AD599136 /* Theme.swift in Sources */,
