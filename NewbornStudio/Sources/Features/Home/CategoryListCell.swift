@@ -36,6 +36,7 @@ final class CategoryListCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         spinner.color = Theme.Color.accentEnd
+        spinner.translatesAutoresizingMaskIntoConstraints = false
 
         nameLabel.font = Theme.Font.heading(16, weight: 700)
         nameLabel.textColor = Theme.Color.textPrimaryAlt
