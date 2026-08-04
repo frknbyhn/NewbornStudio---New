@@ -20,7 +20,6 @@ final class GradientPillButton: UIControl {
 
     private func setUp(icon: UIImage?) {
         layer.insertSublayer(gradientLayer, at: 0)
-        layer.cornerRadius = Theme.Shape.pillRadius / 2
         layer.masksToBounds = true
         layer.shadowColor = Theme.Color.accentEnd.cgColor
         layer.shadowOpacity = 0.4
@@ -58,7 +57,14 @@ final class GradientPillButton: UIControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = bounds
-        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
+        // Neither CALayer.cornerRadius nor UIBezierPath(roundedRect:cornerRadius:) clamps a
+        // radius that exceeds half the shorter side — both self-intersect into a cusped,
+        // pointed shape instead of a clean semicircular cap. Theme.Shape.pillRadius (100) is
+        // deliberately oversized so this always resolves to a true capsule regardless of the
+        // button's actual height, rather than depending on a hand-tuned constant matching it.
+        let radius = min(bounds.width, bounds.height) / 2
+        layer.cornerRadius = radius
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: radius).cgPath
     }
 
     @objc private func touchDown() {
