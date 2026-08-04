@@ -16,9 +16,27 @@ final class CoinPackageViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
         setUpScroll()
+        setUpCloseButton()
         setUpBottomBar()
         setUpLoadingState()
         loadOffering()
+    }
+
+    private func setUpCloseButton() {
+        let close = UIButton(type: .system)
+        close.setImage(UIImage(systemName: "xmark"), for: .normal)
+        close.tintColor = Theme.Color.textSecondaryAlt
+        close.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        close.layer.cornerRadius = 16
+        close.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        close.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(close)
+        NSLayoutConstraint.activate([
+            close.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
+            close.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            close.widthAnchor.constraint(equalToConstant: 32),
+            close.heightAnchor.constraint(equalToConstant: 32)
+        ])
     }
 
     private func setUpLoadingState() {
@@ -123,21 +141,8 @@ final class CoinPackageViewController: UIViewController {
 
     private func heroView() -> UIView {
         let container = UIView()
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor(hex: 0xFFF3D9).cgColor, UIColor(hex: 0xFFF7F0).cgColor]
-        gradient.startPoint = CGPoint(x: 0.5, y: 0)
-        gradient.endPoint = CGPoint(x: 0.5, y: 1)
-        container.layer.insertSublayer(gradient, at: 0)
+        container.backgroundColor = .clear
         container.translatesAutoresizingMaskIntoConstraints = false
-        DispatchQueue.main.async { gradient.frame = container.bounds }
-
-        let back = UIButton(type: .system)
-        back.setImage(UIImage(systemName: "arrow.left"), for: .normal)
-        back.tintColor = UIColor(hex: 0x8A5E12)
-        back.backgroundColor = UIColor.white.withAlphaComponent(0.7)
-        back.layer.cornerRadius = 12
-        back.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-        back.translatesAutoresizingMaskIntoConstraints = false
 
         let deck = fannedCoinDeck()
 
@@ -162,14 +167,9 @@ final class CoinPackageViewController: UIViewController {
         stack.layoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
         stack.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(stack)
-        container.addSubview(back)
 
         NSLayoutConstraint.activate([
             deck.heightAnchor.constraint(equalToConstant: 88),
-            back.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 14),
-            back.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 24),
-            back.widthAnchor.constraint(equalToConstant: 36),
-            back.heightAnchor.constraint(equalToConstant: 36),
             stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             // Pinned relative to the safe area (not a fixed container height) so the fanned,
             // rotated deck never renders under the status bar / Dynamic Island on any device.
