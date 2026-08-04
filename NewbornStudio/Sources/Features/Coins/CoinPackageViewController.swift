@@ -77,7 +77,9 @@ final class CoinPackageViewController: UIViewController {
         spinner.stopAnimating()
         switch result {
         case .success(let offering):
-            let displayOrder = ["small", "limited", "medium", "big"]
+            // "limited" is intentionally excluded here — it's sold exclusively through the
+            // LimitedOfferPopupViewController popup, not as a row in this list.
+            let displayOrder = ["small", "medium", "big"]
             packages = offering.availablePackages
                 .filter { displayOrder.contains($0.identifier) }
                 .sorted { displayOrder.firstIndex(of: $0.identifier)! < displayOrder.firstIndex(of: $1.identifier)! }

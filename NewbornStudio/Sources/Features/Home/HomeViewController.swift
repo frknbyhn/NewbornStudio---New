@@ -13,6 +13,16 @@ final class HomeViewController: UIViewController {
         loadCategories()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentLimitedOfferIfNeeded()
+    }
+
+    private func presentLimitedOfferIfNeeded() {
+        guard let state = LimitedOfferService.popupStateForThisLaunch() else { return }
+        present(LimitedOfferPopupViewController(state: state), animated: true)
+    }
+
     private func loadCategories() {
         ThemeService.fetchCategories { [weak self] result in
             guard let self else { return }
