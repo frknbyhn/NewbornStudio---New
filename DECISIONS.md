@@ -42,5 +42,10 @@ Existing ASC products for `com.NewbornStudio` (pulled via `ascelerate sub/iap pr
 - **Quicksand and Nunito ship only as variable fonts** (single `wght` axis) in the current Google Fonts repo, no static per-weight files. `Theme.Font` dials in the exact weight at runtime via the CoreText `kCTFontVariationAttribute` (axis tag `wght` = `0x77676874`) rather than loading separate `-Bold`/`-SemiBold` files.
 - App icon asset uses the single-size 1024x1024 universal `AppIcon.appiconset` format (Xcode auto-generates all other sizes) — the source PNG must be full-bleed with no alpha, no pre-baked rounded corners/shadow (iOS applies its own mask).
 
+## Theme catalog (content planning — not wired into the app yet)
+- **20 categories × 15 styles = 300 total**, defined in `Design/Content/theme_catalog.json`: Newborn Classics, Fantasy & Fairytale, Space & Astronaut, Animals & Safari, Royalty & Kingdoms, Professions, Seasonal (Spring/Winter/Halloween/Summer — 4 separate categories), Ocean & Under the Sea, Superheroes, Storybook & Fairytale Characters, Sports, Vintage & Retro, Nature & Garden, Cultural & Traditional Dress, Food & Bakery, Music & Arts, Pets & Companions.
+- Each style has a short **descriptor** (not a full prompt) + each category has a **mood**. The actual Wiro prompt is built from a fixed formula (descriptor + mood + non-negotiable constraints: preserve the baby's real face/likeness, no watermark, safe content) — see `Design/Content/PROMPT_TEMPLATE.md` for the exact formula and worked examples. Chosen over hand-writing 300 full prompts so the safety/quality constraints can't drift per-style.
+- **Explicitly not done yet, per user instruction**: no style preview images generated, and this catalog is not wired into the app (`ThemeCard.samples` still has 6 placeholder themes). This is content planning for Phase 6 (it seeds the Firestore `ai_models` collection).
+
 ## Secrets
 - `WIRO_API_KEY` / `WIRO_API_SECRET` stored in `.env` (gitignored), never in Claude memory or committed history.
