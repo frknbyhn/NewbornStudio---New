@@ -94,10 +94,19 @@ final class CategoryStylesViewController: UIViewController {
                 self.themes = cards
                 self.collectionView.reloadData()
                 self.debugAutoFavoriteIfNeeded()
+                self.debugAutoOpenFirstStyleIfNeeded()
             case .failure(let error):
                 print("ThemeService.fetchThemes failed: \(error)")
             }
         }
+    }
+
+    private func debugAutoOpenFirstStyleIfNeeded() {
+        #if DEBUG
+        guard ProcessInfo.processInfo.environment["NS_DEBUG_AUTO_OPEN_FIRST_STYLE"] != nil,
+              let first = themes.first else { return }
+        navigationController?.pushViewController(PhotoUploadViewController(theme: first), animated: false)
+        #endif
     }
 
     private func debugAutoFavoriteIfNeeded() {

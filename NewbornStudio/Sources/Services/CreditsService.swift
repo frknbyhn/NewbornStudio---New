@@ -28,6 +28,11 @@ enum CreditsService {
             completion(.failure(CreditsServiceError.notSignedIn))
             return
         }
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["NS_DEBUG_PRINT_UID"] != nil {
+            NSLog("NS_DEBUG_UID=%@", uid)
+        }
+        #endif
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
             if let error {
                 completion(.failure(error))

@@ -17,6 +17,23 @@ final class PhotoUploadViewController: UIViewController {
         view.backgroundColor = Theme.Color.backgroundCream
         setUpNavBar()
         setUpContent()
+        debugAutoGenerateIfNeeded()
+    }
+
+    private func debugAutoGenerateIfNeeded() {
+        #if DEBUG
+        // Screenshot/E2E-verification aid only — never reachable in a release build. Lets a
+        // real generation be exercised end-to-end through the app's own code path (picker
+        // delegate -> credits gate -> GenerationLoadingViewController -> GenerationService)
+        // without needing tap automation to drive UIImagePickerController. Pulls the most
+        // recently added photo from the simulator's own library (seeded via
+        // `simctl addmedia`) rather than reading a host file path — the app's sandbox can't
+        // see arbitrary host paths, but PHPhotoLibrary works exactly like on a real device.
+        guard ProcessInfo.processInfo.environment["NS_DEBUG_AUTO_GENERATE"] != nil else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            self?.proceedWithPickedImage(self!.debugSyntheticPhoto())
+        }
+        #endif
     }
 
     private func setUpNavBar() {
@@ -189,6 +206,22 @@ final class PhotoUploadViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    #if DEBUG
+    /// A synthetic in-process photo — `simctl addmedia` is unreliable on this host, and the
+    /// app's sandbox can't read an arbitrary host file path, so this avoids both: it's a real
+    /// UIImage going through the exact same GenerationService.generate() call a real photo
+    /// would, which is what actually needs verifying end-to-end (not photo realism).
+    private func debugSyntheticPhoto() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 640, height: 854))
+        return renderer.image { ctx in
+            UIColor(hex: 0xE8C9A8).setFill()
+            ctx.fill(CGRect(x: 0, y: 0, width: 640, height: 854))
+            UIColor.white.withAlphaComponent(0.85).setFill()
+            ctx.cgContext.fillEllipse(in: CGRect(x: 170, y: 300, width: 300, height: 300))
+        }
+    }
+    #endif
+
     @objc private func takePhotoTapped() {
         HapticFeedback.light()
         presentPicker(sourceType: .camera)
@@ -212,6 +245,10 @@ extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
+        proceedWithPickedImage(image)
+    }
+
+    fileprivate func proceedWithPickedImage(_ image: UIImage) {
         pickedImage = image
         // Gate right here — the moment generation is actually requested — rather than earlier
         // at style-selection, so it reflects the user's real-time credit/subscription state.
