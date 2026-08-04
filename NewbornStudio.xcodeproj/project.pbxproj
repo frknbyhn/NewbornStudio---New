@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */; };
+		082C4B9A5684891B87111C26 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */; };
 		0A96BA11249ED5B740C24212 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF642C9515BCC467F834E8B4 /* Milestone.swift */; };
 		0B8F57D37A271FB28331A2BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004B5EC583D5D6EAF640DD8 /* SceneDelegate.swift */; };
 		19E6BEFCE889FDA0C800D8B7 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 07682BE50C2C84C3B373157D /* RevenueCat */; };
 		1C305EF571A030C84CCD2B9F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F5C8EF66A78375A1A5C78 /* OnboardingPage.swift */; };
 		1EB9D11353340D5C62E14CF7 /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677D2EE43C0A50451D4561FD /* ThemeCard.swift */; };
+		24ECD51C45E858C57D974648 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2252ECD08EF287944198F72 /* ThemeService.swift */; };
 		2B3825A1040995155892DB94 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCED30A8A30320D88603AB /* HomeViewController.swift */; };
 		3D82FAA48CE9715BF31C007C /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */; };
 		407AEA6DD0C6F9ECA403C209 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9E46D0EFAC0384D4EBD59E80 /* FirebaseAuth */; };
 		423AF0CEEC10B36DDFDC69A2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 513939B4DE09955E9FCD3746 /* FirebaseCore */; };
 		477855ED8306D46270F09B4F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B61AFFA7C1482FB5B77B8 /* ProfileViewController.swift */; };
+		4A0BB859F9403CB20DE527E6 /* GenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */; };
 		4B0A8765F67962890859A60C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A76CDB5F21897BE615473238 /* FirebaseFirestore */; };
 		55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D217EC357D10BBD06523A /* AppCoordinator.swift */; };
 		609C3425900374E6A62AEC58 /* LegalDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E2CC2727250F73C84155DF /* LegalDocumentViewController.swift */; };
@@ -56,6 +59,7 @@
 		0C8127E93B6D5B70FD24EB30 /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		10E2CC2727250F73C84155DF /* LegalDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentViewController.swift; sourceTree = "<group>"; };
 		18D7E68295C3C9B0BA195AB3 /* PaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewController.swift; sourceTree = "<group>"; };
+		2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationService.swift; sourceTree = "<group>"; };
 		33710312F2AFFDB4D756679E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		548B61AFFA7C1482FB5B77B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +72,9 @@
 		731D217EC357D10BBD06523A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		7F48A625E7B92612094F0D3F /* ThemeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardCell.swift; sourceTree = "<group>"; };
+		9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A1B228FA938BE36A9EB3D177 /* MilestoneTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneTrackerViewController.swift; sourceTree = "<group>"; };
+		A2252ECD08EF287944198F72 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDotsView.swift; sourceTree = "<group>"; };
 		A75301CAE2D5DCFC4E515169 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlan.swift; sourceTree = "<group>"; };
@@ -184,6 +190,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		604EBF210B7C830FAFEF1D17 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */,
+				2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */,
+				A2252ECD08EF287944198F72 /* ThemeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		77BB16A96F6ECC4C028456C9 /* Generation */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +276,7 @@
 				D3E84D030461F9F3AE158A25 /* App */,
 				4E487D35150FB764C9C87036 /* Features */,
 				46F9D0623F43AE201F3CC322 /* Models */,
+				604EBF210B7C830FAFEF1D17 /* Services */,
 				B32BFBA98F29E98ED5193536 /* Views */,
 			);
 			path = Sources;
@@ -385,11 +402,13 @@
 			files = (
 				55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */,
 				03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */,
+				082C4B9A5684891B87111C26 /* AuthService.swift in Sources */,
 				C660DDE533369A4C79932F42 /* CoinPackage.swift in Sources */,
 				EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */,
 				88CCB4F182212328974B04E4 /* CoinPackageViewController.swift in Sources */,
 				E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */,
 				C8776A891601103C3EC06B52 /* GenerationLoadingViewController.swift in Sources */,
+				4A0BB859F9403CB20DE527E6 /* GenerationService.swift in Sources */,
 				ACF762EEB669872A21FFF619 /* GradientPillButton.swift in Sources */,
 				B8FF3B0E609467A1E24CAA74 /* HapticFeedback.swift in Sources */,
 				2B3825A1040995155892DB94 /* HomeViewController.swift in Sources */,
@@ -411,6 +430,7 @@
 				94FD16A2149F5302AD599136 /* Theme.swift in Sources */,
 				1EB9D11353340D5C62E14CF7 /* ThemeCard.swift in Sources */,
 				C646C0E509D938D6E1A455C0 /* ThemeCardCell.swift in Sources */,
+				24ECD51C45E858C57D974648 /* ThemeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

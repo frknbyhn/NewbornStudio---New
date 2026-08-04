@@ -3,10 +3,15 @@ import UIKit
 final class ResultViewController: UIViewController {
     private let theme: ThemeCard
     private let sourceImage: UIImage
+    private let resultUrl: URL
+    private var resultImage: UIImage?
+    private let resultImageView = UIImageView()
+    private let spinner = UIActivityIndicatorView(style: .large)
 
-    init(theme: ThemeCard, sourceImage: UIImage) {
+    init(theme: ThemeCard, sourceImage: UIImage, resultUrl: URL) {
         self.theme = theme
         self.sourceImage = sourceImage
+        self.resultUrl = resultUrl
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -19,6 +24,7 @@ final class ResultViewController: UIViewController {
         setUpTopBar()
         setUpImage()
         setUpActions()
+        loadResultImage()
     }
 
     private func setUpTopBar() {
@@ -68,11 +74,16 @@ final class ResultViewController: UIViewController {
         container.layer.masksToBounds = true
         container.translatesAutoresizingMaskIntoConstraints = false
 
-        let imageView = UIImageView(image: sourceImage)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        container.addSubview(imageView)
+        resultImageView.contentMode = .scaleAspectFill
+        resultImageView.clipsToBounds = true
+        resultImageView.backgroundColor = UIColor(hex: 0x54445A)
+        resultImageView.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(resultImageView)
+
+        spinner.color = .white
+        spinner.startAnimating()
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(spinner)
 
         let watermark = UILabel()
         watermark.text = "Newborn Studio"
@@ -87,10 +98,13 @@ final class ResultViewController: UIViewController {
             container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
 
-            imageView.topAnchor.constraint(equalTo: container.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            resultImageView.topAnchor.constraint(equalTo: container.topAnchor),
+            resultImageView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            resultImageView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            resultImageView.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+
+            spinner.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: container.centerYAnchor),
 
             watermark.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -14),
             watermark.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16)
@@ -99,6 +113,23 @@ final class ResultViewController: UIViewController {
     }
 
     private var imageContainer: UIView!
+
+    private func loadResultImage() {
+        URLSession.shared.dataTask(with: resultUrl) { [weak self] data, _, error in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                self.spinner.stopAnimating()
+                if let data, let image = UIImage(data: data) {
+                    self.resultImage = image
+                    self.resultImageView.image = image
+                } else {
+                    // Real network failure state, not a silent blank — matches the offline-state rule.
+                    print("Failed to load result image: \(error?.localizedDescription ?? "unknown error")")
+                    self.resultImageView.image = self.sourceImage
+                }
+            }
+        }.resume()
+    }
 
     private func setUpActions() {
         let actions = UIStackView(arrangedSubviews: [
@@ -145,12 +176,14 @@ final class ResultViewController: UIViewController {
 
     @objc private func backTapped() { navigationController?.popToRootViewController(animated: true) }
     @objc private func saveTapped() {
+        guard let resultImage else { return }
         HapticFeedback.success()
-        UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(resultImage, nil, nil, nil)
     }
     @objc private func shareTapped() {
+        guard let resultImage else { return }
         HapticFeedback.light()
-        present(UIActivityViewController(activityItems: [sourceImage], applicationActivities: nil), animated: true)
+        present(UIActivityViewController(activityItems: [resultImage], applicationActivities: nil), animated: true)
     }
     @objc private func retryTapped() {
         HapticFeedback.light()

@@ -4,6 +4,7 @@ final class HomeViewController: UIViewController {
     private let coinLabel = UILabel()
     private var collectionView: UICollectionView!
     private let filters = ["New", "Trending", "Milestones", "Fantasy", "Seasonal"]
+    private var themes: [ThemeCard] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,6 +12,22 @@ final class HomeViewController: UIViewController {
         setUpHeader()
         setUpFilters()
         setUpGrid()
+        loadThemes()
+    }
+
+    private func loadThemes() {
+        ThemeService.fetchThemes { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let cards):
+                self.themes = cards
+                self.collectionView.reloadData()
+            case .failure(let error):
+                // Firestore is briefly unreachable right after a cold start — the grid just
+                // stays empty rather than showing a raw error, matching the offline-state rule.
+                print("ThemeService.fetchThemes failed: \(error)")
+            }
+        }
     }
 
     private func setUpHeader() {
@@ -142,12 +159,12 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        ThemeCard.samples.count
+        themes.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThemeCardCell.reuseId, for: indexPath) as! ThemeCardCell
-        cell.configure(with: ThemeCard.samples[indexPath.item])
+        cell.configure(with: themes[indexPath.item])
         return cell
     }
 
@@ -158,7 +175,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         HapticFeedback.selection()
-        let upload = PhotoUploadViewController(theme: ThemeCard.samples[indexPath.item])
+        let upload = PhotoUploadViewController(theme: themes[indexPath.item])
         navigationController?.pushViewController(upload, animated: true)
     }
 

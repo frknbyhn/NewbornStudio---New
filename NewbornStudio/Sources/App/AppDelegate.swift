@@ -8,6 +8,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         FirebaseApp.configure()
+        // Non-blocking — never gate the first frame on network (Stability Gate rule).
+        AuthService.ensureSignedIn { _ in }
         return true
     }
 

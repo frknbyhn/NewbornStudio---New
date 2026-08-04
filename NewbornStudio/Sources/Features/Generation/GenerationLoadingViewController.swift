@@ -1,7 +1,9 @@
 import UIKit
 
-/// Shows generation progress. Currently simulated locally — the real Wiro submit/poll
-/// round-trip via a Cloud Function (`generateContent`) is wired in Phase 6.
+/// Shows generation progress while the real Wiro submit/poll round-trip runs server-side
+/// (`generateContent` Cloud Function). The progress bar is a local animation capped below 100%
+/// until the network call actually resolves — showing 100% before the result exists would be
+/// a fake "done" state, so it never runs ahead of the real work.
 final class GenerationLoadingViewController: UIViewController {
     private let theme: ThemeCard
     private let sourceImage: UIImage
@@ -12,6 +14,9 @@ final class GenerationLoadingViewController: UIViewController {
     private var progressFillWidth: NSLayoutConstraint!
     private var progress: CGFloat = 0
     private var timer: Timer?
+    private var didFinish = false
+
+    private static let progressCap: CGFloat = 0.92
 
     init(theme: ThemeCard, sourceImage: UIImage) {
         self.theme = theme
@@ -27,6 +32,7 @@ final class GenerationLoadingViewController: UIViewController {
         setUpBackground()
         setUpContent()
         startSimulatedProgress()
+        startGeneration()
     }
 
     private func setUpBackground() {
@@ -111,23 +117,59 @@ final class GenerationLoadingViewController: UIViewController {
         let messages = ["Warming up the studio…", "Adding studio lighting…", "Blending the theme…", "Finishing touches…"]
         timer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { [weak self] t in
             guard let self else { return }
-            self.progress = min(1, self.progress + CGFloat.random(in: 0.08...0.16))
-            self.percentLabel.text = "\(Int(self.progress * 100))%"
-            self.progressFillWidth.constant = 250 * self.progress
-            let messageIndex = min(messages.count - 1, Int(self.progress * CGFloat(messages.count)))
-            self.statusLabel.text = messages[messageIndex]
-            UIView.animate(withDuration: 0.3) { self.view.layoutIfNeeded() }
-            if self.progress >= 1 {
+            self.progress = min(Self.progressCap, self.progress + CGFloat.random(in: 0.05...0.1))
+            self.updateProgressUI(messages: messages)
+            if self.progress >= Self.progressCap {
                 t.invalidate()
-                self.finish()
             }
         }
     }
 
-    private func finish() {
-        HapticFeedback.success()
-        let result = ResultViewController(theme: theme, sourceImage: sourceImage)
-        navigationController?.pushViewController(result, animated: true)
+    private func updateProgressUI(messages: [String]) {
+        percentLabel.text = "\(Int(progress * 100))%"
+        progressFillWidth.constant = 250 * progress
+        let messageIndex = min(messages.count - 1, Int(progress * CGFloat(messages.count)))
+        statusLabel.text = messages[messageIndex]
+        UIView.animate(withDuration: 0.3) { self.view.layoutIfNeeded() }
+    }
+
+    private func startGeneration() {
+        GenerationService.generate(styleId: theme.id, sourceImage: sourceImage) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.handleGenerationResult(result)
+            }
+        }
+    }
+
+    private func handleGenerationResult(_ result: Result<GenerationResult, Error>) {
+        guard !didFinish else { return }
+        didFinish = true
+        timer?.invalidate()
+
+        switch result {
+        case .success(let generation):
+            progress = 1
+            updateProgressUI(messages: ["Done!"])
+            HapticFeedback.success()
+            let resultVC = ResultViewController(theme: theme, sourceImage: sourceImage, resultUrl: generation.resultUrl)
+            navigationController?.pushViewController(resultVC, animated: true)
+        case .failure(let error):
+            HapticFeedback.error()
+            presentGenerationError(error)
+        }
+    }
+
+    private func presentGenerationError(_ error: Error) {
+        let alert = UIAlertController(
+            title: "Couldn't create your portrait",
+            message: "Something went wrong and your credits were refunded. Please try again.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        })
+        present(alert, animated: true)
+        print("generateContent failed: \(error)")
     }
 
     deinit {

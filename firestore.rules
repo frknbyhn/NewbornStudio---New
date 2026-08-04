@@ -3,7 +3,32 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      // Credits/premium status are only ever changed server-side (Cloud Functions use the
+      // Admin SDK, which bypasses these rules entirely) — block a client from writing them directly.
+      allow update: if request.auth != null && request.auth.uid == userId
+        && !request.resource.data.diff(resource.data).affectedKeys()
+              .hasAny(['subscriptionCredits', 'purchasedCredits', 'isPremium', 'subscriptionRenewalDate']);
+      allow delete: if false;
+
+      match /generations/{generationId} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+        allow write: if false; // written only by generateContent (Admin SDK)
+      }
+
+      match /milestones/{milestoneId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    match /ai_models/{styleId} {
+      allow read: if true;
+      allow write: if false; // seeded/edited only via seedThemes / the future admin panel
+    }
+
+    match /credit_transactions/{transactionId} {
+      allow read, write: if false; // ledger is server-only
     }
 
     match /app_settings/{docId} {

@@ -67,5 +67,13 @@
 - Legal text is a placeholder modal, not Firestore-backed — Phase 6.5 (admin panel) + Phase 6.
 - Anonymous-first auth is assumed but `AuthService`/Firebase Auth sign-in isn't wired yet.
 
+## Phase 6 — Backend (done, verified live)
+- [x] `functions/generateContent.js`, `functions/deleteAccount.js`, `functions/lib/{wiro,prompt,credits}.js` written, deployed, and tested end-to-end via direct `curl` calls against the live Cloud Functions (not just code review) — see DECISIONS.md for the exact verification steps and results.
+- [x] `ai_models` seeded with all 300 catalog styles via a temporary `seedThemes` function (deployed, curled once, deleted — playbook's one-off admin task pattern).
+- [x] Firestore + Storage rules updated and deployed: credits/premium fields are server-write-only, generations are client-read-only, `ai_models` is public-read.
+- [x] Swift wiring: `AuthService` (anonymous sign-in), `GenerationService` (upload + call `generateContent`), `ThemeService` (real Firestore themes for Home). `PhotoUploadViewController` → `GenerationLoadingViewController` (real network call, progress bar capped below 100% until the real result lands) → `ResultViewController` (loads the real generated image from its download URL) all wired to the live backend. Build verified green; Home screenshot confirms real catalog data loads (e.g. "1920s Flapper", "Alice in Wonderland").
+- [x] Two real bugs found and fixed while verifying against the live backend (not caught by code review alone): `getSignedUrl()` failing on missing IAM permission (switched to Firebase's download-token URL scheme), and a credit-refund gap where a failure between spending credits and the original narrow `try` block would silently lose the user's credit with no refund.
+- [ ] Not done: `grantPurchase` (RevenueCat, Phase 7), Firebase App Check / rate limiting (Phase 14), legal text still placeholder (not Firestore-backed yet), Home's filter chips are still visual-only (not wired to `categoryId` queries), Gallery tab still shows the static empty state rather than the user's real `generations`.
+
 ## Next
-- Phase 6: backend — Cloud Functions (`generateContent` calling Wiro, credit system, `deleteAccount`), Firestore data model for themes/milestones/gallery, wire the real generation flow end to end.
+- Phase 7: RevenueCat monetization — wire the real subscribe/purchase flow, `grantPurchase` Cloud Function, replace the Paywall/Coin Package screens' no-op buttons with real StoreKit purchases.
