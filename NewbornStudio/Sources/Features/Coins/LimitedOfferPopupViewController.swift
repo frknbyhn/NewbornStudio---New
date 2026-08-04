@@ -70,10 +70,11 @@ final class LimitedOfferPopupViewController: UIViewController {
         let badge = PaddedLabel()
         badge.text = "LIMITED TIME OFFER"
         badge.horizontalPadding = 12
-        badge.font = Theme.Font.heading(11, weight: 700)
+        badge.verticalPadding = 5
+        badge.font = Theme.Font.heading(14, weight: 700)
         badge.textColor = Theme.Color.accentEnd
         badge.backgroundColor = Theme.Color.purpleBackground
-        badge.layer.cornerRadius = 12
+        badge.layer.cornerRadius = 8
         badge.layer.masksToBounds = true
         badge.textAlignment = .center
 

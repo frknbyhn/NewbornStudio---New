@@ -35,7 +35,11 @@ final class PhotoUploadViewController: UIViewController {
         // see arbitrary host paths, but PHPhotoLibrary works exactly like on a real device.
         guard ProcessInfo.processInfo.environment["NS_DEBUG_AUTO_GENERATE"] != nil else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-            self?.proceedWithPickedImage(self!.debugSyntheticPhoto())
+            guard let self else { return }
+            // Bypasses FaceCheck deliberately — the synthetic image has no real face, and this
+            // path exists to verify the network pipeline, not face-detection behavior.
+            self.pickedImage = self.debugSyntheticPhoto()
+            self.proceedAfterFaceCheck(self.pickedImage!)
         }
         #endif
     }
@@ -78,6 +82,8 @@ final class PhotoUploadViewController: UIViewController {
         dropZone.layer.cornerRadius = 26
         dropZone.layer.borderWidth = 2
         dropZone.layer.borderColor = UIColor(hex: 0xEBC3CC).cgColor
+        dropZone.isUserInteractionEnabled = true
+        dropZone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chooseGalleryTapped)))
 
         let circle = UIView()
         circle.backgroundColor = .white
@@ -254,8 +260,14 @@ extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigati
 
     fileprivate func proceedWithPickedImage(_ image: UIImage) {
         pickedImage = image
-        // Gate right here — the moment generation is actually requested — rather than earlier
-        // at style-selection, so it reflects the user's real-time credit/subscription state.
+        FaceCheck.run(on: image, presentingFrom: self) { [weak self] in
+            self?.proceedAfterFaceCheck(image)
+        }
+    }
+
+    fileprivate func proceedAfterFaceCheck(_ image: UIImage) {
+        // Gate right here — the moment generation is actually requested — rather than
+        // earlier at style-selection, so it reflects real-time credit/subscription state.
         CreditsService.requireCredits(presentingFrom: self) { [weak self] in
             guard let self else { return }
             let loading = GenerationLoadingViewController(theme: self.theme, sourceImage: image)

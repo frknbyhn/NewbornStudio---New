@@ -42,6 +42,7 @@ final class ThemeCardCell: UICollectionViewCell {
         spinner.translatesAutoresizingMaskIntoConstraints = false
 
         nameLabel.font = Theme.Font.heading(14, weight: 600)
+        nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.textColor = Theme.Color.textPrimaryAlt
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
 

@@ -2,7 +2,7 @@ import UIKit
 
 final class ResultViewController: UIViewController {
     private let theme: ThemeCard
-    private let sourceImage: UIImage
+    private let sourceImage: UIImage?
     private var resultUrl: URL
     private var resultImage: UIImage?
     private let resultImageView = UIImageView()
@@ -10,8 +10,11 @@ final class ResultViewController: UIViewController {
     private let editTextView = UITextView()
     private let editPlaceholder = UILabel()
     private let editSendButton = UIButton(type: .system)
+    private let scrollView = UIScrollView()
 
-    init(theme: ThemeCard, sourceImage: UIImage, resultUrl: URL) {
+    /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
+    /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
+    init(theme: ThemeCard, sourceImage: UIImage?, resultUrl: URL) {
         self.theme = theme
         self.sourceImage = sourceImage
         self.resultUrl = resultUrl
@@ -25,28 +28,38 @@ final class ResultViewController: UIViewController {
         navigationItem.hidesBackButton = true
         view.backgroundColor = UIColor(hex: 0x2E2530)
         setUpTopBar()
-        setUpImage()
-        setUpEditBox()
-        setUpActions()
+        setUpScrollContent()
         loadResultImage()
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(tap)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     private func setUpTopBar() {
+        // Overlaid on top of the scroll content (not inside it) so it stays fixed while scrolling.
         let close = circleButton(icon: "xmark")
         close.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
-
         view.addSubview(close)
         NSLayoutConstraint.activate([
             close.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 6),
             close.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
-        topBarBottom = close.bottomAnchor
+        closeButtonBottom = close.bottomAnchor
     }
 
-    private var topBarBottom: NSLayoutYAxisAnchor!
+    /// Cross-hierarchy anchor (close button is a direct child of view; image container lives
+    /// inside scrollView's content) — NSLayoutConstraint supports this as long as both share
+    /// `view` as a common ancestor, and it's what keeps the image correctly clear of the fixed
+    /// close button on every device instead of a guessed constant.
+    private var closeButtonBottom: NSLayoutYAxisAnchor!
 
     private func circleButton(icon: String) -> UIButton {
         let button = UIButton(type: .system)
@@ -60,7 +73,35 @@ final class ResultViewController: UIViewController {
         return button
     }
 
-    private func setUpImage() {
+    private func setUpScrollContent() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.keyboardDismissMode = .interactive
+        view.addSubview(scrollView)
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
+        let content = UIView()
+        content.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(content)
+        NSLayoutConstraint.activate([
+            content.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            content.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            content.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            content.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            content.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+
+        setUpImage(in: content)
+        setUpEditBox(in: content)
+        setUpActions(in: content)
+    }
+
+    private func setUpImage(in content: UIView) {
         let container = UIView()
         container.backgroundColor = UIColor(hex: 0x54445A)
         container.layer.cornerRadius = 26
@@ -85,11 +126,15 @@ final class ResultViewController: UIViewController {
         watermark.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(watermark)
 
-        view.addSubview(container)
+        let expand = circleButton(icon: "arrow.up.left.and.arrow.down.right")
+        expand.addTarget(self, action: #selector(expandTapped), for: .touchUpInside)
+        container.addSubview(expand)
+
+        content.addSubview(container)
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: topBarBottom, constant: 6),
-            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            container.topAnchor.constraint(equalTo: closeButtonBottom, constant: 6),
+            container.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 22),
+            container.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -22),
 
             resultImageView.topAnchor.constraint(equalTo: container.topAnchor),
             resultImageView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
@@ -100,7 +145,10 @@ final class ResultViewController: UIViewController {
             spinner.centerYAnchor.constraint(equalTo: container.centerYAnchor),
 
             watermark.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -14),
-            watermark.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16)
+            watermark.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16),
+
+            expand.topAnchor.constraint(equalTo: container.topAnchor, constant: 12),
+            expand.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12)
         ])
         imageContainer = container
     }
@@ -109,7 +157,7 @@ final class ResultViewController: UIViewController {
 
     /// Themed text input for requesting an edit on the just-generated result — submitting sends
     /// this image + instruction back through the same generation scenario (GenerationLoadingViewController).
-    private func setUpEditBox() {
+    private func setUpEditBox(in content: UIView) {
         let card = UIView()
         card.backgroundColor = UIColor.white.withAlphaComponent(0.08)
         card.layer.cornerRadius = 18
@@ -143,12 +191,13 @@ final class ResultViewController: UIViewController {
         card.addSubview(editTextView)
         card.addSubview(editPlaceholder)
         card.addSubview(editSendButton)
-        view.addSubview(card)
+        content.addSubview(card)
 
         NSLayoutConstraint.activate([
             card.topAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: 16),
-            card.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            card.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            card.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 22),
+            card.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -22),
+            card.heightAnchor.constraint(equalToConstant: 140),
 
             editTextView.topAnchor.constraint(equalTo: card.topAnchor, constant: 12),
             editTextView.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 14),
@@ -165,10 +214,10 @@ final class ResultViewController: UIViewController {
             editSendButton.widthAnchor.constraint(equalToConstant: 30),
             editSendButton.heightAnchor.constraint(equalToConstant: 30)
         ])
-        editCardBottom = card.bottomAnchor
+        editCard = card
     }
 
-    private var editCardBottom: NSLayoutYAxisAnchor!
+    private var editCard: UIView!
 
     private func loadResultImage() {
         URLSession.shared.dataTask(with: resultUrl) { [weak self] data, _, error in
@@ -187,7 +236,7 @@ final class ResultViewController: UIViewController {
         }.resume()
     }
 
-    private func setUpActions() {
+    private func setUpActions(in content: UIView) {
         let actions = UIStackView(arrangedSubviews: [
             actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
             actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
@@ -195,12 +244,12 @@ final class ResultViewController: UIViewController {
         actions.axis = .horizontal
         actions.distribution = .equalSpacing
         actions.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(actions)
+        content.addSubview(actions)
 
         NSLayoutConstraint.activate([
-            actions.topAnchor.constraint(equalTo: editCardBottom, constant: 20),
-            actions.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            actions.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            actions.topAnchor.constraint(equalTo: editCard.bottomAnchor, constant: 20),
+            actions.centerXAnchor.constraint(equalTo: content.centerXAnchor),
+            actions.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -30)
         ])
     }
 
@@ -236,6 +285,12 @@ final class ResultViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
 
+    @objc private func expandTapped() {
+        guard let resultImage else { return }
+        HapticFeedback.light()
+        present(ZoomableImageViewController(image: resultImage), animated: true)
+    }
+
     @objc private func saveTapped() {
         guard let resultImage else { return }
         HapticFeedback.success()
@@ -257,6 +312,26 @@ final class ResultViewController: UIViewController {
             guard let self else { return }
             let loading = GenerationLoadingViewController(theme: self.theme, sourceImage: resultImage, editInstruction: instruction)
             self.navigationController?.pushViewController(loading, animated: true)
+        }
+    }
+
+    @objc private func keyboardWillChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let frameValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+              let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
+        else { return }
+
+        let keyboardFrame = view.convert(frameValue.cgRectValue, from: nil)
+        let overlap = max(0, view.bounds.maxY - keyboardFrame.minY - view.safeAreaInsets.bottom)
+
+        UIView.animate(withDuration: duration) {
+            self.scrollView.contentInset.bottom = overlap
+            self.scrollView.verticalScrollIndicatorInsets.bottom = overlap
+        } completion: { _ in
+            guard overlap > 0 else { return }
+            // Bring the edit card just above the keyboard rather than only its caret position,
+            // so the whole input (and its send button) stays visible while typing.
+            self.scrollView.scrollRectToVisible(self.editCard.frame.insetBy(dx: 0, dy: -12), animated: true)
         }
     }
 }

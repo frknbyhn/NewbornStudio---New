@@ -22,12 +22,12 @@ final class ProfileViewController: UIViewController {
         scroll.addSubview(stack)
 
         stack.addArrangedSubview(card([
-            row(icon: "square.grid.2x2.fill", tint: Theme.Color.accentEnd, tintBg: UIColor(hex: 0xFCE6EC), title: "My Creations", action: nil),
-            row(icon: "photo.stack.fill", tint: Theme.Color.purpleAccent, tintBg: Theme.Color.purpleBackground, title: "Saved Milestones", action: nil)
+            row(icon: "square.grid.2x2.fill", tint: Theme.Color.accentEnd, tintBg: UIColor(hex: 0xFCE6EC), title: "My Creations", action: #selector(myCreationsTapped)),
+            row(icon: "photo.stack.fill", tint: Theme.Color.purpleAccent, tintBg: Theme.Color.purpleBackground, title: "Saved Milestones", action: #selector(savedMilestonesTapped))
         ]))
 
         stack.addArrangedSubview(card([
-            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: "Language", trailingText: "English", action: nil)
+            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: "Language", trailingText: "English", action: #selector(languageTapped))
         ]))
 
         stack.addArrangedSubview(card([
@@ -129,10 +129,45 @@ final class ProfileViewController: UIViewController {
         return control
     }
 
-    @objc private func restoreTapped() {
-        // Wired to Purchases.shared.restorePurchases in Phase 7 (RevenueCat).
-        HapticFeedback.light()
+    /// Home(0) / Milestones(1) / Gallery(2) / Profile(3) — see MainTabBarController.
+    @objc private func myCreationsTapped() {
+        HapticFeedback.selection()
+        tabBarController?.selectedIndex = 2
     }
+
+    @objc private func savedMilestonesTapped() {
+        HapticFeedback.selection()
+        tabBarController?.selectedIndex = 1
+    }
+
+    @objc private func languageTapped() {
+        HapticFeedback.light()
+        let alert = UIAlertController(title: "Language", message: "English is the only language available right now. More are on the way.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
+    @objc private func restoreTapped() {
+        HapticFeedback.light()
+        RevenueCatService.restore { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                switch result {
+                case .success(let customerInfo):
+                    if customerInfo.entitlements.active.isEmpty {
+                        self.presentAlert(title: "Nothing to restore", message: "No active purchases were found for this account.")
+                    } else {
+                        HapticFeedback.success()
+                        self.presentAlert(title: "Restored", message: "Your purchases have been restored.")
+                    }
+                case .failure(let error):
+                    HapticFeedback.error()
+                    self.presentAlert(title: "Couldn't restore purchases", message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
     @objc private func privacyTapped() { HapticFeedback.light(); presentLegal(title: "Privacy Policy") }
     @objc private func termsTapped() { HapticFeedback.light(); presentLegal(title: "Terms of Use") }
     @objc private func rateTapped() {
@@ -145,5 +180,11 @@ final class ProfileViewController: UIViewController {
     private func presentLegal(title: String) {
         let legal = LegalDocumentViewController(title: title)
         present(UINavigationController(rootViewController: legal), animated: true)
+    }
+
+    private func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }

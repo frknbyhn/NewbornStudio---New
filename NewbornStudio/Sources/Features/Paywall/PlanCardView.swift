@@ -29,7 +29,7 @@ final class PlanCardView: UIControl {
         titleLabel.textAlignment = .center
 
         priceLabel.text = plan.priceLabel
-        priceLabel.font = Theme.Font.heading(15, weight: 700)
+        priceLabel.font = Theme.Font.heading(15, weight: 450)
         priceLabel.textColor = Theme.Color.textPrimaryAlt
         priceLabel.textAlignment = .center
 

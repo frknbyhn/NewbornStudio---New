@@ -291,7 +291,9 @@ extension CustomStyleViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
-        pickedImage = image
+        FaceCheck.run(on: image, presentingFrom: self) { [weak self] in
+            self?.pickedImage = image
+        }
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

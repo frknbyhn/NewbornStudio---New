@@ -72,7 +72,8 @@ enum GenerationService {
                         let resultUrl = URL(string: resultUrlString)
                     else { return nil }
                     let styleName = data["styleName"] as? String ?? "Portrait"
-                    return Generation(id: doc.documentID, styleName: styleName, resultUrl: resultUrl)
+                    let styleId = data["styleId"] as? String ?? "custom-style"
+                    return Generation(id: doc.documentID, styleId: styleId, styleName: styleName, resultUrl: resultUrl)
                 }
                 completion(.success(generations))
             }

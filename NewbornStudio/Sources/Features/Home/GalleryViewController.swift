@@ -240,8 +240,10 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
         HapticFeedback.selection()
         switch selectedTab {
         case .history:
-            let detail = GalleryDetailViewController(generation: generations[indexPath.item])
-            present(detail, animated: true)
+            let generation = generations[indexPath.item]
+            let theme = ThemeCard(id: generation.styleId, name: generation.styleName, tint: Theme.Color.purpleBackground, previewImageUrl: nil)
+            let result = ResultViewController(theme: theme, sourceImage: nil, resultUrl: generation.resultUrl)
+            navigationController?.pushViewController(result, animated: true)
         case .favorites:
             let upload = PhotoUploadViewController(theme: favoriteThemes[indexPath.item])
             navigationController?.pushViewController(upload, animated: true)
