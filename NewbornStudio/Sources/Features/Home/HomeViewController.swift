@@ -145,6 +145,15 @@ final class HomeViewController: UIViewController {
             filterChips.append(chip)
         }
         updateChipSelection()
+
+        #if DEBUG
+        // Screenshot-verification aid only — simulates a chip tap since this environment has
+        // no tap-automation tool. Never reachable in a release build.
+        if let debugCategoryId = ProcessInfo.processInfo.environment["NS_DEBUG_CATEGORY"],
+           let chip = filterChips.first(where: { $0.categoryId == debugCategoryId }) {
+            filterTapped(chip)
+        }
+        #endif
     }
 
     private func updateChipSelection() {
