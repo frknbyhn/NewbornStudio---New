@@ -75,5 +75,13 @@
 - [x] Two real bugs found and fixed while verifying against the live backend (not caught by code review alone): `getSignedUrl()` failing on missing IAM permission (switched to Firebase's download-token URL scheme), and a credit-refund gap where a failure between spending credits and the original narrow `try` block would silently lose the user's credit with no refund.
 - [ ] Not done: `grantPurchase` (RevenueCat, Phase 7), Firebase App Check / rate limiting (Phase 14), legal text still placeholder (not Firestore-backed yet), Home's filter chips are still visual-only (not wired to `categoryId` queries), Gallery tab still shows the static empty state rather than the user's real `generations`.
 
+## Phase 7 — RevenueCat Monetization (done, verified live)
+- [x] RevenueCat account already existed (shared project across the user's other apps) with most of Newborn Studio's setup done in an earlier session — reused rather than recreated. Added the missing `com.newborn.monthly` product/package/entitlement link.
+- [x] Real incident during setup: touching `is_current` on the offering broke a different live app's paywall in the same shared account. Caught and reverted within the session; fixed the root design so the client never depends on that flag (fetches by identifier instead). See DECISIONS.md and the playbook pitfalls table.
+- [x] `grantPurchase` Cloud Function: maps product → credits (subscriptions period-guarded, consumables always add), verified end-to-end via curl — grant, double-grant guard, and consumable stacking all correct.
+- [x] `RevenueCatService` (configure, identify, fetch offering by identifier, purchase, restore) wired into `AppDelegate` and both monetization screens.
+- [x] Paywall and Coin Package are now fully data-driven off the live RevenueCat offering — verified on simulator with real App Store pricing (Weekly $4.99, Yearly $49.99, coin packs $3.99–$19.99, all matching ASC). Fixed a real bug found this way: the paywall was showing all 7 packages (3 subscriptions + 4 coin packs) mixed together before a `packageType` filter was added.
+- [ ] Open (human gates): `com.newborn.monthly` needs its $14.99 price set in the ASC web UI (`ascelerate` 409s, as documented). Real purchases haven't been tested — no sandbox Apple ID / physical device available here, only the plumbing is verified.
+
 ## Next
-- Phase 7: RevenueCat monetization — wire the real subscribe/purchase flow, `grantPurchase` Cloud Function, replace the Paywall/Coin Package screens' no-op buttons with real StoreKit purchases.
+- Phase 8/9: iOS signing + App Store Connect submission prep, or continue polishing Phase 5/6 open items (Gallery tab showing real generations, Home filter chips wired to categories, legal text from Firestore).

@@ -9,7 +9,7 @@ service cloud.firestore {
       // Admin SDK, which bypasses these rules entirely) — block a client from writing them directly.
       allow update: if request.auth != null && request.auth.uid == userId
         && !request.resource.data.diff(resource.data).affectedKeys()
-              .hasAny(['subscriptionCredits', 'purchasedCredits', 'isPremium', 'subscriptionRenewalDate']);
+              .hasAny(['subscriptionCredits', 'purchasedCredits', 'isPremium', 'subscriptionRenewalDate', 'activeProductId']);
       allow delete: if false;
 
       match /generations/{generationId} {

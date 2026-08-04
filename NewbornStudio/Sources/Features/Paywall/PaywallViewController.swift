@@ -1,18 +1,81 @@
 import UIKit
+import RevenueCat
 
 final class PaywallViewController: UIViewController {
     var onDismiss: (() -> Void)?
 
     private let scrollView = UIScrollView()
+    private let spinner = UIActivityIndicatorView(style: .large)
+    private let errorLabel = UILabel()
+    private var plansStack: UIStackView!
     private var planCards: [PlanCardView] = []
-    private var selectedPlan: SubscriptionPlan = SubscriptionPlan.all.first(where: \.isFeatured) ?? SubscriptionPlan.all[0]
+    private var plans: [SubscriptionPlan] = []
+    private var selectedPlan: SubscriptionPlan?
     private let billedCaption = UILabel()
+    private let cta = GradientPillButton(title: "Subscribe Now", icon: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
         setUpScrollContent()
         setUpCloseButton()
+        setUpLoadingState()
+        loadOffering()
+    }
+
+    private func setUpLoadingState() {
+        spinner.color = Theme.Color.accentEnd
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinner)
+
+        errorLabel.font = Theme.Font.body(13, weight: 600)
+        errorLabel.textColor = Theme.Color.textSecondary
+        errorLabel.textAlignment = .center
+        errorLabel.numberOfLines = 0
+        errorLabel.isHidden = true
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(errorLabel)
+
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+        ])
+        spinner.startAnimating()
+        scrollView.isHidden = true
+    }
+
+    private func loadOffering() {
+        RevenueCatService.fetchOffering { [weak self] result in
+            DispatchQueue.main.async {
+                self?.handleOffering(result)
+            }
+        }
+    }
+
+    private func handleOffering(_ result: Result<RevenueCat.Offering, Error>) {
+        spinner.stopAnimating()
+        switch result {
+        case .success(let offering):
+            // The "newborn" offering holds every package (subscriptions AND consumable coin
+            // packs) — the paywall only shows the subscription tiers, Coin Package shows the rest.
+            let displayOrder: [PackageType] = [.weekly, .monthly, .annual]
+            plans = offering.availablePackages
+                .filter { displayOrder.contains($0.packageType) }
+                .sorted { displayOrder.firstIndex(of: $0.packageType)! < displayOrder.firstIndex(of: $1.packageType)! }
+                .map(SubscriptionPlan.init(package:))
+            selectedPlan = plans.first(where: \.isFeatured) ?? plans.first
+            populatePlanCards()
+            scrollView.isHidden = false
+        case .failure(let error):
+            // Real offline/error state — never an infinite spinner (Stability Gate rule).
+            errorLabel.text = "Couldn't load plans. Check your connection and try again."
+            errorLabel.isHidden = false
+            print("RevenueCatService.fetchOffering failed: \(error)")
+        }
     }
 
     private func setUpCloseButton() {
@@ -91,28 +154,19 @@ final class PaywallViewController: UIViewController {
         bullets.spacing = 11
         body.addArrangedSubview(bullets)
 
-        let plansStack = UIStackView()
+        plansStack = UIStackView()
         plansStack.axis = .horizontal
         plansStack.spacing = 10
         plansStack.distribution = .fillEqually
-        for plan in SubscriptionPlan.all {
-            let card = PlanCardView(plan: plan)
-            card.isSelectedPlan = plan.productId == selectedPlan.productId
-            card.addTarget(self, action: #selector(planTapped(_:)), for: .touchUpInside)
-            planCards.append(card)
-            plansStack.addArrangedSubview(card)
-        }
         body.addArrangedSubview(plansStack)
         body.setCustomSpacing(24, after: plansStack)
 
-        let cta = GradientPillButton(title: "Subscribe Now", icon: nil)
         cta.addTarget(self, action: #selector(subscribeTapped), for: .touchUpInside)
         body.addArrangedSubview(cta)
 
         billedCaption.font = Theme.Font.body(11, weight: 600)
         billedCaption.textColor = UIColor(hex: 0xB4A6A2)
         billedCaption.textAlignment = .center
-        updateBilledCaption()
         body.addArrangedSubview(billedCaption)
         body.setCustomSpacing(10, after: cta)
 
@@ -131,6 +185,19 @@ final class PaywallViewController: UIViewController {
         footerWrap.alignment = .center
         body.addArrangedSubview(footerWrap)
         body.setCustomSpacing(14, after: billedCaption)
+    }
+
+    private func populatePlanCards() {
+        planCards.forEach { $0.removeFromSuperview() }
+        planCards = []
+        for plan in plans {
+            let card = PlanCardView(plan: plan)
+            card.isSelectedPlan = plan.productId == selectedPlan?.productId
+            card.addTarget(self, action: #selector(planTapped(_:)), for: .touchUpInside)
+            planCards.append(card)
+            plansStack.addArrangedSubview(card)
+        }
+        updateBilledCaption()
     }
 
     private func heroView() -> UIView {
@@ -215,7 +282,9 @@ final class PaywallViewController: UIViewController {
     }
 
     private func updateBilledCaption() {
-        billedCaption.text = "Billed \(selectedPlan.priceLabel) \(selectedPlan.title == "Weekly" ? "weekly" : selectedPlan.title == "Monthly" ? "monthly" : "yearly") · Cancel anytime"
+        guard let selectedPlan else { return }
+        let periodWord = selectedPlan.title == "Weekly" ? "weekly" : selectedPlan.title == "Monthly" ? "monthly" : "yearly"
+        billedCaption.text = "Billed \(selectedPlan.priceLabel) \(periodWord) · Cancel anytime"
     }
 
     @objc private func planTapped(_ sender: PlanCardView) {
@@ -226,9 +295,24 @@ final class PaywallViewController: UIViewController {
     }
 
     @objc private func subscribeTapped() {
-        // RevenueCat purchase flow wires in here in Phase 7.
-        HapticFeedback.success()
-        closeTapped()
+        guard let selectedPlan else { return }
+        HapticFeedback.light()
+        cta.isEnabled = false
+        RevenueCatService.purchase(package: selectedPlan.package) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.cta.isEnabled = true
+                switch result {
+                case .success:
+                    HapticFeedback.success()
+                    self?.onDismiss?()
+                case .failure(RevenueCatServiceError.userCancelled):
+                    break
+                case .failure(let error):
+                    HapticFeedback.error()
+                    self?.presentPurchaseError(error)
+                }
+            }
+        }
     }
 
     @objc private func closeTapped() {
@@ -236,8 +320,28 @@ final class PaywallViewController: UIViewController {
     }
 
     @objc private func restoreTapped() {
-        // Wired to Purchases.shared.restorePurchases in Phase 7 (RevenueCat).
         HapticFeedback.light()
+        RevenueCatService.restore { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let customerInfo):
+                    if !customerInfo.entitlements.active.isEmpty {
+                        HapticFeedback.success()
+                        self?.onDismiss?()
+                    } else {
+                        self?.presentPurchaseError(RevenueCatServiceError.offeringNotFound, title: "Nothing to restore")
+                    }
+                case .failure(let error):
+                    self?.presentPurchaseError(error)
+                }
+            }
+        }
+    }
+
+    private func presentPurchaseError(_ error: Error, title: String = "Something went wrong") {
+        let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 
     @objc private func termsTapped() {

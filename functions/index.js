@@ -4,6 +4,7 @@ initializeApp();
 
 exports.generateContent = require("./generateContent").generateContent;
 exports.deleteAccount = require("./deleteAccount").deleteAccount;
+exports.grantPurchase = require("./grantPurchase").grantPurchase;
 
 // seedThemes is a one-off admin task (see seedThemes.js) — deployed, curled once to seed
 // ai_models, then deleted. Not exported here so a normal `firebase deploy --only functions`

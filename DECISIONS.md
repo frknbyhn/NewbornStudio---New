@@ -57,5 +57,18 @@ Existing ASC products for `com.NewbornStudio` (pulled via `ascelerate sub/iap pr
 - **`AuthService`** signs in anonymously at launch (non-blocking, fire-and-forget per the Stability Gate rule against blocking the first frame). No login wall.
 - Home's theme grid now loads from Firestore (`ThemeService`, first 20 of the 300 seeded styles) instead of the 6 hardcoded placeholders — `ThemeCard.samples` was removed.
 
+## Monetization / RevenueCat (Phase 7)
+- **RevenueCat project is shared across many of the user's other apps** (project `proj2c0717c6`, "Slapps") — Newborn Studio already existed as app `app62292951bc` with products, entitlement (`newborn`), and an offering (`newborn`, id `ofrngc9d4f47816`) mostly pre-configured from an earlier session. Reused rather than recreated.
+- Added the missing `com.newborn.monthly` product (ASC + RevenueCat), attached it to the `newborn` entitlement, and added a `$rc_monthly` package to the `newborn` offering.
+- **⚠️ Never touch an offering's `is_current` flag in this account.** It is a project-wide flag, not per-app — setting `newborn`'s to `true` silently flipped another live app's offering (`com.moment.weekly3d`) to `false`. Caught and reverted within the same session; see [[revenuecat-shared-project-is-current-flag]]. **The client fetches the offering by its own identifier (`"newborn"`) instead of `offerings.current`**, so this flag is never touched by the app and doesn't matter going forward.
+- Public SDK key: `appl_nxpqIXSXIpYQrsdRfrQwIpDxBrs` (safe to ship — hardcoded in `RevenueCatService.swift`).
+- `RevenueCatService` configures at launch (no uid, per Stability Gate — never gate a subsystem on auth), then `identify(uid:)` links it to the Firestore uid once anonymous sign-in resolves.
+- **Purchase grant flow matches the playbook (no webhook):** client calls `Purchases.purchase()`, and on success calls the `grantPurchase` Cloud Function directly — trusts that a completed StoreKit transaction is what makes "purchase succeeded" meaningful, not a receipt re-verification. Subscriptions are period-guarded (`subscriptionRenewalDate`) so a re-check doesn't double-grant; consumables always add on top. Verified end-to-end via curl against the live function: grant, double-grant guard, and consumable stacking all correct.
+- Paywall and Coin Package screens are now fully data-driven off the live `newborn` offering — verified on simulator with **real App Store pricing** pulled through StoreKit/RevenueCat (Weekly $4.99, Yearly $49.99 "$0.95/week", coin packs $3.99/$6.99/$9.99/$19.99, all matching the ASC-side numbers).
+- **Still open (human gates):**
+  - `com.newborn.monthly` price ($14.99) — `ascelerate sub pricing set` 409s (known gate, playbook-documented); needs the ASC web UI.
+  - Once priced, Monthly needs to actually appear in the paywall — it's already wired (RevenueCat product + package + entitlement exist), just waiting on the price.
+  - Real purchases have not been tested (no sandbox Apple ID / physical device in this environment) — only the plumbing (fetch offering, grant function) is verified live.
+
 ## Secrets
-- `WIRO_API_KEY` / `WIRO_API_SECRET` stored in `.env` (gitignored), never in Claude memory or committed history.
+- `WIRO_API_KEY` / `WIRO_API_SECRET` / `REVENUECAT_SECRET_KEY` stored in `.env` (gitignored), never in Claude memory or committed history.

@@ -19,6 +19,7 @@ final class AppCoordinator {
             switch debugScreen {
             case "paywall": window.rootViewController = UIViewController(); showPaywall(); return
             case "home": showHome(); return
+            case "coins": window.rootViewController = UINavigationController(rootViewController: CoinPackageViewController()); return
             default: break
             }
         }

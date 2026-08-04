@@ -48,6 +48,7 @@
 		D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */; };
 		DF66B2C0F2DEA665170BCFD0 /* SubscriptionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */; };
 		E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2906789AA10EA365194D60 /* GalleryViewController.swift */; };
+		E88C8BB863DC8A134ECDA780 /* RevenueCatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5879ACF5F2BEC2B50AABEEE /* RevenueCatService.swift */; };
 		EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA08C6DD7D874B6C782454 /* CoinPackageCell.swift */; };
 		F240B8750E7CFDF78C822953 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05772657177A97F85C5741F /* PhotoUploadViewController.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		ED76ADBE497505557988ABC2 /* CoinPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackage.swift; sourceTree = "<group>"; };
 		EFF5C9D3E57E0B14666A51E6 /* NewbornStudio.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NewbornStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F004B5EC583D5D6EAF640DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F5879ACF5F2BEC2B50AABEEE /* RevenueCatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatService.swift; sourceTree = "<group>"; };
 		FDEA08C6DD7D874B6C782454 /* CoinPackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackageCell.swift; sourceTree = "<group>"; };
 		FF642C9515BCC467F834E8B4 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 			children = (
 				9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */,
 				2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */,
+				F5879ACF5F2BEC2B50AABEEE /* RevenueCatService.swift */,
 				A2252ECD08EF287944198F72 /* ThemeService.swift */,
 			);
 			path = Services;
@@ -425,6 +428,7 @@
 				B88D7A8DEE640A39F6F4F833 /* PlanCardView.swift in Sources */,
 				477855ED8306D46270F09B4F /* ProfileViewController.swift in Sources */,
 				A575CFC5A496617F96E656A2 /* ResultViewController.swift in Sources */,
+				E88C8BB863DC8A134ECDA780 /* RevenueCatService.swift in Sources */,
 				0B8F57D37A271FB28331A2BE /* SceneDelegate.swift in Sources */,
 				DF66B2C0F2DEA665170BCFD0 /* SubscriptionPlan.swift in Sources */,
 				94FD16A2149F5302AD599136 /* Theme.swift in Sources */,

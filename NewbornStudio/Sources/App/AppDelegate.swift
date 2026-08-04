@@ -8,8 +8,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         FirebaseApp.configure()
+        // RevenueCat is configured at launch without a uid (Stability Gate rule — don't gate
+        // subsystems on auth); identify(uid:) links it to the Firestore uid once sign-in resolves.
+        RevenueCatService.configure()
         // Non-blocking — never gate the first frame on network (Stability Gate rule).
-        AuthService.ensureSignedIn { _ in }
+        AuthService.ensureSignedIn { result in
+            if case .success(let uid) = result {
+                RevenueCatService.identify(uid: uid)
+            }
+        }
         return true
     }
 

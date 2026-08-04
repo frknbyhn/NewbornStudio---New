@@ -1,20 +1,82 @@
 import UIKit
+import RevenueCat
 
 final class CoinPackageViewController: UIViewController {
     private var rows: [CoinPackageRow] = []
-    private var selected: CoinPackage = CoinPackage.all.first(where: \.isPopular) ?? CoinPackage.all[0]
+    private var packages: [CoinPackage] = []
+    private var selected: CoinPackage?
     private let ctaButton = GradientPillButton(title: "", icon: UIImage(systemName: "lock.fill"))
+    private var listStack: UIStackView!
+    private let spinner = UIActivityIndicatorView(style: .large)
+    private let errorLabel = UILabel()
+    private let scroll = UIScrollView()
+    private let bottomBar = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
         setUpScroll()
         setUpBottomBar()
-        updateCTA()
+        setUpLoadingState()
+        loadOffering()
+    }
+
+    private func setUpLoadingState() {
+        spinner.color = Theme.Color.coin
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinner)
+
+        errorLabel.font = Theme.Font.body(13, weight: 600)
+        errorLabel.textColor = Theme.Color.textSecondary
+        errorLabel.textAlignment = .center
+        errorLabel.numberOfLines = 0
+        errorLabel.isHidden = true
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(errorLabel)
+
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+        ])
+        spinner.startAnimating()
+        scroll.isHidden = true
+        bottomBar.isHidden = true
+    }
+
+    private func loadOffering() {
+        RevenueCatService.fetchOffering { [weak self] result in
+            DispatchQueue.main.async {
+                self?.handleOffering(result)
+            }
+        }
+    }
+
+    private func handleOffering(_ result: Result<Offering, Error>) {
+        spinner.stopAnimating()
+        switch result {
+        case .success(let offering):
+            let displayOrder = ["small", "limited", "medium", "big"]
+            packages = offering.availablePackages
+                .filter { displayOrder.contains($0.identifier) }
+                .sorted { displayOrder.firstIndex(of: $0.identifier)! < displayOrder.firstIndex(of: $1.identifier)! }
+                .map(CoinPackage.init(package:))
+            selected = packages.first(where: \.isPopular) ?? packages.first
+            populateRows()
+            updateCTA()
+            scroll.isHidden = false
+            bottomBar.isHidden = false
+        case .failure(let error):
+            errorLabel.text = "Couldn't load coin packages. Check your connection and try again."
+            errorLabel.isHidden = false
+            print("RevenueCatService.fetchOffering failed: \(error)")
+        }
     }
 
     private func setUpScroll() {
-        let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scroll)
         NSLayoutConstraint.activate([
@@ -39,18 +101,24 @@ final class CoinPackageViewController: UIViewController {
 
         content.addArrangedSubview(heroView())
 
-        let list = UIStackView(arrangedSubviews: CoinPackage.all.map { pkg in
+        listStack = UIStackView()
+        listStack.axis = .vertical
+        listStack.spacing = 12
+        listStack.isLayoutMarginsRelativeArrangement = true
+        listStack.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 24, right: 24)
+        content.addArrangedSubview(listStack)
+    }
+
+    private func populateRows() {
+        rows.forEach { $0.removeFromSuperview() }
+        rows = []
+        for pkg in packages {
             let row = CoinPackageRow(package: pkg)
-            row.isSelectedPackage = pkg.productId == selected.productId
+            row.isSelectedPackage = pkg.productId == selected?.productId
             row.addTarget(self, action: #selector(rowTapped(_:)), for: .touchUpInside)
             rows.append(row)
-            return row
-        })
-        list.axis = .vertical
-        list.spacing = 12
-        list.isLayoutMarginsRelativeArrangement = true
-        list.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 24, right: 24)
-        content.addArrangedSubview(list)
+            listStack.addArrangedSubview(row)
+        }
     }
 
     private func heroView() -> UIView {
@@ -113,53 +181,91 @@ final class CoinPackageViewController: UIViewController {
     }
 
     private func setUpBottomBar() {
-        let bar = UIView()
-        bar.backgroundColor = Theme.Color.backgroundCream
-        bar.translatesAutoresizingMaskIntoConstraints = false
+        bottomBar.backgroundColor = Theme.Color.backgroundCream
+        bottomBar.translatesAutoresizingMaskIntoConstraints = false
 
         ctaButton.addTarget(self, action: #selector(purchaseTapped), for: .touchUpInside)
         ctaButton.translatesAutoresizingMaskIntoConstraints = false
 
+        let lockIcon = UIImageView(image: UIImage(systemName: "lock.fill"))
+        lockIcon.tintColor = UIColor(hex: 0xB4A6A2)
+        lockIcon.contentMode = .scaleAspectFit
+        lockIcon.translatesAutoresizingMaskIntoConstraints = false
+        lockIcon.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        lockIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
+
         let secureLabel = UILabel()
-        secureLabel.text = "🔒 Secure payment · Apple Pay · Google Pay"
+        secureLabel.text = "Secure payment · Apple Pay · Google Pay"
         secureLabel.font = Theme.Font.body(11.5, weight: 600)
         secureLabel.textColor = UIColor(hex: 0xB4A6A2)
-        secureLabel.textAlignment = .center
 
-        let stack = UIStackView(arrangedSubviews: [ctaButton, secureLabel])
+        let secureRow = UIStackView(arrangedSubviews: [lockIcon, secureLabel])
+        secureRow.axis = .horizontal
+        secureRow.spacing = 5
+        secureRow.alignment = .center
+
+        let secureContainer = UIView()
+        secureRow.translatesAutoresizingMaskIntoConstraints = false
+        secureContainer.addSubview(secureRow)
+        NSLayoutConstraint.activate([
+            secureRow.centerXAnchor.constraint(equalTo: secureContainer.centerXAnchor),
+            secureRow.topAnchor.constraint(equalTo: secureContainer.topAnchor),
+            secureRow.bottomAnchor.constraint(equalTo: secureContainer.bottomAnchor)
+        ])
+
+        let stack = UIStackView(arrangedSubviews: [ctaButton, secureContainer])
         stack.axis = .vertical
         stack.spacing = 10
         stack.isLayoutMarginsRelativeArrangement = true
         stack.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 20, right: 24)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        bar.addSubview(stack)
-        view.addSubview(bar)
+        bottomBar.addSubview(stack)
+        view.addSubview(bottomBar)
 
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: bar.topAnchor),
-            stack.leadingAnchor.constraint(equalTo: bar.leadingAnchor),
-            stack.trailingAnchor.constraint(equalTo: bar.trailingAnchor),
-            stack.bottomAnchor.constraint(equalTo: bar.safeAreaLayoutGuide.bottomAnchor),
-            bar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            bar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bar.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            stack.topAnchor.constraint(equalTo: bottomBar.topAnchor),
+            stack.leadingAnchor.constraint(equalTo: bottomBar.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: bottomBar.trailingAnchor),
+            stack.bottomAnchor.constraint(equalTo: bottomBar.safeAreaLayoutGuide.bottomAnchor),
+            bottomBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomBar.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
     private func updateCTA() {
+        guard let selected else { return }
         ctaButton.title = "Buy \(selected.credits) coins · \(selected.priceLabel)"
     }
 
     @objc private func rowTapped(_ sender: CoinPackageRow) {
         HapticFeedback.selection()
         selected = sender.package
-        for row in rows { row.isSelectedPackage = row.package.productId == selected.productId }
+        for row in rows { row.isSelectedPackage = row.package.productId == selected?.productId }
         updateCTA()
     }
 
     @objc private func purchaseTapped() {
-        // RevenueCat consumable purchase flow wires in here in Phase 7.
-        HapticFeedback.success()
+        guard let selected else { return }
+        HapticFeedback.light()
+        ctaButton.isEnabled = false
+        RevenueCatService.purchase(package: selected.package) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.ctaButton.isEnabled = true
+                switch result {
+                case .success:
+                    HapticFeedback.success()
+                    self?.backTapped()
+                case .failure(RevenueCatServiceError.userCancelled):
+                    break
+                case .failure(let error):
+                    HapticFeedback.error()
+                    let alert = UIAlertController(title: "Purchase failed", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
     }
 
     @objc private func backTapped() {

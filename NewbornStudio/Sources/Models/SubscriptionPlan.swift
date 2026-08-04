@@ -1,9 +1,10 @@
-import Foundation
+import RevenueCat
 
-/// Mirrors the real App Store Connect products (see DECISIONS.md) — the RevenueCat
-/// offering replaces this hardcoded list in Phase 7, this is the data-shape placeholder.
+/// Built from a real RevenueCat `Package` — display-only mapping of product id -> credit
+/// wording. The actual grant amounts live server-side in functions/helpers/purchaseGrants.js;
+/// this must stay in sync with that file but granting itself never trusts the client's copy.
 struct SubscriptionPlan {
-    let productId: String
+    let package: Package
     let title: String
     let priceLabel: String
     let periodLabel: String
@@ -11,35 +12,40 @@ struct SubscriptionPlan {
     let badge: String?
     let isFeatured: Bool
 
-    static let all: [SubscriptionPlan] = [
-        SubscriptionPlan(
-            productId: "com.newborn.weekly",
-            title: "Weekly",
-            priceLabel: "$4.99",
-            periodLabel: "per week",
-            creditsLabel: "10 credits / week",
-            badge: nil,
-            isFeatured: false
-        ),
-        SubscriptionPlan(
-            productId: "com.newborn.monthly",
-            title: "Monthly",
-            priceLabel: "$14.99",
-            periodLabel: "per month",
-            creditsLabel: "50 credits / month",
-            badge: "3-day trial",
-            isFeatured: false
-        ),
-        SubscriptionPlan(
-            productId: "com.newborn.yearly",
-            title: "Yearly",
-            priceLabel: "$49.99",
-            periodLabel: "$0.96 / week",
-            creditsLabel: "500 credits / year",
-            badge: "Best value",
-            isFeatured: true
-        )
-    ]
+    var productId: String { package.storeProduct.productIdentifier }
+
+    init(package: Package) {
+        self.package = package
+        let product = package.storeProduct
+        self.priceLabel = product.localizedPriceString
+
+        switch package.packageType {
+        case .weekly:
+            title = "Weekly"
+            periodLabel = "per week"
+            creditsLabel = "10 credits / week"
+            badge = nil
+            isFeatured = false
+        case .monthly:
+            title = "Monthly"
+            periodLabel = "per month"
+            creditsLabel = "50 credits / month"
+            badge = "3-day trial"
+            isFeatured = false
+        case .annual:
+            title = "Yearly"
+            periodLabel = product.localizedPricePerWeek.map { "\($0) / week" } ?? "per year"
+            creditsLabel = "500 credits / year"
+            badge = "Best value"
+            isFeatured = true
+        default:
+            title = product.localizedTitle
+            periodLabel = ""
+            creditsLabel = ""
+            badge = nil
+            isFeatured = false
+        }
+    }
 
     static let benefits: [String] = [
         "Unlimited studio themes",
