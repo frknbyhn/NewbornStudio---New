@@ -83,5 +83,11 @@
 - [x] Paywall and Coin Package are now fully data-driven off the live RevenueCat offering — verified on simulator with real App Store pricing (Weekly $4.99, Yearly $49.99, coin packs $3.99–$19.99, all matching ASC). Fixed a real bug found this way: the paywall was showing all 7 packages (3 subscriptions + 4 coin packs) mixed together before a `packageType` filter was added.
 - [ ] Open (human gates): `com.newborn.monthly` needs its $14.99 price set in the ASC web UI (`ascelerate` 409s, as documented). Real purchases haven't been tested — no sandbox Apple ID / physical device available here, only the plumbing is verified.
 
+## Theme Preview Images (done, live)
+- [x] All 300 catalog styles now have a real AI-generated preview thumbnail on Home, generated from one consistent reference baby photo so every card shows "the same baby" in each theme.
+- [x] Pipeline: Wiro image-to-image (base photo + stored prompt) → resize to 640px-max JPEG q87 (~25-35KB) → Storage (`ai_models/{styleId}/preview.jpg`) → `previewImageUrl` on the Firestore doc, via a temporary `seedThemePreviews` admin function (deployed → called 300x from a resumable Python script → deleted).
+- [x] 299/300 succeeded first pass; 1 hit a non-deterministic Wiro content-safety false-positive on an entirely ordinary prompt and succeeded on immediate retry — documented in memory, script is resumable specifically for this class of flake.
+- [x] Swift: `ThemeCard`/`ThemeService` carry `previewImageUrl`, `ThemeCardCell` loads it async via a new small `RemoteImageLoader` (NSCache-backed). Verified visually on simulator with the full live catalog.
+
 ## Next
 - Phase 8/9: iOS signing + App Store Connect submission prep, or continue polishing Phase 5/6 open items (Gallery tab showing real generations, Home filter chips wired to categories, legal text from Firestore).
