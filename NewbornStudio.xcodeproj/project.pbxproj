@@ -16,14 +16,22 @@
 		848081CB357AED00BB173314 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9A0D8D69C677AA06E26C7A96 /* FirebaseStorage */; };
 		867F71C7DE4FFBEBC3B81FFA /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 5499EA09F4C6C0E34CF10CEA /* FirebaseFunctions */; };
 		94FD16A2149F5302AD599136 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33710312F2AFFDB4D756679E /* Theme.swift */; };
+		9AFB90380FE66463ACB1D561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */; };
+		A10F5B8EAB21BD6A43D29CC7 /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8127E93B6D5B70FD24EB30 /* Nunito-Variable.ttf */; };
+		B28B6842C572FE3C3830A8A8 /* Quicksand-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AAD7418AB21B909339A47B1 /* Quicksand-Variable.ttf */; };
 		B6A8F1F45D732C43CEA9AC1E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CE9552E1A8F3EF6EC37479F2 /* FirebaseMessaging */; };
 		BA9350417CDCE200CD5CCEEC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D266D3AA9152F7DE9CF90 /* RootViewController.swift */; };
 		CCCADF412FDF8D3424402E57 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 60A91B98E7246E44EF56D078 /* GoogleSignIn */; };
+		D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0C8127E93B6D5B70FD24EB30 /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		33710312F2AFFDB4D756679E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		5AAD7418AB21B909339A47B1 /* Quicksand-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Variable.ttf"; sourceTree = "<group>"; };
+		BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D95D266D3AA9152F7DE9CF90 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EFF5C9D3E57E0B14666A51E6 /* NewbornStudio.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NewbornStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F004B5EC583D5D6EAF640DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		511B9620ECC5FE6BD61B0E84 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */,
+				BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */,
+				B4803ED4B390AFE0045BEB47 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		927A22F4918812DAB092D63C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +74,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B4803ED4B390AFE0045BEB47 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0C8127E93B6D5B70FD24EB30 /* Nunito-Variable.ttf */,
+				5AAD7418AB21B909339A47B1 /* Quicksand-Variable.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B9B362DFE2278DDF7D1D0565 /* NewbornStudio */ = {
 			isa = PBXGroup;
 			children = (
+				511B9620ECC5FE6BD61B0E84 /* Resources */,
 				CA2D22ADF55461764D903C46 /* Sources */,
 			);
 			path = NewbornStudio;
@@ -99,6 +127,7 @@
 			buildConfigurationList = 01B4102F5BA956ADBC43334C /* Build configuration list for PBXNativeTarget "NewbornStudio" */;
 			buildPhases = (
 				1AEF086E77B9312CA45E1E32 /* Sources */,
+				C72D864D20B0CCFC9BD0DA95 /* Resources */,
 				74AEE8A7B83443EB0446A432 /* Frameworks */,
 			);
 			buildRules = (
@@ -158,6 +187,20 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C72D864D20B0CCFC9BD0DA95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */,
+				9AFB90380FE66463ACB1D561 /* GoogleService-Info.plist in Resources */,
+				A10F5B8EAB21BD6A43D29CC7 /* Nunito-Variable.ttf in Resources */,
+				B28B6842C572FE3C3830A8A8 /* Quicksand-Variable.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1AEF086E77B9312CA45E1E32 /* Sources */ = {

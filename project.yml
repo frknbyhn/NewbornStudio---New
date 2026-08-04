@@ -23,9 +23,12 @@ targets:
     deploymentTarget: "15.0"
     sources:
       - path: NewbornStudio/Sources
-    resources:
       - path: NewbornStudio/Resources/Assets.xcassets
+        buildPhase: resources
       - path: NewbornStudio/Resources/Fonts
+        buildPhase: resources
+      - path: NewbornStudio/Resources/GoogleService-Info.plist
+        buildPhase: resources
     settings:
       base:
         INFOPLIST_FILE: NewbornStudio/Resources/Info.plist
