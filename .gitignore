@@ -17,6 +17,9 @@ xcuserdata/
 .swiftpm/
 .build/
 
+# Design asset generation
+Scripts/DesignAssets/venv/
+
 # Firebase Functions
 functions/node_modules/
 functions/lib/
