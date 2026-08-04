@@ -19,7 +19,10 @@
 - [x] Tokens (colors, fonts, shape language) extracted into DECISIONS.md.
 - [ ] Next: build `lib/app/theme` equivalent in Swift (colors, fonts, reusable button/card styles) from these tokens, then implement screens 1:1.
 
-## Open questions for the user
-1. Weekly and yearly subscription prices (only monthly $14.99 given so far; design mockup shows Weekly $4.99 / Yearly $39.99 as placeholder prices — confirm real prices or keep these).
-2. Prices (not just credit amounts) for the small/medium/big/limited credit packs (design mockup shows an example "550 coins · $7.99" — confirm real prices).
-3. Main screens beyond the core upload→theme→generate→result flow — the design already includes a Milestone Tracker (baby milestones/photo timeline) as a social-ish personal feature. Confirm: is there any actual social/discover layer (seeing other users' content), or is everything private per-user like the mockup suggests?
+## Resolved
+1. All subscription/credit-pack prices pulled live from ASC (see DECISIONS.md) using the `YC2YC44RMZ` API key. `com.newborn.monthly` needs to be created (Phase 7/9).
+2. Photo Editor screen cut. Milestone Tracker confirmed private-only, no social layer anywhere in the app.
+3. User approved moving forward — next: Swift/UIKit Xcode project scaffold + `Theme.swift` from the extracted design tokens.
+
+## Phase 3 — Flutter Scaffold → adapted: Xcode Scaffold
+- [ ] Not started yet.

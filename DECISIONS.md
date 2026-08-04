@@ -19,18 +19,22 @@
   - Semantic: success green `#4FA07C` on `#E0F3EA`; coin/gold `#E8A93C` on `#FFF3D9`; purple accent `#7A63C4` on `#EDE7FB`.
   - Shape language: large corner radii (22-44px), pill-shaped buttons (100px radius), soft colored drop shadows matching each card's accent.
   - Paywall mockup shows only Weekly/Yearly plan cards — the Monthly ($14.99) tier will be added as a third card in the same visual style since the design didn't include it.
+- **Photo Editor screen (mockup #6) is cut** — not building it, per user decision.
+- **Milestone Tracker is private-only** — never shared with other users, no social/discover layer anywhere in the app.
 
 ## Monetization (RevenueCat + credits)
-- Subscription tiers:
-  - Weekly: grants 10 credits/week. Price: **TBD**.
-  - Monthly: **$14.99/mo**, grants 50 credits/month.
-  - Yearly: grants 500 credits/year. Price: **TBD**.
-- Consumable credit packs (one-time):
-  - Small: 5 credits — price TBD
-  - Medium: 15 credits — price TBD
-  - Big: 50 credits — price TBD
-  - Limited: 25 credits — price TBD
-- Credit-to-cost unit economics not yet computed against Wiro's per-call cost — do before finalizing prices (playbook cost-section rule: `credit_cost = ceil(cost_USD / 0.01)`).
+Existing ASC products for `com.NewbornStudio` (pulled via `ascelerate sub/iap pricing show`, prices below are USA base):
+- Subscription tiers (group "Newborn Studio Premium Group"):
+  - Weekly `com.newborn.weekly` — **$4.99/week**, grants 10 credits/week.
+  - Monthly `com.newborn.monthly` — **$14.99/month**, grants 50 credits/month. **Does not exist in ASC yet — create in Phase 7/9.**
+  - Yearly `com.newborn.yearly` — **$49.99/year**, grants 500 credits/year.
+- Consumable credit packs (all `Approved` state already):
+  - Small `com.newborn.small` — **$3.99** — 5 credits
+  - Limited `com.newborn.limited` — **$6.99** — 25 credits
+  - Medium `com.newborn.medium` — **$9.99** — 15 credits
+  - Big `com.newborn.big` — **$19.99** — 50 credits
+- Credit-to-cost unit economics not yet computed against Wiro's per-call cost — do before finalizing whether these prices hold (playbook cost-section rule: `credit_cost = ceil(cost_USD / 0.01)`).
+- ASC API key in use: keyId `YC2YC44RMZ`, issuerId `1aba5c58-f408-4036-b737-5a6c226d821e` (`~/.ascelerate/config.json`).
 
 ## Secrets
 - `WIRO_API_KEY` / `WIRO_API_SECRET` stored in `.env` (gitignored), never in Claude memory or committed history.
