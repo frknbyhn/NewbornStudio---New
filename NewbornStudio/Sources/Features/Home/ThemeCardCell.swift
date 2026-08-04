@@ -42,7 +42,7 @@ final class ThemeCardCell: UICollectionViewCell {
         spinner.translatesAutoresizingMaskIntoConstraints = false
 
         nameLabel.font = Theme.Font.heading(14, weight: 600)
-        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.numberOfLines = 2
         nameLabel.textColor = Theme.Color.textPrimaryAlt
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
 
@@ -76,7 +76,9 @@ final class ThemeCardCell: UICollectionViewCell {
             nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: heartButton.leadingAnchor, constant: -4),
             nameLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10),
 
-            heartButton.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
+            // Centered on the first line rather than the whole (possibly two-line) label block,
+            // so the heart stays level with the title instead of drifting down when it wraps.
+            heartButton.centerYAnchor.constraint(equalTo: nameLabel.firstBaselineAnchor, constant: -6),
             heartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
             heartButton.widthAnchor.constraint(equalToConstant: 32),
             heartButton.heightAnchor.constraint(equalToConstant: 32)

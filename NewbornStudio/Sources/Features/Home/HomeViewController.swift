@@ -161,7 +161,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return CGSize(width: collectionView.bounds.width - 44, height: 96)
         }
         let columnWidth = (collectionView.bounds.width - 44 - 14) / 2
-        return CGSize(width: columnWidth, height: 190)
+        return CGSize(width: columnWidth, height: 208)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

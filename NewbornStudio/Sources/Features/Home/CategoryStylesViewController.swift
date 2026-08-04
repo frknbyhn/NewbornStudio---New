@@ -147,7 +147,7 @@ extension CategoryStylesViewController: UICollectionViewDataSource, UICollection
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.bounds.width - 22 * 2 - 14) / 2
-        return CGSize(width: width, height: width * 0.92)
+        return CGSize(width: width, height: width * 0.92 + 18)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

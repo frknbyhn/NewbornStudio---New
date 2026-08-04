@@ -20,6 +20,9 @@ final class ResultViewController: UIViewController {
         self.sourceImage = sourceImage
         self.resultUrl = resultUrl
         super.init(nibName: nil, bundle: nil)
+        // Set here (not just on an upstream screen in the push chain) so the tab bar hides no
+        // matter which flow pushed this screen — e.g. Gallery pushes it directly as a tab root.
+        hidesBottomBarWhenPushed = true
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -48,7 +51,12 @@ final class ResultViewController: UIViewController {
     /// underneath the scroll view depending on subview add order and go untappable).
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        // Every tab's UINavigationController hides its bar by setting navigationBar.isHidden
+        // directly on the view (MainTabBarController.wrap), not via setNavigationBarHidden(_:) —
+        // that desyncs the controller's internal hidden-state tracking, so calling
+        // setNavigationBarHidden(false) here is a no-op (it already thinks the bar is visible).
+        // Flipping the view property directly sidesteps that entirely.
+        navigationController?.navigationBar.isHidden = false
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(hex: 0x2E2530)
@@ -60,7 +68,7 @@ final class ResultViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
     deinit {
@@ -99,11 +107,7 @@ final class ResultViewController: UIViewController {
             content.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             content.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             content.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            content.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            // Content fills at least the visible area, so on a short result (small image) the
-            // Save/Share row still ends up flush with the screen's bottom instead of floating
-            // in the middle — see the flexible gap above `actions` in setUpActions().
-            content.heightAnchor.constraint(greaterThanOrEqualTo: scrollView.frameLayoutGuide.heightAnchor)
+            content.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
 
         setUpImage(in: content)
@@ -263,9 +267,7 @@ final class ResultViewController: UIViewController {
         content.addSubview(actions)
 
         NSLayoutConstraint.activate([
-            // Flexible (>=) rather than fixed, so this row is free to sit lower — flush with
-            // content's bottom — when content.heightAnchor stretches to fill a short screen.
-            actions.topAnchor.constraint(greaterThanOrEqualTo: editCard.bottomAnchor, constant: 20),
+            actions.topAnchor.constraint(equalTo: editCard.bottomAnchor, constant: 20),
             actions.centerXAnchor.constraint(equalTo: content.centerXAnchor),
             actions.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -30)
         ])

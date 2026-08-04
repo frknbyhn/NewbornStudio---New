@@ -11,14 +11,17 @@ enum FaceDetectionService {
     }
 
     static func detectFaceCount(in image: UIImage, completion: @escaping (Outcome) -> Void) {
-        guard let cgImage = image.cgImage else {
-            DispatchQueue.main.async { completion(.noFace) }
-            return
-        }
-        let orientation = CGImagePropertyOrientation(image.imageOrientation)
-        let request = VNDetectFaceRectanglesRequest()
         DispatchQueue.global(qos: .userInitiated).async {
-            let handler = VNImageRequestHandler(cgImage: cgImage, orientation: orientation, options: [:])
+            // Photos from the library often come back as wide-gamut/HEIC CGImages (extended-range
+            // components) that Vision's request handler rejects outright — redrawing into a plain
+            // 8-bit sRGB bitmap sidesteps that, and also bakes in imageOrientation so Vision always
+            // sees an .up-oriented image regardless of how the photo was captured.
+            guard let cgImage = normalizedCGImage(from: image) else {
+                DispatchQueue.main.async { completion(.noFace) }
+                return
+            }
+            let request = VNDetectFaceRectanglesRequest()
+            let handler = VNImageRequestHandler(cgImage: cgImage, orientation: .up, options: [:])
             do {
                 try handler.perform([request])
                 let count = request.results?.count ?? 0
@@ -35,20 +38,20 @@ enum FaceDetectionService {
             }
         }
     }
-}
 
-private extension CGImagePropertyOrientation {
-    init(_ orientation: UIImage.Orientation) {
-        switch orientation {
-        case .up: self = .up
-        case .upMirrored: self = .upMirrored
-        case .down: self = .down
-        case .downMirrored: self = .downMirrored
-        case .left: self = .left
-        case .leftMirrored: self = .leftMirrored
-        case .right: self = .right
-        case .rightMirrored: self = .rightMirrored
-        @unknown default: self = .up
+    private static func normalizedCGImage(from image: UIImage, maxDimension: CGFloat = 1600) -> CGImage? {
+        let size = image.size
+        guard size.width > 0, size.height > 0 else { return nil }
+        let scale = min(1, maxDimension / max(size.width, size.height))
+        let targetSize = CGSize(width: size.width * scale, height: size.height * scale)
+
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        format.opaque = true
+        let renderer = UIGraphicsImageRenderer(size: targetSize, format: format)
+        let normalized = renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
         }
+        return normalized.cgImage
     }
 }

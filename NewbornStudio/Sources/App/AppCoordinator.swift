@@ -23,6 +23,16 @@ final class AppCoordinator {
                 window.rootViewController = CoinPackageViewController.presented()
                 return
             case "splash": showSplash(); return
+            case "result":
+                let tab = MainTabBarController()
+                tab.loadViewIfNeeded()
+                window.rootViewController = tab
+                tab.selectedIndex = 2
+                let theme = ThemeCard(id: "demo", name: "Demo Theme", tint: UIColor(hex: 0xEBC3CC), previewImageUrl: nil)
+                let resultUrl = URL(string: "https://picsum.photos/seed/newborn/900/1300")!
+                let result = ResultViewController(theme: theme, sourceImage: nil, resultUrl: resultUrl)
+                (tab.viewControllers?[2] as? UINavigationController)?.pushViewController(result, animated: false)
+                return
             case "creditgate":
                 let root = UIViewController()
                 root.view.backgroundColor = .white
