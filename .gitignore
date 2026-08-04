@@ -21,6 +21,8 @@ xcuserdata/
 # Design asset generation
 Scripts/DesignAssets/venv/
 Scripts/DesignAssets/__pycache__/
+Scripts/DesignAssets/theme_preview_progress.json
+Design/Generated/ThemePreviews/
 
 # Firebase Functions
 functions/node_modules/

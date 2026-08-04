@@ -5,4 +5,5 @@ struct ThemeCard {
     let id: String
     let name: String
     let tint: UIColor
+    let previewImageUrl: URL?
 }

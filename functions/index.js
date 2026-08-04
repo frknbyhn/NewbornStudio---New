@@ -5,10 +5,13 @@ initializeApp();
 exports.generateContent = require("./generateContent").generateContent;
 exports.deleteAccount = require("./deleteAccount").deleteAccount;
 exports.grantPurchase = require("./grantPurchase").grantPurchase;
+exports.seedThemePreviews = require("./seedThemePreviews").seedThemePreviews;
 
-// seedThemes is a one-off admin task (see seedThemes.js) — deployed, curled once to seed
-// ai_models, then deleted. Not exported here so a normal `firebase deploy --only functions`
-// never redeploys it. To re-seed after editing theme_catalog.json:
+// seedThemes / seedThemePreviews are one-off admin tasks — deployed, called from a local
+// script to bulk-write, then deleted. Not normally exported so `firebase deploy --only
+// functions` never redeploys them by accident; seedThemePreviews stays exported only while
+// the theme preview generation batch (see Scripts/DesignAssets/generate_theme_previews.py)
+// is actively running, then gets removed and the deployed function deleted.
 //   firebase deploy --only functions:seedThemes && curl ".../seedThemes?token=$SEED_TOKEN"
 //   firebase functions:delete seedThemes --force
 

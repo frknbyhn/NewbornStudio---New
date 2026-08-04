@@ -4,7 +4,9 @@ final class ThemeCardCell: UICollectionViewCell {
     static let reuseId = "ThemeCardCell"
 
     private let tintView = UIView()
+    private let imageView = UIImageView()
     private let nameLabel = UILabel()
+    private var imageTask: URLSessionDataTask?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +24,13 @@ final class ThemeCardCell: UICollectionViewCell {
         contentView.layer.shadowOffset = CGSize(width: 0, height: 6)
 
         tintView.layer.cornerRadius = 16
+        tintView.layer.masksToBounds = true
         tintView.translatesAutoresizingMaskIntoConstraints = false
+
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.alpha = 0
+        imageView.translatesAutoresizingMaskIntoConstraints = false
 
         nameLabel.font = Theme.Font.heading(14, weight: 600)
         nameLabel.textColor = Theme.Color.textPrimaryAlt
@@ -33,6 +41,7 @@ final class ThemeCardCell: UICollectionViewCell {
         heart.translatesAutoresizingMaskIntoConstraints = false
 
         contentView.addSubview(tintView)
+        tintView.addSubview(imageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(heart)
 
@@ -41,6 +50,11 @@ final class ThemeCardCell: UICollectionViewCell {
             tintView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             tintView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             tintView.heightAnchor.constraint(equalToConstant: 100),
+
+            imageView.topAnchor.constraint(equalTo: tintView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: tintView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: tintView.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: tintView.bottomAnchor),
 
             nameLabel.topAnchor.constraint(equalTo: tintView.bottomAnchor, constant: 9),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
@@ -56,5 +70,22 @@ final class ThemeCardCell: UICollectionViewCell {
     func configure(with theme: ThemeCard) {
         tintView.backgroundColor = theme.tint
         nameLabel.text = theme.name
+        imageView.image = nil
+        imageView.alpha = 0
+        imageTask?.cancel()
+
+        guard let url = theme.previewImageUrl else { return }
+        imageTask = RemoteImageLoader.load(url) { [weak self] image in
+            guard let self, let image else { return }
+            self.imageView.image = image
+            UIView.animate(withDuration: 0.2) { self.imageView.alpha = 1 }
+        }
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageTask?.cancel()
+        imageView.image = nil
+        imageView.alpha = 0
     }
 }

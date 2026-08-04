@@ -16,6 +16,7 @@
 		1EB9D11353340D5C62E14CF7 /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677D2EE43C0A50451D4561FD /* ThemeCard.swift */; };
 		24ECD51C45E858C57D974648 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2252ECD08EF287944198F72 /* ThemeService.swift */; };
 		2B3825A1040995155892DB94 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCED30A8A30320D88603AB /* HomeViewController.swift */; };
+		358DE3B132AF9A93CA69FABA /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */; };
 		3D82FAA48CE9715BF31C007C /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571D36BC1C1F4D51E4C4F4B2 /* OnboardingContainerViewController.swift */; };
 		407AEA6DD0C6F9ECA403C209 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9E46D0EFAC0384D4EBD59E80 /* FirebaseAuth */; };
 		423AF0CEEC10B36DDFDC69A2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 513939B4DE09955E9FCD3746 /* FirebaseCore */; };
@@ -73,6 +74,7 @@
 		731D217EC357D10BBD06523A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		7F48A625E7B92612094F0D3F /* ThemeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardCell.swift; sourceTree = "<group>"; };
+		93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
 		9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A1B228FA938BE36A9EB3D177 /* MilestoneTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneTrackerViewController.swift; sourceTree = "<group>"; };
 		A2252ECD08EF287944198F72 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */,
 				2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */,
+				93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */,
 				F5879ACF5F2BEC2B50AABEEE /* RevenueCatService.swift */,
 				A2252ECD08EF287944198F72 /* ThemeService.swift */,
 			);
@@ -427,6 +430,7 @@
 				F240B8750E7CFDF78C822953 /* PhotoUploadViewController.swift in Sources */,
 				B88D7A8DEE640A39F6F4F833 /* PlanCardView.swift in Sources */,
 				477855ED8306D46270F09B4F /* ProfileViewController.swift in Sources */,
+				358DE3B132AF9A93CA69FABA /* RemoteImageLoader.swift in Sources */,
 				A575CFC5A496617F96E656A2 /* ResultViewController.swift in Sources */,
 				E88C8BB863DC8A134ECDA780 /* RevenueCatService.swift in Sources */,
 				0B8F57D37A271FB28331A2BE /* SceneDelegate.swift in Sources */,

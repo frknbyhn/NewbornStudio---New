@@ -16,9 +16,11 @@ enum ThemeService {
             }
             let docs = snapshot?.documents ?? []
             let cards = docs.enumerated().map { index, doc -> ThemeCard in
-                let name = doc.data()["name"] as? String ?? doc.documentID
+                let data = doc.data()
+                let name = data["name"] as? String ?? doc.documentID
                 let tint = tintPalette[index % tintPalette.count]
-                return ThemeCard(id: doc.documentID, name: name, tint: tint)
+                let previewUrl = (data["previewImageUrl"] as? String).flatMap(URL.init(string:))
+                return ThemeCard(id: doc.documentID, name: name, tint: tint, previewImageUrl: previewUrl)
             }
             completion(.success(cards))
         }
