@@ -19,6 +19,7 @@ xcuserdata/
 
 # Design asset generation
 Scripts/DesignAssets/venv/
+Scripts/DesignAssets/__pycache__/
 
 # Firebase Functions
 functions/node_modules/

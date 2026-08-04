@@ -36,5 +36,11 @@ Existing ASC products for `com.NewbornStudio` (pulled via `ascelerate sub/iap pr
 - Credit-to-cost unit economics not yet computed against Wiro's per-call cost — do before finalizing whether these prices hold (playbook cost-section rule: `credit_cost = ceil(cost_USD / 0.01)`).
 - ASC API key in use: keyId `YC2YC44RMZ`, issuerId `1aba5c58-f408-4036-b737-5a6c226d821e` (`~/.ascelerate/config.json`).
 
+## Xcode project tooling
+- Project generated with **XcodeGen** from `project.yml` (the Swift equivalent of `flutter create` for automation) — no manual Xcode GUI project setup. Regenerate with `xcodegen generate` after any `project.yml` change; don't hand-edit the `.xcodeproj`.
+- XcodeGen's `info:` target key regenerates/overwrites Info.plist from its own template — do NOT use it with a hand-authored Info.plist. Instead reference the file as-is via `settings.base.INFOPLIST_FILE` + `GENERATE_INFOPLIST_FILE: NO`.
+- **Quicksand and Nunito ship only as variable fonts** (single `wght` axis) in the current Google Fonts repo, no static per-weight files. `Theme.Font` dials in the exact weight at runtime via the CoreText `kCTFontVariationAttribute` (axis tag `wght` = `0x77676874`) rather than loading separate `-Bold`/`-SemiBold` files.
+- App icon asset uses the single-size 1024x1024 universal `AppIcon.appiconset` format (Xcode auto-generates all other sizes) — the source PNG must be full-bleed with no alpha, no pre-baked rounded corners/shadow (iOS applies its own mask).
+
 ## Secrets
 - `WIRO_API_KEY` / `WIRO_API_SECRET` stored in `.env` (gitignored), never in Claude memory or committed history.

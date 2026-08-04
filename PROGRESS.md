@@ -24,5 +24,15 @@
 2. Photo Editor screen cut. Milestone Tracker confirmed private-only, no social layer anywhere in the app.
 3. User approved moving forward — next: Swift/UIKit Xcode project scaffold + `Theme.swift` from the extracted design tokens.
 
-## Phase 3 — Flutter Scaffold → adapted: Xcode Scaffold
-- [ ] Not started yet.
+## Phase 3 — Xcode Scaffold (Swift/UIKit equivalent of `flutter create`)
+- [x] `project.yml` (XcodeGen) — bundle id `com.NewbornStudio`, iOS 15.0 deployment target, Swift/UIKit, no storyboards (programmatic UI + `UILaunchScreen` dict in Info.plist).
+- [x] SPM dependencies wired: Firebase (Core/Auth/Firestore/Storage/Functions/Messaging), GoogleSignIn, RevenueCat — resolved successfully via `xcodebuild -resolvePackageDependencies`.
+- [x] Folder structure: `NewbornStudio/Sources/{App,Features,Services,Models,Views}`, `NewbornStudio/Resources/{Assets.xcassets,Fonts,Info.plist}`.
+- [x] `Theme.swift` — colors/shape tokens from the design mockup, plus a variable-font weight helper (Quicksand/Nunito are variable fonts, not per-weight static files — weight is dialed in via the CoreText `wght` axis, see DECISIONS.md).
+- [x] App icon (AI-generated) wired into `AppIcon.appiconset` (single 1024x1024, no alpha). 3 onboarding illustrations wired into named image sets.
+- [x] Build verified: `xcodebuild build` → **BUILD SUCCEEDED** for iPhone 17 Pro simulator. Ran on simulator, screenshot confirms cream background + custom Quicksand font rendering correctly (`Design/Screenshots/scaffold_root.png`).
+- [x] Git: `.xcodeproj` is committed (regenerate anytime via `xcodegen generate` after editing `project.yml` — that file is the source of truth, not the `.xcodeproj` itself).
+
+## Next
+- Phase 4: register the iOS app in the `newborn-studio` Firebase project, download `GoogleService-Info.plist`, call `FirebaseApp.configure()`.
+- Phase 5: build the real screen flow (splash → onboarding → paywall → home) replacing the placeholder `RootViewController`, 1:1 from the design mockups.
