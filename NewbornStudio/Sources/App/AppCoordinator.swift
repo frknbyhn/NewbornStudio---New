@@ -13,6 +13,16 @@ final class AppCoordinator {
     }
 
     func start() {
+        #if DEBUG
+        // Screenshot-verification aid only — never reachable in a release build.
+        if let debugScreen = ProcessInfo.processInfo.environment["NS_DEBUG_SCREEN"] {
+            switch debugScreen {
+            case "paywall": window.rootViewController = UIViewController(); showPaywall(); return
+            case "home": showHome(); return
+            default: break
+            }
+        }
+        #endif
         if defaults.bool(forKey: hasOnboardedKey) {
             showHome()
         } else {
@@ -23,14 +33,30 @@ final class AppCoordinator {
     private func showOnboarding() {
         let onboarding = OnboardingContainerViewController()
         onboarding.onFinished = { [weak self] in
-            self?.defaults.set(true, forKey: self?.hasOnboardedKey ?? "hasCompletedOnboarding")
-            self?.showHome()
+            guard let self else { return }
+            self.defaults.set(true, forKey: self.hasOnboardedKey)
+            self.showPaywall()
         }
         window.rootViewController = onboarding
     }
 
+    private func showPaywall() {
+        let paywall = PaywallViewController()
+        paywall.modalPresentationStyle = .fullScreen
+        paywall.onDismiss = { [weak self] in
+            self?.showHome()
+        }
+        window.rootViewController?.present(paywall, animated: true)
+    }
+
     private func showHome() {
-        // Placeholder until Phase 5 finishes the real home/tab flow.
-        window.rootViewController = RootViewController()
+        let tabBar = MainTabBarController()
+        guard window.rootViewController != nil else {
+            window.rootViewController = tabBar
+            return
+        }
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve) {
+            self.window.rootViewController = tabBar
+        }
     }
 }

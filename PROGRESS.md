@@ -46,5 +46,26 @@
 - [x] Verified: page 1 screenshot matches the mockup closely (gradient, illustration, type, dots, CTA). Verified the onboarding-complete → home-placeholder routing by forcing the UserDefaults flag via `simctl spawn defaults write` and relaunching (no way to script simulator taps, so page 2/3 swipe + Skip/Next button taps were verified by code review, not a live screenshot — flag this to the user for a manual check).
 - [ ] Not built yet: real Home (tab bar + theme gallery), Paywall, Photo Upload, AI Generation, Result, Milestone Tracker, Coin Package, Profile screens. Currently `RootViewController` (a bare placeholder label) stands in for Home.
 
+## Phase 5 — App Architecture (screens complete)
+- [x] Full flow wired: onboarding → paywall (shown once, right after onboarding) → `MainTabBarController` (Home / Milestones / Gallery / Profile).
+- [x] **Home** — theme gallery grid (`UICollectionView`, 2 columns), filter chips, coin balance pill (taps through to Coin Package). Verified on simulator, matches the mockup closely.
+- [x] **Paywall** — 3 plan cards (Weekly/Monthly/Yearly, real ASC prices from DECISIONS.md), benefit rows, gradient CTA, working Restore/Terms/Privacy (Terms & Privacy open a placeholder legal modal — real Firestore-backed copy is Phase 6). Verified on simulator; fixed two real bugs found by looking at the screenshot: a badge showing a broken tofu glyph (emoji baked into a label the custom font couldn't render) and "3 DAY FREE TRIAL" clipping outside its pill.
+- [x] **Photo Upload** — drop-zone style upload card, tips list, Take Photo / Choose from Gallery wired to a real `UIImagePickerController`. Not screenshot-verified live (simulator has no camera; gallery picker needs a seeded photo library) — verified by code review only.
+- [x] **AI Generation (loading)** — simulated progress (real Wiro submit/poll via Cloud Function is Phase 6), matches the mockup's circular progress + rotating status text. Code-reviewed only, not screenshotted.
+- [x] **Result** — dark portrait viewer, Save/Share/Retry actions. **The Edit action was deliberately dropped** — Photo Editor is a cut screen per product decision, and playbook rule 4.0 forbids a button that does nothing. Code-reviewed only.
+- [x] **Milestone Tracker** — private-only (no sharing, confirmed product decision), done/pending rows. Verified on simulator.
+- [x] **Gallery** — empty state (illustration + copy, no bare text) since there's no generation history backend yet. Code-reviewed only.
+- [x] **Coin Package** — 4 real packages from DECISIONS.md (small/limited/medium/big), selectable rows, dynamic CTA total. Code-reviewed only, not screenshotted (reachable only via a real tap from Home's coin pill, and the debug-tab hook only covers `MainTabBarController` tabs).
+- [x] **Profile** — avatar + "Guest" (anonymous-first, no login wall yet), grouped settings cards. "Contact Support" row was **removed** (playbook explicitly flags this as a common autonomous-run mistake — the store listing's support URL covers this, not an in-app button). "Rate the App" wired to a real `SKStoreReviewController.requestReview`. Verified on simulator.
+- [x] Added a `#if DEBUG`-gated `NS_DEBUG_SCREEN` / `NS_DEBUG_TAB` environment-variable hook in `AppCoordinator`/`MainTabBarController` purely to reach screens for screenshot verification without tap automation (no simulator UI-automation tool available in this environment). Compiled out of release builds; still worth grepping for before shipping per the Stability Gate's "no debug affordances" rule.
+
+## Known gaps before this can be considered done (tracked, not forgotten)
+- Photo Upload → Generation → Result → Coin Package have not been visually verified on-device/simulator (code-reviewed only) — worth a manual pass.
+- All data is hardcoded sample data (`ThemeCard.samples`, `Milestone.samples`, etc.) — Phase 6 replaces this with Firestore.
+- No real purchase flow yet (Subscribe/Buy buttons haptic + no-op) — Phase 7 (RevenueCat).
+- No real AI generation yet (progress is a local timer, Result shows the *source* photo, not a generated one) — Phase 6 (Cloud Functions + Wiro).
+- Legal text is a placeholder modal, not Firestore-backed — Phase 6.5 (admin panel) + Phase 6.
+- Anonymous-first auth is assumed but `AuthService`/Firebase Auth sign-in isn't wired yet.
+
 ## Next
-- Continue Phase 5: replace the `RootViewController` placeholder with the real tab-bar Home + remaining screens, wiring the Paywall right after onboarding per the playbook's onboarding→paywall rule.
+- Phase 6: backend — Cloud Functions (`generateContent` calling Wiro, credit system, `deleteAccount`), Firestore data model for themes/milestones/gallery, wire the real generation flow end to end.
