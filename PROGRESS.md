@@ -33,6 +33,11 @@
 - [x] Build verified: `xcodebuild build` → **BUILD SUCCEEDED** for iPhone 17 Pro simulator. Ran on simulator, screenshot confirms cream background + custom Quicksand font rendering correctly (`Design/Screenshots/scaffold_root.png`).
 - [x] Git: `.xcodeproj` is committed (regenerate anytime via `xcodegen generate` after editing `project.yml` — that file is the source of truth, not the `.xcodeproj` itself).
 
+## Phase 4 — Firebase
+- [x] iOS app was already registered in the `newborn-studio` Firebase project (App ID `1:284818262960:ios:5b8baa16996c499507a475`, bundle id confirmed matching `com.NewbornStudio`).
+- [x] `GoogleService-Info.plist` downloaded via `firebase apps:sdkconfig`, wired into the Xcode target, gitignored (not a hard secret but the playbook flags it — regenerate anytime with the same command).
+- [x] `FirebaseApp.configure()` added to `AppDelegate`. Verified end-to-end: clean install + launch on simulator, no crash (previously crashed with "could not find a valid GoogleService-Info.plist" until the XcodeGen resources bug above was fixed).
+- [ ] Still open from the original Phase 4 checklist: enable Google + Apple sign-in providers in Firebase Console (🙋 human gate), Firestore/Storage rules deploy, Cloud Functions for the actual generation flow — comes with Phase 5/6 once the real screens exist.
+
 ## Next
-- Phase 4: register the iOS app in the `newborn-studio` Firebase project, download `GoogleService-Info.plist`, call `FirebaseApp.configure()`.
 - Phase 5: build the real screen flow (splash → onboarding → paywall → home) replacing the placeholder `RootViewController`, 1:1 from the design mockups.
