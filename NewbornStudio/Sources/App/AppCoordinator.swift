@@ -19,7 +19,11 @@ final class AppCoordinator {
             switch debugScreen {
             case "paywall": window.rootViewController = UIViewController(); showPaywall(); return
             case "home": showHome(); return
-            case "coins": window.rootViewController = UINavigationController(rootViewController: CoinPackageViewController()); return
+            case "coins":
+                let nav = UINavigationController(rootViewController: CoinPackageViewController())
+                nav.navigationBar.isHidden = true
+                window.rootViewController = nav
+                return
             case "splash": showSplash(); return
             default: break
             }

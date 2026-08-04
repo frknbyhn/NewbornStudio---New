@@ -13,6 +13,7 @@ final class PaywallViewController: UIViewController {
     private var selectedPlan: SubscriptionPlan?
     private let billedCaption = UILabel()
     private let cta = GradientPillButton(title: "Subscribe Now", icon: nil)
+    private var heroImageViews: [UIImageView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,22 @@ final class PaywallViewController: UIViewController {
         setUpCloseButton()
         setUpLoadingState()
         loadOffering()
+        loadHeroPreviews()
+    }
+
+    private func loadHeroPreviews() {
+        ThemeService.fetchThemes(categoryId: nil, limit: 3) { [weak self] result in
+            guard let self, case .success(let cards) = result else { return }
+            for (imageView, card) in zip(self.heroImageViews, cards) {
+                guard let url = card.previewImageUrl else { continue }
+                RemoteImageLoader.load(url) { image in
+                    guard let image else { return }
+                    UIView.transition(with: imageView, duration: 0.25, options: .transitionCrossDissolve) {
+                        imageView.image = image
+                    }
+                }
+            }
+        }
     }
 
     private func setUpLoadingState() {
@@ -208,12 +225,9 @@ final class PaywallViewController: UIViewController {
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
         container.layer.insertSublayer(gradient, at: 0)
         container.translatesAutoresizingMaskIntoConstraints = false
-        container.heightAnchor.constraint(equalToConstant: 150).isActive = true
         DispatchQueue.main.async { gradient.frame = container.bounds }
 
-        let icon = UIImageView(image: UIImage(systemName: "sparkles"))
-        icon.tintColor = Theme.Color.accentEnd
-        icon.contentMode = .scaleAspectFit
+        let deck = fannedPhotoDeck()
 
         let badge = PaddedLabel()
         badge.text = "NEWBORN PRO"
@@ -225,20 +239,66 @@ final class PaywallViewController: UIViewController {
         badge.layer.masksToBounds = true
         badge.textAlignment = .center
 
-        let stack = UIStackView(arrangedSubviews: [icon, badge])
+        let stack = UIStackView(arrangedSubviews: [deck, badge])
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 12
+        stack.spacing = 16
         stack.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(stack)
         NSLayoutConstraint.activate([
-            icon.widthAnchor.constraint(equalToConstant: 46),
-            icon.heightAnchor.constraint(equalToConstant: 46),
+            deck.heightAnchor.constraint(equalToConstant: 112),
             badge.heightAnchor.constraint(equalToConstant: 28),
             stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+            // Pinned relative to the safe area (not a fixed container height) so the fanned,
+            // rotated deck never renders under the status bar / Dynamic Island on any device.
+            stack.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 14),
+            stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -18)
         ])
         return container
+    }
+
+    /// Three fanned, rotated preview cards — matches the design mockup's photo-stack hero,
+    /// filled with real generated portraits (fetched async) rather than a static illustration.
+    private func fannedPhotoDeck() -> UIView {
+        let sizes: [(CGSize, CGFloat)] = [
+            (CGSize(width: 74, height: 96), -6),
+            (CGSize(width: 82, height: 112), 0),
+            (CGSize(width: 74, height: 96), 6)
+        ]
+        heroImageViews = []
+        let cardViews: [UIView] = sizes.map { size, rotation in
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.backgroundColor = UIColor(hex: 0xEDE7FB)
+            imageView.layer.cornerRadius = 14
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+            heroImageViews.append(imageView)
+
+            let shadowWrap = UIView()
+            shadowWrap.layer.shadowColor = Theme.Color.textPrimary.cgColor
+            shadowWrap.layer.shadowOpacity = 0.22
+            shadowWrap.layer.shadowRadius = 10
+            shadowWrap.layer.shadowOffset = CGSize(width: 0, height: 6)
+            shadowWrap.transform = CGAffineTransform(rotationAngle: rotation * .pi / 180)
+            shadowWrap.translatesAutoresizingMaskIntoConstraints = false
+            shadowWrap.addSubview(imageView)
+            NSLayoutConstraint.activate([
+                imageView.topAnchor.constraint(equalTo: shadowWrap.topAnchor),
+                imageView.leadingAnchor.constraint(equalTo: shadowWrap.leadingAnchor),
+                imageView.trailingAnchor.constraint(equalTo: shadowWrap.trailingAnchor),
+                imageView.bottomAnchor.constraint(equalTo: shadowWrap.bottomAnchor)
+            ])
+            return shadowWrap
+        }
+
+        let deck = UIStackView(arrangedSubviews: cardViews)
+        deck.axis = .horizontal
+        deck.alignment = .center
+        deck.spacing = 8
+        return deck
     }
 
     private func benefitRow(_ text: String) -> UIView {

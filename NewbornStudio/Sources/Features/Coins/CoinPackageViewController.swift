@@ -129,7 +129,6 @@ final class CoinPackageViewController: UIViewController {
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
         container.layer.insertSublayer(gradient, at: 0)
         container.translatesAutoresizingMaskIntoConstraints = false
-        container.heightAnchor.constraint(equalToConstant: 190).isActive = true
         DispatchQueue.main.async { gradient.frame = container.bounds }
 
         let back = UIButton(type: .system)
@@ -140,9 +139,7 @@ final class CoinPackageViewController: UIViewController {
         back.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         back.translatesAutoresizingMaskIntoConstraints = false
 
-        let icon = UIImageView(image: UIImage(systemName: "banknote.fill"))
-        icon.tintColor = Theme.Color.coin
-        icon.contentMode = .scaleAspectFit
+        let deck = fannedCoinDeck()
 
         let title = UILabel()
         title.text = "Top up your coins"
@@ -157,10 +154,10 @@ final class CoinPackageViewController: UIViewController {
         subtitle.textAlignment = .center
         subtitle.numberOfLines = 0
 
-        let stack = UIStackView(arrangedSubviews: [icon, title, subtitle])
+        let stack = UIStackView(arrangedSubviews: [deck, title, subtitle])
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 6
+        stack.spacing = 10
         stack.isLayoutMarginsRelativeArrangement = true
         stack.layoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -168,16 +165,69 @@ final class CoinPackageViewController: UIViewController {
         container.addSubview(back)
 
         NSLayoutConstraint.activate([
-            icon.widthAnchor.constraint(equalToConstant: 40),
-            icon.heightAnchor.constraint(equalToConstant: 40),
+            deck.heightAnchor.constraint(equalToConstant: 88),
             back.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 14),
             back.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 24),
             back.widthAnchor.constraint(equalToConstant: 36),
             back.heightAnchor.constraint(equalToConstant: 36),
             stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            // Pinned relative to the safe area (not a fixed container height) so the fanned,
+            // rotated deck never renders under the status bar / Dynamic Island on any device.
+            stack.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 14),
             stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -18)
         ])
         return container
+    }
+
+    /// Three fanned, rotated coin-medallion cards — matches the design mockup's icon-stack hero.
+    private func fannedCoinDeck() -> UIView {
+        let specs: [(CGSize, CGFloat, String, CGFloat)] = [
+            (CGSize(width: 52, height: 64), -8, "dollarsign.circle.fill", 26),
+            (CGSize(width: 72, height: 88), 0, "banknote.fill", 34),
+            (CGSize(width: 52, height: 64), 8, "dollarsign.circle.fill", 26)
+        ]
+        let cardViews: [UIView] = specs.map { size, rotation, symbol, iconSize in
+            let card = UIView()
+            card.backgroundColor = UIColor(hex: 0xFFE4A6)
+            card.layer.cornerRadius = 16
+            card.translatesAutoresizingMaskIntoConstraints = false
+            card.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+            card.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+
+            let icon = UIImageView(image: UIImage(systemName: symbol))
+            icon.tintColor = Theme.Color.coin
+            icon.contentMode = .scaleAspectFit
+            icon.translatesAutoresizingMaskIntoConstraints = false
+            card.addSubview(icon)
+            NSLayoutConstraint.activate([
+                icon.centerXAnchor.constraint(equalTo: card.centerXAnchor),
+                icon.centerYAnchor.constraint(equalTo: card.centerYAnchor),
+                icon.widthAnchor.constraint(equalToConstant: iconSize),
+                icon.heightAnchor.constraint(equalToConstant: iconSize)
+            ])
+
+            let shadowWrap = UIView()
+            shadowWrap.layer.shadowColor = UIColor(hex: 0xC89628).cgColor
+            shadowWrap.layer.shadowOpacity = 0.35
+            shadowWrap.layer.shadowRadius = 10
+            shadowWrap.layer.shadowOffset = CGSize(width: 0, height: 6)
+            shadowWrap.transform = CGAffineTransform(rotationAngle: rotation * .pi / 180)
+            shadowWrap.translatesAutoresizingMaskIntoConstraints = false
+            shadowWrap.addSubview(card)
+            NSLayoutConstraint.activate([
+                card.topAnchor.constraint(equalTo: shadowWrap.topAnchor),
+                card.leadingAnchor.constraint(equalTo: shadowWrap.leadingAnchor),
+                card.trailingAnchor.constraint(equalTo: shadowWrap.trailingAnchor),
+                card.bottomAnchor.constraint(equalTo: shadowWrap.bottomAnchor)
+            ])
+            return shadowWrap
+        }
+
+        let deck = UIStackView(arrangedSubviews: cardViews)
+        deck.axis = .horizontal
+        deck.alignment = .bottom
+        deck.spacing = 10
+        return deck
     }
 
     private func setUpBottomBar() {
