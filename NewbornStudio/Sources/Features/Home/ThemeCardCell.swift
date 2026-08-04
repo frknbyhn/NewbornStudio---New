@@ -5,8 +5,14 @@ final class ThemeCardCell: UICollectionViewCell {
 
     private let tintView = UIView()
     private let imageView = UIImageView()
+    private let spinner = UIActivityIndicatorView(style: .medium)
     private let nameLabel = UILabel()
+    private let heartButton = UIButton(type: .system)
     private var imageTask: URLSessionDataTask?
+
+    private var theme: ThemeCard?
+    private var isFavorited = false
+    var onFavoriteToggle: ((ThemeCard) -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,18 +38,23 @@ final class ThemeCardCell: UICollectionViewCell {
         imageView.alpha = 0
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
+        spinner.color = Theme.Color.accentEnd
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+
         nameLabel.font = Theme.Font.heading(14, weight: 600)
         nameLabel.textColor = Theme.Color.textPrimaryAlt
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        let heart = UIImageView(image: UIImage(systemName: "heart"))
-        heart.tintColor = UIColor(hex: 0xD9CBC5)
-        heart.translatesAutoresizingMaskIntoConstraints = false
+        heartButton.tintColor = UIColor(hex: 0xD9CBC5)
+        heartButton.addTarget(self, action: #selector(heartTapped), for: .touchUpInside)
+        heartButton.translatesAutoresizingMaskIntoConstraints = false
+        updateHeartIcon()
 
         contentView.addSubview(tintView)
         tintView.addSubview(imageView)
+        tintView.addSubview(spinner)
         contentView.addSubview(nameLabel)
-        contentView.addSubview(heart)
+        contentView.addSubview(heartButton)
 
         NSLayoutConstraint.activate([
             tintView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
@@ -56,18 +67,25 @@ final class ThemeCardCell: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: tintView.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: tintView.bottomAnchor),
 
+            spinner.centerXAnchor.constraint(equalTo: tintView.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: tintView.centerYAnchor),
+
             nameLabel.topAnchor.constraint(equalTo: tintView.bottomAnchor, constant: 9),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nameLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10),
 
-            heart.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
-            heart.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            heart.widthAnchor.constraint(equalToConstant: 18),
-            heart.heightAnchor.constraint(equalToConstant: 18)
+            heartButton.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
+            heartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
+            heartButton.widthAnchor.constraint(equalToConstant: 32),
+            heartButton.heightAnchor.constraint(equalToConstant: 32)
         ])
     }
 
-    func configure(with theme: ThemeCard) {
+    func configure(with theme: ThemeCard, isFavorited: Bool = false) {
+        self.theme = theme
+        self.isFavorited = isFavorited
+        updateHeartIcon()
+
         tintView.backgroundColor = theme.tint
         nameLabel.text = theme.name
         imageView.image = nil
@@ -75,17 +93,36 @@ final class ThemeCardCell: UICollectionViewCell {
         imageTask?.cancel()
 
         guard let url = theme.previewImageUrl else { return }
+        spinner.startAnimating()
         imageTask = RemoteImageLoader.load(url) { [weak self] image in
-            guard let self, let image else { return }
+            guard let self else { return }
+            self.spinner.stopAnimating()
+            guard let image else { return }
             self.imageView.image = image
             UIView.animate(withDuration: 0.2) { self.imageView.alpha = 1 }
         }
     }
 
+    private func updateHeartIcon() {
+        let symbol = isFavorited ? "heart.fill" : "heart"
+        heartButton.setImage(UIImage(systemName: symbol), for: .normal)
+        heartButton.tintColor = isFavorited ? Theme.Color.accentEnd : UIColor(hex: 0xD9CBC5)
+    }
+
+    @objc private func heartTapped() {
+        guard let theme else { return }
+        HapticFeedback.light()
+        isFavorited.toggle()
+        updateHeartIcon()
+        onFavoriteToggle?(theme)
+    }
+
     override func prepareForReuse() {
         super.prepareForReuse()
         imageTask?.cancel()
+        spinner.stopAnimating()
         imageView.image = nil
         imageView.alpha = 0
+        onFavoriteToggle = nil
     }
 }

@@ -6,4 +6,5 @@ struct ThemeCategory {
     let id: String
     let name: String
     let position: Int
+    let coverImageUrl: URL?
 }

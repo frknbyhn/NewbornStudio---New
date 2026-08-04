@@ -18,10 +18,12 @@ enum ThemeService {
                 }
                 let categories = (snapshot?.documents ?? []).map { doc -> ThemeCategory in
                     let data = doc.data()
+                    let coverUrl = (data["coverImageUrl"] as? String).flatMap(URL.init(string:))
                     return ThemeCategory(
                         id: doc.documentID,
                         name: data["name"] as? String ?? doc.documentID,
-                        position: data["position"] as? Int ?? 0
+                        position: data["position"] as? Int ?? 0,
+                        coverImageUrl: coverUrl
                     )
                 }
                 completion(.success(categories))
@@ -39,15 +41,35 @@ enum ThemeService {
                 completion(.failure(error))
                 return
             }
-            let docs = snapshot?.documents ?? []
-            let cards = docs.enumerated().map { index, doc -> ThemeCard in
-                let data = doc.data()
-                let name = data["name"] as? String ?? doc.documentID
-                let tint = tintPalette[index % tintPalette.count]
-                let previewUrl = (data["previewImageUrl"] as? String).flatMap(URL.init(string:))
-                return ThemeCard(id: doc.documentID, name: name, tint: tint, previewImageUrl: previewUrl)
+            completion(.success(cards(from: snapshot?.documents ?? [])))
+        }
+    }
+
+    /// Firestore's `in` filter caps at 30 values — fine here since favorites realistically stay small.
+    static func fetchThemes(byIds ids: [String], completion: @escaping (Result<[ThemeCard], Error>) -> Void) {
+        let capped = Array(ids.prefix(30))
+        guard !capped.isEmpty else {
+            completion(.success([]))
+            return
+        }
+        Firestore.firestore().collection("ai_models")
+            .whereField(FieldPath.documentID(), in: capped)
+            .getDocuments { snapshot, error in
+                if let error {
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(cards(from: snapshot?.documents ?? [])))
             }
-            completion(.success(cards))
+    }
+
+    private static func cards(from docs: [QueryDocumentSnapshot]) -> [ThemeCard] {
+        docs.enumerated().map { index, doc -> ThemeCard in
+            let data = doc.data()
+            let name = data["name"] as? String ?? doc.documentID
+            let tint = tintPalette[index % tintPalette.count]
+            let previewUrl = (data["previewImageUrl"] as? String).flatMap(URL.init(string:))
+            return ThemeCard(id: doc.documentID, name: name, tint: tint, previewImageUrl: previewUrl)
         }
     }
 }

@@ -20,10 +20,23 @@ final class AppCoordinator {
             case "paywall": window.rootViewController = UIViewController(); showPaywall(); return
             case "home": showHome(); return
             case "coins": window.rootViewController = UINavigationController(rootViewController: CoinPackageViewController()); return
+            case "splash": showSplash(); return
             default: break
             }
         }
         #endif
+        showSplash()
+    }
+
+    private func showSplash() {
+        let splash = SplashViewController()
+        splash.onFinished = { [weak self] in
+            self?.proceedPastSplash()
+        }
+        window.rootViewController = splash
+    }
+
+    private func proceedPastSplash() {
         if defaults.bool(forKey: hasOnboardedKey) {
             showHome()
         } else {

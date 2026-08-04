@@ -11,4 +11,17 @@ function buildPrompt({ styleName, descriptor, mood }) {
   );
 }
 
-module.exports = { buildPrompt };
+// A broader, category-level variant for cover images (not tied to one specific style).
+function buildCategoryPrompt({ categoryName, mood }) {
+  return (
+    `Transform the uploaded baby photo into a professional AI-generated studio portrait ` +
+    `representing the "${categoryName}" theme collection. ` +
+    `Mood: ${mood}. ` +
+    `Preserve the baby's exact face, expression, proportions and skin tone from the original ` +
+    `photo; only change styling, outfit, props and background to fit the theme. ` +
+    `Soft, warm, professional studio-portrait lighting, photorealistic, high detail, ` +
+    `no text, no watermark, no logos, safe and wholesome, no adult content.`
+  );
+}
+
+module.exports = { buildPrompt, buildCategoryPrompt };

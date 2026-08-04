@@ -3,20 +3,14 @@ import UIKit
 final class HomeViewController: UIViewController {
     private let coinLabel = UILabel()
     private var collectionView: UICollectionView!
-    private var filtersStack: UIStackView!
-    private var filterChips: [FilterChipButton] = []
     private var categories: [ThemeCategory] = []
-    private var selectedCategoryId: String?
-    private var themes: [ThemeCard] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
         setUpHeader()
-        setUpFilters()
         setUpGrid()
         loadCategories()
-        loadThemes()
     }
 
     private func loadCategories() {
@@ -25,26 +19,20 @@ final class HomeViewController: UIViewController {
             switch result {
             case .success(let categories):
                 self.categories = categories
-                self.populateFilterChips()
+                self.collectionView.reloadData()
+                self.openDebugCategoryIfNeeded()
             case .failure(let error):
                 print("ThemeService.fetchCategories failed: \(error)")
             }
         }
     }
 
-    private func loadThemes() {
-        ThemeService.fetchThemes(categoryId: selectedCategoryId) { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let cards):
-                self.themes = cards
-                self.collectionView.reloadData()
-            case .failure(let error):
-                // Firestore is briefly unreachable right after a cold start — the grid just
-                // stays empty rather than showing a raw error, matching the offline-state rule.
-                print("ThemeService.fetchThemes failed: \(error)")
-            }
-        }
+    private func openDebugCategoryIfNeeded() {
+        #if DEBUG
+        guard let debugCategoryId = ProcessInfo.processInfo.environment["NS_DEBUG_CATEGORY"],
+              let category = categories.first(where: { $0.id == debugCategoryId }) else { return }
+        navigationController?.pushViewController(CategoryStylesViewController(category: category), animated: false)
+        #endif
     }
 
     private func setUpHeader() {
@@ -102,90 +90,22 @@ final class HomeViewController: UIViewController {
     }
 
     private var headerBottomAnchor: NSLayoutYAxisAnchor!
-    private var filtersBottomAnchor: NSLayoutYAxisAnchor!
-
-    private func setUpFilters() {
-        let scroll = UIScrollView()
-        scroll.showsHorizontalScrollIndicator = false
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(scroll)
-
-        filtersStack = UIStackView()
-        filtersStack.axis = .horizontal
-        filtersStack.spacing = 8
-        filtersStack.translatesAutoresizingMaskIntoConstraints = false
-        scroll.addSubview(filtersStack)
-
-        NSLayoutConstraint.activate([
-            scroll.topAnchor.constraint(equalTo: headerBottomAnchor, constant: 14),
-            scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scroll.heightAnchor.constraint(equalToConstant: 31),
-            filtersStack.topAnchor.constraint(equalTo: scroll.topAnchor),
-            filtersStack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
-            filtersStack.leadingAnchor.constraint(equalTo: scroll.leadingAnchor, constant: 22),
-            filtersStack.trailingAnchor.constraint(equalTo: scroll.trailingAnchor, constant: -22)
-        ])
-        filtersBottomAnchor = scroll.bottomAnchor
-    }
-
-    private func populateFilterChips() {
-        filterChips.forEach { $0.removeFromSuperview() }
-        filterChips = []
-
-        let allChip = FilterChipButton(title: "All", categoryId: nil)
-        allChip.addTarget(self, action: #selector(filterTapped(_:)), for: .touchUpInside)
-        filtersStack.addArrangedSubview(allChip)
-        filterChips.append(allChip)
-
-        for category in categories {
-            let chip = FilterChipButton(title: category.name, categoryId: category.id)
-            chip.addTarget(self, action: #selector(filterTapped(_:)), for: .touchUpInside)
-            filtersStack.addArrangedSubview(chip)
-            filterChips.append(chip)
-        }
-        updateChipSelection()
-
-        #if DEBUG
-        // Screenshot-verification aid only — simulates a chip tap since this environment has
-        // no tap-automation tool. Never reachable in a release build.
-        if let debugCategoryId = ProcessInfo.processInfo.environment["NS_DEBUG_CATEGORY"],
-           let chip = filterChips.first(where: { $0.categoryId == debugCategoryId }) {
-            filterTapped(chip)
-        }
-        #endif
-    }
-
-    private func updateChipSelection() {
-        for chip in filterChips {
-            chip.isSelectedChip = chip.categoryId == selectedCategoryId
-        }
-    }
-
-    @objc private func filterTapped(_ sender: FilterChipButton) {
-        guard sender.categoryId != selectedCategoryId else { return }
-        HapticFeedback.selection()
-        selectedCategoryId = sender.categoryId
-        updateChipSelection()
-        loadThemes()
-    }
 
     private func setUpGrid() {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 14
-        layout.minimumLineSpacing = 14
-        layout.sectionInset = UIEdgeInsets(top: 14, left: 22, bottom: 24, right: 22)
+        layout.minimumLineSpacing = 16
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 22, bottom: 24, right: 22)
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(ThemeCardCell.self, forCellWithReuseIdentifier: ThemeCardCell.reuseId)
+        collectionView.register(CategoryListCell.self, forCellWithReuseIdentifier: CategoryListCell.reuseId)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
 
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: filtersBottomAnchor, constant: 4),
+            collectionView.topAnchor.constraint(equalTo: headerBottomAnchor, constant: 6),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -195,87 +115,27 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        themes.count
+        categories.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThemeCardCell.reuseId, for: indexPath) as! ThemeCardCell
-        cell.configure(with: themes[indexPath.item])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryListCell.reuseId, for: indexPath) as! CategoryListCell
+        cell.configure(with: categories[indexPath.item])
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.bounds.width - 22 * 2 - 14) / 2
-        return CGSize(width: width, height: width * 0.92)
+        CGSize(width: collectionView.bounds.width - 44, height: 190)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         HapticFeedback.selection()
-        let upload = PhotoUploadViewController(theme: themes[indexPath.item])
-        navigationController?.pushViewController(upload, animated: true)
+        let styles = CategoryStylesViewController(category: categories[indexPath.item])
+        navigationController?.pushViewController(styles, animated: true)
     }
 
     @objc private func coinPillTapped() {
         HapticFeedback.selection()
         navigationController?.pushViewController(CoinPackageViewController(), animated: true)
-    }
-}
-
-/// A UILabel with real horizontal padding baked into its intrinsic content size — used for pill-shaped filter chips.
-final class PaddedLabel: UILabel {
-    var horizontalPadding: CGFloat = 12
-
-    override var intrinsicContentSize: CGSize {
-        let base = super.intrinsicContentSize
-        return CGSize(width: base.width + horizontalPadding * 2, height: base.height)
-    }
-
-    override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.insetBy(dx: horizontalPadding, dy: 0))
-    }
-}
-
-/// A tappable pill chip for Home's category filter row.
-final class FilterChipButton: UIControl {
-    let categoryId: String?
-    private let label = PaddedLabel()
-
-    var isSelectedChip: Bool = false {
-        didSet { updateAppearance() }
-    }
-
-    init(title: String, categoryId: String?) {
-        self.categoryId = categoryId
-        super.init(frame: .zero)
-        label.text = title
-        label.font = Theme.Font.heading(13, weight: 600)
-        label.textAlignment = .center
-        label.horizontalPadding = 15
-        label.isUserInteractionEnabled = false
-        label.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(label)
-        layer.cornerRadius = 15.5
-        layer.masksToBounds = true
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: topAnchor),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor),
-            label.leadingAnchor.constraint(equalTo: leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
-        heightAnchor.constraint(equalToConstant: 31).isActive = true
-        setContentHuggingPriority(.required, for: .horizontal)
-        updateAppearance()
-    }
-
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
-    private func updateAppearance() {
-        if isSelectedChip {
-            backgroundColor = Theme.Color.accentEnd
-            label.textColor = .white
-        } else {
-            backgroundColor = Theme.Color.backgroundWarm
-            label.textColor = Theme.Color.textSecondaryAlt
-        }
     }
 }
