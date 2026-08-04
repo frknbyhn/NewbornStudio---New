@@ -8,9 +8,8 @@ const { ensureUserDoc, spendCredits } = require("./helpers/credits");
 
 // Firebase's own download-token scheme (what client SDKs' getDownloadURL() produces) instead of
 // a GCS signed URL — the runtime service account doesn't have iam.serviceAccounts.signBlob, and
-// granting it needs a gcloud-authenticated session this environment doesn't have. This route
-// needs no IAM change: any client with the token URL can GET the file over plain HTTPS (which is
-// exactly what's needed here — Wiro's servers fetch the source image with no Firebase awareness).
+// granting it needs a gcloud-authenticated session this environment doesn't have. Still used for
+// the RESULT image, which does need to live somewhere the client can fetch it back from.
 async function downloadUrlFor(file) {
   const token = randomUUID();
   await file.setMetadata({ metadata: { firebaseStorageDownloadTokens: token } });
@@ -21,6 +20,7 @@ const WIRO_API_KEY = defineSecret("WIRO_API_KEY");
 const WIRO_API_SECRET = defineSecret("WIRO_API_SECRET");
 
 const DEFAULT_CREDIT_COST = 1;
+const MAX_IMAGE_BYTES = 8 * 1024 * 1024; // 8MB — generous for a compressed JPEG, keeps the callable payload sane
 
 exports.generateContent = onCall(
   { secrets: [WIRO_API_KEY, WIRO_API_SECRET], timeoutSeconds: 120, memory: "512MiB" },
@@ -28,15 +28,14 @@ exports.generateContent = onCall(
     const uid = request.auth && request.auth.uid;
     if (!uid) throw new HttpsError("unauthenticated", "Sign-in required.");
 
-    const { styleId, sourceImagePath } = request.data || {};
-    if (!styleId || !sourceImagePath) {
-      throw new HttpsError("invalid-argument", "styleId and sourceImagePath are required.");
+    const { styleId, imageBase64 } = request.data || {};
+    if (!styleId || !imageBase64) {
+      throw new HttpsError("invalid-argument", "styleId and imageBase64 are required.");
     }
-    // Every generation writes under the caller's own Storage path — never let a client
-    // point this at another user's upload.
-    if (!sourceImagePath.startsWith(`users/${uid}/`)) {
-      throw new HttpsError("permission-denied", "sourceImagePath must be under the caller's own users/{uid}/ path.");
-    }
+
+    const imageBuffer = Buffer.from(imageBase64, "base64");
+    if (imageBuffer.length === 0) throw new HttpsError("invalid-argument", "imageBase64 decoded to an empty buffer.");
+    if (imageBuffer.length > MAX_IMAGE_BYTES) throw new HttpsError("invalid-argument", "Image too large.");
 
     const db = getFirestore();
     const styleSnap = await db.collection("ai_models").doc(styleId).get();
@@ -59,7 +58,7 @@ exports.generateContent = onCall(
     const bucket = getStorage().bucket();
     const generationRef = db.collection("users").doc(uid).collection("generations").doc();
     // Written before the try block so the catch's .update() always has a doc to land on,
-    // even if the very first step inside try (building the source URL) is what fails.
+    // even if the very first step inside try is what fails.
     await generationRef.set({
       styleId,
       styleName: style.name,
@@ -67,18 +66,17 @@ exports.generateContent = onCall(
       createdAt: FieldValue.serverTimestamp(),
     });
 
-    // Everything from here on can fail (bad upload, Wiro outage, a bug) and every one of those
-    // paths must refund the credit already spent above — so the try starts here, not just
-    // around the Wiro call.
+    // Everything from here on can fail (Wiro outage, a bug) and every one of those paths must
+    // refund the credit already spent above — so the try starts here.
     try {
-      const sourceFile = bucket.file(sourceImagePath);
-      const sourceUrl = await downloadUrlFor(sourceFile);
-
       const { buffer, contentType } = await generateImage({
         apiKey: WIRO_API_KEY.value(),
         apiSecret: WIRO_API_SECRET.value(),
         prompt: style.prompt,
-        inputImageUrl: sourceUrl,
+        // Sent directly to Wiro as a multipart file attachment — no Storage round-trip for the
+        // user's source photo. Verified empirically that Wiro actually uses the attached file
+        // (undocumented in Wiro's own docs, which only show URL-string examples).
+        inputImage: { buffer: imageBuffer, filename: "input.jpg", contentType: "image/jpeg" },
         aspectRatio: style.aspectRatio || "3:4",
         timeoutMs: 90000,
       });

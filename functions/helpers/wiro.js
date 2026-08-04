@@ -16,13 +16,21 @@ function authHeaders(apiKey, apiSecret) {
   return { "x-api-key": apiKey, "x-nonce": nonce, "x-signature": signature };
 }
 
-async function submitTask({ apiKey, apiSecret, prompt, inputImageUrl, aspectRatio = "3:4" }) {
+// inputImage accepts either a URL string OR { buffer, filename, contentType } for a real
+// multipart file attachment — verified empirically (undocumented in Wiro's own docs) that
+// attaching the raw file works and Wiro actually uses it, not just a URL reference.
+async function submitTask({ apiKey, apiSecret, prompt, inputImage, aspectRatio = "3:4" }) {
   const form = new FormData();
   form.append("prompt", prompt);
   form.append("aspectRatio", aspectRatio);
   form.append("temperature", "1.0");
   form.append("safetySetting", "BLOCK_ONLY_HIGH");
-  if (inputImageUrl) form.append("inputImage", inputImageUrl);
+  if (typeof inputImage === "string") {
+    form.append("inputImage", inputImage);
+  } else if (inputImage && inputImage.buffer) {
+    const blob = new Blob([inputImage.buffer], { type: inputImage.contentType || "image/jpeg" });
+    form.append("inputImage", blob, inputImage.filename || "input.jpg");
+  }
 
   const resp = await fetch(RUN_URL, { method: "POST", headers: authHeaders(apiKey, apiSecret), body: form });
   if (!resp.ok) throw new Error(`Wiro submit failed: HTTP ${resp.status}`);
@@ -63,8 +71,8 @@ async function downloadOutput(task) {
   return { buffer: Buffer.from(arrayBuffer), contentType: output.contenttype || "image/png" };
 }
 
-async function generateImage({ apiKey, apiSecret, prompt, inputImageUrl, aspectRatio, timeoutMs }) {
-  const taskId = await submitTask({ apiKey, apiSecret, prompt, inputImageUrl, aspectRatio });
+async function generateImage({ apiKey, apiSecret, prompt, inputImage, aspectRatio, timeoutMs }) {
+  const taskId = await submitTask({ apiKey, apiSecret, prompt, inputImage, aspectRatio });
   const task = await pollTask({ apiKey, apiSecret, taskId, timeoutMs });
   return downloadOutput(task);
 }

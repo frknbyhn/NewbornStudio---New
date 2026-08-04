@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseStorage
 import FirebaseFunctions
 import FirebaseFirestore
 
@@ -15,11 +14,13 @@ struct GenerationResult {
     let remainingCredits: Int
 }
 
-/// Uploads the user's photo and calls the `generateContent` Cloud Function, which does the
-/// actual Wiro submit+poll server-side (so the API secret never ships in the client).
+/// Calls the `generateContent` Cloud Function, which does the actual Wiro submit+poll
+/// server-side (so the API secret never ships in the client). The photo is sent straight
+/// through as base64 in the callable payload — Wiro accepts a real multipart file attachment
+/// directly (verified empirically), so there's no Storage upload step for the source photo.
 enum GenerationService {
     static func generate(styleId: String, sourceImage: UIImage, completion: @escaping (Result<GenerationResult, Error>) -> Void) {
-        guard let uid = AuthService.currentUserId else {
+        guard AuthService.currentUserId != nil else {
             completion(.failure(GenerationServiceError.notSignedIn))
             return
         }
@@ -28,23 +29,8 @@ enum GenerationService {
             return
         }
 
-        let path = "users/\(uid)/uploads/\(UUID().uuidString).jpg"
-        let ref = Storage.storage().reference(withPath: path)
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
-
-        ref.putData(data, metadata: metadata) { _, error in
-            if let error {
-                completion(.failure(error))
-                return
-            }
-            callGenerateContent(styleId: styleId, sourceImagePath: path, completion: completion)
-        }
-    }
-
-    private static func callGenerateContent(styleId: String, sourceImagePath: String, completion: @escaping (Result<GenerationResult, Error>) -> Void) {
-        let functions = Functions.functions()
-        functions.httpsCallable("generateContent").call(["styleId": styleId, "sourceImagePath": sourceImagePath]) { result, error in
+        let imageBase64 = data.base64EncodedString()
+        Functions.functions().httpsCallable("generateContent").call(["styleId": styleId, "imageBase64": imageBase64]) { result, error in
             if let error {
                 completion(.failure(error))
                 return
