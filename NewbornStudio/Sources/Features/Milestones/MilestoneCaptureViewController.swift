@@ -55,6 +55,11 @@ final class MilestoneCaptureViewController: UIViewController {
 
         if curatedPrompt == nil {
             let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            // Without this, the recognizer (added straight to `view`, above every subview in the
+            // hit-test order) steals every single tap — including ones landing on the submit
+            // button — before UIControl ever sees a touchUpInside. Mirrors the same fix already
+            // in place on ResultViewController's identical dismiss-keyboard gesture.
+            tap.cancelsTouchesInView = false
             view.addGestureRecognizer(tap)
         }
     }

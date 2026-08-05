@@ -32,9 +32,14 @@ struct Milestone: Identifiable {
     /// curated idea to suggest.
     var aiPrompt: String?
     /// Set once the milestone is captured — the actual photo (or AI result) the user saved.
+    /// Populated immediately after a local pick/generation (no network round trip needed to
+    /// show it); `photoUrl` is the durable Firebase Storage URL backing it, used to redisplay
+    /// after a relaunch (see MilestoneStore/MilestoneRemoteStore) since UIImage itself is never
+    /// persisted.
     var photo: UIImage?
+    var photoUrl: String?
 
-    init(id: String = UUID().uuidString, title: String, state: State = .pending, group: String? = nil, style: Style = .default, aiPrompt: String? = nil, photo: UIImage? = nil) {
+    init(id: String = UUID().uuidString, title: String, state: State = .pending, group: String? = nil, style: Style = .default, aiPrompt: String? = nil, photo: UIImage? = nil, photoUrl: String? = nil) {
         self.id = id
         self.title = title
         self.state = state
@@ -42,6 +47,7 @@ struct Milestone: Identifiable {
         self.style = style
         self.aiPrompt = aiPrompt
         self.photo = photo
+        self.photoUrl = photoUrl
     }
 }
 
@@ -96,6 +102,32 @@ struct MilestoneList: Identifiable {
             Milestone(id: "milestone-sleeps-through-night", title: "Sleeps Through the Night", group: "Celebrations", style: .purple.with(icon: "moon.zzz.fill"), aiPrompt: "Add a dreamy starry night sky background with a soft moonlight glow."),
             Milestone(id: "milestone-first-holiday-season", title: "First Holiday Season", group: "Celebrations", style: .gold.with(icon: "gift.fill"), aiPrompt: "Add a cozy festive holiday background with warm twinkling lights."),
             Milestone(id: "milestone-first-birthday", title: "First Birthday", group: "Celebrations", style: .gold.with(icon: "star.fill"), aiPrompt: "Add a joyful birthday party background with soft pastel balloons and confetti.")
+        ]
+    )
+
+    /// Second always-present standard list — same working logic as `.standard` (auto-populated
+    /// for every user, capture-only, no add/remove), documenting the baby's monthly growth from
+    /// one week to one year old. Ids match the "Milestones" (age-milestones) theme_catalog.json
+    /// category's style ids exactly, same reasoning as `.standard` above — lets a Home-category
+    /// generation of one of these styles auto-match back to its milestone here.
+    static let ageJourney = MilestoneList(
+        id: "age-milestones",
+        name: "Milestones",
+        isStandard: true,
+        milestones: [
+            Milestone(id: "age-one-week", title: "One Week", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden 'ONE WEEK' milestone marker and a few dried flowers beside me, soft cream blanket, natural window light, minimalist newborn documentary style."),
+            Milestone(id: "age-one-month", title: "One Month", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '1 MONTH' milestone marker and a few dried flowers beside me, soft cream blanket, natural light, clean growth-journal style."),
+            Milestone(id: "age-two-months", title: "Two Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '2 MONTHS' milestone marker and a few dried flowers beside me, soft cream blanket, alert and curious expression, natural light."),
+            Milestone(id: "age-three-months", title: "Three Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '3 MONTHS' milestone marker and a few dried flowers beside me during gentle tummy time, soft cream blanket, natural light."),
+            Milestone(id: "age-four-months", title: "Four Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '4 MONTHS' milestone marker and a few dried flowers beside me, propped up on tiny arms during tummy time, natural light."),
+            Milestone(id: "age-five-months", title: "Five Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '5 MONTHS' milestone marker surrounded by a few dried flowers, reaching toward it on a soft cream blanket, natural light."),
+            Milestone(id: "age-six-months", title: "Six Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '6 MONTHS' milestone marker and a few dried flowers beside me, sitting propped up on soft cushions, natural light."),
+            Milestone(id: "age-seven-months", title: "Seven Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '7 MONTHS' milestone marker and a few dried flowers beside me, sitting upright with light support, natural light."),
+            Milestone(id: "age-eight-months", title: "Eight Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '8 MONTHS' milestone marker and a few dried flowers beside me, sitting confidently, natural light."),
+            Milestone(id: "age-nine-months", title: "Nine Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '9 MONTHS' milestone marker surrounded by a few dried flowers, sitting independently and reaching for it, natural light."),
+            Milestone(id: "age-ten-months", title: "Ten Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '10 MONTHS' milestone marker and a few dried flowers beside me, on all fours, natural light."),
+            Milestone(id: "age-eleven-months", title: "Eleven Months", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '11 MONTHS' milestone marker and a few dried flowers beside me, pulling up to stand, natural light."),
+            Milestone(id: "age-one-year", title: "One Year", style: .gold.with(icon: "flag.fill"), aiPrompt: "Add a wooden '1 YEAR' milestone marker amid a small first-birthday-style arrangement of dried flowers and a single balloon, standing proudly, natural light, joyful celebratory tone.")
         ]
     )
 }

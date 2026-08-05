@@ -190,7 +190,7 @@ final class GenerationLoadingViewController: UIViewController {
             HapticFeedback.success()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
                 guard let self else { return }
-                let resultVC = ResultViewController(theme: self.theme, sourceImage: self.sourceImage, resultUrl: generation.resultUrl, milestoneContext: self.milestoneContext)
+                let resultVC = ResultViewController(theme: self.theme, sourceImage: self.sourceImage, resultUrl: generation.resultUrl, milestoneContext: self.milestoneContext, autoSaveEligible: true)
                 self.navigationController?.pushViewController(resultVC, animated: true)
             }
         case .failure(let error):

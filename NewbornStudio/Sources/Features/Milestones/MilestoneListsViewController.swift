@@ -18,6 +18,9 @@ final class MilestoneListsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reload()
+        if !store.hasLoadedRemote {
+            store.loadFromRemote { [weak self] in self?.reload() }
+        }
     }
 
     private var headerBottom: NSLayoutYAxisAnchor!
@@ -75,8 +78,9 @@ final class MilestoneListsViewController: UIViewController {
     private func reload() {
         stack.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-        let standard = store.lists.first { $0.isStandard }!
-        stack.addArrangedSubview(listRow(for: standard))
+        for list in store.lists.filter({ $0.isStandard }) {
+            stack.addArrangedSubview(listRow(for: list))
+        }
         for list in store.lists.filter({ !$0.isStandard }) {
             stack.addArrangedSubview(listRow(for: list))
         }

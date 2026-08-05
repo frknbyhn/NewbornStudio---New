@@ -314,7 +314,7 @@ final class MilestoneListDetailViewController: UIViewController {
             let delete = UIButton(type: .system)
             delete.setImage(UIImage(systemName: "trash"), for: .normal)
             delete.tintColor = UIColor(hex: 0xD8A6A6)
-            delete.addAction(UIAction { [weak self] _ in self?.removeMilestone(milestone.id) }, for: .touchUpInside)
+            delete.addAction(UIAction { [weak self] _ in self?.confirmRemoveIfNeeded(milestone) }, for: .touchUpInside)
             cardArranged.append(delete)
         }
 
@@ -335,10 +335,10 @@ final class MilestoneListDetailViewController: UIViewController {
         card.layer.shadowOffset = CGSize(width: 0, height: 4)
         card.translatesAutoresizingMaskIntoConstraints = false
 
-        // Tap-to-capture only applies to pending milestones — done ones have nothing to do yet
-        // (viewing/editing a captured milestone is a later pass). Added BEFORE cardContent so
-        // the delete button (a real subview inside cardContent, added after/on top) still wins
-        // hit-testing on its own frame — this control only catches taps elsewhere on the card.
+        // Added BEFORE cardContent so the delete button (a real subview inside cardContent,
+        // added after/on top) still wins hit-testing on its own frame — this control only
+        // catches taps elsewhere on the card. Pending milestones open the capture flow; done
+        // ones open the detail/edit screen instead.
         if !isDone {
             let captureControl = MilestoneCaptureControl(milestone: milestone)
             captureControl.translatesAutoresizingMaskIntoConstraints = false
@@ -349,6 +349,17 @@ final class MilestoneListDetailViewController: UIViewController {
                 captureControl.leadingAnchor.constraint(equalTo: card.leadingAnchor),
                 captureControl.trailingAnchor.constraint(equalTo: card.trailingAnchor),
                 captureControl.bottomAnchor.constraint(equalTo: card.bottomAnchor)
+            ])
+        } else {
+            let detailControl = MilestoneCaptureControl(milestone: milestone)
+            detailControl.translatesAutoresizingMaskIntoConstraints = false
+            detailControl.addTarget(self, action: #selector(detailTapped(_:)), for: .touchUpInside)
+            card.addSubview(detailControl)
+            NSLayoutConstraint.activate([
+                detailControl.topAnchor.constraint(equalTo: card.topAnchor),
+                detailControl.leadingAnchor.constraint(equalTo: card.leadingAnchor),
+                detailControl.trailingAnchor.constraint(equalTo: card.trailingAnchor),
+                detailControl.bottomAnchor.constraint(equalTo: card.bottomAnchor)
             ])
         }
 
@@ -372,6 +383,11 @@ final class MilestoneListDetailViewController: UIViewController {
     @objc private func captureTapped(_ sender: MilestoneCaptureControl) {
         HapticFeedback.selection()
         navigationController?.pushViewController(MilestoneCaptureViewController(milestone: sender.milestone, listId: listId), animated: true)
+    }
+
+    @objc private func detailTapped(_ sender: MilestoneCaptureControl) {
+        HapticFeedback.selection()
+        navigationController?.pushViewController(MilestoneDetailViewController(milestone: sender.milestone, listId: listId), animated: true)
     }
 
     private func emptyState() -> UIView {
@@ -411,6 +427,26 @@ final class MilestoneListDetailViewController: UIViewController {
             guard let self, let title = alert?.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines), !title.isEmpty else { return }
             self.store.addMilestone(title: title, toListId: self.listId)
             self.reload()
+        })
+        present(alert, animated: true)
+    }
+
+    /// Deleting an already-captured custom milestone loses its photo for good, so it gets a
+    /// confirmation; a not-yet-captured one is just an empty row, safe to remove directly.
+    private func confirmRemoveIfNeeded(_ milestone: Milestone) {
+        guard milestone.state == .done else {
+            removeMilestone(milestone.id)
+            return
+        }
+        HapticFeedback.light()
+        let alert = UIAlertController(
+            title: "Delete Captured Milestone?",
+            message: "\u{201c}\(milestone.title)\u{201d} has already been captured. Deleting it removes the photo too — this can't be undone.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            self?.removeMilestone(milestone.id)
         })
         present(alert, animated: true)
     }

@@ -13,21 +13,31 @@ final class ResultViewController: UIViewController {
     private let scrollView = UIScrollView()
     private var imageAspectConstraint: NSLayoutConstraint?
     private let milestoneContext: MilestoneCaptureContext?
-    /// Resolved once at load time — the standard milestone this result should auto-save onto,
-    /// if any (nil for every theme that isn't a Milestones-category style, and for the
-    /// milestone-capture flow itself, which already saves its result on close).
+    /// Only a genuinely fresh generation (pushed straight off GenerationLoadingViewController)
+    /// auto-saves onto a matching standard milestone — opening the same result later from
+    /// Gallery history must NOT silently re-append it. That path still gets a manual "Milestone"
+    /// action button instead (see setUpActions) so the user can choose to save it themselves.
+    private let autoSaveEligible: Bool
+    /// Resolved once at load time — the standard milestone this result matches, if any (nil for
+    /// every theme that isn't a Firsts/Milestones-category style, for one already captured, and
+    /// for the milestone-capture flow itself, which already saves its result on close).
     private var pendingMilestone: Milestone?
+    private var pendingMilestoneListId: String?
+    /// Set once a save actually happens (auto or manual) — what "Go to Milestone Gallery" links to.
+    private var savedMilestoneListId: String?
     private let milestoneGalleryLink = UIButton(type: .system)
+    private var milestoneSaveButtonView: UIView?
 
     /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
     /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
     /// `milestoneContext` is set when this result came from MilestoneCaptureViewController — see
     /// closeTapped().
-    init(theme: ThemeCard, sourceImage: UIImage?, resultUrl: URL, milestoneContext: MilestoneCaptureContext? = nil) {
+    init(theme: ThemeCard, sourceImage: UIImage?, resultUrl: URL, milestoneContext: MilestoneCaptureContext? = nil, autoSaveEligible: Bool = false) {
         self.theme = theme
         self.sourceImage = sourceImage
         self.resultUrl = resultUrl
         self.milestoneContext = milestoneContext
+        self.autoSaveEligible = autoSaveEligible
         super.init(nibName: nil, bundle: nil)
         // Set here (not just on an upstream screen in the push chain) so the tab bar hides no
         // matter which flow pushed this screen — e.g. Gallery pushes it directly as a tab root.
@@ -42,7 +52,10 @@ final class ResultViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeTapped))
         navigationItem.rightBarButtonItem?.tintColor = .white
         view.backgroundColor = UIColor(hex: 0x2E2530)
-        pendingMilestone = matchingUncapturedMilestone()
+        if let match = matchingUncapturedMilestone() {
+            pendingMilestone = match.milestone
+            pendingMilestoneListId = match.listId
+        }
         setUpScrollContent()
         loadResultImage()
 
@@ -268,10 +281,18 @@ final class ResultViewController: UIViewController {
     }
 
     private func setUpActions(in content: UIView) {
-        let actions = UIStackView(arrangedSubviews: [
+        var actionViews = [
             actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
             actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
-        ])
+        ]
+        // A matching standard milestone that WON'T auto-save (Gallery history, not a fresh
+        // generation) gets an explicit action here instead — see the autoSaveEligible doc comment.
+        if pendingMilestone != nil, !autoSaveEligible {
+            let milestoneButton = actionButton(icon: "star.circle.fill", title: "Milestone", action: #selector(manualSaveMilestoneTapped))
+            actionViews.append(milestoneButton)
+            milestoneSaveButtonView = milestoneButton
+        }
+        let actions = UIStackView(arrangedSubviews: actionViews)
         actions.axis = .horizontal
         actions.distribution = .equalSpacing
 
@@ -333,7 +354,7 @@ final class ResultViewController: UIViewController {
             return
         }
         if let resultImage {
-            MilestoneStore.shared.capture(photo: resultImage, forMilestoneId: milestoneContext.milestoneId, inListId: milestoneContext.listId)
+            MilestoneStore.shared.capture(photo: resultImage, photoUrl: resultUrl.absoluteString, forMilestoneId: milestoneContext.milestoneId, inListId: milestoneContext.listId)
         }
         if let listVC = navigationController?.viewControllers.first(where: { $0 is MilestoneListDetailViewController }) {
             navigationController?.popToViewController(listVC, animated: true)
@@ -360,16 +381,24 @@ final class ResultViewController: UIViewController {
         present(UIActivityViewController(activityItems: [resultImage], applicationActivities: nil), animated: true)
     }
 
-    private func matchingUncapturedMilestone() -> Milestone? {
+    /// Searches every standard list (Firsts, Milestones, and any added later) for a milestone
+    /// whose id matches this result's style — not just the first one — since a style id is only
+    /// ever defined in one of them, but which list owns it isn't known ahead of time here.
+    private func matchingUncapturedMilestone() -> (milestone: Milestone, listId: String)? {
         guard milestoneContext == nil else { return nil }
-        guard let standardList = MilestoneStore.shared.lists.first(where: { $0.isStandard }) else { return nil }
-        guard let milestone = standardList.milestones.first(where: { $0.id == theme.id }) else { return nil }
-        return milestone.state == .done ? nil : milestone
+        for list in MilestoneStore.shared.lists where list.isStandard {
+            if let milestone = list.milestones.first(where: { $0.id == theme.id }), milestone.state != .done {
+                return (milestone, list.id)
+            }
+        }
+        return nil
     }
 
     private func saveToPendingMilestoneIfNeeded(_ image: UIImage) {
-        guard let milestone = pendingMilestone else { return }
-        MilestoneStore.shared.capture(photo: image, forMilestoneId: milestone.id, inListId: "standard")
+        guard autoSaveEligible, let milestone = pendingMilestone, let listId = pendingMilestoneListId else { return }
+        MilestoneStore.shared.capture(photo: image, photoUrl: resultUrl.absoluteString, forMilestoneId: milestone.id, inListId: listId)
+        pendingMilestone = nil
+        savedMilestoneListId = listId
         milestoneGalleryLink.isHidden = false
         HapticFeedback.success()
         let alert = UIAlertController(
@@ -381,9 +410,20 @@ final class ResultViewController: UIViewController {
         present(alert, animated: true)
     }
 
+    @objc private func manualSaveMilestoneTapped() {
+        guard let resultImage, let milestone = pendingMilestone, let listId = pendingMilestoneListId else { return }
+        HapticFeedback.success()
+        MilestoneStore.shared.capture(photo: resultImage, photoUrl: resultUrl.absoluteString, forMilestoneId: milestone.id, inListId: listId)
+        pendingMilestone = nil
+        savedMilestoneListId = listId
+        milestoneGalleryLink.isHidden = false
+        milestoneSaveButtonView?.isHidden = true
+    }
+
     @objc private func goToMilestoneGalleryTapped() {
         HapticFeedback.light()
-        navigationController?.pushViewController(MilestoneListDetailViewController(list: .standard), animated: true)
+        let list = MilestoneStore.shared.lists.first { $0.id == savedMilestoneListId } ?? .standard
+        navigationController?.pushViewController(MilestoneListDetailViewController(list: list), animated: true)
     }
 
     @objc private func submitEditTapped() {
