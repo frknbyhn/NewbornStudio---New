@@ -3,6 +3,21 @@ import UIKit
 final class CategoryListCell: UICollectionViewCell {
     static let reuseId = "CategoryListCell"
 
+    private static let nameFont = Theme.Font.heading(14.5, weight: 700)
+    /// coverView + stack margins/spacing, everything except the name label's own height.
+    private static let fixedHeight: CGFloat = 8 + 130 + 10 + 10
+    /// Approximates the label's available width inside the row (stack margins + chevron +
+    /// spacer) — slightly conservative is fine here: worst case a 1-line name gets measured as
+    /// 2 and the cell is a touch taller than strictly needed, never the reverse (clipped text).
+    private static let nameLabelWidthInset: CGFloat = 44
+
+    /// Lets sizeForItemAt size each cell to its own name instead of every cell paying for the
+    /// longest possible (2-line) name regardless of its own text.
+    static func height(forName name: String, columnWidth: CGFloat) -> CGFloat {
+        let lines = name.lineCount(font: nameFont, width: columnWidth - nameLabelWidthInset, maxLines: 2)
+        return fixedHeight + CGFloat(lines) * ceil(nameFont.lineHeight)
+    }
+
     private let coverView = UIView()
     private let imageView = UIImageView()
     private let spinner = UIActivityIndicatorView(style: .medium)
@@ -38,7 +53,7 @@ final class CategoryListCell: UICollectionViewCell {
         spinner.color = Theme.Color.accentEnd
         spinner.translatesAutoresizingMaskIntoConstraints = false
 
-        nameLabel.font = Theme.Font.heading(14.5, weight: 700)
+        nameLabel.font = Self.nameFont
         nameLabel.textColor = Theme.Color.textPrimaryAlt
         nameLabel.numberOfLines = 2
         nameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

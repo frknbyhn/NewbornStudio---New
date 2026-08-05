@@ -81,3 +81,21 @@ extension CAGradientLayer {
         return layer
     }
 }
+
+extension String {
+    /// How many lines this string wraps to at a given width/font — lets a grid cell's
+    /// sizeForItemAt give a 1-line title a shorter cell than a 2-line one, instead of every
+    /// cell paying the worst-case height regardless of its own text.
+    func lineCount(font: UIFont, width: CGFloat, maxLines: Int) -> Int {
+        guard width > 0 else { return 1 }
+        let bounds = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let rect = (self as NSString).boundingRect(
+            with: bounds,
+            options: [.usesLineFragmentOrigin, .usesFontLeading],
+            attributes: [.font: font],
+            context: nil
+        )
+        let lines = max(1, Int(ceil(rect.height / font.lineHeight)))
+        return min(lines, maxLines)
+    }
+}

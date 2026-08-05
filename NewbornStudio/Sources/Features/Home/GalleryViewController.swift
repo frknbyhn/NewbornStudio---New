@@ -232,7 +232,9 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
         let width = (collectionView.bounds.width - 20 * 2 - 12) / 2
         switch selectedTab {
         case .history: return CGSize(width: width, height: width * 1.3)
-        case .favorites: return CGSize(width: width, height: width * 0.92 + 18)
+        case .favorites:
+            let height = ThemeCardCell.height(forName: favoriteThemes[indexPath.item].name, columnWidth: width)
+            return CGSize(width: width, height: height)
         }
     }
 

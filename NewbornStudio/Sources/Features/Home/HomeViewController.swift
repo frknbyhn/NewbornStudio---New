@@ -161,7 +161,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return CGSize(width: collectionView.bounds.width - 44, height: 96)
         }
         let columnWidth = (collectionView.bounds.width - 44 - 14) / 2
-        return CGSize(width: columnWidth, height: 208)
+        let height = CategoryListCell.height(forName: categories[indexPath.item - 1].name, columnWidth: columnWidth)
+        return CGSize(width: columnWidth, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -3,6 +3,20 @@ import UIKit
 final class ThemeCardCell: UICollectionViewCell {
     static let reuseId = "ThemeCardCell"
 
+    private static let nameFont = Theme.Font.heading(14, weight: 600)
+    /// tintView + top/gap/bottom spacing, everything except the name label's own height.
+    private static let fixedHeight: CGFloat = 8 + 100 + 9 + 10
+    /// Approximates the label's available width (leading inset + gap + heart button + trailing
+    /// inset) — same conservative-is-fine reasoning as CategoryListCell.
+    private static let nameLabelWidthInset: CGFloat = 52
+
+    /// Lets sizeForItemAt size each cell to its own name instead of every cell paying for the
+    /// longest possible (2-line) name regardless of its own text.
+    static func height(forName name: String, columnWidth: CGFloat) -> CGFloat {
+        let lines = name.lineCount(font: nameFont, width: columnWidth - nameLabelWidthInset, maxLines: 2)
+        return fixedHeight + CGFloat(lines) * ceil(nameFont.lineHeight)
+    }
+
     private let tintView = UIView()
     private let imageView = UIImageView()
     private let spinner = UIActivityIndicatorView(style: .medium)
@@ -41,7 +55,7 @@ final class ThemeCardCell: UICollectionViewCell {
         spinner.color = Theme.Color.accentEnd
         spinner.translatesAutoresizingMaskIntoConstraints = false
 
-        nameLabel.font = Theme.Font.heading(14, weight: 600)
+        nameLabel.font = Self.nameFont
         nameLabel.numberOfLines = 2
         nameLabel.textColor = Theme.Color.textPrimaryAlt
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
