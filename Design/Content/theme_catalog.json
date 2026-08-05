@@ -2,6 +2,113 @@
   "_readme": "20 categories x 15+ styles for the Newborn Studio theme gallery. This is content planning only \u2014 no images generated yet. Each style has a short 'descriptor' rather than a full prompt; the full Wiro prompt is built at generation time from promptTemplate + category.mood + style.descriptor (see Design/Content/PROMPT_TEMPLATE.md for the exact formula and worked examples). This file is the seed data for the Firestore `ai_models` collection in Phase 6 \u2014 nothing here is wired into the app yet.",
   "categories": [
     {
+      "id": "milestones",
+      "name": "Milestones",
+      "mood": "warm, nostalgic, keepsake charm celebrating every milestone",
+      "styles": [
+        {
+          "id": "milestone-first-smile",
+          "name": "First Smile",
+          "descriptor": "captured mid-smile with soft golden light and gentle bokeh sparkles"
+        },
+        {
+          "id": "milestone-first-laugh",
+          "name": "First Laugh",
+          "descriptor": "caught laughing with warm sunlight rays and floating sparkle confetti"
+        },
+        {
+          "id": "milestone-first-bath",
+          "name": "First Bath",
+          "descriptor": "in a dreamy bubble-bath scene with soft pastel tones and a cozy towel"
+        },
+        {
+          "id": "milestone-first-outing",
+          "name": "First Outing",
+          "descriptor": "out for a stroll in a whimsical sunny park with soft bokeh"
+        },
+        {
+          "id": "milestone-first-studio-portrait",
+          "name": "First Studio Portrait",
+          "descriptor": "posed in a professional warm studio setup with a soft creamy backdrop"
+        },
+        {
+          "id": "milestone-holds-head-up",
+          "name": "Holds Head Up",
+          "descriptor": "propped up proudly against a soft pastel nursery backdrop with gentle light rays"
+        },
+        {
+          "id": "milestone-rolls-over",
+          "name": "Rolls Over",
+          "descriptor": "mid-roll on a playful pastel play mat with soft clouds and stars"
+        },
+        {
+          "id": "milestone-sits-up-unassisted",
+          "name": "Sits Up Unassisted",
+          "descriptor": "sitting proudly in a cozy, cushioned nursery corner"
+        },
+        {
+          "id": "milestone-crawls",
+          "name": "Crawls",
+          "descriptor": "crawling along a whimsical adventure trail with playful pastel clouds"
+        },
+        {
+          "id": "milestone-pulls-to-stand",
+          "name": "Pulls to Stand",
+          "descriptor": "standing tall with a warm golden-hour glow behind"
+        },
+        {
+          "id": "milestone-first-steps",
+          "name": "First Steps",
+          "descriptor": "taking first steps along a path of glowing stepping stones at sunset"
+        },
+        {
+          "id": "milestone-walks-independently",
+          "name": "Walks Independently",
+          "descriptor": "walking confidently through a joyful confetti-filled celebration"
+        },
+        {
+          "id": "milestone-coos-babbles",
+          "name": "Coos & Babbles",
+          "descriptor": "surrounded by soft floating musical notes on a dreamy pastel background"
+        },
+        {
+          "id": "milestone-says-first-word",
+          "name": "Says First Word",
+          "descriptor": "with gentle speech-bubble sparkles and a warm cozy background"
+        },
+        {
+          "id": "milestone-waves-bye-bye",
+          "name": "Waves Bye-Bye",
+          "descriptor": "waving gently against a soft golden sunset sky"
+        },
+        {
+          "id": "milestone-first-tooth",
+          "name": "First Tooth",
+          "descriptor": "showing off a first tooth with a playful sparkle and pastel background"
+        },
+        {
+          "id": "milestone-first-haircut",
+          "name": "First Haircut",
+          "descriptor": "seated in a charming little barbershop-style setup"
+        },
+        {
+          "id": "milestone-sleeps-through-night",
+          "name": "Sleeps Through the Night",
+          "descriptor": "sleeping soundly under a dreamy starry night sky"
+        },
+        {
+          "id": "milestone-first-holiday-season",
+          "name": "First Holiday Season",
+          "descriptor": "celebrating amid a cozy festive holiday scene with warm twinkling lights"
+        },
+        {
+          "id": "milestone-first-birthday",
+          "name": "First Birthday",
+          "descriptor": "celebrating a joyful birthday party with pastel balloons and confetti"
+        }
+      ]
+    },
+    {
       "id": "newborn-classics",
       "name": "Newborn Classics",
       "mood": "soft, minimal, timeless newborn studio aesthetic",
@@ -1638,113 +1745,6 @@
           "id": "aquarium-buddies",
           "name": "Aquarium Buddies",
           "descriptor": "in a fish-print outfit against an aquarium backdrop"
-        }
-      ]
-    },
-    {
-      "id": "milestones",
-      "name": "Milestones",
-      "mood": "warm, nostalgic, keepsake charm celebrating every milestone",
-      "styles": [
-        {
-          "id": "milestone-first-smile",
-          "name": "First Smile",
-          "descriptor": "captured mid-smile with soft golden light and gentle bokeh sparkles"
-        },
-        {
-          "id": "milestone-first-laugh",
-          "name": "First Laugh",
-          "descriptor": "caught laughing with warm sunlight rays and floating sparkle confetti"
-        },
-        {
-          "id": "milestone-first-bath",
-          "name": "First Bath",
-          "descriptor": "in a dreamy bubble-bath scene with soft pastel tones and a cozy towel"
-        },
-        {
-          "id": "milestone-first-outing",
-          "name": "First Outing",
-          "descriptor": "out for a stroll in a whimsical sunny park with soft bokeh"
-        },
-        {
-          "id": "milestone-first-studio-portrait",
-          "name": "First Studio Portrait",
-          "descriptor": "posed in a professional warm studio setup with a soft creamy backdrop"
-        },
-        {
-          "id": "milestone-holds-head-up",
-          "name": "Holds Head Up",
-          "descriptor": "propped up proudly against a soft pastel nursery backdrop with gentle light rays"
-        },
-        {
-          "id": "milestone-rolls-over",
-          "name": "Rolls Over",
-          "descriptor": "mid-roll on a playful pastel play mat with soft clouds and stars"
-        },
-        {
-          "id": "milestone-sits-up-unassisted",
-          "name": "Sits Up Unassisted",
-          "descriptor": "sitting proudly in a cozy, cushioned nursery corner"
-        },
-        {
-          "id": "milestone-crawls",
-          "name": "Crawls",
-          "descriptor": "crawling along a whimsical adventure trail with playful pastel clouds"
-        },
-        {
-          "id": "milestone-pulls-to-stand",
-          "name": "Pulls to Stand",
-          "descriptor": "standing tall with a warm golden-hour glow behind"
-        },
-        {
-          "id": "milestone-first-steps",
-          "name": "First Steps",
-          "descriptor": "taking first steps along a path of glowing stepping stones at sunset"
-        },
-        {
-          "id": "milestone-walks-independently",
-          "name": "Walks Independently",
-          "descriptor": "walking confidently through a joyful confetti-filled celebration"
-        },
-        {
-          "id": "milestone-coos-babbles",
-          "name": "Coos & Babbles",
-          "descriptor": "surrounded by soft floating musical notes on a dreamy pastel background"
-        },
-        {
-          "id": "milestone-says-first-word",
-          "name": "Says First Word",
-          "descriptor": "with gentle speech-bubble sparkles and a warm cozy background"
-        },
-        {
-          "id": "milestone-waves-bye-bye",
-          "name": "Waves Bye-Bye",
-          "descriptor": "waving gently against a soft golden sunset sky"
-        },
-        {
-          "id": "milestone-first-tooth",
-          "name": "First Tooth",
-          "descriptor": "showing off a first tooth with a playful sparkle and pastel background"
-        },
-        {
-          "id": "milestone-first-haircut",
-          "name": "First Haircut",
-          "descriptor": "seated in a charming little barbershop-style setup"
-        },
-        {
-          "id": "milestone-sleeps-through-night",
-          "name": "Sleeps Through the Night",
-          "descriptor": "sleeping soundly under a dreamy starry night sky"
-        },
-        {
-          "id": "milestone-first-holiday-season",
-          "name": "First Holiday Season",
-          "descriptor": "celebrating amid a cozy festive holiday scene with warm twinkling lights"
-        },
-        {
-          "id": "milestone-first-birthday",
-          "name": "First Birthday",
-          "descriptor": "celebrating a joyful birthday party with pastel balloons and confetti"
         }
       ]
     }
