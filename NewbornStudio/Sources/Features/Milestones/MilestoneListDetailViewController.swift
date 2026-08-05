@@ -104,20 +104,62 @@ final class MilestoneListDetailViewController: UIViewController {
                 if !group.isEmpty {
                     stack.addArrangedSubview(sectionHeader(group))
                 }
-                for milestone in milestones {
-                    stack.addArrangedSubview(milestoneRow(for: milestone, deletable: false))
-                }
+                stack.addArrangedSubview(timelineSection(milestones, deletable: false))
             }
         } else {
             if current.milestones.isEmpty {
                 stack.addArrangedSubview(emptyState())
             } else {
-                for milestone in current.milestones {
-                    stack.addArrangedSubview(milestoneRow(for: milestone, deletable: true))
-                }
+                stack.addArrangedSubview(timelineSection(current.milestones, deletable: true))
             }
             stack.addArrangedSubview(addMilestoneButton())
         }
+    }
+
+    /// One continuous dashed line behind a run of rows, from the first badge's center to the
+    /// last's — a per-row dashed segment (bounded by that row's own frame) left a gap at every
+    /// row boundary since the stack's inter-row spacing sits outside any single row's bounds.
+    private func timelineSection(_ milestones: [Milestone], deletable: Bool) -> UIView {
+        var rows: [UIView] = []
+        var badges: [UIView] = []
+        for milestone in milestones {
+            let (row, badge) = milestoneRow(for: milestone, deletable: deletable)
+            rows.append(row)
+            badges.append(badge)
+        }
+
+        let rowsStack = UIStackView(arrangedSubviews: rows)
+        rowsStack.axis = .vertical
+        rowsStack.spacing = 14
+        rowsStack.translatesAutoresizingMaskIntoConstraints = false
+
+        let container = UIView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+
+        // rowsStack (which the badges live inside) must already be in the hierarchy before any
+        // constraint referencing a badge can be activated — otherwise the badge and dashedLine
+        // share no common ancestor yet and activation crashes.
+        container.addSubview(rowsStack)
+        NSLayoutConstraint.activate([
+            rowsStack.topAnchor.constraint(equalTo: container.topAnchor),
+            rowsStack.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            rowsStack.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            rowsStack.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+        ])
+
+        if let first = badges.first, let last = badges.last, badges.count > 1 {
+            let dashedLine = DashedLineView()
+            dashedLine.translatesAutoresizingMaskIntoConstraints = false
+            // Inserted behind rowsStack so the (opaque) badges and cards draw on top of it.
+            container.insertSubview(dashedLine, at: 0)
+            NSLayoutConstraint.activate([
+                dashedLine.centerXAnchor.constraint(equalTo: first.centerXAnchor),
+                dashedLine.widthAnchor.constraint(equalToConstant: 2),
+                dashedLine.topAnchor.constraint(equalTo: first.centerYAnchor),
+                dashedLine.bottomAnchor.constraint(equalTo: last.centerYAnchor)
+            ])
+        }
+        return container
     }
 
     private func sectionHeader(_ text: String) -> UIView {
@@ -133,16 +175,14 @@ final class MilestoneListDetailViewController: UIViewController {
     /// dashed cream "+" when pending), each connected to a white card with the milestone's title
     /// and a colored icon tile. The mockup's card date field assumed a real captured date/photo,
     /// which we don't track yet — using an honest static status label instead of fabricating one.
-    private func milestoneRow(for milestone: Milestone, deletable: Bool) -> UIView {
+    /// The dashed line itself is drawn once per run of rows by `timelineSection`, not here — the
+    /// badge view is returned so the caller can anchor that line to it.
+    private func milestoneRow(for milestone: Milestone, deletable: Bool) -> (row: UIView, badge: UIView) {
         let isDone = milestone.state == .done
 
         let badgeColumn = UIView()
         badgeColumn.translatesAutoresizingMaskIntoConstraints = false
         badgeColumn.widthAnchor.constraint(equalToConstant: 56).isActive = true
-
-        let dashedLine = DashedLineView()
-        dashedLine.translatesAutoresizingMaskIntoConstraints = false
-        badgeColumn.addSubview(dashedLine)
 
         let badge = UIView()
         badge.backgroundColor = isDone ? UIColor(hex: 0xF6DCE2) : UIColor(hex: 0xFBF4EF)
@@ -160,11 +200,6 @@ final class MilestoneListDetailViewController: UIViewController {
         badge.addSubview(badgeIcon)
 
         NSLayoutConstraint.activate([
-            dashedLine.centerXAnchor.constraint(equalTo: badgeColumn.centerXAnchor),
-            dashedLine.topAnchor.constraint(equalTo: badgeColumn.topAnchor),
-            dashedLine.bottomAnchor.constraint(equalTo: badgeColumn.bottomAnchor),
-            dashedLine.widthAnchor.constraint(equalToConstant: 2),
-
             badge.centerXAnchor.constraint(equalTo: badgeColumn.centerXAnchor),
             badge.topAnchor.constraint(equalTo: badgeColumn.topAnchor, constant: 4),
             badge.widthAnchor.constraint(equalToConstant: 54),
@@ -240,13 +275,8 @@ final class MilestoneListDetailViewController: UIViewController {
         let row = UIStackView(arrangedSubviews: [badgeColumn, card])
         row.axis = .horizontal
         row.spacing = 16
-        // .fill (not .top) so badgeColumn stretches to the card's full height — the dashed line
-        // is pinned to badgeColumn's own top/bottom, so with .top it collapsed to the badge's
-        // height alone and never reached down toward the next row.
-        row.alignment = .fill
-        row.isLayoutMarginsRelativeArrangement = true
-        row.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 14, right: 0)
-        return row
+        row.alignment = .top
+        return (row, badge)
     }
 
     private func emptyState() -> UIView {
