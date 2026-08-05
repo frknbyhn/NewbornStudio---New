@@ -201,7 +201,7 @@ final class MilestoneListDetailViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             badge.centerXAnchor.constraint(equalTo: badgeColumn.centerXAnchor),
-            badge.topAnchor.constraint(equalTo: badgeColumn.topAnchor, constant: 4),
+            badge.centerYAnchor.constraint(equalTo: badgeColumn.centerYAnchor),
             badge.widthAnchor.constraint(equalToConstant: 54),
             badge.heightAnchor.constraint(equalToConstant: 54),
             badgeIcon.centerXAnchor.constraint(equalTo: badge.centerXAnchor),
@@ -275,7 +275,9 @@ final class MilestoneListDetailViewController: UIViewController {
         let row = UIStackView(arrangedSubviews: [badgeColumn, card])
         row.axis = .horizontal
         row.spacing = 16
-        row.alignment = .top
+        // .fill stretches badgeColumn to the card's full height so the badge's centerY
+        // constraint actually centers it against the card, not just against its own column.
+        row.alignment = .fill
         return (row, badge)
     }
 
