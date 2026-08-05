@@ -275,11 +275,6 @@ final class ResultViewController: UIViewController {
         actions.axis = .horizontal
         actions.distribution = .equalSpacing
 
-        // Reached via Home's Milestones category (not MilestoneCaptureViewController, which
-        // already saves on close) — this result auto-saves onto the matching standard milestone
-        // once it loads (see saveToPendingMilestoneIfNeeded); this link only appears once that's
-        // actually happened, so it's hidden here and revealed there — never shown at all when
-        // the milestone was already captured before this generation.
         var config = UIButton.Configuration.plain()
         config.attributedTitle = AttributedString("Go to Milestone Gallery", attributes: .init([.font: Theme.Font.heading(14, weight: 700)]))
         config.image = UIImage(systemName: "arrow.right")
@@ -365,10 +360,6 @@ final class ResultViewController: UIViewController {
         present(UIActivityViewController(activityItems: [resultImage], applicationActivities: nil), animated: true)
     }
 
-    /// theme.id doubles as a milestone id for every style in the "Milestones" home category
-    /// (Milestone.swift's standard list ids match theme_catalog.json's milestone-* style ids
-    /// exactly) — nil here for every other theme, and for the milestone-capture flow itself
-    /// (milestoneContext != nil), which already saves its result on close.
     private func matchingUncapturedMilestone() -> Milestone? {
         guard milestoneContext == nil else { return nil }
         guard let standardList = MilestoneStore.shared.lists.first(where: { $0.isStandard }) else { return nil }
@@ -376,9 +367,6 @@ final class ResultViewController: UIViewController {
         return milestone.state == .done ? nil : milestone
     }
 
-    /// No tap required — reaching this screen via a Milestones-category style is itself the
-    /// user's intent to capture that milestone, so this saves as soon as the result is in hand
-    /// and tells them it happened, rather than making them find and press a separate button.
     private func saveToPendingMilestoneIfNeeded(_ image: UIImage) {
         guard let milestone = pendingMilestone else { return }
         MilestoneStore.shared.capture(photo: image, forMilestoneId: milestone.id, inListId: "standard")

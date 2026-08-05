@@ -141,6 +141,19 @@ final class MilestoneCaptureViewController: UIViewController {
         dropStack.addArrangedSubview(dropTitle)
         dropStack.addArrangedSubview(dropSubtitle)
         dropZone.addSubview(dropStack)
+        
+        let tipsTitle = UILabel()
+        tipsTitle.text = "For the best results"
+        tipsTitle.font = Theme.Font.heading(14, weight: 700)
+        tipsTitle.textColor = Theme.Color.textSecondaryAlt
+
+        let tips = UIStackView(arrangedSubviews: [
+            tipRow(icon: "sun.max.fill", iconColor: Theme.Color.coin, iconBg: Theme.Color.coinBackground, text: "Bright, even lighting"),
+            tipRow(icon: "face.smiling.fill", iconColor: Theme.Color.success, iconBg: Theme.Color.successBackground, text: "Face clearly visible"),
+            tipRow(icon: "nosign", iconColor: Theme.Color.purpleAccent, iconBg: Theme.Color.purpleBackground, text: "No filters or heavy edits")
+        ])
+        tips.axis = .vertical
+        tips.spacing = 12
 
         previewImageView.contentMode = .scaleAspectFill
         previewImageView.clipsToBounds = true
@@ -165,7 +178,7 @@ final class MilestoneCaptureViewController: UIViewController {
         submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
 
-        var arranged: [UIView] = [dropZone]
+        var arranged: [UIView] = [dropZone, tips]
         var promptCard: UIView?
         if curatedPrompt == nil {
             let promptTitle = UILabel()
@@ -261,6 +274,35 @@ final class MilestoneCaptureViewController: UIViewController {
         ])
     }
 
+    private func tipRow(icon: String, iconColor: UIColor, iconBg: UIColor, text: String) -> UIView {
+        let bg = UIView()
+        bg.backgroundColor = iconBg
+        bg.layer.cornerRadius = 10
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        bg.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        bg.heightAnchor.constraint(equalToConstant: 34).isActive = true
+
+        let iconView = UIImageView(image: UIImage(systemName: icon))
+        iconView.tintColor = iconColor
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        bg.addSubview(iconView)
+        NSLayoutConstraint.activate([
+            iconView.centerXAnchor.constraint(equalTo: bg.centerXAnchor),
+            iconView.centerYAnchor.constraint(equalTo: bg.centerYAnchor)
+        ])
+
+        let label = UILabel()
+        label.text = text
+        label.font = Theme.Font.body(14, weight: 600)
+        label.textColor = Theme.Color.textSecondaryAlt
+
+        let row = UIStackView(arrangedSubviews: [bg, label])
+        row.axis = .horizontal
+        row.spacing = 12
+        row.alignment = .center
+        return row
+    }
+
     private func updatePreview() {
         guard let pickedImage else {
             previewImageView.isHidden = true
@@ -276,8 +318,6 @@ final class MilestoneCaptureViewController: UIViewController {
         updateSubmitState()
     }
 
-    /// For a custom milestone (no curated prompt) the title also reflects whether the optional
-    /// prompt field has text — standard milestones' title is static, set once at construction.
     private func updateSubmitState() {
         if curatedPrompt == nil {
             let hasPrompt = !promptTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

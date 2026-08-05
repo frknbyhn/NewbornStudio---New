@@ -109,6 +109,78 @@
       ]
     },
     {
+      "id": "age-milestones",
+      "name": "Milestones",
+      "mood": "warm, documentary-style monthly growth-journal charm",
+      "styles": [
+        {
+          "id": "age-one-week",
+          "name": "One Week",
+          "descriptor": "lying peacefully asleep on a soft cream blanket beside a wooden 'ONE WEEK' milestone marker and a few dried flowers, soft natural window light, minimalist newborn documentary style"
+        },
+        {
+          "id": "age-one-month",
+          "name": "One Month",
+          "descriptor": "lying calmly on a soft cream blanket beside a wooden '1 MONTH' milestone marker and a few dried flowers, soft natural light, clean growth-journal style"
+        },
+        {
+          "id": "age-two-months",
+          "name": "Two Months",
+          "descriptor": "lying on a soft cream blanket, alert and curious, beside a wooden '2 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-three-months",
+          "name": "Three Months",
+          "descriptor": "lying on a soft cream blanket during gentle tummy time beside a wooden '3 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-four-months",
+          "name": "Four Months",
+          "descriptor": "propped up on tiny arms during tummy time beside a wooden '4 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-five-months",
+          "name": "Five Months",
+          "descriptor": "lying on a soft cream blanket reaching toward a wooden '5 MONTHS' milestone marker surrounded by a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-six-months",
+          "name": "Six Months",
+          "descriptor": "sitting propped up on soft cushions beside a wooden '6 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-seven-months",
+          "name": "Seven Months",
+          "descriptor": "sitting upright with light support beside a wooden '7 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-eight-months",
+          "name": "Eight Months",
+          "descriptor": "sitting confidently beside a wooden '8 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-nine-months",
+          "name": "Nine Months",
+          "descriptor": "sitting independently, reaching for a wooden '9 MONTHS' milestone marker surrounded by a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-ten-months",
+          "name": "Ten Months",
+          "descriptor": "on all fours beside a wooden '10 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-eleven-months",
+          "name": "Eleven Months",
+          "descriptor": "pulling up to stand beside a wooden '11 MONTHS' milestone marker and a few dried flowers, soft natural light"
+        },
+        {
+          "id": "age-one-year",
+          "name": "One Year",
+          "descriptor": "standing proudly beside a wooden '1 YEAR' milestone marker amid a small first-birthday-style arrangement of dried flowers and a single balloon, soft natural light, joyful celebratory tone"
+        }
+      ]
+    },
+    {
       "id": "newborn-classics",
       "name": "Newborn Classics",
       "mood": "soft, minimal, timeless newborn studio aesthetic",
