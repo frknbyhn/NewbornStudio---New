@@ -123,9 +123,6 @@ final class MilestoneListDetailViewController: UIViewController {
         }
     }
 
-    /// One continuous dashed line behind a run of rows, from the first badge's center to the
-    /// last's — a per-row dashed segment (bounded by that row's own frame) left a gap at every
-    /// row boundary since the stack's inter-row spacing sits outside any single row's bounds.
     private func timelineSection(_ milestones: [Milestone], deletable: Bool) -> UIView {
         var rows: [UIView] = []
         var badges: [UIView] = []
@@ -177,15 +174,6 @@ final class MilestoneListDetailViewController: UIViewController {
         return label
     }
 
-    /// Matches the Milestone Tracker mockup (Design/Newborn Studio.dc.html, section 7): a dashed
-    /// timeline running behind circular badges, each connected to a white card with the
-    /// milestone's title and a colored icon tile. Done is a solid green circle with a large
-    /// checkmark filling it — not the captured photo itself; that's for the detail screen
-    /// (designed later), this row just needs an at-a-glance done/pending state. The mockup's
-    /// card date field assumed a real captured date, which we don't track yet — using an honest
-    /// static status label instead of fabricating one. The dashed line itself is drawn once per
-    /// run of rows by `timelineSection`, not here — the badge view is returned so the caller can
-    /// anchor that line to it.
     private func milestoneRow(for milestone: Milestone, deletable: Bool) -> (row: UIView, badge: UIView) {
         let isDone = milestone.state == .done
 
@@ -222,6 +210,21 @@ final class MilestoneListDetailViewController: UIViewController {
             badge.widthAnchor.constraint(equalToConstant: 54),
             badge.heightAnchor.constraint(equalToConstant: 54)
         ])
+
+        // The "+" badge itself reads as a tappable add button — people tap it directly instead
+        // of (or as well as) the card, so it needs its own capture control, not just the card's.
+        if !isDone {
+            let badgeCaptureControl = MilestoneCaptureControl(milestone: milestone)
+            badgeCaptureControl.translatesAutoresizingMaskIntoConstraints = false
+            badgeCaptureControl.addTarget(self, action: #selector(captureTapped(_:)), for: .touchUpInside)
+            badgeColumn.addSubview(badgeCaptureControl)
+            NSLayoutConstraint.activate([
+                badgeCaptureControl.centerXAnchor.constraint(equalTo: badge.centerXAnchor),
+                badgeCaptureControl.centerYAnchor.constraint(equalTo: badge.centerYAnchor),
+                badgeCaptureControl.widthAnchor.constraint(equalToConstant: 54),
+                badgeCaptureControl.heightAnchor.constraint(equalToConstant: 54)
+            ])
+        }
 
         let title = UILabel()
         title.text = milestone.title

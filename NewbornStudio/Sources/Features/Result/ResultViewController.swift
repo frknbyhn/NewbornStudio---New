@@ -13,6 +13,7 @@ final class ResultViewController: UIViewController {
     private let scrollView = UIScrollView()
     private var imageAspectConstraint: NSLayoutConstraint?
     private let milestoneContext: MilestoneCaptureContext?
+    private var saveToMilestoneView: UIView?
 
     /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
     /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
@@ -261,10 +262,19 @@ final class ResultViewController: UIViewController {
     }
 
     private func setUpActions(in content: UIView) {
-        let actions = UIStackView(arrangedSubviews: [
+        var buttons = [
             actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
             actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
-        ])
+        ]
+        // Reached via Home's Milestones category (not MilestoneCaptureViewController, which
+        // already saves on close) — offer to save this result straight onto the matching
+        // standard milestone, but only while it isn't already captured.
+        if matchingUncapturedMilestone() != nil {
+            let milestoneButton = actionButton(icon: "star.circle.fill", title: "Milestone", action: #selector(saveToMilestoneTapped))
+            buttons.append(milestoneButton)
+            saveToMilestoneView = milestoneButton
+        }
+        let actions = UIStackView(arrangedSubviews: buttons)
         actions.axis = .horizontal
         actions.distribution = .equalSpacing
         actions.translatesAutoresizingMaskIntoConstraints = false
@@ -336,6 +346,25 @@ final class ResultViewController: UIViewController {
         guard let resultImage else { return }
         HapticFeedback.light()
         present(UIActivityViewController(activityItems: [resultImage], applicationActivities: nil), animated: true)
+    }
+
+    /// theme.id doubles as a milestone id for every style in the "Milestones" home category
+    /// (Milestone.swift's standard list ids match theme_catalog.json's milestone-* style ids
+    /// exactly) — nil here for every other theme, and for the milestone-capture flow itself
+    /// (milestoneContext != nil), which already saves its result on close.
+    private func matchingUncapturedMilestone() -> Milestone? {
+        guard milestoneContext == nil else { return nil }
+        guard let standardList = MilestoneStore.shared.lists.first(where: { $0.isStandard }) else { return nil }
+        guard let milestone = standardList.milestones.first(where: { $0.id == theme.id }) else { return nil }
+        return milestone.state == .done ? nil : milestone
+    }
+
+    @objc private func saveToMilestoneTapped() {
+        guard let milestone = matchingUncapturedMilestone(), let resultImage else { return }
+        HapticFeedback.success()
+        MilestoneStore.shared.capture(photo: resultImage, forMilestoneId: milestone.id, inListId: "standard")
+        saveToMilestoneView?.removeFromSuperview()
+        saveToMilestoneView = nil
     }
 
     @objc private func submitEditTapped() {
