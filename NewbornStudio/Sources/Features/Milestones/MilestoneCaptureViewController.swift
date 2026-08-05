@@ -1,17 +1,24 @@
 import UIKit
 
-/// Captures a milestone: just pick a photo. Standard milestones carry a curated `aiPrompt`, so
-/// picking a photo there always runs the same generation scenario as "Create Your Own Style"
-/// (`ai_models/custom-style` + editInstruction) — the result is shown on the normal
-/// ResultViewController, and closing it (the X button) saves that result onto this milestone and
-/// returns here instead of the default popToRoot (see ResultViewController.closeTapped).
-/// Custom-list milestones have no curated prompt, so there's nothing to generate from — the
-/// picked photo is saved directly, no Wiro call, no credits spent.
+/// Captures a milestone: pick a photo, then either generate an AI portrait from it or save it
+/// as-is, depending on where the prompt comes from.
+///
+/// - Standard milestones carry a curated `aiPrompt` — no prompt UI at all, picking a photo
+///   always generates using that prompt (nothing external to ask the user for).
+/// - Custom-list milestones have no curated prompt, so an optional prompt textview is shown: a
+///   filled-in prompt runs the same generation scenario as "Create Your Own Style"
+///   (`ai_models/custom-style` + editInstruction, 1 credit); left empty, the picked photo is
+///   just saved directly — no Wiro call, no credits spent.
+///
+/// Either way, a generation's result is shown on the normal ResultViewController, and closing it
+/// (the X button) saves that result onto this milestone and returns here instead of the default
+/// popToRoot (see ResultViewController.closeTapped).
 final class MilestoneCaptureViewController: UIViewController {
     private static let customTheme = ThemeCard(id: "custom-style", name: "Custom Style", tint: Theme.Color.purpleBackground, previewImageUrl: nil)
 
     private let milestone: Milestone
     private let listId: String
+    private let curatedPrompt: String?
 
     private var pickedImage: UIImage? {
         didSet { updatePreview() }
@@ -20,15 +27,18 @@ final class MilestoneCaptureViewController: UIViewController {
     private let dropStack = UIStackView()
     private let previewImageView = UIImageView()
     private var changePhotoLabel: UIView!
+    private let promptTextView = UITextView()
+    private let promptPlaceholder = UILabel()
     private let submitButton: GradientPillButton
 
     init(milestone: Milestone, listId: String) {
         self.milestone = milestone
         self.listId = listId
-        let hasPrompt = milestone.aiPrompt?.isEmpty == false
+        let curatedPrompt = milestone.aiPrompt?.isEmpty == false ? milestone.aiPrompt : nil
+        self.curatedPrompt = curatedPrompt
         self.submitButton = GradientPillButton(
-            title: hasPrompt ? "Generate Portrait" : "Save Photo",
-            icon: UIImage(systemName: hasPrompt ? "sparkles" : "checkmark.circle.fill")
+            title: curatedPrompt != nil ? "Generate Portrait" : "Save Photo",
+            icon: UIImage(systemName: curatedPrompt != nil ? "sparkles" : "checkmark.circle.fill")
         )
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -42,6 +52,11 @@ final class MilestoneCaptureViewController: UIViewController {
         setUpNavBar()
         setUpContent()
         updateSubmitState()
+
+        if curatedPrompt == nil {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tap)
+        }
     }
 
     private var navBarBottom: NSLayoutYAxisAnchor!
@@ -81,6 +96,11 @@ final class MilestoneCaptureViewController: UIViewController {
     }
 
     private func setUpContent() {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.showsVerticalScrollIndicator = false
+        view.addSubview(scroll)
+
         dropZone.backgroundColor = UIColor(hex: 0xFFF4F1)
         dropZone.layer.cornerRadius = 26
         dropZone.layer.borderWidth = 2
@@ -145,20 +165,83 @@ final class MilestoneCaptureViewController: UIViewController {
         submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
 
-        let content = UIStackView(arrangedSubviews: [dropZone, submitButton])
+        var arranged: [UIView] = [dropZone]
+        var promptCard: UIView?
+        if curatedPrompt == nil {
+            let promptTitle = UILabel()
+            promptTitle.text = "Want an AI touch-up? (optional)"
+            promptTitle.font = Theme.Font.heading(14, weight: 700)
+            promptTitle.textColor = Theme.Color.textSecondaryAlt
+
+            let card = UIView()
+            card.backgroundColor = .white
+            card.layer.cornerRadius = 18
+            card.layer.borderWidth = 1.5
+            card.layer.borderColor = UIColor(hex: 0xEEE3DB).cgColor
+            card.translatesAutoresizingMaskIntoConstraints = false
+
+            promptTextView.backgroundColor = .clear
+            promptTextView.textColor = Theme.Color.textPrimaryAlt
+            promptTextView.tintColor = Theme.Color.accentEnd
+            promptTextView.font = Theme.Font.body(14.5, weight: 600)
+            promptTextView.isScrollEnabled = false
+            promptTextView.textContainerInset = .zero
+            promptTextView.textContainer.lineFragmentPadding = 0
+            promptTextView.delegate = self
+            promptTextView.translatesAutoresizingMaskIntoConstraints = false
+
+            promptPlaceholder.text = "e.g. \u{201c}Add soft golden light and floating sparkles\u{201d} — leave blank to just save the photo"
+            promptPlaceholder.font = Theme.Font.body(14.5, weight: 600)
+            promptPlaceholder.textColor = UIColor(hex: 0xB4A6A2)
+            promptPlaceholder.numberOfLines = 0
+            promptPlaceholder.translatesAutoresizingMaskIntoConstraints = false
+
+            card.addSubview(promptTextView)
+            card.addSubview(promptPlaceholder)
+            NSLayoutConstraint.activate([
+                card.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
+                promptTextView.topAnchor.constraint(equalTo: card.topAnchor, constant: 14),
+                promptTextView.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 14),
+                promptTextView.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -14),
+                promptTextView.bottomAnchor.constraint(lessThanOrEqualTo: card.bottomAnchor, constant: -14),
+                promptPlaceholder.topAnchor.constraint(equalTo: promptTextView.topAnchor),
+                promptPlaceholder.leadingAnchor.constraint(equalTo: promptTextView.leadingAnchor),
+                promptPlaceholder.trailingAnchor.constraint(equalTo: promptTextView.trailingAnchor)
+            ])
+
+            arranged.append(promptTitle)
+            arranged.append(card)
+            promptCard = card
+        }
+        arranged.append(submitButton)
+
+        let content = UIStackView(arrangedSubviews: arranged)
         content.axis = .vertical
-        content.spacing = 26
+        content.spacing = 16
+        if let promptCard {
+            content.setCustomSpacing(10, after: arranged[1])
+            content.setCustomSpacing(26, after: promptCard)
+        } else {
+            content.setCustomSpacing(26, after: dropZone)
+        }
         content.isLayoutMarginsRelativeArrangement = true
         content.layoutMargins = UIEdgeInsets(top: 14, left: 22, bottom: 28, right: 22)
         content.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(content)
+        scroll.addSubview(content)
 
         NSLayoutConstraint.activate([
-            content.topAnchor.constraint(equalTo: navBarBottom, constant: 10),
-            content.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            content.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scroll.topAnchor.constraint(equalTo: navBarBottom, constant: 10),
+            scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scroll.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
-            dropZone.heightAnchor.constraint(equalToConstant: 260),
+            content.topAnchor.constraint(equalTo: scroll.topAnchor),
+            content.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
+            content.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
+            content.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
+            content.widthAnchor.constraint(equalTo: scroll.widthAnchor),
+
+            dropZone.heightAnchor.constraint(equalToConstant: 220),
             dropStack.topAnchor.constraint(equalTo: dropZone.topAnchor),
             dropStack.leadingAnchor.constraint(equalTo: dropZone.leadingAnchor),
             dropStack.trailingAnchor.constraint(equalTo: dropZone.trailingAnchor),
@@ -193,10 +276,18 @@ final class MilestoneCaptureViewController: UIViewController {
         updateSubmitState()
     }
 
+    /// For a custom milestone (no curated prompt) the title also reflects whether the optional
+    /// prompt field has text — standard milestones' title is static, set once at construction.
     private func updateSubmitState() {
+        if curatedPrompt == nil {
+            let hasPrompt = !promptTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            submitButton.title = hasPrompt ? "Generate & Save" : "Save Photo"
+        }
         submitButton.isEnabled = pickedImage != nil
         submitButton.alpha = submitButton.isEnabled ? 1 : 0.5
     }
+
+    @objc private func dismissKeyboard() { view.endEditing(true) }
 
     @objc private func backTapped() {
         navigationController?.popViewController(animated: true)
@@ -226,8 +317,10 @@ final class MilestoneCaptureViewController: UIViewController {
     @objc private func submitTapped() {
         guard let pickedImage else { return }
         HapticFeedback.light()
+        view.endEditing(true)
 
-        guard let prompt = milestone.aiPrompt, !prompt.isEmpty else {
+        let prompt = curatedPrompt ?? promptTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !prompt.isEmpty else {
             MilestoneStore.shared.capture(photo: pickedImage, forMilestoneId: milestone.id, inListId: listId)
             HapticFeedback.success()
             navigationController?.popViewController(animated: true)
@@ -254,5 +347,12 @@ extension MilestoneCaptureViewController: UIImagePickerControllerDelegate, UINav
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
+    }
+}
+
+extension MilestoneCaptureViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        promptPlaceholder.isHidden = !textView.text.isEmpty
+        updateSubmitState()
     }
 }
