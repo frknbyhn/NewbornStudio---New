@@ -65,7 +65,7 @@ struct MilestoneList: Identifiable {
 
     static let standard = MilestoneList(
         id: "standard",
-        name: "Standard Milestones",
+        name: "Firsts",
         isStandard: true,
         milestones: [
             // Ids match the "Milestones" theme_catalog.json category's style ids exactly — lets
