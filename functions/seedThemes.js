@@ -37,7 +37,7 @@ exports.seedThemes = onRequest({ secrets: [SEED_TOKEN], timeoutSeconds: 120 }, a
   for (const category of catalog.categories) {
     let batch = db.batch();
     let inBatch = 0;
-    for (const style of category.styles) {
+    for (const [styleIndex, style] of category.styles.entries()) {
       const ref = db.collection("ai_models").doc(style.id);
       // merge: true — a plain .set() here would silently wipe fields this doc has picked up
       // since the catalog was first seeded (previewImageUrl, most notably) since fixed the
@@ -51,6 +51,9 @@ exports.seedThemes = onRequest({ secrets: [SEED_TOKEN], timeoutSeconds: 120 }, a
         prompt: buildPrompt({ styleName: style.name, descriptor: style.descriptor, mood: category.mood }),
         creditCost: 1,
         aspectRatio: "3:4",
+        // Without this, fetchThemes(categoryId:) has no orderBy and Firestore falls back to
+        // document-ID order — alphabetical by styleId, not the catalog's authored sequence.
+        position: styleIndex,
       }, { merge: true });
       inBatch += 1;
       written += 1;

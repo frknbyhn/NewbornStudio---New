@@ -34,7 +34,10 @@ enum ThemeService {
     static func fetchThemes(categoryId: String?, limit: Int = 60, completion: @escaping (Result<[ThemeCard], Error>) -> Void) {
         var query: Query = Firestore.firestore().collection("ai_models")
         if let categoryId {
-            query = query.whereField("categoryId", isEqualTo: categoryId)
+            // Ordered only within a single category — "position" is per-category (index within
+            // that category's styles in theme_catalog.json), not comparable across categories,
+            // so the unfiltered "All" sample below intentionally leaves this unordered.
+            query = query.whereField("categoryId", isEqualTo: categoryId).order(by: "position")
         }
         query.limit(to: limit).getDocuments { snapshot, error in
             if let error {
