@@ -11,15 +11,18 @@ enum FaceDetectionService {
     }
 
     static func detectFaceCount(in image: UIImage, completion: @escaping (Outcome) -> Void) {
+        // Redrawn on the calling thread (expected to be main, since every call site is a picker
+        // delegate callback) into a plain 8-bit sRGB bitmap with orientation baked in as .up —
+        // sidesteps the wide-gamut/HEIC CGImage format Vision's request handler rejects outright,
+        // and keeps UIKit's image drawing off a background thread.
+        guard let cgImage = normalizedCGImage(from: image, maxDimension: 1600) else {
+            // Nothing to redraw (degenerate zero-size image) — not evidence one way or the
+            // other about a face, so don't block on it.
+            DispatchQueue.main.async { completion(.ok) }
+            return
+        }
+
         DispatchQueue.global(qos: .userInitiated).async {
-            // Photos from the library often come back as wide-gamut/HEIC CGImages (extended-range
-            // components) that Vision's request handler rejects outright — redrawing into a plain
-            // 8-bit sRGB bitmap sidesteps that, and also bakes in imageOrientation so Vision always
-            // sees an .up-oriented image regardless of how the photo was captured.
-            guard let cgImage = normalizedCGImage(from: image) else {
-                DispatchQueue.main.async { completion(.noFace) }
-                return
-            }
             let request = VNDetectFaceRectanglesRequest()
             let handler = VNImageRequestHandler(cgImage: cgImage, orientation: .up, options: [:])
             do {
@@ -33,13 +36,17 @@ enum FaceDetectionService {
                     }
                 }
             } catch {
-                print("FaceDetectionService: Vision request failed: \(error)")
-                DispatchQueue.main.async { completion(.noFace) }
+                // A Vision processing failure is evidence the *check* couldn't run, not that
+                // the photo has no face — the previous version blocked on this exact case,
+                // which meant a purely internal glitch could reject a perfectly good photo.
+                // Fail open: let the photo through rather than punish the user for our error.
+                print("FaceDetectionService: Vision request failed, allowing photo through: \(error)")
+                DispatchQueue.main.async { completion(.ok) }
             }
         }
     }
 
-    private static func normalizedCGImage(from image: UIImage, maxDimension: CGFloat = 1600) -> CGImage? {
+    private static func normalizedCGImage(from image: UIImage, maxDimension: CGFloat) -> CGImage? {
         let size = image.size
         guard size.width > 0, size.height > 0 else { return nil }
         let scale = min(1, maxDimension / max(size.width, size.height))
