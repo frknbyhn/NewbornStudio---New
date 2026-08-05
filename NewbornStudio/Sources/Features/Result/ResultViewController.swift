@@ -13,7 +13,11 @@ final class ResultViewController: UIViewController {
     private let scrollView = UIScrollView()
     private var imageAspectConstraint: NSLayoutConstraint?
     private let milestoneContext: MilestoneCaptureContext?
-    private var saveToMilestoneView: UIView?
+    /// Resolved once at load time — the standard milestone this result should auto-save onto,
+    /// if any (nil for every theme that isn't a Milestones-category style, and for the
+    /// milestone-capture flow itself, which already saves its result on close).
+    private var pendingMilestone: Milestone?
+    private let milestoneGalleryLink = UIButton(type: .system)
 
     /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
     /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
@@ -38,6 +42,7 @@ final class ResultViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeTapped))
         navigationItem.rightBarButtonItem?.tintColor = .white
         view.backgroundColor = UIColor(hex: 0x2E2530)
+        pendingMilestone = matchingUncapturedMilestone()
         setUpScrollContent()
         loadResultImage()
 
@@ -241,6 +246,7 @@ final class ResultViewController: UIViewController {
                     self.resultImage = image
                     self.resultImageView.image = image
                     self.applyRealAspectRatio(for: image)
+                    self.saveToPendingMilestoneIfNeeded(image)
                 } else {
                     // Real network failure state, not a silent blank — matches the offline-state rule.
                     print("Failed to load result image: \(error?.localizedDescription ?? "unknown error")")
@@ -262,28 +268,39 @@ final class ResultViewController: UIViewController {
     }
 
     private func setUpActions(in content: UIView) {
-        var buttons = [
+        let actions = UIStackView(arrangedSubviews: [
             actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
             actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
-        ]
-        // Reached via Home's Milestones category (not MilestoneCaptureViewController, which
-        // already saves on close) — offer to save this result straight onto the matching
-        // standard milestone, but only while it isn't already captured.
-        if matchingUncapturedMilestone() != nil {
-            let milestoneButton = actionButton(icon: "star.circle.fill", title: "Milestone", action: #selector(saveToMilestoneTapped))
-            buttons.append(milestoneButton)
-            saveToMilestoneView = milestoneButton
-        }
-        let actions = UIStackView(arrangedSubviews: buttons)
+        ])
         actions.axis = .horizontal
         actions.distribution = .equalSpacing
-        actions.translatesAutoresizingMaskIntoConstraints = false
-        content.addSubview(actions)
+
+        // Reached via Home's Milestones category (not MilestoneCaptureViewController, which
+        // already saves on close) — this result auto-saves onto the matching standard milestone
+        // once it loads (see saveToPendingMilestoneIfNeeded); this link only appears once that's
+        // actually happened, so it's hidden here and revealed there — never shown at all when
+        // the milestone was already captured before this generation.
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = AttributedString("Go to Milestone Gallery", attributes: .init([.font: Theme.Font.heading(14, weight: 700)]))
+        config.image = UIImage(systemName: "arrow.right")
+        config.imagePlacement = .trailing
+        config.imagePadding = 6
+        config.baseForegroundColor = Theme.Color.accentEnd
+        milestoneGalleryLink.configuration = config
+        milestoneGalleryLink.addTarget(self, action: #selector(goToMilestoneGalleryTapped), for: .touchUpInside)
+        milestoneGalleryLink.isHidden = true
+
+        let stack = UIStackView(arrangedSubviews: [actions, milestoneGalleryLink])
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = 16
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        content.addSubview(stack)
 
         NSLayoutConstraint.activate([
-            actions.topAnchor.constraint(equalTo: editCard.bottomAnchor, constant: 20),
-            actions.centerXAnchor.constraint(equalTo: content.centerXAnchor),
-            actions.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -30)
+            stack.topAnchor.constraint(equalTo: editCard.bottomAnchor, constant: 20),
+            stack.centerXAnchor.constraint(equalTo: content.centerXAnchor),
+            stack.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -30)
         ])
     }
 
@@ -359,12 +376,26 @@ final class ResultViewController: UIViewController {
         return milestone.state == .done ? nil : milestone
     }
 
-    @objc private func saveToMilestoneTapped() {
-        guard let milestone = matchingUncapturedMilestone(), let resultImage else { return }
+    /// No tap required — reaching this screen via a Milestones-category style is itself the
+    /// user's intent to capture that milestone, so this saves as soon as the result is in hand
+    /// and tells them it happened, rather than making them find and press a separate button.
+    private func saveToPendingMilestoneIfNeeded(_ image: UIImage) {
+        guard let milestone = pendingMilestone else { return }
+        MilestoneStore.shared.capture(photo: image, forMilestoneId: milestone.id, inListId: "standard")
+        milestoneGalleryLink.isHidden = false
         HapticFeedback.success()
-        MilestoneStore.shared.capture(photo: resultImage, forMilestoneId: milestone.id, inListId: "standard")
-        saveToMilestoneView?.removeFromSuperview()
-        saveToMilestoneView = nil
+        let alert = UIAlertController(
+            title: "Milestone Captured!",
+            message: "This portrait was saved to your Milestone Gallery.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
+    @objc private func goToMilestoneGalleryTapped() {
+        HapticFeedback.light()
+        navigationController?.pushViewController(MilestoneListDetailViewController(list: .standard), animated: true)
     }
 
     @objc private func submitEditTapped() {
