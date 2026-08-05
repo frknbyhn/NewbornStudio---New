@@ -3,6 +3,9 @@
 resize/compress it, upload to Firebase Storage, and set ai_models/{styleId}.previewImageUrl
 via the seedThemePreviews Cloud Function.
 
+Pure text-to-image (no reference photo) with a rotating synthetic-baby identity per style —
+see baby_identities.py — so previews don't all show the same baby with the same closed eyes.
+
 Resumable: writes a JSON progress log and skips styleIds already marked done.
 """
 import base64
@@ -22,26 +25,24 @@ load_dotenv(PROJECT_ROOT / ".env")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from generate_nano_banana import submit_task, poll_task, download_output  # noqa: E402
+from baby_identities import identity_for, eyes_state_for  # noqa: E402
 
 CATALOG_PATH = PROJECT_ROOT / "Design" / "Content" / "theme_catalog.json"
 PROGRESS_PATH = PROJECT_ROOT / "Scripts" / "DesignAssets" / "theme_preview_progress.json"
-BASE_PHOTO_URL_PATH = Path("/tmp/base_photo_url.txt")
 
 SEED_FN_URL = "https://us-central1-newborn-studio.cloudfunctions.net/seedThemePreviews"
 MAX_DIMENSION = 640
 JPEG_QUALITY = 87
 
 
-def build_prompt(style_name: str, descriptor: str, mood: str) -> str:
-    """Mirrors functions/helpers/prompt.js exactly — keep both in sync."""
+def build_prompt(style_name: str, descriptor: str, mood: str, identity: str, eyes_state: str) -> str:
     return (
-        f"Transform the uploaded baby photo into a professional AI-generated studio portrait. "
+        f"A professional AI-generated studio portrait of {identity}, {eyes_state}. "
         f"Theme: {style_name} — {descriptor}. "
         f"Mood: {mood}. "
-        f"Preserve the baby's exact face, expression, proportions and skin tone from the original "
-        f"photo; only change styling, outfit, props and background to match the theme. "
         f"Soft, warm, professional studio-portrait lighting, photorealistic, high detail, "
-        f"no text, no watermark, no logos, safe and wholesome, no adult content."
+        f"natural newborn/baby proportions, no text, no watermark, no logos, safe and wholesome, "
+        f"no adult content."
     )
 
 
@@ -81,7 +82,6 @@ def main() -> None:
     api_key = os.environ["WIRO_API_KEY"]
     api_secret = os.environ["WIRO_API_SECRET"]
     seed_token = Path("/tmp/seed_token.txt").read_text().strip()
-    base_photo_url = BASE_PHOTO_URL_PATH.read_text().strip()
 
     catalog = json.loads(CATALOG_PATH.read_text())
     progress = load_progress()
@@ -95,16 +95,17 @@ def main() -> None:
     done_count = sum(1 for s in progress.values() if s.get("status") == "done")
     print(f"{done_count}/{total} already done, resuming...", file=sys.stderr)
 
-    for index, (category, style) in enumerate(all_styles, start=1):
+    for index, (category, style) in enumerate(all_styles):
         style_id = style["id"]
         if progress.get(style_id, {}).get("status") == "done":
             continue
 
-        prompt = build_prompt(style["name"], style["descriptor"], category["mood"])
-        print(f"[{index}/{total}] {category['name']} / {style['name']} ({style_id})", file=sys.stderr)
+        eyes_state = eyes_state_for(style["descriptor"])
+        prompt = build_prompt(style["name"], style["descriptor"], category["mood"], identity_for(index), eyes_state)
+        print(f"[{index + 1}/{total}] {category['name']} / {style['name']} ({style_id})", file=sys.stderr)
 
         try:
-            task_id = submit_task(prompt, "3:4", base_photo_url, 1.0, "BLOCK_ONLY_HIGH")
+            task_id = submit_task(prompt, "3:4", None, 1.0, "BLOCK_ONLY_HIGH")
             task = poll_task(task_id, timeout_s=90)
             output = download_output(task, PROJECT_ROOT / "Design" / "Generated" / "ThemePreviews" / f"{style_id}.png")
             png_bytes = (PROJECT_ROOT / "Design" / "Generated" / "ThemePreviews" / f"{style_id}.png").read_bytes()

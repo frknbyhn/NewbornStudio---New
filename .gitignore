@@ -22,6 +22,7 @@ xcuserdata/
 Scripts/DesignAssets/venv/
 Scripts/DesignAssets/__pycache__/
 Scripts/DesignAssets/theme_preview_progress.json
+Scripts/DesignAssets/category_cover_progress.json
 Design/Generated/ThemePreviews/
 
 # Firebase Functions
