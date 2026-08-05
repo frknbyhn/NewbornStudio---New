@@ -77,10 +77,10 @@ final class MilestoneListsViewController: UIViewController {
 
         let standard = store.lists.first { $0.isStandard }!
         stack.addArrangedSubview(listRow(for: standard))
-        stack.addArrangedSubview(addListRow())
         for list in store.lists.filter({ !$0.isStandard }) {
             stack.addArrangedSubview(listRow(for: list))
         }
+        stack.addArrangedSubview(addListRow())
     }
 
     private func listRow(for list: MilestoneList) -> UIView {

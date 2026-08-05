@@ -1,5 +1,13 @@
 import UIKit
 
+/// Threaded through GenerationLoadingViewController -> ResultViewController so closing the
+/// result screen can save it onto the right milestone/list and navigate back there, instead of
+/// the default popToRoot.
+struct MilestoneCaptureContext {
+    let milestoneId: String
+    let listId: String
+}
+
 struct Milestone: Identifiable {
     enum State { case done, pending }
 

@@ -178,12 +178,14 @@ final class MilestoneListDetailViewController: UIViewController {
     }
 
     /// Matches the Milestone Tracker mockup (Design/Newborn Studio.dc.html, section 7): a dashed
-    /// timeline running behind circular badges (photo-textured pink + green check when done,
-    /// dashed cream "+" when pending), each connected to a white card with the milestone's title
-    /// and a colored icon tile. The mockup's card date field assumed a real captured date/photo,
-    /// which we don't track yet — using an honest static status label instead of fabricating one.
-    /// The dashed line itself is drawn once per run of rows by `timelineSection`, not here — the
-    /// badge view is returned so the caller can anchor that line to it.
+    /// timeline running behind circular badges, each connected to a white card with the
+    /// milestone's title and a colored icon tile. Done is a solid green circle with a large
+    /// checkmark filling it — not the captured photo itself; that's for the detail screen
+    /// (designed later), this row just needs an at-a-glance done/pending state. The mockup's
+    /// card date field assumed a real captured date, which we don't track yet — using an honest
+    /// static status label instead of fabricating one. The dashed line itself is drawn once per
+    /// run of rows by `timelineSection`, not here — the badge view is returned so the caller can
+    /// anchor that line to it.
     private func milestoneRow(for milestone: Milestone, deletable: Bool) -> (row: UIView, badge: UIView) {
         let isDone = milestone.state == .done
 
@@ -192,7 +194,7 @@ final class MilestoneListDetailViewController: UIViewController {
         badgeColumn.widthAnchor.constraint(equalToConstant: 56).isActive = true
 
         let badge = UIView()
-        badge.backgroundColor = isDone ? UIColor(hex: 0xF6DCE2) : UIColor(hex: 0xFBF4EF)
+        badge.backgroundColor = isDone ? Theme.Color.success : UIColor(hex: 0xFBF4EF)
         badge.layer.cornerRadius = 27
         badge.layer.masksToBounds = true
         if !isDone {
@@ -202,50 +204,17 @@ final class MilestoneListDetailViewController: UIViewController {
         badge.translatesAutoresizingMaskIntoConstraints = false
         badgeColumn.addSubview(badge)
 
-        // A captured photo fills the badge itself — the solid pink/checkmark combo is only a
-        // placeholder for milestones marked done without ever having gone through the capture
-        // screen (shouldn't normally happen, but kept as a safe fallback).
-        if isDone, let photo = milestone.photo {
-            let photoView = UIImageView(image: photo)
-            photoView.contentMode = .scaleAspectFill
-            photoView.clipsToBounds = true
-            photoView.translatesAutoresizingMaskIntoConstraints = false
-            badge.addSubview(photoView)
-            NSLayoutConstraint.activate([
-                photoView.topAnchor.constraint(equalTo: badge.topAnchor),
-                photoView.leadingAnchor.constraint(equalTo: badge.leadingAnchor),
-                photoView.trailingAnchor.constraint(equalTo: badge.trailingAnchor),
-                photoView.bottomAnchor.constraint(equalTo: badge.bottomAnchor)
-            ])
-            let checkBadge = UIView()
-            checkBadge.backgroundColor = Theme.Color.success
-            checkBadge.layer.cornerRadius = 9
-            checkBadge.layer.borderWidth = 2
-            checkBadge.layer.borderColor = UIColor.white.cgColor
-            checkBadge.translatesAutoresizingMaskIntoConstraints = false
-            let checkIcon = UIImageView(image: UIImage(systemName: "checkmark"))
-            checkIcon.tintColor = .white
-            checkIcon.translatesAutoresizingMaskIntoConstraints = false
-            checkBadge.addSubview(checkIcon)
-            badge.addSubview(checkBadge)
-            NSLayoutConstraint.activate([
-                checkBadge.widthAnchor.constraint(equalToConstant: 18),
-                checkBadge.heightAnchor.constraint(equalToConstant: 18),
-                checkBadge.trailingAnchor.constraint(equalTo: badge.trailingAnchor, constant: -1),
-                checkBadge.bottomAnchor.constraint(equalTo: badge.bottomAnchor, constant: -1),
-                checkIcon.centerXAnchor.constraint(equalTo: checkBadge.centerXAnchor),
-                checkIcon.centerYAnchor.constraint(equalTo: checkBadge.centerYAnchor)
-            ])
-        } else {
-            let badgeIcon = UIImageView(image: UIImage(systemName: isDone ? "checkmark" : "plus"))
-            badgeIcon.tintColor = isDone ? Theme.Color.success : UIColor(hex: 0xD8C4B9)
-            badgeIcon.translatesAutoresizingMaskIntoConstraints = false
-            badge.addSubview(badgeIcon)
-            NSLayoutConstraint.activate([
-                badgeIcon.centerXAnchor.constraint(equalTo: badge.centerXAnchor),
-                badgeIcon.centerYAnchor.constraint(equalTo: badge.centerYAnchor)
-            ])
-        }
+        let badgeIcon = UIImageView(image: UIImage(systemName: isDone ? "checkmark" : "plus"))
+        badgeIcon.tintColor = isDone ? .white : UIColor(hex: 0xD8C4B9)
+        badgeIcon.contentMode = .scaleAspectFit
+        badgeIcon.translatesAutoresizingMaskIntoConstraints = false
+        badge.addSubview(badgeIcon)
+        NSLayoutConstraint.activate([
+            badgeIcon.centerXAnchor.constraint(equalTo: badge.centerXAnchor),
+            badgeIcon.centerYAnchor.constraint(equalTo: badge.centerYAnchor),
+            badgeIcon.widthAnchor.constraint(equalToConstant: isDone ? 24 : 18),
+            badgeIcon.heightAnchor.constraint(equalToConstant: isDone ? 24 : 18)
+        ])
 
         NSLayoutConstraint.activate([
             badge.centerXAnchor.constraint(equalTo: badgeColumn.centerXAnchor),

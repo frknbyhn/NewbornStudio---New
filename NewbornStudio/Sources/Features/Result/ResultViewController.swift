@@ -12,13 +12,17 @@ final class ResultViewController: UIViewController {
     private let editSendButton = UIButton(type: .system)
     private let scrollView = UIScrollView()
     private var imageAspectConstraint: NSLayoutConstraint?
+    private let milestoneContext: MilestoneCaptureContext?
 
     /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
     /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
-    init(theme: ThemeCard, sourceImage: UIImage?, resultUrl: URL) {
+    /// `milestoneContext` is set when this result came from MilestoneCaptureViewController — see
+    /// closeTapped().
+    init(theme: ThemeCard, sourceImage: UIImage?, resultUrl: URL, milestoneContext: MilestoneCaptureContext? = nil) {
         self.theme = theme
         self.sourceImage = sourceImage
         self.resultUrl = resultUrl
+        self.milestoneContext = milestoneContext
         super.init(nibName: nil, bundle: nil)
         // Set here (not just on an upstream screen in the push chain) so the tab bar hides no
         // matter which flow pushed this screen — e.g. Gallery pushes it directly as a tab root.
@@ -302,7 +306,18 @@ final class ResultViewController: UIViewController {
     @objc private func dismissKeyboard() { view.endEditing(true) }
 
     @objc private func closeTapped() {
-        navigationController?.popToRootViewController(animated: true)
+        guard let milestoneContext else {
+            navigationController?.popToRootViewController(animated: true)
+            return
+        }
+        if let resultImage {
+            MilestoneStore.shared.capture(photo: resultImage, forMilestoneId: milestoneContext.milestoneId, inListId: milestoneContext.listId)
+        }
+        if let listVC = navigationController?.viewControllers.first(where: { $0 is MilestoneListDetailViewController }) {
+            navigationController?.popToViewController(listVC, animated: true)
+        } else {
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
 
     @objc private func expandTapped() {
