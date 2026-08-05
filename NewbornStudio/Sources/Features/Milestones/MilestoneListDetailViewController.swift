@@ -104,44 +104,19 @@ final class MilestoneListDetailViewController: UIViewController {
                 if !group.isEmpty {
                     stack.addArrangedSubview(sectionHeader(group))
                 }
-                let card = UIStackView(arrangedSubviews: milestones.map { milestoneRow(for: $0, deletable: false) })
-                card.axis = .vertical
-                card.spacing = 0
-                card.backgroundColor = .white
-                card.layer.cornerRadius = 18
-                card.layer.masksToBounds = true
-                addDividers(to: card)
-                stack.addArrangedSubview(card)
+                for milestone in milestones {
+                    stack.addArrangedSubview(milestoneRow(for: milestone, deletable: false))
+                }
             }
         } else {
             if current.milestones.isEmpty {
                 stack.addArrangedSubview(emptyState())
             } else {
-                let card = UIStackView(arrangedSubviews: current.milestones.map { milestoneRow(for: $0, deletable: true) })
-                card.axis = .vertical
-                card.spacing = 0
-                card.backgroundColor = .white
-                card.layer.cornerRadius = 18
-                card.layer.masksToBounds = true
-                addDividers(to: card)
-                stack.addArrangedSubview(card)
+                for milestone in current.milestones {
+                    stack.addArrangedSubview(milestoneRow(for: milestone, deletable: true))
+                }
             }
             stack.addArrangedSubview(addMilestoneButton())
-        }
-    }
-
-    private func addDividers(to card: UIStackView) {
-        for (index, row) in card.arrangedSubviews.enumerated() where index < card.arrangedSubviews.count - 1 {
-            let divider = UIView()
-            divider.backgroundColor = UIColor(hex: 0xF2EAE4)
-            divider.translatesAutoresizingMaskIntoConstraints = false
-            divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
-            row.addSubview(divider)
-            NSLayoutConstraint.activate([
-                divider.leadingAnchor.constraint(equalTo: row.leadingAnchor, constant: 16),
-                divider.trailingAnchor.constraint(equalTo: row.trailingAnchor),
-                divider.bottomAnchor.constraint(equalTo: row.bottomAnchor)
-            ])
         }
     }
 
@@ -153,48 +128,124 @@ final class MilestoneListDetailViewController: UIViewController {
         return label
     }
 
+    /// Matches the Milestone Tracker mockup (Design/Newborn Studio.dc.html, section 7): a dashed
+    /// timeline running behind circular badges (photo-textured pink + green check when done,
+    /// dashed cream "+" when pending), each connected to a white card with the milestone's title
+    /// and a colored icon tile. The mockup's card date field assumed a real captured date/photo,
+    /// which we don't track yet — using an honest static status label instead of fabricating one.
     private func milestoneRow(for milestone: Milestone, deletable: Bool) -> UIView {
         let isDone = milestone.state == .done
-        let circle = UIView()
-        circle.backgroundColor = isDone ? UIColor(hex: 0xF6DCE2) : UIColor(hex: 0xFBF4EF)
-        circle.layer.cornerRadius = 20
-        if !isDone {
-            circle.layer.borderWidth = 2
-            circle.layer.borderColor = UIColor(hex: 0xE5D2C7).cgColor
-        }
-        circle.translatesAutoresizingMaskIntoConstraints = false
-        circle.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        circle.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
-        let icon = UIImageView(image: UIImage(systemName: isDone ? "checkmark" : "circle"))
-        icon.tintColor = isDone ? Theme.Color.success : UIColor(hex: 0xD8C4B9)
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        circle.addSubview(icon)
+        let badgeColumn = UIView()
+        badgeColumn.translatesAutoresizingMaskIntoConstraints = false
+        badgeColumn.widthAnchor.constraint(equalToConstant: 56).isActive = true
+
+        let dashedLine = DashedLineView()
+        dashedLine.translatesAutoresizingMaskIntoConstraints = false
+        badgeColumn.addSubview(dashedLine)
+
+        let badge = UIView()
+        badge.backgroundColor = isDone ? UIColor(hex: 0xF6DCE2) : UIColor(hex: 0xFBF4EF)
+        badge.layer.cornerRadius = 27
+        if !isDone {
+            badge.layer.borderWidth = 2
+            badge.layer.borderColor = UIColor(hex: 0xE5D2C7).cgColor
+        }
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        badgeColumn.addSubview(badge)
+
+        let badgeIcon = UIImageView(image: UIImage(systemName: isDone ? "checkmark" : "plus"))
+        badgeIcon.tintColor = isDone ? Theme.Color.success : UIColor(hex: 0xD8C4B9)
+        badgeIcon.translatesAutoresizingMaskIntoConstraints = false
+        badge.addSubview(badgeIcon)
+
         NSLayoutConstraint.activate([
-            icon.centerXAnchor.constraint(equalTo: circle.centerXAnchor),
-            icon.centerYAnchor.constraint(equalTo: circle.centerYAnchor)
+            dashedLine.centerXAnchor.constraint(equalTo: badgeColumn.centerXAnchor),
+            dashedLine.topAnchor.constraint(equalTo: badgeColumn.topAnchor),
+            dashedLine.bottomAnchor.constraint(equalTo: badgeColumn.bottomAnchor),
+            dashedLine.widthAnchor.constraint(equalToConstant: 2),
+
+            badge.centerXAnchor.constraint(equalTo: badgeColumn.centerXAnchor),
+            badge.topAnchor.constraint(equalTo: badgeColumn.topAnchor, constant: 4),
+            badge.widthAnchor.constraint(equalToConstant: 54),
+            badge.heightAnchor.constraint(equalToConstant: 54),
+            badgeIcon.centerXAnchor.constraint(equalTo: badge.centerXAnchor),
+            badgeIcon.centerYAnchor.constraint(equalTo: badge.centerYAnchor)
         ])
 
-        let label = UILabel()
-        label.text = milestone.title
-        label.font = Theme.Font.heading(15, weight: 600)
-        label.textColor = isDone ? Theme.Color.textPrimaryAlt : Theme.Color.textSecondary
+        let title = UILabel()
+        title.text = milestone.title
+        title.font = Theme.Font.heading(16, weight: 700)
+        title.textColor = Theme.Color.textPrimaryAlt
+        title.numberOfLines = 2
 
-        var arranged: [UIView] = [circle, label, UIView()]
+        let status = UILabel()
+        status.text = isDone ? "Captured" : "Not yet captured"
+        status.font = Theme.Font.body(12, weight: 600)
+        status.textColor = Theme.Color.textSecondary
+
+        let textStack = UIStackView(arrangedSubviews: [title, status])
+        textStack.axis = .vertical
+        textStack.spacing = 2
+
+        let iconTile = UIView()
+        iconTile.backgroundColor = milestone.style.tint
+        iconTile.layer.cornerRadius = 12
+        iconTile.translatesAutoresizingMaskIntoConstraints = false
+        iconTile.widthAnchor.constraint(equalToConstant: 46).isActive = true
+        iconTile.heightAnchor.constraint(equalToConstant: 46).isActive = true
+
+        let tileIcon = UIImageView(image: UIImage(systemName: milestone.style.icon))
+        tileIcon.tintColor = milestone.style.ink
+        tileIcon.translatesAutoresizingMaskIntoConstraints = false
+        iconTile.addSubview(tileIcon)
+        NSLayoutConstraint.activate([
+            tileIcon.centerXAnchor.constraint(equalTo: iconTile.centerXAnchor),
+            tileIcon.centerYAnchor.constraint(equalTo: iconTile.centerYAnchor)
+        ])
+
+        var cardArranged: [UIView] = [textStack, UIView(), iconTile]
         if deletable {
             let delete = UIButton(type: .system)
             delete.setImage(UIImage(systemName: "trash"), for: .normal)
             delete.tintColor = UIColor(hex: 0xD8A6A6)
             delete.addAction(UIAction { [weak self] _ in self?.removeMilestone(milestone.id) }, for: .touchUpInside)
-            arranged.append(delete)
+            cardArranged.append(delete)
         }
 
-        let row = UIStackView(arrangedSubviews: arranged)
+        let cardContent = UIStackView(arrangedSubviews: cardArranged)
+        cardContent.axis = .horizontal
+        cardContent.spacing = 12
+        cardContent.alignment = .center
+        cardContent.isLayoutMarginsRelativeArrangement = true
+        cardContent.layoutMargins = UIEdgeInsets(top: 14, left: 16, bottom: 14, right: 16)
+        cardContent.translatesAutoresizingMaskIntoConstraints = false
+
+        let card = UIView()
+        card.backgroundColor = .white
+        card.layer.cornerRadius = 20
+        card.layer.shadowColor = Theme.Color.textPrimary.cgColor
+        card.layer.shadowOpacity = 0.08
+        card.layer.shadowRadius = 10
+        card.layer.shadowOffset = CGSize(width: 0, height: 4)
+        card.translatesAutoresizingMaskIntoConstraints = false
+        card.addSubview(cardContent)
+        NSLayoutConstraint.activate([
+            cardContent.topAnchor.constraint(equalTo: card.topAnchor),
+            cardContent.leadingAnchor.constraint(equalTo: card.leadingAnchor),
+            cardContent.trailingAnchor.constraint(equalTo: card.trailingAnchor),
+            cardContent.bottomAnchor.constraint(equalTo: card.bottomAnchor)
+        ])
+
+        let row = UIStackView(arrangedSubviews: [badgeColumn, card])
         row.axis = .horizontal
-        row.spacing = 14
-        row.alignment = .center
+        row.spacing = 16
+        // .fill (not .top) so badgeColumn stretches to the card's full height — the dashed line
+        // is pinned to badgeColumn's own top/bottom, so with .top it collapsed to the badge's
+        // height alone and never reached down toward the next row.
+        row.alignment = .fill
         row.isLayoutMarginsRelativeArrangement = true
-        row.layoutMargins = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
+        row.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 14, right: 0)
         return row
     }
 
@@ -247,5 +298,29 @@ final class MilestoneListDetailViewController: UIViewController {
 
     @objc private func backTapped() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+/// The dashed vertical connector threading through each row's badge column, per the mockup.
+private final class DashedLineView: UIView {
+    private let dashLayer = CAShapeLayer()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
+        dashLayer.strokeColor = UIColor(hex: 0xEAD9CF).cgColor
+        dashLayer.lineWidth = 2
+        dashLayer.lineDashPattern = [4, 4]
+        layer.addSublayer(dashLayer)
+    }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: bounds.midX, y: 0))
+        path.addLine(to: CGPoint(x: bounds.midX, y: bounds.height))
+        dashLayer.path = path.cgPath
     }
 }
