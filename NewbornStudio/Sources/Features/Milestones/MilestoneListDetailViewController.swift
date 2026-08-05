@@ -336,7 +336,12 @@ final class MilestoneListDetailViewController: UIViewController {
             cardArranged.append(delete)
         }
 
-        let cardContent = UIStackView(arrangedSubviews: cardArranged)
+        // PassThroughStackView, not a plain UIStackView — this container sits on top of
+        // captureControl/detailControl below, and a plain stack's default hitTest wins over
+        // that control for every point not claimed by one of its own children (a delete button
+        // still resolves normally; see PassThroughStackView's doc comment for the full story —
+        // this is what was actually blocking taps to the detail screen).
+        let cardContent = PassThroughStackView(arrangedSubviews: cardArranged)
         cardContent.axis = .horizontal
         cardContent.spacing = 12
         cardContent.alignment = .center

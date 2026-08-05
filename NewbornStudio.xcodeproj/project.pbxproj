@@ -71,6 +71,7 @@
 		E88C8BB863DC8A134ECDA780 /* RevenueCatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5879ACF5F2BEC2B50AABEEE /* RevenueCatService.swift */; };
 		EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA08C6DD7D874B6C782454 /* CoinPackageCell.swift */; };
 		EF305336DDEB457EC55B2E1D /* FaceCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D904EC7447C3F2DB23648CC /* FaceCheck.swift */; };
+		F16D17C73BB8F68BCD32281D /* PassThroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E722723E6C92AE782EA83279 /* PassThroughStackView.swift */; };
 		F240B8750E7CFDF78C822953 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05772657177A97F85C5741F /* PhotoUploadViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		DCE374D091E4F8D353D9D2B5 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
 		DD5174FCAB01C88CAD7E4E7C /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 		DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateYourOwnStyleCell.swift; sourceTree = "<group>"; };
+		E722723E6C92AE782EA83279 /* PassThroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughStackView.swift; sourceTree = "<group>"; };
 		ECA57E93405E32339B219BC6 /* FaceDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionService.swift; sourceTree = "<group>"; };
 		ED76ADBE497505557988ABC2 /* CoinPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackage.swift; sourceTree = "<group>"; };
 		EFF5C9D3E57E0B14666A51E6 /* NewbornStudio.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NewbornStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,6 +307,7 @@
 				650C23104D1B350C7A6FC4B1 /* GradientPillButton.swift */,
 				2912CC63C6E345709B5F9019 /* PaddedLabel.swift */,
 				A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */,
+				E722723E6C92AE782EA83279 /* PassThroughStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				65B4BD6EDDB3F7DDFBA647D6 /* OnboardingPageViewController.swift in Sources */,
 				0697F0E77483FFC91E970CC5 /* PaddedLabel.swift in Sources */,
 				CE5C91CD28A5BB002572C526 /* PageDotsView.swift in Sources */,
+				F16D17C73BB8F68BCD32281D /* PassThroughStackView.swift in Sources */,
 				A3D762B883211586F30B475D /* PaywallViewController.swift in Sources */,
 				F240B8750E7CFDF78C822953 /* PhotoUploadViewController.swift in Sources */,
 				B88D7A8DEE640A39F6F4F833 /* PlanCardView.swift in Sources */,
