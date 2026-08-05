@@ -20,13 +20,17 @@ exports.seedThemes = onRequest({ secrets: [SEED_TOKEN], timeoutSeconds: 120 }, a
   // Small standalone collection so Home can list categories cheaply (Firestore has no
   // distinct-query support, so deriving this from 300 ai_models docs client-side would mean
   // fetching all 300 just to build a 20-item filter chip list).
+  // merge: true — same reasoning as the ai_models write below: a plain .set() here silently
+  // wipes coverImageUrl (added later by seedCategoryPreviews), which is exactly what happened
+  // re-running this to add the "Milestones" category — recovered from
+  // Scripts/DesignAssets/category_cover_progress.json, but the underlying bug is fixed here.
   const categoriesBatch = db.batch();
   catalog.categories.forEach((category, index) => {
     categoriesBatch.set(db.collection("categories").doc(category.id), {
       name: category.name,
       mood: category.mood,
       position: index,
-    });
+    }, { merge: true });
   });
   await categoriesBatch.commit();
 
