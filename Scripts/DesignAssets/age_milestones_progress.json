@@ -1,0 +1,58 @@
+{
+  "age-one-week": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-one-week%2Fpreview.jpg?alt=media&token=08e5a587-f2ad-4293-9fb8-06d5fb0d432a"
+  },
+  "category:age-milestones": {
+    "status": "done",
+    "coverImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/categories%2Fage-milestones%2Fcover.jpg?alt=media&token=7a04d2f2-07ec-4437-914b-158dc258e937"
+  },
+  "age-one-month": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-one-month%2Fpreview.jpg?alt=media&token=5008dfd3-0a6f-48e9-beeb-44b81d13986f"
+  },
+  "age-two-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-two-months%2Fpreview.jpg?alt=media&token=75b34f8f-2924-48ae-bbeb-030f0d8b6338"
+  },
+  "age-three-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-three-months%2Fpreview.jpg?alt=media&token=d1425c80-db92-4c9e-a8c7-e2167eb9ae2c"
+  },
+  "age-four-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-four-months%2Fpreview.jpg?alt=media&token=20c59013-a394-45ba-91e6-9d2643dcee40"
+  },
+  "age-five-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-five-months%2Fpreview.jpg?alt=media&token=38588b5f-e362-45be-a540-aeb248e0bf24"
+  },
+  "age-six-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-six-months%2Fpreview.jpg?alt=media&token=6357acd0-523e-4902-af37-6bb430b89aa2"
+  },
+  "age-seven-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-seven-months%2Fpreview.jpg?alt=media&token=139eb6be-55e1-42db-9507-1c7cc532a4a6"
+  },
+  "age-eight-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-eight-months%2Fpreview.jpg?alt=media&token=f24091d6-f8a3-45be-995e-0b0e7279cea5"
+  },
+  "age-nine-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-nine-months%2Fpreview.jpg?alt=media&token=3dd02da6-e33e-4634-9208-6c3aa5a4a529"
+  },
+  "age-ten-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-ten-months%2Fpreview.jpg?alt=media&token=c7644f60-589b-4ce9-ad45-daa874b23b18"
+  },
+  "age-eleven-months": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-eleven-months%2Fpreview.jpg?alt=media&token=ebed1551-6373-4751-89eb-03dd5b36ee9c"
+  },
+  "age-one-year": {
+    "status": "done",
+    "previewImageUrl": "https://firebasestorage.googleapis.com/v0/b/newborn-studio.firebasestorage.app/o/ai_models%2Fage-one-year%2Fpreview.jpg?alt=media&token=4cf8c6c4-60c1-4266-86f6-bc7bf14fe100"
+  }
+}
