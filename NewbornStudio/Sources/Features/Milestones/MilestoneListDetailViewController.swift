@@ -289,6 +289,11 @@ final class MilestoneListDetailViewController: UIViewController {
         let textStack = UIStackView(arrangedSubviews: [title, status])
         textStack.axis = .vertical
         textStack.spacing = 2
+        // Every plain (non-actionable) view stacked into cardContent needs this — see the
+        // spacer below for the full explanation. Labels default to disabled already, but the
+        // UIStackView wrapping them does NOT, and it's the stack (not the labels) that
+        // hit-tests as covering this whole area.
+        textStack.isUserInteractionEnabled = false
 
         let iconTile = UIView()
         iconTile.backgroundColor = milestone.style.tint
@@ -309,7 +314,20 @@ final class MilestoneListDetailViewController: UIViewController {
             tileIcon.centerYAnchor.constraint(equalTo: iconTile.centerYAnchor)
         ])
 
-        var cardArranged: [UIView] = [textStack, UIView(), iconTile]
+        // The flexible spacer that pushes iconTile to the trailing edge — by far the largest
+        // area of the card, and a plain UIView defaults to isUserInteractionEnabled = true, so
+        // without this line it silently wins hit-testing over the whole middle of the card
+        // (a tap there hits this instead of falling through to captureControl/detailControl
+        // behind cardContent). THIS was the actual bug behind "can't open milestone detail" —
+        // the row's own tap control was never broken, taps just never reached it. Same root
+        // cause applies to any future card built the same way (content stack on top of a
+        // full-bounds tap control): every non-actionable view in that stack — including bare
+        // spacers and stacks that only wrap non-interactive labels — needs this set explicitly.
+        // Only genuinely actionable subviews (like the delete button below) should stay enabled.
+        let spacer = UIView()
+        spacer.isUserInteractionEnabled = false
+
+        var cardArranged: [UIView] = [textStack, spacer, iconTile]
         if deletable {
             let delete = UIButton(type: .system)
             delete.setImage(UIImage(systemName: "trash"), for: .normal)
