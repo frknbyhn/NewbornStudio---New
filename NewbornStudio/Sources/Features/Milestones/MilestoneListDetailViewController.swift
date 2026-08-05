@@ -1,8 +1,8 @@
 import UIKit
 
 /// A single milestone list's contents. The standard list is read-only (no add/remove); custom
-/// lists let the user add and remove milestones freely. Marking a milestone done/attaching a
-/// photo is a later pass — this screen is just the list itself for now.
+/// lists let the user add and remove milestones freely. Tapping a pending milestone opens
+/// MilestoneCaptureViewController to capture it with a photo (optionally AI touched-up).
 final class MilestoneListDetailViewController: UIViewController {
     private let store = MilestoneStore.shared
     private let listId: String
@@ -24,6 +24,13 @@ final class MilestoneListDetailViewController: UIViewController {
         view.backgroundColor = Theme.Color.backgroundCream
         setUpNavBar()
         setUpList()
+        reload()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Picks up a capture made on MilestoneCaptureViewController since this screen last
+        // appeared (state/photo/counts all live in the shared store, not local state here).
         reload()
     }
 
@@ -187,6 +194,7 @@ final class MilestoneListDetailViewController: UIViewController {
         let badge = UIView()
         badge.backgroundColor = isDone ? UIColor(hex: 0xF6DCE2) : UIColor(hex: 0xFBF4EF)
         badge.layer.cornerRadius = 27
+        badge.layer.masksToBounds = true
         if !isDone {
             badge.layer.borderWidth = 2
             badge.layer.borderColor = UIColor(hex: 0xE5D2C7).cgColor
@@ -194,18 +202,56 @@ final class MilestoneListDetailViewController: UIViewController {
         badge.translatesAutoresizingMaskIntoConstraints = false
         badgeColumn.addSubview(badge)
 
-        let badgeIcon = UIImageView(image: UIImage(systemName: isDone ? "checkmark" : "plus"))
-        badgeIcon.tintColor = isDone ? Theme.Color.success : UIColor(hex: 0xD8C4B9)
-        badgeIcon.translatesAutoresizingMaskIntoConstraints = false
-        badge.addSubview(badgeIcon)
+        // A captured photo fills the badge itself — the solid pink/checkmark combo is only a
+        // placeholder for milestones marked done without ever having gone through the capture
+        // screen (shouldn't normally happen, but kept as a safe fallback).
+        if isDone, let photo = milestone.photo {
+            let photoView = UIImageView(image: photo)
+            photoView.contentMode = .scaleAspectFill
+            photoView.clipsToBounds = true
+            photoView.translatesAutoresizingMaskIntoConstraints = false
+            badge.addSubview(photoView)
+            NSLayoutConstraint.activate([
+                photoView.topAnchor.constraint(equalTo: badge.topAnchor),
+                photoView.leadingAnchor.constraint(equalTo: badge.leadingAnchor),
+                photoView.trailingAnchor.constraint(equalTo: badge.trailingAnchor),
+                photoView.bottomAnchor.constraint(equalTo: badge.bottomAnchor)
+            ])
+            let checkBadge = UIView()
+            checkBadge.backgroundColor = Theme.Color.success
+            checkBadge.layer.cornerRadius = 9
+            checkBadge.layer.borderWidth = 2
+            checkBadge.layer.borderColor = UIColor.white.cgColor
+            checkBadge.translatesAutoresizingMaskIntoConstraints = false
+            let checkIcon = UIImageView(image: UIImage(systemName: "checkmark"))
+            checkIcon.tintColor = .white
+            checkIcon.translatesAutoresizingMaskIntoConstraints = false
+            checkBadge.addSubview(checkIcon)
+            badge.addSubview(checkBadge)
+            NSLayoutConstraint.activate([
+                checkBadge.widthAnchor.constraint(equalToConstant: 18),
+                checkBadge.heightAnchor.constraint(equalToConstant: 18),
+                checkBadge.trailingAnchor.constraint(equalTo: badge.trailingAnchor, constant: -1),
+                checkBadge.bottomAnchor.constraint(equalTo: badge.bottomAnchor, constant: -1),
+                checkIcon.centerXAnchor.constraint(equalTo: checkBadge.centerXAnchor),
+                checkIcon.centerYAnchor.constraint(equalTo: checkBadge.centerYAnchor)
+            ])
+        } else {
+            let badgeIcon = UIImageView(image: UIImage(systemName: isDone ? "checkmark" : "plus"))
+            badgeIcon.tintColor = isDone ? Theme.Color.success : UIColor(hex: 0xD8C4B9)
+            badgeIcon.translatesAutoresizingMaskIntoConstraints = false
+            badge.addSubview(badgeIcon)
+            NSLayoutConstraint.activate([
+                badgeIcon.centerXAnchor.constraint(equalTo: badge.centerXAnchor),
+                badgeIcon.centerYAnchor.constraint(equalTo: badge.centerYAnchor)
+            ])
+        }
 
         NSLayoutConstraint.activate([
             badge.centerXAnchor.constraint(equalTo: badgeColumn.centerXAnchor),
             badge.centerYAnchor.constraint(equalTo: badgeColumn.centerYAnchor),
             badge.widthAnchor.constraint(equalToConstant: 54),
-            badge.heightAnchor.constraint(equalToConstant: 54),
-            badgeIcon.centerXAnchor.constraint(equalTo: badge.centerXAnchor),
-            badgeIcon.centerYAnchor.constraint(equalTo: badge.centerYAnchor)
+            badge.heightAnchor.constraint(equalToConstant: 54)
         ])
 
         let title = UILabel()
@@ -226,6 +272,9 @@ final class MilestoneListDetailViewController: UIViewController {
         let iconTile = UIView()
         iconTile.backgroundColor = milestone.style.tint
         iconTile.layer.cornerRadius = 12
+        // Decorative only — without this, a tap landing exactly on the tile is swallowed here
+        // (its default is enabled) instead of passing through to the capture control behind it.
+        iconTile.isUserInteractionEnabled = false
         iconTile.translatesAutoresizingMaskIntoConstraints = false
         iconTile.widthAnchor.constraint(equalToConstant: 46).isActive = true
         iconTile.heightAnchor.constraint(equalToConstant: 46).isActive = true
@@ -264,6 +313,24 @@ final class MilestoneListDetailViewController: UIViewController {
         card.layer.shadowRadius = 10
         card.layer.shadowOffset = CGSize(width: 0, height: 4)
         card.translatesAutoresizingMaskIntoConstraints = false
+
+        // Tap-to-capture only applies to pending milestones — done ones have nothing to do yet
+        // (viewing/editing a captured milestone is a later pass). Added BEFORE cardContent so
+        // the delete button (a real subview inside cardContent, added after/on top) still wins
+        // hit-testing on its own frame — this control only catches taps elsewhere on the card.
+        if !isDone {
+            let captureControl = MilestoneCaptureControl(milestone: milestone)
+            captureControl.translatesAutoresizingMaskIntoConstraints = false
+            captureControl.addTarget(self, action: #selector(captureTapped(_:)), for: .touchUpInside)
+            card.addSubview(captureControl)
+            NSLayoutConstraint.activate([
+                captureControl.topAnchor.constraint(equalTo: card.topAnchor),
+                captureControl.leadingAnchor.constraint(equalTo: card.leadingAnchor),
+                captureControl.trailingAnchor.constraint(equalTo: card.trailingAnchor),
+                captureControl.bottomAnchor.constraint(equalTo: card.bottomAnchor)
+            ])
+        }
+
         card.addSubview(cardContent)
         NSLayoutConstraint.activate([
             cardContent.topAnchor.constraint(equalTo: card.topAnchor),
@@ -279,6 +346,11 @@ final class MilestoneListDetailViewController: UIViewController {
         // constraint actually centers it against the card, not just against its own column.
         row.alignment = .fill
         return (row, badge)
+    }
+
+    @objc private func captureTapped(_ sender: MilestoneCaptureControl) {
+        HapticFeedback.selection()
+        navigationController?.pushViewController(MilestoneCaptureViewController(milestone: sender.milestone, listId: listId), animated: true)
     }
 
     private func emptyState() -> UIView {
@@ -331,6 +403,17 @@ final class MilestoneListDetailViewController: UIViewController {
     @objc private func backTapped() {
         navigationController?.popViewController(animated: true)
     }
+}
+
+/// Carries the tapped milestone through the UIControl target/action, which has no payload of
+/// its own — mirrors MilestoneListControl in MilestoneListsViewController.swift.
+private final class MilestoneCaptureControl: UIControl {
+    let milestone: Milestone
+    init(milestone: Milestone) {
+        self.milestone = milestone
+        super.init(frame: .zero)
+    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
 /// The dashed vertical connector threading through each row's badge column, per the mockup.

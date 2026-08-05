@@ -19,6 +19,7 @@
 		23CEF94056FF8C2F545F5BA5 /* ThemeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39809759245896589A20F080 /* ThemeCategory.swift */; };
 		24ECD51C45E858C57D974648 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2252ECD08EF287944198F72 /* ThemeService.swift */; };
 		26909D3088168DF6959E8D22 /* MilestoneListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B44B0080ECB1C7E4E3AC29 /* MilestoneListsViewController.swift */; };
+		28A806F9670B540281834B19 /* MilestoneCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857546B658B167E382FAD549 /* MilestoneCaptureViewController.swift */; };
 		2B3825A1040995155892DB94 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCED30A8A30320D88603AB /* HomeViewController.swift */; };
 		2B3C0865CCEFF10B2E1178E2 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8BF08F841E1AA95C6083A5 /* FavoritesService.swift */; };
 		358DE3B132AF9A93CA69FABA /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */; };
@@ -99,6 +100,7 @@
 		731D217EC357D10BBD06523A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		7F48A625E7B92612094F0D3F /* ThemeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardCell.swift; sourceTree = "<group>"; };
+		857546B658B167E382FAD549 /* MilestoneCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCaptureViewController.swift; sourceTree = "<group>"; };
 		89D876EB6DF4D7495E8D8ED8 /* ZoomableImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageViewController.swift; sourceTree = "<group>"; };
 		92DC661031709EF5F8A124E9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		370D458D4DACCA356BBB9E7E /* Milestones */ = {
 			isa = PBXGroup;
 			children = (
+				857546B658B167E382FAD549 /* MilestoneCaptureViewController.swift */,
 				97EBB6079D2A7C5116B5FB33 /* MilestoneListDetailViewController.swift */,
 				51B44B0080ECB1C7E4E3AC29 /* MilestoneListsViewController.swift */,
 			);
@@ -491,6 +494,7 @@
 				E3204F9B36AA69FDD6394B16 /* LimitedOfferService.swift in Sources */,
 				B41FE525ADF1784F9B0AB241 /* MainTabBarController.swift in Sources */,
 				0A96BA11249ED5B740C24212 /* Milestone.swift in Sources */,
+				28A806F9670B540281834B19 /* MilestoneCaptureViewController.swift in Sources */,
 				725E6337D84AC0B30945A578 /* MilestoneListDetailViewController.swift in Sources */,
 				26909D3088168DF6959E8D22 /* MilestoneListsViewController.swift in Sources */,
 				96EC7B3712CE04E72B30D78F /* MilestoneStore.swift in Sources */,

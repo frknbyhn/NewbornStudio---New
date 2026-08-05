@@ -12,6 +12,10 @@ final class GenerationLoadingViewController: UIViewController {
     private let theme: ThemeCard
     private let sourceImage: UIImage
     private let editInstruction: String?
+    /// Overrides the default "push ResultViewController" success behavior — used by flows that
+    /// need the raw result somewhere else (e.g. saving it onto a milestone) instead of the
+    /// standard result-viewer screen.
+    private let onSuccess: ((GenerationResult) -> Void)?
     private let percentLabel = UILabel()
     private let statusLabel = UILabel()
     private let progressTrack = UIView()
@@ -27,10 +31,11 @@ final class GenerationLoadingViewController: UIViewController {
     private static let tickInterval: TimeInterval = 0.3
     private static let minimumDuration: TimeInterval = 15
 
-    init(theme: ThemeCard, sourceImage: UIImage, editInstruction: String? = nil) {
+    init(theme: ThemeCard, sourceImage: UIImage, editInstruction: String? = nil, onSuccess: ((GenerationResult) -> Void)? = nil) {
         self.theme = theme
         self.sourceImage = sourceImage
         self.editInstruction = editInstruction
+        self.onSuccess = onSuccess
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -186,8 +191,12 @@ final class GenerationLoadingViewController: UIViewController {
             HapticFeedback.success()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
                 guard let self else { return }
-                let resultVC = ResultViewController(theme: self.theme, sourceImage: self.sourceImage, resultUrl: generation.resultUrl)
-                self.navigationController?.pushViewController(resultVC, animated: true)
+                if let onSuccess = self.onSuccess {
+                    onSuccess(generation)
+                } else {
+                    let resultVC = ResultViewController(theme: self.theme, sourceImage: self.sourceImage, resultUrl: generation.resultUrl)
+                    self.navigationController?.pushViewController(resultVC, animated: true)
+                }
             }
         case .failure(let error):
             HapticFeedback.error()
