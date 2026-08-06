@@ -3,6 +3,7 @@ const { initializeApp } = require("firebase-admin/app");
 initializeApp();
 
 exports.generateContent = require("./generateContent").generateContent;
+exports.animateResult = require("./animateResult").animateResult;
 exports.deleteAccount = require("./deleteAccount").deleteAccount;
 exports.grantPurchase = require("./grantPurchase").grantPurchase;
 

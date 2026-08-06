@@ -17,6 +17,11 @@ service cloud.firestore {
         allow write: if false; // written only by generateContent (Admin SDK)
       }
 
+      match /animations/{animationId} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+        allow write: if false; // written only by animateResult (Admin SDK)
+      }
+
       match /milestones/{milestoneId} {
         allow read, write: if request.auth != null && request.auth.uid == userId;
       }

@@ -64,4 +64,29 @@ function buildEditPrompt({ instruction, allowPoseChange = false }) {
   );
 }
 
-module.exports = { buildPrompt, buildCategoryPrompt, buildEditPrompt };
+// Used for the Result screen's "Animate Portrait" action (ResultViewController -> animateResult
+// Cloud Function -> Wiro's bytedance/seedance-pro-v1-5, an image-to-video model). Per-style like
+// buildPrompt (weaves in that style's own descriptor/mood), but a genuinely separate formula
+// rather than a reused one: an image prompt describes a STATIC scene, a video prompt needs to
+// describe MOTION within that already-fixed scene instead — reusing buildPrompt's wording would
+// just re-describe the same still image, giving the video model nothing to animate.
+//
+// One formula for all 333 styles (not 333 hand-written motion descriptions) — same reasoning as
+// the rest of this file: every prompt needs the same non-negotiable constraints (don't change
+// what's already in the photo, keep motion subtle and safe), and the per-style descriptor/mood
+// already carry everything scene-specific that a motion prompt needs to reference.
+function buildAnimatePrompt({ styleName, descriptor, mood }) {
+  return (
+    `Bring this still studio portrait photo to life with subtle, natural motion — do not change ` +
+    `the composition, styling, outfit, props or background from what's shown in the photo, only ` +
+    `animate it. Scene: ${styleName} — ${descriptor}. Mood: ${mood}. ` +
+    `Add gentle, realistic movement appropriate to the scene: soft breathing, slow relaxed ` +
+    `blinking, small natural head or hand movement from the baby, and light ambient motion in ` +
+    `the background or props if present (e.g. a slow drift, gentle sway, soft flicker of light). ` +
+    `Camera stays mostly static, at most a very slow, gentle drift or push-in — no sudden or ` +
+    `jarring movement. Keep the baby's exact face and identity unchanged throughout. ` +
+    `Photorealistic, smooth, calm, safe and wholesome, no adult content.`
+  );
+}
+
+module.exports = { buildPrompt, buildCategoryPrompt, buildEditPrompt, buildAnimatePrompt };

@@ -27,6 +27,7 @@ final class ResultViewController: UIViewController {
     private var savedMilestoneListId: String?
     private let milestoneGalleryLink = UIButton(type: .system)
     private var milestoneSaveButtonView: UIView?
+    private let animateButton = GradientPillButton(title: "Animate Portrait", icon: UIImage(systemName: "sparkles"))
 
     /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
     /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
@@ -306,7 +307,10 @@ final class ResultViewController: UIViewController {
         milestoneGalleryLink.addTarget(self, action: #selector(goToMilestoneGalleryTapped), for: .touchUpInside)
         milestoneGalleryLink.isHidden = true
 
-        let stack = UIStackView(arrangedSubviews: [actions, milestoneGalleryLink])
+        animateButton.addTarget(self, action: #selector(animateTapped), for: .touchUpInside)
+        animateButton.translatesAutoresizingMaskIntoConstraints = false
+
+        let stack = UIStackView(arrangedSubviews: [actions, animateButton, milestoneGalleryLink])
         stack.axis = .vertical
         stack.alignment = .center
         stack.spacing = 16
@@ -316,7 +320,9 @@ final class ResultViewController: UIViewController {
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: editCard.bottomAnchor, constant: 20),
             stack.centerXAnchor.constraint(equalTo: content.centerXAnchor),
-            stack.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -30)
+            stack.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -30),
+            animateButton.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 22),
+            animateButton.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -22)
         ])
     }
 
@@ -379,6 +385,39 @@ final class ResultViewController: UIViewController {
         guard let resultImage else { return }
         HapticFeedback.light()
         present(UIActivityViewController(activityItems: [resultImage], applicationActivities: nil), animated: true)
+    }
+
+    /// Sends this result's own durable Storage URL straight to animateResult — no local image
+    /// bytes needed, Wiro fetches it server-side (see AnimationService's doc comment).
+    @objc private func animateTapped() {
+        guard resultImage != nil else { return }
+        HapticFeedback.light()
+        CreditsService.requireCredits(presentingFrom: self) { [weak self] in
+            guard let self else { return }
+            self.animateButton.setLoading(true)
+            AnimationService.animate(resultUrl: self.resultUrl, styleId: self.theme.id) { [weak self] result in
+                guard let self else { return }
+                self.animateButton.setLoading(false)
+                switch result {
+                case .success(let animation):
+                    HapticFeedback.success()
+                    self.navigationController?.pushViewController(AnimatedVideoViewController(videoURL: animation.videoUrl), animated: true)
+                case .failure(let error):
+                    self.presentAnimateError(error)
+                }
+            }
+        }
+    }
+
+    private func presentAnimateError(_ error: Error) {
+        let alert = UIAlertController(
+            title: "Couldn't Animate This Portrait",
+            message: "Something went wrong. If credits were spent, they've been refunded. Please try again.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+        print("animateResult failed: \(error)")
     }
 
     /// Searches every standard list (Firsts, Milestones, and any added later) for a milestone

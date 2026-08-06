@@ -18,7 +18,7 @@ async function ensureUserDoc(uid) {
 }
 
 /** Deducts from subscriptionCredits first, then purchasedCredits. Throws if insufficient. */
-async function spendCredits(uid, amount) {
+async function spendCredits(uid, amount, reason = "generateContent") {
   const db = getFirestore();
   const userRef = db.collection("users").doc(uid);
   return db.runTransaction(async (tx) => {
@@ -40,7 +40,7 @@ async function spendCredits(uid, amount) {
     tx.set(ledgerRef, {
       uid,
       amount: -amount,
-      reason: "generateContent",
+      reason,
       createdAt: FieldValue.serverTimestamp(),
     });
     return { remainingCredits: total - amount };

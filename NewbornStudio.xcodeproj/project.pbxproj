@@ -47,6 +47,7 @@
 		88CCB4F182212328974B04E4 /* CoinPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19CCDF721E36711C5C2F478 /* CoinPackageViewController.swift */; };
 		94FD16A2149F5302AD599136 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33710312F2AFFDB4D756679E /* Theme.swift */; };
 		96EC7B3712CE04E72B30D78F /* MilestoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2EAC78DCE6D4FBFD9CBD84 /* MilestoneStore.swift */; };
+		99398BB4A239909EAC53CCD0 /* AnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F94E3C078C38AC4A1329823 /* AnimationService.swift */; };
 		9AFB90380FE66463ACB1D561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */; };
 		A10F5B8EAB21BD6A43D29CC7 /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8127E93B6D5B70FD24EB30 /* Nunito-Variable.ttf */; };
 		A3D762B883211586F30B475D /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E68295C3C9B0BA195AB3 /* PaywallViewController.swift */; };
@@ -68,6 +69,7 @@
 		D271597F73536994493C5042 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224CAE5CB657B6ED69449B3 /* CustomStyleViewController.swift */; };
 		D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */; };
 		DF66B2C0F2DEA665170BCFD0 /* SubscriptionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */; };
+		E159EA4D6AA69CB6732A877F /* AnimatedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52B9A269A0D94BD8C0E949C /* AnimatedVideoViewController.swift */; };
 		E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2906789AA10EA365194D60 /* GalleryViewController.swift */; };
 		E3204F9B36AA69FDD6394B16 /* LimitedOfferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68349B26C3022F6579A9279 /* LimitedOfferService.swift */; };
 		E720E8551443146D09A07440 /* MilestoneCollageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73760A4820A4FED4EA0E5602 /* MilestoneCollageStore.swift */; };
@@ -118,6 +120,7 @@
 		97EBB6079D2A7C5116B5FB33 /* MilestoneListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListDetailViewController.swift; sourceTree = "<group>"; };
 		9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9D904EC7447C3F2DB23648CC /* FaceCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCheck.swift; sourceTree = "<group>"; };
+		9F94E3C078C38AC4A1329823 /* AnimationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		A2252ECD08EF287944198F72 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDotsView.swift; sourceTree = "<group>"; };
 		A75301CAE2D5DCFC4E515169 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		B05772657177A97F85C5741F /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		B68349B26C3022F6579A9279 /* LimitedOfferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedOfferService.swift; sourceTree = "<group>"; };
 		BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C52B9A269A0D94BD8C0E949C /* AnimatedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedVideoViewController.swift; sourceTree = "<group>"; };
 		C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6D2A351E13BBB2EBE6ECD81 /* MilestoneCollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageViewController.swift; sourceTree = "<group>"; };
 		CF2906789AA10EA365194D60 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		2C784FAEA2AFA15AB141963A /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				C52B9A269A0D94BD8C0E949C /* AnimatedVideoViewController.swift */,
 				045EACC8D63ABB75EB736DDB /* ResultViewController.swift */,
 				89D876EB6DF4D7495E8D8ED8 /* ZoomableImageViewController.swift */,
 			);
@@ -265,6 +270,7 @@
 		604EBF210B7C830FAFEF1D17 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9F94E3C078C38AC4A1329823 /* AnimationService.swift */,
 				9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */,
 				AB5E5ADA9E63E84A499201B7 /* CreditsService.swift */,
 				9D904EC7447C3F2DB23648CC /* FaceCheck.swift */,
@@ -489,6 +495,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E159EA4D6AA69CB6732A877F /* AnimatedVideoViewController.swift in Sources */,
+				99398BB4A239909EAC53CCD0 /* AnimationService.swift in Sources */,
 				55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */,
 				03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */,
 				082C4B9A5684891B87111C26 /* AuthService.swift in Sources */,
