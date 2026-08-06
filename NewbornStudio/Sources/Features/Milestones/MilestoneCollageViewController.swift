@@ -8,13 +8,19 @@ import Photos
 final class MilestoneCollageViewController: UIViewController {
     private let videoURL: URL
     private let listName: String
+    /// Id of the Firestore/Storage doc this collage is (or will shortly be, if the upload from
+    /// a just-finished render is still in flight — see MilestoneCollageStore.saveCollage) saved
+    /// under. Always present — both call sites (a fresh render, or opening one from "Kolajlarım")
+    /// have it up front — so the delete action always has something to target.
+    private let collageId: String
     private var player: AVPlayer!
     private var playerLayer: AVPlayerLayer!
     private var loopObserver: NSObjectProtocol?
 
-    init(videoURL: URL, listName: String) {
+    init(videoURL: URL, listName: String, collageId: String) {
         self.videoURL = videoURL
         self.listName = listName
+        self.collageId = collageId
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
     }
@@ -26,6 +32,8 @@ final class MilestoneCollageViewController: UIViewController {
         navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeTapped))
         navigationItem.rightBarButtonItem?.tintColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteTapped))
+        navigationItem.leftBarButtonItem?.tintColor = .white
         view.backgroundColor = UIColor(hex: 0x2E2530)
         setUpPlayer()
         setUpActions()
@@ -137,6 +145,47 @@ final class MilestoneCollageViewController: UIViewController {
 
     @objc private func closeTapped() {
         navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func deleteTapped() {
+        HapticFeedback.light()
+        let alert = UIAlertController(
+            title: "Delete This Collage?",
+            message: "The \u{201c}\(listName)\u{201d} collage video will be permanently deleted. This can't be undone.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            self?.performDelete()
+        })
+        present(alert, animated: true)
+    }
+
+    private func performDelete() {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.color = .white
+        spinner.startAnimating()
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        navigationItem.leftBarButtonItem?.isEnabled = false
+        navigationItem.rightBarButtonItem?.isEnabled = false
+
+        MilestoneCollageStore.deleteCollage(id: collageId) { [weak self] success in
+            guard let self else { return }
+            if success {
+                HapticFeedback.success()
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                spinner.removeFromSuperview()
+                self.navigationItem.leftBarButtonItem?.isEnabled = true
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
+                self.presentAlert(title: "Couldn't Delete", message: "Something went wrong deleting the collage. Please try again.")
+            }
+        }
     }
 
     @objc private func saveTapped() {

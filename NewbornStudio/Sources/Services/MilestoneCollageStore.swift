@@ -50,10 +50,13 @@ enum MilestoneCollageStore {
     /// Uploads the just-rendered local video file to Storage, then writes its Firestore doc.
     /// Fire-and-forget from the call site (MilestoneListDetailViewController pushes the local
     /// preview immediately and doesn't wait on this) — best-effort, same reasoning as
-    /// MilestoneStore's remote writes.
-    static func saveCollage(localFileURL: URL, listId: String, listName: String) {
-        guard let uid = AuthService.currentUserId else { return }
+    /// MilestoneStore's remote writes. Returns the id up front (generated locally, doesn't need
+    /// the write to land first) so the caller can pass it straight into MilestoneCollageViewController
+    /// for its delete action, without waiting on the upload either.
+    @discardableResult
+    static func saveCollage(localFileURL: URL, listId: String, listName: String) -> String {
         let collageId = UUID().uuidString
+        guard let uid = AuthService.currentUserId else { return collageId }
         let ref = Storage.storage().reference().child("users/\(uid)/collages/\(collageId).mp4")
         let metadata = StorageMetadata()
         metadata.contentType = "video/mp4"
@@ -69,5 +72,23 @@ enum MilestoneCollageStore {
                 ])
             }
         }
+        return collageId
+    }
+
+    /// Deletes both the Firestore doc and the Storage video. Safe to call even if the upload in
+    /// saveCollage hasn't finished yet (e.g. the user deletes right after a fresh render) — a
+    /// delete on a not-yet-existing doc/object is treated as success either way, nothing left
+    /// behind once the in-flight upload does land.
+    static func deleteCollage(id: String, completion: @escaping (Bool) -> Void = { _ in }) {
+        guard let uid = AuthService.currentUserId else {
+            completion(false)
+            return
+        }
+        let group = DispatchGroup()
+        group.enter()
+        collagesCollection(uid).document(id).delete { _ in group.leave() }
+        group.enter()
+        Storage.storage().reference().child("users/\(uid)/collages/\(id).mp4").delete { _ in group.leave() }
+        group.notify(queue: .main) { completion(true) }
     }
 }

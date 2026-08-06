@@ -9,12 +9,23 @@ final class MilestoneCollageGalleryViewController: UIViewController {
     private var collages: [MilestoneCollageStore.SavedCollage] = []
     private let spinner = UIActivityIndicatorView(style: .large)
 
+    private var hasLoadedOnce = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
         setUpNavBar()
         setUpList()
         loadCollages()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Skips the redundant re-fetch right after viewDidLoad's own load, but picks up a
+        // deletion made on MilestoneCollageViewController when popping back here.
+        if hasLoadedOnce {
+            loadCollages()
+        }
     }
 
     private var navBarBottom: NSLayoutYAxisAnchor!
@@ -87,6 +98,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         MilestoneCollageStore.fetchCollages { [weak self] result in
             guard let self else { return }
             self.spinner.stopAnimating()
+            self.hasLoadedOnce = true
             switch result {
             case .success(let collages):
                 self.collages = collages
@@ -198,7 +210,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
     @objc private func collageTapped(_ sender: MilestoneCollageControl) {
         HapticFeedback.selection()
         navigationController?.pushViewController(
-            MilestoneCollageViewController(videoURL: sender.collage.videoUrl, listName: sender.collage.listName),
+            MilestoneCollageViewController(videoURL: sender.collage.videoUrl, listName: sender.collage.listName, collageId: sender.collage.id),
             animated: true
         )
     }
