@@ -421,13 +421,25 @@ final class ResultViewController: UIViewController {
 
     /// Sends this result's own durable Storage URL straight to animateResult — no local image
     /// bytes needed, Wiro fetches it server-side (see AnimationService's doc comment).
+    ///
+    /// The styleId sent here is what lets the server build a per-style animate prompt (its own
+    /// descriptor/mood from ai_models) instead of a generic fallback — but a result from
+    /// MilestoneCaptureViewController's own capture flow always carries `theme.id ==
+    /// "custom-style"` (it generates through the shared customTheme, not the milestone's own
+    /// ai_models entry), which would only ever hit animateResult's generic fallback even for a
+    /// standard milestone like First Laugh. Standard-list milestone ids are deterministically
+    /// the SAME as their ai_models style ids (see Milestone.swift's doc comment), so sending
+    /// milestoneContext's id instead recovers the real per-style prompt for that case; a
+    /// custom-list milestone's random UUID just won't match any ai_models doc and falls through
+    /// to the same generic fallback as before — no worse than today.
     @objc private func animateTapped() {
         guard resultImage != nil else { return }
         HapticFeedback.light()
+        let animateStyleId = milestoneContext?.milestoneId ?? theme.id
         CreditsService.requireCredits(presentingFrom: self) { [weak self] in
             guard let self else { return }
             self.animateButton.setLoading(true)
-            AnimationService.animate(resultUrl: self.resultUrl, styleId: self.theme.id) { [weak self] result in
+            AnimationService.animate(resultUrl: self.resultUrl, styleId: animateStyleId) { [weak self] result in
                 guard let self else { return }
                 self.animateButton.setLoading(false)
                 switch result {
