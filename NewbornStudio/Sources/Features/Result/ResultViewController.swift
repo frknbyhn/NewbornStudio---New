@@ -278,7 +278,39 @@ final class ResultViewController: UIViewController {
         imageAspectConstraint?.isActive = false
         imageAspectConstraint = imageContainer.heightAnchor.constraint(equalTo: imageContainer.widthAnchor, multiplier: image.size.height / image.size.width)
         imageAspectConstraint?.isActive = true
-        UIView.animate(withDuration: 0.2) { self.view.layoutIfNeeded() }
+        UIView.animate(withDuration: 0.2, animations: { self.view.layoutIfNeeded() }) { [weak self] _ in
+            self?.revealFullScreenIfFirstTime()
+        }
+    }
+
+    private static let hasSeenResultScreenKey = "hasSeenResultScreenScrollReveal"
+
+    /// The first time ANY user ever lands on this screen (across every entry point — a fresh
+    /// generation, Gallery history, a milestone capture), auto-scroll to the very bottom and
+    /// back up — a nudge so they notice there's more below the fold (the edit box, Animate
+    /// Portrait, Save/Share) instead of only ever seeing the image and assuming that's the whole
+    /// screen. Runs once ever, not once per screen visit — tracked in UserDefaults like the
+    /// onboarding-seen flag in AppCoordinator.
+    private func revealFullScreenIfFirstTime() {
+        let defaults = UserDefaults.standard
+        guard !defaults.bool(forKey: Self.hasSeenResultScreenKey) else { return }
+        defaults.set(true, forKey: Self.hasSeenResultScreenKey)
+
+        view.layoutIfNeeded()
+        let maxOffsetY = scrollView.contentSize.height - scrollView.bounds.height + scrollView.adjustedContentInset.bottom
+        guard maxOffsetY > 0 else { return } // content already fits on screen — nothing to reveal
+        let bottomOffset = CGPoint(x: 0, y: maxOffsetY)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            guard let self else { return }
+            UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut) {
+                self.scrollView.setContentOffset(bottomOffset, animated: false)
+            } completion: { _ in
+                UIView.animate(withDuration: 0.7, delay: 0.5, options: .curveEaseInOut) {
+                    self.scrollView.setContentOffset(.zero, animated: false)
+                }
+            }
+        }
     }
 
     private func setUpActions(in content: UIView) {
