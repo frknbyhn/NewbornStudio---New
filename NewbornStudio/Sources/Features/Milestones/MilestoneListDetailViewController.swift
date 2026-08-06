@@ -181,6 +181,9 @@ final class MilestoneListDetailViewController: UIViewController {
                 switch result {
                 case .success(let url):
                     HapticFeedback.success()
+                    // Pushes the local file immediately (instant, no network wait) while the
+                    // upload to "Kolajlarım" happens in the background — see MilestoneCollageStore.
+                    MilestoneCollageStore.saveCollage(localFileURL: url, listId: self.listId, listName: self.list.name)
                     self.navigationController?.pushViewController(MilestoneCollageViewController(videoURL: url, listName: self.list.name), animated: true)
                 case .failure:
                     self.presentCollageErrorAlert()

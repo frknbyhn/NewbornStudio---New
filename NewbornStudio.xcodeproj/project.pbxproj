@@ -36,6 +36,7 @@
 		55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D217EC357D10BBD06523A /* AppCoordinator.swift */; };
 		563A13B7689A72132CBE6986 /* CreateYourOwnStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */; };
 		609C3425900374E6A62AEC58 /* LegalDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E2CC2727250F73C84155DF /* LegalDocumentViewController.swift */; };
+		655DD5628FDB2470A62C5909 /* MilestoneCollageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91135208EFB702C497066757 /* MilestoneCollageGalleryViewController.swift */; };
 		65857A19D43A9D37613D935C /* LimitedOfferPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E089CFB1B50604ECD1ED4 /* LimitedOfferPopupViewController.swift */; };
 		65B4BD6EDDB3F7DDFBA647D6 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */; };
 		6C40640A16B28C3C2832FCC0 /* MilestoneRemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AA301847962C8D5E2AB2F2 /* MilestoneRemoteStore.swift */; };
@@ -69,6 +70,7 @@
 		DF66B2C0F2DEA665170BCFD0 /* SubscriptionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */; };
 		E2B9F342A551EDC20B1046E3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2906789AA10EA365194D60 /* GalleryViewController.swift */; };
 		E3204F9B36AA69FDD6394B16 /* LimitedOfferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68349B26C3022F6579A9279 /* LimitedOfferService.swift */; };
+		E720E8551443146D09A07440 /* MilestoneCollageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73760A4820A4FED4EA0E5602 /* MilestoneCollageStore.swift */; };
 		E75370FCAF156BDF4B2CC8DA /* ZoomableImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D876EB6DF4D7495E8D8ED8 /* ZoomableImageViewController.swift */; };
 		E88C8BB863DC8A134ECDA780 /* RevenueCatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5879ACF5F2BEC2B50AABEEE /* RevenueCatService.swift */; };
 		EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA08C6DD7D874B6C782454 /* CoinPackageCell.swift */; };
@@ -104,11 +106,13 @@
 		69FCED30A8A30320D88603AB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		723F5C8EF66A78375A1A5C78 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		731D217EC357D10BBD06523A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		73760A4820A4FED4EA0E5602 /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		7F48A625E7B92612094F0D3F /* ThemeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardCell.swift; sourceTree = "<group>"; };
 		7FEF78FF5B5541746D8B94DF /* MilestoneVideoRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneVideoRenderer.swift; sourceTree = "<group>"; };
 		857546B658B167E382FAD549 /* MilestoneCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCaptureViewController.swift; sourceTree = "<group>"; };
 		89D876EB6DF4D7495E8D8ED8 /* ZoomableImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageViewController.swift; sourceTree = "<group>"; };
+		91135208EFB702C497066757 /* MilestoneCollageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageGalleryViewController.swift; sourceTree = "<group>"; };
 		92DC661031709EF5F8A124E9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
 		97EBB6079D2A7C5116B5FB33 /* MilestoneListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListDetailViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				857546B658B167E382FAD549 /* MilestoneCaptureViewController.swift */,
+				91135208EFB702C497066757 /* MilestoneCollageGalleryViewController.swift */,
 				C6D2A351E13BBB2EBE6ECD81 /* MilestoneCollageViewController.swift */,
 				5D2494F1E8DEDAC22CB992D0 /* MilestoneDetailViewController.swift */,
 				97EBB6079D2A7C5116B5FB33 /* MilestoneListDetailViewController.swift */,
@@ -267,6 +272,7 @@
 				5A8BF08F841E1AA95C6083A5 /* FavoritesService.swift */,
 				2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */,
 				B68349B26C3022F6579A9279 /* LimitedOfferService.swift */,
+				73760A4820A4FED4EA0E5602 /* MilestoneCollageStore.swift */,
 				A9AA301847962C8D5E2AB2F2 /* MilestoneRemoteStore.swift */,
 				4A2EAC78DCE6D4FBFD9CBD84 /* MilestoneStore.swift */,
 				7FEF78FF5B5541746D8B94DF /* MilestoneVideoRenderer.swift */,
@@ -510,6 +516,8 @@
 				B41FE525ADF1784F9B0AB241 /* MainTabBarController.swift in Sources */,
 				0A96BA11249ED5B740C24212 /* Milestone.swift in Sources */,
 				28A806F9670B540281834B19 /* MilestoneCaptureViewController.swift in Sources */,
+				655DD5628FDB2470A62C5909 /* MilestoneCollageGalleryViewController.swift in Sources */,
+				E720E8551443146D09A07440 /* MilestoneCollageStore.swift in Sources */,
 				13DC44E2E886FE1D1E1A817B /* MilestoneCollageViewController.swift in Sources */,
 				25067E8B66832B57882F3D21 /* MilestoneDetailViewController.swift in Sources */,
 				725E6337D84AC0B30945A578 /* MilestoneListDetailViewController.swift in Sources */,

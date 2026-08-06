@@ -148,15 +148,21 @@ final class MilestoneCollageViewController: UIViewController {
                     self.presentAlert(title: "Photos Access Needed", message: "Allow photo library access in Settings to save the video.")
                     return
                 }
-                PHPhotoLibrary.shared().performChanges({
-                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoURL)
-                }) { success, _ in
-                    DispatchQueue.main.async {
-                        if success {
-                            HapticFeedback.success()
-                            self.presentAlert(title: "Saved!", message: "The collage video was saved to your Photos.")
-                        } else {
-                            self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                self.withLocalFileURL { localURL in
+                    guard let localURL else {
+                        self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                        return
+                    }
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: localURL)
+                    }) { success, _ in
+                        DispatchQueue.main.async {
+                            if success {
+                                HapticFeedback.success()
+                                self.presentAlert(title: "Saved!", message: "The collage video was saved to your Photos.")
+                            } else {
+                                self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                            }
                         }
                     }
                 }
@@ -166,7 +172,47 @@ final class MilestoneCollageViewController: UIViewController {
 
     @objc private func shareTapped() {
         HapticFeedback.light()
-        present(UIActivityViewController(activityItems: [videoURL], applicationActivities: nil), animated: true)
+        withLocalFileURL { [weak self] localURL in
+            guard let self, let localURL else { return }
+            self.present(UIActivityViewController(activityItems: [localURL], applicationActivities: nil), animated: true)
+        }
+    }
+
+    /// The video is a local file URL when this screen was just pushed straight off a fresh
+    /// render (see MilestoneListDetailViewController) — used as-is. Opened from the "Kolajlarım"
+    /// gallery instead, it's a remote Storage URL: AVPlayer streams that fine for playback, but
+    /// PHAssetChangeRequest/UIActivityViewController both need an actual local file, so this
+    /// downloads it to a temp file first (with a brief spinner) whenever it isn't one already.
+    private func withLocalFileURL(completion: @escaping (URL?) -> Void) {
+        if videoURL.isFileURL {
+            completion(videoURL)
+            return
+        }
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.color = .white
+        spinner.startAnimating()
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+
+        let task = URLSession.shared.downloadTask(with: videoURL) { tempURL, _, _ in
+            var destination: URL?
+            if let tempURL {
+                let dest = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".mp4")
+                try? FileManager.default.removeItem(at: dest)
+                if (try? FileManager.default.moveItem(at: tempURL, to: dest)) != nil {
+                    destination = dest
+                }
+            }
+            DispatchQueue.main.async {
+                spinner.removeFromSuperview()
+                completion(destination)
+            }
+        }
+        task.resume()
     }
 
     private func presentAlert(title: String, message: String) {

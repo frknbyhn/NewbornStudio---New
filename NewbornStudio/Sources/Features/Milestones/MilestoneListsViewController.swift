@@ -6,12 +6,14 @@ import UIKit
 final class MilestoneListsViewController: UIViewController {
     private let store = MilestoneStore.shared
     private var stack: UIStackView!
+    private let collagesButton = GradientPillButton(title: "Kolajlarım", icon: UIImage(systemName: "film.stack.fill"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
         setUpHeader()
         setUpList()
+        setUpCollagesButton()
         reload()
     }
 
@@ -58,7 +60,9 @@ final class MilestoneListsViewController: UIViewController {
         stack.axis = .vertical
         stack.spacing = 12
         stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 30, right: 24)
+        // Extra bottom margin (vs. a plain 30) so the last row can scroll clear of the floating
+        // "Kolajlarım" button pinned over the content — see setUpCollagesButton().
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 100, right: 24)
         stack.translatesAutoresizingMaskIntoConstraints = false
         scroll.addSubview(stack)
 
@@ -73,6 +77,51 @@ final class MilestoneListsViewController: UIViewController {
             stack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
             stack.widthAnchor.constraint(equalTo: scroll.widthAnchor)
         ])
+    }
+
+    /// Floating over the scrollable list (not part of its content) so it's always reachable —
+    /// mirrors MilestoneListDetailViewController's "Kolaj Oluştur" button exactly.
+    private func setUpCollagesButton() {
+        let fade = UIView()
+        fade.translatesAutoresizingMaskIntoConstraints = false
+        fade.isUserInteractionEnabled = false
+        view.addSubview(fade)
+
+        let gradient = CAGradientLayer()
+        gradient.colors = [Theme.Color.backgroundCream.withAlphaComponent(0).cgColor, Theme.Color.backgroundCream.cgColor]
+        gradient.locations = [0, 0.4]
+        fade.layer.addSublayer(gradient)
+
+        collagesButton.addTarget(self, action: #selector(collagesTapped), for: .touchUpInside)
+        collagesButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collagesButton)
+
+        NSLayoutConstraint.activate([
+            fade.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            fade.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            fade.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            fade.topAnchor.constraint(equalTo: collagesButton.topAnchor, constant: -28),
+
+            collagesButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            collagesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            collagesButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        ])
+
+        collagesButtonFadeLayer = gradient
+        collagesButtonFadeView = fade
+    }
+
+    private var collagesButtonFadeLayer: CAGradientLayer!
+    private var collagesButtonFadeView: UIView!
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collagesButtonFadeLayer?.frame = collagesButtonFadeView?.bounds ?? .zero
+    }
+
+    @objc private func collagesTapped() {
+        HapticFeedback.selection()
+        navigationController?.pushViewController(MilestoneCollageGalleryViewController(), animated: true)
     }
 
     private func reload() {
