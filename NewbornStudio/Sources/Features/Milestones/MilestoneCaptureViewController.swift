@@ -375,7 +375,12 @@ final class MilestoneCaptureViewController: UIViewController {
         CreditsService.requireCredits(presentingFrom: self) { [weak self] in
             guard let self else { return }
             let context = MilestoneCaptureContext(milestoneId: self.milestone.id, listId: self.listId)
-            let loading = GenerationLoadingViewController(theme: Self.customTheme, sourceImage: pickedImage, editInstruction: prompt, milestoneContext: context)
+            // true whenever this is a curated milestone prompt (not the user's own free-typed
+            // one) — the whole point of a milestone like First Laugh or Waves Bye-Bye IS a
+            // different expression/pose than the uploaded photo, so the default "preserve the
+            // original expression" instruction can't be allowed to override it. See
+            // GenerationService.generate's doc comment.
+            let loading = GenerationLoadingViewController(theme: Self.customTheme, sourceImage: pickedImage, editInstruction: prompt, allowPoseChange: self.curatedPrompt != nil, milestoneContext: context)
             self.navigationController?.pushViewController(loading, animated: true)
         }
     }

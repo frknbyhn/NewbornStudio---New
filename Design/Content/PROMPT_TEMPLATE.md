@@ -23,6 +23,34 @@ style is the one-line descriptor, which is what actually needs a human/AI's judg
 `category.mood` and `style.descriptor` are the only two knobs. `aspectRatio` is fixed at `3:4`
 (the app's portrait card ratio) unless a style benefits from otherwise.
 
+### `allowPoseChange` (optional category flag)
+
+Most categories are costume/background themes — the baby's own expression and pose should carry
+over unchanged, only styling should change, so the formula's preserve-clause defaults to:
+
+```
+Preserve the baby's exact face, expression, proportions and skin tone from the original
+photo; only change styling, outfit, props and background to match the theme.
+```
+
+A milestone-style category (currently "Firsts" and "Milestones"/age-progression) is different —
+its whole point is a SPECIFIC expression or pose ("mid-laugh, eyes crinkled shut", "one hand
+raised mid-wave", "sitting up independently") that's almost never what the uploaded photo
+happens to show. Under the default clause above, that's two contradicting instructions in the
+same prompt, and the model either muddles the result or just ignores the descriptor and keeps
+the original expression. Setting `"allowPoseChange": true` on a category swaps in:
+
+```
+Keep the baby's facial identity recognizable — same face shape, eyes, and skin tone as
+the original photo — but adopt the exact expression and pose described in the theme
+below, even if that differs from the original photo.
+```
+
+Scoped per-category (not changed globally) so the majority of styles that already work well
+under strict preservation keep that behavior — this only affects categories that explicitly opt
+in. Re-run `seedThemes` after adding/removing the flag so `ai_models.{styleId}.prompt` picks up
+the change (see functions/index.js's comment for the redeploy/run/delete steps).
+
 ## Worked examples
 
 **Fantasy & Fairytale → Dragon Rider**

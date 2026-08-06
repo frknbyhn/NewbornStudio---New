@@ -1,5 +1,5 @@
 {
-  "_readme": "20 categories x 15+ styles for the Newborn Studio theme gallery. This is content planning only \u2014 no images generated yet. Each style has a short 'descriptor' rather than a full prompt; the full Wiro prompt is built at generation time from promptTemplate + category.mood + style.descriptor (see Design/Content/PROMPT_TEMPLATE.md for the exact formula and worked examples). This file is the seed data for the Firestore `ai_models` collection in Phase 6 \u2014 nothing here is wired into the app yet.",
+  "_readme": "20 categories x 15+ styles for the Newborn Studio theme gallery. This is content planning only — no images generated yet. Each style has a short 'descriptor' rather than a full prompt; the full Wiro prompt is built at generation time from promptTemplate + category.mood + style.descriptor (see Design/Content/PROMPT_TEMPLATE.md for the exact formula and worked examples). This file is the seed data for the Firestore `ai_models` collection in Phase 6 — nothing here is wired into the app yet.",
   "categories": [
     {
       "id": "milestones",
@@ -106,7 +106,8 @@
           "name": "First Birthday",
           "descriptor": "seated joyfully among soft pastel balloons and scattered confetti, a small '1'-shaped cake-smash prop nearby, bright cheerful party backdrop, warm celebratory lighting, big happy expression"
         }
-      ]
+      ],
+      "allowPoseChange": true
     },
     {
       "id": "age-milestones",
@@ -178,7 +179,8 @@
           "name": "One Year",
           "descriptor": "standing proudly beside a wooden '1 YEAR' milestone marker amid a small first-birthday-style arrangement of dried flowers and a single balloon, soft natural light, joyful celebratory tone"
         }
-      ]
+      ],
+      "allowPoseChange": true
     },
     {
       "id": "newborn-classics",
@@ -674,7 +676,7 @@
     },
     {
       "id": "seasonal-spring",
-      "name": "Seasonal \u2014 Spring",
+      "name": "Seasonal — Spring",
       "mood": "fresh, pastel, blooming spring cheer",
       "styles": [
         {
@@ -756,7 +758,7 @@
     },
     {
       "id": "seasonal-winter",
-      "name": "Seasonal \u2014 Winter & Christmas",
+      "name": "Seasonal — Winter & Christmas",
       "mood": "cozy, festive, warm holiday glow",
       "styles": [
         {
@@ -838,7 +840,7 @@
     },
     {
       "id": "seasonal-halloween",
-      "name": "Seasonal \u2014 Halloween",
+      "name": "Seasonal — Halloween",
       "mood": "playful, spooky-cute, autumn charm",
       "styles": [
         {
@@ -920,7 +922,7 @@
     },
     {
       "id": "seasonal-summer",
-      "name": "Seasonal \u2014 Summer & Beach",
+      "name": "Seasonal — Summer & Beach",
       "mood": "bright, sunny, breezy beach-day fun",
       "styles": [
         {

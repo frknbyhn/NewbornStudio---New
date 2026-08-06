@@ -12,6 +12,9 @@ final class GenerationLoadingViewController: UIViewController {
     private let theme: ThemeCard
     private let sourceImage: UIImage
     private let editInstruction: String?
+    /// Forwarded to GenerationService — see its doc comment. Only meaningful alongside a real
+    /// editInstruction.
+    private let allowPoseChange: Bool
     /// Forwarded to ResultViewController — when set, closing that screen saves the result onto
     /// this milestone and returns to its list instead of the default popToRoot.
     private let milestoneContext: MilestoneCaptureContext?
@@ -30,10 +33,11 @@ final class GenerationLoadingViewController: UIViewController {
     private static let tickInterval: TimeInterval = 0.3
     private static let minimumDuration: TimeInterval = 15
 
-    init(theme: ThemeCard, sourceImage: UIImage, editInstruction: String? = nil, milestoneContext: MilestoneCaptureContext? = nil) {
+    init(theme: ThemeCard, sourceImage: UIImage, editInstruction: String? = nil, allowPoseChange: Bool = false, milestoneContext: MilestoneCaptureContext? = nil) {
         self.theme = theme
         self.sourceImage = sourceImage
         self.editInstruction = editInstruction
+        self.allowPoseChange = allowPoseChange
         self.milestoneContext = milestoneContext
         super.init(nibName: nil, bundle: nil)
     }
@@ -152,7 +156,7 @@ final class GenerationLoadingViewController: UIViewController {
     }
 
     private func startGeneration() {
-        GenerationService.generate(styleId: theme.id, sourceImage: sourceImage, editInstruction: editInstruction) { [weak self] result in
+        GenerationService.generate(styleId: theme.id, sourceImage: sourceImage, editInstruction: editInstruction, allowPoseChange: allowPoseChange) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self, !self.didFinish else { return }
                 if case .failure = result {

@@ -29,7 +29,7 @@ exports.generateContent = onCall(
     const uid = request.auth && request.auth.uid;
     if (!uid) throw new HttpsError("unauthenticated", "Sign-in required.");
 
-    const { styleId, imageBase64, editInstruction } = request.data || {};
+    const { styleId, imageBase64, editInstruction, allowPoseChange } = request.data || {};
     if (!styleId || !imageBase64) {
       throw new HttpsError("invalid-argument", "styleId and imageBase64 are required.");
     }
@@ -77,7 +77,7 @@ exports.generateContent = onCall(
       const { buffer, contentType } = await generateImage({
         apiKey: WIRO_API_KEY.value(),
         apiSecret: WIRO_API_SECRET.value(),
-        prompt: editInstruction ? buildEditPrompt({ instruction: editInstruction }) : style.prompt,
+        prompt: editInstruction ? buildEditPrompt({ instruction: editInstruction, allowPoseChange: !!allowPoseChange }) : style.prompt,
         // Sent directly to Wiro as a multipart file attachment — no Storage round-trip for the
         // user's source photo. Verified empirically that Wiro actually uses the attached file
         // (undocumented in Wiro's own docs, which only show URL-string examples).

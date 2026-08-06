@@ -48,7 +48,7 @@ exports.seedThemes = onRequest({ secrets: [SEED_TOKEN], timeoutSeconds: 120 }, a
         mood: category.mood,
         name: style.name,
         descriptor: style.descriptor,
-        prompt: buildPrompt({ styleName: style.name, descriptor: style.descriptor, mood: category.mood }),
+        prompt: buildPrompt({ styleName: style.name, descriptor: style.descriptor, mood: category.mood, allowPoseChange: !!category.allowPoseChange }),
         creditCost: 1,
         aspectRatio: "3:4",
         // Without this, fetchThemes(categoryId:) has no orderBy and Firestore falls back to
