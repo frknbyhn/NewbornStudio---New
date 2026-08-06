@@ -4,6 +4,9 @@ initializeApp();
 
 exports.generateContent = require("./generateContent").generateContent;
 exports.animateResult = require("./animateResult").animateResult;
+exports.startCollageAnimation = require("./startCollageAnimation").startCollageAnimation;
+exports.processCollageAnimationItem = require("./processCollageAnimationItem").processCollageAnimationItem;
+exports.finalizeCollageAnimation = require("./finalizeCollageAnimation").finalizeCollageAnimation;
 exports.deleteAccount = require("./deleteAccount").deleteAccount;
 exports.grantPurchase = require("./grantPurchase").grantPurchase;
 

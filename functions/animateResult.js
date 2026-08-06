@@ -2,18 +2,10 @@ const { onCall, HttpsError } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { getStorage } = require("firebase-admin/storage");
-const { randomUUID } = require("crypto");
 const { generateVideo } = require("./helpers/wiroVideo");
 const { buildAnimatePrompt } = require("./helpers/prompt");
 const { ensureUserDoc, spendCredits } = require("./helpers/credits");
-
-// Same download-token scheme as generateContent.js — see that file's comment for why (no
-// iam.serviceAccounts.signBlob available to this runtime service account).
-async function downloadUrlFor(file) {
-  const token = randomUUID();
-  await file.setMetadata({ metadata: { firebaseStorageDownloadTokens: token } });
-  return `https://firebasestorage.googleapis.com/v0/b/${file.bucket.name}/o/${encodeURIComponent(file.name)}?alt=media&token=${token}`;
-}
+const { downloadUrlFor } = require("./helpers/storage");
 
 const WIRO_API_KEY = defineSecret("WIRO_API_KEY");
 const WIRO_API_SECRET = defineSecret("WIRO_API_SECRET");

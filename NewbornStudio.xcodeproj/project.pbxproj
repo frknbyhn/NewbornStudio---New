@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		018D9968999825417B606703 /* MilestoneVideoRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF78FF5B5541746D8B94DF /* MilestoneVideoRenderer.swift */; };
 		03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */; };
 		0697F0E77483FFC91E970CC5 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912CC63C6E345709B5F9019 /* PaddedLabel.swift */; };
 		082C4B9A5684891B87111C26 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */; };
@@ -33,8 +32,10 @@
 		477855ED8306D46270F09B4F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B61AFFA7C1482FB5B77B8 /* ProfileViewController.swift */; };
 		4A0BB859F9403CB20DE527E6 /* GenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */; };
 		4B0A8765F67962890859A60C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A76CDB5F21897BE615473238 /* FirebaseFirestore */; };
+		4CA52D6FC41F9CE5F03AEC5E /* CollageAnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855AB6FB5AB560E3DFFE69B /* CollageAnimationService.swift */; };
 		55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D217EC357D10BBD06523A /* AppCoordinator.swift */; };
 		563A13B7689A72132CBE6986 /* CreateYourOwnStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */; };
+		5AE6067D581D44C6737A787A /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0FD8518A7CABB1221271D /* PushNotificationService.swift */; };
 		609C3425900374E6A62AEC58 /* LegalDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E2CC2727250F73C84155DF /* LegalDocumentViewController.swift */; };
 		655DD5628FDB2470A62C5909 /* MilestoneCollageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91135208EFB702C497066757 /* MilestoneCollageGalleryViewController.swift */; };
 		65857A19D43A9D37613D935C /* LimitedOfferPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E089CFB1B50604ECD1ED4 /* LimitedOfferPopupViewController.swift */; };
@@ -111,7 +112,6 @@
 		73760A4820A4FED4EA0E5602 /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		781E7BF30237C3C0EDFB352F /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		7F48A625E7B92612094F0D3F /* ThemeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardCell.swift; sourceTree = "<group>"; };
-		7FEF78FF5B5541746D8B94DF /* MilestoneVideoRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneVideoRenderer.swift; sourceTree = "<group>"; };
 		857546B658B167E382FAD549 /* MilestoneCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCaptureViewController.swift; sourceTree = "<group>"; };
 		89D876EB6DF4D7495E8D8ED8 /* ZoomableImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageViewController.swift; sourceTree = "<group>"; };
 		91135208EFB702C497066757 /* MilestoneCollageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageGalleryViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +124,7 @@
 		A2252ECD08EF287944198F72 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDotsView.swift; sourceTree = "<group>"; };
 		A75301CAE2D5DCFC4E515169 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		A8A0FD8518A7CABB1221271D /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 		A9AA301847962C8D5E2AB2F2 /* MilestoneRemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneRemoteStore.swift; sourceTree = "<group>"; };
 		AB5E5ADA9E63E84A499201B7 /* CreditsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsService.swift; sourceTree = "<group>"; };
 		ACF261CA80B88245D53F8420 /* SubscriptionPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlan.swift; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 		CF2906789AA10EA365194D60 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		CFC08B8E2A5886007925282F /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		D19CCDF721E36711C5C2F478 /* CoinPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackageViewController.swift; sourceTree = "<group>"; };
+		D855AB6FB5AB560E3DFFE69B /* CollageAnimationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageAnimationService.swift; sourceTree = "<group>"; };
 		DCE374D091E4F8D353D9D2B5 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
 		DD5174FCAB01C88CAD7E4E7C /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 		DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateYourOwnStyleCell.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			children = (
 				9F94E3C078C38AC4A1329823 /* AnimationService.swift */,
 				9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */,
+				D855AB6FB5AB560E3DFFE69B /* CollageAnimationService.swift */,
 				AB5E5ADA9E63E84A499201B7 /* CreditsService.swift */,
 				9D904EC7447C3F2DB23648CC /* FaceCheck.swift */,
 				ECA57E93405E32339B219BC6 /* FaceDetectionService.swift */,
@@ -281,7 +284,7 @@
 				73760A4820A4FED4EA0E5602 /* MilestoneCollageStore.swift */,
 				A9AA301847962C8D5E2AB2F2 /* MilestoneRemoteStore.swift */,
 				4A2EAC78DCE6D4FBFD9CBD84 /* MilestoneStore.swift */,
-				7FEF78FF5B5541746D8B94DF /* MilestoneVideoRenderer.swift */,
+				A8A0FD8518A7CABB1221271D /* PushNotificationService.swift */,
 				93ACE1F0B40459299792B34A /* RemoteImageLoader.swift */,
 				F5879ACF5F2BEC2B50AABEEE /* RevenueCatService.swift */,
 				A2252ECD08EF287944198F72 /* ThemeService.swift */,
@@ -505,6 +508,7 @@
 				C660DDE533369A4C79932F42 /* CoinPackage.swift in Sources */,
 				EADE74FE82A4B76FD8D5721A /* CoinPackageCell.swift in Sources */,
 				88CCB4F182212328974B04E4 /* CoinPackageViewController.swift in Sources */,
+				4CA52D6FC41F9CE5F03AEC5E /* CollageAnimationService.swift in Sources */,
 				563A13B7689A72132CBE6986 /* CreateYourOwnStyleCell.swift in Sources */,
 				B2D3FA887578BABAB7FB10C5 /* CreditsService.swift in Sources */,
 				D271597F73536994493C5042 /* CustomStyleViewController.swift in Sources */,
@@ -532,7 +536,6 @@
 				26909D3088168DF6959E8D22 /* MilestoneListsViewController.swift in Sources */,
 				6C40640A16B28C3C2832FCC0 /* MilestoneRemoteStore.swift in Sources */,
 				96EC7B3712CE04E72B30D78F /* MilestoneStore.swift in Sources */,
-				018D9968999825417B606703 /* MilestoneVideoRenderer.swift in Sources */,
 				3D82FAA48CE9715BF31C007C /* OnboardingContainerViewController.swift in Sources */,
 				1C305EF571A030C84CCD2B9F /* OnboardingPage.swift in Sources */,
 				65B4BD6EDDB3F7DDFBA647D6 /* OnboardingPageViewController.swift in Sources */,
@@ -543,6 +546,7 @@
 				F240B8750E7CFDF78C822953 /* PhotoUploadViewController.swift in Sources */,
 				B88D7A8DEE640A39F6F4F833 /* PlanCardView.swift in Sources */,
 				477855ED8306D46270F09B4F /* ProfileViewController.swift in Sources */,
+				5AE6067D581D44C6737A787A /* PushNotificationService.swift in Sources */,
 				358DE3B132AF9A93CA69FABA /* RemoteImageLoader.swift in Sources */,
 				A575CFC5A496617F96E656A2 /* ResultViewController.swift in Sources */,
 				E88C8BB863DC8A134ECDA780 /* RevenueCatService.swift in Sources */,
@@ -566,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NewbornStudio/Resources/NewbornStudio.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -591,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NewbornStudio/Resources/NewbornStudio.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

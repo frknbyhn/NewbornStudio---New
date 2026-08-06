@@ -2,20 +2,10 @@ const { onCall, HttpsError } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { getStorage } = require("firebase-admin/storage");
-const { randomUUID } = require("crypto");
 const { generateImage } = require("./helpers/wiro");
 const { ensureUserDoc, spendCredits } = require("./helpers/credits");
 const { buildEditPrompt } = require("./helpers/prompt");
-
-// Firebase's own download-token scheme (what client SDKs' getDownloadURL() produces) instead of
-// a GCS signed URL — the runtime service account doesn't have iam.serviceAccounts.signBlob, and
-// granting it needs a gcloud-authenticated session this environment doesn't have. Still used for
-// the RESULT image, which does need to live somewhere the client can fetch it back from.
-async function downloadUrlFor(file) {
-  const token = randomUUID();
-  await file.setMetadata({ metadata: { firebaseStorageDownloadTokens: token } });
-  return `https://firebasestorage.googleapis.com/v0/b/${file.bucket.name}/o/${encodeURIComponent(file.name)}?alt=media&token=${token}`;
-}
+const { downloadUrlFor } = require("./helpers/storage");
 
 const WIRO_API_KEY = defineSecret("WIRO_API_KEY");
 const WIRO_API_SECRET = defineSecret("WIRO_API_SECRET");

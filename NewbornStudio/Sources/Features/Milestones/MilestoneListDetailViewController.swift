@@ -156,118 +156,64 @@ final class MilestoneListDetailViewController: UIViewController {
             present(alert, animated: true)
             return
         }
-        startCollageGeneration(for: captured)
+        startCollageAnimation(for: captured)
     }
 
     // MARK: - Collage generation
+    //
+    // Each captured item gets its own Wiro-animated video clip, then all clips are concatenated
+    // server-side (see startCollageAnimation/processCollageAnimationItem/finalizeCollageAnimation
+    // in functions/) — this can take a long time (one Wiro call per item, run sequentially), so
+    // this screen fires the request and moves on immediately rather than blocking on it; the
+    // result shows up "Preparing…" in My Collages and (once push notifications are wired up
+    // with a real APNs key) a push when it's ready.
 
-    private var collageProgressOverlay: UIView?
-    private var collageProgressLabel: UILabel?
+    private func startCollageAnimation(for captured: [Milestone]) {
+        // A photo captured moments ago on THIS device might still be mid-upload (see
+        // MilestoneStore.capture's async Storage path for a plain local pick) and have no
+        // photoUrl yet — those items are dropped rather than sent with no image at all.
+        let items = captured.compactMap { milestone -> CollageAnimationService.ItemPayload? in
+            guard let photoUrl = milestone.photoUrl else { return nil }
+            // Only a standard-list milestone's id doubles as an ai_models style id — sending it
+            // lets the server build a real per-style animate prompt (see
+            // processCollageAnimationItem); a custom-list item's UUID has no catalog entry to
+            // find, so it isn't sent as a styleId at all (server falls back to a generic prompt).
+            let styleId = list.isStandard ? milestone.id : nil
+            return CollageAnimationService.ItemPayload(milestoneId: milestone.id, title: milestone.title, photoUrl: photoUrl, styleId: styleId)
+        }
+        guard items.count >= Self.minCaptureCountForCollage else {
+            presentCollageErrorAlert(message: "Some of your captured photos are still syncing. Please try again in a moment.")
+            return
+        }
 
-    private func startCollageGeneration(for captured: [Milestone]) {
-        showCollageProgressOverlay()
-        resolveImages(for: captured) { [weak self] items in
+        CreditsService.requireCredits(presentingFrom: self) { [weak self] in
             guard let self else { return }
-            guard !items.isEmpty else {
-                self.hideCollageProgressOverlay()
-                self.presentCollageErrorAlert()
-                return
-            }
-            MilestoneVideoRenderer.renderCollage(listName: self.list.name, items: items, progress: { [weak self] fraction in
-                self?.collageProgressLabel?.text = "Creating your collage… \(Int(fraction * 100))%"
-            }, completion: { [weak self] result in
+            CollageAnimationService.start(listId: self.listId, listName: self.list.name, items: items) { [weak self] result in
                 guard let self else { return }
-                self.hideCollageProgressOverlay()
                 switch result {
-                case .success(let url):
+                case .success:
                     HapticFeedback.success()
-                    // Pushes the local file immediately (instant, no network wait) while the
-                    // upload to "My Collages" happens in the background — see MilestoneCollageStore.
-                    let collageId = MilestoneCollageStore.saveCollage(localFileURL: url, listId: self.listId, listName: self.list.name)
-                    self.navigationController?.pushViewController(MilestoneCollageViewController(videoURL: url, listName: self.list.name, collageId: collageId), animated: true)
-                case .failure:
-                    self.presentCollageErrorAlert()
+                    self.presentCollageStartedAlert()
+                case .failure(let error):
+                    print("startCollageAnimation failed: \(error)")
+                    self.presentCollageErrorAlert(message: "Something went wrong starting your collage. Please try again.")
                 }
-            })
-        }
-    }
-
-    /// A captured milestone's photo is already in memory only if this session captured it —
-    /// after a relaunch, only `photoUrl` survives (see MilestoneStore/MilestoneRemoteStore), so
-    /// this resolves whichever source each one actually has before rendering can start.
-    private func resolveImages(for captured: [Milestone], completion: @escaping ([MilestoneVideoRenderer.Item]) -> Void) {
-        var items: [MilestoneVideoRenderer.Item?] = Array(repeating: nil, count: captured.count)
-        let group = DispatchGroup()
-        for (index, milestone) in captured.enumerated() {
-            if let photo = milestone.photo {
-                items[index] = MilestoneVideoRenderer.Item(title: milestone.title, image: photo, capturedAt: milestone.capturedAt)
-                continue
-            }
-            guard let urlString = milestone.photoUrl, let url = URL(string: urlString) else { continue }
-            group.enter()
-            RemoteImageLoader.load(url) { image in
-                if let image {
-                    items[index] = MilestoneVideoRenderer.Item(title: milestone.title, image: image, capturedAt: milestone.capturedAt)
-                }
-                group.leave()
             }
         }
-        group.notify(queue: .main) {
-            completion(items.compactMap { $0 })
-        }
     }
 
-    private func showCollageProgressOverlay() {
-        let overlay = UIView()
-        overlay.backgroundColor = UIColor.black.withAlphaComponent(0.55)
-        overlay.translatesAutoresizingMaskIntoConstraints = false
-
-        let spinner = UIActivityIndicatorView(style: .large)
-        spinner.color = .white
-        spinner.startAnimating()
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-
-        let label = UILabel()
-        label.text = "Creating your collage… 0%"
-        label.font = Theme.Font.heading(15, weight: 700)
-        label.textColor = .white
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        let stack = UIStackView(arrangedSubviews: [spinner, label])
-        stack.axis = .vertical
-        stack.spacing = 14
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        overlay.addSubview(stack)
-        view.addSubview(overlay)
-
-        NSLayoutConstraint.activate([
-            overlay.topAnchor.constraint(equalTo: view.topAnchor),
-            overlay.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            overlay.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            overlay.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            stack.centerXAnchor.constraint(equalTo: overlay.centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo: overlay.centerYAnchor),
-            stack.leadingAnchor.constraint(greaterThanOrEqualTo: overlay.leadingAnchor, constant: 40),
-            stack.trailingAnchor.constraint(lessThanOrEqualTo: overlay.trailingAnchor, constant: -40)
-        ])
-
-        collageProgressOverlay = overlay
-        collageProgressLabel = label
-    }
-
-    private func hideCollageProgressOverlay() {
-        collageProgressOverlay?.removeFromSuperview()
-        collageProgressOverlay = nil
-        collageProgressLabel = nil
-    }
-
-    private func presentCollageErrorAlert() {
+    private func presentCollageStartedAlert() {
         let alert = UIAlertController(
-            title: "Something Went Wrong",
-            message: "We couldn't create the collage video. Please try again.",
+            title: "Your Request Was Received",
+            message: "We're preparing your collage — you can check its progress anytime in My Collages, and we'll notify you the moment it's ready.",
             preferredStyle: .alert
         )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
+    private func presentCollageErrorAlert(message: String = "We couldn't create the collage video. Please try again.") {
+        let alert = UIAlertController(title: "Something Went Wrong", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }

@@ -10,6 +10,12 @@ final class MilestoneCollageGalleryViewController: UIViewController {
     private let spinner = UIActivityIndicatorView(style: .large)
 
     private var hasLoadedOnce = false
+    /// While at least one row is still `.generating`, polls every few seconds so this screen
+    /// updates on its own if the user just leaves it open and waits — a real push notification
+    /// (once an APNs key is configured) is the primary "it's ready" signal, this is just a
+    /// foreground nicety on top of it. Stops itself the moment nothing is generating anymore.
+    private var refreshTimer: Timer?
+    private static let refreshInterval: TimeInterval = 8
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,24 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         // deletion made on MilestoneCollageViewController when popping back here.
         if hasLoadedOnce {
             loadCollages()
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        refreshTimer?.invalidate()
+        refreshTimer = nil
+    }
+
+    private func updateRefreshTimer() {
+        let stillGenerating = collages.contains { $0.status == .generating }
+        if stillGenerating, refreshTimer == nil {
+            refreshTimer = Timer.scheduledTimer(withTimeInterval: Self.refreshInterval, repeats: true) { [weak self] _ in
+                self?.loadCollages()
+            }
+        } else if !stillGenerating {
+            refreshTimer?.invalidate()
+            refreshTimer = nil
         }
     }
 
@@ -103,6 +127,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
             case .success(let collages):
                 self.collages = collages
                 self.reload()
+                self.updateRefreshTimer()
             case .failure:
                 self.reload() // shows the empty state — a quiet failure beats a blocking error here
             }
@@ -138,20 +163,33 @@ final class MilestoneCollageGalleryViewController: UIViewController {
 
     private func collageRow(for collage: MilestoneCollageStore.SavedCollage) -> UIView {
         let bg = UIView()
-        bg.backgroundColor = Theme.Color.purpleBackground
+        bg.backgroundColor = collage.status == .failed ? UIColor(hex: 0xFCE6E6) : Theme.Color.purpleBackground
         bg.layer.cornerRadius = 12
         bg.translatesAutoresizingMaskIntoConstraints = false
         bg.widthAnchor.constraint(equalToConstant: 44).isActive = true
         bg.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
-        let icon = UIImageView(image: UIImage(systemName: "film.fill"))
-        icon.tintColor = Theme.Color.purpleAccent
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        bg.addSubview(icon)
-        NSLayoutConstraint.activate([
-            icon.centerXAnchor.constraint(equalTo: bg.centerXAnchor),
-            icon.centerYAnchor.constraint(equalTo: bg.centerYAnchor)
-        ])
+        switch collage.status {
+        case .generating:
+            let spinner = UIActivityIndicatorView(style: .medium)
+            spinner.color = Theme.Color.purpleAccent
+            spinner.startAnimating()
+            spinner.translatesAutoresizingMaskIntoConstraints = false
+            bg.addSubview(spinner)
+            NSLayoutConstraint.activate([
+                spinner.centerXAnchor.constraint(equalTo: bg.centerXAnchor),
+                spinner.centerYAnchor.constraint(equalTo: bg.centerYAnchor)
+            ])
+        case .complete, .failed:
+            let icon = UIImageView(image: UIImage(systemName: collage.status == .failed ? "exclamationmark.triangle.fill" : "film.fill"))
+            icon.tintColor = collage.status == .failed ? UIColor(hex: 0xC24E4E) : Theme.Color.purpleAccent
+            icon.translatesAutoresizingMaskIntoConstraints = false
+            bg.addSubview(icon)
+            NSLayoutConstraint.activate([
+                icon.centerXAnchor.constraint(equalTo: bg.centerXAnchor),
+                icon.centerYAnchor.constraint(equalTo: bg.centerYAnchor)
+            ])
+        }
 
         let title = UILabel()
         title.text = collage.listName
@@ -159,9 +197,18 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         title.textColor = Theme.Color.textPrimaryAlt
 
         let subtitle = UILabel()
-        subtitle.text = Self.dateFormatter.string(from: collage.createdAt)
+        switch collage.status {
+        case .generating:
+            subtitle.text = "Preparing… (\(collage.itemCount) clips)"
+            subtitle.textColor = Theme.Color.purpleAccent
+        case .failed:
+            subtitle.text = "Couldn't be created — credits refunded"
+            subtitle.textColor = UIColor(hex: 0xC24E4E)
+        case .complete:
+            subtitle.text = Self.dateFormatter.string(from: collage.createdAt)
+            subtitle.textColor = Theme.Color.textSecondary
+        }
         subtitle.font = Theme.Font.body(12.5, weight: 600)
-        subtitle.textColor = Theme.Color.textSecondary
 
         let textStack = UIStackView(arrangedSubviews: [title, subtitle])
         textStack.axis = .vertical
@@ -171,6 +218,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         let chevron = UIImageView(image: UIImage(systemName: "chevron.right"))
         chevron.tintColor = UIColor(hex: 0xCBBDB8)
         chevron.setContentHuggingPriority(.required, for: .horizontal)
+        chevron.isHidden = collage.status != .complete
 
         let spacer = UIView()
         spacer.isUserInteractionEnabled = false
@@ -188,17 +236,23 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         card.layer.cornerRadius = 18
         card.translatesAutoresizingMaskIntoConstraints = false
 
-        let control = MilestoneCollageControl(collage: collage)
-        control.translatesAutoresizingMaskIntoConstraints = false
-        control.addTarget(self, action: #selector(collageTapped(_:)), for: .touchUpInside)
+        // A generating/failed row has nothing to navigate to yet — only a complete one gets a
+        // tap control at all, so the row visually (no chevron) and functionally (no tap) agree.
+        if collage.status == .complete {
+            let control = MilestoneCollageControl(collage: collage)
+            control.translatesAutoresizingMaskIntoConstraints = false
+            control.addTarget(self, action: #selector(collageTapped(_:)), for: .touchUpInside)
+            card.addSubview(control)
+            NSLayoutConstraint.activate([
+                control.topAnchor.constraint(equalTo: card.topAnchor),
+                control.leadingAnchor.constraint(equalTo: card.leadingAnchor),
+                control.trailingAnchor.constraint(equalTo: card.trailingAnchor),
+                control.bottomAnchor.constraint(equalTo: card.bottomAnchor)
+            ])
+        }
 
-        card.addSubview(control)
         card.addSubview(row)
         NSLayoutConstraint.activate([
-            control.topAnchor.constraint(equalTo: card.topAnchor),
-            control.leadingAnchor.constraint(equalTo: card.leadingAnchor),
-            control.trailingAnchor.constraint(equalTo: card.trailingAnchor),
-            control.bottomAnchor.constraint(equalTo: card.bottomAnchor),
             row.topAnchor.constraint(equalTo: card.topAnchor),
             row.leadingAnchor.constraint(equalTo: card.leadingAnchor),
             row.trailingAnchor.constraint(equalTo: card.trailingAnchor),
@@ -208,9 +262,10 @@ final class MilestoneCollageGalleryViewController: UIViewController {
     }
 
     @objc private func collageTapped(_ sender: MilestoneCollageControl) {
+        guard let videoUrl = sender.collage.videoUrl else { return }
         HapticFeedback.selection()
         navigationController?.pushViewController(
-            MilestoneCollageViewController(videoURL: sender.collage.videoUrl, listName: sender.collage.listName, collageId: sender.collage.id),
+            MilestoneCollageViewController(videoURL: videoUrl, listName: sender.collage.listName, collageId: sender.collage.id),
             animated: true
         )
     }
