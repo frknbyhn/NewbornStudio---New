@@ -41,7 +41,11 @@ exports.processCollageAnimationItem = onTaskDispatched(
     if (collage.status !== "generating") return; // already finalized or otherwise no longer active
 
     const item = collage.items[itemIndex];
-    let styleName = "Portrait";
+    // No styleId at all means this is a custom-list item — there's no ai_models descriptor to
+    // look up (we genuinely don't know what's in the photo), but the user's OWN title for it
+    // (e.g. "First Haircut", "Grandma's Visit") is real context that was otherwise going
+    // completely unused here — better than the fully generic "Portrait" placeholder.
+    let styleName = item.title || "Portrait";
     let descriptor = "a warm, gentle studio portrait";
     let mood = "warm, natural, gentle";
     if (item.styleId) {
