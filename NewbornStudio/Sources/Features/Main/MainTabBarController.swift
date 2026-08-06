@@ -5,7 +5,7 @@ final class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         let home = wrap(HomeViewController(), title: "Home", icon: "house.fill")
-        let milestones = wrap(MilestoneListsViewController(), title: "Milestones", icon: "calendar")
+        let milestones = wrap(MilestoneListsViewController(), title: "My Collages", icon: "film.stack.fill")
         let gallery = wrap(GalleryViewController(), title: "Gallery", icon: "photo.on.rectangle")
         let profile = wrap(ProfileViewController(), title: "Profile", icon: "person.fill")
 

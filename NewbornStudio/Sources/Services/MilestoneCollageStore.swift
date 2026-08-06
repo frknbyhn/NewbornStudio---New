@@ -3,7 +3,7 @@ import FirebaseFirestore
 import FirebaseStorage
 
 /// Persists every collage video the user has generated (see MilestoneVideoRenderer) so the
-/// "Kolajlarım" gallery (MilestoneCollageGalleryViewController) still has them on a later
+/// "My Collages" gallery (MilestoneCollageGalleryViewController) still has them on a later
 /// launch — mirrors MilestoneRemoteStore's schema style, just its own collection since a
 /// collage is a very different shape of thing (one video, not a per-milestone capture).
 ///

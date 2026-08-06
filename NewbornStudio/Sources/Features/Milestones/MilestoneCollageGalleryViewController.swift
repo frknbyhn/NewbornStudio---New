@@ -122,7 +122,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
 
     private func emptyState() -> UIView {
         let label = UILabel()
-        label.text = "No collages yet — capture at least 5 milestones in a list, then tap \u{201c}Kolaj Oluştur\u{201d} to create one."
+        label.text = "No collages yet — capture at least 5 milestones in a list, then tap \u{201c}Create Collage\u{201d} to create one."
         label.font = Theme.Font.body(14, weight: 600)
         label.textColor = Theme.Color.textSecondary
         label.textAlignment = .center

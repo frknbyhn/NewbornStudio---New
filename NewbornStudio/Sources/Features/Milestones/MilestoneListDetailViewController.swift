@@ -7,7 +7,7 @@ final class MilestoneListDetailViewController: UIViewController {
     private let store = MilestoneStore.shared
     private let listId: String
     private var stack: UIStackView!
-    private let collageButton = GradientPillButton(title: "Kolaj Oluştur", icon: UIImage(systemName: "square.grid.2x2.fill"))
+    private let collageButton = GradientPillButton(title: "Create Collage", icon: UIImage(systemName: "square.grid.2x2.fill"))
 
     init(list: MilestoneList) {
         self.listId = list.id
@@ -80,7 +80,7 @@ final class MilestoneListDetailViewController: UIViewController {
         stack.spacing = 18
         stack.isLayoutMarginsRelativeArrangement = true
         // Extra bottom margin (vs. a plain 30) so the last row can scroll clear of the floating
-        // "Kolaj Oluştur" button pinned over the content — see setUpCollageButton().
+        // "Create Collage" button pinned over the content — see setUpCollageButton().
         stack.layoutMargins = UIEdgeInsets(top: 14, left: 24, bottom: 100, right: 24)
         stack.translatesAutoresizingMaskIntoConstraints = false
         scroll.addSubview(stack)
@@ -182,7 +182,7 @@ final class MilestoneListDetailViewController: UIViewController {
                 case .success(let url):
                     HapticFeedback.success()
                     // Pushes the local file immediately (instant, no network wait) while the
-                    // upload to "Kolajlarım" happens in the background — see MilestoneCollageStore.
+                    // upload to "My Collages" happens in the background — see MilestoneCollageStore.
                     let collageId = MilestoneCollageStore.saveCollage(localFileURL: url, listId: self.listId, listName: self.list.name)
                     self.navigationController?.pushViewController(MilestoneCollageViewController(videoURL: url, listName: self.list.name, collageId: collageId), animated: true)
                 case .failure:

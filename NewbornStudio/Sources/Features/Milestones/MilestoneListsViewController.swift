@@ -6,7 +6,7 @@ import UIKit
 final class MilestoneListsViewController: UIViewController {
     private let store = MilestoneStore.shared
     private var stack: UIStackView!
-    private let collagesButton = GradientPillButton(title: "Kolajlarım", icon: UIImage(systemName: "film.stack.fill"))
+    private let collagesButton = GradientPillButton(title: "My Collages", icon: UIImage(systemName: "film.stack.fill"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ final class MilestoneListsViewController: UIViewController {
 
     private func setUpHeader() {
         let title = UILabel()
-        title.text = "Your baby's milestones"
+        title.text = "Your baby's collages"
         title.font = Theme.Font.heading(23, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
 
@@ -61,7 +61,7 @@ final class MilestoneListsViewController: UIViewController {
         stack.spacing = 12
         stack.isLayoutMarginsRelativeArrangement = true
         // Extra bottom margin (vs. a plain 30) so the last row can scroll clear of the floating
-        // "Kolajlarım" button pinned over the content — see setUpCollagesButton().
+        // "My Collages" button pinned over the content — see setUpCollagesButton().
         stack.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 100, right: 24)
         stack.translatesAutoresizingMaskIntoConstraints = false
         scroll.addSubview(stack)
@@ -80,7 +80,7 @@ final class MilestoneListsViewController: UIViewController {
     }
 
     /// Floating over the scrollable list (not part of its content) so it's always reachable —
-    /// mirrors MilestoneListDetailViewController's "Kolaj Oluştur" button exactly.
+    /// mirrors MilestoneListDetailViewController's "Create Collage" button exactly.
     private func setUpCollagesButton() {
         let fade = UIView()
         fade.translatesAutoresizingMaskIntoConstraints = false

@@ -10,7 +10,7 @@ final class MilestoneCollageViewController: UIViewController {
     private let listName: String
     /// Id of the Firestore/Storage doc this collage is (or will shortly be, if the upload from
     /// a just-finished render is still in flight — see MilestoneCollageStore.saveCollage) saved
-    /// under. Always present — both call sites (a fresh render, or opening one from "Kolajlarım")
+    /// under. Always present — both call sites (a fresh render, or opening one from "My Collages")
     /// have it up front — so the delete action always has something to target.
     private let collageId: String
     private var player: AVPlayer!
@@ -228,7 +228,7 @@ final class MilestoneCollageViewController: UIViewController {
     }
 
     /// The video is a local file URL when this screen was just pushed straight off a fresh
-    /// render (see MilestoneListDetailViewController) — used as-is. Opened from the "Kolajlarım"
+    /// render (see MilestoneListDetailViewController) — used as-is. Opened from the "My Collages"
     /// gallery instead, it's a remote Storage URL: AVPlayer streams that fine for playback, but
     /// PHAssetChangeRequest/UIActivityViewController both need an actual local file, so this
     /// downloads it to a temp file first (with a brief spinner) whenever it isn't one already.
