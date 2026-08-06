@@ -30,10 +30,12 @@ final class MilestoneStore {
                         // Standard-list item: apply the remote capture onto the hardcoded definition.
                         self.lists[listIndex].milestones[milestoneIndex].state = doc.state == "done" ? .done : .pending
                         self.lists[listIndex].milestones[milestoneIndex].photoUrl = doc.photoUrl
+                        self.lists[listIndex].milestones[milestoneIndex].capturedAt = doc.capturedAt
                     } else if !self.lists[listIndex].isStandard {
                         // Custom-list item: the doc IS the definition, reconstruct it.
                         var milestone = Milestone(id: doc.id, title: doc.title ?? "Untitled", state: doc.state == "done" ? .done : .pending)
                         milestone.photoUrl = doc.photoUrl
+                        milestone.capturedAt = doc.capturedAt
                         self.lists[listIndex].milestones.append(milestone)
                     }
                 }
@@ -72,13 +74,19 @@ final class MilestoneStore {
         guard let listIndex = lists.firstIndex(where: { $0.id == listId }),
               let milestoneIndex = lists[listIndex].milestones.firstIndex(where: { $0.id == milestoneId })
         else { return }
+        // Only fill this in the first time — a later "change photo" (updatePhoto below) must
+        // not bump the original captured date.
+        let isFirstCapture = lists[listIndex].milestones[milestoneIndex].capturedAt == nil
+        let capturedAt = lists[listIndex].milestones[milestoneIndex].capturedAt ?? Date()
         lists[listIndex].milestones[milestoneIndex].state = .done
         lists[listIndex].milestones[milestoneIndex].photo = photo
         lists[listIndex].milestones[milestoneIndex].photoUrl = photoUrl
+        lists[listIndex].milestones[milestoneIndex].capturedAt = capturedAt
 
         let title = lists[listIndex].isStandard ? nil : lists[listIndex].milestones[milestoneIndex].title
+        let capturedAtToPersist = isFirstCapture ? capturedAt : nil
         if let photoUrl {
-            MilestoneRemoteStore.saveMilestone(id: milestoneId, listId: listId, title: title, state: .done, photoUrl: photoUrl)
+            MilestoneRemoteStore.saveMilestone(id: milestoneId, listId: listId, title: title, state: .done, photoUrl: photoUrl, capturedAt: capturedAtToPersist)
         } else {
             MilestoneRemoteStore.uploadPhoto(photo, milestoneId: milestoneId) { [weak self] uploadedUrl in
                 guard let self else { return }
@@ -86,7 +94,7 @@ final class MilestoneStore {
                    let mIndex = self.lists[index].milestones.firstIndex(where: { $0.id == milestoneId }) {
                     self.lists[index].milestones[mIndex].photoUrl = uploadedUrl
                 }
-                MilestoneRemoteStore.saveMilestone(id: milestoneId, listId: listId, title: title, state: .done, photoUrl: uploadedUrl)
+                MilestoneRemoteStore.saveMilestone(id: milestoneId, listId: listId, title: title, state: .done, photoUrl: uploadedUrl, capturedAt: capturedAtToPersist)
             }
         }
     }
@@ -101,6 +109,7 @@ final class MilestoneStore {
             lists[listIndex].milestones[milestoneIndex].state = .pending
             lists[listIndex].milestones[milestoneIndex].photo = nil
             lists[listIndex].milestones[milestoneIndex].photoUrl = nil
+            lists[listIndex].milestones[milestoneIndex].capturedAt = nil
             MilestoneRemoteStore.deleteMilestone(id: milestoneId)
         } else {
             removeMilestone(id: milestoneId, fromListId: listId)

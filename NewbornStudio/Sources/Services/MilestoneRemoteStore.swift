@@ -23,6 +23,7 @@ enum MilestoneRemoteStore {
         let title: String?
         let state: String
         let photoUrl: String?
+        let capturedAt: Date?
     }
 
     private static func userRef(_ uid: String) -> DocumentReference {
@@ -64,7 +65,8 @@ enum MilestoneRemoteStore {
                     listId: data["listId"] as? String ?? "",
                     title: data["title"] as? String,
                     state: data["state"] as? String ?? "pending",
-                    photoUrl: data["photoUrl"] as? String
+                    photoUrl: data["photoUrl"] as? String,
+                    capturedAt: (data["capturedAt"] as? Timestamp)?.dateValue()
                 )
             }
             group.leave()
@@ -87,7 +89,11 @@ enum MilestoneRemoteStore {
         userRef(uid).setData(["customMilestoneLists": raw], merge: true)
     }
 
-    static func saveMilestone(id: String, listId: String, title: String?, state: Milestone.State, photoUrl: String?) {
+    /// `capturedAt` should only ever be passed the FIRST time a milestone is captured — see
+    /// MilestoneStore.capture, which only fills in a local Date() when the field wasn't already
+    /// set, so a later "change photo" never bumps it. Passing nil here just omits the field
+    /// from this write rather than clearing an existing one (merge: true).
+    static func saveMilestone(id: String, listId: String, title: String?, state: Milestone.State, photoUrl: String?, capturedAt: Date? = nil) {
         guard let uid = AuthService.currentUserId else { return }
         var data: [String: Any] = [
             "listId": listId,
@@ -96,6 +102,7 @@ enum MilestoneRemoteStore {
         ]
         if let title { data["title"] = title }
         if let photoUrl { data["photoUrl"] = photoUrl }
+        if let capturedAt { data["capturedAt"] = Timestamp(date: capturedAt) }
         milestonesCollection(uid).document(id).setData(data, merge: true)
     }
 

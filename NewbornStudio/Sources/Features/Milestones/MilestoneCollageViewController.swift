@@ -1,0 +1,177 @@
+import UIKit
+import AVKit
+import Photos
+
+/// Shows the rendered collage video with looping playback, Save (to Photos) and Share — mirrors
+/// ResultViewController's dark preview screen so the two "here's your generated thing" moments
+/// in the app feel like the same pattern.
+final class MilestoneCollageViewController: UIViewController {
+    private let videoURL: URL
+    private let listName: String
+    private var player: AVPlayer!
+    private var playerLayer: AVPlayerLayer!
+    private var loopObserver: NSObjectProtocol?
+
+    init(videoURL: URL, listName: String) {
+        self.videoURL = videoURL
+        self.listName = listName
+        super.init(nibName: nil, bundle: nil)
+        hidesBottomBarWhenPushed = true
+    }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .white
+        view.backgroundColor = UIColor(hex: 0x2E2530)
+        setUpPlayer()
+        setUpActions()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(hex: 0x2E2530)
+        appearance.shadowColor = .clear
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = .white
+        player?.play()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
+        player?.pause()
+    }
+
+    deinit {
+        if let loopObserver {
+            NotificationCenter.default.removeObserver(loopObserver)
+        }
+    }
+
+    private var playerContainer: UIView!
+
+    private func setUpPlayer() {
+        let container = UIView()
+        container.backgroundColor = UIColor(hex: 0x54445A)
+        container.layer.cornerRadius = 26
+        container.layer.masksToBounds = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(container)
+        playerContainer = container
+
+        NSLayoutConstraint.activate([
+            container.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            container.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120)
+        ])
+
+        player = AVPlayer(url: videoURL)
+        player.actionAtItemEnd = .none
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspect
+        container.layer.addSublayer(playerLayer)
+
+        loopObserver = NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main
+        ) { [weak self] _ in
+            self?.player.seek(to: .zero)
+            self?.player.play()
+        }
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        playerLayer?.frame = playerContainer?.bounds ?? .zero
+    }
+
+    private func setUpActions() {
+        let actions = UIStackView(arrangedSubviews: [
+            actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
+            actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
+        ])
+        actions.axis = .horizontal
+        actions.distribution = .equalSpacing
+        actions.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(actions)
+
+        NSLayoutConstraint.activate([
+            actions.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            actions.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+        ])
+    }
+
+    private func actionButton(icon: String, title: String, action: Selector) -> UIView {
+        let circle = UIButton(type: .system)
+        circle.setImage(UIImage(systemName: icon), for: .normal)
+        circle.tintColor = .white
+        circle.backgroundColor = UIColor.white.withAlphaComponent(0.14)
+        circle.layer.cornerRadius = 25
+        circle.addTarget(self, action: action, for: .touchUpInside)
+        circle.translatesAutoresizingMaskIntoConstraints = false
+        circle.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        circle.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
+        let label = UILabel()
+        label.text = title
+        label.font = Theme.Font.body(11, weight: 600)
+        label.textColor = UIColor.white.withAlphaComponent(0.8)
+        label.textAlignment = .center
+
+        let stack = UIStackView(arrangedSubviews: [circle, label])
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = 5
+        stack.isLayoutMarginsRelativeArrangement = true
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
+        return stack
+    }
+
+    @objc private func closeTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func saveTapped() {
+        HapticFeedback.light()
+        PHPhotoLibrary.requestAuthorization(for: .addOnly) { [weak self] status in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                guard status == .authorized || status == .limited else {
+                    self.presentAlert(title: "Photos Access Needed", message: "Allow photo library access in Settings to save the video.")
+                    return
+                }
+                PHPhotoLibrary.shared().performChanges({
+                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoURL)
+                }) { success, _ in
+                    DispatchQueue.main.async {
+                        if success {
+                            HapticFeedback.success()
+                            self.presentAlert(title: "Saved!", message: "The collage video was saved to your Photos.")
+                        } else {
+                            self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @objc private func shareTapped() {
+        HapticFeedback.light()
+        present(UIActivityViewController(activityItems: [videoURL], applicationActivities: nil), animated: true)
+    }
+
+    private func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+}

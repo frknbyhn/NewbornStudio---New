@@ -38,8 +38,12 @@ struct Milestone: Identifiable {
     /// persisted.
     var photo: UIImage?
     var photoUrl: String?
+    /// Set once, the moment this milestone is first captured — never overwritten by a later
+    /// "change photo" (see MilestoneStore.capture). Used by the collage video's date caption and
+    /// to order-independently label each card, without needing a server round trip.
+    var capturedAt: Date?
 
-    init(id: String = UUID().uuidString, title: String, state: State = .pending, group: String? = nil, style: Style = .default, aiPrompt: String? = nil, photo: UIImage? = nil, photoUrl: String? = nil) {
+    init(id: String = UUID().uuidString, title: String, state: State = .pending, group: String? = nil, style: Style = .default, aiPrompt: String? = nil, photo: UIImage? = nil, photoUrl: String? = nil, capturedAt: Date? = nil) {
         self.id = id
         self.title = title
         self.state = state
@@ -48,6 +52,7 @@ struct Milestone: Identifiable {
         self.aiPrompt = aiPrompt
         self.photo = photo
         self.photoUrl = photoUrl
+        self.capturedAt = capturedAt
     }
 }
 
