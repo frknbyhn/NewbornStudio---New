@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E56D363025361B00B59A9B /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D353025361B00B59A9B /* loader.json */; };
+		00E56D383025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D373025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit */; };
 		03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */; };
 		0697F0E77483FFC91E970CC5 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912CC63C6E345709B5F9019 /* PaddedLabel.swift */; };
 		082C4B9A5684891B87111C26 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */; };
@@ -83,6 +85,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00E56D353025361B00B59A9B /* loader.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		00E56D373025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Newborn Studio: AI Baby Photos.storekit"; sourceTree = "<group>"; };
 		01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		045EACC8D63ABB75EB736DDB /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -263,8 +267,10 @@
 			isa = PBXGroup;
 			children = (
 				C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */,
+				00E56D353025361B00B59A9B /* loader.json */,
 				BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */,
 				B4803ED4B390AFE0045BEB47 /* Fonts */,
+				00E56D373025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -486,8 +492,10 @@
 			files = (
 				D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */,
 				9AFB90380FE66463ACB1D561 /* GoogleService-Info.plist in Resources */,
+				00E56D383025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit in Resources */,
 				A10F5B8EAB21BD6A43D29CC7 /* Nunito-Variable.ttf in Resources */,
 				B28B6842C572FE3C3830A8A8 /* Quicksand-Variable.ttf in Resources */,
+				00E56D363025361B00B59A9B /* loader.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
