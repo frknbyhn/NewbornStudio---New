@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E56D363025361B00B59A9B /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D353025361B00B59A9B /* loader.json */; };
-		00E56D383025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D373025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit */; };
 		03B2237BFFDBADEA8DF8A5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */; };
 		0697F0E77483FFC91E970CC5 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912CC63C6E345709B5F9019 /* PaddedLabel.swift */; };
 		082C4B9A5684891B87111C26 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09D30B6E4175F7B9EED2F0 /* AuthService.swift */; };
@@ -32,9 +30,11 @@
 		407AEA6DD0C6F9ECA403C209 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9E46D0EFAC0384D4EBD59E80 /* FirebaseAuth */; };
 		423AF0CEEC10B36DDFDC69A2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 513939B4DE09955E9FCD3746 /* FirebaseCore */; };
 		477855ED8306D46270F09B4F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B61AFFA7C1482FB5B77B8 /* ProfileViewController.swift */; };
+		491C3B3F69AC45B93235367C /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = A326620D034BF42CA25C3225 /* loader.json */; };
 		4A0BB859F9403CB20DE527E6 /* GenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0AEC1378A3E1C779D987B6 /* GenerationService.swift */; };
 		4B0A8765F67962890859A60C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A76CDB5F21897BE615473238 /* FirebaseFirestore */; };
 		4CA52D6FC41F9CE5F03AEC5E /* CollageAnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855AB6FB5AB560E3DFFE69B /* CollageAnimationService.swift */; };
+		52090568A1B155E0B99BE291 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A716E6F8B8A1868915832AFA /* Lottie */; };
 		55C0E9E8D8B596F935372A4F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D217EC357D10BBD06523A /* AppCoordinator.swift */; };
 		563A13B7689A72132CBE6986 /* CreateYourOwnStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF46652604012C1A364D782 /* CreateYourOwnStyleCell.swift */; };
 		5AE6067D581D44C6737A787A /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0FD8518A7CABB1221271D /* PushNotificationService.swift */; };
@@ -85,8 +85,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00E56D353025361B00B59A9B /* loader.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
-		00E56D373025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Newborn Studio: AI Baby Photos.storekit"; sourceTree = "<group>"; };
 		01D82E84AC77F56FF0B53FFA /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		045EACC8D63ABB75EB736DDB /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		09F529CCEF63C31A8B23AD98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +124,7 @@
 		9D904EC7447C3F2DB23648CC /* FaceCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCheck.swift; sourceTree = "<group>"; };
 		9F94E3C078C38AC4A1329823 /* AnimationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		A2252ECD08EF287944198F72 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
+		A326620D034BF42CA25C3225 /* loader.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		A65F1F0EAC8E2BE154A3F4CF /* PageDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDotsView.swift; sourceTree = "<group>"; };
 		A75301CAE2D5DCFC4E515169 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A8A0FD8518A7CABB1221271D /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
@@ -168,6 +167,7 @@
 				B6A8F1F45D732C43CEA9AC1E /* FirebaseMessaging in Frameworks */,
 				CCCADF412FDF8D3424402E57 /* GoogleSignIn in Frameworks */,
 				19E6BEFCE889FDA0C800D8B7 /* RevenueCat in Frameworks */,
+				52090568A1B155E0B99BE291 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,10 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				C6C583E126E7A6CF9DB43BB7 /* Assets.xcassets */,
-				00E56D353025361B00B59A9B /* loader.json */,
 				BAB6E2DB0EAF92411E5DF9D7 /* GoogleService-Info.plist */,
+				A326620D034BF42CA25C3225 /* loader.json */,
 				B4803ED4B390AFE0045BEB47 /* Fonts */,
-				00E56D373025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -441,6 +440,7 @@
 				CE9552E1A8F3EF6EC37479F2 /* FirebaseMessaging */,
 				60A91B98E7246E44EF56D078 /* GoogleSignIn */,
 				07682BE50C2C84C3B373157D /* RevenueCat */,
+				A716E6F8B8A1868915832AFA /* Lottie */,
 			);
 			productName = NewbornStudio;
 			productReference = EFF5C9D3E57E0B14666A51E6 /* NewbornStudio.app */;
@@ -473,6 +473,7 @@
 			packageReferences = (
 				D3C7CFCBA3ED5A771EBA4E03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A5BB6F39475326358FCA4994 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				C58AA990D3D350C5F927A4AA /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				597602412AC9E8661C25C1B6 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -492,10 +493,9 @@
 			files = (
 				D478A16953376DFD4A17E3ED /* Assets.xcassets in Resources */,
 				9AFB90380FE66463ACB1D561 /* GoogleService-Info.plist in Resources */,
-				00E56D383025367300B59A9B /* Newborn Studio: AI Baby Photos.storekit in Resources */,
 				A10F5B8EAB21BD6A43D29CC7 /* Nunito-Variable.ttf in Resources */,
 				B28B6842C572FE3C3830A8A8 /* Quicksand-Variable.ttf in Resources */,
-				00E56D363025361B00B59A9B /* loader.json in Resources */,
+				491C3B3F69AC45B93235367C /* loader.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +784,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		C58AA990D3D350C5F927A4AA /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
 		D3C7CFCBA3ED5A771EBA4E03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -824,6 +832,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D3C7CFCBA3ED5A771EBA4E03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		A716E6F8B8A1868915832AFA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C58AA990D3D350C5F927A4AA /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		A76CDB5F21897BE615473238 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;

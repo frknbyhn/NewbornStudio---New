@@ -1,4 +1,5 @@
 import UIKit
+import Lottie
 
 /// Shows generation progress while the real Wiro submit/poll round-trip runs server-side
 /// (`generateContent` Cloud Function). The progress bar is a local animation capped below 100%
@@ -68,12 +69,16 @@ final class GenerationLoadingViewController: UIViewController {
         let circle = UIView()
         circle.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         circle.layer.cornerRadius = 110
-        let sparkle = UIImageView(image: UIImage(systemName: "sparkles"))
-        sparkle.tintColor = Theme.Color.accentEnd
-        sparkle.contentMode = .scaleAspectFit
-        sparkle.translatesAutoresizingMaskIntoConstraints = false
-        circle.addSubview(sparkle)
         circle.translatesAutoresizingMaskIntoConstraints = false
+
+        // loader.json — bundled Lottie animation, replacing the old static sparkles icon so
+        // this screen actually feels like it's doing something during the wait.
+        let loader = LottieAnimationView(name: "loader")
+        loader.loopMode = .loop
+        loader.contentMode = .scaleAspectFit
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        loader.play()
+        circle.addSubview(loader)
 
         percentLabel.font = Theme.Font.heading(40, weight: 700)
         percentLabel.textColor = Theme.Color.textPrimaryAlt
@@ -115,10 +120,10 @@ final class GenerationLoadingViewController: UIViewController {
         NSLayoutConstraint.activate([
             circle.widthAnchor.constraint(equalToConstant: 220),
             circle.heightAnchor.constraint(equalToConstant: 220),
-            sparkle.widthAnchor.constraint(equalToConstant: 80),
-            sparkle.heightAnchor.constraint(equalToConstant: 80),
-            sparkle.centerXAnchor.constraint(equalTo: circle.centerXAnchor),
-            sparkle.centerYAnchor.constraint(equalTo: circle.centerYAnchor),
+            loader.widthAnchor.constraint(equalToConstant: 140),
+            loader.heightAnchor.constraint(equalToConstant: 140),
+            loader.centerXAnchor.constraint(equalTo: circle.centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: circle.centerYAnchor),
 
             progressTrack.widthAnchor.constraint(equalToConstant: 250),
             progressTrack.heightAnchor.constraint(equalToConstant: 10),

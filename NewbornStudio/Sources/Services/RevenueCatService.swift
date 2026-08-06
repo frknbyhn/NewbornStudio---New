@@ -1,5 +1,17 @@
+import Foundation
 import RevenueCat
 import FirebaseFunctions
+
+extension Notification.Name {
+    /// Posted right after any purchase (coin pack, limited offer, subscription) is granted
+    /// server-side — credits/premium status just changed. Screens showing a credit balance
+    /// (currently just HomeViewController's coin pill) observe this instead of relying on
+    /// viewWillAppear/viewDidAppear timing after a purchase screen dismisses, which isn't
+    /// reliable here: these purchase screens are presented with `self.present(...)` from deep in
+    /// a tab's view controller hierarchy, so modal presentation can bubble up past the screen
+    /// that actually needs to refresh, and its own appearance callbacks never fire again.
+    static let creditsDidChange = Notification.Name("creditsDidChange")
+}
 
 enum RevenueCatService {
     // Public SDK key — safe to ship in the client. This RevenueCat project hosts several other
@@ -78,6 +90,7 @@ enum RevenueCatService {
                 subscriptionCredits: dict["subscriptionCredits"] as? Int ?? 0,
                 purchasedCredits: dict["purchasedCredits"] as? Int ?? 0
             )
+            NotificationCenter.default.post(name: .creditsDidChange, object: nil)
             completion(.success(grant))
         }
     }

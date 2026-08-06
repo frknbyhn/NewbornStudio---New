@@ -16,6 +16,9 @@ final class MilestoneCollageViewController: UIViewController {
     private var player: AVPlayer!
     private var playerLayer: AVPlayerLayer!
     private var loopObserver: NSObjectProtocol?
+    private var statusObservation: NSKeyValueObservation?
+    private let loadingSpinner = UIActivityIndicatorView(style: .large)
+    private var containerAspectConstraint: NSLayoutConstraint?
 
     init(videoURL: URL, listName: String, collageId: String) {
         self.videoURL = videoURL
@@ -62,6 +65,7 @@ final class MilestoneCollageViewController: UIViewController {
         if let loopObserver {
             NotificationCenter.default.removeObserver(loopObserver)
         }
+        statusObservation?.invalidate()
     }
 
     private var playerContainer: UIView!
@@ -75,17 +79,36 @@ final class MilestoneCollageViewController: UIViewController {
         view.addSubview(container)
         playerContainer = container
 
+        // Placeholder 9:16 aspect (this screen only ever shows videos from MilestoneVideoRenderer's
+        // fixed vertical canvas or an "Animate Portrait" clip, both tall) while the real one loads —
+        // swapped for the actual ratio once the player item is ready, same idea as
+        // ResultViewController's applyRealAspectRatio for its image. defaultHigh (not required) so
+        // the bottomAnchor cap below always wins if a real ratio would ever push the container
+        // past the space actually available above the action buttons.
+        let aspectConstraint = container.heightAnchor.constraint(equalTo: container.widthAnchor, multiplier: 16.0 / 9.0)
+        aspectConstraint.priority = .defaultHigh
+        containerAspectConstraint = aspectConstraint
+
+        loadingSpinner.color = .white
+        loadingSpinner.startAnimating()
+        loadingSpinner.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(loadingSpinner)
+
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
             container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
-            container.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120)
+            container.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120),
+            aspectConstraint,
+            loadingSpinner.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            loadingSpinner.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
 
         player = AVPlayer(url: videoURL)
         player.actionAtItemEnd = .none
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resizeAspect
+        playerLayer.isHidden = true // stays hidden (spinner only) until the item is actually ready
         container.layer.addSublayer(playerLayer)
 
         loopObserver = NotificationCenter.default.addObserver(
@@ -94,6 +117,34 @@ final class MilestoneCollageViewController: UIViewController {
             self?.player.seek(to: .zero)
             self?.player.play()
         }
+
+        statusObservation = player.currentItem?.observe(\.status, options: [.new]) { [weak self] item, _ in
+            DispatchQueue.main.async {
+                guard let self, item.status != .unknown else { return }
+                self.loadingSpinner.stopAnimating()
+                self.playerLayer.isHidden = false
+                if item.status == .readyToPlay {
+                    self.applyRealAspectRatio()
+                }
+            }
+        }
+    }
+
+    /// Reads the actual video dimensions (accounting for any rotation via preferredTransform, the
+    /// standard gotcha with AVAsset's naturalSize) once the item is ready, and resizes the
+    /// container to match instead of the 9:16 placeholder guess.
+    private func applyRealAspectRatio() {
+        guard let track = player.currentItem?.asset.tracks(withMediaType: .video).first else { return }
+        let size = track.naturalSize.applying(track.preferredTransform)
+        let width = abs(size.width)
+        let height = abs(size.height)
+        guard width > 0, height > 0 else { return }
+        containerAspectConstraint?.isActive = false
+        let newConstraint = playerContainer.heightAnchor.constraint(equalTo: playerContainer.widthAnchor, multiplier: height / width)
+        newConstraint.priority = .defaultHigh
+        newConstraint.isActive = true
+        containerAspectConstraint = newConstraint
+        UIView.animate(withDuration: 0.2) { self.view.layoutIfNeeded() }
     }
 
     override func viewDidLayoutSubviews() {

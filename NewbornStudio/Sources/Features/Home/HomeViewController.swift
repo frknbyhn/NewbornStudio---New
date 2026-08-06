@@ -11,11 +11,24 @@ final class HomeViewController: UIViewController {
         setUpHeader()
         setUpGrid()
         loadCategories()
+        // Purchase screens (coin pack, limited offer, subscription) post this right after a
+        // purchase is granted — more reliable than counting on viewWillAppear/viewDidAppear
+        // firing again once they dismiss, which isn't guaranteed here (see the notification's
+        // own doc comment in RevenueCatService.swift for why).
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCreditsDidChange), name: .creditsDidChange, object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presentLimitedOfferIfNeeded()
+        refreshCoinBalance()
+    }
+
+    @objc private func handleCreditsDidChange() {
         refreshCoinBalance()
     }
 

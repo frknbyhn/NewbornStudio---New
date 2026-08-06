@@ -15,6 +15,9 @@ packages:
   RevenueCat:
     url: https://github.com/RevenueCat/purchases-ios
     from: 5.0.0
+  Lottie:
+    url: https://github.com/airbnb/lottie-ios
+    from: 4.4.0
 
 targets:
   NewbornStudio:
@@ -29,6 +32,8 @@ targets:
       - path: NewbornStudio/Resources/Fonts
         buildPhase: resources
       - path: NewbornStudio/Resources/GoogleService-Info.plist
+        buildPhase: resources
+      - path: NewbornStudio/Resources/loader.json
         buildPhase: resources
     settings:
       base:
@@ -62,3 +67,5 @@ targets:
         product: GoogleSignIn
       - package: RevenueCat
         product: RevenueCat
+      - package: Lottie
+        product: Lottie

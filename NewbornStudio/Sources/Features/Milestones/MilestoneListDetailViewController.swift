@@ -174,7 +174,21 @@ final class MilestoneListDetailViewController: UIViewController {
             present(alert, animated: true)
             return
         }
-        startCollageAnimation(for: captured)
+        presentCollageConfirmation(for: captured)
+    }
+
+    private func presentCollageConfirmation(for captured: [Milestone]) {
+        let cost = captured.count * Self.creditCostPerItem
+        let alert = UIAlertController(
+            title: "Create Collage Video?",
+            message: "We'll animate each of your \(captured.count) captured photos and combine them into one video. This will cost \(cost) credit\(cost == 1 ? "" : "s"), and depending on how many photos you've added, it may take quite a while. Do you want to continue?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Continue", style: .default) { [weak self] _ in
+            self?.startCollageAnimation(for: captured)
+        })
+        present(alert, animated: true)
     }
 
     // MARK: - Collage generation
@@ -224,11 +238,21 @@ final class MilestoneListDetailViewController: UIViewController {
     private func presentCollageStartedAlert() {
         let alert = UIAlertController(
             title: "Your Request Was Received",
-            message: "We're preparing your collage — you can check its progress anytime in My Collages, and we'll notify you the moment it's ready.",
+            message: "We're preparing your collage — you can check its progress anytime in My Collages. To notify you the moment it's ready, we need permission to send notifications.",
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: "Not Now", style: .cancel) { [weak self] _ in
+            self?.goToMyCollages()
+        })
+        alert.addAction(UIAlertAction(title: "Allow Notifications", style: .default) { [weak self] _ in
+            PushNotificationService.requestAuthorizationAndRegister()
+            self?.goToMyCollages()
+        })
         present(alert, animated: true)
+    }
+
+    private func goToMyCollages() {
+        navigationController?.pushViewController(MilestoneCollageGalleryViewController(), animated: true)
     }
 
     private func presentCollageErrorAlert(message: String = "We couldn't create the collage video. Please try again.") {
