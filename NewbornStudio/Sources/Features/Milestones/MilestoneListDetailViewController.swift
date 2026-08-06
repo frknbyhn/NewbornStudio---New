@@ -8,6 +8,7 @@ final class MilestoneListDetailViewController: UIViewController {
     private let listId: String
     private var stack: UIStackView!
     private let collageButton = GradientPillButton(title: "Create Collage", icon: UIImage(systemName: "square.grid.2x2.fill"))
+    private let collageCostLabel = UILabel()
 
     init(list: MilestoneList) {
         self.listId = list.id
@@ -80,8 +81,9 @@ final class MilestoneListDetailViewController: UIViewController {
         stack.spacing = 18
         stack.isLayoutMarginsRelativeArrangement = true
         // Extra bottom margin (vs. a plain 30) so the last row can scroll clear of the floating
-        // "Create Collage" button pinned over the content — see setUpCollageButton().
-        stack.layoutMargins = UIEdgeInsets(top: 14, left: 24, bottom: 100, right: 24)
+        // "Create Collage" button (+ its credit-cost label) pinned over the content — see
+        // setUpCollageButton().
+        stack.layoutMargins = UIEdgeInsets(top: 14, left: 24, bottom: 124, right: 24)
         stack.translatesAutoresizingMaskIntoConstraints = false
         scroll.addSubview(stack)
 
@@ -98,8 +100,11 @@ final class MilestoneListDetailViewController: UIViewController {
         ])
     }
 
-    /// Floating over the scrollable list (not part of its content) so it's always reachable —
-    /// action wired up in a later pass, this is just the button itself for now.
+    /// Floating over the scrollable list (not part of its content) so it's always reachable.
+    /// The cost label right underneath it (updated in reload() — see collageCostLabel) is set
+    /// from CREDIT_COST_PER_ITEM, which must stay in sync with the server's own
+    /// startCollageAnimation.js constant of the same name — nothing enforces that at compile
+    /// time, it's just the two places this number happens to live.
     private func setUpCollageButton() {
         let fade = UIView()
         fade.translatesAutoresizingMaskIntoConstraints = false
@@ -113,17 +118,26 @@ final class MilestoneListDetailViewController: UIViewController {
 
         collageButton.addTarget(self, action: #selector(collageTapped), for: .touchUpInside)
         collageButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collageButton)
+
+        collageCostLabel.font = Theme.Font.body(12.5, weight: 700)
+        collageCostLabel.textColor = Theme.Color.textSecondary
+        collageCostLabel.textAlignment = .center
+
+        let stack = UIStackView(arrangedSubviews: [collageButton, collageCostLabel])
+        stack.axis = .vertical
+        stack.spacing = 6
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stack)
 
         NSLayoutConstraint.activate([
             fade.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             fade.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             fade.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            fade.topAnchor.constraint(equalTo: collageButton.topAnchor, constant: -28),
+            fade.topAnchor.constraint(equalTo: stack.topAnchor, constant: -28),
 
-            collageButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            collageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
-            collageButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            stack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
 
         collageButtonFadeLayer = gradient
@@ -139,6 +153,10 @@ final class MilestoneListDetailViewController: UIViewController {
     }
 
     private static let minCaptureCountForCollage = 5
+    /// Must match functions/startCollageAnimation.js's own CREDIT_COST_PER_ITEM — see that
+    /// file's comment for why this is a different (lower) rate than a standalone Animate
+    /// Portrait action.
+    private static let creditCostPerItem = 1
 
     @objc private func collageTapped() {
         HapticFeedback.light()
@@ -186,7 +204,8 @@ final class MilestoneListDetailViewController: UIViewController {
             return
         }
 
-        CreditsService.requireCredits(presentingFrom: self) { [weak self] in
+        let creditCost = items.count * Self.creditCostPerItem
+        CreditsService.requireCredits(atLeast: creditCost, presentingFrom: self) { [weak self] in
             guard let self else { return }
             CollageAnimationService.start(listId: self.listId, listName: self.list.name, items: items) { [weak self] result in
                 guard let self else { return }
@@ -221,6 +240,10 @@ final class MilestoneListDetailViewController: UIViewController {
     private func reload() {
         stack.arrangedSubviews.forEach { $0.removeFromSuperview() }
         let current = list
+
+        let capturedCount = current.milestones.filter { $0.state == .done }.count
+        let cost = capturedCount * Self.creditCostPerItem
+        collageCostLabel.text = "\(cost) credit\(cost == 1 ? "" : "s")"
 
         if current.isStandard {
             let groups = current.milestones.reduce(into: [(String, [Milestone])]()) { acc, milestone in

@@ -68,18 +68,8 @@ final class ResultViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    /// This screen is the one place in the app with a real, visible UINavigationBar (every
-    /// other pushed screen draws its own back button and keeps the tab's navigation bar
-    /// hidden) — the close button needs to live in an actual nav bar per design, and doing
-    /// that also sidesteps the z-order bug a floating overlay button had (it could end up
-    /// underneath the scroll view depending on subview add order and go untappable).
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Every tab's UINavigationController hides its bar by setting navigationBar.isHidden
-        // directly on the view (MainTabBarController.wrap), not via setNavigationBarHidden(_:) —
-        // that desyncs the controller's internal hidden-state tracking, so calling
-        // setNavigationBarHidden(false) here is a no-op (it already thinks the bar is visible).
-        // Flipping the view property directly sidesteps that entirely.
         navigationController?.navigationBar.isHidden = false
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

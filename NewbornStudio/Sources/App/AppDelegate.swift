@@ -19,10 +19,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationC
         AuthService.ensureSignedIn { result in
             if case .success(let uid) = result {
                 RevenueCatService.identify(uid: uid)
-                // Requested right after sign-in resolves (not before — there's no uid yet to
-                // attach a token to) rather than at some more contextual later moment. Harmless
-                // if declined; see PushNotificationService's doc comment for why this is also
-                // inert either way until an APNs key is uploaded to the Firebase Console.
                 PushNotificationService.requestAuthorizationAndRegister()
             }
         }

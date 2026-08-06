@@ -50,12 +50,27 @@ enum CreditsService {
     /// immediately. No credits and not subscribed → subscription paywall. No credits but
     /// subscribed (their period ran dry) → coin purchase screen, since another subscription
     /// wouldn't grant more credits until the next renewal.
+    ///
+    /// This is the ≥1 case — most generations cost exactly 1 credit up front from the user's
+    /// perspective (the server enforces the style's real cost regardless), so a soft "has
+    /// something" check has been enough. A multi-credit action (e.g. a collage costing N items'
+    /// worth of credits) needs the amount-aware overload below instead, or this same soft check
+    /// would let someone through here only to hit a real "insufficient credits" failure
+    /// server-side — see requireCredits(atLeast:presentingFrom:onAllowed:).
     static func requireCredits(presentingFrom viewController: UIViewController, onAllowed: @escaping () -> Void) {
+        requireCredits(atLeast: 1, presentingFrom: viewController, onAllowed: onAllowed)
+    }
+
+    /// Same gate, but checks for a specific amount rather than just "> 0" — for an action whose
+    /// cost the client already knows up front (e.g. MilestoneListDetailViewController's collage
+    /// button, N credits for N items) and wants to route to the paywall/coin screen itself
+    /// instead of letting the user tap through only to have the server reject it.
+    static func requireCredits(atLeast amount: Int, presentingFrom viewController: UIViewController, onAllowed: @escaping () -> Void) {
         fetchStatus { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let status):
-                    if status.hasCredits {
+                    if status.totalCredits >= amount {
                         onAllowed()
                     } else if status.isPremium {
                         viewController.present(CoinPackageViewController.presented(), animated: true)

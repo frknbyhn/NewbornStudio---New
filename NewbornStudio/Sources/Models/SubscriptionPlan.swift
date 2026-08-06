@@ -36,7 +36,7 @@ struct SubscriptionPlan {
             title = "Yearly"
             periodLabel = product.localizedPricePerWeek.map { "\($0) / week" } ?? "per year"
             creditsLabel = "500 credits / year"
-            badge = "Best value"
+            badge = nil
             isFeatured = true
         default:
             title = product.localizedTitle
