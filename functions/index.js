@@ -9,6 +9,10 @@ exports.processCollageAnimationItem = require("./processCollageAnimationItem").p
 exports.finalizeCollageAnimation = require("./finalizeCollageAnimation").finalizeCollageAnimation;
 exports.deleteAccount = require("./deleteAccount").deleteAccount;
 exports.grantPurchase = require("./grantPurchase").grantPurchase;
+// Debug aid — see scheduleTestNotification.js's doc comment. Safe to leave exported
+// permanently: auth-gated, and a caller can only ever send a push to their own devices.
+exports.scheduleTestNotification = require("./scheduleTestNotification").scheduleTestNotification;
+exports.sendTestNotification = require("./sendTestNotification").sendTestNotification;
 
 // seedThemes / seedThemePreviews / seedCategoryPreviews are one-off admin tasks — deployed,
 // called from a local script to bulk-write, then deleted. Not exported here so
