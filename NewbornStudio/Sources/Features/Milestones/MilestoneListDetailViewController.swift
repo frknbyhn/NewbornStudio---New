@@ -211,7 +211,7 @@ final class MilestoneListDetailViewController: UIViewController {
             // processCollageAnimationItem); a custom-list item's UUID has no catalog entry to
             // find, so it isn't sent as a styleId at all (server falls back to a generic prompt).
             let styleId = list.isStandard ? milestone.id : nil
-            return CollageAnimationService.ItemPayload(milestoneId: milestone.id, title: milestone.title, photoUrl: photoUrl, styleId: styleId)
+            return CollageAnimationService.ItemPayload(milestoneId: milestone.id, title: milestone.title, photoUrl: photoUrl, styleId: styleId, capturedAt: milestone.capturedAt)
         }
         guard items.count >= Self.minCaptureCountForCollage else {
             presentCollageErrorAlert(message: "Some of your captured photos are still syncing. Please try again in a moment.")

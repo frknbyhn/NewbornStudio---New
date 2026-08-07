@@ -4,9 +4,13 @@ const { getStorage } = require("firebase-admin/storage");
 const os = require("os");
 const path = require("path");
 const fs = require("fs");
-const { concatVideos } = require("./helpers/ffmpegConcat");
+const { composeCollage, composeSingleClip } = require("./helpers/ffmpegCompose");
 const { downloadUrlFor } = require("./helpers/storage");
 const { sendCollageNotification } = require("./helpers/collageNotify");
+
+// Matches iOS's DateFormatter(.dateStyle = .medium) closely enough (e.g. "Aug 6, 2026") — the
+// same caption format the old on-device MilestoneVideoRenderer used to burn into each item.
+const dateFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "medium" });
 
 // Runs once, after processCollageAnimationItem's chain has worked through every item — downloads
 // whatever clips actually succeeded (in order), concatenates them into the final collage video,
@@ -15,7 +19,9 @@ const { sendCollageNotification } = require("./helpers/collageNotify");
 // no changes — they only ever cared about the Firestore doc's videoUrl, not how it got there),
 // refunds credits for any item that never produced a clip, and sends the "ready" push.
 exports.finalizeCollageAnimation = onTaskDispatched(
-  { timeoutSeconds: 540, memory: "1GiB", retryConfig: { maxAttempts: 1 } },
+  // 2GiB (was 1GiB) — the xfade/acrossfade/drawtext filter graph re-encodes every frame instead
+  // of the old plain concat demuxer's stream copy, meaningfully more CPU/memory per clip.
+  { timeoutSeconds: 540, memory: "2GiB", retryConfig: { maxAttempts: 1 } },
   async (request) => {
     const { uid, collageId } = request.data;
     const db = getFirestore();
@@ -44,15 +50,29 @@ exports.finalizeCollageAnimation = onTaskDispatched(
 
     const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "collage-"));
     try {
-      const localClipPaths = [];
+      const items = collage.items || [];
+      const clips = [];
       for (const index of orderedIndexes) {
         const localPath = path.join(tmpDir, `${index}.mp4`);
         await bucket.file(clipPaths[index]).download({ destination: localPath });
-        localClipPaths.push(localPath);
+        const item = items[index] || {};
+        clips.push({
+          path: localPath,
+          title: item.title || "",
+          dateText: item.capturedAt ? dateFormatter.format(new Date(item.capturedAt)) : "",
+        });
       }
 
       const outputPath = path.join(tmpDir, "final.mp4");
-      await concatVideos(localClipPaths, outputPath);
+      if (clips.length === 1) {
+        // MIN_ITEMS (startCollageAnimation.js) means this practically never happens — it'd take
+        // 4+ of 5 items failing — but there's nothing to crossfade with just one clip, so this
+        // is the honest fallback (caption only) rather than composeCollage's crossfade chain,
+        // which needs at least 2.
+        await composeSingleClip(clips[0], outputPath);
+      } else {
+        await composeCollage({ clips, outputPath });
+      }
 
       const finalStoragePath = `users/${uid}/collages/${collageId}.mp4`;
       const finalFile = bucket.file(finalStoragePath);

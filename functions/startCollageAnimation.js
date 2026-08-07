@@ -61,6 +61,11 @@ exports.startCollageAnimation = onCall({ timeoutSeconds: 60, memory: "256MiB" },
       title: item.title,
       photoUrl: item.photoUrl,
       styleId: typeof item.styleId === "string" ? item.styleId : null,
+      // ISO 8601 string (client sends via ISO8601DateFormatter) — finalizeCollageAnimation
+      // parses it back with `new Date(...)` for the per-clip date caption. Stored as the plain
+      // string rather than a Firestore Timestamp since it's just carried through to a text
+      // burn-in, never queried on.
+      capturedAt: typeof item.capturedAt === "string" ? item.capturedAt : null,
     })),
     clipPaths: {},
     failedIndexes: [],

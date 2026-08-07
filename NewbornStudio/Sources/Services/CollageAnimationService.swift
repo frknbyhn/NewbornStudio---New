@@ -28,7 +28,13 @@ enum CollageAnimationService {
         /// of falling back to a generic one. nil for custom-list items, which have no catalog
         /// entry to look up.
         let styleId: String?
+        /// Burned into this item's own clip as a caption (see finalizeCollageAnimation.js) —
+        /// same date the old on-device MilestoneVideoRenderer used to show. Sent as ISO 8601 so
+        /// the server can parse it without any timezone/format guessing.
+        let capturedAt: Date?
     }
+
+    private static let iso8601Formatter = ISO8601DateFormatter()
 
     static func start(listId: String, listName: String, items: [ItemPayload], completion: @escaping (Result<CollageAnimationStartResult, Error>) -> Void) {
         guard AuthService.currentUserId != nil else {
@@ -39,6 +45,7 @@ enum CollageAnimationService {
             var dict: [String: Any] = ["title": item.title, "photoUrl": item.photoUrl]
             if let milestoneId = item.milestoneId { dict["milestoneId"] = milestoneId }
             if let styleId = item.styleId { dict["styleId"] = styleId }
+            if let capturedAt = item.capturedAt { dict["capturedAt"] = iso8601Formatter.string(from: capturedAt) }
             return dict
         }
         Functions.functions().httpsCallable("startCollageAnimation").call([
