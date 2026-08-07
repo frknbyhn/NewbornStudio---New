@@ -456,7 +456,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					0F1534D6A0628EF8CD38169D = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = X4R77QQ25M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -582,7 +582,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X4R77QQ25M;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = NewbornStudio/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -608,7 +608,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X4R77QQ25M;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = NewbornStudio/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
