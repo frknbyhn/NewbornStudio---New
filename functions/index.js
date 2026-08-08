@@ -12,6 +12,11 @@ exports.grantPurchase = require("./grantPurchase").grantPurchase;
 exports.startCollageMusic = require("./startCollageMusic").startCollageMusic;
 exports.renderCollageMusic = require("./renderCollageMusic").renderCollageMusic;
 
+// TEMPORARY — self-service test-credit top-up for the #if DEBUG button on HomeViewController.
+// Remove this export, debugAddCredits.js, and that button together once done testing (see
+// debugAddCredits.js's own doc comment for why this shouldn't stay exported long-term).
+exports.debugAddCredits = require("./debugAddCredits").debugAddCredits;
+
 // seedThemes / seedThemePreviews / seedCategoryPreviews are one-off admin tasks — deployed,
 // called from a local script to bulk-write, then deleted. Not exported here so
 // `firebase deploy --only functions` never redeploys them by accident. To re-run any of them

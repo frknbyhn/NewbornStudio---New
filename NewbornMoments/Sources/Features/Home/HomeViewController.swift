@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseFunctions
 
 final class HomeViewController: UIViewController {
     private let coinLabel = UILabel()
@@ -9,6 +10,9 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = Theme.Color.backgroundCream
         setUpHeader()
+        #if DEBUG
+        setUpDebugAddCreditsButton()
+        #endif
         setUpGrid()
         loadCategories()
         // Purchase screens (coin pack, limited offer, subscription) post this right after a
@@ -129,6 +133,47 @@ final class HomeViewController: UIViewController {
     }
 
     private var headerBottomAnchor: NSLayoutYAxisAnchor!
+
+    #if DEBUG
+    /// TEMPORARY — self-service test-credit top-up so purchase/generation flows can be exercised
+    /// on a device without a real StoreKit purchase every time. Never compiled into a release
+    /// build. Remove this button, debugAddCreditsTapped(), and functions/debugAddCredits.js
+    /// (+ its index.js export) together once done testing.
+    private func setUpDebugAddCreditsButton() {
+        let button = UIButton(type: .system)
+        var config = UIButton.Configuration.filled()
+        config.title = "Debug: +50 Coins"
+        config.baseBackgroundColor = Theme.Color.purpleAccent
+        config.baseForegroundColor = .white
+        config.cornerStyle = .capsule
+        config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 14, bottom: 8, trailing: 14)
+        button.configuration = config
+        button.titleLabel?.font = Theme.Font.heading(13, weight: 700)
+        button.addTarget(self, action: #selector(debugAddCreditsTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(button)
+
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: headerBottomAnchor, constant: 10),
+            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22)
+        ])
+        headerBottomAnchor = button.bottomAnchor
+    }
+
+    @objc private func debugAddCreditsTapped() {
+        HapticFeedback.light()
+        Functions.functions().httpsCallable("debugAddCredits").call { [weak self] _, error in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                if let error {
+                    print("debugAddCredits failed: \(error)")
+                    return
+                }
+                self.refreshCoinBalance()
+            }
+        }
+    }
+    #endif
 
     private func setUpGrid() {
         let layout = UICollectionViewFlowLayout()
