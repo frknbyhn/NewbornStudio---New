@@ -33894,6 +33894,9 @@
         }
       }
     },
+    "Recently Used" : {
+      "comment" : "Recently used photos section title"
+    },
     "Restore" : {
       "comment" : "Paywall footer link",
       "extractionState" : "manual",

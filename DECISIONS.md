@@ -35,7 +35,9 @@
   - Medium `com.babycollages.medium` — **$9.99** — 15 credits
   - Big `com.babycollages.big` — **$19.99** — 50 credits
 - Credit-to-cost unit economics not yet computed against Wiro's per-call cost — do before finalizing whether these prices hold (playbook cost-section rule: `credit_cost = ceil(cost_USD / 0.01)`).
-- Still needed after pricing: attach all 7 products to RevenueCat (app `app68c2b2ac6d`, entitlement `newborn`, packages in the `newborn` offering) — RevenueCat still shows zero products for the new app as of this pass. Also: localizing IAP/subscription name+description into the other 32 languages (only en-GB done so far) — not started, ask before doing all of it (lots of ground, same shape as the earlier ASC-metadata pass).
+- **RevenueCat wiring — done 2026-08-09.** All 7 `com.babycollages.*` products created under app `app68c2b2ac6d` (RevenueCat v2 API, `sk_...` secret key from `.env`), each attached to the `newborn` entitlement (`entl04f774091a`) and to its matching package in the shared `newborn` offering (`ofrngc9d4f47816`) — weekly/monthly/yearly → `$rc_weekly`/`$rc_monthly`/`$rc_annual`, small/limited/medium/big → same-named custom packages. Verified via the API (GET each package's/entitlement's products) rather than assumed. **Never touch `is_current` on this offering** — see [[revenuecat-shared-project-is-current-flag]].
+  - Still open: real purchase flow untested (no sandbox Apple ID / physical device in this environment) — only the RevenueCat-side wiring is verified, not an actual StoreKit sandbox transaction.
+  - Also still open: localizing IAP/subscription name+description into the other 32 languages (only en-GB done so far) — ask before doing all of it (same shape as the earlier ASC-metadata pass).
 - ASC API key in use: keyId `YC2YC44RMZ`, issuerId `1aba5c58-f408-4036-b737-5a6c226d821e` (`~/.ascelerate/config.json`). `ascelerate` alias `newborn` → `com.BabyCollages`.
 
 ## Xcode project tooling
