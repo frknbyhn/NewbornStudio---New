@@ -95,6 +95,9 @@ private struct LegalDocument {
     HOW WE USE YOUR PHOTOS
     Uploaded photos are sent to our AI image generation provider (Wiro AI) solely to produce your requested portrait, and are not used to train AI models or shared with any other third party. Generated portraits are stored so you can view them again in your Gallery, tied to your anonymous account.
 
+    FACE DETECTION
+    Before a photo is uploaded, the app uses Apple's on-device Vision framework to check that exactly one face is visible in the frame. This check runs entirely on your device — it never leaves your device, is never sent to us or to any third party, and nothing from it is stored. We do not perform facial recognition, and we do not create, store, or use any biometric identity template (a mathematical representation of a face used to identify or verify a specific person) from this or any other check. Separately, once you choose to upload a photo, the photo itself — which naturally includes your child's face — is sent to our AI image generation provider as described in "HOW WE USE YOUR PHOTOS" above; that is the only way your child's face is transmitted or processed outside your device.
+
     CHILDREN'S PHOTOS
     This app is intended to be used by a parent or legal guardian to create portraits of their own child. Do not upload photos of any child without the consent of that child's parent or guardian.
 
