@@ -3,7 +3,15 @@ import PhotosUI
 
 final class PhotoUploadViewController: UIViewController {
     private let theme: ThemeCard
-    private var pickedImage: UIImage?
+    private var pickedImage: UIImage? {
+        didSet { updatePreview() }
+    }
+
+    private let dropZone = UIView()
+    private let dropStack = UIStackView()
+    private let previewImageView = UIImageView()
+    private var changePhotoLabel: UIView!
+    private let createButton = GradientPillButton(title: NSLocalizedString("Generate", comment: "Photo upload create button"), icon: UIImage(systemName: "sparkles"))
 
     init(theme: ThemeCard) {
         self.theme = theme
@@ -20,6 +28,7 @@ final class PhotoUploadViewController: UIViewController {
         view.backgroundColor = Theme.Color.backgroundCream
         setUpNavBar()
         setUpContent()
+        updateCreateEnabled()
         debugAutoGenerateIfNeeded()
     }
 
@@ -44,8 +53,9 @@ final class PhotoUploadViewController: UIViewController {
             guard let self else { return }
             // Bypasses FaceCheck deliberately — the synthetic image has no real face, and this
             // path exists to verify the network pipeline, not face-detection behavior.
-            self.pickedImage = self.debugSyntheticPhoto()
-            self.proceedAfterFaceCheck(self.pickedImage!)
+            let synthetic = self.debugSyntheticPhoto()
+            self.pickedImage = synthetic
+            self.proceedAfterFaceCheck(synthetic)
         }
         #endif
     }
@@ -83,13 +93,14 @@ final class PhotoUploadViewController: UIViewController {
     private var navBarBottom: NSLayoutYAxisAnchor!
 
     private func setUpContent() {
-        let dropZone = UIView()
         dropZone.backgroundColor = UIColor(hex: 0xFFF4F1)
         dropZone.layer.cornerRadius = 26
         dropZone.layer.borderWidth = 2
         dropZone.layer.borderColor = UIColor(hex: 0xEBC3CC).cgColor
+        dropZone.layer.masksToBounds = true
         dropZone.isUserInteractionEnabled = true
         dropZone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dropZoneTapped)))
+        dropZone.translatesAutoresizingMaskIntoConstraints = false
 
         let circle = UIView()
         circle.backgroundColor = .white
@@ -113,15 +124,36 @@ final class PhotoUploadViewController: UIViewController {
         dropSubtitle.textColor = Theme.Color.textSecondary
         dropSubtitle.textAlignment = .center
 
-        let dropStack = UIStackView(arrangedSubviews: [circle, dropTitle, dropSubtitle])
         dropStack.axis = .vertical
         dropStack.alignment = .center
         dropStack.spacing = 14
         dropStack.isLayoutMarginsRelativeArrangement = true
         dropStack.layoutMargins = UIEdgeInsets(top: 40, left: 24, bottom: 40, right: 24)
         dropStack.translatesAutoresizingMaskIntoConstraints = false
+        dropStack.addArrangedSubview(circle)
+        dropStack.addArrangedSubview(dropTitle)
+        dropStack.addArrangedSubview(dropSubtitle)
         dropZone.addSubview(dropStack)
-        dropZone.translatesAutoresizingMaskIntoConstraints = false
+
+        previewImageView.contentMode = .scaleAspectFill
+        previewImageView.clipsToBounds = true
+        previewImageView.isHidden = true
+        previewImageView.translatesAutoresizingMaskIntoConstraints = false
+        dropZone.addSubview(previewImageView)
+
+        let changePhoto = PaddedLabel()
+        changePhoto.text = NSLocalizedString("Tap to change photo", comment: "Photo upload overlay label")
+        changePhoto.horizontalPadding = 12
+        changePhoto.font = Theme.Font.heading(11, weight: 700)
+        changePhoto.textColor = .white
+        changePhoto.backgroundColor = UIColor.black.withAlphaComponent(0.45)
+        changePhoto.layer.cornerRadius = 12
+        changePhoto.layer.masksToBounds = true
+        changePhoto.textAlignment = .center
+        changePhoto.isHidden = true
+        changePhoto.translatesAutoresizingMaskIntoConstraints = false
+        dropZone.addSubview(changePhoto)
+        changePhotoLabel = changePhoto
 
         let recentStrip = makeRecentPhotosStrip()
 
@@ -138,22 +170,10 @@ final class PhotoUploadViewController: UIViewController {
         tips.axis = .vertical
         tips.spacing = 12
 
-        let takePhoto = GradientPillButton(title: NSLocalizedString("Take Photo", comment: "Photo upload button"), icon: UIImage(systemName: "camera.fill"))
-        takePhoto.addTarget(self, action: #selector(takePhotoTapped), for: .touchUpInside)
-
-        let chooseGallery = UIButton(type: .system)
-        var config = UIButton.Configuration.filled()
-        config.title = NSLocalizedString("Choose from Gallery", comment: "Photo upload button")
-        config.image = UIImage(systemName: "photo")
-        config.imagePadding = 8
-        config.baseBackgroundColor = Theme.Color.backgroundWarm
-        config.baseForegroundColor = Theme.Color.textSecondaryAlt
-        config.cornerStyle = .capsule
-        config.attributedTitle = AttributedString(NSLocalizedString("Choose from Gallery", comment: "Photo upload button"), attributes: .init([.font: Theme.Font.heading(16, weight: 700)]))
-        chooseGallery.configuration = config
-        chooseGallery.addTarget(self, action: #selector(chooseGalleryTapped), for: .touchUpInside)
-        chooseGallery.translatesAutoresizingMaskIntoConstraints = false
-        chooseGallery.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        let scroll = UIScrollView()
+        scroll.showsVerticalScrollIndicator = false
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scroll)
 
         let content = UIStackView(arrangedSubviews: [dropZone, recentStrip, tipsTitle, tips])
         content.axis = .vertical
@@ -161,11 +181,13 @@ final class PhotoUploadViewController: UIViewController {
         content.isLayoutMarginsRelativeArrangement = true
         content.layoutMargins = UIEdgeInsets(top: 12, left: 22, bottom: 0, right: 22)
         content.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(content)
+        scroll.addSubview(content)
 
-        let actions = UIStackView(arrangedSubviews: [takePhoto, chooseGallery])
+        createButton.addTarget(self, action: #selector(createTapped), for: .touchUpInside)
+        createButton.translatesAutoresizingMaskIntoConstraints = false
+
+        let actions = UIStackView(arrangedSubviews: [createButton])
         actions.axis = .vertical
-        actions.spacing = 12
         actions.isLayoutMarginsRelativeArrangement = true
         actions.layoutMargins = UIEdgeInsets(top: 0, left: 22, bottom: 24, right: 22)
         actions.translatesAutoresizingMaskIntoConstraints = false
@@ -180,10 +202,26 @@ final class PhotoUploadViewController: UIViewController {
             dropStack.leadingAnchor.constraint(equalTo: dropZone.leadingAnchor),
             dropStack.trailingAnchor.constraint(equalTo: dropZone.trailingAnchor),
             dropStack.bottomAnchor.constraint(equalTo: dropZone.bottomAnchor),
+            dropZone.heightAnchor.constraint(equalToConstant: 220),
 
-            content.topAnchor.constraint(equalTo: navBarBottom, constant: 12),
-            content.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            content.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            previewImageView.topAnchor.constraint(equalTo: dropZone.topAnchor),
+            previewImageView.leadingAnchor.constraint(equalTo: dropZone.leadingAnchor),
+            previewImageView.trailingAnchor.constraint(equalTo: dropZone.trailingAnchor),
+            previewImageView.bottomAnchor.constraint(equalTo: dropZone.bottomAnchor),
+            changePhotoLabel.centerXAnchor.constraint(equalTo: dropZone.centerXAnchor),
+            changePhotoLabel.bottomAnchor.constraint(equalTo: dropZone.bottomAnchor, constant: -14),
+            changePhotoLabel.heightAnchor.constraint(equalToConstant: 26),
+
+            scroll.topAnchor.constraint(equalTo: navBarBottom, constant: 12),
+            scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scroll.bottomAnchor.constraint(equalTo: actions.topAnchor),
+
+            content.topAnchor.constraint(equalTo: scroll.topAnchor),
+            content.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
+            content.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
+            content.bottomAnchor.constraint(equalTo: scroll.bottomAnchor, constant: -16),
+            content.widthAnchor.constraint(equalTo: scroll.widthAnchor),
 
             actions.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             actions.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -218,6 +256,28 @@ final class PhotoUploadViewController: UIViewController {
         row.spacing = 12
         row.alignment = .center
         return row
+    }
+
+    // MARK: - Preview / create
+
+    private func updatePreview() {
+        guard let pickedImage else {
+            previewImageView.isHidden = true
+            changePhotoLabel.isHidden = true
+            dropStack.isHidden = false
+            updateCreateEnabled()
+            return
+        }
+        previewImageView.image = pickedImage
+        previewImageView.isHidden = false
+        changePhotoLabel.isHidden = false
+        dropStack.isHidden = true
+        updateCreateEnabled()
+    }
+
+    private func updateCreateEnabled() {
+        createButton.isEnabled = pickedImage != nil
+        createButton.alpha = createButton.isEnabled ? 1 : 0.5
     }
 
     // MARK: - Recently used photos
@@ -271,17 +331,23 @@ final class PhotoUploadViewController: UIViewController {
         }
     }
 
+    /// Only puts the photo into the drop zone preview — does NOT start generation. The user
+    /// still has to tap Create, same as a fresh camera/gallery pick. Already went through
+    /// FaceCheck the first time it was added to the strip, so it isn't re-run here.
     private func recentPhotoSelected(_ photo: RecentPhotosStore.Photo) {
         HapticFeedback.selection()
         selectedRecentPhotoId = photo.id
-        refreshRecentPhotosStrip()
+        pickedImage = photo.image
         RecentPhotosStore.moveToFront(id: photo.id)
-        proceedWithPickedImage(photo.image, alreadyInRecents: true)
+        refreshRecentPhotosStrip()
     }
 
     private func recentPhotoDeleted(_ photo: RecentPhotosStore.Photo) {
         HapticFeedback.light()
         RecentPhotosStore.remove(id: photo.id)
+        if selectedRecentPhotoId == photo.id {
+            selectedRecentPhotoId = nil
+        }
         refreshRecentPhotosStrip()
     }
 
@@ -305,16 +371,6 @@ final class PhotoUploadViewController: UIViewController {
     }
     #endif
 
-    @objc private func takePhotoTapped() {
-        HapticFeedback.light()
-        presentPicker(sourceType: .camera)
-    }
-
-    @objc private func chooseGalleryTapped() {
-        HapticFeedback.light()
-        presentPicker(sourceType: .photoLibrary)
-    }
-
     @objc private func dropZoneTapped() {
         HapticFeedback.light()
         let alert = UIAlertController(title: NSLocalizedString("Add a Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
@@ -335,26 +391,11 @@ final class PhotoUploadViewController: UIViewController {
         picker.delegate = self
         present(picker, animated: true)
     }
-}
 
-extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        picker.dismiss(animated: true)
-        guard let image = info[.originalImage] as? UIImage else { return }
-        proceedWithPickedImage(image)
-    }
-
-    fileprivate func proceedWithPickedImage(_ image: UIImage, alreadyInRecents: Bool = false) {
-        pickedImage = image
-        // Every fresh pick (camera or gallery) joins the "recently used" shortcut strip for
-        // next time — a photo reselected from that same strip is already there (just bumped to
-        // the front by the caller), so it doesn't need re-saving as a second copy.
-        if !alreadyInRecents {
-            RecentPhotosStore.add(image)
-        }
-        FaceCheck.run(on: image, presentingFrom: self) { [weak self] in
-            self?.proceedAfterFaceCheck(image)
-        }
+    @objc private func createTapped() {
+        guard let pickedImage else { return }
+        HapticFeedback.light()
+        proceedAfterFaceCheck(pickedImage)
     }
 
     fileprivate func proceedAfterFaceCheck(_ image: UIImage) {
@@ -364,6 +405,23 @@ extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigati
             guard let self else { return }
             let loading = GenerationLoadingViewController(theme: self.theme, sourceImage: image)
             self.navigationController?.pushViewController(loading, animated: true)
+        }
+    }
+}
+
+extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        picker.dismiss(animated: true)
+        guard let image = info[.originalImage] as? UIImage else { return }
+        // Validate right away so a bad photo (no face / multiple faces) never makes it into the
+        // drop zone preview or the recent-photos strip — only fills the preview once it passes,
+        // and the user still has to tap Create to actually start a generation.
+        selectedRecentPhotoId = nil
+        FaceCheck.run(on: image, presentingFrom: self) { [weak self] in
+            guard let self else { return }
+            self.pickedImage = image
+            RecentPhotosStore.add(image)
+            self.refreshRecentPhotosStrip()
         }
     }
 
