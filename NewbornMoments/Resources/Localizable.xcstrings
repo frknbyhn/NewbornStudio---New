@@ -184,6 +184,18 @@
             "state": "translated",
             "value": "%@ / सप्ताह"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / أسبوع"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / שבוע"
+          }
         }
       }
     },
@@ -369,6 +381,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "%d सिक्के"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d عملة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d מטבעות"
           }
         }
       }
@@ -556,6 +580,18 @@
             "state": "translated",
             "value": "%d सिक्के · %@"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d عملة · %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d מטבעות · %@"
+          }
         }
       }
     },
@@ -741,6 +777,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "%d क्रेडिट"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d رصيد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d קרדיטים"
           }
         }
       }
@@ -928,6 +976,18 @@
             "state": "translated",
             "value": "1 क्रेडिट"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "رصيد واحد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "קרדיט אחד"
+          }
         }
       }
     },
@@ -1113,6 +1173,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "10 क्रेडिट / सप्ताह"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 أرصدة / أسبوع"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 קרדיטים / שבוע"
           }
         }
       }
@@ -1300,6 +1372,18 @@
             "state": "translated",
             "value": "50 क्रेडिट / माह"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 رصيدًا / شهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 קרדיטים / חודש"
+          }
         }
       }
     },
@@ -1485,6 +1569,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "500 क्रेडिट / वर्ष"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 رصيد / سنة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 קרדיטים / שנה"
           }
         }
       }
@@ -1672,6 +1768,18 @@
             "state": "translated",
             "value": "आपके लिए एक खास ऑफ़र"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض خاص، لك وحدك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מבצע מיוחד, רק בשבילך"
+          }
         }
       }
     },
@@ -1857,6 +1965,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "AI बेबी फोटो स्टूडियो"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استوديو صور ذكاء اصطناعي للأطفال"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סטודיו לתמונות תינוקות מבוסס AI"
           }
         }
       }
@@ -2044,6 +2164,18 @@
             "state": "translated",
             "value": "दर्जनों सपनों जैसी थीम में AI-जनित स्टूडियो पोर्ट्रेट — सिर्फ़ एक फोटो से बनाए गए।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صور استوديو من إنشاء الذكاء الاصطناعي بعشرات الأنماط الحالمة — تُصنع من صورة واحدة فقط."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "פורטרטים סטודיו שנוצרו על ידי בינה מלאכותית בעשרות ערכות נושא חלומיות — נוצרו מתמונה אחת בלבד."
+          }
         }
       }
     },
@@ -2229,6 +2361,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "जोड़ें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הוספה"
           }
         }
       }
@@ -2416,6 +2560,18 @@
             "state": "translated",
             "value": "सूची जोड़ें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة قائمة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הוספת רשימה"
+          }
         }
       }
     },
@@ -2601,6 +2757,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "माइलस्टोन जोड़ें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة مَعلَم"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הוספת אבן דרך"
           }
         }
       }
@@ -2788,6 +2956,18 @@
             "state": "translated",
             "value": "फोटो जोड़ें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة صورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הוספת תמונה"
+          }
         }
       }
     },
@@ -2973,6 +3153,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "इस पल के लिए एक फोटो जोड़ें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أضف صورة لهذه اللحظة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הוסיפו תמונה לרגע הזה"
           }
         }
       }
@@ -3160,6 +3352,18 @@
             "state": "translated",
             "value": "शुरू करने के लिए एक फोटो जोड़ें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أضف صورة للبدء"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הוסיפו תמונה כדי להתחיל"
+          }
         }
       }
     },
@@ -3345,6 +3549,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आपका संगीत जोड़ा जा रहा है"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ إضافة موسيقاك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מוסיפים את המוזיקה שלכם"
           }
         }
       }
@@ -3532,6 +3748,18 @@
             "state": "translated",
             "value": "संगीत जोड़ा जा रहा है…"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ إضافة الموسيقى…"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מוסיף מוזיקה…"
+          }
         }
       }
     },
@@ -3717,6 +3945,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "स्टूडियो लाइटिंग लागू की जा रही है…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ تطبيق إضاءة الاستوديو…"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מחיל תאורת סטודיו…"
           }
         }
       }
@@ -3904,6 +4144,18 @@
             "state": "translated",
             "value": "वीडियो सहेजने के लिए सेटिंग्स में फोटो लाइब्रेरी एक्सेस की अनुमति दें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يرجى السماح بالوصول إلى مكتبة الصور من الإعدادات لحفظ الفيديو."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אפשרו גישה לספריית התמונות בהגדרות כדי לשמור את הסרטון."
+          }
         }
       }
     },
@@ -4089,6 +4341,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पोर्ट्रेट को एनिमेट करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحريك الصورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הנפשת פורטרט"
           }
         }
       }
@@ -4276,6 +4540,18 @@
             "state": "translated",
             "value": "आपका संपादन लागू किया जा रहा है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ تطبيق تعديلك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מחיל את העריכה שלכם"
+          }
         }
       }
     },
@@ -4461,6 +4737,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अंतरिक्ष यात्री, परी, छोटा शेफ और भी बहुत कुछ — हर बार एक बिल्कुल नया स्टूडियो।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "رائد فضاء، جنية، طاهٍ صغير، والمزيد — استوديو جديد بالكامل في كل مرة."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אסטרונאוט, פיה, שף קטן ועוד — סטודיו חדש לגמרי בכל פעם."
           }
         }
       }
@@ -4648,6 +4936,18 @@
             "state": "translated",
             "value": "बड़ा पैक"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "باقة كبيرة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חבילה גדולה"
+          }
         }
       }
     },
@@ -4833,6 +5133,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "थीम मिलाई जा रही है…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ مزج النمط…"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ממזג את ערכת הנושא…"
           }
         }
       }
@@ -5020,6 +5332,18 @@
             "state": "translated",
             "value": "शरीर"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الجسم"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "גוף"
+          }
         }
       }
     },
@@ -5205,6 +5529,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "चमकीली, एकसमान रोशनी"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضاءة ساطعة ومتساوية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תאורה בהירה ואחידה"
           }
         }
       }
@@ -5392,6 +5728,18 @@
             "state": "translated",
             "value": "रद्द करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إلغاء"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ביטול"
+          }
         }
       }
     },
@@ -5577,6 +5925,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हर माइलस्टोन को एक ही जगह कैद करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احفظ كل مَعلَم في مكان واحد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תעדו כל אבן דרך במקום אחד"
           }
         }
       }
@@ -5764,6 +6124,18 @@
             "state": "translated",
             "value": "कैद किया गया"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم الالتقاط"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "נלכד"
+          }
         }
       }
     },
@@ -5949,6 +6321,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "उत्सव"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احتفالات"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חגיגות"
           }
         }
       }
@@ -6136,6 +6520,18 @@
             "state": "translated",
             "value": "फोटो बदलें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تغيير الصورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "החלפת תמונה"
+          }
         }
       }
     },
@@ -6321,6 +6717,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "गैलरी से चुनें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختيار من المعرض"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בחירה מהגלריה"
           }
         }
       }
@@ -6508,6 +6916,18 @@
             "state": "translated",
             "value": "%d सिक्के प्राप्त करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احصل على %d عملة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "קבלו %d מטבעות"
+          }
         }
       }
     },
@@ -6693,6 +7113,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "ऑफ़र का लाभ उठाएं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استفد من العرض"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "נצלו את המבצע"
           }
         }
       }
@@ -6880,6 +7312,18 @@
             "state": "translated",
             "value": "इसे बंद करें और यह हमेशा के लिए चला जाएगा।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أغلق هذا وسيختفي إلى الأبد."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סגרו את זה וזה ייעלם לתמיד."
+          }
         }
       }
     },
@@ -7065,6 +7509,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "संचार"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التواصل"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תקשורת"
           }
         }
       }
@@ -7252,6 +7708,18 @@
             "state": "translated",
             "value": "जारी रखें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متابعة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המשך"
+          }
         }
       }
     },
@@ -7437,6 +7905,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "गुनगुनाना और बड़बड़ाना"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الهديل والمناغاة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "גיגוג ופטפוט"
           }
         }
       }
@@ -7624,6 +8104,18 @@
             "state": "translated",
             "value": "इस पोर्ट्रेट को एनिमेट नहीं किया जा सका"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر تحريك هذه الصورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה להנפיש את הפורטרט הזה"
+          }
         }
       }
     },
@@ -7809,6 +8301,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हटाया नहीं जा सका"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر الحذف"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה למחוק"
           }
         }
       }
@@ -7996,6 +8500,18 @@
             "state": "translated",
             "value": "सहेजा नहीं जा सका"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر الحفظ"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה לשמור"
+          }
         }
       }
     },
@@ -8181,6 +8697,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "संगीत शुरू नहीं किया जा सका"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر بدء الموسيقى"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה להפעיל את המוזיקה"
           }
         }
       }
@@ -8368,6 +8896,18 @@
             "state": "translated",
             "value": "बनाया नहीं जा सका — क्रेडिट वापस कर दिए गए"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر الإنشاء — تم استرداد الرصيد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה ליצור — הקרדיטים הוחזרו"
+          }
         }
       }
     },
@@ -8553,6 +9093,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आपके क्रेडिट जांचे नहीं जा सके"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر التحقق من رصيدك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה לבדוק את הקרדיטים שלכם"
           }
         }
       }
@@ -8740,6 +9292,18 @@
             "state": "translated",
             "value": "आपका पोर्ट्रेट नहीं बनाया जा सका"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر إنشاء صورتك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה ליצור את הפורטרט שלכם"
+          }
         }
       }
     },
@@ -8925,6 +9489,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "सिक्का पैक लोड नहीं हो सके। अपना कनेक्शन जांचें और फिर से कोशिश करें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر تحميل باقات العملات. تحقق من اتصالك وحاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה לטעון חבילות מטבעות. בדקו את החיבור שלכם ונסו שוב."
           }
         }
       }
@@ -9112,6 +9688,18 @@
             "state": "translated",
             "value": "प्लान लोड नहीं हो सके। अपना कनेक्शन जांचें और फिर से कोशिश करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر تحميل الخطط. تحقق من اتصالك وحاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה לטעון תוכניות. בדקו את החיבור שלכם ונסו שוב."
+          }
         }
       }
     },
@@ -9297,6 +9885,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "खरीदारी पुनर्स्थापित नहीं हो सकी"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّرت استعادة المشتريات"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה לשחזר רכישות"
           }
         }
       }
@@ -9484,6 +10084,18 @@
             "state": "translated",
             "value": "“%@” थीम बनाई जा रही है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ إنشاء نمط «%@»"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יוצר את ערכת הנושא “%@”"
+          }
         }
       }
     },
@@ -9669,6 +10281,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "रेंगना"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يزحف"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "זוחל"
           }
         }
       }
@@ -9856,6 +10480,18 @@
             "state": "translated",
             "value": "बनाएं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יצירה"
+          }
         }
       }
     },
@@ -10041,6 +10677,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कोलाज बनाएं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء كولاج"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יצירת קולאז'"
           }
         }
       }
@@ -10228,6 +10876,18 @@
             "state": "translated",
             "value": "कोलाज वीडियो बनाएं?"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء فيديو الكولاج؟"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ליצור סרטון קולאז'?"
+          }
         }
       }
     },
@@ -10413,6 +11073,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अपनी खुद की स्टाइल बनाएं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أنشئ نمطك الخاص"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "צרו את הסגנון שלכם"
           }
         }
       }
@@ -10600,6 +11272,18 @@
             "state": "translated",
             "value": "क्रेडिट कभी समाप्त नहीं होते"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الرصيد لا تنتهي صلاحيته أبدًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "קרדיטים אף פעם לא פגי תוקף"
+          }
         }
       }
     },
@@ -10785,6 +11469,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कस्टम स्टाइल"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نمط مخصص"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סגנון מותאם אישית"
           }
         }
       }
@@ -10972,6 +11668,18 @@
             "state": "translated",
             "value": "हटाएं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حذف"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מחיקה"
+          }
         }
       }
     },
@@ -11157,6 +11865,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कैद किया गया माइलस्टोन हटाएं?"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حذف المَعلَم الملتقط؟"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "למחוק את אבן הדרך שנלכדה?"
           }
         }
       }
@@ -11344,6 +12064,18 @@
             "state": "translated",
             "value": "माइलस्टोन हटाएं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حذف المَعلَم"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מחיקת אבן דרך"
+          }
         }
       }
     },
@@ -11529,6 +12261,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "इस कोलाज को हटाएं?"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حذف هذا الكولاج؟"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "למחוק את הקולאז' הזה?"
           }
         }
       }
@@ -11716,6 +12460,18 @@
             "state": "translated",
             "value": "इस माइलस्टोन को हटाएं?"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حذف هذا المَعلَم؟"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "למחוק את אבן הדרך הזו?"
+          }
         }
       }
     },
@@ -11901,6 +12657,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "एक विचार बताएं — हम उसे जीवंत करेंगे"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صف فكرة — وسنجعلها واقعًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תארו רעיון — ניצור אותו בשבילכם"
           }
         }
       }
@@ -12088,6 +12856,18 @@
             "state": "translated",
             "value": "संगीत का वर्णन करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صف الموسيقى"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תיאור המוזיקה"
+          }
         }
       }
     },
@@ -12273,6 +13053,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "संगीत का वर्णन करें — उदा. “नरम, सपनों जैसी पियानो लोरी, गर्म और कोमल”"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صف الموسيقى — مثال: «تهويدة بيانو ناعمة وحالمة، دافئة ورقيقة»"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תארו את המוזיקה — למשל “שיר ערש פסנתר רך וחלומי, חם ועדין”"
           }
         }
       }
@@ -12460,6 +13252,18 @@
             "state": "translated",
             "value": "अपना विचार बताएं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صف فكرتك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תארו את הרעיון שלכם"
+          }
         }
       }
     },
@@ -12645,6 +13449,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हो गया!"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم!"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סיום!"
           }
         }
       }
@@ -12832,6 +13648,18 @@
             "state": "translated",
             "value": "खोजने के लिए दर्जनों सपनों जैसी थीम"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عشرات الأنماط الحالمة لاستكشافها"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עשרות ערכות נושא חלומיות לגלות"
+          }
         }
       }
     },
@@ -13017,6 +13845,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आठ महीने"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ثمانية أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שמונה חודשים"
           }
         }
       }
@@ -13204,6 +14044,18 @@
             "state": "translated",
             "value": "ग्यारह महीने"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أحد عشر شهرًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אחד עשר חודשים"
+          }
         }
       }
     },
@@ -13389,6 +14241,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हिन्दी"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "العربية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עברית"
           }
         }
       }
@@ -13576,6 +14440,18 @@
             "state": "translated",
             "value": "फिलहाल हिन्दी ही एकमात्र उपलब्ध भाषा है। जल्द ही और भाषाएं आएंगी।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "العربية هي اللغة الوحيدة المتاحة حاليًا. المزيد من اللغات قادمة قريبًا."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עברית היא כרגע השפה היחידה הזמינה. עוד שפות בדרך בקרוב."
+          }
         }
       }
     },
@@ -13761,6 +14637,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "संक्षेप में बताएं कि आप ट्रैक को कैसा सुनना चाहते हैं।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صف بإيجاز الصوت الذي تريده للمقطع."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תארו בקצרה איך תרצו שהרצועה תישמע."
           }
         }
       }
@@ -13948,6 +14836,18 @@
             "state": "translated",
             "value": "हमेशा के लिए यादें बनाने के लिए आपको जो कुछ भी चाहिए, वह सब कुछ।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "كل ما تحتاجه لصنع ذكريات إلى الأبد."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "כל מה שאתם צריכים כדי ליצור זיכרונות לנצח."
+          }
         }
       }
     },
@@ -14133,6 +15033,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "चेहरा स्पष्ट रूप से दिखाई दे रहा है"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الوجه واضح بشكل جيد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הפנים נראות בבירור"
           }
         }
       }
@@ -14320,6 +15232,18 @@
             "state": "translated",
             "value": "पसंदीदा"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المفضلة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מועדפים"
+          }
         }
       }
     },
@@ -14505,6 +15429,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अंतिम छुअन…"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اللمسات الأخيرة…"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "נגיעות אחרונות…"
           }
         }
       }
@@ -14692,6 +15628,18 @@
             "state": "translated",
             "value": "पहला स्नान"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول استحمام"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "האמבטיה הראשונה"
+          }
         }
       }
     },
@@ -14877,6 +15825,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पहला जन्मदिन"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول عيد ميلاد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יום ההולדת הראשון"
           }
         }
       }
@@ -15064,6 +16024,18 @@
             "state": "translated",
             "value": "पहली बाल कटवाई"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول قصة شعر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "התספורת הראשונה"
+          }
         }
       }
     },
@@ -15249,6 +16221,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पहला त्योहारी मौसम"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول موسم أعياد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עונת החגים הראשונה"
           }
         }
       }
@@ -15436,6 +16420,18 @@
             "state": "translated",
             "value": "पहली हंसी"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول ضحكة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הצחוק הראשון"
+          }
         }
       }
     },
@@ -15621,6 +16617,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पहली सैर"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول نزهة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הטיול הראשון"
           }
         }
       }
@@ -15808,6 +16816,18 @@
             "state": "translated",
             "value": "पहली मुस्कान"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول ابتسامة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "החיוך הראשון"
+          }
         }
       }
     },
@@ -15993,6 +17013,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पहला कदम"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أولى الخطوات"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הצעדים הראשונים"
           }
         }
       }
@@ -16180,6 +17212,18 @@
             "state": "translated",
             "value": "पहला स्टूडियो पोर्ट्रेट"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول صورة استوديو"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הפורטרט הסטודיו הראשון"
+          }
         }
       }
     },
@@ -16365,6 +17409,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पहला दांत"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أول سن"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "השן הראשונה"
           }
         }
       }
@@ -16552,6 +17608,18 @@
             "state": "translated",
             "value": "पहली बार"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اللحظات الأولى"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "פעמים ראשונות"
+          }
         }
       }
     },
@@ -16737,6 +17805,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पांच महीने"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خمسة أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חמישה חודשים"
           }
         }
       }
@@ -16924,6 +18004,18 @@
             "state": "translated",
             "value": "सर्वोत्तम परिणामों के लिए"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "للحصول على أفضل النتائج"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לתוצאות הטובות ביותר"
+          }
         }
       }
     },
@@ -17109,6 +18201,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "चार महीने"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أربعة أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ארבעה חודשים"
           }
         }
       }
@@ -17296,6 +18400,18 @@
             "state": "translated",
             "value": "गैलरी"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المعرض"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "גלריה"
+          }
         }
       }
     },
@@ -17481,6 +18597,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "जनरेट करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יצירה"
           }
         }
       }
@@ -17668,6 +18796,18 @@
             "state": "translated",
             "value": "जनरेट करें और सहेजें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء وحفظ"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יצירה ושמירה"
+          }
         }
       }
     },
@@ -17853,6 +18993,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "संगीत जनरेट करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء موسيقى"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יצירת מוזיקה"
           }
         }
       }
@@ -18040,6 +19192,18 @@
             "state": "translated",
             "value": "पोर्ट्रेट जनरेट करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء صورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יצירת פורטרט"
+          }
         }
       }
     },
@@ -18225,6 +19389,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अपना पहला स्टूडियो पोर्ट्रेट जनरेट करें, यह यहां दिखाई देगा।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أنشئ أول صورة استوديو لك، وستظهر هنا."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "צרו את הפורטרט הסטודיו הראשון שלכם, הוא יופיע כאן."
           }
         }
       }
@@ -18412,6 +19588,18 @@
             "state": "translated",
             "value": "शुरू करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ابدأ"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "להתחיל"
+          }
         }
       }
     },
@@ -18597,6 +19785,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अपनी सूची को एक नाम दें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أعطِ قائمتك اسمًا."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תנו שם לרשימה שלכם."
           }
         }
       }
@@ -18784,6 +19984,18 @@
             "state": "translated",
             "value": "माइलस्टोन गैलरी पर जाएं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الانتقال إلى معرض المعالم"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מעבר לגלריית אבני הדרך"
+          }
         }
       }
     },
@@ -18969,6 +20181,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "मेरे कोलाज पर जाएं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الانتقال إلى كولاجاتي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מעבר לקולאז'ים שלי"
           }
         }
       }
@@ -19156,6 +20380,18 @@
             "state": "translated",
             "value": "समय खत्म होने से पहले यह पैक प्राप्त करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احصل على هذه الباقة قبل انتهاء الوقت."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "השיגו את החבילה הזו לפני שהזמן נגמר."
+          }
         }
       }
     },
@@ -19341,6 +20577,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "विकास और मोटर कौशल"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النمو والمهارات الحركية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "גדילה ומיומנויות מוטוריות"
           }
         }
       }
@@ -19528,6 +20776,18 @@
             "state": "translated",
             "value": "इतिहास"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "السجل"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "היסטוריה"
+          }
         }
       }
     },
@@ -19713,6 +20973,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "सिर सीधा रखता है"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يرفع رأسه بثبات"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מחזיק ראש זקוף"
           }
         }
       }
@@ -19900,6 +21172,18 @@
             "state": "translated",
             "value": "होम"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الرئيسية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בית"
+          }
         }
       }
     },
@@ -20085,6 +21369,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "JPG या PNG, 10 MB तक"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG أو PNG، حتى 10 ميغابايت"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG או PNG, עד 10MB"
           }
         }
       }
@@ -20272,6 +21568,18 @@
             "state": "translated",
             "value": "याद रखने लायक हर पल के लिए एक सूची"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قائمة لكل لحظة تستحق أن تُذكر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "רשימה לכל רגע ששווה לזכור"
+          }
         }
       }
     },
@@ -20457,6 +21765,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आखिरी मौका"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الفرصة الأخيرة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ההזדמנות האחרונה"
           }
         }
       }
@@ -20644,6 +21964,18 @@
             "state": "translated",
             "value": "सीमित समय का ऑफ़र"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض لفترة محدودة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מבצע לזמן מוגבל"
+          }
         }
       }
     },
@@ -20829,6 +22161,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "भाषा"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اللغة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שפה"
           }
         }
       }
@@ -21016,6 +22360,18 @@
             "state": "translated",
             "value": "अंतिम अपडेट: अगस्त 2026"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "آخر تحديث: أغسطس 2026"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עדכון אחרון: אוגוסט 2026"
+          }
         }
       }
     },
@@ -21201,6 +22557,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "सीमित समय का ऑफ़र"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض لفترة محدودة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מבצע לזמן מוגבל"
           }
         }
       }
@@ -21388,6 +22756,18 @@
             "state": "translated",
             "value": "सूची"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "القائمة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "רשימה"
+          }
         }
       }
     },
@@ -21573,6 +22953,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "सबसे लोकप्रिय"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأكثر شيوعًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הכי פופולרי"
           }
         }
       }
@@ -21760,6 +23152,18 @@
             "state": "translated",
             "value": "मध्यम पैक"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "باقة متوسطة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חבילה בינונית"
+          }
         }
       }
     },
@@ -21945,6 +23349,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "माइलस्टोन"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مَعلَم"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אבן דרך"
           }
         }
       }
@@ -22132,6 +23548,18 @@
             "state": "translated",
             "value": "माइलस्टोन कैद किया गया!"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم التقاط المَعلَم!"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אבן הדרך נלכדה!"
+          }
         }
       }
     },
@@ -22317,6 +23745,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "माइलस्टोन"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المعالم"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אבני דרך"
           }
         }
       }
@@ -22504,6 +23944,18 @@
             "state": "translated",
             "value": "मासिक"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شهري"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חודשי"
+          }
         }
       }
     },
@@ -22689,6 +24141,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कई चेहरे पहचाने गए"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم اكتشاف عدة وجوه"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "זוהו מספר פנים"
           }
         }
       }
@@ -22876,6 +24340,18 @@
             "state": "translated",
             "value": "मेरे कोलाज"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "كولاجاتي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הקולאז'ים שלי"
+          }
         }
       }
     },
@@ -23062,6 +24538,18 @@
             "state": "translated",
             "value": "मेरी रचनाएं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إبداعاتي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "היצירות שלי"
+          }
         }
       }
     },
@@ -23244,6 +24732,18 @@
           }
         },
         "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "he": {
           "stringUnit": {
             "state": "translated",
             "value": "NEWBORN PRO"
@@ -23434,6 +24934,18 @@
             "state": "translated",
             "value": "नई सूची"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قائمة جديدة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "רשימה חדשה"
+          }
         }
       }
     },
@@ -23619,6 +25131,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "नया माइलस्टोन"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مَعلَم جديد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אבן דרך חדשה"
           }
         }
       }
@@ -23806,6 +25330,18 @@
             "state": "translated",
             "value": "नवजात"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مولود جديد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יילוד"
+          }
         }
       }
     },
@@ -23988,6 +25524,18 @@
           }
         },
         "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "he": {
           "stringUnit": {
             "state": "translated",
             "value": "Newborn Moments"
@@ -24178,6 +25726,18 @@
             "state": "translated",
             "value": "अगला"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التالي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הבא"
+          }
         }
       }
     },
@@ -24363,6 +25923,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "नौ महीने"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تسعة أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תשעה חודשים"
           }
         }
       }
@@ -24550,6 +26122,18 @@
             "state": "translated",
             "value": "कोई चेहरा नहीं पहचाना गया"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يتم اكتشاف وجه"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא זוהו פנים"
+          }
         }
       }
     },
@@ -24735,6 +26319,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "इस खाते के लिए कोई सक्रिय खरीदारी नहीं मिली।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يتم العثور على مشتريات نشطة لهذا الحساب."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא נמצאו רכישות פעילות עבור חשבון זה."
           }
         }
       }
@@ -24922,6 +26518,18 @@
             "state": "translated",
             "value": "अभी तक कोई कोलाज नहीं — एक सूची में कम से कम 5 माइलस्टोन कैद करें, फिर “कोलाज बनाएं” पर टैप करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد كولاجات بعد — التقط 5 معالم على الأقل في قائمة، ثم اضغط على «إنشاء كولاج»."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין עדיין קולאז'ים — תעדו לפחות 5 אבני דרך ברשימה, ואז הקישו על “יצירת קולאז'”."
+          }
         }
       }
     },
@@ -25107,6 +26715,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अभी तक कोई पसंदीदा नहीं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد مفضلات بعد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין עדיין מועדפים"
           }
         }
       }
@@ -25294,6 +26914,18 @@
             "state": "translated",
             "value": "कोई फ़िल्टर या भारी संपादन नहीं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بدون فلاتر أو تعديلات قوية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ללא פילטרים או עריכות כבדות"
+          }
         }
       }
     },
@@ -25479,6 +27111,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अभी तक कोई माइलस्टोन नहीं — नीचे अपना पहला जोड़ें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد معالم بعد — أضف أول معلم أدناه."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין עדיין אבני דרך — הוסיפו את הראשונה שלכם למטה."
           }
         }
       }
@@ -25666,6 +27310,18 @@
             "state": "translated",
             "value": "अभी तक कोई पोर्ट्रेट नहीं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد صور بعد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין עדיין פורטרטים"
+          }
         }
       }
     },
@@ -25851,6 +27507,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कोई सदस्यता या आवर्ती शुल्क नहीं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بدون اشتراك أو رسوم متكررة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ללא מנוי או חיוב חוזר"
           }
         }
       }
@@ -26038,6 +27706,18 @@
             "state": "translated",
             "value": "कोई वॉटरमार्क नहीं"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بدون علامة مائية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ללא סימן מים"
+          }
         }
       }
     },
@@ -26223,6 +27903,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अभी तक पर्याप्त माइलस्टोन नहीं हैं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد معالم كافية بعد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין עדיין מספיק אבני דרך"
           }
         }
       }
@@ -26410,6 +28102,18 @@
             "state": "translated",
             "value": "अभी तक कैद नहीं किया गया"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يتم الالتقاط بعد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "טרם נלכד"
+          }
         }
       }
     },
@@ -26595,6 +28299,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पुनर्स्थापित करने के लिए कुछ नहीं"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يوجد شيء لاستعادته"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין מה לשחזר"
           }
         }
       }
@@ -26782,6 +28498,18 @@
             "state": "translated",
             "value": "ठीक है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حسنًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אישור"
+          }
         }
       }
     },
@@ -26967,6 +28695,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "ऑफ़र अभी उपलब्ध नहीं है"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "العرض غير متاح حاليًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המבצע אינו זמין כרגע"
           }
         }
       }
@@ -27154,6 +28894,18 @@
             "state": "translated",
             "value": "एक महीना"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شهر واحد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חודש אחד"
+          }
         }
       }
     },
@@ -27339,6 +29091,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "एक सप्ताह"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أسبوع واحد"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שבוע אחד"
           }
         }
       }
@@ -27526,6 +29290,18 @@
             "state": "translated",
             "value": "एक वर्ष"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سنة واحدة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שנה אחת"
+          }
         }
       }
     },
@@ -27711,6 +29487,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "एकबारगी ऑफ़र — टाइमर खत्म होने पर समाप्त हो जाता है।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض لمرة واحدة — ينتهي عند انتهاء المؤقت."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מבצע חד-פעמי — פג תוקף כשהטיימר מסתיים."
           }
         }
       }
@@ -27898,6 +29686,18 @@
             "state": "translated",
             "value": "फोटो एक्सेस आवश्यक है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الوصول إلى الصور مطلوب"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "נדרשת גישה לתמונות"
+          }
         }
       }
     },
@@ -28083,6 +29883,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अपना कनेक्शन जांचें और फिर से कोशिश करें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحقق من اتصالك وحاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בדקו את החיבור שלכם ונסו שוב."
           }
         }
       }
@@ -28270,6 +30082,18 @@
             "state": "translated",
             "value": "पोर्ट्रेट"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "פורטרט"
+          }
         }
       }
     },
@@ -28455,6 +30279,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "तैयार किया जा रहा है… (%d क्लिप) %@ बाकी"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ التحضير… (%d مقاطع) تبقى %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בהכנה… (%d קטעים) נותרו %@"
           }
         }
       }
@@ -28642,6 +30478,18 @@
             "state": "translated",
             "value": "प्राथमिकता AI जनरेशन"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنشاء ذكاء اصطناعي بأولوية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יצירת AI בעדיפות"
+          }
         }
       }
     },
@@ -28827,6 +30675,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "गोपनीयता"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الخصوصية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "פרטיות"
           }
         }
       }
@@ -29014,6 +30874,18 @@
             "state": "translated",
             "value": "गोपनीयता नीति"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سياسة الخصوصية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מדיניות פרטיות"
+          }
         }
       }
     },
@@ -29199,6 +31071,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "प्रोफ़ाइल"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الملف الشخصي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "פרופיל"
           }
         }
       }
@@ -29386,6 +31270,18 @@
             "state": "translated",
             "value": "सहारा लेकर खड़ा होता है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يقف مستندًا إلى شيء"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עומד תוך היאחזות"
+          }
         }
       }
     },
@@ -29571,6 +31467,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "खरीदारी विफल रही"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فشلت عملية الشراء"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הרכישה נכשלה"
           }
         }
       }
@@ -29758,6 +31666,18 @@
             "state": "translated",
             "value": "ऐप को रेट करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قيّم التطبيق"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "דרגו את האפליקציה"
+          }
         }
       }
     },
@@ -29943,6 +31863,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पुनर्स्थापित करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استعادة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שחזור"
           }
         }
       }
@@ -30130,6 +32062,18 @@
             "state": "translated",
             "value": "खरीदारी पुनर्स्थापित करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استعادة الشراء"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שחזור רכישה"
+          }
         }
       }
     },
@@ -30315,6 +32259,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पुनर्स्थापित किया गया"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت الاستعادة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שוחזר"
           }
         }
       }
@@ -30502,6 +32458,18 @@
             "state": "translated",
             "value": "करवट लेता है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يتقلب"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מתהפך"
+          }
         }
       }
     },
@@ -30687,6 +32655,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "सहेजें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حفظ"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שמירה"
           }
         }
       }
@@ -30874,6 +32854,18 @@
             "state": "translated",
             "value": "फोटो सहेजें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حفظ الصورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שמירת תמונה"
+          }
         }
       }
     },
@@ -31059,6 +33051,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हर पोर्ट्रेट को अपनी गैलरी में सहेजें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احفظ كل صورة في معرضك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שמרו כל פורטרט בגלריה שלכם"
           }
         }
       }
@@ -31246,6 +33250,18 @@
             "state": "translated",
             "value": "सहेजे गए कोलाज"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الكولاجات المحفوظة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "קולאז'ים שמורים"
+          }
         }
       }
     },
@@ -31431,6 +33447,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "सहेजा गया!"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم الحفظ!"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "נשמר!"
           }
         }
       }
@@ -31618,6 +33646,18 @@
             "state": "translated",
             "value": "पहला शब्द बोलता है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يقول أول كلمة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אומר מילה ראשונה"
+          }
         }
       }
     },
@@ -31803,6 +33843,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "सुरक्षित भुगतान · Apple Pay · Google Pay"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دفع آمن · Apple Pay · Google Pay"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תשלום מאובטח · Apple Pay · Google Pay"
           }
         }
       }
@@ -31990,6 +34042,18 @@
             "state": "translated",
             "value": "सात महीने"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سبعة أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שבעה חודשים"
+          }
         }
       }
     },
@@ -32175,6 +34239,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "शेयर करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مشاركة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שיתוף"
           }
         }
       }
@@ -32362,6 +34438,18 @@
             "state": "translated",
             "value": "बिना सहारे बैठता है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يجلس دون دعم"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יושב ללא תמיכה"
+          }
         }
       }
     },
@@ -32547,6 +34635,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "छह महीने"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ستة أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שישה חודשים"
           }
         }
       }
@@ -32734,6 +34834,18 @@
             "state": "translated",
             "value": "छोड़ें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تخطي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "דילוג"
+          }
         }
       }
     },
@@ -32919,6 +35031,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "पूरी रात सोता है"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ينام طوال الليل"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ישן כל הלילה"
           }
         }
       }
@@ -33106,6 +35230,18 @@
             "state": "translated",
             "value": "छोटा पैक"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "باقة صغيرة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חבילה קטנה"
+          }
         }
       }
     },
@@ -33291,6 +35427,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आपकी कुछ कैद की गई फोटो अभी भी सिंक हो रही हैं। कृपया थोड़ी देर बाद फिर से कोशिश करें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا تزال بعض صورك الملتقطة قيد المزامنة. حاول مرة أخرى بعد قليل."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חלק מהתמונות שתיעדתם עדיין מסתנכרנות. נסו שוב בעוד רגע."
           }
         }
       }
@@ -33478,6 +35626,18 @@
             "state": "translated",
             "value": "कुछ गलत हो गया"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدث خطأ ما"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משהו השתבש"
+          }
         }
       }
     },
@@ -33663,6 +35823,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कुछ गलत हो गया"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدث خطأ ما"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משהו השתבש"
           }
         }
       }
@@ -33850,6 +36022,18 @@
             "state": "translated",
             "value": "कुछ गलत हो गया और आपके क्रेडिट वापस कर दिए गए। कृपया फिर से कोशिश करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدث خطأ ما وتم استرداد رصيدك. حاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משהו השתבש והקרדיטים שלכם הוחזרו. נסו שוב."
+          }
         }
       }
     },
@@ -34035,6 +36219,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कोलाज हटाते समय कुछ गलत हो गया। कृपया फिर से कोशिश करें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدث خطأ ما أثناء حذف الكولاج. حاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משהו השתבש במחיקת הקולאז'. נסו שוב."
           }
         }
       }
@@ -34222,6 +36418,18 @@
             "state": "translated",
             "value": "वीडियो सहेजते समय कुछ गलत हो गया। कृपया फिर से कोशिश करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدث خطأ ما أثناء حفظ الفيديو. حاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משהו השתבש בשמירת הסרטון. נסו שוב."
+          }
         }
       }
     },
@@ -34407,6 +36615,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आपका कोलाज शुरू करते समय कुछ गलत हो गया। कृपया फिर से कोशिश करें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدث خطأ ما أثناء بدء الكولاج الخاص بك. حاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משהו השתבש בהפעלת הקולאז' שלכם. נסו שוב."
           }
         }
       }
@@ -34594,6 +36814,18 @@
             "state": "translated",
             "value": "कुछ गलत हो गया। यदि क्रेडिट खर्च किए गए थे, तो वे वापस कर दिए गए हैं। कृपया फिर से कोशिश करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حدث خطأ ما. إذا تم إنفاق أي رصيد، فقد تم استرداده. حاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משהו השתבש. אם נוצלו קרדיטים, הם הוחזרו. נסו שוב."
+          }
         }
       }
     },
@@ -34779,6 +37011,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "किसी भी पोर्ट्रेट को जनरेट करने के लिए सिक्के खर्च करें — सदस्यता की आवश्यकता नहीं।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أنفق العملات لإنشاء أي صورة — بلا حاجة إلى اشتراك."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "נצלו מטבעות כדי ליצור כל פורטרט — לא נדרש מנוי."
           }
         }
       }
@@ -34966,6 +37210,18 @@
             "state": "translated",
             "value": "अभी सदस्यता लें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اشترك الآن"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הירשמו עכשיו"
+          }
         }
       }
     },
@@ -35151,6 +37407,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "फोटो लें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التقاط صورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "צילום תמונה"
           }
         }
       }
@@ -35338,6 +37606,18 @@
             "state": "translated",
             "value": "इसे यहां सहेजने के लिए किसी भी स्टाइल पर दिल पर टैप करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اضغط على القلب في أي نمط لحفظه هنا."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הקישו על הלב בכל סגנון כדי לשמור אותו כאן."
+          }
         }
       }
     },
@@ -35523,6 +37803,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "फोटो बदलने के लिए टैप करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اضغط لتغيير الصورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הקישו כדי להחליף תמונה"
           }
         }
       }
@@ -35710,6 +38002,18 @@
             "state": "translated",
             "value": "दस महीने"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عشرة أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עשרה חודשים"
+          }
         }
       }
     },
@@ -35895,6 +38199,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "शर्तें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الشروط"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תנאים"
           }
         }
       }
@@ -36082,6 +38398,18 @@
             "state": "translated",
             "value": "उपयोग की शर्तें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شروط الاستخدام"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תנאי שימוש"
+          }
         }
       }
     },
@@ -36267,6 +38595,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कोलाज वीडियो “%@” स्थायी रूप से हटा दिया जाएगा। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سيتم حذف فيديو الكولاج «%@» نهائيًا. لا يمكن التراجع عن هذا الإجراء."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סרטון הקולאז' “%@” יימחק לצמיתות. לא ניתן לבטל פעולה זו."
           }
         }
       }
@@ -36454,6 +38794,18 @@
             "state": "translated",
             "value": "एनिमेटेड वीडियो आपकी फोटो में सहेजा गया।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم حفظ الفيديو المتحرك في صورك."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הסרטון המונפש נשמר בתמונות שלכם."
+          }
         }
       }
     },
@@ -36639,6 +38991,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "कोलाज वीडियो आपकी फोटो में सहेजा गया।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم حفظ فيديو الكولاج في صورك."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סרטון הקולאז' נשמר בתמונות שלכם."
           }
         }
       }
@@ -36826,6 +39190,18 @@
             "state": "translated",
             "value": "यह विशेष पैक फिर से नहीं दिया जाएगा। इसे अभी प्राप्त करें, वरना यह हमेशा के लिए चला जाएगा।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لن تُقدَّم هذه الباقة الحصرية مرة أخرى. احصل عليها الآن، وإلا فستختفي إلى الأبد."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "החבילה הבלעדית הזו לא תוצע שוב. השיגו אותה עכשיו, אחרת היא תיעלם לתמיד."
+          }
         }
       }
     },
@@ -37011,6 +39387,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "इस फोटो में एक से अधिक चेहरे हैं। कृपया केवल अपने बच्चे वाली फोटो चुनें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحتوي هذه الصورة على أكثر من وجه واحد. يرجى اختيار صورة تحتوي على طفلك فقط."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בתמונה הזו יש יותר מפרצוף אחד. בחרו תמונה עם התינוק שלכם בלבד."
           }
         }
       }
@@ -37198,6 +39586,18 @@
             "state": "translated",
             "value": "यह पोर्ट्रेट आपकी माइलस्टोन गैलरी में सहेजा गया।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم حفظ هذه الصورة في معرض المعالم الخاص بك."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הפורטרט הזה נשמר בגלריית אבני הדרך שלכם."
+          }
         }
       }
     },
@@ -37383,6 +39783,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "तीन महीने"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ثلاثة أشهر"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שלושה חודשים"
           }
         }
       }
@@ -37570,6 +39982,18 @@
             "state": "translated",
             "value": "अपने सिक्के रिचार्ज करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أعد شحن عملاتك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "טענו מחדש את המטבעות שלכם"
+          }
         }
       }
     },
@@ -37755,6 +40179,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अपने बच्चे के पहली बार होने वाले पलों को ट्रैक करें और हर कीमती याद को खूबसूरती से व्यवस्थित रखें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تتبع لحظات طفلك الأولى واحتفظ بكل ذكرى ثمينة منظمة بشكل جميل."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עקבו אחרי הפעמים הראשונות של התינוק שלכם ושמרו על כל זיכרון יקר מאורגן בצורה יפה."
           }
         }
       }
@@ -37942,6 +40378,18 @@
             "state": "translated",
             "value": "अपने बच्चे की तस्वीरों को जादुई यादों में बदलें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حوّل صور طفلك إلى ذكريات سحرية"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הפכו את התמונות של התינוק שלכם לזיכרונות קסומים"
+          }
         }
       }
     },
@@ -38127,6 +40575,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "दो महीने"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شهران"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חודשיים"
           }
         }
       }
@@ -38314,6 +40774,18 @@
             "state": "translated",
             "value": "असीमित स्टूडियो थीम"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أنماط استوديو غير محدودة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ערכות נושא סטודיו ללא הגבלה"
+          }
         }
       }
     },
@@ -38499,6 +40971,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "असीमित रचनात्मकता को अनलॉक करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أطلق العنان لإبداع غير محدود"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שחררו יצירתיות ללא הגבלה"
           }
         }
       }
@@ -38686,6 +41170,18 @@
             "state": "translated",
             "value": "बिना शीर्षक"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بلا عنوان"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ללא כותרת"
+          }
         }
       }
     },
@@ -38871,6 +41367,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "अपने बच्चे की स्पष्ट फोटो अपलोड करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ارفع صورة واضحة لطفلك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "העלו תמונה ברורה של התינוק שלכם"
           }
         }
       }
@@ -39058,6 +41566,18 @@
             "state": "translated",
             "value": "फोटो अपलोड करें"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "رفع صورة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "העלאת תמונה"
+          }
         }
       }
     },
@@ -39243,6 +41763,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "किसी भी थीम या अपने खुद के कस्टम प्रॉम्प्ट के साथ उपयोग करें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استخدمه مع أي نمط أو مع طلبك المخصص الخاص"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "השתמשו בזה עם כל ערכת נושא או עם ההנחיה המותאמת אישית שלכם"
           }
         }
       }
@@ -39430,6 +41962,18 @@
             "state": "translated",
             "value": "स्वतंत्र रूप से चलता है"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يمشي بشكل مستقل"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הולך באופן עצמאי"
+          }
         }
       }
     },
@@ -39615,6 +42159,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "बदलाव चाहते हैं? एक संपादन बताएं — उदा. “एक मुलायम नीला कंबल जोड़ें”"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تريد تغييرًا؟ صف تعديلًا — مثال: «أضف بطانية زرقاء ناعمة»"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "רוצים שינוי? תארו עריכה — למשל “הוסיפו שמיכה כחולה רכה”"
           }
         }
       }
@@ -39802,6 +42358,18 @@
             "state": "translated",
             "value": "AI टच-अप चाहते हैं? (वैकल्पिक)"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تريد لمسة ذكاء اصطناعي؟ (اختياري)"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "רוצים שיפור AI? (אופציונלי)"
+          }
         }
       }
     },
@@ -39987,6 +42555,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "इस कोलाज के लिए संगीत चाहते हैं?"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تريد موسيقى لهذا الكولاج؟"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "רוצים מוזיקה לקולאז' הזה?"
           }
         }
       }
@@ -40174,6 +42754,18 @@
             "state": "translated",
             "value": "स्टूडियो तैयार किया जा रहा है…"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ تحضير الاستوديو…"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מכינים את הסטודיו…"
+          }
         }
       }
     },
@@ -40359,6 +42951,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हाथ हिलाकर बाय कहता है"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يلوّح مودّعًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מנפנף לשלום"
           }
         }
       }
@@ -40546,6 +43150,18 @@
             "state": "translated",
             "value": "कोलाज वीडियो नहीं बनाया जा सका। कृपया फिर से कोशिश करें।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر إنشاء فيديو الكولاج. حاول مرة أخرى."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן היה ליצור את סרטון הקולאז'. נסו שוב."
+          }
         }
       }
     },
@@ -40731,6 +43347,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हमें इस फोटो में कोई चेहरा नहीं मिला। कृपया अपने बच्चे के चेहरे की एक स्पष्ट, अच्छी रोशनी वाली फोटो चुनें।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم نتمكن من العثور على وجه في هذه الصورة. يرجى اختيار صورة واضحة وجيدة الإضاءة لوجه طفلك."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא הצלחנו למצוא פרצוף בתמונה הזו. בחרו תמונה ברורה ומוארת היטב של פני התינוק שלכם."
           }
         }
       }
@@ -40918,6 +43546,18 @@
             "state": "translated",
             "value": "हम आपकी कैद की गई %d फोटो में से हर एक को एनिमेट करेंगे और उन्हें एक वीडियो में मिलाएंगे। इसकी लागत %@ होगी, और आपने कितनी फोटो जोड़ी हैं, इस पर निर्भर करते हुए इसमें काफी समय लग सकता है। क्या आप जारी रखना चाहते हैं?"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سنقوم بتحريك كل صورة من صورك الملتقطة الـ %d ودمجها في فيديو واحد. سيكلف هذا %@، وقد يستغرق بعض الوقت حسب عدد الصور التي أضفتها. هل تريد المتابعة؟"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אנחנו ננפיש כל אחת מ-%d התמונות שתיעדתם ונשלב אותן לסרטון אחד. זה יעלה %@, ובהתאם למספר התמונות שהוספתם, זה עשוי לקחת זמן מה. להמשיך?"
+          }
         }
       }
     },
@@ -41103,6 +43743,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "हम आपके ट्रैक को इस कोलाज में मिला रहे हैं। आप मेरे कोलाज स्क्रीन से इसकी प्रगति देख सकते हैं।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نقوم بمزج مقطوعتك في هذا الكولاج. يمكنك متابعة التقدم من شاشة كولاجاتي."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אנחנו מערבבים את הרצועה שלכם לתוך הקולאז' הזה. תוכלו לעקוב אחרי ההתקדמות ממסך הקולאז'ים שלי."
           }
         }
       }
@@ -41290,6 +43942,18 @@
             "state": "translated",
             "value": "हम आपका कोलाज तैयार कर रहे हैं। आप मेरे कोलाज स्क्रीन से इसकी प्रगति देख सकते हैं।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نقوم بتحضير الكولاج الخاص بك. يمكنك متابعة التقدم من شاشة كولاجاتي."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אנחנו מכינים את הקולאז' שלכם. תוכלו לעקוב אחרי ההתקדמות ממסך הקולאז'ים שלי."
+          }
         }
       }
     },
@@ -41475,6 +44139,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "साप्ताहिक"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أسبوعي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שבועי"
           }
         }
       }
@@ -41662,6 +44338,18 @@
             "state": "translated",
             "value": "आप क्या याद रखना चाहेंगे?"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ما الذي تود تذكره؟"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מה תרצו לזכור?"
+          }
         }
       }
     },
@@ -41847,6 +44535,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "वार्षिक"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سنوي"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שנתי"
           }
         }
       }
@@ -42034,6 +44734,18 @@
             "state": "translated",
             "value": "कोलाज वीडियो बनाने के लिए आपको कम से कम %d कैद किए गए माइलस्टोन चाहिए। अभी तक आपके पास %d हैं।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحتاج إلى %d معالم ملتقطة على الأقل لإنشاء فيديو كولاج. لديك %d حتى الآن."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אתם צריכים לפחות %d אבני דרך שתועדו כדי ליצור סרטון קולאז'. יש לכם %d עד כה."
+          }
         }
       }
     },
@@ -42219,6 +44931,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आपका आखिरी मौका!"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فرصتك الأخيرة!"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ההזדמנות האחרונה שלכם!"
           }
         }
       }
@@ -42406,6 +45130,18 @@
             "state": "translated",
             "value": "आपका अनुरोध प्राप्त हो गया"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم استلام طلبك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הבקשה שלכם התקבלה"
+          }
         }
       }
     },
@@ -42591,6 +45327,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "आपके बच्चे के कोलाज"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "كولاجات طفلك"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הקולאז'ים של התינוק שלכם"
           }
         }
       }
@@ -42778,6 +45526,18 @@
             "state": "translated",
             "value": "आपकी खरीदारी पुनर्स्थापित कर दी गई है।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تمت استعادة مشترياتك."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הרכישות שלכם שוחזרו."
+          }
         }
       }
     },
@@ -42963,6 +45723,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "“%@” और उसकी फोटो हटा दी जाएगी। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سيتم إزالة «%@» وصورته. لا يمكن التراجع عن هذا الإجراء."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” והתמונה שלו יוסרו. לא ניתן לבטל פעולה זו."
           }
         }
       }
@@ -43150,6 +45922,18 @@
             "state": "translated",
             "value": "“%@” पहले ही कैद किया जा चुका है। इसे हटाने से फोटो भी हट जाएगी — इस कार्रवाई को पूर्ववत नहीं किया जा सकता।"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم التقاط «%@» بالفعل. سيؤدي حذفه أيضًا إلى إزالة الصورة — لا يمكن التراجع عن هذا الإجراء."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” כבר תועד. מחיקתו תסיר גם את התמונה — לא ניתן לבטל פעולה זו."
+          }
         }
       }
     },
@@ -43335,6 +46119,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "उदा. दादी की यात्रा"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مثال: زيارة الجدة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "למשל, ביקור סבתא"
           }
         }
       }
@@ -43522,6 +46318,18 @@
             "state": "translated",
             "value": "उदा. दादी से मिला"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مثال: قابل الجدة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "למשל, פגש את סבתא"
+          }
         }
       }
     },
@@ -43707,6 +46515,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "उदा. “नरम सुनहरी रोशनी और तैरती चमक जोड़ें” — केवल फोटो सहेजने के लिए खाली छोड़ दें"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مثال: «أضف ضوءًا ذهبيًا ناعمًا وبريقًا عائمًا» — اتركه فارغًا لحفظ الصورة فقط"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "למשל, “הוסיפו אור זהוב רך וניצוצות מרחפים” — השאירו ריק כדי רק לשמור את התמונה"
           }
         }
       }
@@ -43894,6 +46714,18 @@
             "state": "translated",
             "value": "उदा. “मेरे बच्चे को तारों के बीच तैरते एक छोटे अंतरिक्ष यात्री में बदल दें”"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مثال: «حوّل طفلي إلى رائد فضاء صغير يطفو بين النجوم»"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "למשל, “הפכו את התינוק שלי לאסטרונאוט קטן שמרחף בין הכוכבים”"
+          }
         }
       }
     },
@@ -44079,6 +46911,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "प्रति माह"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شهريًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לחודש"
           }
         }
       }
@@ -44266,6 +47110,18 @@
             "state": "translated",
             "value": "प्रति सप्ताह"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أسبوعيًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לשבוע"
+          }
         }
       }
     },
@@ -44451,6 +47307,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "प्रति वर्ष"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سنويًا"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לשנה"
           }
         }
       }
@@ -44638,6 +47506,18 @@
             "state": "translated",
             "value": "~%d मिनट"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d دقيقة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "‏~%d דק'"
+          }
         }
       }
     },
@@ -44823,6 +47703,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "~%d–%d मिनट"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d دقيقة"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "‏~%d–%d דק'"
           }
         }
       }
