@@ -22,6 +22,30 @@
             "state": "translated",
             "value": "%@ / semaine"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / semana"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / settimana"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / semana"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / week"
+          }
         }
       }
     },
@@ -45,6 +69,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "%d pièces"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d monedas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d monete"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d moedas"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d munten"
           }
         }
       }
@@ -70,6 +118,30 @@
             "state": "translated",
             "value": "%d pièces · %@"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d monedas · %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d monete · %@"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d moedas · %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d munten · %@"
+          }
         }
       }
     },
@@ -93,6 +165,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "%d crédits"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d créditos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d crediti"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d créditos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d credits"
           }
         }
       }
@@ -118,6 +214,30 @@
             "state": "translated",
             "value": "1 crédit"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 crédito"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 credito"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 crédito"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 credit"
+          }
         }
       }
     },
@@ -141,6 +261,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "10 crédits / semaine"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 créditos / semana"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 crediti / settimana"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 créditos / semana"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 credits / week"
           }
         }
       }
@@ -166,6 +310,30 @@
             "state": "translated",
             "value": "50 crédits / mois"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 créditos / mes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 crediti / mese"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 créditos / mês"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 credits / maand"
+          }
         }
       }
     },
@@ -189,6 +357,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "500 crédits / an"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 créditos / año"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 crediti / anno"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 créditos / ano"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 credits / jaar"
           }
         }
       }
@@ -214,6 +406,30 @@
             "state": "translated",
             "value": "Une offre spéciale, rien que pour vous"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una oferta especial, solo para ti"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un'offerta speciale, solo per te"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma oferta especial, só para você"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een speciale aanbieding, alleen voor jou"
+          }
         }
       }
     },
@@ -237,6 +453,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Studio photo IA pour bébé"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio de fotos de bebés con IA"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studio fotografico IA per neonati"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estúdio de fotos de bebê com IA"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI-babyfotostudio"
           }
         }
       }
@@ -262,6 +502,30 @@
             "state": "translated",
             "value": "Portraits de studio générés par IA dans des dizaines de thèmes féeriques — créés à partir d'une seule photo."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retratos de estudio con IA en docenas de temas de ensueño — creados a partir de una sola foto."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritratti da studio con IA in decine di temi da sogno — creati da un solo scatto."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retratos de estúdio com IA em dezenas de temas encantadores — criados a partir de uma única foto."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Door AI gegenereerde studioportretten in tientallen dromerige thema's — gemaakt van één foto."
+          }
         }
       }
     },
@@ -285,6 +549,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajouter"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toevoegen"
           }
         }
       }
@@ -310,6 +598,30 @@
             "state": "translated",
             "value": "Ajouter une liste"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir lista"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi elenco"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar lista"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lijst toevoegen"
+          }
         }
       }
     },
@@ -333,6 +645,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajouter une étape"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir hito"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi traguardo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar marco"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mijlpaal toevoegen"
           }
         }
       }
@@ -358,6 +694,30 @@
             "state": "translated",
             "value": "Ajouter une photo"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi una foto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar foto"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto toevoegen"
+          }
         }
       }
     },
@@ -381,6 +741,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajoutez une photo pour ce moment"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade una foto para este momento"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi una foto per questo momento"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicione uma foto para este momento"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voeg een foto toe voor dit moment"
           }
         }
       }
@@ -406,6 +790,30 @@
             "state": "translated",
             "value": "Ajoutez une photo pour commencer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade una foto para empezar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi una foto per iniziare"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicione uma foto para começar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voeg een foto toe om te beginnen"
+          }
         }
       }
     },
@@ -429,6 +837,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajout de votre musique"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadiendo tu música"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiunta della tua musica"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionando sua música"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je muziek wordt toegevoegd"
           }
         }
       }
@@ -454,6 +886,30 @@
             "state": "translated",
             "value": "Ajout de musique…"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadiendo música…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiunta della musica…"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionando música…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muziek wordt toegevoegd…"
+          }
         }
       }
     },
@@ -477,6 +933,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Application de l'éclairage studio…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicando iluminación de estudio…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Applicazione dell'illuminazione da studio…"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicando iluminação de estúdio…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studioverlichting wordt toegepast…"
           }
         }
       }
@@ -502,6 +982,30 @@
             "state": "translated",
             "value": "Autorisez l'accès à la photothèque dans Réglages pour enregistrer la vidéo."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permite el acceso a la fototeca en Ajustes para guardar el video."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consenti l'accesso alla libreria foto in Impostazioni per salvare il video."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permita o acesso à biblioteca de fotos em Ajustes para salvar o vídeo."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sta toegang tot de fotobibliotheek toe in Instellingen om de video op te slaan."
+          }
         }
       }
     },
@@ -525,6 +1029,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Animer le portrait"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animar retrato"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anima ritratto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animar retrato"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portret animeren"
           }
         }
       }
@@ -550,6 +1078,30 @@
             "state": "translated",
             "value": "Application de votre modification"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicando tu edición"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Applicazione della tua modifica"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicando sua edição"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je bewerking wordt toegepast"
+          }
         }
       }
     },
@@ -573,6 +1125,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Astronaute, fée, petit chef et plus encore — un tout nouveau studio à chaque fois."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronauta, hada, pequeño chef y más — un estudio totalmente nuevo cada vez."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronauta, fata, piccolo chef e altro — uno studio sempre nuovo ogni volta."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronauta, fada, pequeno chef e muito mais — um estúdio totalmente novo a cada vez."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronaut, fee, kleine chef-kok en meer — elke keer een gloednieuwe studio."
           }
         }
       }
@@ -598,6 +1174,30 @@
             "state": "translated",
             "value": "Grand pack"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquete grande"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacchetto grande"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacote grande"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Groot pakket"
+          }
         }
       }
     },
@@ -621,6 +1221,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fusion du thème…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combinando el tema…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fusione del tema…"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Misturando o tema…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thema wordt gemengd…"
           }
         }
       }
@@ -646,6 +1270,30 @@
             "state": "translated",
             "value": "Corps"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuerpo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corpo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corpo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lichaam"
+          }
         }
       }
     },
@@ -669,6 +1317,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Éclairage lumineux et uniforme"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iluminación brillante y uniforme"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Illuminazione luminosa e uniforme"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iluminação clara e uniforme"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Helder, gelijkmatig licht"
           }
         }
       }
@@ -694,6 +1366,30 @@
             "state": "translated",
             "value": "Annuler"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annulla"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annuleren"
+          }
         }
       }
     },
@@ -717,6 +1413,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Capturez chaque étape en un seul endroit"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Captura cada hito en un solo lugar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cattura ogni traguardo in un unico posto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capture cada marco em um só lugar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leg elke mijlpaal op één plek vast"
           }
         }
       }
@@ -742,6 +1462,30 @@
             "state": "translated",
             "value": "Capturé"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capturado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Catturato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capturado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vastgelegd"
+          }
         }
       }
     },
@@ -765,6 +1509,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Célébrations"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Celebraciones"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Celebrazioni"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Celebrações"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vieringen"
           }
         }
       }
@@ -790,6 +1558,30 @@
             "state": "translated",
             "value": "Changer de photo"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambia foto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trocar foto"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto wijzigen"
+          }
         }
       }
     },
@@ -813,6 +1605,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Choisir dans la galerie"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir de la galería"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scegli dalla galleria"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolher da galeria"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kiezen uit galerij"
           }
         }
       }
@@ -838,6 +1654,30 @@
             "state": "translated",
             "value": "Réclamer %d pièces"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclamar %d monedas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riscatta %d monete"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resgatar %d moedas"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d munten claimen"
+          }
         }
       }
     },
@@ -861,6 +1701,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Profiter de l'offre"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprovechar oferta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Approfitta dell'offerta"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aproveitar oferta"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aanbieding gebruiken"
           }
         }
       }
@@ -886,6 +1750,30 @@
             "state": "translated",
             "value": "Fermez ceci et il aura disparu pour toujours."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cierra esto y desaparecerá para siempre."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiudi questo e sparirà per sempre."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feche isto e desaparecerá para sempre."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sluit dit en het is voorgoed weg."
+          }
         }
       }
     },
@@ -909,6 +1797,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Communication"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comunicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comunicazione"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comunicação"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Communicatie"
           }
         }
       }
@@ -934,6 +1846,30 @@
             "state": "translated",
             "value": "Continuer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continua"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorgaan"
+          }
         }
       }
     },
@@ -957,6 +1893,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Roucoulements et babillages"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrullos y balbuceos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tubare e balbettare"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrulhos e balbucios"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kirren en brabbelen"
           }
         }
       }
@@ -982,6 +1942,30 @@
             "state": "translated",
             "value": "Impossible d'animer ce portrait"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo animar este retrato"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile animare questo ritratto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível animar este retrato"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan dit portret niet animeren"
+          }
         }
       }
     },
@@ -1005,6 +1989,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suppression impossible"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo eliminar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile eliminare"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível excluir"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan niet verwijderen"
           }
         }
       }
@@ -1030,6 +2038,30 @@
             "state": "translated",
             "value": "Enregistrement impossible"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile salvare"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível salvar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan niet opslaan"
+          }
         }
       }
     },
@@ -1053,6 +2085,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Démarrage de la musique impossible"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo iniciar la música"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile avviare la musica"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível iniciar a música"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan muziek niet starten"
           }
         }
       }
@@ -1078,6 +2134,30 @@
             "state": "translated",
             "value": "Création impossible — crédits remboursés"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo crear — créditos reembolsados"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile creare — crediti rimborsati"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível criar — créditos reembolsados"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kon niet worden gemaakt — credits terugbetaald"
+          }
         }
       }
     },
@@ -1101,6 +2181,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impossible de vérifier vos crédits"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron verificar tus créditos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile verificare i tuoi crediti"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível verificar seus créditos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan je credits niet controleren"
           }
         }
       }
@@ -1126,6 +2230,30 @@
             "state": "translated",
             "value": "Impossible de créer votre portrait"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo crear tu retrato"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile creare il tuo ritratto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível criar seu retrato"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan je portret niet maken"
+          }
         }
       }
     },
@@ -1149,6 +2277,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impossible de charger les packs de pièces. Vérifiez votre connexion et réessayez."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron cargar los paquetes de monedas. Verifica tu conexión e inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile caricare i pacchetti di monete. Controlla la connessione e riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível carregar os pacotes de moedas. Verifique sua conexão e tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan muntpakketten niet laden. Controleer je verbinding en probeer het opnieuw."
           }
         }
       }
@@ -1174,6 +2326,30 @@
             "state": "translated",
             "value": "Impossible de charger les formules. Vérifiez votre connexion et réessayez."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron cargar los planes. Verifica tu conexión e inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile caricare i piani. Controlla la connessione e riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível carregar os planos. Verifique sua conexão e tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan abonnementen niet laden. Controleer je verbinding en probeer het opnieuw."
+          }
         }
       }
     },
@@ -1197,6 +2373,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impossible de restaurer les achats"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron restaurar las compras"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile ripristinare gli acquisti"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível restaurar as compras"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan aankopen niet herstellen"
           }
         }
       }
@@ -1222,6 +2422,30 @@
             "state": "translated",
             "value": "Création du thème « %@ »"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creando el tema «%@»"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creazione del tema «%@»"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criando o tema “%@”"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thema “%@” wordt gemaakt"
+          }
         }
       }
     },
@@ -1245,6 +2469,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rampe"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gatea"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gattona"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engatinha"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kruipt"
           }
         }
       }
@@ -1270,6 +2518,30 @@
             "state": "translated",
             "value": "Créer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maken"
+          }
         }
       }
     },
@@ -1293,6 +2565,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Créer un collage"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear collage"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea collage"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criar colagem"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collage maken"
           }
         }
       }
@@ -1318,6 +2614,30 @@
             "state": "translated",
             "value": "Créer une vidéo de collage ?"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Crear video del collage?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creare il video del collage?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criar vídeo da colagem?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collagevideo maken?"
+          }
         }
       }
     },
@@ -1341,6 +2661,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Créer votre propre style"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea tu propio estilo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea il tuo stile"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crie seu próprio estilo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak je eigen stijl"
           }
         }
       }
@@ -1366,6 +2710,30 @@
             "state": "translated",
             "value": "Les crédits n'expirent jamais"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los créditos nunca caducan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I crediti non scadono mai"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os créditos nunca expiram"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Credits verlopen nooit"
+          }
         }
       }
     },
@@ -1389,6 +2757,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Style personnalisé"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilo personalizado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stile personalizzato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilo personalizado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aangepaste stijl"
           }
         }
       }
@@ -1414,6 +2806,30 @@
             "state": "translated",
             "value": "Supprimer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijderen"
+          }
         }
       }
     },
@@ -1437,6 +2853,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Supprimer l'étape capturée ?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar hito capturado?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminare il traguardo catturato?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir marco capturado?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vastgelegde mijlpaal verwijderen?"
           }
         }
       }
@@ -1462,6 +2902,30 @@
             "state": "translated",
             "value": "Supprimer l'étape"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar hito"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina traguardo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir marco"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mijlpaal verwijderen"
+          }
         }
       }
     },
@@ -1485,6 +2949,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Supprimer ce collage ?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar este collage?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminare questo collage?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir esta colagem?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze collage verwijderen?"
           }
         }
       }
@@ -1510,6 +2998,30 @@
             "state": "translated",
             "value": "Supprimer cette étape ?"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar este hito?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminare questo traguardo?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir este marco?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze mijlpaal verwijderen?"
+          }
         }
       }
     },
@@ -1533,6 +3045,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Décrivez une idée — nous la donnerons vie"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe una idea — la haremos realidad"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrivi un'idea — la realizzeremo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descreva uma ideia — vamos dar vida a ela"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschrijf een idee — wij maken het werkelijkheid"
           }
         }
       }
@@ -1558,6 +3094,30 @@
             "state": "translated",
             "value": "Décrire la musique"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describir la música"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrivi la musica"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrever a música"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muziek beschrijven"
+          }
         }
       }
     },
@@ -1581,6 +3141,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Décrivez la musique — ex. « berceuse au piano douce et rêveuse, chaleureuse et tendre »"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe la música — p. ej. «nana de piano suave y soñadora, cálida y tierna»"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrivi la musica — es. «ninna nanna al pianoforte dolce e sognante, calda e delicata»"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descreva a música — ex. “canção de ninar de piano suave e sonhadora, quente e terna”"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschrijf de muziek — bijv. “zacht, dromerig pianoslaapliedje, warm en teder”"
           }
         }
       }
@@ -1606,6 +3190,30 @@
             "state": "translated",
             "value": "Décrivez votre idée"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe tu idea"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrivi la tua idea"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descreva sua ideia"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschrijf je idee"
+          }
         }
       }
     },
@@ -1629,6 +3237,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Terminé !"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Listo!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fatto!"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto!"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klaar!"
           }
         }
       }
@@ -1654,6 +3286,30 @@
             "state": "translated",
             "value": "Des dizaines de thèmes féeriques à explorer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Docenas de temas de ensueño por explorar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decine di temi da sogno da esplorare"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dezenas de temas encantadores para explorar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tientallen dromerige thema's om te verkennen"
+          }
         }
       }
     },
@@ -1677,6 +3333,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Huit mois"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocho meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otto mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oito meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acht maanden"
           }
         }
       }
@@ -1702,6 +3382,30 @@
             "state": "translated",
             "value": "Onze mois"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undici mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onze meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elf maanden"
+          }
         }
       }
     },
@@ -1725,6 +3429,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Français"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Español"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Italiano"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Português"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nederlands"
           }
         }
       }
@@ -1750,6 +3478,30 @@
             "state": "translated",
             "value": "Le français est la seule langue disponible pour le moment. D'autres arrivent bientôt."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El español es el único idioma disponible por ahora. Pronto habrá más."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al momento l'italiano è l'unica lingua disponibile. Presto ce ne saranno altre."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O português é o único idioma disponível no momento. Mais estão a caminho."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nederlands is momenteel de enige beschikbare taal. Meer talen volgen."
+          }
         }
       }
     },
@@ -1773,6 +3525,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Décrivez brièvement le son que vous souhaitez pour ce morceau."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe brevemente el sonido que quieres para la pista."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descrivi brevemente il suono che vuoi per il brano."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descreva brevemente o som que você quer para a faixa."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschrijf kort hoe het nummer moet klinken."
           }
         }
       }
@@ -1798,6 +3574,30 @@
             "state": "translated",
             "value": "Tout ce qu'il vous faut pour créer des souvenirs pour toujours."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo lo que necesitas para crear recuerdos para siempre."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutto ciò che ti serve per creare ricordi per sempre."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tudo o que você precisa para criar memórias para sempre."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alles wat je nodig hebt om herinneringen voor altijd te maken."
+          }
         }
       }
     },
@@ -1821,6 +3621,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Visage clairement visible"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rostro claramente visible"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Viso chiaramente visibile"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rosto claramente visível"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gezicht duidelijk zichtbaar"
           }
         }
       }
@@ -1846,6 +3670,30 @@
             "state": "translated",
             "value": "Favoris"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoritos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiti"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoritos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorieten"
+          }
         }
       }
     },
@@ -1869,6 +3717,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Touches finales…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Últimos retoques…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ultimi ritocchi…"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retoques finais…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatste finishing touches…"
           }
         }
       }
@@ -1894,6 +3766,30 @@
             "state": "translated",
             "value": "Premier bain"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer baño"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primo bagnetto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiro banho"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste bad"
+          }
         }
       }
     },
@@ -1917,6 +3813,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Premier anniversaire"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer cumpleaños"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primo compleanno"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiro aniversário"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste verjaardag"
           }
         }
       }
@@ -1942,6 +3862,30 @@
             "state": "translated",
             "value": "Première coupe de cheveux"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer corte de pelo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primo taglio di capelli"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiro corte de cabelo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste knipbeurt"
+          }
         }
       }
     },
@@ -1965,6 +3909,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Premières fêtes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeras fiestas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prime festività"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiras festividades"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste feestdagen"
           }
         }
       }
@@ -1990,6 +3958,30 @@
             "state": "translated",
             "value": "Premier rire"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primera risa"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima risata"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeira risada"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste lach"
+          }
         }
       }
     },
@@ -2013,6 +4005,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Première sortie"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primera salida"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima uscita"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiro passeio"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste uitje"
           }
         }
       }
@@ -2038,6 +4054,30 @@
             "state": "translated",
             "value": "Premier sourire"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primera sonrisa"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primo sorriso"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiro sorriso"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste glimlach"
+          }
         }
       }
     },
@@ -2061,6 +4101,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Premiers pas"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeros pasos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primi passi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiros passos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste stapjes"
           }
         }
       }
@@ -2086,6 +4150,30 @@
             "state": "translated",
             "value": "Premier portrait de studio"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer retrato de estudio"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primo ritratto da studio"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiro retrato de estúdio"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste studioportret"
+          }
         }
       }
     },
@@ -2109,6 +4197,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Première dent"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer diente"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primo dentino"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiro dente"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste tandje"
           }
         }
       }
@@ -2134,6 +4246,30 @@
             "state": "translated",
             "value": "Premières fois"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeras veces"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prime volte"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeiras vezes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste keren"
+          }
         }
       }
     },
@@ -2157,6 +4293,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cinq mois"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinco meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinque mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinco meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vijf maanden"
           }
         }
       }
@@ -2182,6 +4342,30 @@
             "state": "translated",
             "value": "Pour de meilleurs résultats"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para obtener los mejores resultados"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per i migliori risultati"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para melhores resultados"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voor de beste resultaten"
+          }
         }
       }
     },
@@ -2205,6 +4389,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quatre mois"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuatro meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quattro mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quatro meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vier maanden"
           }
         }
       }
@@ -2230,6 +4438,30 @@
             "state": "translated",
             "value": "Galerie"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galería"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galleria"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galeria"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galerij"
+          }
         }
       }
     },
@@ -2253,6 +4485,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Générer"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gerar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genereren"
           }
         }
       }
@@ -2278,6 +4534,30 @@
             "state": "translated",
             "value": "Générer et enregistrer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generar y guardar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera e salva"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gerar e salvar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genereren en opslaan"
+          }
         }
       }
     },
@@ -2301,6 +4581,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Générer la musique"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generar música"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera musica"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gerar música"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muziek genereren"
           }
         }
       }
@@ -2326,6 +4630,30 @@
             "state": "translated",
             "value": "Générer le portrait"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generar retrato"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera ritratto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gerar retrato"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portret genereren"
+          }
         }
       }
     },
@@ -2349,6 +4677,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Générez votre premier portrait de studio, il apparaîtra ici."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera tu primer retrato de estudio y aparecerá aquí."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera il tuo primo ritratto da studio, apparirà qui."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gere seu primeiro retrato de estúdio e ele aparecerá aqui."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genereer je eerste studioportret en het verschijnt hier."
           }
         }
       }
@@ -2374,6 +4726,30 @@
             "state": "translated",
             "value": "Commencer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inizia"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Começar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aan de slag"
+          }
         }
       }
     },
@@ -2397,6 +4773,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Donnez un nom à votre liste."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dale un nombre a tu lista."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dai un nome alla tua lista."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dê um nome à sua lista."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geef je lijst een naam."
           }
         }
       }
@@ -2422,6 +4822,30 @@
             "state": "translated",
             "value": "Aller à la galerie des étapes"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ir a la galería de hitos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vai alla galleria dei traguardi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ir para a galeria de marcos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naar mijlpaalgalerij"
+          }
         }
       }
     },
@@ -2445,6 +4869,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aller à Mes collages"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ir a Mis collages"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vai a I miei collage"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ir para Minhas colagens"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naar Mijn collages"
           }
         }
       }
@@ -2470,6 +4918,30 @@
             "state": "translated",
             "value": "Profitez de ce pack avant la fin du minuteur."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consigue este paquete antes de que se acabe el tiempo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Approfitta di questo pacchetto prima che scada il tempo."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aproveite este pacote antes que o tempo acabe."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bemachtig dit pakket voordat de tijd verstrijkt."
+          }
         }
       }
     },
@@ -2493,6 +4965,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Croissance et motricité"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crecimiento y motricidad"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crescita e abilità motorie"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crescimento e habilidades motoras"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Groei en motoriek"
           }
         }
       }
@@ -2518,6 +5014,30 @@
             "state": "translated",
             "value": "Historique"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Historial"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronologia"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Histórico"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geschiedenis"
+          }
         }
       }
     },
@@ -2541,6 +5061,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tient sa tête droite"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sostiene la cabeza erguida"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiene la testa alta"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segura a cabeça erguida"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Houdt hoofd omhoog"
           }
         }
       }
@@ -2566,6 +5110,30 @@
             "state": "translated",
             "value": "Accueil"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicio"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Início"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
         }
       }
     },
@@ -2589,6 +5157,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "JPG ou PNG, jusqu'à 10 Mo"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG o PNG, hasta 10 MB"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG o PNG, fino a 10 MB"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG ou PNG, até 10 MB"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG of PNG, tot 10 MB"
           }
         }
       }
@@ -2614,6 +5206,30 @@
             "state": "translated",
             "value": "Une liste pour chaque moment à retenir"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una lista para cada momento digno de recordar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un elenco per ogni momento da ricordare"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma lista para cada momento que vale a pena lembrar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een lijst voor elk onvergetelijk moment"
+          }
         }
       }
     },
@@ -2637,6 +5253,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "DERNIÈRE CHANCE"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ÚLTIMA OPORTUNIDAD"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ULTIMA POSSIBILITÀ"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ÚLTIMA CHANCE"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LAATSTE KANS"
           }
         }
       }
@@ -2662,6 +5302,30 @@
             "state": "translated",
             "value": "OFFRE À DURÉE LIMITÉE"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OFERTA POR TIEMPO LIMITADO"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OFFERTA A TEMPO LIMITATO"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OFERTA POR TEMPO LIMITADO"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BEPERKTE-TIJDAANBIEDING"
+          }
         }
       }
     },
@@ -2685,6 +5349,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Langue"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lingua"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taal"
           }
         }
       }
@@ -2710,6 +5398,30 @@
             "state": "translated",
             "value": "Dernière mise à jour : août 2026"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última actualización: agosto de 2026"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ultimo aggiornamento: agosto 2026"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última atualização: agosto de 2026"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatst bijgewerkt: augustus 2026"
+          }
         }
       }
     },
@@ -2733,6 +5445,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Offre à durée limitée"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta por tiempo limitado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offerta a tempo limitato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta por tempo limitado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beperkte-tijdaanbieding"
           }
         }
       }
@@ -2758,6 +5494,30 @@
             "state": "translated",
             "value": "Liste"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elenco"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lijst"
+          }
         }
       }
     },
@@ -2781,6 +5541,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "LE PLUS POPULAIRE"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MÁS POPULAR"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PIÙ POPOLARE"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MAIS POPULAR"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MEEST POPULAIR"
           }
         }
       }
@@ -2806,6 +5590,30 @@
             "state": "translated",
             "value": "Pack moyen"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquete mediano"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacchetto medio"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacote médio"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Middelgroot pakket"
+          }
         }
       }
     },
@@ -2829,6 +5637,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Étape"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hito"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traguardo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marco"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mijlpaal"
           }
         }
       }
@@ -2854,6 +5686,30 @@
             "state": "translated",
             "value": "Étape capturée !"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Hito capturado!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traguardo catturato!"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marco capturado!"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mijlpaal vastgelegd!"
+          }
         }
       }
     },
@@ -2877,6 +5733,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Étapes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hitos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traguardi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mijlpalen"
           }
         }
       }
@@ -2902,6 +5782,30 @@
             "state": "translated",
             "value": "Mensuel"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensual"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensile"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensal"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maandelijks"
+          }
         }
       }
     },
@@ -2925,6 +5829,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Plusieurs visages détectés"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se detectaron varios rostros"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rilevati più volti"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vários rostos detectados"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meerdere gezichten gedetecteerd"
           }
         }
       }
@@ -2950,6 +5878,30 @@
             "state": "translated",
             "value": "Mes collages"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mis collages"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I miei collage"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minhas colagens"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mijn collages"
+          }
         }
       }
     },
@@ -2974,6 +5926,30 @@
             "state": "translated",
             "value": "Mes créations"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mis creaciones"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le mie creazioni"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minhas criações"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mijn creaties"
+          }
         }
       }
     },
@@ -2994,6 +5970,30 @@
           }
         },
         "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "NEWBORN PRO"
@@ -3022,6 +6022,30 @@
             "state": "translated",
             "value": "Nouvelle liste"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva lista"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuovo elenco"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova lista"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe lijst"
+          }
         }
       }
     },
@@ -3045,6 +6069,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nouvelle étape"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo hito"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuovo traguardo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novo marco"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe mijlpaal"
           }
         }
       }
@@ -3070,6 +6118,30 @@
             "state": "translated",
             "value": "Nouveau-né"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recién nacido"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neonato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recém-nascido"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasgeboren"
+          }
         }
       }
     },
@@ -3090,6 +6162,30 @@
           }
         },
         "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "Newborn Moments"
@@ -3118,6 +6214,30 @@
             "state": "translated",
             "value": "Suivant"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siguiente"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avanti"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volgende"
+          }
         }
       }
     },
@@ -3141,6 +6261,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Neuf mois"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueve meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nove mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nove meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Negen maanden"
           }
         }
       }
@@ -3166,6 +6310,30 @@
             "state": "translated",
             "value": "Aucun visage détecté"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se detectó ningún rostro"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun volto rilevato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum rosto detectado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen gezicht gedetecteerd"
+          }
         }
       }
     },
@@ -3189,6 +6357,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aucun achat actif trouvé pour ce compte."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontraron compras activas para esta cuenta."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun acquisto attivo trovato per questo account."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma compra ativa encontrada para esta conta."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen actieve aankopen gevonden voor dit account."
           }
         }
       }
@@ -3214,6 +6406,30 @@
             "state": "translated",
             "value": "Pas encore de collages — capturez au moins 5 étapes dans une liste, puis appuyez sur « Créer un collage »."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay collages — captura al menos 5 hitos en una lista y luego toca «Crear collage»."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessun collage — cattura almeno 5 traguardi in un elenco, poi tocca «Crea collage»."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda sem colagens — capture pelo menos 5 marcos em uma lista e toque em “Criar colagem”."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen collages — leg minstens 5 mijlpalen vast in een lijst en tik dan op “Collage maken”."
+          }
         }
       }
     },
@@ -3237,6 +6453,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pas encore de favoris"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay favoritos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessun preferito"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda sem favoritos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen favorieten"
           }
         }
       }
@@ -3262,6 +6502,30 @@
             "state": "translated",
             "value": "Aucun filtre ni retouche lourde"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin filtros ni ediciones pesadas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun filtro o modifica pesante"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem filtros ou edições pesadas"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen filters of zware bewerkingen"
+          }
         }
       }
     },
@@ -3285,6 +6549,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pas encore d'étapes — ajoutez la première ci-dessous."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay hitos — añade el primero a continuación."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessun traguardo — aggiungi il primo qui sotto."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda sem marcos — adicione o primeiro abaixo."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen mijlpalen — voeg hieronder je eerste toe."
           }
         }
       }
@@ -3310,6 +6598,30 @@
             "state": "translated",
             "value": "Pas encore de portraits"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay retratos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessun ritratto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda sem retratos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen portretten"
+          }
         }
       }
     },
@@ -3333,6 +6645,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aucun abonnement ni frais récurrent"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin suscripción ni cargo recurrente"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun abbonamento o addebito ricorrente"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem assinatura ou cobrança recorrente"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen abonnement of terugkerende kosten"
           }
         }
       }
@@ -3358,6 +6694,30 @@
             "state": "translated",
             "value": "Aucun filigrane"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin marca de agua"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna filigrana"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem marca d'água"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen watermerk"
+          }
         }
       }
     },
@@ -3381,6 +6741,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pas encore assez d'étapes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay suficientes hitos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non ci sono ancora abbastanza traguardi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não há marcos suficientes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog niet genoeg mijlpalen"
           }
         }
       }
@@ -3406,6 +6790,30 @@
             "state": "translated",
             "value": "Pas encore capturé"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no capturado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non ancora catturato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não capturado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog niet vastgelegd"
+          }
         }
       }
     },
@@ -3430,6 +6838,30 @@
             "state": "translated",
             "value": "Rien à restaurer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada que restaurar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niente da ripristinare"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada para restaurar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niets om te herstellen"
+          }
         }
       }
     },
@@ -3450,6 +6882,30 @@
           }
         },
         "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -3478,6 +6934,30 @@
             "state": "translated",
             "value": "Offre indisponible pour le moment"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta no disponible en este momento"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offerta al momento non disponibile"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta indisponível no momento"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aanbieding momenteel niet beschikbaar"
+          }
         }
       }
     },
@@ -3501,6 +6981,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un mois"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un mes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un mese"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um mês"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eén maand"
           }
         }
       }
@@ -3526,6 +7030,30 @@
             "state": "translated",
             "value": "Une semaine"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una semana"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una settimana"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma semana"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eén week"
+          }
         }
       }
     },
@@ -3549,6 +7077,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un an"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un año"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un anno"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um ano"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eén jaar"
           }
         }
       }
@@ -3574,6 +7126,30 @@
             "state": "translated",
             "value": "Offre unique — expire à la fin du minuteur."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta única — caduca cuando termine el temporizador."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offerta una tantum — scade allo scadere del timer."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta única — expira quando o cronômetro terminar."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eenmalige aanbieding — verloopt wanneer de timer afloopt."
+          }
         }
       }
     },
@@ -3597,6 +7173,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accès aux photos requis"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se requiere acceso a las fotos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accesso alle foto necessario"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acesso às fotos necessário"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toegang tot foto's vereist"
           }
         }
       }
@@ -3622,6 +7222,30 @@
             "state": "translated",
             "value": "Veuillez vérifier votre connexion et réessayer."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verifica tu conexión e inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controlla la connessione e riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verifique sua conexão e tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controleer je verbinding en probeer het opnieuw."
+          }
         }
       }
     },
@@ -3645,6 +7269,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Portrait"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrato"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritratto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrato"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portret"
           }
         }
       }
@@ -3670,6 +7318,30 @@
             "state": "translated",
             "value": "Préparation… (%d clips) %@ restant"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando… (%d clips) quedan %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparazione… (%d clip) %@ rimanenti"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando… (%d clipes) %@ restantes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wordt voorbereid… (%d clips) nog %@"
+          }
         }
       }
     },
@@ -3693,6 +7365,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Génération IA prioritaire"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generación de IA prioritaria"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generazione IA prioritaria"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geração de IA prioritária"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioritaire AI-generatie"
           }
         }
       }
@@ -3718,6 +7414,30 @@
             "state": "translated",
             "value": "Confidentialité"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacidad"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacidade"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy"
+          }
         }
       }
     },
@@ -3741,6 +7461,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Politique de confidentialité"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacidad"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informativa sulla privacy"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de Privacidade"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacybeleid"
           }
         }
       }
@@ -3766,6 +7510,30 @@
             "state": "translated",
             "value": "Profil"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfil"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profilo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfil"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profiel"
+          }
         }
       }
     },
@@ -3789,6 +7557,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se met debout en s'appuyant"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se pone de pie apoyándose"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si tira su per stare in piedi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fica em pé apoiando-se"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trekt zich op om te staan"
           }
         }
       }
@@ -3814,6 +7606,30 @@
             "state": "translated",
             "value": "Échec de l'achat"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error en la compra"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acquisto non riuscito"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Falha na compra"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankoop mislukt"
+          }
         }
       }
     },
@@ -3837,6 +7653,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Évaluer l'application"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calificar la app"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valuta l'app"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avaliar o app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beoordeel de app"
           }
         }
       }
@@ -3862,6 +7702,30 @@
             "state": "translated",
             "value": "Restaurer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ripristina"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Herstellen"
+          }
         }
       }
     },
@@ -3885,6 +7749,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Restaurer l'achat"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar compra"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ripristina acquisto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar compra"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankoop herstellen"
           }
         }
       }
@@ -3910,6 +7798,30 @@
             "state": "translated",
             "value": "Restauré"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ripristinato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hersteld"
+          }
         }
       }
     },
@@ -3933,6 +7845,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se retourne"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se da la vuelta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si gira"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rola sobre si mesmo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rolt zich om"
           }
         }
       }
@@ -3958,6 +7894,30 @@
             "state": "translated",
             "value": "Enregistrer"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salva"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opslaan"
+          }
         }
       }
     },
@@ -3981,6 +7941,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enregistrer la photo"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salva foto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvar foto"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto opslaan"
           }
         }
       }
@@ -4006,6 +7990,30 @@
             "state": "translated",
             "value": "Enregistrez chaque portrait dans votre galerie"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarda cada retrato en tu galería"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salva ogni ritratto nella tua galleria"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salve cada retrato na sua galeria"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sla elk portret op in je galerij"
+          }
         }
       }
     },
@@ -4029,6 +8037,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Collages enregistrés"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collages guardados"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collage salvati"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colagens salvas"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgeslagen collages"
           }
         }
       }
@@ -4054,6 +8086,30 @@
             "state": "translated",
             "value": "Enregistré !"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Guardado!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvato!"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvo!"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgeslagen!"
+          }
         }
       }
     },
@@ -4077,6 +8133,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dit son premier mot"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dice su primera palabra"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dice la prima parola"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diz a primeira palavra"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zegt eerste woordje"
           }
         }
       }
@@ -4102,6 +8182,30 @@
             "state": "translated",
             "value": "Paiement sécurisé · Apple Pay · Google Pay"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pago seguro · Apple Pay · Google Pay"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pagamento sicuro · Apple Pay · Google Pay"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pagamento seguro · Apple Pay · Google Pay"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veilig betalen · Apple Pay · Google Pay"
+          }
         }
       }
     },
@@ -4125,6 +8229,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sept mois"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siete meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sette mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sete meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeven maanden"
           }
         }
       }
@@ -4150,6 +8278,30 @@
             "state": "translated",
             "value": "Partager"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Condividi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartilhar"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delen"
+          }
         }
       }
     },
@@ -4173,6 +8325,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "S'assoit sans aide"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se sienta sin apoyo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si siede senza sostegno"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senta-se sem apoio"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zit zonder steun"
           }
         }
       }
@@ -4198,6 +8374,30 @@
             "state": "translated",
             "value": "Six mois"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seis meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sei mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seis meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zes maanden"
+          }
         }
       }
     },
@@ -4221,6 +8421,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ignorer"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omitir"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salta"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pular"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overslaan"
           }
         }
       }
@@ -4246,6 +8470,30 @@
             "state": "translated",
             "value": "Fait ses nuits"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duerme toda la noche"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dorme tutta la notte"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dorme a noite toda"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slaapt de hele nacht door"
+          }
         }
       }
     },
@@ -4269,6 +8517,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Petit pack"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquete pequeño"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacchetto piccolo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacote pequeno"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klein pakket"
           }
         }
       }
@@ -4294,6 +8566,30 @@
             "state": "translated",
             "value": "Certaines de vos photos capturées sont encore en cours de synchronisation. Veuillez réessayer dans un instant."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algunas de tus fotos capturadas todavía se están sincronizando. Inténtalo de nuevo en un momento."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alcune delle tue foto catturate sono ancora in fase di sincronizzazione. Riprova tra un momento."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algumas das suas fotos capturadas ainda estão sincronizando. Tente novamente em instantes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sommige van je vastgelegde foto's worden nog gesynchroniseerd. Probeer het zo weer."
+          }
         }
       }
     },
@@ -4317,6 +8613,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un problème est survenu"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa è andato storto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo deu errado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is iets misgegaan"
           }
         }
       }
@@ -4342,6 +8662,30 @@
             "state": "translated",
             "value": "Un problème est survenu"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa è andato storto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo deu errado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is iets misgegaan"
+          }
         }
       }
     },
@@ -4365,6 +8709,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un problème est survenu et vos crédits ont été remboursés. Veuillez réessayer."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal y tus créditos fueron reembolsados. Inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa è andato storto e i tuoi crediti sono stati rimborsati. Riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo deu errado e seus créditos foram reembolsados. Tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is iets misgegaan en je credits zijn terugbetaald. Probeer het opnieuw."
           }
         }
       }
@@ -4390,6 +8758,30 @@
             "state": "translated",
             "value": "Un problème est survenu lors de la suppression du collage. Veuillez réessayer."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal al eliminar el collage. Inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa è andato storto durante l'eliminazione del collage. Riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo deu errado ao excluir a colagem. Tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is iets misgegaan bij het verwijderen van de collage. Probeer het opnieuw."
+          }
         }
       }
     },
@@ -4413,6 +8805,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un problème est survenu lors de l'enregistrement de la vidéo. Veuillez réessayer."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal al guardar el video. Inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa è andato storto durante il salvataggio del video. Riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo deu errado ao salvar o vídeo. Tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is iets misgegaan bij het opslaan van de video. Probeer het opnieuw."
           }
         }
       }
@@ -4438,6 +8854,30 @@
             "state": "translated",
             "value": "Un problème est survenu lors du démarrage de votre collage. Veuillez réessayer."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal al iniciar tu collage. Inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa è andato storto durante l'avvio del collage. Riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo deu errado ao iniciar sua colagem. Tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is iets misgegaan bij het starten van je collage. Probeer het opnieuw."
+          }
         }
       }
     },
@@ -4461,6 +8901,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un problème est survenu. Si des crédits ont été dépensés, ils ont été remboursés. Veuillez réessayer."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal. Si se gastaron créditos, fueron reembolsados. Inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa è andato storto. Se sono stati spesi crediti, sono stati rimborsati. Riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo deu errado. Se créditos foram gastos, eles foram reembolsados. Tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is iets misgegaan. Als er credits zijn besteed, zijn deze terugbetaald. Probeer het opnieuw."
           }
         }
       }
@@ -4486,6 +8950,30 @@
             "state": "translated",
             "value": "Dépensez des pièces pour générer n'importe quel portrait — aucun abonnement requis."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gasta monedas para generar cualquier retrato — sin necesidad de suscripción."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spendi monete per generare qualsiasi ritratto — nessun abbonamento necessario."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gaste moedas para gerar qualquer retrato — sem necessidade de assinatura."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Besteed munten om elk portret te genereren — geen abonnement nodig."
+          }
         }
       }
     },
@@ -4509,6 +8997,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "S'abonner maintenant"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suscribirse ahora"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abbonati ora"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assinar agora"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu abonneren"
           }
         }
       }
@@ -4534,6 +9046,30 @@
             "state": "translated",
             "value": "Prendre une photo"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomar foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scatta foto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tirar foto"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto maken"
+          }
         }
       }
     },
@@ -4557,6 +9093,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Appuyez sur le cœur d'un style pour l'enregistrer ici."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el corazón de cualquier estilo para guardarlo aquí."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocca il cuore su qualsiasi stile per salvarlo qui."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque no coração de qualquer estilo para salvá-lo aqui."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tik op het hartje van een stijl om deze hier op te slaan."
           }
         }
       }
@@ -4582,6 +9142,30 @@
             "state": "translated",
             "value": "Appuyez pour changer de photo"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca para cambiar la foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocca per cambiare foto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque para trocar a foto"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tik om foto te wijzigen"
+          }
         }
       }
     },
@@ -4605,6 +9189,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dix mois"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diez meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieci mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dez meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tien maanden"
           }
         }
       }
@@ -4630,6 +9238,30 @@
             "state": "translated",
             "value": "Conditions"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Términos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termini"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termos"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voorwaarden"
+          }
         }
       }
     },
@@ -4653,6 +9285,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conditions d'utilisation"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Términos de uso"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termini di utilizzo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termos de Uso"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruiksvoorwaarden"
           }
         }
       }
@@ -4678,6 +9334,30 @@
             "state": "translated",
             "value": "La vidéo de collage « %@ » sera définitivement supprimée. Cette action est irréversible."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El video del collage «%@» se eliminará permanentemente. Esta acción no se puede deshacer."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il video del collage «%@» verrà eliminato definitivamente. Questa azione non può essere annullata."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O vídeo da colagem “%@” será excluído permanentemente. Esta ação não pode ser desfeita."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De collagevideo “%@” wordt permanent verwijderd. Dit kan niet ongedaan worden gemaakt."
+          }
         }
       }
     },
@@ -4701,6 +9381,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "La vidéo animée a été enregistrée dans vos Photos."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El video animado se guardó en tus Fotos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il video animato è stato salvato nelle tue Foto."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O vídeo animado foi salvo em suas Fotos."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De geanimeerde video is opgeslagen in je Foto's."
           }
         }
       }
@@ -4726,6 +9430,30 @@
             "state": "translated",
             "value": "La vidéo de collage a été enregistrée dans vos Photos."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El video del collage se guardó en tus Fotos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il video del collage è stato salvato nelle tue Foto."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O vídeo da colagem foi salvo em suas Fotos."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De collagevideo is opgeslagen in je Foto's."
+          }
         }
       }
     },
@@ -4749,6 +9477,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ce pack exclusif ne sera plus proposé. Profitez-en maintenant, sinon il aura disparu pour toujours."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este paquete exclusivo no se volverá a ofrecer. Consíguelo ahora o desaparecerá para siempre."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questo pacchetto esclusivo non sarà più offerto. Prendilo ora, o sparirà per sempre."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este pacote exclusivo não será oferecido novamente. Aproveite agora, ou desaparecerá para sempre."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit exclusieve pakket wordt niet opnieuw aangeboden. Bemachtig het nu, of het is voorgoed weg."
           }
         }
       }
@@ -4774,6 +9526,30 @@
             "state": "translated",
             "value": "Cette photo contient plus d'un visage. Veuillez choisir une photo avec seulement votre bébé."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta foto tiene más de un rostro. Elige una foto con solo tu bebé."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questa foto contiene più di un volto. Scegli una foto con solo il tuo bambino."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta foto tem mais de um rosto. Escolha uma foto com apenas o seu bebê."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze foto bevat meer dan één gezicht. Kies een foto met alleen je baby erop."
+          }
         }
       }
     },
@@ -4797,6 +9573,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ce portrait a été enregistré dans votre galerie des étapes."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este retrato se guardó en tu galería de hitos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questo ritratto è stato salvato nella tua galleria dei traguardi."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este retrato foi salvo na sua galeria de marcos."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit portret is opgeslagen in je mijlpaalgalerij."
           }
         }
       }
@@ -4822,6 +9622,30 @@
             "state": "translated",
             "value": "Trois mois"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tre mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Três meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drie maanden"
+          }
         }
       }
     },
@@ -4845,6 +9669,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recharger vos pièces"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recarga tus monedas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ricarica le tue monete"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recarregue suas moedas"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Munten opwaarderen"
           }
         }
       }
@@ -4870,6 +9718,30 @@
             "state": "translated",
             "value": "Suivez les premières fois de votre bébé et gardez chaque souvenir précieux joliment organisé."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sigue las primeras veces de tu bebé y mantén cada recuerdo precioso bien organizado."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tieni traccia delle prime volte del tuo bambino e mantieni ogni ricordo prezioso ben organizzato."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acompanhe as primeiras vezes do seu bebê e mantenha cada lembrança preciosa bem organizada."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volg de eerste keren van je baby en houd elke kostbare herinnering mooi georganiseerd."
+          }
         }
       }
     },
@@ -4893,6 +9765,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Transformez les photos de votre bébé en souvenirs magiques"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convierte las fotos de tu bebé en recuerdos mágicos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trasforma le foto del tuo bambino in ricordi magici"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transforme as fotos do seu bebê em lembranças mágicas"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verander de foto's van je baby in magische aandenkens"
           }
         }
       }
@@ -4918,6 +9814,30 @@
             "state": "translated",
             "value": "Deux mois"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dos meses"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Due mesi"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dois meses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Twee maanden"
+          }
         }
       }
     },
@@ -4941,6 +9861,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thèmes de studio illimités"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas de estudio ilimitados"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temi da studio illimitati"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas de estúdio ilimitados"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onbeperkte studiothema's"
           }
         }
       }
@@ -4966,6 +9910,30 @@
             "state": "translated",
             "value": "Débloquez une créativité illimitée"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquea creatividad ilimitada"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sblocca creatività illimitata"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloqueie criatividade ilimitada"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ontgrendel onbeperkte creativiteit"
+          }
         }
       }
     },
@@ -4989,6 +9957,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sans titre"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin título"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senza titolo"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem título"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naamloos"
           }
         }
       }
@@ -5014,6 +10006,30 @@
             "state": "translated",
             "value": "Téléchargez une photo nette de votre bébé"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sube una foto clara de tu bebé"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carica una foto nitida del tuo bambino"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie uma foto nítida do seu bebê"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upload een duidelijke foto van je baby"
+          }
         }
       }
     },
@@ -5037,6 +10053,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Téléverser une photo"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subir foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carica una foto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar foto"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto uploaden"
           }
         }
       }
@@ -5062,6 +10102,30 @@
             "state": "translated",
             "value": "À utiliser avec n'importe quel thème ou votre propre prompt personnalisé"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Úsalo con cualquier tema o tu propio mensaje personalizado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usalo con qualsiasi tema o il tuo prompt personalizzato"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use em qualquer tema ou no seu próprio prompt personalizado"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruik het bij elk thema of je eigen aangepaste prompt"
+          }
         }
       }
     },
@@ -5085,6 +10149,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marche seul"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camina de forma independiente"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cammina in autonomia"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anda sozinho"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loopt zelfstandig"
           }
         }
       }
@@ -5110,6 +10198,30 @@
             "state": "translated",
             "value": "Envie d'un changement ? Décrivez une modification — ex. « ajouter une douce couverture bleue »"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Quieres un cambio? Describe una edición — p. ej. «añade una suave manta azul»"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuoi un cambiamento? Descrivi una modifica — es. «aggiungi una morbida coperta blu»"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quer uma mudança? Descreva uma edição — ex. “adicionar um cobertor azul macio”"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wil je een wijziging? Beschrijf een bewerking — bijv. “voeg een zachte blauwe deken toe”"
+          }
         }
       }
     },
@@ -5133,6 +10245,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Envie d'une retouche IA ? (facultatif)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Quieres un retoque con IA? (opcional)"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuoi un ritocco IA? (opzionale)"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quer um retoque de IA? (opcional)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wil je een AI-retouche? (optioneel)"
           }
         }
       }
@@ -5158,6 +10294,30 @@
             "state": "translated",
             "value": "Envie de musique pour ce collage ?"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Quieres música para este collage?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuoi la musica per questo collage?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quer música para esta colagem?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wil je muziek voor deze collage?"
+          }
         }
       }
     },
@@ -5181,6 +10341,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Préparation du studio…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando el estudio…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparazione dello studio…"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando o estúdio…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studio wordt voorbereid…"
           }
         }
       }
@@ -5206,6 +10390,30 @@
             "state": "translated",
             "value": "Fait au revoir de la main"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dice adiós con la mano"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fa ciao con la manina"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acena tchau"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zwaait gedag"
+          }
         }
       }
     },
@@ -5229,6 +10437,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impossible de créer la vidéo de collage. Veuillez réessayer."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo crear el video del collage. Inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile creare il video del collage. Riprova."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível criar o vídeo da colagem. Tente novamente."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kon de collagevideo niet maken. Probeer het opnieuw."
           }
         }
       }
@@ -5254,6 +10486,30 @@
             "state": "translated",
             "value": "Nous n'avons pas trouvé de visage sur cette photo. Veuillez choisir une photo nette et bien éclairée du visage de votre bébé."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No pudimos encontrar un rostro en esta foto. Elige una foto clara y bien iluminada del rostro de tu bebé."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non siamo riusciti a trovare un volto in questa foto. Scegli una foto nitida e ben illuminata del viso del tuo bambino."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não conseguimos encontrar um rosto nesta foto. Escolha uma foto nítida e bem iluminada do rosto do seu bebê."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We konden geen gezicht vinden op deze foto. Kies een duidelijke, goed verlichte foto van het gezicht van je baby."
+          }
         }
       }
     },
@@ -5277,6 +10533,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nous allons animer chacune de vos %d photos capturées et les combiner en une seule vidéo. Cela coûtera %@ et, selon le nombre de photos ajoutées, cela peut prendre un certain temps. Voulez-vous continuer ?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animaremos cada una de tus %d fotos capturadas y las combinaremos en un solo video. Esto costará %@ y, según cuántas fotos hayas añadido, puede tardar un buen rato. ¿Deseas continuar?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animeremo ciascuna delle tue %d foto catturate e le combineremo in un unico video. Costerà %@ e, a seconda di quante foto hai aggiunto, potrebbe richiedere del tempo. Vuoi continuare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vamos animar cada uma das suas %d fotos capturadas e combiná-las em um único vídeo. Isso custará %@ e, dependendo de quantas fotos você adicionou, pode levar um bom tempo. Deseja continuar?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We animeren elk van je %d vastgelegde foto's en combineren ze tot één video. Dit kost %@ en, afhankelijk van hoeveel foto's je hebt toegevoegd, kan het even duren. Wil je doorgaan?"
           }
         }
       }
@@ -5302,6 +10582,30 @@
             "state": "translated",
             "value": "Nous intégrons votre morceau à ce collage. Vous pouvez suivre sa progression depuis l'écran Mes collages."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estamos mezclando tu pista en este collage. Puedes seguir su progreso desde la pantalla Mis collages."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stiamo mixando il tuo brano in questo collage. Puoi seguirne l'avanzamento dalla schermata I miei collage."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estamos misturando sua faixa nesta colagem. Você pode acompanhar o progresso na tela Minhas colagens."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We mixen je nummer in deze collage. Je kunt de voortgang volgen op het scherm Mijn collages."
+          }
         }
       }
     },
@@ -5325,6 +10629,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nous préparons votre collage. Vous pouvez suivre sa progression depuis l'écran Mes collages."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estamos preparando tu collage. Puedes seguir su progreso desde la pantalla Mis collages."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stiamo preparando il tuo collage. Puoi seguirne l'avanzamento dalla schermata I miei collage."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estamos preparando sua colagem. Você pode acompanhar o progresso na tela Minhas colagens."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We bereiden je collage voor. Je kunt de voortgang volgen op het scherm Mijn collages."
           }
         }
       }
@@ -5350,6 +10678,30 @@
             "state": "translated",
             "value": "Hebdomadaire"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semanal"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settimanale"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semanal"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wekelijks"
+          }
         }
       }
     },
@@ -5373,6 +10725,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Que souhaitez-vous retenir ?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te gustaría recordar?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa vorresti ricordare?"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O que você gostaria de lembrar?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat wil je onthouden?"
           }
         }
       }
@@ -5398,6 +10774,30 @@
             "state": "translated",
             "value": "Annuel"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anual"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annuale"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anual"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jaarlijks"
+          }
         }
       }
     },
@@ -5421,6 +10821,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Il vous faut au moins %d étapes capturées pour créer une vidéo de collage. Vous en avez %d jusqu'à présent."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Necesitas al menos %d hitos capturados para crear un video de collage. Hasta ahora tienes %d."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ti servono almeno %d traguardi catturati per creare un video collage. Finora ne hai %d."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você precisa de pelo menos %d marcos capturados para criar um vídeo de colagem. Você tem %d até agora."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je hebt minstens %d vastgelegde mijlpalen nodig om een collagevideo te maken. Je hebt er tot nu toe %d."
           }
         }
       }
@@ -5446,6 +10870,30 @@
             "state": "translated",
             "value": "Votre dernière chance !"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Tu última oportunidad!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La tua ultima occasione!"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sua última chance!"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je laatste kans!"
+          }
         }
       }
     },
@@ -5469,6 +10917,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Votre demande a été reçue"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu solicitud fue recibida"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La tua richiesta è stata ricevuta"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sua solicitação foi recebida"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je aanvraag is ontvangen"
           }
         }
       }
@@ -5494,6 +10966,30 @@
             "state": "translated",
             "value": "Les collages de votre bébé"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los collages de tu bebé"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I collage del tuo bambino"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As colagens do seu bebê"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De collages van je baby"
+          }
         }
       }
     },
@@ -5517,6 +11013,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vos achats ont été restaurés."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus compras han sido restauradas."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I tuoi acquisti sono stati ripristinati."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suas compras foram restauradas."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je aankopen zijn hersteld."
           }
         }
       }
@@ -5542,6 +11062,30 @@
             "state": "translated",
             "value": "« %@ » et sa photo seront supprimés. Cette action est irréversible."
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» y su foto se eliminarán. Esta acción no se puede deshacer."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» e la sua foto verranno rimossi. Questa azione non può essere annullata."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” e sua foto serão removidos. Esta ação não pode ser desfeita."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” en de bijbehorende foto worden verwijderd. Dit kan niet ongedaan worden gemaakt."
+          }
         }
       }
     },
@@ -5565,6 +11109,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "« %@ » a déjà été capturé. Le supprimer retire aussi la photo — cette action est irréversible."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» ya ha sido capturado. Eliminarlo también quita la foto — esta acción no se puede deshacer."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» è già stato catturato. Eliminandolo verrà rimossa anche la foto — questa azione non può essere annullata."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” já foi capturado. Excluí-lo também remove a foto — esta ação não pode ser desfeita."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” is al vastgelegd. Verwijderen verwijdert ook de foto — dit kan niet ongedaan worden gemaakt."
           }
         }
       }
@@ -5590,6 +11158,30 @@
             "state": "translated",
             "value": "ex. Visite de mamie"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej. Visita de la abuela"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. Visita della nonna"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. Visita da vovó"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bijv. Bezoek van oma"
+          }
         }
       }
     },
@@ -5613,6 +11205,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "ex. A rencontré mamie"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej. Conoció a la abuela"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. Ha conosciuto la nonna"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. Conheceu a vovó"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bijv. Oma ontmoet"
           }
         }
       }
@@ -5638,6 +11254,30 @@
             "state": "translated",
             "value": "ex. « ajouter une douce lumière dorée et des étincelles flottantes » — laissez vide pour enregistrer simplement la photo"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej. «añade una suave luz dorada y destellos flotantes» — deja en blanco para solo guardar la foto"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. «aggiungi una luce dorata soffusa e scintille fluttuanti» — lascia vuoto per salvare solo la foto"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. “adicionar uma luz dourada suave e brilhos flutuantes” — deixe em branco para apenas salvar a foto"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bijv. “voeg zacht goudlicht en zwevende sprankels toe” — laat leeg om alleen de foto op te slaan"
+          }
         }
       }
     },
@@ -5661,6 +11301,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "ex. « transformer mon bébé en petit astronaute flottant parmi les étoiles »"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej. «convierte a mi bebé en un pequeño astronauta flotando entre las estrellas»"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. «trasforma il mio bambino in un piccolo astronauta che fluttua tra le stelle»"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. “transformar meu bebê em um pequeno astronauta flutuando entre as estrelas”"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bijv. “verander mijn baby in een kleine astronaut die tussen de sterren zweeft”"
           }
         }
       }
@@ -5686,6 +11350,30 @@
             "state": "translated",
             "value": "par mois"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "al mes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "al mese"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "por mês"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per maand"
+          }
         }
       }
     },
@@ -5709,6 +11397,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "par semaine"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "a la semana"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "alla settimana"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "por semana"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per week"
           }
         }
       }
@@ -5734,6 +11446,30 @@
             "state": "translated",
             "value": "par an"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "al año"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "all'anno"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "por ano"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per jaar"
+          }
         }
       }
     },
@@ -5758,6 +11494,30 @@
             "state": "translated",
             "value": "~%d min"
           }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d min"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d min"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d min"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d min"
+          }
         }
       }
     },
@@ -5778,6 +11538,30 @@
           }
         },
         "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d min"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d min"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d min"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d min"
+          }
+        },
+        "nl": {
           "stringUnit": {
             "state": "translated",
             "value": "~%d–%d min"
