@@ -19,6 +19,9 @@ final class MilestoneCollageViewController: UIViewController {
     private var statusObservation: NSKeyValueObservation?
     private let loadingSpinner = UIActivityIndicatorView(style: .large)
     private var containerAspectConstraint: NSLayoutConstraint?
+    private let musicPromptTextView = UITextView()
+    private let musicPromptPlaceholder = UILabel()
+    private let generateMusicButton = GradientPillButton(title: "Generate Music", icon: UIImage(systemName: "music.note"))
 
     init(videoURL: URL, listName: String, collageId: String) {
         self.videoURL = videoURL
@@ -38,8 +41,11 @@ final class MilestoneCollageViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteTapped))
         navigationItem.leftBarButtonItem?.tintColor = .white
         view.backgroundColor = UIColor(hex: 0x2E2530)
-        setUpPlayer()
+        // Built bottom-up so the video container (below) can cap its height against the top of
+        // this stack instead of a magic constant — see setUpPlayer's aspectConstraint comment.
         setUpActions()
+        setUpMusicPromptSection()
+        setUpPlayer()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -98,7 +104,7 @@ final class MilestoneCollageViewController: UIViewController {
             container.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
             container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
-            container.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120),
+            container.bottomAnchor.constraint(lessThanOrEqualTo: musicSectionTop, constant: -16),
             aspectConstraint,
             loadingSpinner.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             loadingSpinner.centerYAnchor.constraint(equalTo: container.centerYAnchor)
@@ -166,7 +172,84 @@ final class MilestoneCollageViewController: UIViewController {
             actions.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             actions.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
         ])
+        actionsTop = actions.topAnchor
     }
+
+    private var actionsTop: NSLayoutYAxisAnchor!
+
+    /// Offers to generate a music track for the collage video — mirrors ResultViewController's
+    /// themed edit-prompt card (same card styling, placeholder-as-UILabel trick since UITextView
+    /// has no native placeholder), plus a full-width button underneath instead of an inline send
+    /// arrow, since "Generate Music" reads better as its own CTA than a chat-style send icon.
+    /// generateMusicTapped() is intentionally a no-op for now — wired up once the Wiro
+    /// music-generation endpoint is added.
+    private func setUpMusicPromptSection() {
+        let question = UILabel()
+        question.text = "Want music for this collage?"
+        question.font = Theme.Font.heading(15, weight: 700)
+        question.textColor = .white
+        question.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(question)
+
+        let card = UIView()
+        card.backgroundColor = UIColor.white.withAlphaComponent(0.08)
+        card.layer.cornerRadius = 18
+        card.layer.borderWidth = 1
+        card.layer.borderColor = UIColor.white.withAlphaComponent(0.14).cgColor
+        card.translatesAutoresizingMaskIntoConstraints = false
+
+        musicPromptTextView.backgroundColor = .clear
+        musicPromptTextView.textColor = .white
+        musicPromptTextView.tintColor = Theme.Color.accentEnd
+        musicPromptTextView.font = Theme.Font.body(14, weight: 600)
+        musicPromptTextView.isScrollEnabled = false
+        musicPromptTextView.textContainerInset = .zero
+        musicPromptTextView.textContainer.lineFragmentPadding = 0
+        musicPromptTextView.delegate = self
+        musicPromptTextView.translatesAutoresizingMaskIntoConstraints = false
+
+        musicPromptPlaceholder.text = "Describe the music — e.g. \u{201c}soft, dreamy piano lullaby, gentle and warm\u{201d}"
+        musicPromptPlaceholder.font = Theme.Font.body(14, weight: 600)
+        musicPromptPlaceholder.textColor = UIColor.white.withAlphaComponent(0.4)
+        musicPromptPlaceholder.numberOfLines = 2
+        musicPromptPlaceholder.translatesAutoresizingMaskIntoConstraints = false
+
+        card.addSubview(musicPromptTextView)
+        card.addSubview(musicPromptPlaceholder)
+        view.addSubview(card)
+
+        generateMusicButton.addTarget(self, action: #selector(generateMusicTapped), for: .touchUpInside)
+        generateMusicButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(generateMusicButton)
+
+        NSLayoutConstraint.activate([
+            question.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            question.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+
+            card.topAnchor.constraint(equalTo: question.bottomAnchor, constant: 10),
+            card.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            card.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            card.heightAnchor.constraint(equalToConstant: 68),
+
+            musicPromptTextView.topAnchor.constraint(equalTo: card.topAnchor, constant: 12),
+            musicPromptTextView.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 14),
+            musicPromptTextView.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -14),
+            musicPromptTextView.bottomAnchor.constraint(equalTo: card.bottomAnchor, constant: -12),
+
+            musicPromptPlaceholder.topAnchor.constraint(equalTo: musicPromptTextView.topAnchor),
+            musicPromptPlaceholder.leadingAnchor.constraint(equalTo: musicPromptTextView.leadingAnchor),
+            musicPromptPlaceholder.trailingAnchor.constraint(equalTo: musicPromptTextView.trailingAnchor),
+
+            generateMusicButton.topAnchor.constraint(equalTo: card.bottomAnchor, constant: 12),
+            generateMusicButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            generateMusicButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            generateMusicButton.heightAnchor.constraint(equalToConstant: 52),
+            generateMusicButton.bottomAnchor.constraint(equalTo: actionsTop, constant: -20)
+        ])
+        musicSectionTop = question.topAnchor
+    }
+
+    private var musicSectionTop: NSLayoutYAxisAnchor!
 
     private func actionButton(icon: String, title: String, action: Selector) -> UIView {
         let circle = UIButton(type: .system)
@@ -270,6 +353,11 @@ final class MilestoneCollageViewController: UIViewController {
         }
     }
 
+    /// No-op for now — the Wiro music-generation call gets wired in here once that API is added.
+    @objc private func generateMusicTapped() {
+        HapticFeedback.light()
+    }
+
     @objc private func shareTapped() {
         HapticFeedback.light()
         withLocalFileURL { [weak self] localURL in
@@ -319,5 +407,11 @@ final class MilestoneCollageViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
+    }
+}
+
+extension MilestoneCollageViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        musicPromptPlaceholder.isHidden = !textView.text.isEmpty
     }
 }
