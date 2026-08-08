@@ -9,7 +9,8 @@ exports.processCollageAnimationItem = require("./processCollageAnimationItem").p
 exports.finalizeCollageAnimation = require("./finalizeCollageAnimation").finalizeCollageAnimation;
 exports.deleteAccount = require("./deleteAccount").deleteAccount;
 exports.grantPurchase = require("./grantPurchase").grantPurchase;
-exports.generateCollageMusic = require("./generateCollageMusic").generateCollageMusic;
+exports.startCollageMusic = require("./startCollageMusic").startCollageMusic;
+exports.renderCollageMusic = require("./renderCollageMusic").renderCollageMusic;
 
 // seedThemes / seedThemePreviews / seedCategoryPreviews are one-off admin tasks — deployed,
 // called from a local script to bulk-write, then deleted. Not exported here so

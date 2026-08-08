@@ -187,8 +187,8 @@ final class MilestoneCollageViewController: UIViewController {
     /// themed edit-prompt card (same card styling, placeholder-as-UILabel trick since UITextView
     /// has no native placeholder), plus a full-width button underneath instead of an inline send
     /// arrow, since "Generate Music" reads better as its own CTA than a chat-style send icon.
-    /// generateMusicTapped() is intentionally a no-op for now — wired up once the Wiro
-    /// music-generation endpoint is added.
+    /// generateMusicTapped() only starts the job (startCollageMusic) and returns to My Collages —
+    /// see its own doc comment for why this doesn't wait around on this screen.
     private func setUpMusicPromptSection() {
         let question = UILabel()
         question.text = "Want music for this collage?"
@@ -393,20 +393,51 @@ final class MilestoneCollageViewController: UIViewController {
         }
     }
 
+    /// startCollageMusic itself only validates/charges/enqueues (finishes in seconds — the
+    /// spinner here covers just that round trip), but the actual work behind it (a Wiro
+    /// text-to-music call, then an ffmpeg mux pass onto this video) runs in the background across
+    /// renderCollageMusic, the same reasoning as the collage video itself: easily long enough
+    /// that staying on this screen waiting isn't reasonable. So a successful call here doesn't
+    /// keep the user on this screen either — it hands off to My Collages, where the row shows
+    /// its usual "preparing" treatment until the music is actually mixed in.
     private func startMusicGeneration(prompt: String) {
         setMusicGenerating(true)
-        CollageAnimationService.generateMusic(collageId: collageId, prompt: prompt) { [weak self] result in
+        CollageAnimationService.startMusic(collageId: collageId, prompt: prompt) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self else { return }
                 self.setMusicGenerating(false)
                 switch result {
                 case .success:
                     HapticFeedback.success()
-                    self.presentAlert(title: "Music Ready", message: "Your track was generated and saved with this collage.")
+                    self.presentMusicStartedAlert()
                 case .failure(let error):
-                    self.presentAlert(title: "Couldn't Generate Music", message: error.localizedDescription)
+                    self.presentAlert(title: "Couldn't Start Music", message: error.localizedDescription)
                 }
             }
+        }
+    }
+
+    private func presentMusicStartedAlert() {
+        let alert = UIAlertController(
+            title: "Adding Your Music",
+            message: "We're mixing your track into this collage. You can follow its progress from the My Collages screen.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Go to My Collages", style: .default) { [weak self] _ in
+            self?.goToMyCollages()
+        })
+        present(alert, animated: true)
+    }
+
+    /// Pops back to an already-on-the-stack My Collages screen (this player is often reached BY
+    /// tapping a row there) instead of pushing a duplicate on top of it; only pushes a fresh one
+    /// when this screen was reached some other way (e.g. straight off a fresh collage render).
+    private func goToMyCollages() {
+        guard let nav = navigationController else { return }
+        if let gallery = nav.viewControllers.last(where: { $0 is MilestoneCollageGalleryViewController }) {
+            nav.popToViewController(gallery, animated: true)
+        } else {
+            nav.pushViewController(MilestoneCollageGalleryViewController(), animated: true)
         }
     }
 

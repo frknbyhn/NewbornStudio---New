@@ -18,6 +18,16 @@ enum MilestoneCollageStore {
         case failed
     }
 
+    /// Separate from `Status` — set by startCollageMusic/renderCollageMusic once a collage's own
+    /// video is already `.complete`, so "adding background music" never hides or invalidates the
+    /// already-playable video while it runs. nil/absent means music was never requested for this
+    /// collage.
+    enum MusicStatus: String {
+        case generating
+        case complete
+        case failed
+    }
+
     struct SavedCollage: Identifiable {
         let id: String
         let listId: String
@@ -25,8 +35,11 @@ enum MilestoneCollageStore {
         let status: Status
         let itemCount: Int
         /// nil while `status == .generating` (or `.failed`) — only ever set once the background
-        /// job's finalize step actually writes it.
+        /// job's finalize step actually writes it. Also updated in place (new download token) by
+        /// renderCollageMusic once a music track is muxed in, so this always points at the video
+        /// that's actually meant to play right now.
         let videoUrl: URL?
+        let musicStatus: MusicStatus?
         let createdAt: Date
     }
 
@@ -56,7 +69,8 @@ enum MilestoneCollageStore {
                 let status = Status(rawValue: data["status"] as? String ?? "complete") ?? .complete
                 let itemCount = data["itemCount"] as? Int ?? 0
                 let videoUrl = (data["videoUrl"] as? String).flatMap(URL.init(string:))
-                return SavedCollage(id: doc.documentID, listId: listId, listName: listName, status: status, itemCount: itemCount, videoUrl: videoUrl, createdAt: createdAt)
+                let musicStatus = (data["musicStatus"] as? String).flatMap(MusicStatus.init(rawValue:))
+                return SavedCollage(id: doc.documentID, listId: listId, listName: listName, status: status, itemCount: itemCount, videoUrl: videoUrl, musicStatus: musicStatus, createdAt: createdAt)
             }
             completion(.success(collages))
         }

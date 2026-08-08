@@ -69,28 +69,17 @@ enum CollageAnimationService {
         }
     }
 
-    struct MusicResult {
-        let musicUrl: URL
-        let remainingCredits: Int
-    }
-
-    /// Calls `generateCollageMusic` — the server reads the collage's own already-rendered video
-    /// duration (finalizeCollageAnimation.js) rather than trusting a client-supplied length, so
-    /// the track always matches the actual video regardless of what this device thinks its
-    /// duration is.
-    /// Matches generateCollageMusic's own 300s Cloud Function timeout — same reasoning as
-    /// AnimationService's callTimeout: the Functions SDK's default (70s) would otherwise fail
-    /// the client long before a healthy server call actually finishes.
-    private static let musicCallTimeout: TimeInterval = 300
-
-    static func generateMusic(collageId: String, prompt: String, completion: @escaping (Result<MusicResult, Error>) -> Void) {
+    /// Calls `startCollageMusic` — kicks off a background-music job and returns almost
+    /// immediately, same shape as `start(listId:...)` above. The real work (a Wiro
+    /// text-to-music call, which can run long enough that holding a client callable open for it
+    /// isn't reasonable, then an ffmpeg mux pass onto the existing collage video) happens
+    /// entirely server-side (startCollageMusic -> renderCollageMusic).
+    static func startMusic(collageId: String, prompt: String, completion: @escaping (Result<Int, Error>) -> Void) {
         guard AuthService.currentUserId != nil else {
             completion(.failure(CollageAnimationServiceError.notSignedIn))
             return
         }
-        let callable = Functions.functions().httpsCallable("generateCollageMusic")
-        callable.timeoutInterval = musicCallTimeout
-        callable.call([
+        Functions.functions().httpsCallable("startCollageMusic").call([
             "collageId": collageId,
             "prompt": prompt
         ]) { result, error in
@@ -98,16 +87,9 @@ enum CollageAnimationService {
                 completion(.failure(error))
                 return
             }
-            guard
-                let dict = result?.data as? [String: Any],
-                let urlString = dict["musicUrl"] as? String,
-                let musicUrl = URL(string: urlString)
-            else {
-                completion(.failure(CollageAnimationServiceError.invalidServerResponse))
-                return
-            }
-            let remainingCredits = (dict["remainingCredits"] as? Int) ?? 0
-            completion(.success(MusicResult(musicUrl: musicUrl, remainingCredits: remainingCredits)))
+            let dict = result?.data as? [String: Any]
+            let remainingCredits = (dict?["remainingCredits"] as? Int) ?? 0
+            completion(.success(remainingCredits))
         }
     }
 }

@@ -41,7 +41,10 @@ final class MilestoneCollageGalleryViewController: UIViewController {
     }
 
     private func updateRefreshTimer() {
-        let stillGenerating = collages.contains { $0.status == .generating }
+        // Also keeps polling while a `.complete` collage's musicStatus is `.generating` —
+        // renderCollageMusic runs after the collage itself is already done and playable, so it
+        // doesn't touch `status` at all (see MusicStatus's own doc comment).
+        let stillGenerating = collages.contains { $0.status == .generating || $0.musicStatus == .generating }
         if stillGenerating, refreshTimer == nil {
             refreshTimer = Timer.scheduledTimer(withTimeInterval: Self.refreshInterval, repeats: true) { [weak self] _ in
                 self?.loadCollages()
@@ -220,8 +223,16 @@ final class MilestoneCollageGalleryViewController: UIViewController {
             subtitle.text = "Couldn't be created — credits refunded"
             subtitle.textColor = UIColor(hex: 0xC24E4E)
         case .complete:
-            subtitle.text = Self.dateFormatter.string(from: collage.createdAt)
-            subtitle.textColor = Theme.Color.textSecondary
+            // The video itself is already done and playable — adding music runs after the fact
+            // (renderCollageMusic) and never blocks tapping into it, this subtitle is just a
+            // status note, same purple as the "still generating" case above.
+            if collage.musicStatus == .generating {
+                subtitle.text = "Adding music…"
+                subtitle.textColor = Theme.Color.purpleAccent
+            } else {
+                subtitle.text = Self.dateFormatter.string(from: collage.createdAt)
+                subtitle.textColor = Theme.Color.textSecondary
+            }
         }
         subtitle.font = Theme.Font.body(12.5, weight: 600)
 
