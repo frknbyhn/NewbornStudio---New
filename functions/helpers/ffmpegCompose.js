@@ -159,18 +159,26 @@ async function composeSingleClip(clip, outputPath) {
 
 /**
  * Adds `musicPath` (a generated audio track, already requested at the video's own duration — see
- * generateCollageMusic.js) onto `videoPath` as background music, writing the result to
+ * renderCollageMusic.js) onto `videoPath` as background music, writing the result to
  * `outputPath`. If the video already has its own audio (per-item Wiro clips can — see
  * composeCollage's allHaveAudio), the two are mixed (music turned down to sit behind it) rather
  * than one replacing the other; otherwise the music becomes the video's only audio track. Video
  * stream is copied untouched (`-c:v copy`) — only audio is (re-)encoded, so this is fast
  * regardless of how long composeCollage's own re-encode took.
+ *
+ * Wiro's own returned track can come back a little short or long of the `duration` it was asked
+ * for. `-stream_loop -1` on the music input (before ITS `-i`, so only that input loops — the
+ * video input is untouched) restarts the track from the beginning as many times as needed to
+ * outlast the video, rather than leaving the tail of the video silent; the output-level `-t`
+ * then hard-caps the result at the video's real length either way, so a track that came back
+ * long just gets cut off at the end like before, and one that came back short loops seamlessly
+ * instead.
  */
 async function addBackgroundMusic({ videoPath, musicPath, outputPath }) {
   const [duration, hasExistingAudio] = await Promise.all([probeDuration(videoPath), probeHasAudio(videoPath)]);
   const args = hasExistingAudio
     ? [
-        "-y", "-i", videoPath, "-i", musicPath,
+        "-y", "-i", videoPath, "-stream_loop", "-1", "-i", musicPath,
         "-filter_complex", "[1:a]volume=0.5[bg];[0:a][bg]amix=inputs=2:duration=first:dropout_transition=2[aout]",
         "-map", "0:v", "-map", "[aout]",
         "-t", duration.toFixed(3),
@@ -178,7 +186,7 @@ async function addBackgroundMusic({ videoPath, musicPath, outputPath }) {
         outputPath,
       ]
     : [
-        "-y", "-i", videoPath, "-i", musicPath,
+        "-y", "-i", videoPath, "-stream_loop", "-1", "-i", musicPath,
         "-map", "0:v", "-map", "1:a",
         "-t", duration.toFixed(3),
         "-c:v", "copy", "-c:a", "aac",
