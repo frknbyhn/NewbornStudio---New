@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "newborn-studio"
+    "default": "newborn-moments",
+    "old-newborn-studio": "newborn-studio"
   }
 }
