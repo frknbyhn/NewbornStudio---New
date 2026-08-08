@@ -4,9 +4,9 @@ const { ensureUserDoc } = require("./helpers/credits");
 const { GRANTS } = require("./helpers/purchaseGrants");
 
 const PERIOD_MS = {
-  "com.newborn.weekly": 7 * 24 * 60 * 60 * 1000,
-  "com.newborn.monthly": 31 * 24 * 60 * 60 * 1000,
-  "com.newborn.yearly": 366 * 24 * 60 * 60 * 1000,
+  "com.babycollages.weekly": 7 * 24 * 60 * 60 * 1000,
+  "com.babycollages.monthly": 31 * 24 * 60 * 60 * 1000,
+  "com.babycollages.yearly": 366 * 24 * 60 * 60 * 1000,
 };
 
 // Called right after RevenueCat's Purchases.purchase() resolves successfully on the client —
@@ -36,7 +36,7 @@ exports.grantPurchase = onCall({}, async (request) => {
       if (renewalDate && renewalDate.toMillis() > now.toMillis()) {
         return;
       }
-      const periodMs = PERIOD_MS[productId] || PERIOD_MS["com.newborn.monthly"];
+      const periodMs = PERIOD_MS[productId] || PERIOD_MS["com.babycollages.monthly"];
       tx.update(userRef, {
         isPremium: true,
         subscriptionCredits: grant.credits,

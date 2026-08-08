@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F1534D6A0628EF8CD38169D"
-               BuildableName = "NewbornStudio.app"
-               BlueprintName = "NewbornStudio"
-               ReferencedContainer = "container:NewbornStudio.xcodeproj">
+               BlueprintIdentifier = "65ED6814FF37A9EE4A5F8A37"
+               BuildableName = "NewbornMoments.app"
+               BlueprintName = "NewbornMoments"
+               ReferencedContainer = "container:NewbornMoments.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0F1534D6A0628EF8CD38169D"
-            BuildableName = "NewbornStudio.app"
-            BlueprintName = "NewbornStudio"
-            ReferencedContainer = "container:NewbornStudio.xcodeproj">
+            BlueprintIdentifier = "65ED6814FF37A9EE4A5F8A37"
+            BuildableName = "NewbornMoments.app"
+            BlueprintName = "NewbornMoments"
+            ReferencedContainer = "container:NewbornMoments.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -57,10 +57,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0F1534D6A0628EF8CD38169D"
-            BuildableName = "NewbornStudio.app"
-            BlueprintName = "NewbornStudio"
-            ReferencedContainer = "container:NewbornStudio.xcodeproj">
+            BlueprintIdentifier = "65ED6814FF37A9EE4A5F8A37"
+            BuildableName = "NewbornMoments.app"
+            BlueprintName = "NewbornMoments"
+            ReferencedContainer = "container:NewbornMoments.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0F1534D6A0628EF8CD38169D"
-            BuildableName = "NewbornStudio.app"
-            BlueprintName = "NewbornStudio"
-            ReferencedContainer = "container:NewbornStudio.xcodeproj">
+            BlueprintIdentifier = "65ED6814FF37A9EE4A5F8A37"
+            BuildableName = "NewbornMoments.app"
+            BlueprintName = "NewbornMoments"
+            ReferencedContainer = "container:NewbornMoments.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>

@@ -1,6 +1,6 @@
 {
   "name": "functions",
-  "description": "Cloud Functions for Newborn Studio",
+  "description": "Cloud Functions for Newborn Moments",
   "engines": {
     "node": "22"
   },

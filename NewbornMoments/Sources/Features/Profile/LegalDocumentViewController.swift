@@ -72,7 +72,7 @@ private struct LegalDocument {
     }
 
     private static let privacyBody = """
-    Newborn Studio ("we", "us") creates AI-generated studio-style portraits from photos you upload. This policy explains what we collect and why.
+    Newborn Moments ("we", "us") creates AI-generated studio-style portraits from photos you upload. This policy explains what we collect and why.
 
     WHAT WE COLLECT
     • Photos you upload to generate a portrait, and the portraits we create for you.
@@ -99,10 +99,10 @@ private struct LegalDocument {
     """
 
     private static let termsBody = """
-    By using Newborn Studio, you agree to these terms.
+    By using Newborn Moments, you agree to these terms.
 
     THE SERVICE
-    Newborn Studio lets you upload a photo and generate AI-created studio-style portrait variations using selected themes or your own custom prompt. Results are AI-generated approximations and may not always be usable — we do our best, but generation can occasionally fail or produce unexpected results.
+    Newborn Moments lets you upload a photo and generate AI-created studio-style portrait variations using selected themes or your own custom prompt. Results are AI-generated approximations and may not always be usable — we do our best, but generation can occasionally fail or produce unexpected results.
 
     CREDITS & SUBSCRIPTIONS
     Each generation costs credits. Credits are granted through a subscription (recurring, auto-renewing unless cancelled) or one-time coin purchases. Subscriptions are billed through your Apple ID account and renew automatically unless turned off at least 24 hours before the end of the current period, managed via your device's App Store subscription settings. If a generation fails due to a technical error on our end, the credit spent is automatically refunded to your account.

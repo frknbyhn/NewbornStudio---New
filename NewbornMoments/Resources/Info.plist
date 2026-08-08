@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Newborn Studio</string>
+	<string>Newborn Moments</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,11 +23,11 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSCameraUsageDescription</key>
-	<string>Newborn Studio needs camera access so you can take a photo of your baby to create studio-style portraits.</string>
+	<string>Newborn Moments needs camera access so you can take a photo of your baby to create studio-style portraits.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Newborn Studio needs permission to save your generated portraits to your photo library.</string>
+	<string>Newborn Moments needs permission to save your generated portraits to your photo library.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Newborn Studio needs photo library access so you can choose a photo of your baby to create studio-style portraits.</string>
+	<string>Newborn Moments needs photo library access so you can choose a photo of your baby to create studio-style portraits.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Quicksand-Variable.ttf</string>

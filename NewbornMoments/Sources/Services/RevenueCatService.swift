@@ -17,7 +17,9 @@ enum RevenueCatService {
     // Public SDK key — safe to ship in the client. This RevenueCat project hosts several other
     // apps; the "newborn" offering is fetched by its own identifier below rather than relying on
     // offerings.current, which is a project-wide flag shared across every app in the account.
-    private static let publicAPIKey = "appl_nxpqIXSXIpYQrsdRfrQwIpDxBrs"
+    // "newborn" is a lookup key reused from the account's shared entitlement (see memory) — it
+    // isn't user-facing, so keeping it doesn't conflict with the Newborn Moments rebrand.
+    private static let publicAPIKey = "appl_KezTVkyDqqcvBlcgJFzTLgfKdhf"
     private static let offeringIdentifier = "newborn"
     private static let entitlementIdentifier = "newborn"
 

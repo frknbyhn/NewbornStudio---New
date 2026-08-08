@@ -25,7 +25,7 @@
           "locale" : "en_GB"
         }
       ],
-      "productID" : "com.newborn.big",
+      "productID" : "com.babycollages.big",
       "referenceName" : "Big Package",
       "type" : "Consumable"
     },
@@ -40,7 +40,7 @@
           "locale" : "en_GB"
         }
       ],
-      "productID" : "com.newborn.limited",
+      "productID" : "com.babycollages.limited",
       "referenceName" : "Limited Time Offer",
       "type" : "Consumable"
     },
@@ -55,7 +55,7 @@
           "locale" : "en_GB"
         }
       ],
-      "productID" : "com.newborn.medium",
+      "productID" : "com.babycollages.medium",
       "referenceName" : "Medium Package",
       "type" : "Consumable"
     },
@@ -70,7 +70,7 @@
           "locale" : "en_GB"
         }
       ],
-      "productID" : "com.newborn.small",
+      "productID" : "com.babycollages.small",
       "referenceName" : "Small Package",
       "type" : "Consumable"
     }
@@ -98,7 +98,7 @@
       "localizations" : [
 
       ],
-      "name" : "Newborn Studio Premium Group",
+      "name" : "Newborn Moments Premium Group",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -119,7 +119,7 @@
               "locale" : "en_GB"
             }
           ],
-          "productID" : "com.newborn.monthly",
+          "productID" : "com.babycollages.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Monthly",
           "subscriptionGroupID" : "21834694",
@@ -147,7 +147,7 @@
               "locale" : "en_GB"
             }
           ],
-          "productID" : "com.newborn.weekly",
+          "productID" : "com.babycollages.weekly",
           "recurringSubscriptionPeriod" : "P1W",
           "referenceName" : "Weekly",
           "subscriptionGroupID" : "21834694",
@@ -175,7 +175,7 @@
               "locale" : "en_GB"
             }
           ],
-          "productID" : "com.newborn.yearly",
+          "productID" : "com.babycollages.yearly",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Yearly",
           "subscriptionGroupID" : "21834694",

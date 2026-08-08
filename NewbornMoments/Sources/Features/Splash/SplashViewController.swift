@@ -44,7 +44,7 @@ final class SplashViewController: UIViewController {
         logoIcon.contentMode = .scaleAspectFit
         logoIcon.translatesAutoresizingMaskIntoConstraints = false
 
-        titleLabel.text = "Newborn Studio"
+        titleLabel.text = "Newborn Moments"
         titleLabel.font = Theme.Font.heading(24, weight: 700)
         titleLabel.textColor = Theme.Color.textPrimaryAlt
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

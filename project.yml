@@ -1,4 +1,4 @@
-name: NewbornStudio
+name: NewbornMoments
 options:
   bundleIdPrefix: com
   deploymentTarget:
@@ -20,27 +20,27 @@ packages:
     from: 4.4.0
 
 targets:
-  NewbornStudio:
+  NewbornMoments:
     type: application
     platform: iOS
     deploymentTarget: "15.0"
     scheme: {}
     sources:
-      - path: NewbornStudio/Sources
-      - path: NewbornStudio/Resources/Assets.xcassets
+      - path: NewbornMoments/Sources
+      - path: NewbornMoments/Resources/Assets.xcassets
         buildPhase: resources
-      - path: NewbornStudio/Resources/Fonts
+      - path: NewbornMoments/Resources/Fonts
         buildPhase: resources
-      - path: NewbornStudio/Resources/GoogleService-Info.plist
+      - path: NewbornMoments/Resources/GoogleService-Info.plist
         buildPhase: resources
-      - path: NewbornStudio/Resources/loader.json
+      - path: NewbornMoments/Resources/loader.json
         buildPhase: resources
     settings:
       base:
-        INFOPLIST_FILE: NewbornStudio/Resources/Info.plist
+        INFOPLIST_FILE: NewbornMoments/Resources/Info.plist
         GENERATE_INFOPLIST_FILE: NO
-        PRODUCT_BUNDLE_IDENTIFIER: com.NewbornStudio
-        PRODUCT_NAME: NewbornStudio
+        PRODUCT_BUNDLE_IDENTIFIER: com.BabyCollages
+        PRODUCT_NAME: NewbornMoments
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "5.0"
