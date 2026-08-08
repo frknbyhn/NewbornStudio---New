@@ -23,6 +23,13 @@ final class PhotoUploadViewController: UIViewController {
         debugAutoGenerateIfNeeded()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Refresh every appearance, not just once — a photo could have been added (this screen
+        // pushed a generation, user came back) or removed (deleted from the strip) since last time.
+        refreshRecentPhotosStrip()
+    }
+
     private func debugAutoGenerateIfNeeded() {
         #if DEBUG
         // Screenshot/E2E-verification aid only — never reachable in a release build. Lets a
@@ -116,6 +123,8 @@ final class PhotoUploadViewController: UIViewController {
         dropZone.addSubview(dropStack)
         dropZone.translatesAutoresizingMaskIntoConstraints = false
 
+        let recentStrip = makeRecentPhotosStrip()
+
         let tipsTitle = UILabel()
         tipsTitle.text = NSLocalizedString("For the best results", comment: "Photo upload tips title")
         tipsTitle.font = Theme.Font.heading(14, weight: 700)
@@ -146,7 +155,7 @@ final class PhotoUploadViewController: UIViewController {
         chooseGallery.translatesAutoresizingMaskIntoConstraints = false
         chooseGallery.heightAnchor.constraint(equalToConstant: 56).isActive = true
 
-        let content = UIStackView(arrangedSubviews: [dropZone, tipsTitle, tips])
+        let content = UIStackView(arrangedSubviews: [dropZone, recentStrip, tipsTitle, tips])
         content.axis = .vertical
         content.spacing = 22
         content.isLayoutMarginsRelativeArrangement = true
@@ -211,6 +220,71 @@ final class PhotoUploadViewController: UIViewController {
         return row
     }
 
+    // MARK: - Recently used photos
+
+    private var recentStripContainer: UIView!
+    private var recentStripStack: UIStackView!
+    private var selectedRecentPhotoId: String?
+
+    private func makeRecentPhotosStrip() -> UIView {
+        let title = UILabel()
+        title.text = NSLocalizedString("Recently Used", comment: "Recently used photos section title")
+        title.font = Theme.Font.heading(14, weight: 700)
+        title.textColor = Theme.Color.textSecondaryAlt
+
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 10
+        stack.alignment = .center
+        recentStripStack = stack
+
+        let scroll = UIScrollView()
+        scroll.showsHorizontalScrollIndicator = false
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        scroll.addSubview(stack)
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stack.topAnchor.constraint(equalTo: scroll.topAnchor),
+            stack.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
+            stack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
+            stack.heightAnchor.constraint(equalTo: scroll.heightAnchor),
+            scroll.heightAnchor.constraint(equalToConstant: 76)
+        ])
+
+        let container = UIStackView(arrangedSubviews: [title, scroll])
+        container.axis = .vertical
+        container.spacing = 10
+        recentStripContainer = container
+        return container
+    }
+
+    private func refreshRecentPhotosStrip() {
+        recentStripStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        let photos = RecentPhotosStore.recentPhotos()
+        recentStripContainer.isHidden = photos.isEmpty
+        for photo in photos {
+            let cell = RecentPhotoCell(photo: photo, isSelected: photo.id == selectedRecentPhotoId)
+            cell.onSelect = { [weak self] in self?.recentPhotoSelected(photo) }
+            cell.onDelete = { [weak self] in self?.recentPhotoDeleted(photo) }
+            recentStripStack.addArrangedSubview(cell)
+        }
+    }
+
+    private func recentPhotoSelected(_ photo: RecentPhotosStore.Photo) {
+        HapticFeedback.selection()
+        selectedRecentPhotoId = photo.id
+        refreshRecentPhotosStrip()
+        RecentPhotosStore.moveToFront(id: photo.id)
+        proceedWithPickedImage(photo.image, alreadyInRecents: true)
+    }
+
+    private func recentPhotoDeleted(_ photo: RecentPhotosStore.Photo) {
+        HapticFeedback.light()
+        RecentPhotosStore.remove(id: photo.id)
+        refreshRecentPhotosStrip()
+    }
+
     @objc private func backTapped() {
         navigationController?.popViewController(animated: true)
     }
@@ -270,8 +344,14 @@ extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigati
         proceedWithPickedImage(image)
     }
 
-    fileprivate func proceedWithPickedImage(_ image: UIImage) {
+    fileprivate func proceedWithPickedImage(_ image: UIImage, alreadyInRecents: Bool = false) {
         pickedImage = image
+        // Every fresh pick (camera or gallery) joins the "recently used" shortcut strip for
+        // next time — a photo reselected from that same strip is already there (just bumped to
+        // the front by the caller), so it doesn't need re-saving as a second copy.
+        if !alreadyInRecents {
+            RecentPhotosStore.add(image)
+        }
         FaceCheck.run(on: image, presentingFrom: self) { [weak self] in
             self?.proceedAfterFaceCheck(image)
         }
@@ -290,4 +370,73 @@ extension PhotoUploadViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
+}
+
+/// One thumbnail in the "Recently Used" strip. A plain UIControl (not a gesture recognizer on
+/// top of a UIView) so the delete button — a subview positioned over its top-trailing corner —
+/// naturally wins its own touches via normal view-hierarchy hit-testing, without fighting a
+/// parent gesture recognizer for them.
+private final class RecentPhotoCell: UIControl {
+    var onSelect: (() -> Void)?
+    var onDelete: (() -> Void)?
+
+    private let imageView = UIImageView()
+    private let checkBadge = UIImageView(image: UIImage(systemName: "checkmark.circle.fill"))
+
+    init(photo: RecentPhotosStore.Photo, isSelected: Bool) {
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalToConstant: 64).isActive = true
+        heightAnchor.constraint(equalToConstant: 64).isActive = true
+
+        imageView.image = photo.image
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 14
+        imageView.layer.borderWidth = isSelected ? 3 : 0
+        imageView.layer.borderColor = Theme.Color.success.cgColor
+        imageView.isUserInteractionEnabled = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(imageView)
+
+        checkBadge.tintColor = Theme.Color.success
+        checkBadge.backgroundColor = .white
+        checkBadge.layer.cornerRadius = 8
+        checkBadge.isHidden = !isSelected
+        checkBadge.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(checkBadge)
+
+        let deleteButton = UIButton(type: .system)
+        deleteButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        deleteButton.tintColor = Theme.Color.textSecondary
+        deleteButton.backgroundColor = .white
+        deleteButton.layer.cornerRadius = 9
+        deleteButton.addTarget(self, action: #selector(deleteTapped), for: .touchUpInside)
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(deleteButton)
+
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+            checkBadge.widthAnchor.constraint(equalToConstant: 16),
+            checkBadge.heightAnchor.constraint(equalToConstant: 16),
+            checkBadge.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 2),
+            checkBadge.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 2),
+
+            deleteButton.widthAnchor.constraint(equalToConstant: 18),
+            deleteButton.heightAnchor.constraint(equalToConstant: 18),
+            deleteButton.topAnchor.constraint(equalTo: topAnchor, constant: -6),
+            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 6)
+        ])
+
+        addTarget(self, action: #selector(selfTapped), for: .touchUpInside)
+    }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
+    @objc private func selfTapped() { onSelect?() }
+    @objc private func deleteTapped() { onDelete?() }
 }

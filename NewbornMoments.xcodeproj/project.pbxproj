@@ -35,6 +35,7 @@
 		64255B41CCB458031A72C72D /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772779D512D8CB2C537158FA /* Generation.swift */; };
 		6514D12AB063D387BC4E3072 /* MilestoneRemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685067C7053AEEEE40921493 /* MilestoneRemoteStore.swift */; };
 		68246C64D137059CCEC26B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14263A12F72FA64E41BBBB7 /* HomeViewController.swift */; };
+		68A62D8622F7FA020390A8DB /* RecentPhotosStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB02E08C9C5AA2AD47F4954 /* RecentPhotosStore.swift */; };
 		6AA63994F7CD7016EDAB52CD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF45AE24E1C0C8B8E2B778 /* ProfileViewController.swift */; };
 		7008CEACF2EEDCFEC6A802EF /* PassThroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D66A5C08C09C285481E160F /* PassThroughStackView.swift */; };
 		734DE0088BC50250479F9F52 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 929C927B29F36F22BCF83E9A /* FirebaseAuth */; };
@@ -120,6 +121,7 @@
 		84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		87FF1E549558C89AD18C6504 /* CoinPackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackageCell.swift; sourceTree = "<group>"; };
 		8970105EB43DB1025ACD4284 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		8BB02E08C9C5AA2AD47F4954 /* RecentPhotosStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotosStore.swift; sourceTree = "<group>"; };
 		8BBA6E1ABB064D0DE29C1680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EF681C449EB1133B79D60E1 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		8F2664D2D01E4139E4CDA43B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */,
 				685067C7053AEEEE40921493 /* MilestoneRemoteStore.swift */,
 				5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */,
+				8BB02E08C9C5AA2AD47F4954 /* RecentPhotosStore.swift */,
 				AEB5CB643C185A1C1AE7BCE3 /* RemoteImageLoader.swift */,
 				EE959EC4B4D654E0F55DFFCE /* RevenueCatService.swift */,
 				C7B4581C465A1838F53DD09E /* ThemeService.swift */,
@@ -552,6 +555,7 @@
 				02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */,
 				41ADC6222609435E4606F55B /* PlanCardView.swift in Sources */,
 				6AA63994F7CD7016EDAB52CD /* ProfileViewController.swift in Sources */,
+				68A62D8622F7FA020390A8DB /* RecentPhotosStore.swift in Sources */,
 				DF8DA5C95B7549485507D171 /* RemoteImageLoader.swift in Sources */,
 				9A213140F20F3BA2FF4AAA0C /* ResultViewController.swift in Sources */,
 				AE598B1CAD6A2E81D1FFC9E6 /* RevenueCatService.swift in Sources */,

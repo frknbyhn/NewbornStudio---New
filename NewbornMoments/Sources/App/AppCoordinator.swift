@@ -45,6 +45,17 @@ final class AppCoordinator {
                 let detail = MilestoneListDetailViewController(list: MilestoneStore.shared.lists[0])
                 window.rootViewController = UINavigationController(rootViewController: detail)
                 return
+            case "photo-upload":
+                // Screenshot-verification aid only — seeds a couple of recent photos so the
+                // "Recently Used" strip actually has content to look at.
+                if RecentPhotosStore.recentPhotos().isEmpty, let seed = UIImage(systemName: "photo.fill") {
+                    RecentPhotosStore.add(seed)
+                    RecentPhotosStore.add(seed)
+                }
+                let theme = ThemeCard(id: "demo", name: "Demo Theme", tint: UIColor(hex: 0xEBC3CC), previewImageUrl: nil)
+                let upload = PhotoUploadViewController(theme: theme)
+                window.rootViewController = UINavigationController(rootViewController: upload)
+                return
             case "creditgate":
                 let root = UIViewController()
                 root.view.backgroundColor = .white
