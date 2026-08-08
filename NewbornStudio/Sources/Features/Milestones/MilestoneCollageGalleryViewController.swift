@@ -11,9 +11,9 @@ final class MilestoneCollageGalleryViewController: UIViewController {
 
     private var hasLoadedOnce = false
     /// While at least one row is still `.generating`, polls every few seconds so this screen
-    /// updates on its own if the user just leaves it open and waits — a real push notification
-    /// (once an APNs key is configured) is the primary "it's ready" signal, this is just a
-    /// foreground nicety on top of it. Stops itself the moment nothing is generating anymore.
+    /// updates on its own if the user leaves it open and waits — this is the only "it's ready"
+    /// signal (there's no push notification), so it's the whole mechanism, not just a nicety.
+    /// Stops itself the moment nothing is generating anymore.
     private var refreshTimer: Timer?
     private static let refreshInterval: TimeInterval = 8
 
@@ -161,6 +161,21 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         return formatter
     }()
 
+    /// Rough range, not a promise — each item is one sequential Wiro animate call
+    /// (processCollageAnimationItem.js) plus a fixed ffmpeg compose/upload pass at the end
+    /// (finalizeCollageAnimation.js). Wiro's own per-call latency varies, so this is deliberately
+    /// a wide window (30–60s/item) rather than a single misleadingly-precise number.
+    private static func estimatedWaitText(itemCount: Int) -> String {
+        let lowSeconds = itemCount * 30 + 45
+        let highSeconds = itemCount * 60 + 90
+        let lowMinutes = Int(ceil(Double(lowSeconds) / 60))
+        let highMinutes = Int(ceil(Double(highSeconds) / 60))
+        if lowMinutes == highMinutes {
+            return "~\(lowMinutes) min"
+        }
+        return "~\(lowMinutes)–\(highMinutes) min"
+    }
+
     private func collageRow(for collage: MilestoneCollageStore.SavedCollage) -> UIView {
         let bg = UIView()
         bg.backgroundColor = collage.status == .failed ? UIColor(hex: 0xFCE6E6) : Theme.Color.purpleBackground
@@ -199,7 +214,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         let subtitle = UILabel()
         switch collage.status {
         case .generating:
-            subtitle.text = "Preparing… (\(collage.itemCount) clips)"
+            subtitle.text = "Preparing… (\(collage.itemCount) clips) — \(Self.estimatedWaitText(itemCount: collage.itemCount)) left"
             subtitle.textColor = Theme.Color.purpleAccent
         case .failed:
             subtitle.text = "Couldn't be created — credits refunded"

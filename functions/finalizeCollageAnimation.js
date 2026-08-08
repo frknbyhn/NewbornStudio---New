@@ -6,7 +6,6 @@ const path = require("path");
 const fs = require("fs");
 const { composeCollage, composeSingleClip } = require("./helpers/ffmpegCompose");
 const { downloadUrlFor } = require("./helpers/storage");
-const { sendCollageNotification } = require("./helpers/collageNotify");
 
 // Matches iOS's DateFormatter(.dateStyle = .medium) closely enough (e.g. "Aug 6, 2026") — the
 // same caption format the old on-device MilestoneVideoRenderer used to burn into each item.
@@ -17,7 +16,8 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "medium" });
 // uploads it to the same users/{uid}/collages/{collageId}.mp4 path the old on-device renderer
 // used to write to (so MilestoneCollageGalleryViewController/MilestoneCollageViewController need
 // no changes — they only ever cared about the Firestore doc's videoUrl, not how it got there),
-// refunds credits for any item that never produced a clip, and sends the "ready" push.
+// and refunds credits for any item that never produced a clip. There's no push notification —
+// MilestoneCollageGalleryViewController polls the Firestore doc's status field instead.
 exports.finalizeCollageAnimation = onTaskDispatched(
   // 2GiB (was 1GiB) — the xfade/acrossfade/drawtext filter graph re-encodes every frame instead
   // of the old plain concat demuxer's stream copy, meaningfully more CPU/memory per clip.
@@ -44,7 +44,6 @@ exports.finalizeCollageAnimation = onTaskDispatched(
 
     if (orderedIndexes.length === 0) {
       await collageRef.update({ status: "failed", completedAt: FieldValue.serverTimestamp() });
-      await sendCollageNotification(uid, collage.listName, false);
       return;
     }
 
@@ -89,7 +88,6 @@ exports.finalizeCollageAnimation = onTaskDispatched(
         videoUrl,
         completedAt: FieldValue.serverTimestamp(),
       });
-      await sendCollageNotification(uid, collage.listName, true);
     } catch (err) {
       console.error(`finalizeCollageAnimation failed for ${collageId}:`, err);
       // The per-item credits were already refunded above for genuinely failed items; a
@@ -100,7 +98,6 @@ exports.finalizeCollageAnimation = onTaskDispatched(
         await db.collection("users").doc(uid).update({ purchasedCredits: FieldValue.increment(succeededCount) });
       }
       await collageRef.update({ status: "failed", error: String(err.message || err), completedAt: FieldValue.serverTimestamp() });
-      await sendCollageNotification(uid, collage.listName, false);
     } finally {
       fs.rmSync(tmpDir, { recursive: true, force: true });
     }

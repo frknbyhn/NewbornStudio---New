@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Newborn Studio</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -12,8 +14,6 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
-	<key>CFBundleDisplayName</key>
-	<string>Newborn Studio</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -22,6 +22,17 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Newborn Studio needs camera access so you can take a photo of your baby to create studio-style portraits.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Newborn Studio needs permission to save your generated portraits to your photo library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Newborn Studio needs photo library access so you can choose a photo of your baby to create studio-style portraits.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Quicksand-Variable.ttf</string>
+		<string>Nunito-Variable.ttf</string>
+	</array>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
@@ -32,17 +43,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Newborn Studio needs camera access so you can take a photo of your baby to create studio-style portraits.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Newborn Studio needs photo library access so you can choose a photo of your baby to create studio-style portraits.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Newborn Studio needs permission to save your generated portraits to your photo library.</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Quicksand-Variable.ttf</string>
-		<string>Nunito-Variable.ttf</string>
 	</array>
 </dict>
 </plist>

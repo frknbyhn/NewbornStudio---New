@@ -238,14 +238,10 @@ final class MilestoneListDetailViewController: UIViewController {
     private func presentCollageStartedAlert() {
         let alert = UIAlertController(
             title: "Your Request Was Received",
-            message: "We're preparing your collage — you can check its progress anytime in My Collages. To notify you the moment it's ready, we need permission to send notifications.",
+            message: "We're preparing your collage. You can follow its progress from the My Collages screen.",
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Not Now", style: .cancel) { [weak self] _ in
-            self?.goToMyCollages()
-        })
-        alert.addAction(UIAlertAction(title: "Allow Notifications", style: .default) { [weak self] _ in
-            PushNotificationService.requestAuthorizationAndRegister()
+        alert.addAction(UIAlertAction(title: "Go to My Collages", style: .default) { [weak self] _ in
             self?.goToMyCollages()
         })
         present(alert, animated: true)
