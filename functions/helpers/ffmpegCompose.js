@@ -1,8 +1,29 @@
-const ffmpegPath = require("ffmpeg-static");
-const ffprobePath = require("ffprobe-static").path;
 const { spawn, execFile } = require("child_process");
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
+const sharp = require("sharp");
+
+// Neither obvious npm ffmpeg package actually worked for what this file needs (both confirmed
+// against real production failures, not guessed):
+//   - ffmpeg-static's Linux (Cloud Functions) build is missing libfreetype/fontconfig entirely,
+//     so drawtext (the title/date captions below) doesn't exist: every real collage's finalize
+//     step failed with "No such filter: 'drawtext'".
+//   - @ffmpeg-installer/ffmpeg's Linux binary DOES have drawtext, but it's pinned to ffmpeg
+//     4.1.0 — too old to have xfade at all (added in ffmpeg 4.3), so finalize just failed
+//     differently: "No such filter: 'xfade'".
+// bin/ffmpeg-linux-x64 (committed to this repo, not a dependency) is John Van Sickle's own
+// current "release-amd64-static" build (ffmpeg 7.0.2, https://johnvansickle.com/ffmpeg/) —
+// verified directly against the downloaded binary (not just trusted from a README) to have both
+// --enable-fontconfig --enable-libfreetype AND xfade/acrossfade before committing it. Used only
+// on Linux (i.e. always, in the real deployed function); macOS keeps using
+// @ffmpeg-installer/ffmpeg for local dev/testing, since a modern-enough full build isn't needed
+// there — local runs are just filter-graph/command sanity checks, never a stand-in for the exact
+// deployed binary (Cloud Build always reinstalls node_modules on Linux regardless).
+const ffmpegPath = os.platform() === "linux"
+  ? path.join(__dirname, "..", "bin", "ffmpeg-linux-x64")
+  : require("@ffmpeg-installer/ffmpeg").path;
+const ffprobePath = require("ffprobe-static").path;
 
 const FONT_PATH = path.join(__dirname, "..", "assets", "Quicksand-Variable.ttf");
 
@@ -33,6 +54,15 @@ async function probeHasAudio(filePath) {
   return Array.isArray(streams) && streams.length > 0;
 }
 
+async function probeVideoSize(filePath) {
+  const out = await run(ffprobePath, [
+    "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "json", filePath,
+  ]);
+  const stream = JSON.parse(out).streams && JSON.parse(out).streams[0];
+  if (!stream || !stream.width || !stream.height) throw new Error(`Could not read video dimensions for ${filePath}`);
+  return { width: stream.width, height: stream.height };
+}
+
 function runFfmpeg(args) {
   return new Promise((resolve, reject) => {
     const proc = spawn(ffmpegPath, args);
@@ -46,16 +76,40 @@ function runFfmpeg(args) {
   });
 }
 
-// ffmpeg drawtext's `text=`/`textfile=` values are filter-graph syntax, where a raw title (user
-// typed, could contain anything) would need careful escaping of `:`, `'`, `\`, `%`, newlines,
-// etc. — a real source of bugs. Writing each caption to its own tiny textfile and pointing
-// drawtext's `textfile=` at that sidesteps all of it: the ONLY thing that still needs escaping
-// is the file PATH itself inside the filter string, and since these are our own auto-generated
-// tmp paths (UUID-based, forward slashes only, no quotes/colons), that's a non-issue in practice.
-function writeCaptionFile(dir, name, text) {
-  const filePath = path.join(dir, name);
-  fs.writeFileSync(filePath, text || "", "utf8");
-  return filePath;
+// NOT ffmpeg's drawtext filter — see this file's own top-of-file note: no static ffmpeg build we
+// could find (or bundle) has both drawtext AND xfade/acrossfade at once. Captions are rendered as
+// standalone transparent PNGs via sharp's text feature instead (using our own bundled font file
+// directly, sidestepping any system-fontconfig dependency) and composited onto each clip with
+// ffmpeg's `overlay` filter — a universally-available core filter, unlike drawtext.
+//
+// `rgba: true` makes sharp treat `text` as Pango markup (allowing the `<span>` color) rather than
+// plain text, so a raw title (user-typed, could contain `<`/`&`/etc.) has to be XML-escaped first.
+function escapeMarkup(text) {
+  return String(text || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+/**
+ * Renders `text` to a standalone transparent-background PNG sized to fit within `maxWidth`px,
+ * white text, using our own bundled Quicksand font. Returns null (nothing to overlay) for empty
+ * text rather than an empty image.
+ */
+async function renderCaptionPng({ text, fontSizePx, maxWidth, outputPath }) {
+  if (!text) return null;
+  const img = sharp({
+    text: {
+      text: `<span foreground="white">${escapeMarkup(text)}</span>`,
+      fontfile: FONT_PATH,
+      font: `Quicksand Bold ${fontSizePx}`,
+      width: maxWidth,
+      rgba: true,
+      align: "center",
+    },
+  });
+  await img.png().toFile(outputPath);
+  return outputPath;
 }
 
 /**
@@ -76,26 +130,62 @@ async function composeCollage({ clips, transitionDuration = 0.5, outputPath }) {
   const durations = await Promise.all(clips.map((c) => probeDuration(c.path)));
   const audioFlags = await Promise.all(clips.map((c) => probeHasAudio(c.path)));
   const allHaveAudio = audioFlags.every(Boolean);
+  const sizes = await Promise.all(clips.map((c) => probeVideoSize(c.path)));
 
   const inputArgs = [];
   clips.forEach((c) => inputArgs.push("-i", c.path));
 
+  // Per-clip caption PNGs (title + optional date), rendered relative to that clip's own
+  // dimensions (same ratios the old drawtext fontsize=h*0.058/h*0.036 used) — each becomes its
+  // own extra ffmpeg input, appended after all the clip inputs so clip-input indices stay
+  // 0..clips.length-1 as everything below (the xfade/acrossfade chain) already assumes.
+  const captionInputs = []; // { index, kind: "title" | "date", clipIndex }
+  for (let i = 0; i < clips.length; i++) {
+    const { width, height } = sizes[i];
+    const titlePath = await renderCaptionPng({
+      text: clips[i].title,
+      fontSizePx: Math.round(height * 0.058),
+      maxWidth: Math.round(width * 0.85),
+      outputPath: path.join(tmpDir, `title_${i}.png`),
+    });
+    if (titlePath) {
+      inputArgs.push("-i", titlePath);
+      captionInputs.push({ index: clips.length + captionInputs.length, kind: "title", clipIndex: i });
+    }
+    const datePath = await renderCaptionPng({
+      text: clips[i].dateText,
+      fontSizePx: Math.round(height * 0.036),
+      maxWidth: Math.round(width * 0.85),
+      outputPath: path.join(tmpDir, `date_${i}.png`),
+    });
+    if (datePath) {
+      inputArgs.push("-i", datePath);
+      captionInputs.push({ index: clips.length + captionInputs.length, kind: "date", clipIndex: i });
+    }
+  }
+
   const filterParts = [];
 
-  // Per-clip caption: a dark scrim across the bottom ~24% of the frame, title + date drawn over
-  // it — same idea as the old renderer's gradient scrim + two-line caption, just a flat
+  // Per-clip caption: a dark scrim across the bottom ~24% of the frame, title + date overlaid on
+  // top of it — same idea as the old renderer's gradient scrim + two-line caption, just a flat
   // semi-transparent band here since ffmpeg doesn't have an easy true-gradient primitive.
   clips.forEach((clip, i) => {
-    const titleFile = writeCaptionFile(tmpDir, `title_${i}.txt`, clip.title);
-    const dateFile = writeCaptionFile(tmpDir, `date_${i}.txt`, clip.dateText);
-    const captionFilter =
-      `[${i}:v]drawbox=x=0:y=ih-0.24*ih:w=iw:h=0.24*ih:color=black@0.45:t=fill,` +
-      `drawtext=textfile='${titleFile}':fontfile='${FONT_PATH}':fontsize=h*0.058:fontcolor=white:x=(w-text_w)/2:y=h-0.165*h` +
-      (clip.dateText
-        ? `,drawtext=textfile='${dateFile}':fontfile='${FONT_PATH}':fontsize=h*0.036:fontcolor=white@0.85:x=(w-text_w)/2:y=h-0.09*h`
-        : "") +
-      `[v${i}]`;
-    filterParts.push(captionFilter);
+    const title = captionInputs.find((c) => c.clipIndex === i && c.kind === "title");
+    const date = captionInputs.find((c) => c.clipIndex === i && c.kind === "date");
+    let label = `db${i}`;
+    filterParts.push(`[${i}:v]drawbox=x=0:y=ih-0.24*ih:w=iw:h=0.24*ih:color=black@0.45:t=fill[${label}]`);
+    if (title) {
+      const next = `t${i}`;
+      filterParts.push(`[${label}][${title.index}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.79[${next}]`);
+      label = next;
+    }
+    if (date) {
+      const next = `v${i}`;
+      filterParts.push(`[${label}][${date.index}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.885[${next}]`);
+      label = next;
+    } else if (label !== `v${i}`) {
+      filterParts.push(`[${label}]null[v${i}]`);
+    }
   });
 
   // Video crossfade chain — xfade's `offset` is where in the RUNNING OUTPUT timeline (not the
@@ -145,16 +235,51 @@ async function composeCollage({ clips, transitionDuration = 0.5, outputPath }) {
  */
 async function composeSingleClip(clip, outputPath) {
   const tmpDir = path.dirname(outputPath);
-  const titleFile = writeCaptionFile(tmpDir, "title_0.txt", clip.title);
-  const dateFile = writeCaptionFile(tmpDir, "date_0.txt", clip.dateText);
-  const filter =
-    `drawbox=x=0:y=ih-0.24*ih:w=iw:h=0.24*ih:color=black@0.45:t=fill,` +
-    `drawtext=textfile='${titleFile}':fontfile='${FONT_PATH}':fontsize=h*0.058:fontcolor=white:x=(w-text_w)/2:y=h-0.165*h` +
-    (clip.dateText
-      ? `,drawtext=textfile='${dateFile}':fontfile='${FONT_PATH}':fontsize=h*0.036:fontcolor=white@0.85:x=(w-text_w)/2:y=h-0.09*h`
-      : "");
+  const { width, height } = await probeVideoSize(clip.path);
+  const titlePath = await renderCaptionPng({
+    text: clip.title,
+    fontSizePx: Math.round(height * 0.058),
+    maxWidth: Math.round(width * 0.85),
+    outputPath: path.join(tmpDir, "title_0.png"),
+  });
+  const datePath = await renderCaptionPng({
+    text: clip.dateText,
+    fontSizePx: Math.round(height * 0.036),
+    maxWidth: Math.round(width * 0.85),
+    outputPath: path.join(tmpDir, "date_0.png"),
+  });
+
+  const inputArgs = ["-i", clip.path];
+  const filterParts = ["[0:v]drawbox=x=0:y=ih-0.24*ih:w=iw:h=0.24*ih:color=black@0.45:t=fill[db0]"];
+  let label = "db0";
+  let nextInputIndex = 1;
+  if (titlePath) {
+    inputArgs.push("-i", titlePath);
+    filterParts.push(`[${label}][${nextInputIndex}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.79[t0]`);
+    label = "t0";
+    nextInputIndex++;
+  }
+  if (datePath) {
+    inputArgs.push("-i", datePath);
+    filterParts.push(`[${label}][${nextInputIndex}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.885[vout]`);
+    label = "vout";
+    nextInputIndex++;
+  } else {
+    filterParts.push(`[${label}]null[vout]`);
+  }
+
   const hasAudio = await probeHasAudio(clip.path);
-  await runFfmpeg(["-y", "-i", clip.path, "-vf", filter, "-c:v", "libx264", "-pix_fmt", "yuv420p", ...(hasAudio ? ["-c:a", "copy"] : []), outputPath]);
+  await runFfmpeg([
+    "-y",
+    ...inputArgs,
+    "-filter_complex", filterParts.join(";"),
+    "-map", "[vout]",
+    ...(hasAudio ? ["-map", "0:a"] : []),
+    "-c:v", "libx264",
+    "-pix_fmt", "yuv420p",
+    ...(hasAudio ? ["-c:a", "copy"] : []),
+    outputPath,
+  ]);
 }
 
 /**
