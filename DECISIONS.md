@@ -23,18 +23,20 @@
 - **Milestone Tracker is private-only** — never shared with other users, no social/discover layer anywhere in the app.
 
 ## Monetization (RevenueCat + credits)
-Existing ASC products for `com.NewbornStudio` (pulled via `ascelerate sub/iap pricing show`, prices below are USA base):
-- Subscription tiers (group "Newborn Studio Premium Group"):
-  - Weekly `com.newborn.weekly` — **$4.99/week**, grants 10 credits/week.
-  - Monthly `com.newborn.monthly` — **$14.99/month**, grants 50 credits/month. **Does not exist in ASC yet — create in Phase 7/9.**
-  - Yearly `com.newborn.yearly` — **$49.99/year**, grants 500 credits/year.
-- Consumable credit packs (all `Approved` state already):
-  - Small `com.newborn.small` — **$3.99** — 5 credits
-  - Limited `com.newborn.limited` — **$6.99** — 25 credits
-  - Medium `com.newborn.medium` — **$9.99** — 15 credits
-  - Big `com.newborn.big` — **$19.99** — 50 credits
+`com.NewbornStudio`'s products (old app) are the reference — same 7 product IDs re-created under `com.BabyCollages` (new app, "Newborn Moments") 2026-08-08 via `ascelerate`, mirroring the old app's prices/credit grants (which still match `functions/helpers/purchaseGrants.js`, the real source of truth for grant amounts):
+- Subscription group "Newborn Moments Premium" (group level 1 for all three — duration variants of the same access, not feature tiers):
+  - Weekly `com.babycollages.weekly` — **$4.99/week** target price, grants 10 credits/week.
+  - Monthly `com.babycollages.monthly` — **$14.99/month** target price, grants 50 credits/month.
+  - Yearly `com.babycollages.yearly` — **$49.99/year** target price, grants 500 credits/year.
+  - **Created + en-GB localized (name/description) via API, but pricing is NOT set yet** — `ascelerate sub pricing set` 409s for every territory on this app (same known gate hit on the old app's `com.newborn.monthly`, see the old note this replaced). Root cause still unconfirmed; workaround is the ASC web UI (Distribution → the subscription → Availability, enter $4.99/$14.99/$49.99 in USA, let Apple auto-equalize the rest). **Human gate — needs doing before these can be submitted.**
+- Consumable credit packs — created, en-GB localized, **and priced successfully via the API** (no gate hit for consumables):
+  - Small `com.babycollages.small` — **$3.99** — 5 credits
+  - Limited `com.babycollages.limited` — **$6.99** — 25 credits
+  - Medium `com.babycollages.medium` — **$9.99** — 15 credits
+  - Big `com.babycollages.big` — **$19.99** — 50 credits
 - Credit-to-cost unit economics not yet computed against Wiro's per-call cost — do before finalizing whether these prices hold (playbook cost-section rule: `credit_cost = ceil(cost_USD / 0.01)`).
-- ASC API key in use: keyId `YC2YC44RMZ`, issuerId `1aba5c58-f408-4036-b737-5a6c226d821e` (`~/.ascelerate/config.json`).
+- Still needed after pricing: attach all 7 products to RevenueCat (app `app68c2b2ac6d`, entitlement `newborn`, packages in the `newborn` offering) — RevenueCat still shows zero products for the new app as of this pass. Also: localizing IAP/subscription name+description into the other 32 languages (only en-GB done so far) — not started, ask before doing all of it (lots of ground, same shape as the earlier ASC-metadata pass).
+- ASC API key in use: keyId `YC2YC44RMZ`, issuerId `1aba5c58-f408-4036-b737-5a6c226d821e` (`~/.ascelerate/config.json`). `ascelerate` alias `newborn` → `com.BabyCollages`.
 
 ## Xcode project tooling
 - Project generated with **XcodeGen** from `project.yml` (the Swift equivalent of `flutter create` for automation) — no manual Xcode GUI project setup. Regenerate with `xcodegen generate` after any `project.yml` change; don't hand-edit the `.xcodeproj`.
