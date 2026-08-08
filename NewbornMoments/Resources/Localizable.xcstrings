@@ -172,6 +172,18 @@
             "state": "translated",
             "value": "%@ / 週"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / สัปดาห์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / सप्ताह"
+          }
         }
       }
     },
@@ -345,6 +357,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "%d 枚金幣"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d เหรียญ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d सिक्के"
           }
         }
       }
@@ -520,6 +544,18 @@
             "state": "translated",
             "value": "%d 枚金幣 · %@"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d เหรียญ · %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d सिक्के · %@"
+          }
         }
       }
     },
@@ -693,6 +729,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "%d 積分"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d เครดิต"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d क्रेडिट"
           }
         }
       }
@@ -868,6 +916,18 @@
             "state": "translated",
             "value": "1 積分"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 เครดิต"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 क्रेडिट"
+          }
         }
       }
     },
@@ -1041,6 +1101,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "10 積分 / 週"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 เครดิต / สัปดาห์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 क्रेडिट / सप्ताह"
           }
         }
       }
@@ -1216,6 +1288,18 @@
             "state": "translated",
             "value": "50 積分 / 月"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 เครดิต / เดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 क्रेडिट / माह"
+          }
         }
       }
     },
@@ -1389,6 +1473,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "500 積分 / 年"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 เครดิต / ปี"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 क्रेडिट / वर्ष"
           }
         }
       }
@@ -1564,6 +1660,18 @@
             "state": "translated",
             "value": "專屬特別優惠，僅為您準備"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้อเสนอพิเศษ เฉพาะสำหรับคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके लिए एक खास ऑफ़र"
+          }
         }
       }
     },
@@ -1737,6 +1845,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "AI 寶寶照相館"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สตูดิโอถ่ายภาพลูกน้อยด้วย AI"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI बेबी फोटो स्टूडियो"
           }
         }
       }
@@ -1912,6 +2032,18 @@
             "state": "translated",
             "value": "AI 生成的工作室肖像，涵蓋數十種夢幻主題——只需一張照片即可建立。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ภาพเหมือนสไตล์สตูดิโอที่สร้างด้วย AI ในธีมแสนฝันหลายสิบแบบ — สร้างจากภาพถ่ายเพียงภาพเดียว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दर्जनों सपनों जैसी थीम में AI-जनित स्टूडियो पोर्ट्रेट — सिर्फ़ एक फोटो से बनाए गए।"
+          }
         }
       }
     },
@@ -2085,6 +2217,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "新增"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพิ่ม"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जोड़ें"
           }
         }
       }
@@ -2260,6 +2404,18 @@
             "state": "translated",
             "value": "新增列表"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพิ่มรายการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सूची जोड़ें"
+          }
         }
       }
     },
@@ -2433,6 +2589,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "新增里程碑"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพิ่มพัฒนาการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइलस्टोन जोड़ें"
           }
         }
       }
@@ -2608,6 +2776,18 @@
             "state": "translated",
             "value": "新增照片"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพิ่มรูปภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोटो जोड़ें"
+          }
         }
       }
     },
@@ -2781,6 +2961,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "為這一刻新增一張照片"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพิ่มรูปภาพสำหรับช่วงเวลานี้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस पल के लिए एक फोटो जोड़ें"
           }
         }
       }
@@ -2956,6 +3148,18 @@
             "state": "translated",
             "value": "新增照片以開始"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพิ่มรูปภาพเพื่อเริ่มต้น"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शुरू करने के लिए एक फोटो जोड़ें"
+          }
         }
       }
     },
@@ -3129,6 +3333,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在新增您的音樂"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังเพิ่มเพลงของคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका संगीत जोड़ा जा रहा है"
           }
         }
       }
@@ -3304,6 +3520,18 @@
             "state": "translated",
             "value": "正在新增音樂…"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังเพิ่มเพลง…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संगीत जोड़ा जा रहा है…"
+          }
         }
       }
     },
@@ -3477,6 +3705,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在應用工作室燈光…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังปรับใช้แสงสตูดิโอ…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्टूडियो लाइटिंग लागू की जा रही है…"
           }
         }
       }
@@ -3652,6 +3892,18 @@
             "state": "translated",
             "value": "請在設定中允許訪問照片相簿以儲存影片。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อนุญาตการเข้าถึงคลังภาพในการตั้งค่าเพื่อบันทึกวิดีโอ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वीडियो सहेजने के लिए सेटिंग्स में फोटो लाइब्रेरी एक्सेस की अनुमति दें।"
+          }
         }
       }
     },
@@ -3825,6 +4077,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "動畫化肖像"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ทำให้ภาพเหมือนเคลื่อนไหว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पोर्ट्रेट को एनिमेट करें"
           }
         }
       }
@@ -4000,6 +4264,18 @@
             "state": "translated",
             "value": "正在應用您的編輯"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังปรับใช้การแก้ไขของคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका संपादन लागू किया जा रहा है"
+          }
         }
       }
     },
@@ -4173,6 +4449,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "宇航員、仙女、小廚師等等——每次都是全新的工作室。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "นักบินอวกาศ นางฟ้า เชฟตัวน้อย และอื่นๆ อีกมากมาย — สตูดิโอใหม่ทั้งหมดในทุกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अंतरिक्ष यात्री, परी, छोटा शेफ और भी बहुत कुछ — हर बार एक बिल्कुल नया स्टूडियो।"
           }
         }
       }
@@ -4348,6 +4636,18 @@
             "state": "translated",
             "value": "大禮包"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แพ็กใหญ่"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बड़ा पैक"
+          }
         }
       }
     },
@@ -4521,6 +4821,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在混合主題…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังผสมธีม…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "थीम मिलाई जा रही है…"
           }
         }
       }
@@ -4696,6 +5008,18 @@
             "state": "translated",
             "value": "身體"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ร่างกาย"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शरीर"
+          }
         }
       }
     },
@@ -4869,6 +5193,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "明亮均勻的光線"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แสงสว่างสม่ำเสมอ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चमकीली, एकसमान रोशनी"
           }
         }
       }
@@ -5044,6 +5380,18 @@
             "state": "translated",
             "value": "取消"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยกเลิก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रद्द करें"
+          }
         }
       }
     },
@@ -5217,6 +5565,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "在一個地方記錄每一個里程碑"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกทุกพัฒนาการไว้ในที่เดียว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर माइलस्टोन को एक ही जगह कैद करें"
           }
         }
       }
@@ -5392,6 +5752,18 @@
             "state": "translated",
             "value": "已記錄"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैद किया गया"
+          }
         }
       }
     },
@@ -5565,6 +5937,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "慶祝活動"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การเฉลิมฉลอง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उत्सव"
           }
         }
       }
@@ -5740,6 +6124,18 @@
             "state": "translated",
             "value": "更換照片"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เปลี่ยนรูปภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोटो बदलें"
+          }
         }
       }
     },
@@ -5913,6 +6309,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "從相簿選擇"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เลือกจากคลังภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गैलरी से चुनें"
           }
         }
       }
@@ -6088,6 +6496,18 @@
             "state": "translated",
             "value": "領取 %d 枚金幣"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รับ %d เหรียญ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d सिक्के प्राप्त करें"
+          }
         }
       }
     },
@@ -6261,6 +6681,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "領取優惠"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ใช้ข้อเสนอ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऑफ़र का लाभ उठाएं"
           }
         }
       }
@@ -6436,6 +6868,18 @@
             "state": "translated",
             "value": "關閉此提示，它將永遠消失。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ปิดสิ่งนี้แล้วมันจะหายไปตลอดกาล"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसे बंद करें और यह हमेशा के लिए चला जाएगा।"
+          }
         }
       }
     },
@@ -6609,6 +7053,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "溝通"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การสื่อสาร"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संचार"
           }
         }
       }
@@ -6784,6 +7240,18 @@
             "state": "translated",
             "value": "繼續"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ดำเนินการต่อ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जारी रखें"
+          }
         }
       }
     },
@@ -6957,6 +7425,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "咕咕聲與咿呀學語"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ส่งเสียงอ้อแอ้และพูดเสียงเบา ๆ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गुनगुनाना और बड़बड़ाना"
           }
         }
       }
@@ -7132,6 +7612,18 @@
             "state": "translated",
             "value": "無法動畫化此肖像"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถทำให้ภาพเหมือนนี้เคลื่อนไหวได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस पोर्ट्रेट को एनिमेट नहीं किया जा सका"
+          }
         }
       }
     },
@@ -7305,6 +7797,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "無法刪除"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถลบได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हटाया नहीं जा सका"
           }
         }
       }
@@ -7480,6 +7984,18 @@
             "state": "translated",
             "value": "無法儲存"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถบันทึกได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सहेजा नहीं जा सका"
+          }
         }
       }
     },
@@ -7653,6 +8169,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "無法開始播放音樂"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถเริ่มเพลงได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संगीत शुरू नहीं किया जा सका"
           }
         }
       }
@@ -7828,6 +8356,18 @@
             "state": "translated",
             "value": "無法建立 — 積分已退還"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถสร้างได้ — คืนเครดิตแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बनाया नहीं जा सका — क्रेडिट वापस कर दिए गए"
+          }
         }
       }
     },
@@ -8001,6 +8541,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "無法檢查您的積分"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถตรวจสอบเครดิตของคุณได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके क्रेडिट जांचे नहीं जा सके"
           }
         }
       }
@@ -8176,6 +8728,18 @@
             "state": "translated",
             "value": "無法建立您的肖像"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถสร้างภาพเหมือนของคุณได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका पोर्ट्रेट नहीं बनाया जा सका"
+          }
         }
       }
     },
@@ -8349,6 +8913,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "無法載入金幣禮包。請檢查您的連線並重試。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถโหลดแพ็กเหรียญได้ กรุณาตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सिक्का पैक लोड नहीं हो सके। अपना कनेक्शन जांचें और फिर से कोशिश करें।"
           }
         }
       }
@@ -8524,6 +9100,18 @@
             "state": "translated",
             "value": "無法載入訂閱方案。請檢查您的連線並重試。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถโหลดแพ็กเกจได้ กรุณาตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्लान लोड नहीं हो सके। अपना कनेक्शन जांचें और फिर से कोशिश करें।"
+          }
         }
       }
     },
@@ -8697,6 +9285,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "無法恢復購買"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถกู้คืนการซื้อได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खरीदारी पुनर्स्थापित नहीं हो सकी"
           }
         }
       }
@@ -8872,6 +9472,18 @@
             "state": "translated",
             "value": "正在建立“%@”主題"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังสร้างธีม “%@”"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” थीम बनाई जा रही है"
+          }
         }
       }
     },
@@ -9045,6 +9657,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在爬行"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คลาน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रेंगना"
           }
         }
       }
@@ -9220,6 +9844,18 @@
             "state": "translated",
             "value": "建立"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้าง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बनाएं"
+          }
         }
       }
     },
@@ -9393,6 +10029,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "建立拼貼"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างคอลลาจ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोलाज बनाएं"
           }
         }
       }
@@ -9568,6 +10216,18 @@
             "state": "translated",
             "value": "要建立拼貼影片嗎？"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างวิดีโอคอลลาจหรือไม่?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोलाज वीडियो बनाएं?"
+          }
         }
       }
     },
@@ -9741,6 +10401,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "建立您自己的風格"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างสไตล์ของคุณเอง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपनी खुद की स्टाइल बनाएं"
           }
         }
       }
@@ -9916,6 +10588,18 @@
             "state": "translated",
             "value": "積分永不過期"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เครดิตไม่มีวันหมดอายุ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "क्रेडिट कभी समाप्त नहीं होते"
+          }
         }
       }
     },
@@ -10089,6 +10773,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "自定義風格"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สไตล์กำหนดเอง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कस्टम स्टाइल"
           }
         }
       }
@@ -10264,6 +10960,18 @@
             "state": "translated",
             "value": "刪除"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลบ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हटाएं"
+          }
         }
       }
     },
@@ -10437,6 +11145,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "刪除已記錄的里程碑？"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลบพัฒนาการที่บันทึกไว้หรือไม่?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैद किया गया माइलस्टोन हटाएं?"
           }
         }
       }
@@ -10612,6 +11332,18 @@
             "state": "translated",
             "value": "刪除里程碑"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลบพัฒนาการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइलस्टोन हटाएं"
+          }
         }
       }
     },
@@ -10785,6 +11517,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "刪除此拼貼？"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลบคอลลาจนี้หรือไม่?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस कोलाज को हटाएं?"
           }
         }
       }
@@ -10960,6 +11704,18 @@
             "state": "translated",
             "value": "刪除此里程碑？"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลบพัฒนาการนี้หรือไม่?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस माइलस्टोन को हटाएं?"
+          }
         }
       }
     },
@@ -11133,6 +11889,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "描述一個想法——我們將把它變為現實"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อธิบายไอเดีย — เราจะทำให้มันเป็นจริง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक विचार बताएं — हम उसे जीवंत करेंगे"
           }
         }
       }
@@ -11308,6 +12076,18 @@
             "state": "translated",
             "value": "描述音樂"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อธิบายเพลง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संगीत का वर्णन करें"
+          }
         }
       }
     },
@@ -11481,6 +12261,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "描述音樂——例如“柔和、夢幻的鋼琴搖籃曲，溫暖而柔情”"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อธิบายเพลง — เช่น “เพลงกล่อมเด็กจากเปียโนที่นุ่มนวล แสนฝัน อบอุ่นและอ่อนโยน”"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संगीत का वर्णन करें — उदा. “नरम, सपनों जैसी पियानो लोरी, गर्म और कोमल”"
           }
         }
       }
@@ -11656,6 +12448,18 @@
             "state": "translated",
             "value": "描述您的想法"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อธิบายไอเดียของคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना विचार बताएं"
+          }
         }
       }
     },
@@ -11829,6 +12633,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "完成！"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เสร็จสิ้น!"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हो गया!"
           }
         }
       }
@@ -12004,6 +12820,18 @@
             "state": "translated",
             "value": "數十種夢幻主題等您探索"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ธีมแสนฝันหลายสิบแบบให้สำรวจ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खोजने के लिए दर्जनों सपनों जैसी थीम"
+          }
         }
       }
     },
@@ -12177,6 +13005,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "八個月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แปดเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आठ महीने"
           }
         }
       }
@@ -12352,6 +13192,18 @@
             "state": "translated",
             "value": "十一個月"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สิบเอ็ดเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ग्यारह महीने"
+          }
         }
       }
     },
@@ -12525,6 +13377,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "繁體中文"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไทย"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हिन्दी"
           }
         }
       }
@@ -12700,6 +13564,18 @@
             "state": "translated",
             "value": "目前繁體中文是唯一可用的語言。更多語言即將推出。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ขณะนี้ภาษาไทยเป็นภาษาเดียวที่ใช้ได้ จะมีภาษาเพิ่มเติมเร็ว ๆ นี้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फिलहाल हिन्दी ही एकमात्र उपलब्ध भाषा है। जल्द ही और भाषाएं आएंगी।"
+          }
         }
       }
     },
@@ -12873,6 +13749,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "簡要描述您希望這段音樂聽起來是什麼樣的。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อธิบายสั้น ๆ ว่าคุณต้องการให้เพลงฟังดูเป็นอย่างไร"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संक्षेप में बताएं कि आप ट्रैक को कैसा सुनना चाहते हैं।"
           }
         }
       }
@@ -13048,6 +13936,18 @@
             "state": "translated",
             "value": "建立永恆回憶所需的一切。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ทุกสิ่งที่คุณต้องการเพื่อสร้างความทรงจำตลอดไป"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हमेशा के लिए यादें बनाने के लिए आपको जो कुछ भी चाहिए, वह सब कुछ।"
+          }
         }
       }
     },
@@ -13221,6 +14121,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "面部清晰可見"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เห็นใบหน้าชัดเจน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चेहरा स्पष्ट रूप से दिखाई दे रहा है"
           }
         }
       }
@@ -13396,6 +14308,18 @@
             "state": "translated",
             "value": "收藏夾"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายการโปรด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पसंदीदा"
+          }
         }
       }
     },
@@ -13569,6 +14493,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "最後的潤色…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การปรับแต่งขั้นสุดท้าย…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अंतिम छुअन…"
           }
         }
       }
@@ -13744,6 +14680,18 @@
             "state": "translated",
             "value": "第一次洗澡"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การอาบน้ำครั้งแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहला स्नान"
+          }
         }
       }
     },
@@ -13917,6 +14865,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "第一個生日"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "วันเกิดแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहला जन्मदिन"
           }
         }
       }
@@ -14092,6 +15052,18 @@
             "state": "translated",
             "value": "第一次理髮"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การตัดผมครั้งแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहली बाल कटवाई"
+          }
         }
       }
     },
@@ -14265,6 +15237,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "第一個節日季"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เทศกาลแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहला त्योहारी मौसम"
           }
         }
       }
@@ -14440,6 +15424,18 @@
             "state": "translated",
             "value": "第一次大笑"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เสียงหัวเราะครั้งแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहली हंसी"
+          }
         }
       }
     },
@@ -14613,6 +15609,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "第一次外出"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การออกไปเที่ยวครั้งแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहली सैर"
           }
         }
       }
@@ -14788,6 +15796,18 @@
             "state": "translated",
             "value": "第一次微笑"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รอยยิ้มแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहली मुस्कान"
+          }
         }
       }
     },
@@ -14961,6 +15981,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "第一次邁步"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ก้าวแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहला कदम"
           }
         }
       }
@@ -15136,6 +16168,18 @@
             "state": "translated",
             "value": "第一張工作室肖像"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ภาพเหมือนสไตล์สตูดิโอแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहला स्टूडियो पोर्ट्रेट"
+          }
         }
       }
     },
@@ -15309,6 +16353,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "第一顆牙齒"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ฟันซี่แรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहला दांत"
           }
         }
       }
@@ -15484,6 +16540,18 @@
             "state": "translated",
             "value": "第一次"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ครั้งแรก ๆ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहली बार"
+          }
         }
       }
     },
@@ -15657,6 +16725,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "五個月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ห้าเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पांच महीने"
           }
         }
       }
@@ -15832,6 +16912,18 @@
             "state": "translated",
             "value": "以獲得最佳效果"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพื่อผลลัพธ์ที่ดีที่สุด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सर्वोत्तम परिणामों के लिए"
+          }
         }
       }
     },
@@ -16005,6 +17097,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "四個月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สี่เดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चार महीने"
           }
         }
       }
@@ -16180,6 +17284,18 @@
             "state": "translated",
             "value": "相簿"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คลังภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गैलरी"
+          }
         }
       }
     },
@@ -16353,6 +17469,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "生成"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้าง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जनरेट करें"
           }
         }
       }
@@ -16528,6 +17656,18 @@
             "state": "translated",
             "value": "生成並儲存"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างและบันทึก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जनरेट करें और सहेजें"
+          }
         }
       }
     },
@@ -16701,6 +17841,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "生成音樂"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างเพลง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संगीत जनरेट करें"
           }
         }
       }
@@ -16876,6 +18028,18 @@
             "state": "translated",
             "value": "生成肖像"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างภาพเหมือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पोर्ट्रेट जनरेट करें"
+          }
         }
       }
     },
@@ -17049,6 +18213,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "生成您的第一張工作室肖像，它將顯示在這裡。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างภาพเหมือนสไตล์สตูดิโอแรกของคุณ แล้วมันจะปรากฏที่นี่"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना पहला स्टूडियो पोर्ट्रेट जनरेट करें, यह यहां दिखाई देगा।"
           }
         }
       }
@@ -17224,6 +18400,18 @@
             "state": "translated",
             "value": "開始使用"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เริ่มต้นใช้งาน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शुरू करें"
+          }
         }
       }
     },
@@ -17397,6 +18585,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "為您的列表命名。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตั้งชื่อรายการของคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपनी सूची को एक नाम दें।"
           }
         }
       }
@@ -17572,6 +18772,18 @@
             "state": "translated",
             "value": "前往里程碑相簿"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไปที่คลังภาพพัฒนาการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइलस्टोन गैलरी पर जाएं"
+          }
         }
       }
     },
@@ -17745,6 +18957,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "前往我的拼貼"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไปที่คอลลาจของฉัน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मेरे कोलाज पर जाएं"
           }
         }
       }
@@ -17920,6 +19144,18 @@
             "state": "translated",
             "value": "在計時器結束前搶購此禮包。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รีบรับแพ็กนี้ก่อนหมดเวลา"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "समय खत्म होने से पहले यह पैक प्राप्त करें।"
+          }
         }
       }
     },
@@ -18093,6 +19329,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "成長與運動技能"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การเจริญเติบโตและทักษะการเคลื่อนไหว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विकास और मोटर कौशल"
           }
         }
       }
@@ -18268,6 +19516,18 @@
             "state": "translated",
             "value": "歷史記錄"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ประวัติ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इतिहास"
+          }
         }
       }
     },
@@ -18441,6 +19701,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "抬頭挺胸"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ชูศีรษะตั้งตรง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सिर सीधा रखता है"
           }
         }
       }
@@ -18616,6 +19888,18 @@
             "state": "translated",
             "value": "首頁"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หน้าหลัก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "होम"
+          }
         }
       }
     },
@@ -18789,6 +20073,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "JPG 或 PNG，最大 10 MB"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG หรือ PNG ขนาดสูงสุด 10 MB"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG या PNG, 10 MB तक"
           }
         }
       }
@@ -18964,6 +20260,18 @@
             "state": "translated",
             "value": "為每個值得紀念的時刻建一個列表"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายการสำหรับทุกช่วงเวลาที่ควรค่าแก่การจดจำ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "याद रखने लायक हर पल के लिए एक सूची"
+          }
         }
       }
     },
@@ -19137,6 +20445,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "最後機會"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โอกาสสุดท้าย"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आखिरी मौका"
           }
         }
       }
@@ -19312,6 +20632,18 @@
             "state": "translated",
             "value": "限時優惠"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้อเสนอมีเวลาจำกัด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सीमित समय का ऑफ़र"
+          }
         }
       }
     },
@@ -19485,6 +20817,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "語言"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ภาษา"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "भाषा"
           }
         }
       }
@@ -19660,6 +21004,18 @@
             "state": "translated",
             "value": "最後更新：2026 年 8 月"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อัปเดตล่าสุด: สิงหาคม 2026"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अंतिम अपडेट: अगस्त 2026"
+          }
         }
       }
     },
@@ -19833,6 +21189,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "限時優惠"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้อเสนอมีเวลาจำกัด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सीमित समय का ऑफ़र"
           }
         }
       }
@@ -20008,6 +21376,18 @@
             "state": "translated",
             "value": "列表"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सूची"
+          }
         }
       }
     },
@@ -20181,6 +21561,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "最受歡迎"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยอดนิยมที่สุด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सबसे लोकप्रिय"
           }
         }
       }
@@ -20356,6 +21748,18 @@
             "state": "translated",
             "value": "中禮包"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แพ็กกลาง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मध्यम पैक"
+          }
         }
       }
     },
@@ -20529,6 +21933,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "里程碑"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "พัฒนาการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइलस्टोन"
           }
         }
       }
@@ -20704,6 +22120,18 @@
             "state": "translated",
             "value": "里程碑已記錄！"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกพัฒนาการแล้ว!"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइलस्टोन कैद किया गया!"
+          }
         }
       }
     },
@@ -20877,6 +22305,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "里程碑"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "พัฒนาการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइलस्टोन"
           }
         }
       }
@@ -21052,6 +22492,18 @@
             "state": "translated",
             "value": "按月"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मासिक"
+          }
         }
       }
     },
@@ -21225,6 +22677,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "檢測到多張面孔"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตรวจพบหลายใบหน้า"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कई चेहरे पहचाने गए"
           }
         }
       }
@@ -21400,6 +22864,18 @@
             "state": "translated",
             "value": "我的拼貼"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คอลลาจของฉัน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मेरे कोलाज"
+          }
         }
       }
     },
@@ -21574,6 +23050,18 @@
             "state": "translated",
             "value": "我的創作"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ผลงานสร้างสรรค์ของฉัน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मेरी रचनाएं"
+          }
         }
       }
     },
@@ -21744,6 +23232,18 @@
           }
         },
         "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "hi": {
           "stringUnit": {
             "state": "translated",
             "value": "NEWBORN PRO"
@@ -21922,6 +23422,18 @@
             "state": "translated",
             "value": "新建列表"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายการใหม่"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नई सूची"
+          }
         }
       }
     },
@@ -22095,6 +23607,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "新里程碑"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "พัฒนาการใหม่"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नया माइलस्टोन"
           }
         }
       }
@@ -22270,6 +23794,18 @@
             "state": "translated",
             "value": "新生兒"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ทารกแรกเกิด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नवजात"
+          }
         }
       }
     },
@@ -22440,6 +23976,18 @@
           }
         },
         "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "hi": {
           "stringUnit": {
             "state": "translated",
             "value": "Newborn Moments"
@@ -22618,6 +24166,18 @@
             "state": "translated",
             "value": "下一步"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ถัดไป"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगला"
+          }
         }
       }
     },
@@ -22791,6 +24351,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "九個月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เก้าเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नौ महीने"
           }
         }
       }
@@ -22966,6 +24538,18 @@
             "state": "translated",
             "value": "未檢測到面孔"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่พบใบหน้า"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई चेहरा नहीं पहचाना गया"
+          }
         }
       }
     },
@@ -23139,6 +24723,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "未找到此賬戶的有效購買記錄。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่พบการซื้อที่ใช้งานอยู่สำหรับบัญชีนี้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस खाते के लिए कोई सक्रिय खरीदारी नहीं मिली।"
           }
         }
       }
@@ -23314,6 +24910,18 @@
             "state": "translated",
             "value": "暫無拼貼 — 在列表中記錄至少 5 個里程碑，然後點按“建立拼貼”。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่มีคอลลาจ — บันทึกพัฒนาการอย่างน้อย 5 รายการในรายการหนึ่ง จากนั้นแตะ “สร้างคอลลาจ”"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी तक कोई कोलाज नहीं — एक सूची में कम से कम 5 माइलस्टोन कैद करें, फिर “कोलाज बनाएं” पर टैप करें।"
+          }
         }
       }
     },
@@ -23487,6 +25095,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "暫無收藏"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่มีรายการโปรด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी तक कोई पसंदीदा नहीं"
           }
         }
       }
@@ -23662,6 +25282,18 @@
             "state": "translated",
             "value": "無濾鏡或大幅編輯"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่มีฟิลเตอร์หรือการแก้ไขหนัก ๆ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई फ़िल्टर या भारी संपादन नहीं"
+          }
         }
       }
     },
@@ -23835,6 +25467,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "暫無里程碑 — 在下方新增第一個。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่มีพัฒนาการ — เพิ่มรายการแรกของคุณด้านล่าง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी तक कोई माइलस्टोन नहीं — नीचे अपना पहला जोड़ें।"
           }
         }
       }
@@ -24010,6 +25654,18 @@
             "state": "translated",
             "value": "暫無肖像"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่มีภาพเหมือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी तक कोई पोर्ट्रेट नहीं"
+          }
         }
       }
     },
@@ -24183,6 +25839,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "無需訂閱或經常性費用"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่มีการสมัครสมาชิกหรือค่าธรรมเนียมที่เกิดขึ้นซ้ำ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई सदस्यता या आवर्ती शुल्क नहीं"
           }
         }
       }
@@ -24358,6 +26026,18 @@
             "state": "translated",
             "value": "無水印"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่มีลายน้ำ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई वॉटरमार्क नहीं"
+          }
         }
       }
     },
@@ -24531,6 +26211,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "里程碑數量尚不足"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "พัฒนาการยังไม่เพียงพอ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी तक पर्याप्त माइलस्टोन नहीं हैं"
           }
         }
       }
@@ -24706,6 +26398,18 @@
             "state": "translated",
             "value": "尚未記錄"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่ได้บันทึก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी तक कैद नहीं किया गया"
+          }
         }
       }
     },
@@ -24879,6 +26583,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "沒有可恢復的內容"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่มีอะไรให้กู้คืน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पुनर्स्थापित करने के लिए कुछ नहीं"
           }
         }
       }
@@ -25054,6 +26770,18 @@
             "state": "translated",
             "value": "好的"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตกลง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ठीक है"
+          }
         }
       }
     },
@@ -25227,6 +26955,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "優惠目前不可用"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ขณะนี้ไม่มีข้อเสนอ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऑफ़र अभी उपलब्ध नहीं है"
           }
         }
       }
@@ -25402,6 +27142,18 @@
             "state": "translated",
             "value": "一個月"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หนึ่งเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक महीना"
+          }
         }
       }
     },
@@ -25575,6 +27327,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "一週"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หนึ่งสัปดาห์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक सप्ताह"
           }
         }
       }
@@ -25750,6 +27514,18 @@
             "state": "translated",
             "value": "一年"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หนึ่งปี"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक वर्ष"
+          }
         }
       }
     },
@@ -25923,6 +27699,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "一次性優惠 — 計時器結束後失效。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้อเสนอครั้งเดียว — หมดอายุเมื่อตัวจับเวลาสิ้นสุด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एकबारगी ऑफ़र — टाइमर खत्म होने पर समाप्त हो जाता है।"
           }
         }
       }
@@ -26098,6 +27886,18 @@
             "state": "translated",
             "value": "需要訪問照片"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต้องการการเข้าถึงรูปภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोटो एक्सेस आवश्यक है"
+          }
         }
       }
     },
@@ -26271,6 +28071,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "請檢查您的連線並重試。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กรุณาตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना कनेक्शन जांचें और फिर से कोशिश करें।"
           }
         }
       }
@@ -26446,6 +28258,18 @@
             "state": "translated",
             "value": "肖像"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ภาพเหมือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पोर्ट्रेट"
+          }
         }
       }
     },
@@ -26619,6 +28443,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "準備中…（%d 個片段）剩餘 %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังเตรียม… (%d คลิป) เหลืออีก %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "तैयार किया जा रहा है… (%d क्लिप) %@ बाकी"
           }
         }
       }
@@ -26794,6 +28630,18 @@
             "state": "translated",
             "value": "優先 AI 生成"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การสร้าง AI แบบมีลำดับความสำคัญ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्राथमिकता AI जनरेशन"
+          }
         }
       }
     },
@@ -26967,6 +28815,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "隱私"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ความเป็นส่วนตัว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गोपनीयता"
           }
         }
       }
@@ -27142,6 +29002,18 @@
             "state": "translated",
             "value": "隱私政策"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "นโยบายความเป็นส่วนตัว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गोपनीयता नीति"
+          }
         }
       }
     },
@@ -27315,6 +29187,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "個人資料"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โปรไฟล์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रोफ़ाइल"
           }
         }
       }
@@ -27490,6 +29374,18 @@
             "state": "translated",
             "value": "扶著東西站起來"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยืนโดยเกาะจับ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सहारा लेकर खड़ा होता है"
+          }
         }
       }
     },
@@ -27663,6 +29559,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "購買失敗"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การซื้อล้มเหลว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खरीदारी विफल रही"
           }
         }
       }
@@ -27838,6 +29746,18 @@
             "state": "translated",
             "value": "評價此應用"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ให้คะแนนแอป"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप को रेट करें"
+          }
         }
       }
     },
@@ -28011,6 +29931,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "恢復"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กู้คืน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पुनर्स्थापित करें"
           }
         }
       }
@@ -28186,6 +30118,18 @@
             "state": "translated",
             "value": "恢復購買"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กู้คืนการซื้อ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खरीदारी पुनर्स्थापित करें"
+          }
         }
       }
     },
@@ -28359,6 +30303,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "已恢復"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กู้คืนแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पुनर्स्थापित किया गया"
           }
         }
       }
@@ -28534,6 +30490,18 @@
             "state": "translated",
             "value": "翻身"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "พลิกตัว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "करवट लेता है"
+          }
         }
       }
     },
@@ -28707,6 +30675,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "儲存"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सहेजें"
           }
         }
       }
@@ -28882,6 +30862,18 @@
             "state": "translated",
             "value": "儲存照片"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกรูปภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोटो सहेजें"
+          }
         }
       }
     },
@@ -29055,6 +31047,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "將每張肖像儲存到您的相簿"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกภาพเหมือนทุกภาพลงในคลังภาพของคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर पोर्ट्रेट को अपनी गैलरी में सहेजें"
           }
         }
       }
@@ -29230,6 +31234,18 @@
             "state": "translated",
             "value": "已儲存的拼貼"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คอลลาจที่บันทึกไว้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सहेजे गए कोलाज"
+          }
         }
       }
     },
@@ -29403,6 +31419,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "已儲存！"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกแล้ว!"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सहेजा गया!"
           }
         }
       }
@@ -29578,6 +31606,18 @@
             "state": "translated",
             "value": "說出第一個詞"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "พูดคำแรก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहला शब्द बोलता है"
+          }
         }
       }
     },
@@ -29751,6 +31791,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "安全支付 · Apple Pay · Google Pay"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การชำระเงินที่ปลอดภัย · Apple Pay · Google Pay"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुरक्षित भुगतान · Apple Pay · Google Pay"
           }
         }
       }
@@ -29926,6 +31978,18 @@
             "state": "translated",
             "value": "七個月"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เจ็ดเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सात महीने"
+          }
         }
       }
     },
@@ -30099,6 +32163,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "分享"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แชร์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शेयर करें"
           }
         }
       }
@@ -30274,6 +32350,18 @@
             "state": "translated",
             "value": "獨立坐立"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "นั่งได้โดยไม่ต้องพยุง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बिना सहारे बैठता है"
+          }
         }
       }
     },
@@ -30447,6 +32535,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "六個月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หกเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "छह महीने"
           }
         }
       }
@@ -30622,6 +32722,18 @@
             "state": "translated",
             "value": "跳過"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้าม"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "छोड़ें"
+          }
         }
       }
     },
@@ -30795,6 +32907,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "整夜安睡"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หลับตลอดคืน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरी रात सोता है"
           }
         }
       }
@@ -30970,6 +33094,18 @@
             "state": "translated",
             "value": "小禮包"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แพ็กเล็ก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "छोटा पैक"
+          }
         }
       }
     },
@@ -31143,6 +33279,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "您的一些已記錄照片仍在同步中。請稍後再試。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รูปภาพที่บันทึกไว้บางส่วนของคุณยังคงซิงค์อยู่ กรุณาลองอีกครั้งในอีกสักครู่"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपकी कुछ कैद की गई फोटो अभी भी सिंक हो रही हैं। कृपया थोड़ी देर बाद फिर से कोशिश करें।"
           }
         }
       }
@@ -31318,6 +33466,18 @@
             "state": "translated",
             "value": "出了點問題"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกิดข้อผิดพลาด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ गलत हो गया"
+          }
         }
       }
     },
@@ -31491,6 +33651,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "出了點問題"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกิดข้อผิดพลาด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ गलत हो गया"
           }
         }
       }
@@ -31666,6 +33838,18 @@
             "state": "translated",
             "value": "出了點問題，您的積分已退還。請重試。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกิดข้อผิดพลาดและเครดิตของคุณได้รับการคืนแล้ว กรุณาลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ गलत हो गया और आपके क्रेडिट वापस कर दिए गए। कृपया फिर से कोशिश करें।"
+          }
         }
       }
     },
@@ -31839,6 +34023,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "刪除拼貼時出了點問題。請重試。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกิดข้อผิดพลาดขณะลบคอลลาจ กรุณาลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोलाज हटाते समय कुछ गलत हो गया। कृपया फिर से कोशिश करें।"
           }
         }
       }
@@ -32014,6 +34210,18 @@
             "state": "translated",
             "value": "儲存影片時出了點問題。請重試。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกิดข้อผิดพลาดขณะบันทึกวิดีโอ กรุณาลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वीडियो सहेजते समय कुछ गलत हो गया। कृपया फिर से कोशिश करें।"
+          }
         }
       }
     },
@@ -32187,6 +34395,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "啟動拼貼時出了點問題。請重試。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกิดข้อผิดพลาดขณะเริ่มคอลลาจของคุณ กรุณาลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका कोलाज शुरू करते समय कुछ गलत हो गया। कृपया फिर से कोशिश करें।"
           }
         }
       }
@@ -32362,6 +34582,18 @@
             "state": "translated",
             "value": "出了點問題。如果已扣除積分，將予以退還。請重試。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกิดข้อผิดพลาด หากมีการใช้เครดิตไป จะได้รับการคืนแล้ว กรุณาลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ गलत हो गया। यदि क्रेडिट खर्च किए गए थे, तो वे वापस कर दिए गए हैं। कृपया फिर से कोशिश करें।"
+          }
         }
       }
     },
@@ -32535,6 +34767,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "使用金幣生成任意肖像 — 無需訂閱。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ใช้เหรียญเพื่อสร้างภาพเหมือนใดก็ได้ — ไม่จำเป็นต้องสมัครสมาชิก"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "किसी भी पोर्ट्रेट को जनरेट करने के लिए सिक्के खर्च करें — सदस्यता की आवश्यकता नहीं।"
           }
         }
       }
@@ -32710,6 +34954,18 @@
             "state": "translated",
             "value": "立即訂閱"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สมัครสมาชิกตอนนี้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी सदस्यता लें"
+          }
         }
       }
     },
@@ -32883,6 +35139,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "拍照"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ถ่ายภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोटो लें"
           }
         }
       }
@@ -33058,6 +35326,18 @@
             "state": "translated",
             "value": "點按任意風格上的心形圖示以儲存至此處。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แตะที่หัวใจบนสไตล์ใดก็ได้เพื่อบันทึกไว้ที่นี่"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसे यहां सहेजने के लिए किसी भी स्टाइल पर दिल पर टैप करें।"
+          }
         }
       }
     },
@@ -33231,6 +35511,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "點按以更換照片"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แตะเพื่อเปลี่ยนรูปภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोटो बदलने के लिए टैप करें"
           }
         }
       }
@@ -33406,6 +35698,18 @@
             "state": "translated",
             "value": "十個月"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สิบเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दस महीने"
+          }
         }
       }
     },
@@ -33579,6 +35883,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "條款"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้อกำหนด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शर्तें"
           }
         }
       }
@@ -33754,6 +36070,18 @@
             "state": "translated",
             "value": "使用條款"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้อกำหนดการใช้งาน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उपयोग की शर्तें"
+          }
         }
       }
     },
@@ -33927,6 +36255,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "拼貼影片“%@”將被永久刪除。此操作無法撤銷。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "วิดีโอคอลลาจ “%@” จะถูกลบอย่างถาวร การกระทำนี้ไม่สามารถย้อนกลับได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोलाज वीडियो “%@” स्थायी रूप से हटा दिया जाएगा। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।"
           }
         }
       }
@@ -34102,6 +36442,18 @@
             "state": "translated",
             "value": "動畫影片已儲存到您的照片中。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "วิดีโอที่เคลื่อนไหวถูกบันทึกลงในรูปภาพของคุณแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एनिमेटेड वीडियो आपकी फोटो में सहेजा गया।"
+          }
         }
       }
     },
@@ -34275,6 +36627,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "拼貼影片已儲存到您的照片中。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "วิดีโอคอลลาจถูกบันทึกลงในรูปภาพของคุณแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोलाज वीडियो आपकी फोटो में सहेजा गया।"
           }
         }
       }
@@ -34450,6 +36814,18 @@
             "state": "translated",
             "value": "此專屬禮包將不再提供。立即領取，否則將永遠消失。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แพ็กสุดพิเศษนี้จะไม่มีการเสนออีก รับตอนนี้ ไม่เช่นนั้นมันจะหายไปตลอดกาล"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह विशेष पैक फिर से नहीं दिया जाएगा। इसे अभी प्राप्त करें, वरना यह हमेशा के लिए चला जाएगा।"
+          }
         }
       }
     },
@@ -34623,6 +36999,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "這張照片中有多張面孔。請選擇只有您寶寶的照片。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รูปภาพนี้มีมากกว่าหนึ่งใบหน้า กรุณาเลือกรูปภาพที่มีเฉพาะลูกน้อยของคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस फोटो में एक से अधिक चेहरे हैं। कृपया केवल अपने बच्चे वाली फोटो चुनें।"
           }
         }
       }
@@ -34798,6 +37186,18 @@
             "state": "translated",
             "value": "此肖像已儲存到您的里程碑相簿中。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ภาพเหมือนนี้ถูกบันทึกลงในคลังภาพพัฒนาการของคุณแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह पोर्ट्रेट आपकी माइलस्टोन गैलरी में सहेजा गया।"
+          }
         }
       }
     },
@@ -34971,6 +37371,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "三個月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สามเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "तीन महीने"
           }
         }
       }
@@ -35146,6 +37558,18 @@
             "state": "translated",
             "value": "為您的金幣充值"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เติมเหรียญของคุณ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपने सिक्के रिचार्ज करें"
+          }
         }
       }
     },
@@ -35319,6 +37743,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "追蹤寶寶的每一個第一次，把每份珍貴回憶整理得井井有條。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ติดตามช่วงเวลาแรก ๆ ของลูกน้อย และจัดระเบียบความทรงจำอันล้ำค่าทุกช่วงเวลาให้สวยงาม"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपने बच्चे के पहली बार होने वाले पलों को ट्रैक करें और हर कीमती याद को खूबसूरती से व्यवस्थित रखें।"
           }
         }
       }
@@ -35494,6 +37930,18 @@
             "state": "translated",
             "value": "將寶寶的照片變成神奇的紀念品"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เปลี่ยนรูปภาพลูกน้อยของคุณให้เป็นความทรงจำมหัศจรรย์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपने बच्चे की तस्वीरों को जादुई यादों में बदलें"
+          }
         }
       }
     },
@@ -35667,6 +38115,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "兩個月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สองเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दो महीने"
           }
         }
       }
@@ -35842,6 +38302,18 @@
             "state": "translated",
             "value": "無限工作室主題"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ธีมสตูดิโอไม่จำกัด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "असीमित स्टूडियो थीम"
+          }
         }
       }
     },
@@ -36015,6 +38487,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "解鎖無限創意"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ปลดล็อกความคิดสร้างสรรค์ไม่จำกัด"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "असीमित रचनात्मकता को अनलॉक करें"
           }
         }
       }
@@ -36190,6 +38674,18 @@
             "state": "translated",
             "value": "無標題"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่มีชื่อ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बिना शीर्षक"
+          }
         }
       }
     },
@@ -36363,6 +38859,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "上傳一張清晰的寶寶照片"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อัปโหลดรูปภาพลูกน้อยของคุณที่ชัดเจน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपने बच्चे की स्पष्ट फोटो अपलोड करें"
           }
         }
       }
@@ -36538,6 +39046,18 @@
             "state": "translated",
             "value": "上傳照片"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อัปโหลดรูปภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोटो अपलोड करें"
+          }
         }
       }
     },
@@ -36711,6 +39231,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "可用於任意主題或您自己的自定義提示詞"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ใช้ได้กับธีมใดก็ได้หรือพรอมต์กำหนดเองของคุณเอง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "किसी भी थीम या अपने खुद के कस्टम प्रॉम्प्ट के साथ उपयोग करें"
           }
         }
       }
@@ -36886,6 +39418,18 @@
             "state": "translated",
             "value": "獨立行走"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เดินได้ด้วยตัวเอง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्वतंत्र रूप से चलता है"
+          }
         }
       }
     },
@@ -37059,6 +39603,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "想要改變嗎？描述一下編輯內容 — 例如“新增一條柔軟的藍色毯子”"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต้องการเปลี่ยนแปลงหรือไม่? อธิบายการแก้ไข — เช่น “เพิ่มผ้าห่มสีฟ้านุ่ม ๆ”"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बदलाव चाहते हैं? एक संपादन बताएं — उदा. “एक मुलायम नीला कंबल जोड़ें”"
           }
         }
       }
@@ -37234,6 +39790,18 @@
             "state": "translated",
             "value": "想要 AI 潤飾嗎？（可選）"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต้องการการรีทัชด้วย AI หรือไม่? (ไม่บังคับ)"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI टच-अप चाहते हैं? (वैकल्पिक)"
+          }
         }
       }
     },
@@ -37407,6 +39975,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "想為這個拼貼配上音樂嗎？"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต้องการเพลงสำหรับคอลลาจนี้หรือไม่?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस कोलाज के लिए संगीत चाहते हैं?"
           }
         }
       }
@@ -37582,6 +40162,18 @@
             "state": "translated",
             "value": "正在準備工作室…"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังเตรียมสตูดิโอ…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्टूडियो तैयार किया जा रहा है…"
+          }
         }
       }
     },
@@ -37755,6 +40347,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "揮手告別"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โบกมือบ๊ายบาย"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हाथ हिलाकर बाय कहता है"
           }
         }
       }
@@ -37930,6 +40534,18 @@
             "state": "translated",
             "value": "無法建立拼貼影片。請重試。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถสร้างวิดีโอคอลลาจได้ กรุณาลองอีกครั้ง"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोलाज वीडियो नहीं बनाया जा सका। कृपया फिर से कोशिश करें।"
+          }
         }
       }
     },
@@ -38103,6 +40719,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "我們無法在這張照片中找到面孔。請選擇一張清晰、光線充足的寶寶面部照片。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เราไม่พบใบหน้าในรูปภาพนี้ กรุณาเลือกรูปภาพใบหน้าลูกน้อยของคุณที่ชัดเจนและมีแสงสว่างเพียงพอ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हमें इस फोटो में कोई चेहरा नहीं मिला। कृपया अपने बच्चे के चेहरे की एक स्पष्ट, अच्छी रोशनी वाली फोटो चुनें।"
           }
         }
       }
@@ -38278,6 +40906,18 @@
             "state": "translated",
             "value": "我們將把您已記錄的 %d 張照片逐一動畫化，並合併為一段影片。這將花費 %@，具體所需時間取決於您新增的照片數量，可能會需要一段時間。要繼續嗎？"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เราจะทำให้รูปภาพที่บันทึกไว้ %d รูปของคุณแต่ละรูปเคลื่อนไหวและรวมเข้าด้วยกันเป็นวิดีโอเดียว ซึ่งจะมีค่าใช้จ่าย %@ และอาจใช้เวลาสักพักขึ้นอยู่กับจำนวนรูปภาพที่คุณเพิ่ม คุณต้องการดำเนินการต่อหรือไม่?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हम आपकी कैद की गई %d फोटो में से हर एक को एनिमेट करेंगे और उन्हें एक वीडियो में मिलाएंगे। इसकी लागत %@ होगी, और आपने कितनी फोटो जोड़ी हैं, इस पर निर्भर करते हुए इसमें काफी समय लग सकता है। क्या आप जारी रखना चाहते हैं?"
+          }
         }
       }
     },
@@ -38451,6 +41091,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "我們正在將您的音軌混合到這個拼貼中。您可以在“我的拼貼”介面檢視進度。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เรากำลังผสมเพลงของคุณเข้ากับคอลลาจนี้ คุณสามารถติดตามความคืบหน้าได้จากหน้าจอคอลลาจของฉัน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हम आपके ट्रैक को इस कोलाज में मिला रहे हैं। आप मेरे कोलाज स्क्रीन से इसकी प्रगति देख सकते हैं।"
           }
         }
       }
@@ -38626,6 +41278,18 @@
             "state": "translated",
             "value": "我們正在準備您的拼貼。您可以在“我的拼貼”介面檢視進度。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เรากำลังเตรียมคอลลาจของคุณ คุณสามารถติดตามความคืบหน้าได้จากหน้าจอคอลลาจของฉัน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हम आपका कोलाज तैयार कर रहे हैं। आप मेरे कोलाज स्क्रीन से इसकी प्रगति देख सकते हैं।"
+          }
         }
       }
     },
@@ -38799,6 +41463,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "每週"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายสัปดาห์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "साप्ताहिक"
           }
         }
       }
@@ -38974,6 +41650,18 @@
             "state": "translated",
             "value": "您想記住什麼？"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คุณต้องการจดจำอะไร?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप क्या याद रखना चाहेंगे?"
+          }
         }
       }
     },
@@ -39147,6 +41835,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "每年"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายปี"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वार्षिक"
           }
         }
       }
@@ -39322,6 +42022,18 @@
             "state": "translated",
             "value": "您需要至少 %d 個已記錄的里程碑才能建立拼貼影片。目前您已有 %d 個。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คุณต้องมีพัฒนาการที่บันทึกไว้อย่างน้อย %d รายการเพื่อสร้างวิดีโอคอลลาจ ขณะนี้คุณมี %d รายการ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोलाज वीडियो बनाने के लिए आपको कम से कम %d कैद किए गए माइलस्टोन चाहिए। अभी तक आपके पास %d हैं।"
+          }
         }
       }
     },
@@ -39495,6 +42207,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "這是您的最後機會！"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โอกาสสุดท้ายของคุณ!"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका आखिरी मौका!"
           }
         }
       }
@@ -39670,6 +42394,18 @@
             "state": "translated",
             "value": "已收到您的請求"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ได้รับคำขอของคุณแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका अनुरोध प्राप्त हो गया"
+          }
         }
       }
     },
@@ -39843,6 +42579,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "寶寶的拼貼"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คอลลาจของลูกน้อย"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके बच्चे के कोलाज"
           }
         }
       }
@@ -40018,6 +42766,18 @@
             "state": "translated",
             "value": "您的購買已恢復。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การซื้อของคุณได้รับการกู้คืนแล้ว"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपकी खरीदारी पुनर्स्थापित कर दी गई है।"
+          }
         }
       }
     },
@@ -40191,6 +42951,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "“%@”及其照片將被移除。此操作無法撤銷。"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” และรูปภาพของมันจะถูกลบออก การกระทำนี้ไม่สามารถย้อนกลับได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” और उसकी फोटो हटा दी जाएगी। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।"
           }
         }
       }
@@ -40366,6 +43138,18 @@
             "state": "translated",
             "value": "“%@”已被記錄。刪除它也會刪除照片 — 此操作無法撤銷。"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” ถูกบันทึกไว้แล้ว การลบจะลบรูปภาพออกด้วย — การกระทำนี้ไม่สามารถย้อนกลับได้"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” पहले ही कैद किया जा चुका है। इसे हटाने से फोटो भी हट जाएगी — इस कार्रवाई को पूर्ववत नहीं किया जा सकता।"
+          }
         }
       }
     },
@@ -40539,6 +43323,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "例如：奶奶來訪"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เช่น การมาเยี่ยมของคุณย่า"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उदा. दादी की यात्रा"
           }
         }
       }
@@ -40714,6 +43510,18 @@
             "state": "translated",
             "value": "例如：見到奶奶"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เช่น พบคุณย่า"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उदा. दादी से मिला"
+          }
         }
       }
     },
@@ -40887,6 +43695,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "例如：“新增柔和的金色光線和飄浮的閃光”——留空則僅儲存照片"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เช่น “เพิ่มแสงสีทองนุ่มนวลและประกายแวววาวลอยตัว” — เว้นว่างไว้เพื่อบันทึกเฉพาะรูปภาพ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उदा. “नरम सुनहरी रोशनी और तैरती चमक जोड़ें” — केवल फोटो सहेजने के लिए खाली छोड़ दें"
           }
         }
       }
@@ -41062,6 +43882,18 @@
             "state": "translated",
             "value": "例如：“把我的寶寶變成漂浮在星星間的小宇航員”"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เช่น “เปลี่ยนลูกน้อยของฉันให้เป็นนักบินอวกาศตัวน้อยที่ลอยอยู่ท่ามกลางดวงดาว”"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उदा. “मेरे बच्चे को तारों के बीच तैरते एक छोटे अंतरिक्ष यात्री में बदल दें”"
+          }
         }
       }
     },
@@ -41235,6 +44067,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "每月"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต่อเดือน"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रति माह"
           }
         }
       }
@@ -41410,6 +44254,18 @@
             "state": "translated",
             "value": "每週"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต่อสัปดาห์"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रति सप्ताह"
+          }
         }
       }
     },
@@ -41583,6 +44439,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "每年"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต่อปี"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रति वर्ष"
           }
         }
       }
@@ -41758,6 +44626,18 @@
             "state": "translated",
             "value": "約 %d 分鐘"
           }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d นาที"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d मिनट"
+          }
         }
       }
     },
@@ -41931,6 +44811,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "約 %d–%d 分鐘"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d นาที"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d मिनट"
           }
         }
       }
