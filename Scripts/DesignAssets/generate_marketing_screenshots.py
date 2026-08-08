@@ -21,8 +21,8 @@ from generate_nano_banana import auth_headers, poll_task, download_output, RUN_U
 OUT_DIR = PROJECT_ROOT / "Design" / "Generated" / "MarketingScreenshots"
 
 BASE_PROMPT = (
-    "A candid, ordinary smartphone snapshot of a baby girl, around 6 months old, "
-    "light-brown skin tone, soft black hair, sitting on a plain living room couch, "
+    "A candid, ordinary smartphone snapshot of a baby boy, around 6 months old, "
+    "fair skin, blond hair and blue eyes, sitting on a plain living room couch, "
     "wearing a simple cream onesie, natural indoor daylight, slightly casual framing, "
     "realistic amateur phone-photo quality, no studio lighting, no props, no text, "
     "no watermark, safe and wholesome, no adult content."
@@ -37,15 +37,15 @@ THEME_TEMPLATE = (
 )
 
 THEMES = [
-    ("hero_fairy_wings", "Fairy Wings", "wearing delicate fairy wings and a flower crown",
+    ("hero_wizard", "Wizard Apprentice", "dressed in an oversized wizard robe and star-covered hat",
      "dreamy, magical, enchanted fairytale atmosphere"),
     ("mosaic_astronaut", "Little Astronaut", "in a plush astronaut suit with a helmet prop",
      "playful, cosmic, wonder-filled space adventure"),
-    ("mosaic_princess", "Little Princess", "in a lace gown wearing a jeweled tiara",
-     "opulent, regal, storybook-castle grandeur"),
+    ("mosaic_firefighter", "Little Firefighter", "wearing a mini firefighter helmet and coat",
+     "cheerful, playful, pretend-career charm"),
     ("mosaic_lion_cub", "Lion Cub", "wearing a lion-mane hood against a golden savanna backdrop",
      "warm, earthy, gentle wildlife charm"),
-    ("mosaic_mermaid", "Little Mermaid", "in a shimmering tail wrap with a shell crown",
+    ("mosaic_bubble_diver", "Bubble Diver", "wearing a diving-mask prop against a bubble backdrop",
      "shimmering, aquatic, dreamy underwater glow"),
     ("mosaic_batman", "Tiny Batman", "wearing a bat-eared cowl and cape",
      "bold, energetic, heroic comic-book fun"),
