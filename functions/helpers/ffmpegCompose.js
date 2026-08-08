@@ -91,24 +91,64 @@ function escapeMarkup(text) {
     .replace(/>/g, "&gt;");
 }
 
-/**
- * Renders `text` to a standalone transparent-background PNG sized to fit within `maxWidth`px,
- * white text, using our own bundled Quicksand font. Returns null (nothing to overlay) for empty
- * text rather than an empty image.
- */
-async function renderCaptionPng({ text, fontSizePx, maxWidth, outputPath }) {
+/** Renders `text` to an in-memory transparent-background PNG buffer, white, left-aligned, using
+ * our own bundled Quicksand font. Returns null for empty text. */
+async function renderTextPng({ text, fontSizePx, maxWidth }) {
   if (!text) return null;
-  const img = sharp({
+  const buffer = await sharp({
     text: {
       text: `<span foreground="white">${escapeMarkup(text)}</span>`,
       fontfile: FONT_PATH,
       font: `Quicksand Bold ${fontSizePx}`,
       width: maxWidth,
       rgba: true,
-      align: "center",
+      align: "left",
     },
-  });
-  await img.png().toFile(outputPath);
+  }).png().toBuffer();
+  const { width, height } = await sharp(buffer).metadata();
+  return { buffer, width, height };
+}
+
+/**
+ * Renders a single compact "chip" PNG — title (+ optional date below it) left-aligned over a
+ * small rounded semi-transparent backdrop sized to hug just the text, not a full-width banner.
+ * Meant to sit in a corner of the frame (see composeCollage/composeSingleClip's positioning) —
+ * the rounded pill + drop-shadow-free flat backdrop keeps it legible over any footage without
+ * dominating the frame the way a full-width bar across a quarter of the video did before.
+ * Returns null (nothing to overlay) if there's no title and no date.
+ */
+async function renderCaptionChip({ title, dateText, fontSizeTitlePx, fontSizeDatePx, maxTextWidth, outputPath }) {
+  const [titleImg, dateImg] = await Promise.all([
+    renderTextPng({ text: title, fontSizePx: fontSizeTitlePx, maxWidth: maxTextWidth }),
+    renderTextPng({ text: dateText, fontSizePx: fontSizeDatePx, maxWidth: maxTextWidth }),
+  ]);
+  if (!titleImg && !dateImg) return null;
+
+  const padding = Math.round(fontSizeTitlePx * 0.55);
+  const gap = Math.round(fontSizeTitlePx * 0.2);
+  const contentWidth = Math.max(titleImg ? titleImg.width : 0, dateImg ? dateImg.width : 0);
+  const contentHeight = (titleImg ? titleImg.height : 0) + (titleImg && dateImg ? gap : 0) + (dateImg ? dateImg.height : 0);
+  const chipWidth = contentWidth + padding * 2;
+  const chipHeight = contentHeight + padding * 2;
+  const cornerRadius = Math.round(padding * 0.7);
+
+  const backdropSvg = Buffer.from(
+    `<svg width="${chipWidth}" height="${chipHeight}" xmlns="http://www.w3.org/2000/svg">` +
+    `<rect width="${chipWidth}" height="${chipHeight}" rx="${cornerRadius}" ry="${cornerRadius}" fill="black" fill-opacity="0.45"/>` +
+    `</svg>`
+  );
+
+  const composites = [];
+  let y = padding;
+  if (titleImg) {
+    composites.push({ input: titleImg.buffer, left: padding, top: y });
+    y += titleImg.height + gap;
+  }
+  if (dateImg) {
+    composites.push({ input: dateImg.buffer, left: padding, top: y });
+  }
+
+  await sharp(backdropSvg).composite(composites).png().toFile(outputPath);
   return outputPath;
 }
 
@@ -118,8 +158,8 @@ async function renderCaptionPng({ text, fontSizePx, maxWidth, outputPath }) {
  *     acrossfade — but only if EVERY clip actually has an audio stream; if even one doesn't,
  *     the whole output is rendered silent rather than risk a broken filter graph referencing a
  *     stream that isn't there),
- *   - each clip's own title + date burned in over a bottom scrim, matching what the old
- *     on-device MilestoneVideoRenderer used to show per item before this feature moved server-side.
+ *   - each clip's own title + date shown as a compact rounded caption chip in the bottom-left
+ *     corner (see renderCaptionChip) rather than a full-width bar across the frame.
  *
  * `clips`: [{ path, title, dateText }], already in final display order.
  */
@@ -135,57 +175,40 @@ async function composeCollage({ clips, transitionDuration = 0.5, outputPath }) {
   const inputArgs = [];
   clips.forEach((c) => inputArgs.push("-i", c.path));
 
-  // Per-clip caption PNGs (title + optional date), rendered relative to that clip's own
-  // dimensions (same ratios the old drawtext fontsize=h*0.058/h*0.036 used) — each becomes its
-  // own extra ffmpeg input, appended after all the clip inputs so clip-input indices stay
-  // 0..clips.length-1 as everything below (the xfade/acrossfade chain) already assumes.
-  const captionInputs = []; // { index, kind: "title" | "date", clipIndex }
+  // One caption "chip" per clip (title + optional date, see renderCaptionChip), sized relative
+  // to that clip's own dimensions — each becomes its own extra ffmpeg input, appended after all
+  // the clip inputs so clip-input indices stay 0..clips.length-1 as everything below (the
+  // xfade/acrossfade chain) already assumes.
+  const chipInputIndex = []; // chipInputIndex[i] = input index, or undefined if clip i has no caption
+  let nextInputIndex = clips.length;
   for (let i = 0; i < clips.length; i++) {
     const { width, height } = sizes[i];
-    const titlePath = await renderCaptionPng({
-      text: clips[i].title,
-      fontSizePx: Math.round(height * 0.058),
-      maxWidth: Math.round(width * 0.85),
-      outputPath: path.join(tmpDir, `title_${i}.png`),
+    const chipPath = await renderCaptionChip({
+      title: clips[i].title,
+      dateText: clips[i].dateText,
+      fontSizeTitlePx: Math.round(height * 0.042),
+      fontSizeDatePx: Math.round(height * 0.026),
+      maxTextWidth: Math.round(width * 0.6),
+      outputPath: path.join(tmpDir, `chip_${i}.png`),
     });
-    if (titlePath) {
-      inputArgs.push("-i", titlePath);
-      captionInputs.push({ index: clips.length + captionInputs.length, kind: "title", clipIndex: i });
-    }
-    const datePath = await renderCaptionPng({
-      text: clips[i].dateText,
-      fontSizePx: Math.round(height * 0.036),
-      maxWidth: Math.round(width * 0.85),
-      outputPath: path.join(tmpDir, `date_${i}.png`),
-    });
-    if (datePath) {
-      inputArgs.push("-i", datePath);
-      captionInputs.push({ index: clips.length + captionInputs.length, kind: "date", clipIndex: i });
+    if (chipPath) {
+      inputArgs.push("-i", chipPath);
+      chipInputIndex[i] = nextInputIndex++;
     }
   }
 
   const filterParts = [];
 
-  // Per-clip caption: a dark scrim across the bottom ~24% of the frame, title + date overlaid on
-  // top of it — same idea as the old renderer's gradient scrim + two-line caption, just a flat
-  // semi-transparent band here since ffmpeg doesn't have an easy true-gradient primitive.
+  // Bottom-left corner placement, margin scaled to the clip's own size — no full-width scrim.
   clips.forEach((clip, i) => {
-    const title = captionInputs.find((c) => c.clipIndex === i && c.kind === "title");
-    const date = captionInputs.find((c) => c.clipIndex === i && c.kind === "date");
-    let label = `db${i}`;
-    filterParts.push(`[${i}:v]drawbox=x=0:y=ih-0.24*ih:w=iw:h=0.24*ih:color=black@0.45:t=fill[${label}]`);
-    if (title) {
-      const next = `t${i}`;
-      filterParts.push(`[${label}][${title.index}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.79[${next}]`);
-      label = next;
+    const chipIdx = chipInputIndex[i];
+    if (chipIdx === undefined) {
+      filterParts.push(`[${i}:v]null[v${i}]`);
+      return;
     }
-    if (date) {
-      const next = `v${i}`;
-      filterParts.push(`[${label}][${date.index}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.885[${next}]`);
-      label = next;
-    } else if (label !== `v${i}`) {
-      filterParts.push(`[${label}]null[v${i}]`);
-    }
+    const marginX = "main_w*0.05";
+    const marginY = "main_h*0.05";
+    filterParts.push(`[${i}:v][${chipIdx}:v]overlay=x=${marginX}:y=main_h-overlay_h-${marginY}[v${i}]`);
   });
 
   // Video crossfade chain — xfade's `offset` is where in the RUNNING OUTPUT timeline (not the
@@ -236,37 +259,20 @@ async function composeCollage({ clips, transitionDuration = 0.5, outputPath }) {
 async function composeSingleClip(clip, outputPath) {
   const tmpDir = path.dirname(outputPath);
   const { width, height } = await probeVideoSize(clip.path);
-  const titlePath = await renderCaptionPng({
-    text: clip.title,
-    fontSizePx: Math.round(height * 0.058),
-    maxWidth: Math.round(width * 0.85),
-    outputPath: path.join(tmpDir, "title_0.png"),
-  });
-  const datePath = await renderCaptionPng({
-    text: clip.dateText,
-    fontSizePx: Math.round(height * 0.036),
-    maxWidth: Math.round(width * 0.85),
-    outputPath: path.join(tmpDir, "date_0.png"),
+  const chipPath = await renderCaptionChip({
+    title: clip.title,
+    dateText: clip.dateText,
+    fontSizeTitlePx: Math.round(height * 0.042),
+    fontSizeDatePx: Math.round(height * 0.026),
+    maxTextWidth: Math.round(width * 0.6),
+    outputPath: path.join(tmpDir, "chip_0.png"),
   });
 
   const inputArgs = ["-i", clip.path];
-  const filterParts = ["[0:v]drawbox=x=0:y=ih-0.24*ih:w=iw:h=0.24*ih:color=black@0.45:t=fill[db0]"];
-  let label = "db0";
-  let nextInputIndex = 1;
-  if (titlePath) {
-    inputArgs.push("-i", titlePath);
-    filterParts.push(`[${label}][${nextInputIndex}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.79[t0]`);
-    label = "t0";
-    nextInputIndex++;
-  }
-  if (datePath) {
-    inputArgs.push("-i", datePath);
-    filterParts.push(`[${label}][${nextInputIndex}:v]overlay=x=(main_w-overlay_w)/2:y=main_h*0.885[vout]`);
-    label = "vout";
-    nextInputIndex++;
-  } else {
-    filterParts.push(`[${label}]null[vout]`);
-  }
+  const filterParts = chipPath
+    ? [`[0:v][1:v]overlay=x=main_w*0.05:y=main_h-overlay_h-main_h*0.05[vout]`]
+    : ["[0:v]null[vout]"];
+  if (chipPath) inputArgs.push("-i", chipPath);
 
   const hasAudio = await probeHasAudio(clip.path);
   await runFfmpeg([
