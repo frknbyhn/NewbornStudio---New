@@ -68,4 +68,46 @@ enum CollageAnimationService {
             completion(.success(CollageAnimationStartResult(collageId: collageId, remainingCredits: remainingCredits)))
         }
     }
+
+    struct MusicResult {
+        let musicUrl: URL
+        let remainingCredits: Int
+    }
+
+    /// Calls `generateCollageMusic` — the server reads the collage's own already-rendered video
+    /// duration (finalizeCollageAnimation.js) rather than trusting a client-supplied length, so
+    /// the track always matches the actual video regardless of what this device thinks its
+    /// duration is.
+    /// Matches generateCollageMusic's own 300s Cloud Function timeout — same reasoning as
+    /// AnimationService's callTimeout: the Functions SDK's default (70s) would otherwise fail
+    /// the client long before a healthy server call actually finishes.
+    private static let musicCallTimeout: TimeInterval = 300
+
+    static func generateMusic(collageId: String, prompt: String, completion: @escaping (Result<MusicResult, Error>) -> Void) {
+        guard AuthService.currentUserId != nil else {
+            completion(.failure(CollageAnimationServiceError.notSignedIn))
+            return
+        }
+        let callable = Functions.functions().httpsCallable("generateCollageMusic")
+        callable.timeoutInterval = musicCallTimeout
+        callable.call([
+            "collageId": collageId,
+            "prompt": prompt
+        ]) { result, error in
+            if let error {
+                completion(.failure(error))
+                return
+            }
+            guard
+                let dict = result?.data as? [String: Any],
+                let urlString = dict["musicUrl"] as? String,
+                let musicUrl = URL(string: urlString)
+            else {
+                completion(.failure(CollageAnimationServiceError.invalidServerResponse))
+                return
+            }
+            let remainingCredits = (dict["remainingCredits"] as? Int) ?? 0
+            completion(.success(MusicResult(musicUrl: musicUrl, remainingCredits: remainingCredits)))
+        }
+    }
 }

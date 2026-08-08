@@ -4,7 +4,7 @@ const { getStorage } = require("firebase-admin/storage");
 const os = require("os");
 const path = require("path");
 const fs = require("fs");
-const { composeCollage, composeSingleClip } = require("./helpers/ffmpegCompose");
+const { composeCollage, composeSingleClip, probeDuration } = require("./helpers/ffmpegCompose");
 const { downloadUrlFor } = require("./helpers/storage");
 
 // Matches iOS's DateFormatter(.dateStyle = .medium) closely enough (e.g. "Aug 6, 2026") — the
@@ -73,6 +73,11 @@ exports.finalizeCollageAnimation = onTaskDispatched(
         await composeCollage({ clips, outputPath });
       }
 
+      // Read the assembled video's real duration (not the sum of clip durations — xfade
+      // transitions overlap consecutive clips, so the timeline is shorter than that sum) so
+      // generateCollageMusic can request a matching-length track without re-probing.
+      const duration = await probeDuration(outputPath);
+
       const finalStoragePath = `users/${uid}/collages/${collageId}.mp4`;
       const finalFile = bucket.file(finalStoragePath);
       await finalFile.save(fs.readFileSync(outputPath), { metadata: { contentType: "video/mp4" } });
@@ -86,6 +91,7 @@ exports.finalizeCollageAnimation = onTaskDispatched(
         status: "complete",
         videoPath: finalStoragePath,
         videoUrl,
+        duration,
         completedAt: FieldValue.serverTimestamp(),
       });
     } catch (err) {

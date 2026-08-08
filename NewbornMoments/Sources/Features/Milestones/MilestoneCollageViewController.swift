@@ -22,6 +22,12 @@ final class MilestoneCollageViewController: UIViewController {
     private let musicPromptTextView = UITextView()
     private let musicPromptPlaceholder = UILabel()
     private let generateMusicButton = GradientPillButton(title: "Generate Music", icon: UIImage(systemName: "music.note"))
+    private let musicCreditLabel = UILabel()
+    private let musicSpinner = UIActivityIndicatorView(style: .medium)
+    /// Must match functions/generateCollageMusic.js's own MUSIC_CREDIT_COST constant — nothing
+    /// enforces that at compile time, it's just the two places this number happens to live (same
+    /// pattern as MilestoneListDetailViewController.creditCostPerItem).
+    private static let musicCreditCost = 1
 
     init(videoURL: URL, listName: String, collageId: String) {
         self.videoURL = videoURL
@@ -222,6 +228,20 @@ final class MilestoneCollageViewController: UIViewController {
         generateMusicButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(generateMusicButton)
 
+        musicSpinner.color = .white
+        musicSpinner.hidesWhenStopped = true
+        musicSpinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(musicSpinner)
+
+        // Must match functions/generateCollageMusic.js's own MUSIC_CREDIT_COST — see
+        // Self.musicCreditCost's own comment.
+        musicCreditLabel.text = "\(Self.musicCreditCost) Credit"
+        musicCreditLabel.font = Theme.Font.body(12.5, weight: 700)
+        musicCreditLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+        musicCreditLabel.textAlignment = .center
+        musicCreditLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(musicCreditLabel)
+
         NSLayoutConstraint.activate([
             question.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             question.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
@@ -244,7 +264,14 @@ final class MilestoneCollageViewController: UIViewController {
             generateMusicButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             generateMusicButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
             generateMusicButton.heightAnchor.constraint(equalToConstant: 52),
-            generateMusicButton.bottomAnchor.constraint(equalTo: actionsTop, constant: -20)
+
+            musicSpinner.centerXAnchor.constraint(equalTo: generateMusicButton.centerXAnchor),
+            musicSpinner.centerYAnchor.constraint(equalTo: generateMusicButton.centerYAnchor),
+
+            musicCreditLabel.topAnchor.constraint(equalTo: generateMusicButton.bottomAnchor, constant: 6),
+            musicCreditLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            musicCreditLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            musicCreditLabel.bottomAnchor.constraint(equalTo: actionsTop, constant: -20)
         ])
         musicSectionTop = question.topAnchor
     }
@@ -353,9 +380,45 @@ final class MilestoneCollageViewController: UIViewController {
         }
     }
 
-    /// No-op for now — the Wiro music-generation call gets wired in here once that API is added.
     @objc private func generateMusicTapped() {
+        let prompt = musicPromptTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !prompt.isEmpty else {
+            HapticFeedback.light()
+            presentAlert(title: "Describe the Music", message: "Enter a short description of what you'd like the track to sound like.")
+            return
+        }
         HapticFeedback.light()
+        CreditsService.requireCredits(atLeast: Self.musicCreditCost, presentingFrom: self) { [weak self] in
+            self?.startMusicGeneration(prompt: prompt)
+        }
+    }
+
+    private func startMusicGeneration(prompt: String) {
+        setMusicGenerating(true)
+        CollageAnimationService.generateMusic(collageId: collageId, prompt: prompt) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                self.setMusicGenerating(false)
+                switch result {
+                case .success:
+                    HapticFeedback.success()
+                    self.presentAlert(title: "Music Ready", message: "Your track was generated and saved with this collage.")
+                case .failure(let error):
+                    self.presentAlert(title: "Couldn't Generate Music", message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    private func setMusicGenerating(_ generating: Bool) {
+        generateMusicButton.isUserInteractionEnabled = !generating
+        generateMusicButton.alpha = generating ? 0.5 : 1
+        musicPromptTextView.isEditable = !generating
+        if generating {
+            musicSpinner.startAnimating()
+        } else {
+            musicSpinner.stopAnimating()
+        }
     }
 
     @objc private func shareTapped() {

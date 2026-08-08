@@ -157,4 +157,4 @@ async function composeSingleClip(clip, outputPath) {
   await runFfmpeg(["-y", "-i", clip.path, "-vf", filter, "-c:v", "libx264", "-pix_fmt", "yuv420p", ...(hasAudio ? ["-c:a", "copy"] : []), outputPath]);
 }
 
-module.exports = { composeCollage, composeSingleClip };
+module.exports = { composeCollage, composeSingleClip, probeDuration };
