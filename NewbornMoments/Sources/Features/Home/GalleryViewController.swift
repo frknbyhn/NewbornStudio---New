@@ -39,7 +39,10 @@ final class GalleryViewController: UIViewController {
     }
 
     private func setUpSegmentedControl() {
-        segmentedControl = UISegmentedControl(items: ["History", "Favorites"])
+        segmentedControl = UISegmentedControl(items: [
+            NSLocalizedString("History", comment: "Gallery segment"),
+            NSLocalizedString("Favorites", comment: "Gallery segment")
+        ])
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.selectedSegmentTintColor = Theme.Color.accentEnd
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white, .font: Theme.Font.heading(13, weight: 700)], for: .selected)
@@ -192,11 +195,11 @@ final class GalleryViewController: UIViewController {
     private func updateEmptyStateCopy() {
         switch selectedTab {
         case .history:
-            emptyTitle.text = "No portraits yet"
-            emptySubtitle.text = "Generate your first studio portrait and it will show up here."
+            emptyTitle.text = NSLocalizedString("No portraits yet", comment: "Gallery history empty state title")
+            emptySubtitle.text = NSLocalizedString("Generate your first studio portrait and it will show up here.", comment: "Gallery history empty state subtitle")
         case .favorites:
-            emptyTitle.text = "No favorites yet"
-            emptySubtitle.text = "Tap the heart on any style to save it here."
+            emptyTitle.text = NSLocalizedString("No favorites yet", comment: "Gallery favorites empty state title")
+            emptySubtitle.text = NSLocalizedString("Tap the heart on any style to save it here.", comment: "Gallery favorites empty state subtitle")
         }
     }
 }

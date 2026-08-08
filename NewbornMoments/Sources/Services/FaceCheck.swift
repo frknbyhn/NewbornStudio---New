@@ -31,14 +31,14 @@ enum FaceCheck {
             case .noFace:
                 presentError(
                     from: viewController,
-                    title: "No Face Detected",
-                    message: "We couldn't find a face in this photo. Please choose a clear, well-lit photo of your baby's face."
+                    title: NSLocalizedString("No Face Detected", comment: "Face detection error alert title"),
+                    message: NSLocalizedString("We couldn't find a face in this photo. Please choose a clear, well-lit photo of your baby's face.", comment: "Face detection error alert message")
                 )
             case .multipleFaces:
                 presentError(
                     from: viewController,
-                    title: "Multiple Faces Detected",
-                    message: "This photo has more than one face. Please choose a photo with just your baby in it."
+                    title: NSLocalizedString("Multiple Faces Detected", comment: "Face detection error alert title"),
+                    message: NSLocalizedString("This photo has more than one face. Please choose a photo with just your baby in it.", comment: "Face detection error alert message")
                 )
             }
         }
@@ -47,7 +47,7 @@ enum FaceCheck {
     private static func presentError(from viewController: UIViewController, title: String, message: String) {
         HapticFeedback.error()
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         viewController.present(alert, animated: true)
     }
 }

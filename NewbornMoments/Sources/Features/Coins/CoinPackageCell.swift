@@ -40,7 +40,7 @@ final class CoinPackageRow: UIControl {
         coinBg.translatesAutoresizingMaskIntoConstraints = false
 
         let coinsLabel = UILabel()
-        coinsLabel.text = "\(package.credits) coins"
+        coinsLabel.text = String(format: NSLocalizedString("%d coins", comment: "Coin package amount, %d is a number"), package.credits)
         coinsLabel.font = Theme.Font.heading(18, weight: 700)
         coinsLabel.textColor = Theme.Color.textPrimaryAlt
 
@@ -87,7 +87,7 @@ final class CoinPackageRow: UIControl {
 
         if package.isPopular {
             let badge = PaddedLabel()
-            badge.text = "MOST POPULAR"
+            badge.text = NSLocalizedString("MOST POPULAR", comment: "Coin package badge")
             badge.horizontalPadding = 12
             badge.font = Theme.Font.heading(10, weight: 700)
             badge.textColor = .white

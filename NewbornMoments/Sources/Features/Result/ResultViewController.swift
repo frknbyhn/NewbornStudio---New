@@ -27,7 +27,7 @@ final class ResultViewController: UIViewController {
     private var savedMilestoneListId: String?
     private let milestoneGalleryLink = UIButton(type: .system)
     private var milestoneSaveButtonView: UIView?
-    private let animateButton = GradientPillButton(title: "Animate Portrait", icon: UIImage(systemName: "sparkles"))
+    private let animateButton = GradientPillButton(title: NSLocalizedString("Animate Portrait", comment: "Button to animate the generated portrait"), icon: UIImage(systemName: "sparkles"))
 
     /// `sourceImage` is nil for a result opened from Gallery history — the original upload was
     /// never persisted (no Storage round-trip for source photos), only the AI result is kept.
@@ -197,7 +197,7 @@ final class ResultViewController: UIViewController {
         editTextView.delegate = self
         editTextView.translatesAutoresizingMaskIntoConstraints = false
 
-        editPlaceholder.text = "Want a change? Describe an edit — e.g. \u{201c}add a soft blue blanket\u{201d}"
+        editPlaceholder.text = NSLocalizedString("Want a change? Describe an edit — e.g. \u{201c}add a soft blue blanket\u{201d}", comment: "Result screen edit prompt placeholder")
         editPlaceholder.font = Theme.Font.body(14, weight: 600)
         editPlaceholder.textColor = UIColor.white.withAlphaComponent(0.4)
         editPlaceholder.numberOfLines = 2
@@ -305,13 +305,13 @@ final class ResultViewController: UIViewController {
 
     private func setUpActions(in content: UIView) {
         var actionViews = [
-            actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
-            actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
+            actionButton(icon: "square.and.arrow.down", title: NSLocalizedString("Save", comment: "Result screen action button"), action: #selector(saveTapped)),
+            actionButton(icon: "square.and.arrow.up", title: NSLocalizedString("Share", comment: "Result screen action button"), action: #selector(shareTapped))
         ]
         // A matching standard milestone that WON'T auto-save (Gallery history, not a fresh
         // generation) gets an explicit action here instead — see the autoSaveEligible doc comment.
         if pendingMilestone != nil, !autoSaveEligible {
-            let milestoneButton = actionButton(icon: "star.circle.fill", title: "Milestone", action: #selector(manualSaveMilestoneTapped))
+            let milestoneButton = actionButton(icon: "star.circle.fill", title: NSLocalizedString("Milestone", comment: "Result screen action button"), action: #selector(manualSaveMilestoneTapped))
             actionViews.append(milestoneButton)
             milestoneSaveButtonView = milestoneButton
         }
@@ -320,7 +320,7 @@ final class ResultViewController: UIViewController {
         actions.distribution = .equalSpacing
 
         var config = UIButton.Configuration.plain()
-        config.attributedTitle = AttributedString("Go to Milestone Gallery", attributes: .init([.font: Theme.Font.heading(14, weight: 700)]))
+        config.attributedTitle = AttributedString(NSLocalizedString("Go to Milestone Gallery", comment: "Result screen link"), attributes: .init([.font: Theme.Font.heading(14, weight: 700)]))
         config.image = UIImage(systemName: "arrow.right")
         config.imagePlacement = .trailing
         config.imagePadding = 6
@@ -445,11 +445,11 @@ final class ResultViewController: UIViewController {
 
     private func presentAnimateError(_ error: Error) {
         let alert = UIAlertController(
-            title: "Couldn't Animate This Portrait",
-            message: "Something went wrong. If credits were spent, they've been refunded. Please try again.",
+            title: NSLocalizedString("Couldn't Animate This Portrait", comment: "Animate error title"),
+            message: NSLocalizedString("Something went wrong. If credits were spent, they've been refunded. Please try again.", comment: "Animate error message"),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
         print("animateResult failed: \(error)")
     }
@@ -475,11 +475,11 @@ final class ResultViewController: UIViewController {
         milestoneGalleryLink.isHidden = false
         HapticFeedback.success()
         let alert = UIAlertController(
-            title: "Milestone Captured!",
-            message: "This portrait was saved to your Milestone Gallery.",
+            title: NSLocalizedString("Milestone Captured!", comment: "Milestone save confirmation title"),
+            message: NSLocalizedString("This portrait was saved to your Milestone Gallery.", comment: "Milestone save confirmation message"),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
     }
 

@@ -1,3 +1,4 @@
+import Foundation
 import RevenueCat
 
 /// Built from a real RevenueCat `Package` (custom identifiers: "small", "limited", "medium", "big").
@@ -16,19 +17,19 @@ struct CoinPackage {
         self.priceLabel = package.storeProduct.localizedPriceString
         switch package.identifier {
         case "small":
-            name = "Small Pack"
+            name = NSLocalizedString("Small Pack", comment: "Coin package name")
             credits = 5
             isPopular = false
         case "limited":
-            name = "Limited Time Offer"
+            name = NSLocalizedString("Limited Time Offer", comment: "Coin package name")
             credits = 25
             isPopular = true
         case "medium":
-            name = "Medium Pack"
+            name = NSLocalizedString("Medium Pack", comment: "Coin package name")
             credits = 15
             isPopular = false
         case "big":
-            name = "Big Pack"
+            name = NSLocalizedString("Big Pack", comment: "Coin package name")
             credits = 50
             isPopular = false
         default:

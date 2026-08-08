@@ -35,6 +35,8 @@ targets:
         buildPhase: resources
       - path: NewbornMoments/Resources/loader.json
         buildPhase: resources
+      - path: NewbornMoments/Resources/Localizable.xcstrings
+        buildPhase: resources
     settings:
       base:
         INFOPLIST_FILE: NewbornMoments/Resources/Info.plist

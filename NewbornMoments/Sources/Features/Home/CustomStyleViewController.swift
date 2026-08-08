@@ -6,7 +6,7 @@ import UIKit
 /// `styleId` points at the reserved `ai_models/custom-style` doc (functions/seedCustomStyle.js)
 /// — its own `prompt` field is never used since editInstruction always takes precedence server-side.
 final class CustomStyleViewController: UIViewController {
-    private static let customTheme = ThemeCard(id: "custom-style", name: "Custom Style", tint: Theme.Color.purpleBackground, previewImageUrl: nil)
+    private static let customTheme = ThemeCard(id: "custom-style", name: NSLocalizedString("Custom Style", comment: "Custom-style theme name"), tint: Theme.Color.purpleBackground, previewImageUrl: nil)
 
     private var pickedImage: UIImage? {
         didSet { updatePreview() }
@@ -16,7 +16,7 @@ final class CustomStyleViewController: UIViewController {
     private let previewImageView = UIImageView()
     private let promptTextView = UITextView()
     private let promptPlaceholder = UILabel()
-    private let generateButton = GradientPillButton(title: "Generate", icon: UIImage(systemName: "sparkles"))
+    private let generateButton = GradientPillButton(title: NSLocalizedString("Generate", comment: "Custom style generate button"), icon: UIImage(systemName: "sparkles"))
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -46,7 +46,7 @@ final class CustomStyleViewController: UIViewController {
         back.translatesAutoresizingMaskIntoConstraints = false
 
         let title = UILabel()
-        title.text = "Create Your Own Style"
+        title.text = NSLocalizedString("Create Your Own Style", comment: "Custom style screen nav title")
         title.font = Theme.Font.heading(19, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
         title.numberOfLines = 1
@@ -97,13 +97,13 @@ final class CustomStyleViewController: UIViewController {
         circle.addSubview(cameraIcon)
 
         let dropTitle = UILabel()
-        dropTitle.text = "Add a photo to start from"
+        dropTitle.text = NSLocalizedString("Add a photo to start from", comment: "Custom style drop zone title")
         dropTitle.font = Theme.Font.heading(16, weight: 700)
         dropTitle.textColor = Theme.Color.textPrimaryAlt
         dropTitle.textAlignment = .center
 
         let dropSubtitle = UILabel()
-        dropSubtitle.text = "JPG or PNG, up to 10 MB"
+        dropSubtitle.text = NSLocalizedString("JPG or PNG, up to 10 MB", comment: "Custom style drop zone subtitle")
         dropSubtitle.font = Theme.Font.body(13, weight: 500)
         dropSubtitle.textColor = Theme.Color.textSecondary
         dropSubtitle.textAlignment = .center
@@ -126,7 +126,7 @@ final class CustomStyleViewController: UIViewController {
         dropZone.addSubview(previewImageView)
 
         let changePhoto = PaddedLabel()
-        changePhoto.text = "Tap to change photo"
+        changePhoto.text = NSLocalizedString("Tap to change photo", comment: "Custom style photo overlay label")
         changePhoto.horizontalPadding = 12
         changePhoto.font = Theme.Font.heading(11, weight: 700)
         changePhoto.textColor = .white
@@ -140,7 +140,7 @@ final class CustomStyleViewController: UIViewController {
         self.changePhotoLabel = changePhoto
 
         let promptTitle = UILabel()
-        promptTitle.text = "Describe your idea"
+        promptTitle.text = NSLocalizedString("Describe your idea", comment: "Custom style prompt field label")
         promptTitle.font = Theme.Font.heading(14, weight: 700)
         promptTitle.textColor = Theme.Color.textSecondaryAlt
 
@@ -161,7 +161,7 @@ final class CustomStyleViewController: UIViewController {
         promptTextView.delegate = self
         promptTextView.translatesAutoresizingMaskIntoConstraints = false
 
-        promptPlaceholder.text = "e.g. \u{201c}Turn my baby into a tiny astronaut floating among the stars\u{201d}"
+        promptPlaceholder.text = NSLocalizedString("e.g. \u{201c}Turn my baby into a tiny astronaut floating among the stars\u{201d}", comment: "Custom style prompt field placeholder")
         promptPlaceholder.font = Theme.Font.body(14.5, weight: 600)
         promptPlaceholder.textColor = UIColor(hex: 0xB4A6A2)
         promptPlaceholder.numberOfLines = 0
@@ -254,14 +254,14 @@ final class CustomStyleViewController: UIViewController {
 
     @objc private func dropZoneTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: "Add a Photo", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: NSLocalizedString("Add a Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .camera)
         })
-        alert.addAction(UIAlertAction(title: "Choose from Gallery", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Choose from Gallery", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .photoLibrary)
         })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
         present(alert, animated: true)
     }
 

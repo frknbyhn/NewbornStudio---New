@@ -4,6 +4,42 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>ar</string>
+		<string>ca</string>
+		<string>zh-Hans</string>
+		<string>zh-Hant</string>
+		<string>hr</string>
+		<string>cs</string>
+		<string>da</string>
+		<string>nl</string>
+		<string>fi</string>
+		<string>fr</string>
+		<string>de</string>
+		<string>el</string>
+		<string>he</string>
+		<string>hi</string>
+		<string>hu</string>
+		<string>id</string>
+		<string>it</string>
+		<string>ja</string>
+		<string>ko</string>
+		<string>ms</string>
+		<string>nb</string>
+		<string>pl</string>
+		<string>pt</string>
+		<string>ro</string>
+		<string>ru</string>
+		<string>sk</string>
+		<string>es</string>
+		<string>sv</string>
+		<string>th</string>
+		<string>tr</string>
+		<string>uk</string>
+		<string>vi</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>Newborn Moments</string>
 	<key>CFBundleExecutable</key>

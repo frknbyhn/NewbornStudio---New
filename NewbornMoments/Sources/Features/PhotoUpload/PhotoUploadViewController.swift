@@ -53,7 +53,7 @@ final class PhotoUploadViewController: UIViewController {
         back.translatesAutoresizingMaskIntoConstraints = false
 
         let title = UILabel()
-        title.text = "Upload a photo"
+        title.text = NSLocalizedString("Upload a photo", comment: "Photo upload screen nav title")
         title.font = Theme.Font.heading(19, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
 
@@ -94,14 +94,14 @@ final class PhotoUploadViewController: UIViewController {
         circle.translatesAutoresizingMaskIntoConstraints = false
 
         let dropTitle = UILabel()
-        dropTitle.text = "Upload a clear photo of your baby"
+        dropTitle.text = NSLocalizedString("Upload a clear photo of your baby", comment: "Photo upload drop zone title")
         dropTitle.font = Theme.Font.heading(16, weight: 700)
         dropTitle.textColor = Theme.Color.textPrimaryAlt
         dropTitle.textAlignment = .center
         dropTitle.numberOfLines = 0
 
         let dropSubtitle = UILabel()
-        dropSubtitle.text = "JPG or PNG, up to 10 MB"
+        dropSubtitle.text = NSLocalizedString("JPG or PNG, up to 10 MB", comment: "Photo upload drop zone subtitle")
         dropSubtitle.font = Theme.Font.body(13, weight: 500)
         dropSubtitle.textColor = Theme.Color.textSecondary
         dropSubtitle.textAlignment = .center
@@ -117,30 +117,30 @@ final class PhotoUploadViewController: UIViewController {
         dropZone.translatesAutoresizingMaskIntoConstraints = false
 
         let tipsTitle = UILabel()
-        tipsTitle.text = "For the best results"
+        tipsTitle.text = NSLocalizedString("For the best results", comment: "Photo upload tips title")
         tipsTitle.font = Theme.Font.heading(14, weight: 700)
         tipsTitle.textColor = Theme.Color.textSecondaryAlt
 
         let tips = UIStackView(arrangedSubviews: [
-            tipRow(icon: "sun.max.fill", iconColor: Theme.Color.coin, iconBg: Theme.Color.coinBackground, text: "Bright, even lighting"),
-            tipRow(icon: "face.smiling.fill", iconColor: Theme.Color.success, iconBg: Theme.Color.successBackground, text: "Face clearly visible"),
-            tipRow(icon: "nosign", iconColor: Theme.Color.purpleAccent, iconBg: Theme.Color.purpleBackground, text: "No filters or heavy edits")
+            tipRow(icon: "sun.max.fill", iconColor: Theme.Color.coin, iconBg: Theme.Color.coinBackground, text: NSLocalizedString("Bright, even lighting", comment: "Photo upload tip")),
+            tipRow(icon: "face.smiling.fill", iconColor: Theme.Color.success, iconBg: Theme.Color.successBackground, text: NSLocalizedString("Face clearly visible", comment: "Photo upload tip")),
+            tipRow(icon: "nosign", iconColor: Theme.Color.purpleAccent, iconBg: Theme.Color.purpleBackground, text: NSLocalizedString("No filters or heavy edits", comment: "Photo upload tip"))
         ])
         tips.axis = .vertical
         tips.spacing = 12
 
-        let takePhoto = GradientPillButton(title: "Take Photo", icon: UIImage(systemName: "camera.fill"))
+        let takePhoto = GradientPillButton(title: NSLocalizedString("Take Photo", comment: "Photo upload button"), icon: UIImage(systemName: "camera.fill"))
         takePhoto.addTarget(self, action: #selector(takePhotoTapped), for: .touchUpInside)
 
         let chooseGallery = UIButton(type: .system)
         var config = UIButton.Configuration.filled()
-        config.title = "Choose from Gallery"
+        config.title = NSLocalizedString("Choose from Gallery", comment: "Photo upload button")
         config.image = UIImage(systemName: "photo")
         config.imagePadding = 8
         config.baseBackgroundColor = Theme.Color.backgroundWarm
         config.baseForegroundColor = Theme.Color.textSecondaryAlt
         config.cornerStyle = .capsule
-        config.attributedTitle = AttributedString("Choose from Gallery", attributes: .init([.font: Theme.Font.heading(16, weight: 700)]))
+        config.attributedTitle = AttributedString(NSLocalizedString("Choose from Gallery", comment: "Photo upload button"), attributes: .init([.font: Theme.Font.heading(16, weight: 700)]))
         chooseGallery.configuration = config
         chooseGallery.addTarget(self, action: #selector(chooseGalleryTapped), for: .touchUpInside)
         chooseGallery.translatesAutoresizingMaskIntoConstraints = false
@@ -243,14 +243,14 @@ final class PhotoUploadViewController: UIViewController {
 
     @objc private func dropZoneTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: "Add a Photo", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: NSLocalizedString("Add a Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .camera)
         })
-        alert.addAction(UIAlertAction(title: "Choose from Gallery", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Choose from Gallery", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .photoLibrary)
         })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
         present(alert, animated: true)
     }
 

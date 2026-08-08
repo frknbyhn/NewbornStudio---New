@@ -22,19 +22,19 @@ final class ProfileViewController: UIViewController {
         scroll.addSubview(stack)
 
         stack.addArrangedSubview(card([
-            row(icon: "square.grid.2x2.fill", tint: Theme.Color.accentEnd, tintBg: UIColor(hex: 0xFCE6EC), title: "My Creations", action: #selector(myCreationsTapped)),
-            row(icon: "photo.stack.fill", tint: Theme.Color.purpleAccent, tintBg: Theme.Color.purpleBackground, title: "Saved Milestones", action: #selector(savedMilestonesTapped))
+            row(icon: "square.grid.2x2.fill", tint: Theme.Color.accentEnd, tintBg: UIColor(hex: 0xFCE6EC), title: NSLocalizedString("My Creations", comment: "Profile menu row"), action: #selector(myCreationsTapped)),
+            row(icon: "photo.stack.fill", tint: Theme.Color.purpleAccent, tintBg: Theme.Color.purpleBackground, title: NSLocalizedString("Saved Collages", comment: "Profile menu row"), action: #selector(savedMilestonesTapped))
         ]))
 
         stack.addArrangedSubview(card([
-            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: "Language", trailingText: "English", action: #selector(languageTapped))
+            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: NSLocalizedString("Language", comment: "Profile menu row"), trailingText: NSLocalizedString("English", comment: "Current language value shown in Profile"), action: #selector(languageTapped))
         ]))
 
         stack.addArrangedSubview(card([
-            row(icon: "arrow.counterclockwise", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: "Restore Purchase", action: #selector(restoreTapped)),
-            row(icon: "hand.raised.fill", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: "Privacy Policy", action: #selector(privacyTapped)),
-            row(icon: "doc.text.fill", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: "Terms of Use", action: #selector(termsTapped)),
-            row(icon: "star.fill", tint: Theme.Color.coin, tintBg: Theme.Color.coinBackground, title: "Rate the App", action: #selector(rateTapped))
+            row(icon: "arrow.counterclockwise", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: NSLocalizedString("Restore Purchase", comment: "Profile menu row"), action: #selector(restoreTapped)),
+            row(icon: "hand.raised.fill", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: NSLocalizedString("Privacy Policy", comment: "Profile menu row"), action: #selector(privacyTapped)),
+            row(icon: "doc.text.fill", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: NSLocalizedString("Terms of Use", comment: "Profile menu row"), action: #selector(termsTapped)),
+            row(icon: "star.fill", tint: Theme.Color.coin, tintBg: Theme.Color.coinBackground, title: NSLocalizedString("Rate the App", comment: "Profile menu row"), action: #selector(rateTapped))
         ]))
 
         NSLayoutConstraint.activate([
@@ -149,8 +149,8 @@ final class ProfileViewController: UIViewController {
 
     @objc private func languageTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: "Language", message: "English is the only language available right now. More are on the way.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        let alert = UIAlertController(title: NSLocalizedString("Language", comment: "Language alert title"), message: NSLocalizedString("English is the only language available right now. More are on the way.", comment: "Language alert message"), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
     }
 
@@ -162,21 +162,21 @@ final class ProfileViewController: UIViewController {
                 switch result {
                 case .success(let customerInfo):
                     if customerInfo.entitlements.active.isEmpty {
-                        self.presentAlert(title: "Nothing to restore", message: "No active purchases were found for this account.")
+                        self.presentAlert(title: NSLocalizedString("Nothing to restore", comment: "Restore purchases alert title"), message: NSLocalizedString("No active purchases were found for this account.", comment: "Restore purchases alert message"))
                     } else {
                         HapticFeedback.success()
-                        self.presentAlert(title: "Restored", message: "Your purchases have been restored.")
+                        self.presentAlert(title: NSLocalizedString("Restored", comment: "Restore purchases alert title"), message: NSLocalizedString("Your purchases have been restored.", comment: "Restore purchases alert message"))
                     }
                 case .failure(let error):
                     HapticFeedback.error()
-                    self.presentAlert(title: "Couldn't restore purchases", message: error.localizedDescription)
+                    self.presentAlert(title: NSLocalizedString("Couldn't restore purchases", comment: "Restore purchases alert title"), message: error.localizedDescription)
                 }
             }
         }
     }
 
-    @objc private func privacyTapped() { HapticFeedback.light(); presentLegal(title: "Privacy Policy") }
-    @objc private func termsTapped() { HapticFeedback.light(); presentLegal(title: "Terms of Use") }
+    @objc private func privacyTapped() { HapticFeedback.light(); presentLegal(kind: .privacyPolicy) }
+    @objc private func termsTapped() { HapticFeedback.light(); presentLegal(kind: .termsOfUse) }
     @objc private func rateTapped() {
         HapticFeedback.light()
         if let scene = view.window?.windowScene {
@@ -184,14 +184,14 @@ final class ProfileViewController: UIViewController {
         }
     }
 
-    private func presentLegal(title: String) {
-        let legal = LegalDocumentViewController(title: title)
+    private func presentLegal(kind: LegalDocumentViewController.Kind) {
+        let legal = LegalDocumentViewController(kind: kind)
         present(UINavigationController(rootViewController: legal), animated: true)
     }
 
     private func presentAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
     }
 }

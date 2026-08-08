@@ -40,7 +40,7 @@ final class OnboardingPageViewController: UIViewController {
         // Skip button
         if page.showsSkip {
             let skip = UIButton(type: .system)
-            skip.setTitle("Skip", for: .normal)
+            skip.setTitle(NSLocalizedString("Skip", comment: "Onboarding skip button"), for: .normal)
             skip.setTitleColor(page.skipColor, for: .normal)
             skip.titleLabel?.font = Theme.Font.heading(14, weight: 600)
             skip.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)

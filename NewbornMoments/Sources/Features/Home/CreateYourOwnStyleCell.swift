@@ -38,12 +38,12 @@ final class CreateYourOwnStyleCell: UICollectionViewCell {
         badge.addSubview(wand)
 
         let title = UILabel()
-        title.text = "Create Your Own Style"
+        title.text = NSLocalizedString("Create Your Own Style", comment: "Home screen custom-style card title")
         title.font = Theme.Font.heading(17, weight: 700)
         title.textColor = .white
 
         let subtitle = UILabel()
-        subtitle.text = "Describe any idea — we'll bring it to life"
+        subtitle.text = NSLocalizedString("Describe any idea — we'll bring it to life", comment: "Home screen custom-style card subtitle")
         subtitle.adjustsFontSizeToFitWidth = true
         subtitle.font = Theme.Font.body(12.5, weight: 600)
         subtitle.textColor = UIColor.white.withAlphaComponent(0.85)

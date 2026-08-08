@@ -7,7 +7,7 @@ final class MilestoneListDetailViewController: UIViewController {
     private let store = MilestoneStore.shared
     private let listId: String
     private var stack: UIStackView!
-    private let collageButton = GradientPillButton(title: "Create Collage", icon: UIImage(systemName: "square.grid.2x2.fill"))
+    private let collageButton = GradientPillButton(title: NSLocalizedString("Create Collage", comment: "Button to create a milestone collage"), icon: UIImage(systemName: "square.grid.2x2.fill"))
     private let collageCostLabel = UILabel()
 
     init(list: MilestoneList) {
@@ -166,11 +166,11 @@ final class MilestoneListDetailViewController: UIViewController {
         let captured = list.milestones.filter { $0.state == .done }
         guard captured.count >= Self.minCaptureCountForCollage else {
             let alert = UIAlertController(
-                title: "Not Enough Milestones Yet",
-                message: "You need at least \(Self.minCaptureCountForCollage) captured milestones to create a collage video. You have \(captured.count) so far.",
+                title: NSLocalizedString("Not Enough Milestones Yet", comment: "Not enough milestones alert title"),
+                message: String(format: NSLocalizedString("You need at least %d captured milestones to create a collage video. You have %d so far.", comment: "Not enough milestones alert message, both %d are counts"), Self.minCaptureCountForCollage, captured.count),
                 preferredStyle: .alert
             )
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
             present(alert, animated: true)
             return
         }
@@ -179,13 +179,16 @@ final class MilestoneListDetailViewController: UIViewController {
 
     private func presentCollageConfirmation(for captured: [Milestone]) {
         let cost = captured.count * Self.creditCostPerItem
+        let costText = cost == 1
+            ? NSLocalizedString("1 credit", comment: "Credit cost, singular")
+            : String(format: NSLocalizedString("%d credits", comment: "Credit cost, plural, %d is a count"), cost)
         let alert = UIAlertController(
-            title: "Create Collage Video?",
-            message: "We'll animate each of your \(captured.count) captured photos and combine them into one video. This will cost \(cost) credit\(cost == 1 ? "" : "s"), and depending on how many photos you've added, it may take quite a while. Do you want to continue?",
+            title: NSLocalizedString("Create Collage Video?", comment: "Collage confirmation alert title"),
+            message: String(format: NSLocalizedString("We'll animate each of your %d captured photos and combine them into one video. This will cost %@, and depending on how many photos you've added, it may take quite a while. Do you want to continue?", comment: "Collage confirmation alert message, %d is item count, %@ is a credit cost like '5 credits'"), captured.count, costText),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Continue", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Continue", comment: "Continue button"), style: .default) { [weak self] _ in
             self?.startCollageAnimation(for: captured)
         })
         present(alert, animated: true)
@@ -214,7 +217,7 @@ final class MilestoneListDetailViewController: UIViewController {
             return CollageAnimationService.ItemPayload(milestoneId: milestone.id, title: milestone.title, photoUrl: photoUrl, styleId: styleId, capturedAt: milestone.capturedAt)
         }
         guard items.count >= Self.minCaptureCountForCollage else {
-            presentCollageErrorAlert(message: "Some of your captured photos are still syncing. Please try again in a moment.")
+            presentCollageErrorAlert(message: NSLocalizedString("Some of your captured photos are still syncing. Please try again in a moment.", comment: "Collage sync error message"))
             return
         }
 
@@ -229,7 +232,7 @@ final class MilestoneListDetailViewController: UIViewController {
                     self.presentCollageStartedAlert()
                 case .failure(let error):
                     print("startCollageAnimation failed: \(error)")
-                    self.presentCollageErrorAlert(message: "Something went wrong starting your collage. Please try again.")
+                    self.presentCollageErrorAlert(message: NSLocalizedString("Something went wrong starting your collage. Please try again.", comment: "Collage start error message"))
                 }
             }
         }
@@ -237,11 +240,11 @@ final class MilestoneListDetailViewController: UIViewController {
 
     private func presentCollageStartedAlert() {
         let alert = UIAlertController(
-            title: "Your Request Was Received",
-            message: "We're preparing your collage. You can follow its progress from the My Collages screen.",
+            title: NSLocalizedString("Your Request Was Received", comment: "Collage started alert title"),
+            message: NSLocalizedString("We're preparing your collage. You can follow its progress from the My Collages screen.", comment: "Collage started alert message"),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Go to My Collages", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Go to My Collages", comment: "Collage started alert action"), style: .default) { [weak self] _ in
             self?.goToMyCollages()
         })
         present(alert, animated: true)
@@ -251,9 +254,9 @@ final class MilestoneListDetailViewController: UIViewController {
         navigationController?.pushViewController(MilestoneCollageGalleryViewController(), animated: true)
     }
 
-    private func presentCollageErrorAlert(message: String = "We couldn't create the collage video. Please try again.") {
-        let alert = UIAlertController(title: "Something Went Wrong", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+    private func presentCollageErrorAlert(message: String = NSLocalizedString("We couldn't create the collage video. Please try again.", comment: "Collage error message")) {
+        let alert = UIAlertController(title: NSLocalizedString("Something Went Wrong", comment: "Generic error title"), message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
     }
 
@@ -400,7 +403,7 @@ final class MilestoneListDetailViewController: UIViewController {
         title.numberOfLines = 2
 
         let status = UILabel()
-        status.text = isDone ? "Captured" : "Not yet captured"
+        status.text = isDone ? NSLocalizedString("Captured", comment: "Milestone status") : NSLocalizedString("Not yet captured", comment: "Milestone status")
         status.font = Theme.Font.body(12, weight: 600)
         status.textColor = Theme.Color.textSecondary
 
@@ -533,7 +536,7 @@ final class MilestoneListDetailViewController: UIViewController {
 
     private func emptyState() -> UIView {
         let label = UILabel()
-        label.text = "No milestones yet — add your first one below."
+        label.text = NSLocalizedString("No milestones yet — add your first one below.", comment: "Empty milestone list message")
         label.font = Theme.Font.body(14, weight: 600)
         label.textColor = Theme.Color.textSecondary
         label.textAlignment = .center
@@ -544,7 +547,7 @@ final class MilestoneListDetailViewController: UIViewController {
     private func addMilestoneButton() -> UIView {
         let button = UIButton(type: .system)
         var config = UIButton.Configuration.plain()
-        config.title = "Add Milestone"
+        config.title = NSLocalizedString("Add Milestone", comment: "Add milestone button")
         config.image = UIImage(systemName: "plus.circle.fill")
         config.imagePadding = 8
         config.baseForegroundColor = Theme.Color.accentEnd
@@ -561,10 +564,10 @@ final class MilestoneListDetailViewController: UIViewController {
 
     @objc private func addMilestoneTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: "New Milestone", message: "What would you like to remember?", preferredStyle: .alert)
-        alert.addTextField { $0.placeholder = "e.g. Met Grandma" }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Add", style: .default) { [weak self, weak alert] _ in
+        let alert = UIAlertController(title: NSLocalizedString("New Milestone", comment: "New milestone alert title"), message: NSLocalizedString("What would you like to remember?", comment: "New milestone alert message"), preferredStyle: .alert)
+        alert.addTextField { $0.placeholder = NSLocalizedString("e.g. Met Grandma", comment: "New milestone name placeholder") }
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: "Add button"), style: .default) { [weak self, weak alert] _ in
             guard let self, let title = alert?.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines), !title.isEmpty else { return }
             self.store.addMilestone(title: title, toListId: self.listId)
             self.reload()
@@ -581,12 +584,12 @@ final class MilestoneListDetailViewController: UIViewController {
         }
         HapticFeedback.light()
         let alert = UIAlertController(
-            title: "Delete Captured Milestone?",
-            message: "\u{201c}\(milestone.title)\u{201d} has already been captured. Deleting it removes the photo too — this can't be undone.",
+            title: NSLocalizedString("Delete Captured Milestone?", comment: "Delete milestone alert title"),
+            message: String(format: NSLocalizedString("\u{201c}%@\u{201d} has already been captured. Deleting it removes the photo too — this can't be undone.", comment: "Delete milestone alert message, %@ is a milestone title"), milestone.title),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: "Delete button"), style: .destructive) { [weak self] _ in
             self?.removeMilestone(milestone.id)
         })
         present(alert, animated: true)

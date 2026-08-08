@@ -8,7 +8,7 @@ final class LimitedOfferPopupViewController: UIViewController {
     private let card = UIView()
     private let countdownLabel = UILabel()
     private let priceLabel = UILabel()
-    private let cta = GradientPillButton(title: "Claim Offer", icon: nil)
+    private let cta = GradientPillButton(title: NSLocalizedString("Claim Offer", comment: "Limited offer CTA placeholder"), icon: nil)
     private let spinner = UIActivityIndicatorView(style: .medium)
     private var countdownTimer: Timer?
     private var deadline: Date?
@@ -68,7 +68,7 @@ final class LimitedOfferPopupViewController: UIViewController {
         let badgeIcon = medallion(symbol: "gift.fill", diameter: 76)
 
         let badge = PaddedLabel()
-        badge.text = "LIMITED TIME OFFER"
+        badge.text = NSLocalizedString("LIMITED TIME OFFER", comment: "Limited offer badge")
         badge.horizontalPadding = 12
         badge.verticalPadding = 5
         badge.font = Theme.Font.heading(14, weight: 700)
@@ -79,14 +79,14 @@ final class LimitedOfferPopupViewController: UIViewController {
         badge.textAlignment = .center
 
         let title = UILabel()
-        title.text = "A Special Offer, Just for You"
+        title.text = NSLocalizedString("A Special Offer, Just for You", comment: "Limited offer title")
         title.font = Theme.Font.heading(21, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
         title.textAlignment = .center
         title.numberOfLines = 0
 
         let subtitle = UILabel()
-        subtitle.text = "Grab this bundle before the timer runs out."
+        subtitle.text = NSLocalizedString("Grab this bundle before the timer runs out.", comment: "Limited offer subtitle")
         subtitle.font = Theme.Font.body(13.5, weight: 600)
         subtitle.textColor = Theme.Color.textSecondary
         subtitle.textAlignment = .center
@@ -95,7 +95,7 @@ final class LimitedOfferPopupViewController: UIViewController {
         countdownLabel.font = Theme.Font.heading(28, weight: 700)
         countdownLabel.textColor = Theme.Color.accentEnd
         countdownLabel.textAlignment = .center
-        countdownLabel.text = "--:--:--"
+        countdownLabel.text = "--:--:--" // digits/colons — locale-neutral, not localized
 
         let countdownWrap = UIView()
         countdownWrap.backgroundColor = .white
@@ -122,7 +122,7 @@ final class LimitedOfferPopupViewController: UIViewController {
         cta.addTarget(self, action: #selector(claimTapped), for: .touchUpInside)
 
         let footer = UILabel()
-        footer.text = "One-time offer — expires when the timer ends."
+        footer.text = NSLocalizedString("One-time offer — expires when the timer ends.", comment: "Limited offer footer note")
         footer.font = Theme.Font.body(11, weight: 600)
         footer.textColor = UIColor(hex: 0xB4A6A2)
         footer.textAlignment = .center
@@ -159,7 +159,7 @@ final class LimitedOfferPopupViewController: UIViewController {
         let badgeIcon = medallion(symbol: "flame.fill", diameter: 76)
 
         let badge = PaddedLabel()
-        badge.text = "LAST CHANCE"
+        badge.text = NSLocalizedString("LAST CHANCE", comment: "Limited offer last-chance badge")
         badge.horizontalPadding = 12
         badge.font = Theme.Font.heading(11, weight: 700)
         badge.textColor = Theme.Color.accentEnd
@@ -169,14 +169,14 @@ final class LimitedOfferPopupViewController: UIViewController {
         badge.textAlignment = .center
 
         let title = UILabel()
-        title.text = "Your Final Chance!"
+        title.text = NSLocalizedString("Your Final Chance!", comment: "Limited offer last-chance title")
         title.font = Theme.Font.heading(21, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
         title.textAlignment = .center
         title.numberOfLines = 0
 
         let subtitle = UILabel()
-        subtitle.text = "This exclusive bundle won't be offered again. Grab it now, or it's gone for good."
+        subtitle.text = NSLocalizedString("This exclusive bundle won't be offered again. Grab it now, or it's gone for good.", comment: "Limited offer last-chance subtitle")
         subtitle.font = Theme.Font.body(13.5, weight: 600)
         subtitle.textColor = Theme.Color.textSecondary
         subtitle.textAlignment = .center
@@ -195,7 +195,7 @@ final class LimitedOfferPopupViewController: UIViewController {
         cta.addTarget(self, action: #selector(claimTapped), for: .touchUpInside)
 
         let footer = UILabel()
-        footer.text = "Close this and it's gone for good."
+        footer.text = NSLocalizedString("Close this and it's gone for good.", comment: "Limited offer last-chance footer note")
         footer.font = Theme.Font.body(11, weight: 600)
         footer.textColor = UIColor(hex: 0xB4A6A2)
         footer.textAlignment = .center
@@ -264,13 +264,13 @@ final class LimitedOfferPopupViewController: UIViewController {
                 self.spinner.stopAnimating()
                 guard case .success(let offering) = result,
                       let package = offering.availablePackages.first(where: { $0.identifier == "limited" }) else {
-                    self.priceLabel.text = "Offer unavailable right now"
+                    self.priceLabel.text = NSLocalizedString("Offer unavailable right now", comment: "Limited offer unavailable message")
                     return
                 }
                 let coinPackage = CoinPackage(package: package)
                 self.limitedPackage = coinPackage
-                self.priceLabel.text = "\(coinPackage.credits) coins · \(coinPackage.priceLabel)"
-                self.cta.title = "Claim \(coinPackage.credits) Coins"
+                self.priceLabel.text = String(format: NSLocalizedString("%d coins · %@", comment: "Limited offer price line, %d is credit count, %@ is a formatted price"), coinPackage.credits, coinPackage.priceLabel)
+                self.cta.title = String(format: NSLocalizedString("Claim %d Coins", comment: "Limited offer CTA, %d is a credit count"), coinPackage.credits)
                 self.cta.isHidden = false
             }
         }
@@ -312,8 +312,8 @@ final class LimitedOfferPopupViewController: UIViewController {
                     break
                 case .failure(let error):
                     HapticFeedback.error()
-                    let alert = UIAlertController(title: "Purchase failed", message: error.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Purchase failed", comment: "Purchase error title"), message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
                     self.present(alert, animated: true)
                 }
             }

@@ -14,7 +14,7 @@ import UIKit
 /// (the X button) saves that result onto this milestone and returns here instead of the default
 /// popToRoot (see ResultViewController.closeTapped).
 final class MilestoneCaptureViewController: UIViewController {
-    private static let customTheme = ThemeCard(id: "custom-style", name: "Custom Style", tint: Theme.Color.purpleBackground, previewImageUrl: nil)
+    private static let customTheme = ThemeCard(id: "custom-style", name: NSLocalizedString("Custom Style", comment: "Custom-style theme name"), tint: Theme.Color.purpleBackground, previewImageUrl: nil)
 
     private let milestone: Milestone
     private let listId: String
@@ -37,7 +37,7 @@ final class MilestoneCaptureViewController: UIViewController {
         let curatedPrompt = milestone.aiPrompt?.isEmpty == false ? milestone.aiPrompt : nil
         self.curatedPrompt = curatedPrompt
         self.submitButton = GradientPillButton(
-            title: curatedPrompt != nil ? "Generate Portrait" : "Save Photo",
+            title: curatedPrompt != nil ? NSLocalizedString("Generate Portrait", comment: "Milestone capture submit button") : NSLocalizedString("Save Photo", comment: "Milestone capture submit button"),
             icon: UIImage(systemName: curatedPrompt != nil ? "sparkles" : "checkmark.circle.fill")
         )
         super.init(nibName: nil, bundle: nil)
@@ -125,13 +125,13 @@ final class MilestoneCaptureViewController: UIViewController {
         circle.addSubview(cameraIcon)
 
         let dropTitle = UILabel()
-        dropTitle.text = "Add a photo for this moment"
+        dropTitle.text = NSLocalizedString("Add a photo for this moment", comment: "Milestone capture drop zone title")
         dropTitle.font = Theme.Font.heading(16, weight: 700)
         dropTitle.textColor = Theme.Color.textPrimaryAlt
         dropTitle.textAlignment = .center
 
         let dropSubtitle = UILabel()
-        dropSubtitle.text = "JPG or PNG, up to 10 MB"
+        dropSubtitle.text = NSLocalizedString("JPG or PNG, up to 10 MB", comment: "Photo drop zone subtitle")
         dropSubtitle.font = Theme.Font.body(13, weight: 500)
         dropSubtitle.textColor = Theme.Color.textSecondary
         dropSubtitle.textAlignment = .center
@@ -148,14 +148,14 @@ final class MilestoneCaptureViewController: UIViewController {
         dropZone.addSubview(dropStack)
         
         let tipsTitle = UILabel()
-        tipsTitle.text = "For the best results"
+        tipsTitle.text = NSLocalizedString("For the best results", comment: "Photo tips title")
         tipsTitle.font = Theme.Font.heading(14, weight: 700)
         tipsTitle.textColor = Theme.Color.textSecondaryAlt
 
         let tips = UIStackView(arrangedSubviews: [
-            tipRow(icon: "sun.max.fill", iconColor: Theme.Color.coin, iconBg: Theme.Color.coinBackground, text: "Bright, even lighting"),
-            tipRow(icon: "face.smiling.fill", iconColor: Theme.Color.success, iconBg: Theme.Color.successBackground, text: "Face clearly visible"),
-            tipRow(icon: "nosign", iconColor: Theme.Color.purpleAccent, iconBg: Theme.Color.purpleBackground, text: "No filters or heavy edits")
+            tipRow(icon: "sun.max.fill", iconColor: Theme.Color.coin, iconBg: Theme.Color.coinBackground, text: NSLocalizedString("Bright, even lighting", comment: "Photo tip")),
+            tipRow(icon: "face.smiling.fill", iconColor: Theme.Color.success, iconBg: Theme.Color.successBackground, text: NSLocalizedString("Face clearly visible", comment: "Photo tip")),
+            tipRow(icon: "nosign", iconColor: Theme.Color.purpleAccent, iconBg: Theme.Color.purpleBackground, text: NSLocalizedString("No filters or heavy edits", comment: "Photo tip"))
         ])
         tips.axis = .vertical
         tips.spacing = 12
@@ -167,7 +167,7 @@ final class MilestoneCaptureViewController: UIViewController {
         dropZone.addSubview(previewImageView)
 
         let changePhoto = PaddedLabel()
-        changePhoto.text = "Tap to change photo"
+        changePhoto.text = NSLocalizedString("Tap to change photo", comment: "Photo overlay label")
         changePhoto.horizontalPadding = 12
         changePhoto.font = Theme.Font.heading(11, weight: 700)
         changePhoto.textColor = .white
@@ -187,7 +187,7 @@ final class MilestoneCaptureViewController: UIViewController {
         var promptCard: UIView?
         if curatedPrompt == nil {
             let promptTitle = UILabel()
-            promptTitle.text = "Want an AI touch-up? (optional)"
+            promptTitle.text = NSLocalizedString("Want an AI touch-up? (optional)", comment: "Milestone capture prompt field label")
             promptTitle.font = Theme.Font.heading(14, weight: 700)
             promptTitle.textColor = Theme.Color.textSecondaryAlt
 
@@ -208,7 +208,7 @@ final class MilestoneCaptureViewController: UIViewController {
             promptTextView.delegate = self
             promptTextView.translatesAutoresizingMaskIntoConstraints = false
 
-            promptPlaceholder.text = "e.g. \u{201c}Add soft golden light and floating sparkles\u{201d} — leave blank to just save the photo"
+            promptPlaceholder.text = NSLocalizedString("e.g. \u{201c}Add soft golden light and floating sparkles\u{201d} — leave blank to just save the photo", comment: "Milestone capture prompt placeholder")
             promptPlaceholder.font = Theme.Font.body(14.5, weight: 600)
             promptPlaceholder.textColor = UIColor(hex: 0xB4A6A2)
             promptPlaceholder.numberOfLines = 0
@@ -326,7 +326,7 @@ final class MilestoneCaptureViewController: UIViewController {
     private func updateSubmitState() {
         if curatedPrompt == nil {
             let hasPrompt = !promptTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            submitButton.title = hasPrompt ? "Generate & Save" : "Save Photo"
+            submitButton.title = hasPrompt ? NSLocalizedString("Generate & Save", comment: "Milestone capture submit button") : NSLocalizedString("Save Photo", comment: "Milestone capture submit button")
         }
         submitButton.isEnabled = pickedImage != nil
         submitButton.alpha = submitButton.isEnabled ? 1 : 0.5
@@ -340,14 +340,14 @@ final class MilestoneCaptureViewController: UIViewController {
 
     @objc private func dropZoneTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: "Add a Photo", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: NSLocalizedString("Add a Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .camera)
         })
-        alert.addAction(UIAlertAction(title: "Choose from Gallery", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Choose from Gallery", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .photoLibrary)
         })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
         present(alert, animated: true)
     }
 

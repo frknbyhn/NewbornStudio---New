@@ -25,6 +25,7 @@
 		50F03519599B99A7062D5300 /* CoinPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAAC39F7C7E333C1B9D9E99 /* CoinPackage.swift */; };
 		557E16B3762B37EE3FF340B8 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC82EF57A3AA2CC64AA16C6 /* GalleryViewController.swift */; };
 		591F8326A1FCD0A1BB5B197F /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E13AA36EB6DC5E874ACE /* PaywallViewController.swift */; };
+		5A53E64A235ECFC90EE0E9EA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */; };
 		5C72511AFF0F405271B7AB68 /* SubscriptionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351C2B9535CA5129F9F72496 /* SubscriptionPlan.swift */; };
 		5E0F964ECBD9319BF3338A9F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B980D1E22D56EE53F1DF8B /* OnboardingPage.swift */; };
 		5E1D41FC9F8A2A20943578A9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444A95432FFD592628BA3793 /* SplashViewController.swift */; };
@@ -96,6 +97,7 @@
 		351C2B9535CA5129F9F72496 /* SubscriptionPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlan.swift; sourceTree = "<group>"; };
 		356B6585FDE6D281439A32C4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		397F41CB76F88001A3F06648 /* CategoryStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStylesViewController.swift; sourceTree = "<group>"; };
+		39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3AB3B2CD5D42443811662992 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		3E578BB3B7412D77685DFEAE /* MilestoneDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailViewController.swift; sourceTree = "<group>"; };
 		3FA120F0C471F2249F069FAF /* ThemeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCard.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				8BBA6E1ABB064D0DE29C1680 /* Assets.xcassets */,
 				E0DF4304993EBEF084B4A1F9 /* GoogleService-Info.plist */,
 				96FADCB8E9007F93A5048803 /* loader.json */,
+				39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */,
 				E1002772CB479E6910326CEF /* Fonts */,
 			);
 			path = Resources;
@@ -487,6 +490,7 @@
 			files = (
 				8AA85BE0AC10C920B0FF214D /* Assets.xcassets in Resources */,
 				38A898FC7BFD4CDE27B3D429 /* GoogleService-Info.plist in Resources */,
+				5A53E64A235ECFC90EE0E9EA /* Localizable.xcstrings in Resources */,
 				0E5C728A5778C23B62738901 /* Nunito-Variable.ttf in Resources */,
 				B704F24B00AD0F67014D1B82 /* Quicksand-Variable.ttf in Resources */,
 				AE32DF321A6F6A8B695D5461 /* loader.json in Resources */,

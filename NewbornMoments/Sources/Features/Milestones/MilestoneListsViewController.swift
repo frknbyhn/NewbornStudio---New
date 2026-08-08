@@ -6,7 +6,7 @@ import UIKit
 final class MilestoneListsViewController: UIViewController {
     private let store = MilestoneStore.shared
     private var stack: UIStackView!
-    private let collagesButton = GradientPillButton(title: "My Collages", icon: UIImage(systemName: "film.stack.fill"))
+    private let collagesButton = GradientPillButton(title: NSLocalizedString("My Collages", comment: "Button to view saved collages"), icon: UIImage(systemName: "film.stack.fill"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,12 @@ final class MilestoneListsViewController: UIViewController {
 
     private func setUpHeader() {
         let title = UILabel()
-        title.text = "Your baby's collages"
+        title.text = NSLocalizedString("Your baby's collages", comment: "Milestone lists screen title")
         title.font = Theme.Font.heading(23, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
 
         let subtitle = UILabel()
-        subtitle.text = "Keep a list for every moment worth remembering"
+        subtitle.text = NSLocalizedString("Keep a list for every moment worth remembering", comment: "Milestone lists screen subtitle")
         subtitle.font = Theme.Font.body(13, weight: 600)
         subtitle.textColor = Theme.Color.textSecondary
 
@@ -226,7 +226,7 @@ final class MilestoneListsViewController: UIViewController {
         ])
 
         let title = UILabel()
-        title.text = "Add List"
+        title.text = NSLocalizedString("Add List", comment: "Add milestone list button")
         title.font = Theme.Font.heading(15.5, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
 
@@ -272,10 +272,10 @@ final class MilestoneListsViewController: UIViewController {
 
     @objc private func addListTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: "New List", message: "Give your list a name.", preferredStyle: .alert)
-        alert.addTextField { $0.placeholder = "e.g. Grandma's Visit" }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Create", style: .default) { [weak self, weak alert] _ in
+        let alert = UIAlertController(title: NSLocalizedString("New List", comment: "New list alert title"), message: NSLocalizedString("Give your list a name.", comment: "New list alert message"), preferredStyle: .alert)
+        alert.addTextField { $0.placeholder = NSLocalizedString("e.g. Grandma's Visit", comment: "New list name placeholder") }
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Create", comment: "Create button"), style: .default) { [weak self, weak alert] _ in
             guard let self, let name = alert?.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines), !name.isEmpty else { return }
             self.store.addList(name: name)
             self.reload()

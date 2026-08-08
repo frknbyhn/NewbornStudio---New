@@ -22,7 +22,7 @@ final class PaywallViewController: UIViewController {
     private var planCards: [PlanCardView] = []
     private var plans: [SubscriptionPlan] = []
     private var selectedPlan: SubscriptionPlan?
-    private let cta = GradientPillButton(title: "Subscribe Now", icon: nil)
+    private let cta = GradientPillButton(title: NSLocalizedString("Subscribe Now", comment: "Paywall CTA button"), icon: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +82,7 @@ final class PaywallViewController: UIViewController {
             contentContainer.isHidden = false
         case .failure(let error):
             // Real offline/error state — never an infinite spinner (Stability Gate rule).
-            errorLabel.text = "Couldn't load plans. Check your connection and try again."
+            errorLabel.text = NSLocalizedString("Couldn't load plans. Check your connection and try again.", comment: "Paywall load error")
             errorLabel.isHidden = false
             print("RevenueCatService.fetchOffering failed: \(error)")
         }
@@ -118,11 +118,11 @@ final class PaywallViewController: UIViewController {
             contentContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        let restoreLink = footerLink("Restore")
+        let restoreLink = footerLink(NSLocalizedString("Restore", comment: "Paywall footer link"))
         (restoreLink as? UIButton)?.addTarget(self, action: #selector(restoreTapped), for: .touchUpInside)
-        let termsLink = footerLink("Terms")
+        let termsLink = footerLink(NSLocalizedString("Terms", comment: "Paywall footer link"))
         (termsLink as? UIButton)?.addTarget(self, action: #selector(termsTapped), for: .touchUpInside)
-        let privacyLink = footerLink("Privacy")
+        let privacyLink = footerLink(NSLocalizedString("Privacy", comment: "Paywall footer link"))
         (privacyLink as? UIButton)?.addTarget(self, action: #selector(privacyTapped), for: .touchUpInside)
         let footer = UIStackView(arrangedSubviews: [restoreLink, termsLink, privacyLink])
         footer.axis = .horizontal
@@ -171,14 +171,14 @@ final class PaywallViewController: UIViewController {
 
     private func textBlock() -> UIView {
         let title = UILabel()
-        title.text = "Unlock Unlimited Creativity"
+        title.text = NSLocalizedString("Unlock Unlimited Creativity", comment: "Paywall title")
         title.font = Theme.Font.heading(24, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
         title.textAlignment = .center
         title.numberOfLines = 0
 
         let subtitle = UILabel()
-        subtitle.text = "Everything you need to make forever memories."
+        subtitle.text = NSLocalizedString("Everything you need to make forever memories.", comment: "Paywall subtitle")
         subtitle.font = Theme.Font.body(13, weight: 600)
         subtitle.textColor = Theme.Color.textSecondary
         subtitle.textAlignment = .center
@@ -223,7 +223,7 @@ final class PaywallViewController: UIViewController {
         let deck = fannedPhotoDeck()
 
         let badge = PaddedLabel()
-        badge.text = "NEWBORN PRO"
+        badge.text = NSLocalizedString("NEWBORN PRO", comment: "Paywall hero badge")
         badge.horizontalPadding = 14
         badge.font = Theme.Font.heading(11, weight: 700)
         badge.textColor = Theme.Color.accentEnd
@@ -374,7 +374,7 @@ final class PaywallViewController: UIViewController {
                         HapticFeedback.success()
                         self?.onDismiss?()
                     } else {
-                        self?.presentPurchaseError(RevenueCatServiceError.offeringNotFound, title: "Nothing to restore")
+                        self?.presentPurchaseError(RevenueCatServiceError.offeringNotFound, title: NSLocalizedString("Nothing to restore", comment: "Restore purchases error title"))
                     }
                 case .failure(let error):
                     self?.presentPurchaseError(error)
@@ -383,19 +383,19 @@ final class PaywallViewController: UIViewController {
         }
     }
 
-    private func presentPurchaseError(_ error: Error, title: String = "Something went wrong") {
+    private func presentPurchaseError(_ error: Error, title: String = NSLocalizedString("Something went wrong", comment: "Generic error title")) {
         let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
     }
 
     @objc private func termsTapped() {
         HapticFeedback.light()
-        present(UINavigationController(rootViewController: LegalDocumentViewController(title: "Terms of Use")), animated: true)
+        present(UINavigationController(rootViewController: LegalDocumentViewController(kind: .termsOfUse)), animated: true)
     }
 
     @objc private func privacyTapped() {
         HapticFeedback.light()
-        present(UINavigationController(rootViewController: LegalDocumentViewController(title: "Privacy Policy")), animated: true)
+        present(UINavigationController(rootViewController: LegalDocumentViewController(kind: .privacyPolicy)), animated: true)
     }
 }

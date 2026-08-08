@@ -33,7 +33,7 @@ final class MilestoneStore {
                         self.lists[listIndex].milestones[milestoneIndex].capturedAt = doc.capturedAt
                     } else if !self.lists[listIndex].isStandard {
                         // Custom-list item: the doc IS the definition, reconstruct it.
-                        var milestone = Milestone(id: doc.id, title: doc.title ?? "Untitled", state: doc.state == "done" ? .done : .pending)
+                        var milestone = Milestone(id: doc.id, title: doc.title ?? NSLocalizedString("Untitled", comment: "Fallback milestone title when none was recorded"), state: doc.state == "done" ? .done : .pending)
                         milestone.photoUrl = doc.photoUrl
                         milestone.capturedAt = doc.capturedAt
                         self.lists[listIndex].milestones.append(milestone)

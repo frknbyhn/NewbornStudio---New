@@ -67,7 +67,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         back.translatesAutoresizingMaskIntoConstraints = false
 
         let title = UILabel()
-        title.text = "My Collages"
+        title.text = NSLocalizedString("My Collages", comment: "My Collages screen title")
         title.font = Theme.Font.heading(19, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
         title.numberOfLines = 1
@@ -150,7 +150,7 @@ final class MilestoneCollageGalleryViewController: UIViewController {
 
     private func emptyState() -> UIView {
         let label = UILabel()
-        label.text = "No collages yet — capture at least 5 milestones in a list, then tap \u{201c}Create Collage\u{201d} to create one."
+        label.text = NSLocalizedString("No collages yet — capture at least 5 milestones in a list, then tap \u{201c}Create Collage\u{201d} to create one.", comment: "Empty collages state message")
         label.font = Theme.Font.body(14, weight: 600)
         label.textColor = Theme.Color.textSecondary
         label.textAlignment = .center
@@ -174,9 +174,9 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         let lowMinutes = Int(ceil(Double(lowSeconds) / 60))
         let highMinutes = Int(ceil(Double(highSeconds) / 60))
         if lowMinutes == highMinutes {
-            return "~\(lowMinutes) min"
+            return String(format: NSLocalizedString("~%d min", comment: "Estimated wait time, single value"), lowMinutes)
         }
-        return "~\(lowMinutes)–\(highMinutes) min"
+        return String(format: NSLocalizedString("~%d–%d min", comment: "Estimated wait time, range"), lowMinutes, highMinutes)
     }
 
     private func collageRow(for collage: MilestoneCollageStore.SavedCollage) -> UIView {
@@ -217,17 +217,17 @@ final class MilestoneCollageGalleryViewController: UIViewController {
         let subtitle = UILabel()
         switch collage.status {
         case .generating:
-            subtitle.text = "Preparing… (\(collage.itemCount) clips) — \(Self.estimatedWaitText(itemCount: collage.itemCount)) left"
+            subtitle.text = String(format: NSLocalizedString("Preparing… (%d clips) %@ left", comment: "Collage preparing subtitle, %d is a clip count, %@ is a time estimate like '~4–7 min'"), collage.itemCount, Self.estimatedWaitText(itemCount: collage.itemCount))
             subtitle.textColor = Theme.Color.purpleAccent
         case .failed:
-            subtitle.text = "Couldn't be created — credits refunded"
+            subtitle.text = NSLocalizedString("Couldn't be created — credits refunded", comment: "Collage failed subtitle")
             subtitle.textColor = UIColor(hex: 0xC24E4E)
         case .complete:
             // The video itself is already done and playable — adding music runs after the fact
             // (renderCollageMusic) and never blocks tapping into it, this subtitle is just a
             // status note, same purple as the "still generating" case above.
             if collage.musicStatus == .generating {
-                subtitle.text = "Adding music…"
+                subtitle.text = NSLocalizedString("Adding music…", comment: "Collage music-in-progress subtitle")
                 subtitle.textColor = Theme.Color.purpleAccent
             } else {
                 subtitle.text = Self.dateFormatter.string(from: collage.createdAt)

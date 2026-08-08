@@ -80,11 +80,11 @@ enum CreditsService {
                 case .failure(let error):
                     print("CreditsService.fetchStatus failed: \(error)")
                     let alert = UIAlertController(
-                        title: "Couldn't check your credits",
-                        message: "Please check your connection and try again.",
+                        title: NSLocalizedString("Couldn't check your credits", comment: "Credits fetch failure alert title"),
+                        message: NSLocalizedString("Please check your connection and try again.", comment: "Credits fetch failure alert message"),
                         preferredStyle: .alert
                     )
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
                     viewController.present(alert, animated: true)
                 }
             }

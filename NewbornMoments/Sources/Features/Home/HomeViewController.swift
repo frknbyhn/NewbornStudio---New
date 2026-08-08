@@ -87,7 +87,7 @@ final class HomeViewController: UIViewController {
         logo.translatesAutoresizingMaskIntoConstraints = false
 
         let nameLabel = UILabel()
-        nameLabel.text = "Newborn"
+        nameLabel.text = NSLocalizedString("Newborn", comment: "Header logo wordmark (short app name)")
         nameLabel.font = Theme.Font.heading(18, weight: 700)
         nameLabel.textColor = Theme.Color.textPrimaryAlt
 

@@ -21,7 +21,7 @@ final class MilestoneCollageViewController: UIViewController {
     private var containerAspectConstraint: NSLayoutConstraint?
     private let musicPromptTextView = UITextView()
     private let musicPromptPlaceholder = UILabel()
-    private let generateMusicButton = GradientPillButton(title: "Generate Music", icon: UIImage(systemName: "music.note"))
+    private let generateMusicButton = GradientPillButton(title: NSLocalizedString("Generate Music", comment: "Button to generate music for a collage"), icon: UIImage(systemName: "music.note"))
     private let musicCreditLabel = UILabel()
     private let musicSpinner = UIActivityIndicatorView(style: .medium)
     /// Must match functions/generateCollageMusic.js's own MUSIC_CREDIT_COST constant — nothing
@@ -166,8 +166,8 @@ final class MilestoneCollageViewController: UIViewController {
 
     private func setUpActions() {
         let actions = UIStackView(arrangedSubviews: [
-            actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
-            actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
+            actionButton(icon: "square.and.arrow.down", title: NSLocalizedString("Save", comment: "Collage screen action button"), action: #selector(saveTapped)),
+            actionButton(icon: "square.and.arrow.up", title: NSLocalizedString("Share", comment: "Collage screen action button"), action: #selector(shareTapped))
         ])
         actions.axis = .horizontal
         actions.distribution = .equalSpacing
@@ -191,7 +191,7 @@ final class MilestoneCollageViewController: UIViewController {
     /// see its own doc comment for why this doesn't wait around on this screen.
     private func setUpMusicPromptSection() {
         let question = UILabel()
-        question.text = "Want music for this collage?"
+        question.text = NSLocalizedString("Want music for this collage?", comment: "Collage music prompt question")
         question.font = Theme.Font.heading(15, weight: 700)
         question.textColor = .white
         question.translatesAutoresizingMaskIntoConstraints = false
@@ -214,7 +214,7 @@ final class MilestoneCollageViewController: UIViewController {
         musicPromptTextView.delegate = self
         musicPromptTextView.translatesAutoresizingMaskIntoConstraints = false
 
-        musicPromptPlaceholder.text = "Describe the music — e.g. \u{201c}soft, dreamy piano lullaby, gentle and warm\u{201d}"
+        musicPromptPlaceholder.text = NSLocalizedString("Describe the music — e.g. \u{201c}soft, dreamy piano lullaby, gentle and warm\u{201d}", comment: "Collage music prompt placeholder")
         musicPromptPlaceholder.font = Theme.Font.body(14, weight: 600)
         musicPromptPlaceholder.textColor = UIColor.white.withAlphaComponent(0.4)
         musicPromptPlaceholder.numberOfLines = 2
@@ -311,12 +311,12 @@ final class MilestoneCollageViewController: UIViewController {
     @objc private func deleteTapped() {
         HapticFeedback.light()
         let alert = UIAlertController(
-            title: "Delete This Collage?",
-            message: "The \u{201c}\(listName)\u{201d} collage video will be permanently deleted. This can't be undone.",
+            title: NSLocalizedString("Delete This Collage?", comment: "Delete collage alert title"),
+            message: String(format: NSLocalizedString("The \u{201c}%@\u{201d} collage video will be permanently deleted. This can't be undone.", comment: "Delete collage alert message, %@ is a list name"), listName),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: "Delete button"), style: .destructive) { [weak self] _ in
             self?.performDelete()
         })
         present(alert, animated: true)
@@ -344,7 +344,7 @@ final class MilestoneCollageViewController: UIViewController {
                 spinner.removeFromSuperview()
                 self.navigationItem.leftBarButtonItem?.isEnabled = true
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
-                self.presentAlert(title: "Couldn't Delete", message: "Something went wrong deleting the collage. Please try again.")
+                self.presentAlert(title: NSLocalizedString("Couldn't Delete", comment: "Delete error title"), message: NSLocalizedString("Something went wrong deleting the collage. Please try again.", comment: "Delete error message"))
             }
         }
     }
@@ -355,12 +355,12 @@ final class MilestoneCollageViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let self else { return }
                 guard status == .authorized || status == .limited else {
-                    self.presentAlert(title: "Photos Access Needed", message: "Allow photo library access in Settings to save the video.")
+                    self.presentAlert(title: NSLocalizedString("Photos Access Needed", comment: "Photo library access error title"), message: NSLocalizedString("Allow photo library access in Settings to save the video.", comment: "Photo library access error message"))
                     return
                 }
                 self.withLocalFileURL { localURL in
                     guard let localURL else {
-                        self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                        self.presentAlert(title: NSLocalizedString("Couldn't Save", comment: "Save error title"), message: NSLocalizedString("Something went wrong saving the video. Please try again.", comment: "Save error message"))
                         return
                     }
                     PHPhotoLibrary.shared().performChanges({
@@ -369,9 +369,9 @@ final class MilestoneCollageViewController: UIViewController {
                         DispatchQueue.main.async {
                             if success {
                                 HapticFeedback.success()
-                                self.presentAlert(title: "Saved!", message: "The collage video was saved to your Photos.")
+                                self.presentAlert(title: NSLocalizedString("Saved!", comment: "Save success title"), message: NSLocalizedString("The collage video was saved to your Photos.", comment: "Save success message"))
                             } else {
-                                self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                                self.presentAlert(title: NSLocalizedString("Couldn't Save", comment: "Save error title"), message: NSLocalizedString("Something went wrong saving the video. Please try again.", comment: "Save error message"))
                             }
                         }
                     }
@@ -384,7 +384,7 @@ final class MilestoneCollageViewController: UIViewController {
         let prompt = musicPromptTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !prompt.isEmpty else {
             HapticFeedback.light()
-            presentAlert(title: "Describe the Music", message: "Enter a short description of what you'd like the track to sound like.")
+            presentAlert(title: NSLocalizedString("Describe the Music", comment: "Empty music prompt alert title"), message: NSLocalizedString("Enter a short description of what you'd like the track to sound like.", comment: "Empty music prompt alert message"))
             return
         }
         HapticFeedback.light()
@@ -411,7 +411,7 @@ final class MilestoneCollageViewController: UIViewController {
                     HapticFeedback.success()
                     self.presentMusicStartedAlert()
                 case .failure(let error):
-                    self.presentAlert(title: "Couldn't Start Music", message: error.localizedDescription)
+                    self.presentAlert(title: NSLocalizedString("Couldn't Start Music", comment: "Music start error title"), message: error.localizedDescription)
                 }
             }
         }
@@ -419,11 +419,11 @@ final class MilestoneCollageViewController: UIViewController {
 
     private func presentMusicStartedAlert() {
         let alert = UIAlertController(
-            title: "Adding Your Music",
-            message: "We're mixing your track into this collage. You can follow its progress from the My Collages screen.",
+            title: NSLocalizedString("Adding Your Music", comment: "Music started alert title"),
+            message: NSLocalizedString("We're mixing your track into this collage. You can follow its progress from the My Collages screen.", comment: "Music started alert message"),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Go to My Collages", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Go to My Collages", comment: "Music started alert action"), style: .default) { [weak self] _ in
             self?.goToMyCollages()
         })
         present(alert, animated: true)
@@ -499,7 +499,7 @@ final class MilestoneCollageViewController: UIViewController {
 
     private func presentAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
     }
 }

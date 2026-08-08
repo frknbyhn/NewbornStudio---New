@@ -16,7 +16,7 @@ final class CoinPackageViewController: UIViewController {
     private var rows: [CoinPackageRow] = []
     private var packages: [CoinPackage] = []
     private var selected: CoinPackage?
-    private let ctaButton = GradientPillButton(title: "", icon: UIImage(systemName: "lock.fill"))
+    private let ctaButton = GradientPillButton(title: "", icon: UIImage(systemName: "lock.fill")) // set in updateCTA()
     private var listStack: UIStackView!
     private let spinner = UIActivityIndicatorView(style: .large)
     private let errorLabel = UILabel()
@@ -97,7 +97,7 @@ final class CoinPackageViewController: UIViewController {
             updateCTA()
             contentContainer.isHidden = false
         case .failure(let error):
-            errorLabel.text = "Couldn't load coin packages. Check your connection and try again."
+            errorLabel.text = NSLocalizedString("Couldn't load coin packages. Check your connection and try again.", comment: "Coin package load error")
             errorLabel.isHidden = false
             print("RevenueCatService.fetchOffering failed: \(error)")
         }
@@ -124,7 +124,7 @@ final class CoinPackageViewController: UIViewController {
         lockIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
 
         let secureLabel = UILabel()
-        secureLabel.text = "Secure payment · Apple Pay · Google Pay"
+        secureLabel.text = NSLocalizedString("Secure payment · Apple Pay · Google Pay", comment: "Coin package secure payment note")
         secureLabel.font = Theme.Font.body(11.5, weight: 600)
         secureLabel.textColor = UIColor(hex: 0xB4A6A2)
 
@@ -173,22 +173,22 @@ final class CoinPackageViewController: UIViewController {
 
     private func textBlock() -> UIView {
         let title = UILabel()
-        title.text = "Top up your coins"
+        title.text = NSLocalizedString("Top up your coins", comment: "Coin package screen title")
         title.font = Theme.Font.heading(22, weight: 700)
         title.textColor = Theme.Color.textPrimaryAlt
         title.textAlignment = .center
 
         let subtitle = UILabel()
-        subtitle.text = "Spend coins to generate any portrait — no subscription needed."
+        subtitle.text = NSLocalizedString("Spend coins to generate any portrait — no subscription needed.", comment: "Coin package screen subtitle")
         subtitle.font = Theme.Font.body(13, weight: 600)
         subtitle.textColor = UIColor(hex: 0xB08A3E)
         subtitle.textAlignment = .center
         subtitle.numberOfLines = 0
 
         let bullets = UIStackView(arrangedSubviews: [
-            benefitRow("Use on any theme or your own custom prompt"),
-            benefitRow("Credits never expire"),
-            benefitRow("No subscription or recurring charge")
+            benefitRow(NSLocalizedString("Use on any theme or your own custom prompt", comment: "Coin package benefit")),
+            benefitRow(NSLocalizedString("Credits never expire", comment: "Coin package benefit")),
+            benefitRow(NSLocalizedString("No subscription or recurring charge", comment: "Coin package benefit"))
         ])
         bullets.axis = .vertical
         bullets.spacing = 9
@@ -318,7 +318,7 @@ final class CoinPackageViewController: UIViewController {
     }
 
     private func updateCTA() {
-        ctaButton.title = "Continue"
+        ctaButton.title = NSLocalizedString("Continue", comment: "Coin package continue button")
     }
 
     @objc private func rowTapped(_ sender: CoinPackageRow) {
@@ -343,8 +343,8 @@ final class CoinPackageViewController: UIViewController {
                     break
                 case .failure(let error):
                     HapticFeedback.error()
-                    let alert = UIAlertController(title: "Purchase failed", message: error.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    let alert = UIAlertController(title: NSLocalizedString("Purchase failed", comment: "Purchase error title"), message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
                     self?.present(alert, animated: true)
                 }
             }

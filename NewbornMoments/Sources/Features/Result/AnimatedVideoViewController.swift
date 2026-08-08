@@ -95,8 +95,8 @@ final class AnimatedVideoViewController: UIViewController {
 
     private func setUpActions() {
         let actions = UIStackView(arrangedSubviews: [
-            actionButton(icon: "square.and.arrow.down", title: "Save", action: #selector(saveTapped)),
-            actionButton(icon: "square.and.arrow.up", title: "Share", action: #selector(shareTapped))
+            actionButton(icon: "square.and.arrow.down", title: NSLocalizedString("Save", comment: "Video screen action button"), action: #selector(saveTapped)),
+            actionButton(icon: "square.and.arrow.up", title: NSLocalizedString("Share", comment: "Video screen action button"), action: #selector(shareTapped))
         ])
         actions.axis = .horizontal
         actions.distribution = .equalSpacing
@@ -145,12 +145,12 @@ final class AnimatedVideoViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let self else { return }
                 guard status == .authorized || status == .limited else {
-                    self.presentAlert(title: "Photos Access Needed", message: "Allow photo library access in Settings to save the video.")
+                    self.presentAlert(title: NSLocalizedString("Photos Access Needed", comment: "Photo library access error title"), message: NSLocalizedString("Allow photo library access in Settings to save the video.", comment: "Photo library access error message"))
                     return
                 }
                 self.withLocalFileURL { localURL in
                     guard let localURL else {
-                        self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                        self.presentAlert(title: NSLocalizedString("Couldn't Save", comment: "Save error title"), message: NSLocalizedString("Something went wrong saving the video. Please try again.", comment: "Save error message"))
                         return
                     }
                     PHPhotoLibrary.shared().performChanges({
@@ -159,9 +159,9 @@ final class AnimatedVideoViewController: UIViewController {
                         DispatchQueue.main.async {
                             if success {
                                 HapticFeedback.success()
-                                self.presentAlert(title: "Saved!", message: "The animated video was saved to your Photos.")
+                                self.presentAlert(title: NSLocalizedString("Saved!", comment: "Save success title"), message: NSLocalizedString("The animated video was saved to your Photos.", comment: "Save success message"))
                             } else {
-                                self.presentAlert(title: "Couldn't Save", message: "Something went wrong saving the video. Please try again.")
+                                self.presentAlert(title: NSLocalizedString("Couldn't Save", comment: "Save error title"), message: NSLocalizedString("Something went wrong saving the video. Please try again.", comment: "Save error message"))
                             }
                         }
                     }
@@ -215,7 +215,7 @@ final class AnimatedVideoViewController: UIViewController {
 
     private func presentAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
         present(alert, animated: true)
     }
 }

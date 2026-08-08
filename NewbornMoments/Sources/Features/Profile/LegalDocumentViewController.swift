@@ -4,8 +4,15 @@ import UIKit
 final class LegalDocumentViewController: UIViewController {
     private let document: LegalDocument
 
-    init(title: String) {
-        self.document = LegalDocument(title: title)
+    /// Which document to show. Kept separate from the (now-localized) display title so the
+    /// choice of body text never depends on comparing translated strings — see LegalDocument.
+    enum Kind {
+        case privacyPolicy
+        case termsOfUse
+    }
+
+    init(kind: Kind) {
+        self.document = LegalDocument(kind: kind)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -63,15 +70,21 @@ final class LegalDocumentViewController: UIViewController {
 /// Design/Content if that ever needs syncing) until app_settings/legal exists.
 private struct LegalDocument {
     let title: String
-    let lastUpdated = "Last updated: August 2026"
+    let lastUpdated = NSLocalizedString("Last updated: August 2026", comment: "Legal document last-updated label")
     let body: String
 
-    init(title: String) {
-        self.title = title
-        self.body = title == "Privacy Policy" ? Self.privacyBody : Self.termsBody
+    init(kind: LegalDocumentViewController.Kind) {
+        switch kind {
+        case .privacyPolicy:
+            self.title = NSLocalizedString("Privacy Policy", comment: "Legal document title")
+            self.body = Self.privacyBody
+        case .termsOfUse:
+            self.title = NSLocalizedString("Terms of Use", comment: "Legal document title")
+            self.body = Self.termsBody
+        }
     }
 
-    private static let privacyBody = """
+    private static let privacyBody = NSLocalizedString("""
     Newborn Moments ("we", "us") creates AI-generated studio-style portraits from photos you upload. This policy explains what we collect and why.
 
     WHAT WE COLLECT
@@ -96,9 +109,9 @@ private struct LegalDocument {
 
     CONTACT
     Questions about this policy can be sent to the support address listed on our App Store page.
-    """
+    """, comment: "Privacy Policy full legal body text")
 
-    private static let termsBody = """
+    private static let termsBody = NSLocalizedString("""
     By using Newborn Moments, you agree to these terms.
 
     THE SERVICE
@@ -121,5 +134,5 @@ private struct LegalDocument {
 
     CONTACT
     Questions about these terms can be sent to the support address listed on our App Store page.
-    """
+    """, comment: "Terms of Use full legal body text")
 }

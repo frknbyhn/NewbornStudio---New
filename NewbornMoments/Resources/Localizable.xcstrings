@@ -1,0 +1,5798 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ / week": {
+      "extractionState": "manual",
+      "comment": "Per-week price breakdown, %@ is a formatted price",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / hafta"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / Woche"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / semaine"
+          }
+        }
+      }
+    },
+    "%d coins": {
+      "extractionState": "manual",
+      "comment": "Coin package amount, %d is a number",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d jeton"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d Coins"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d pièces"
+          }
+        }
+      }
+    },
+    "%d coins · %@": {
+      "extractionState": "manual",
+      "comment": "Limited offer price line, %d is credit count, %@ is a formatted price",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d jeton · %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d Coins · %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d pièces · %@"
+          }
+        }
+      }
+    },
+    "%d credits": {
+      "extractionState": "manual",
+      "comment": "Credit cost, plural, %d is a count",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d kredi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d Credits"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d crédits"
+          }
+        }
+      }
+    },
+    "1 credit": {
+      "extractionState": "manual",
+      "comment": "Credit cost, singular",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 kredi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 Credit"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 crédit"
+          }
+        }
+      }
+    },
+    "10 credits / week": {
+      "extractionState": "manual",
+      "comment": "Subscription plan credits",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haftada 10 kredi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 Credits / Woche"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 crédits / semaine"
+          }
+        }
+      }
+    },
+    "50 credits / month": {
+      "extractionState": "manual",
+      "comment": "Subscription plan credits",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayda 50 kredi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 Credits / Monat"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 crédits / mois"
+          }
+        }
+      }
+    },
+    "500 credits / year": {
+      "extractionState": "manual",
+      "comment": "Subscription plan credits",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yılda 500 kredi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 Credits / Jahr"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 crédits / an"
+          }
+        }
+      }
+    },
+    "A Special Offer, Just for You": {
+      "extractionState": "manual",
+      "comment": "Limited offer title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sırf Size Özel Bir Fırsat"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein besonderes Angebot, nur für Sie"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une offre spéciale, rien que pour vous"
+          }
+        }
+      }
+    },
+    "AI baby photo studio": {
+      "extractionState": "manual",
+      "comment": "Splash screen subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yapay zeka bebek fotoğraf stüdyosu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KI-Baby-Fotostudio"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studio photo IA pour bébé"
+          }
+        }
+      }
+    },
+    "AI-powered studio portraits in dozens of dreamy themes — created from a single snapshot.": {
+      "extractionState": "manual",
+      "comment": "Onboarding page 1 subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tek bir kareden onlarca hayalimsi temada yapay zeka destekli stüdyo portreleri."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KI-gestützte Studioporträts in Dutzenden traumhaften Stilen — aus einem einzigen Foto erstellt."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portraits de studio générés par IA dans des dizaines de thèmes féeriques — créés à partir d'une seule photo."
+          }
+        }
+      }
+    },
+    "Add": {
+      "extractionState": "manual",
+      "comment": "Add button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hinzufügen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter"
+          }
+        }
+      }
+    },
+    "Add List": {
+      "extractionState": "manual",
+      "comment": "Add milestone list button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste Ekle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste hinzufügen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter une liste"
+          }
+        }
+      }
+    },
+    "Add Milestone": {
+      "extractionState": "manual",
+      "comment": "Add milestone button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilometre Taşı Ekle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meilenstein hinzufügen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter une étape"
+          }
+        }
+      }
+    },
+    "Add a Photo": {
+      "extractionState": "manual",
+      "comment": "Photo source action sheet title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğraf Ekle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto hinzufügen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter une photo"
+          }
+        }
+      }
+    },
+    "Add a photo for this moment": {
+      "extractionState": "manual",
+      "comment": "Milestone capture drop zone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu an için bir fotoğraf ekleyin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto für diesen Moment hinzufügen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajoutez une photo pour ce moment"
+          }
+        }
+      }
+    },
+    "Add a photo to start from": {
+      "extractionState": "manual",
+      "comment": "Custom style drop zone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlamak için bir fotoğraf ekleyin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto zum Starten hinzufügen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajoutez une photo pour commencer"
+          }
+        }
+      }
+    },
+    "Adding Your Music": {
+      "extractionState": "manual",
+      "comment": "Music started alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müziğiniz Ekleniyor"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre Musik wird hinzugefügt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajout de votre musique"
+          }
+        }
+      }
+    },
+    "Adding music…": {
+      "extractionState": "manual",
+      "comment": "Collage music-in-progress subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik ekleniyor…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik wird hinzugefügt…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajout de musique…"
+          }
+        }
+      }
+    },
+    "Adding studio lighting…": {
+      "extractionState": "manual",
+      "comment": "Generation loading status",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stüdyo aydınlatması uygulanıyor…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studiobeleuchtung wird angewendet…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Application de l'éclairage studio…"
+          }
+        }
+      }
+    },
+    "Allow photo library access in Settings to save the video.": {
+      "extractionState": "manual",
+      "comment": "Photo library access error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Videoyu kaydetmek için Ayarlar'dan fotoğraf kitaplığı erişimine izin verin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlauben Sie den Fotozugriff in den Einstellungen, um das Video zu speichern."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autorisez l'accès à la photothèque dans Réglages pour enregistrer la vidéo."
+          }
+        }
+      }
+    },
+    "Animate Portrait": {
+      "extractionState": "manual",
+      "comment": "Button to animate the generated portrait",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portreyi Canlandır"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Porträt animieren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animer le portrait"
+          }
+        }
+      }
+    },
+    "Applying your edit": {
+      "extractionState": "manual",
+      "comment": "Generation loading subtitle (edit flow)",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Düzenlemeniz uygulanıyor"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bearbeitung wird angewendet"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Application de votre modification"
+          }
+        }
+      }
+    },
+    "Astronaut, fairy, tiny chef and more — a brand-new studio every single time.": {
+      "extractionState": "manual",
+      "comment": "Onboarding page 2 subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronot, peri, minik şef ve daha fazlası — her seferinde yepyeni bir stüdyo."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronaut, Fee, kleiner Koch und mehr — jedes Mal ein brandneues Studio."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronaute, fée, petit chef et plus encore — un tout nouveau studio à chaque fois."
+          }
+        }
+      }
+    },
+    "Big Pack": {
+      "extractionState": "manual",
+      "comment": "Coin package name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Büyük Paket"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Großes Paket"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grand pack"
+          }
+        }
+      }
+    },
+    "Blending the theme…": {
+      "extractionState": "manual",
+      "comment": "Generation loading status",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema harmanlanıyor…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thema wird gemischt…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fusion du thème…"
+          }
+        }
+      }
+    },
+    "Body": {
+      "extractionState": "manual",
+      "comment": "Milestone group header",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vücut"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Körper"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corps"
+          }
+        }
+      }
+    },
+    "Bright, even lighting": {
+      "extractionState": "manual",
+      "comment": "Photo tip",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parlak, dengeli aydınlatma"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Helle, gleichmäßige Beleuchtung"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Éclairage lumineux et uniforme"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "extractionState": "manual",
+      "comment": "Cancel button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vazgeç"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abbrechen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annuler"
+          }
+        }
+      }
+    },
+    "Capture every milestone in one place": {
+      "extractionState": "manual",
+      "comment": "Onboarding page 3 title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her kilometre taşını tek bir yerde yakalayın"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halten Sie jeden Meilenstein an einem Ort fest"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capturez chaque étape en un seul endroit"
+          }
+        }
+      }
+    },
+    "Captured": {
+      "extractionState": "manual",
+      "comment": "Milestone status",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yakalandı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfasst"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capturé"
+          }
+        }
+      }
+    },
+    "Celebrations": {
+      "extractionState": "manual",
+      "comment": "Milestone group header",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kutlamalar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feiern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Célébrations"
+          }
+        }
+      }
+    },
+    "Change Photo": {
+      "extractionState": "manual",
+      "comment": "Milestone detail button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğrafı Değiştir"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto ändern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Changer de photo"
+          }
+        }
+      }
+    },
+    "Choose from Gallery": {
+      "extractionState": "manual",
+      "comment": "Photo source action",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galeriden Seç"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus Galerie wählen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisir dans la galerie"
+          }
+        }
+      }
+    },
+    "Claim %d Coins": {
+      "extractionState": "manual",
+      "comment": "Limited offer CTA, %d is a credit count",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d Jeton Talep Et"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d Coins beanspruchen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réclamer %d pièces"
+          }
+        }
+      }
+    },
+    "Claim Offer": {
+      "extractionState": "manual",
+      "comment": "Limited offer CTA placeholder",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklifi Al"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Angebot einlösen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profiter de l'offre"
+          }
+        }
+      }
+    },
+    "Close this and it's gone for good.": {
+      "extractionState": "manual",
+      "comment": "Limited offer last-chance footer note",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunu kapatırsanız bir daha gelmez."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn Sie dies schließen, ist es für immer weg."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fermez ceci et il aura disparu pour toujours."
+          }
+        }
+      }
+    },
+    "Communication": {
+      "extractionState": "manual",
+      "comment": "Milestone group header",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İletişim"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommunikation"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Communication"
+          }
+        }
+      }
+    },
+    "Continue": {
+      "extractionState": "manual",
+      "comment": "Coin package continue button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devam Et"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuer"
+          }
+        }
+      }
+    },
+    "Coos & Babbles": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gıdıklanmalar ve Mırıltılar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gurren & Plappern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Roucoulements et babillages"
+          }
+        }
+      }
+    },
+    "Couldn't Animate This Portrait": {
+      "extractionState": "manual",
+      "comment": "Animate error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Portre Canlandırılamadı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Porträt konnte nicht animiert werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible d'animer ce portrait"
+          }
+        }
+      }
+    },
+    "Couldn't Delete": {
+      "extractionState": "manual",
+      "comment": "Delete error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silinemedi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konnte nicht gelöscht werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suppression impossible"
+          }
+        }
+      }
+    },
+    "Couldn't Save": {
+      "extractionState": "manual",
+      "comment": "Save error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydedilemedi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konnte nicht gespeichert werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrement impossible"
+          }
+        }
+      }
+    },
+    "Couldn't Start Music": {
+      "extractionState": "manual",
+      "comment": "Music start error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik Başlatılamadı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik konnte nicht gestartet werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Démarrage de la musique impossible"
+          }
+        }
+      }
+    },
+    "Couldn't be created — credits refunded": {
+      "extractionState": "manual",
+      "comment": "Collage failed subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oluşturulamadı — krediler iade edildi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konnte nicht erstellt werden — Credits erstattet"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Création impossible — crédits remboursés"
+          }
+        }
+      }
+    },
+    "Couldn't check your credits": {
+      "extractionState": "manual",
+      "comment": "Credits fetch failure alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kredileriniz kontrol edilemedi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre Credits konnten nicht geprüft werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de vérifier vos crédits"
+          }
+        }
+      }
+    },
+    "Couldn't create your portrait": {
+      "extractionState": "manual",
+      "comment": "Generation error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portreniz oluşturulamadı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihr Porträt konnte nicht erstellt werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de créer votre portrait"
+          }
+        }
+      }
+    },
+    "Couldn't load coin packages. Check your connection and try again.": {
+      "extractionState": "manual",
+      "comment": "Coin package load error",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeton paketleri yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Münzpakete konnten nicht geladen werden. Verbindung prüfen und erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de charger les packs de pièces. Vérifiez votre connexion et réessayez."
+          }
+        }
+      }
+    },
+    "Couldn't load plans. Check your connection and try again.": {
+      "extractionState": "manual",
+      "comment": "Paywall load error",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planlar yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pläne konnten nicht geladen werden. Verbindung prüfen und erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de charger les formules. Vérifiez votre connexion et réessayez."
+          }
+        }
+      }
+    },
+    "Couldn't restore purchases": {
+      "extractionState": "manual",
+      "comment": "Restore purchases alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın alımlar geri yüklenemedi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Käufe konnten nicht wiederhergestellt werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de restaurer les achats"
+          }
+        }
+      }
+    },
+    "Crafting the \\u{201c}%@\\u{201d} theme": {
+      "extractionState": "manual",
+      "comment": "Generation loading subtitle, %@ is a theme name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” teması hazırlanıyor"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thema „%@“ wird erstellt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Création du thème « %@ »"
+          }
+        }
+      }
+    },
+    "Crawls": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emekleme"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Krabbeln"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rampe"
+          }
+        }
+      }
+    },
+    "Create": {
+      "extractionState": "manual",
+      "comment": "Create button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oluştur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créer"
+          }
+        }
+      }
+    },
+    "Create Collage": {
+      "extractionState": "manual",
+      "comment": "Button to create a milestone collage",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj Oluştur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collage erstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créer un collage"
+          }
+        }
+      }
+    },
+    "Create Collage Video?": {
+      "extractionState": "manual",
+      "comment": "Collage confirmation alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj Videosu Oluşturulsun mu?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collage-Video erstellen?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créer une vidéo de collage ?"
+          }
+        }
+      }
+    },
+    "Create Your Own Style": {
+      "extractionState": "manual",
+      "comment": "Custom style screen nav title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kendi Stilini Oluştur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenen Stil erstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créer votre propre style"
+          }
+        }
+      }
+    },
+    "Credits never expire": {
+      "extractionState": "manual",
+      "comment": "Coin package benefit",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Krediler asla süresi dolmaz"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Credits verfallen nie"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les crédits n'expirent jamais"
+          }
+        }
+      }
+    },
+    "Custom Style": {
+      "extractionState": "manual",
+      "comment": "Custom-style theme name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Özel Stil"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Individueller Stil"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Style personnalisé"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "extractionState": "manual",
+      "comment": "Delete button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sil"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Löschen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer"
+          }
+        }
+      }
+    },
+    "Delete Captured Milestone?": {
+      "extractionState": "manual",
+      "comment": "Delete milestone alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yakalanan Kilometre Taşı Silinsin mi?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfassten Meilenstein löschen?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer l'étape capturée ?"
+          }
+        }
+      }
+    },
+    "Delete Milestone": {
+      "extractionState": "manual",
+      "comment": "Milestone detail button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilometre Taşını Sil"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meilenstein löschen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer l'étape"
+          }
+        }
+      }
+    },
+    "Delete This Collage?": {
+      "extractionState": "manual",
+      "comment": "Delete collage alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Kolaj Silinsin mi?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Collage löschen?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer ce collage ?"
+          }
+        }
+      }
+    },
+    "Delete This Milestone?": {
+      "extractionState": "manual",
+      "comment": "Delete confirmation title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Kilometre Taşı Silinsin mi?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diesen Meilenstein löschen?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer cette étape ?"
+          }
+        }
+      }
+    },
+    "Describe any idea — we'll bring it to life": {
+      "extractionState": "manual",
+      "comment": "Home screen custom-style card subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Herhangi bir fikir tarif edin — hayata geçirelim"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschreiben Sie eine Idee — wir setzen sie um"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décrivez une idée — nous la donnerons vie"
+          }
+        }
+      }
+    },
+    "Describe the Music": {
+      "extractionState": "manual",
+      "comment": "Empty music prompt alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müziği Tarif Edin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik beschreiben"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décrire la musique"
+          }
+        }
+      }
+    },
+    "Describe the music — e.g. \\u{201c}soft, dreamy piano lullaby, gentle and warm\\u{201d}": {
+      "extractionState": "manual",
+      "comment": "Collage music prompt placeholder",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müziği tarif edin — örn. “yumuşak, hayalimsi piyano ninnisi, sıcak ve nazik”"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschreiben Sie die Musik — z. B. „sanftes, verträumtes Klavier-Schlaflied, warm und zart“"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décrivez la musique — ex. « berceuse au piano douce et rêveuse, chaleureuse et tendre »"
+          }
+        }
+      }
+    },
+    "Describe your idea": {
+      "extractionState": "manual",
+      "comment": "Custom style prompt field label",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fikrinizi tarif edin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschreiben Sie Ihre Idee"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décrivez votre idée"
+          }
+        }
+      }
+    },
+    "Done!": {
+      "extractionState": "manual",
+      "comment": "Generation loading status",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamamlandı!"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig!"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminé !"
+          }
+        }
+      }
+    },
+    "Dozens of dreamy themes to explore": {
+      "extractionState": "manual",
+      "comment": "Onboarding page 2 title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keşfedilecek onlarca hayalimsi tema"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dutzende traumhafte Stile zum Entdecken"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Des dizaines de thèmes féeriques à explorer"
+          }
+        }
+      }
+    },
+    "Eight Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sekiz Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acht Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huit mois"
+          }
+        }
+      }
+    },
+    "Eleven Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On Bir Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elf Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onze mois"
+          }
+        }
+      }
+    },
+    "English": {
+      "extractionState": "manual",
+      "comment": "Current language value shown in Profile",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Türkçe"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deutsch"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Français"
+          }
+        }
+      }
+    },
+    "English is the only language available right now. More are on the way.": {
+      "extractionState": "manual",
+      "comment": "Language alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şu anda kullanılabilen tek dil Türkçe/İngilizce. Diğerleri yolda."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deutsch ist derzeit die einzige verfügbare Sprache. Weitere folgen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le français est la seule langue disponible pour le moment. D'autres arrivent bientôt."
+          }
+        }
+      }
+    },
+    "Enter a short description of what you'd like the track to sound like.": {
+      "extractionState": "manual",
+      "comment": "Empty music prompt alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parçanın nasıl bir sesi olmasını istediğinizi kısaca yazın."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geben Sie kurz an, wie der Track klingen soll."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décrivez brièvement le son que vous souhaitez pour ce morceau."
+          }
+        }
+      }
+    },
+    "Everything you need to make forever memories.": {
+      "extractionState": "manual",
+      "comment": "Paywall subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonsuza dek kalıcı anılar oluşturmak için ihtiyacınız olan her şey."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alles, was Sie für unvergessliche Erinnerungen brauchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tout ce qu'il vous faut pour créer des souvenirs pour toujours."
+          }
+        }
+      }
+    },
+    "Face clearly visible": {
+      "extractionState": "manual",
+      "comment": "Photo tip",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüz net görünür"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesicht klar sichtbar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visage clairement visible"
+          }
+        }
+      }
+    },
+    "Favorites": {
+      "extractionState": "manual",
+      "comment": "Gallery segment",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriler"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriten"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoris"
+          }
+        }
+      }
+    },
+    "Finishing touches…": {
+      "extractionState": "manual",
+      "comment": "Generation loading status",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son rötuşlar…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letzte Feinschliffe…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touches finales…"
+          }
+        }
+      }
+    },
+    "First Bath": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Banyo"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstes Bad"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premier bain"
+          }
+        }
+      }
+    },
+    "First Birthday": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Yaş Günü"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erster Geburtstag"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premier anniversaire"
+          }
+        }
+      }
+    },
+    "First Haircut": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Saç Kesimi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erster Haarschnitt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Première coupe de cheveux"
+          }
+        }
+      }
+    },
+    "First Holiday Season": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Tatil Sezonu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erste Feiertage"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premières fêtes"
+          }
+        }
+      }
+    },
+    "First Laugh": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Kahkaha"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstes Lachen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premier rire"
+          }
+        }
+      }
+    },
+    "First Outing": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Dışarı Çıkış"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erster Ausflug"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Première sortie"
+          }
+        }
+      }
+    },
+    "First Smile": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Gülümseme"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstes Lächeln"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premier sourire"
+          }
+        }
+      }
+    },
+    "First Steps": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Adımlar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erste Schritte"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premiers pas"
+          }
+        }
+      }
+    },
+    "First Studio Portrait": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Stüdyo Portresi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstes Studioporträt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premier portrait de studio"
+          }
+        }
+      }
+    },
+    "First Tooth": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Diş"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erster Zahn"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Première dent"
+          }
+        }
+      }
+    },
+    "Firsts": {
+      "extractionState": "manual",
+      "comment": "Standard milestone list name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlkler"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premieren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premières fois"
+          }
+        }
+      }
+    },
+    "Five Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beş Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fünf Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinq mois"
+          }
+        }
+      }
+    },
+    "For the best results": {
+      "extractionState": "manual",
+      "comment": "Photo tips title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En iyi sonuçlar için"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Für die besten Ergebnisse"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pour de meilleurs résultats"
+          }
+        }
+      }
+    },
+    "Four Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dört Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vier Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quatre mois"
+          }
+        }
+      }
+    },
+    "Gallery": {
+      "extractionState": "manual",
+      "comment": "Tab bar item",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galeri"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galerie"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galerie"
+          }
+        }
+      }
+    },
+    "Generate": {
+      "extractionState": "manual",
+      "comment": "Custom style generate button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oluştur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Générer"
+          }
+        }
+      }
+    },
+    "Generate & Save": {
+      "extractionState": "manual",
+      "comment": "Milestone capture submit button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oluştur ve Kaydet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellen & Speichern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Générer et enregistrer"
+          }
+        }
+      }
+    },
+    "Generate Music": {
+      "extractionState": "manual",
+      "comment": "Button to generate music for a collage",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik Oluştur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik erstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Générer la musique"
+          }
+        }
+      }
+    },
+    "Generate Portrait": {
+      "extractionState": "manual",
+      "comment": "Milestone capture submit button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portre Oluştur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Porträt erstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Générer le portrait"
+          }
+        }
+      }
+    },
+    "Generate your first studio portrait and it will show up here.": {
+      "extractionState": "manual",
+      "comment": "Gallery history empty state subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk stüdyo portrenizi oluşturun, burada görünecek."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellen Sie Ihr erstes Studioporträt — es erscheint hier."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Générez votre premier portrait de studio, il apparaîtra ici."
+          }
+        }
+      }
+    },
+    "Get Started": {
+      "extractionState": "manual",
+      "comment": "Onboarding CTA button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlayın"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loslegen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commencer"
+          }
+        }
+      }
+    },
+    "Give your list a name.": {
+      "extractionState": "manual",
+      "comment": "New list alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listenize bir isim verin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geben Sie Ihrer Liste einen Namen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donnez un nom à votre liste."
+          }
+        }
+      }
+    },
+    "Go to Milestone Gallery": {
+      "extractionState": "manual",
+      "comment": "Result screen link",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilometre Taşı Galerisine Git"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zur Meilenstein-Galerie"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aller à la galerie des étapes"
+          }
+        }
+      }
+    },
+    "Go to My Collages": {
+      "extractionState": "manual",
+      "comment": "Music started alert action",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koleksiyonlarıma Git"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zu Meine Collagen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aller à Mes collages"
+          }
+        }
+      }
+    },
+    "Grab this bundle before the timer runs out.": {
+      "extractionState": "manual",
+      "comment": "Limited offer subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Süre dolmadan bu paketi kapın."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sichern Sie sich dieses Paket, bevor die Zeit abläuft."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profitez de ce pack avant la fin du minuteur."
+          }
+        }
+      }
+    },
+    "Growth & Motor Skills": {
+      "extractionState": "manual",
+      "comment": "Milestone group header",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Büyüme ve Motor Beceriler"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wachstum & motorische Fähigkeiten"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Croissance et motricité"
+          }
+        }
+      }
+    },
+    "History": {
+      "extractionState": "manual",
+      "comment": "Gallery segment",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geçmiş"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlauf"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Historique"
+          }
+        }
+      }
+    },
+    "Holds Head Up": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başını Dik Tutar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hält den Kopf hoch"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tient sa tête droite"
+          }
+        }
+      }
+    },
+    "Home": {
+      "extractionState": "manual",
+      "comment": "Tab bar item",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ana Sayfa"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accueil"
+          }
+        }
+      }
+    },
+    "JPG or PNG, up to 10 MB": {
+      "extractionState": "manual",
+      "comment": "Custom style drop zone subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG veya PNG, 10 MB'a kadar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG oder PNG, bis zu 10 MB"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG ou PNG, jusqu'à 10 Mo"
+          }
+        }
+      }
+    },
+    "Keep a list for every moment worth remembering": {
+      "extractionState": "manual",
+      "comment": "Milestone lists screen subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hatırlanmaya değer her an için bir liste tutun"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Liste für jeden erinnerungswürdigen Moment"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une liste pour chaque moment à retenir"
+          }
+        }
+      }
+    },
+    "LAST CHANCE": {
+      "extractionState": "manual",
+      "comment": "Limited offer last-chance badge",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SON ŞANS"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LETZTE CHANCE"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DERNIÈRE CHANCE"
+          }
+        }
+      }
+    },
+    "LIMITED TIME OFFER": {
+      "extractionState": "manual",
+      "comment": "Limited offer badge",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SINIRLI SÜRELİ TEKLİF"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZEITLICH BEGRENZTES ANGEBOT"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OFFRE À DURÉE LIMITÉE"
+          }
+        }
+      }
+    },
+    "Language": {
+      "extractionState": "manual",
+      "comment": "Profile menu row",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dil"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprache"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langue"
+          }
+        }
+      }
+    },
+    "Last updated: August 2026": {
+      "extractionState": "manual",
+      "comment": "Legal document last-updated label",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son güncelleme: Ağustos 2026"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt aktualisiert: August 2026"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dernière mise à jour : août 2026"
+          }
+        }
+      }
+    },
+    "Limited Time Offer": {
+      "extractionState": "manual",
+      "comment": "Coin package name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sınırlı Süreli Teklif"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeitlich begrenztes Angebot"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offre à durée limitée"
+          }
+        }
+      }
+    },
+    "List": {
+      "extractionState": "manual",
+      "comment": "Milestone detail info label",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste"
+          }
+        }
+      }
+    },
+    "MOST POPULAR": {
+      "extractionState": "manual",
+      "comment": "Coin package badge",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EN POPÜLER"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AM BELIEBTESTEN"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LE PLUS POPULAIRE"
+          }
+        }
+      }
+    },
+    "Medium Pack": {
+      "extractionState": "manual",
+      "comment": "Coin package name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orta Paket"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mittleres Paket"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pack moyen"
+          }
+        }
+      }
+    },
+    "Milestone": {
+      "extractionState": "manual",
+      "comment": "Result screen action button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilometre Taşı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meilenstein"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Étape"
+          }
+        }
+      }
+    },
+    "Milestone Captured!": {
+      "extractionState": "manual",
+      "comment": "Milestone save confirmation title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilometre Taşı Yakalandı!"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meilenstein erfasst!"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Étape capturée !"
+          }
+        }
+      }
+    },
+    "Milestones": {
+      "extractionState": "manual",
+      "comment": "Age-journey milestone list name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilometre Taşları"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meilensteine"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Étapes"
+          }
+        }
+      }
+    },
+    "Monthly": {
+      "extractionState": "manual",
+      "comment": "Subscription plan title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monatlich"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensuel"
+          }
+        }
+      }
+    },
+    "Multiple Faces Detected": {
+      "extractionState": "manual",
+      "comment": "Face detection error alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birden Fazla Yüz Algılandı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mehrere Gesichter erkannt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plusieurs visages détectés"
+          }
+        }
+      }
+    },
+    "My Collages": {
+      "extractionState": "manual",
+      "comment": "Button to view saved collages",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koleksiyonlarım"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meine Collagen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mes collages"
+          }
+        }
+      }
+    },
+    "My Creations": {
+      "extractionState": "manual",
+      "comment": "Profile menu row",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yaratımlarım"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meine Kreationen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mes créations"
+          }
+        }
+      }
+    },
+    "NEWBORN PRO": {
+      "extractionState": "manual",
+      "comment": "Paywall hero badge",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        }
+      }
+    },
+    "New List": {
+      "extractionState": "manual",
+      "comment": "New list alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni Liste"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neue Liste"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouvelle liste"
+          }
+        }
+      }
+    },
+    "New Milestone": {
+      "extractionState": "manual",
+      "comment": "New milestone alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni Kilometre Taşı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neuer Meilenstein"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouvelle étape"
+          }
+        }
+      }
+    },
+    "Newborn": {
+      "extractionState": "manual",
+      "comment": "Header logo wordmark (short app name)",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yenidoğan"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neugeboren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouveau-né"
+          }
+        }
+      }
+    },
+    "Newborn Moments": {
+      "extractionState": "manual",
+      "comment": "App name shown on the splash screen",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        }
+      }
+    },
+    "Next": {
+      "extractionState": "manual",
+      "comment": "Onboarding next button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İleri"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suivant"
+          }
+        }
+      }
+    },
+    "Nine Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dokuz Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neun Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neuf mois"
+          }
+        }
+      }
+    },
+    "No Face Detected": {
+      "extractionState": "manual",
+      "comment": "Face detection error alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüz Algılanamadı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Gesicht erkannt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun visage détecté"
+          }
+        }
+      }
+    },
+    "No active purchases were found for this account.": {
+      "extractionState": "manual",
+      "comment": "Restore purchases alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu hesap için aktif satın alım bulunamadı."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Für dieses Konto wurden keine aktiven Käufe gefunden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun achat actif trouvé pour ce compte."
+          }
+        }
+      }
+    },
+    "No collages yet — capture at least 5 milestones in a list, then tap \\u{201c}Create Collage\\u{201d} to create one.": {
+      "extractionState": "manual",
+      "comment": "Empty collages state message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz kolaj yok — bir listede en az 5 kilometre taşı yakalayın, ardından “Kolaj Oluştur”a dokunun."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Collagen — erfassen Sie mindestens 5 Meilensteine in einer Liste und tippen Sie dann auf „Collage erstellen“."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore de collages — capturez au moins 5 étapes dans une liste, puis appuyez sur « Créer un collage »."
+          }
+        }
+      }
+    },
+    "No favorites yet": {
+      "extractionState": "manual",
+      "comment": "Gallery favorites empty state title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz favori yok"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Favoriten"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore de favoris"
+          }
+        }
+      }
+    },
+    "No filters or heavy edits": {
+      "extractionState": "manual",
+      "comment": "Photo tip",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtre veya ağır düzenleme yok"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Filter oder starken Bearbeitungen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun filtre ni retouche lourde"
+          }
+        }
+      }
+    },
+    "No milestones yet — add your first one below.": {
+      "extractionState": "manual",
+      "comment": "Empty milestone list message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz kilometre taşı yok — ilk kilometre taşınızı aşağıdan ekleyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Meilensteine — fügen Sie unten Ihren ersten hinzu."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore d'étapes — ajoutez la première ci-dessous."
+          }
+        }
+      }
+    },
+    "No portraits yet": {
+      "extractionState": "manual",
+      "comment": "Gallery history empty state title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz portre yok"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Porträts"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore de portraits"
+          }
+        }
+      }
+    },
+    "No subscription or recurring charge": {
+      "extractionState": "manual",
+      "comment": "Coin package benefit",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abonelik veya tekrarlayan ücret yok"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Abo oder wiederkehrende Gebühr"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun abonnement ni frais récurrent"
+          }
+        }
+      }
+    },
+    "No watermark": {
+      "extractionState": "manual",
+      "comment": "Paywall benefit",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filigran yok"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Wasserzeichen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun filigrane"
+          }
+        }
+      }
+    },
+    "Not Enough Milestones Yet": {
+      "extractionState": "manual",
+      "comment": "Not enough milestones alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz Yeterli Kilometre Taşı Yok"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch nicht genug Meilensteine"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore assez d'étapes"
+          }
+        }
+      }
+    },
+    "Not yet captured": {
+      "extractionState": "manual",
+      "comment": "Milestone status",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz yakalanmadı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch nicht erfasst"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore capturé"
+          }
+        }
+      }
+    },
+    "Nothing to restore": {
+      "extractionState": "manual",
+      "comment": "Restore purchases alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri yüklenecek bir şey yok"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nichts zum Wiederherstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rien à restaurer"
+          }
+        }
+      }
+    },
+    "OK": {
+      "extractionState": "manual",
+      "comment": "OK button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamam"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Offer unavailable right now": {
+      "extractionState": "manual",
+      "comment": "Limited offer unavailable message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teklif şu anda kullanılamıyor"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Angebot derzeit nicht verfügbar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offre indisponible pour le moment"
+          }
+        }
+      }
+    },
+    "One Month": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir Ay"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Monat"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un mois"
+          }
+        }
+      }
+    },
+    "One Week": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir Hafta"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Woche"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une semaine"
+          }
+        }
+      }
+    },
+    "One Year": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir Yıl"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Jahr"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un an"
+          }
+        }
+      }
+    },
+    "One-time offer — expires when the timer ends.": {
+      "extractionState": "manual",
+      "comment": "Limited offer footer note",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tek seferlik teklif — süre dolduğunda sona erer."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einmaliges Angebot — endet, wenn der Timer abläuft."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offre unique — expire à la fin du minuteur."
+          }
+        }
+      }
+    },
+    "Photos Access Needed": {
+      "extractionState": "manual",
+      "comment": "Photo library access error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğraf Erişimi Gerekli"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotozugriff erforderlich"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accès aux photos requis"
+          }
+        }
+      }
+    },
+    "Please check your connection and try again.": {
+      "extractionState": "manual",
+      "comment": "Credits fetch failure alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lütfen bağlantınızı kontrol edip tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bitte Verbindung prüfen und erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veuillez vérifier votre connexion et réessayer."
+          }
+        }
+      }
+    },
+    "Portrait": {
+      "extractionState": "manual",
+      "comment": "Fallback style name when none was recorded",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portre"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Porträt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portrait"
+          }
+        }
+      }
+    },
+    "Preparing… (%d clips) %@ left": {
+      "extractionState": "manual",
+      "comment": "Collage preparing subtitle, %d is a clip count, %@ is a time estimate like '~4–7 min'",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hazırlanıyor… (%d klip) %@ kaldı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird vorbereitet… (%d Clips) noch %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Préparation… (%d clips) %@ restant"
+          }
+        }
+      }
+    },
+    "Priority AI generation": {
+      "extractionState": "manual",
+      "comment": "Paywall benefit",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öncelikli yapay zeka oluşturma"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorisierte KI-Generierung"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Génération IA prioritaire"
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "extractionState": "manual",
+      "comment": "Paywall footer link",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizlilik"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenschutz"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confidentialité"
+          }
+        }
+      }
+    },
+    "Privacy Policy": {
+      "extractionState": "manual",
+      "comment": "Legal document title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizlilik Politikası"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenschutzerklärung"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Politique de confidentialité"
+          }
+        }
+      }
+    },
+    "Profile": {
+      "extractionState": "manual",
+      "comment": "Tab bar item",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profil"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profil"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profil"
+          }
+        }
+      }
+    },
+    "Pulls to Stand": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayakta Durmaya Çalışır"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zieht sich zum Stehen hoch"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se met debout en s'appuyant"
+          }
+        }
+      }
+    },
+    "Purchase failed": {
+      "extractionState": "manual",
+      "comment": "Purchase error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın alma başarısız oldu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kauf fehlgeschlagen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Échec de l'achat"
+          }
+        }
+      }
+    },
+    "Rate the App": {
+      "extractionState": "manual",
+      "comment": "Profile menu row",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulamayı Değerlendir"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App bewerten"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Évaluer l'application"
+          }
+        }
+      }
+    },
+    "Restore": {
+      "extractionState": "manual",
+      "comment": "Paywall footer link",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri Yükle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederherstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer"
+          }
+        }
+      }
+    },
+    "Restore Purchase": {
+      "extractionState": "manual",
+      "comment": "Profile menu row",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın Alımı Geri Yükle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kauf wiederherstellen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer l'achat"
+          }
+        }
+      }
+    },
+    "Restored": {
+      "extractionState": "manual",
+      "comment": "Restore purchases alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geri Yüklendi"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederhergestellt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restauré"
+          }
+        }
+      }
+    },
+    "Rolls Over": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yuvarlanır"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rollt sich um"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se retourne"
+          }
+        }
+      }
+    },
+    "Save": {
+      "extractionState": "manual",
+      "comment": "Result screen action button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrer"
+          }
+        }
+      }
+    },
+    "Save Photo": {
+      "extractionState": "manual",
+      "comment": "Milestone capture submit button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğrafı Kaydet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto speichern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrer la photo"
+          }
+        }
+      }
+    },
+    "Save every portrait to your gallery": {
+      "extractionState": "manual",
+      "comment": "Paywall benefit",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her portreyi galerinize kaydedin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jedes Porträt in Ihrer Galerie speichern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrez chaque portrait dans votre galerie"
+          }
+        }
+      }
+    },
+    "Saved Collages": {
+      "extractionState": "manual",
+      "comment": "Profile menu row",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydedilen Kolajlar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gespeicherte Collagen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collages enregistrés"
+          }
+        }
+      }
+    },
+    "Saved!": {
+      "extractionState": "manual",
+      "comment": "Save success title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydedildi!"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gespeichert!"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistré !"
+          }
+        }
+      }
+    },
+    "Says First Word": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk Kelimesini Söyler"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sagt erstes Wort"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit son premier mot"
+          }
+        }
+      }
+    },
+    "Secure payment · Apple Pay · Google Pay": {
+      "extractionState": "manual",
+      "comment": "Coin package secure payment note",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güvenli ödeme · Apple Pay · Google Pay"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sichere Zahlung · Apple Pay · Google Pay"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paiement sécurisé · Apple Pay · Google Pay"
+          }
+        }
+      }
+    },
+    "Seven Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yedi Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sieben Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sept mois"
+          }
+        }
+      }
+    },
+    "Share": {
+      "extractionState": "manual",
+      "comment": "Result screen action button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paylaş"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teilen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partager"
+          }
+        }
+      }
+    },
+    "Sits Up Unassisted": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desteksiz Oturur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sitzt ohne Hilfe"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'assoit sans aide"
+          }
+        }
+      }
+    },
+    "Six Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Altı Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sechs Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Six mois"
+          }
+        }
+      }
+    },
+    "Skip": {
+      "extractionState": "manual",
+      "comment": "Onboarding skip button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atla"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Überspringen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ignorer"
+          }
+        }
+      }
+    },
+    "Sleeps Through the Night": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gece Boyu Uyur"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schläft die ganze Nacht durch"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fait ses nuits"
+          }
+        }
+      }
+    },
+    "Small Pack": {
+      "extractionState": "manual",
+      "comment": "Coin package name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Küçük Paket"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleines Paket"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Petit pack"
+          }
+        }
+      }
+    },
+    "Some of your captured photos are still syncing. Please try again in a moment.": {
+      "extractionState": "manual",
+      "comment": "Collage sync error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yakalanan fotoğraflarınızdan bazıları hâlâ senkronize ediliyor. Lütfen biraz sonra tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einige Ihrer erfassten Fotos werden noch synchronisiert. Bitte versuchen Sie es gleich noch einmal."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Certaines de vos photos capturées sont encore en cours de synchronisation. Veuillez réessayer dans un instant."
+          }
+        }
+      }
+    },
+    "Something Went Wrong": {
+      "extractionState": "manual",
+      "comment": "Generic error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir Şeyler Ters Gitti"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etwas ist schiefgelaufen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un problème est survenu"
+          }
+        }
+      }
+    },
+    "Something went wrong": {
+      "extractionState": "manual",
+      "comment": "Generic error title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir şeyler ters gitti"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etwas ist schiefgelaufen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un problème est survenu"
+          }
+        }
+      }
+    },
+    "Something went wrong and your credits were refunded. Please try again.": {
+      "extractionState": "manual",
+      "comment": "Generation error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir şeyler ters gitti ve krediniz iade edildi. Lütfen tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etwas ist schiefgelaufen, und Ihre Credits wurden erstattet. Bitte erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un problème est survenu et vos crédits ont été remboursés. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "Something went wrong deleting the collage. Please try again.": {
+      "extractionState": "manual",
+      "comment": "Delete error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj silinirken bir şeyler ters gitti. Lütfen tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Löschen der Collage ist etwas schiefgelaufen. Bitte erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un problème est survenu lors de la suppression du collage. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "Something went wrong saving the video. Please try again.": {
+      "extractionState": "manual",
+      "comment": "Save error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video kaydedilirken bir şeyler ters gitti. Lütfen tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Speichern des Videos ist etwas schiefgelaufen. Bitte erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un problème est survenu lors de l'enregistrement de la vidéo. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "Something went wrong starting your collage. Please try again.": {
+      "extractionState": "manual",
+      "comment": "Collage start error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolajınız başlatılırken bir şeyler ters gitti. Lütfen tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Starten Ihrer Collage ist etwas schiefgelaufen. Bitte erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un problème est survenu lors du démarrage de votre collage. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "Something went wrong. If credits were spent, they've been refunded. Please try again.": {
+      "extractionState": "manual",
+      "comment": "Animate error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir şeyler ters gitti. Kredi harcandıysa iade edildi. Lütfen tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etwas ist schiefgelaufen. Falls Credits ausgegeben wurden, wurden sie erstattet. Bitte erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un problème est survenu. Si des crédits ont été dépensés, ils ont été remboursés. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "Spend coins to generate any portrait — no subscription needed.": {
+      "extractionState": "manual",
+      "comment": "Coin package screen subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Herhangi bir portre oluşturmak için jeton harcayın — abonelik gerekmez."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geben Sie Münzen aus, um jedes Porträt zu erstellen — kein Abo nötig."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dépensez des pièces pour générer n'importe quel portrait — aucun abonnement requis."
+          }
+        }
+      }
+    },
+    "Subscribe Now": {
+      "extractionState": "manual",
+      "comment": "Paywall CTA button",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi Abone Ol"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt abonnieren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'abonner maintenant"
+          }
+        }
+      }
+    },
+    "Take Photo": {
+      "extractionState": "manual",
+      "comment": "Photo source action",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğraf Çek"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto aufnehmen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prendre une photo"
+          }
+        }
+      }
+    },
+    "Tap the heart on any style to save it here.": {
+      "extractionState": "manual",
+      "comment": "Gallery favorites empty state subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydetmek için herhangi bir stilin kalbine dokunun."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tippen Sie auf das Herz eines Stils, um ihn hier zu speichern."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appuyez sur le cœur d'un style pour l'enregistrer ici."
+          }
+        }
+      }
+    },
+    "Tap to change photo": {
+      "extractionState": "manual",
+      "comment": "Custom style photo overlay label",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğrafı değiştirmek için dokunun"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tippen, um Foto zu ändern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appuyez pour changer de photo"
+          }
+        }
+      }
+    },
+    "Ten Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zehn Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dix mois"
+          }
+        }
+      }
+    },
+    "Terms": {
+      "extractionState": "manual",
+      "comment": "Paywall footer link",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şartlar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedingungen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conditions"
+          }
+        }
+      }
+    },
+    "Terms of Use": {
+      "extractionState": "manual",
+      "comment": "Legal document title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kullanım Şartları"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nutzungsbedingungen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conditions d'utilisation"
+          }
+        }
+      }
+    },
+    "The \\u{201c}%@\\u{201d} collage video will be permanently deleted. This can't be undone.": {
+      "extractionState": "manual",
+      "comment": "Delete collage alert message, %@ is a list name",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” kolaj videosu kalıcı olarak silinecek. Bu işlem geri alınamaz."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Collage-Video „%@“ wird dauerhaft gelöscht. Dies kann nicht rückgängig gemacht werden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La vidéo de collage « %@ » sera définitivement supprimée. Cette action est irréversible."
+          }
+        }
+      }
+    },
+    "The animated video was saved to your Photos.": {
+      "extractionState": "manual",
+      "comment": "Save success message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canlandırılan video Fotoğraflar'a kaydedildi."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das animierte Video wurde in Ihren Fotos gespeichert."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La vidéo animée a été enregistrée dans vos Photos."
+          }
+        }
+      }
+    },
+    "The collage video was saved to your Photos.": {
+      "extractionState": "manual",
+      "comment": "Save success message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj videosu Fotoğraflar'a kaydedildi."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Collage-Video wurde in Ihren Fotos gespeichert."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La vidéo de collage a été enregistrée dans vos Photos."
+          }
+        }
+      }
+    },
+    "This exclusive bundle won't be offered again. Grab it now, or it's gone for good.": {
+      "extractionState": "manual",
+      "comment": "Limited offer last-chance subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu özel paket bir daha sunulmayacak. Şimdi alın, yoksa bir daha gelmez."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses exklusive Paket wird nicht erneut angeboten. Sichern Sie es sich jetzt, sonst ist es für immer weg."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ce pack exclusif ne sera plus proposé. Profitez-en maintenant, sinon il aura disparu pour toujours."
+          }
+        }
+      }
+    },
+    "This photo has more than one face. Please choose a photo with just your baby in it.": {
+      "extractionState": "manual",
+      "comment": "Face detection error alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu fotoğrafta birden fazla yüz var. Lütfen sadece bebeğinizin olduğu bir fotoğraf seçin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf diesem Foto ist mehr als ein Gesicht zu sehen. Bitte wählen Sie ein Foto mit nur Ihrem Baby."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cette photo contient plus d'un visage. Veuillez choisir une photo avec seulement votre bébé."
+          }
+        }
+      }
+    },
+    "This portrait was saved to your Milestone Gallery.": {
+      "extractionState": "manual",
+      "comment": "Milestone save confirmation message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu portre Kilometre Taşı Galerinize kaydedildi."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Porträt wurde in Ihrer Meilenstein-Galerie gespeichert."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ce portrait a été enregistré dans votre galerie des étapes."
+          }
+        }
+      }
+    },
+    "Three Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Üç Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drei Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trois mois"
+          }
+        }
+      }
+    },
+    "Top up your coins": {
+      "extractionState": "manual",
+      "comment": "Coin package screen title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetonlarınızı yükleyin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Münzen aufladen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recharger vos pièces"
+          }
+        }
+      }
+    },
+    "Track baby's firsts and keep every precious memory beautifully organized.": {
+      "extractionState": "manual",
+      "comment": "Onboarding page 3 subtitle",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bebeğinizin ilklerini takip edin ve her değerli anıyı güzelce düzenli tutun."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verfolgen Sie die Premieren Ihres Babys und halten Sie jede kostbare Erinnerung schön geordnet fest."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suivez les premières fois de votre bébé et gardez chaque souvenir précieux joliment organisé."
+          }
+        }
+      }
+    },
+    "Turn your baby's photos into magical keepsakes": {
+      "extractionState": "manual",
+      "comment": "Onboarding page 1 title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bebeğinizin fotoğraflarını büyülü hatıralara dönüştürün"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwandeln Sie die Fotos Ihres Babys in magische Andenken"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transformez les photos de votre bébé en souvenirs magiques"
+          }
+        }
+      }
+    },
+    "Two Months": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İki Aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zwei Monate"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deux mois"
+          }
+        }
+      }
+    },
+    "Unlimited studio themes": {
+      "extractionState": "manual",
+      "comment": "Paywall benefit",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sınırsız stüdyo temaları"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbegrenzte Studiostile"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thèmes de studio illimités"
+          }
+        }
+      }
+    },
+    "Unlock Unlimited Creativity": {
+      "extractionState": "manual",
+      "comment": "Paywall title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sınırsız Yaratıcılığın Kilidini Açın"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grenzenlose Kreativität freischalten"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Débloquez une créativité illimitée"
+          }
+        }
+      }
+    },
+    "Untitled": {
+      "extractionState": "manual",
+      "comment": "Fallback milestone title when none was recorded",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adsız"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbenannt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sans titre"
+          }
+        }
+      }
+    },
+    "Upload a clear photo of your baby": {
+      "extractionState": "manual",
+      "comment": "Photo upload drop zone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bebeğinizin net bir fotoğrafını yükleyin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laden Sie ein klares Foto Ihres Babys hoch"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléchargez une photo nette de votre bébé"
+          }
+        }
+      }
+    },
+    "Upload a photo": {
+      "extractionState": "manual",
+      "comment": "Photo upload screen nav title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotoğraf yükleyin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto hochladen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléverser une photo"
+          }
+        }
+      }
+    },
+    "Use on any theme or your own custom prompt": {
+      "extractionState": "manual",
+      "comment": "Coin package benefit",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Herhangi bir temada veya kendi özel isteğinizde kullanın"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Für jedes Thema oder Ihren eigenen individuellen Prompt verwenden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À utiliser avec n'importe quel thème ou votre propre prompt personnalisé"
+          }
+        }
+      }
+    },
+    "Walks Independently": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağımsız Yürür"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Läuft selbstständig"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marche seul"
+          }
+        }
+      }
+    },
+    "Want a change? Describe an edit — e.g. \\u{201c}add a soft blue blanket\\u{201d}": {
+      "extractionState": "manual",
+      "comment": "Result screen edit prompt placeholder",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir değişiklik mi istiyorsunuz? Bir düzenleme tarif edin — örn. “yumuşak mavi bir battaniye ekle”"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Änderung gewünscht? Beschreiben Sie eine Bearbeitung — z. B. „eine weiche blaue Decke hinzufügen“"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie d'un changement ? Décrivez une modification — ex. « ajouter une douce couverture bleue »"
+          }
+        }
+      }
+    },
+    "Want an AI touch-up? (optional)": {
+      "extractionState": "manual",
+      "comment": "Milestone capture prompt field label",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yapay zeka rötuşu ister misiniz? (isteğe bağlı)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KI-Retusche gewünscht? (optional)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie d'une retouche IA ? (facultatif)"
+          }
+        }
+      }
+    },
+    "Want music for this collage?": {
+      "extractionState": "manual",
+      "comment": "Collage music prompt question",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu kolaj için müzik ister misiniz?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik für diese Collage gewünscht?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie de musique pour ce collage ?"
+          }
+        }
+      }
+    },
+    "Warming up the studio…": {
+      "extractionState": "manual",
+      "comment": "Generation loading status",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stüdyo hazırlanıyor…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studio wird vorbereitet…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Préparation du studio…"
+          }
+        }
+      }
+    },
+    "Waves Bye-Bye": {
+      "extractionState": "manual",
+      "comment": "Milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Sallar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkt zum Abschied"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fait au revoir de la main"
+          }
+        }
+      }
+    },
+    "We couldn't create the collage video. Please try again.": {
+      "extractionState": "manual",
+      "comment": "Collage error message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj videosu oluşturulamadı. Lütfen tekrar deneyin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Collage-Video konnte nicht erstellt werden. Bitte erneut versuchen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de créer la vidéo de collage. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "We couldn't find a face in this photo. Please choose a clear, well-lit photo of your baby's face.": {
+      "extractionState": "manual",
+      "comment": "Face detection error alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu fotoğrafta bir yüz bulamadık. Lütfen bebeğinizin net ve iyi aydınlatılmış bir fotoğrafını seçin."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir konnten auf diesem Foto kein Gesicht finden. Bitte wählen Sie ein klares, gut beleuchtetes Foto vom Gesicht Ihres Babys."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nous n'avons pas trouvé de visage sur cette photo. Veuillez choisir une photo nette et bien éclairée du visage de votre bébé."
+          }
+        }
+      }
+    },
+    "We'll animate each of your %d captured photos and combine them into one video. This will cost %@, and depending on how many photos you've added, it may take quite a while. Do you want to continue?": {
+      "extractionState": "manual",
+      "comment": "Collage confirmation alert message, %d is item count, %@ is a credit cost like '5 credits'",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yakaladığınız %d fotoğrafın her birini canlandırıp tek bir videoda birleştireceğiz. Bu %@ tutacak ve eklediğiniz fotoğraf sayısına bağlı olarak biraz zaman alabilir. Devam etmek ister misiniz?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir animieren jedes Ihrer %d erfassten Fotos und fügen sie zu einem Video zusammen. Das kostet %@ und kann je nach Anzahl der hinzugefügten Fotos eine Weile dauern. Möchten Sie fortfahren?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nous allons animer chacune de vos %d photos capturées et les combiner en une seule vidéo. Cela coûtera %@ et, selon le nombre de photos ajoutées, cela peut prendre un certain temps. Voulez-vous continuer ?"
+          }
+        }
+      }
+    },
+    "We're mixing your track into this collage. You can follow its progress from the My Collages screen.": {
+      "extractionState": "manual",
+      "comment": "Music started alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parçanızı bu kolajla harmanlıyoruz. İlerlemesini Koleksiyonlarım ekranından takip edebilirsiniz."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir mischen Ihren Track in diese Collage. Sie können den Fortschritt im Bildschirm „Meine Collagen“ verfolgen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nous intégrons votre morceau à ce collage. Vous pouvez suivre sa progression depuis l'écran Mes collages."
+          }
+        }
+      }
+    },
+    "We're preparing your collage. You can follow its progress from the My Collages screen.": {
+      "extractionState": "manual",
+      "comment": "Collage started alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolajınızı hazırlıyoruz. İlerlemesini Koleksiyonlarım ekranından takip edebilirsiniz."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir bereiten Ihre Collage vor. Sie können den Fortschritt im Bildschirm „Meine Collagen“ verfolgen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nous préparons votre collage. Vous pouvez suivre sa progression depuis l'écran Mes collages."
+          }
+        }
+      }
+    },
+    "Weekly": {
+      "extractionState": "manual",
+      "comment": "Subscription plan title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haftalık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wöchentlich"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hebdomadaire"
+          }
+        }
+      }
+    },
+    "What would you like to remember?": {
+      "extractionState": "manual",
+      "comment": "New milestone alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neyi hatırlamak istersiniz?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Was möchten Sie festhalten?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Que souhaitez-vous retenir ?"
+          }
+        }
+      }
+    },
+    "Yearly": {
+      "extractionState": "manual",
+      "comment": "Subscription plan title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yıllık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jährlich"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annuel"
+          }
+        }
+      }
+    },
+    "You need at least %d captured milestones to create a collage video. You have %d so far.": {
+      "extractionState": "manual",
+      "comment": "Not enough milestones alert message, both %d are counts",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj videosu oluşturmak için en az %d yakalanmış kilometre taşına ihtiyacınız var. Şu ana kadar %d tanesi var."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sie benötigen mindestens %d erfasste Meilensteine, um ein Collage-Video zu erstellen. Sie haben bisher %d."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il vous faut au moins %d étapes capturées pour créer une vidéo de collage. Vous en avez %d jusqu'à présent."
+          }
+        }
+      }
+    },
+    "Your Final Chance!": {
+      "extractionState": "manual",
+      "comment": "Limited offer last-chance title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son Şansınız!"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre letzte Chance!"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre dernière chance !"
+          }
+        }
+      }
+    },
+    "Your Request Was Received": {
+      "extractionState": "manual",
+      "comment": "Collage started alert title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Talebiniz Alındı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre Anfrage wurde empfangen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre demande a été reçue"
+          }
+        }
+      }
+    },
+    "Your baby's collages": {
+      "extractionState": "manual",
+      "comment": "Milestone lists screen title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bebeğinizin kolajları"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Collagen Ihres Babys"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les collages de votre bébé"
+          }
+        }
+      }
+    },
+    "Your purchases have been restored.": {
+      "extractionState": "manual",
+      "comment": "Restore purchases alert message",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satın alımlarınız geri yüklendi."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ihre Käufe wurden wiederhergestellt."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vos achats ont été restaurés."
+          }
+        }
+      }
+    },
+    "\\u{201c}%@\\u{201d} and its photo will be removed. This can't be undone.": {
+      "extractionState": "manual",
+      "comment": "Delete confirmation message, %@ is a milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” ve fotoğrafı kaldırılacak. Bu işlem geri alınamaz."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "„%@“ und das zugehörige Foto werden entfernt. Dies kann nicht rückgängig gemacht werden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "« %@ » et sa photo seront supprimés. Cette action est irréversible."
+          }
+        }
+      }
+    },
+    "\\u{201c}%@\\u{201d} has already been captured. Deleting it removes the photo too — this can't be undone.": {
+      "extractionState": "manual",
+      "comment": "Delete milestone alert message, %@ is a milestone title",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” zaten yakalandı. Silmek fotoğrafı da kaldırır — bu işlem geri alınamaz."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "„%@“ wurde bereits erfasst. Beim Löschen wird auch das Foto entfernt — dies kann nicht rückgängig gemacht werden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "« %@ » a déjà été capturé. Le supprimer retire aussi la photo — cette action est irréversible."
+          }
+        }
+      }
+    },
+    "e.g. Grandma's Visit": {
+      "extractionState": "manual",
+      "comment": "New list name placeholder",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "örn. Büyükanne'nin Ziyareti"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. Omas Besuch"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. Visite de mamie"
+          }
+        }
+      }
+    },
+    "e.g. Met Grandma": {
+      "extractionState": "manual",
+      "comment": "New milestone name placeholder",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "örn. Büyükanneyle Tanıştı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. Oma kennengelernt"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. A rencontré mamie"
+          }
+        }
+      }
+    },
+    "e.g. \\u{201c}Add soft golden light and floating sparkles\\u{201d} — leave blank to just save the photo": {
+      "extractionState": "manual",
+      "comment": "Milestone capture prompt placeholder",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "örn. “Yumuşak altın ışık ve süzülen parıltılar ekle” — sadece fotoğrafı kaydetmek için boş bırakın"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. „weiches goldenes Licht und schwebende Funken hinzufügen“ — leer lassen, um nur das Foto zu speichern"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. « ajouter une douce lumière dorée et des étincelles flottantes » — laissez vide pour enregistrer simplement la photo"
+          }
+        }
+      }
+    },
+    "e.g. \\u{201c}Turn my baby into a tiny astronaut floating among the stars\\u{201d}": {
+      "extractionState": "manual",
+      "comment": "Custom style prompt field placeholder",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "örn. “Bebeğimi yıldızların arasında süzülen minik bir astronota dönüştür”"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. „mein Baby in einen kleinen Astronauten zwischen den Sternen verwandeln“"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ex. « transformer mon bébé en petit astronaute flottant parmi les étoiles »"
+          }
+        }
+      }
+    },
+    "per month": {
+      "extractionState": "manual",
+      "comment": "Subscription plan period",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aylık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pro Monat"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "par mois"
+          }
+        }
+      }
+    },
+    "per week": {
+      "extractionState": "manual",
+      "comment": "Subscription plan period",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "haftalık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pro Woche"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "par semaine"
+          }
+        }
+      }
+    },
+    "per year": {
+      "extractionState": "manual",
+      "comment": "Subscription plan period",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yıllık"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pro Jahr"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "par an"
+          }
+        }
+      }
+    },
+    "~%d min": {
+      "extractionState": "manual",
+      "comment": "Estimated wait time, single value",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d dk"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d Min."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d min"
+          }
+        }
+      }
+    },
+    "~%d–%d min": {
+      "extractionState": "manual",
+      "comment": "Estimated wait time, range",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d dk"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d Min."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d min"
+          }
+        }
+      }
+    },
+    "    Newborn Moments (\"we\", \"us\") creates AI-generated studio-style portraits from photos you upload. This policy explains what we collect and why.\n\n    WHAT WE COLLECT\n    • Photos you upload to generate a portrait, and the portraits we create for you.\n    • Basic usage data (which themes you generate, credit/subscription status) tied to an anonymous device account — we don't require an email, phone number, or name to use the app.\n    • Purchase information handled by Apple and our payments provider (RevenueCat) — we never see or store your card details.\n\n    HOW WE USE YOUR PHOTOS\n    Uploaded photos are sent to our AI image generation provider (Wiro AI) solely to produce your requested portrait, and are not used to train AI models or shared with any other third party. Generated portraits are stored so you can view them again in your Gallery, tied to your anonymous account.\n\n    CHILDREN'S PHOTOS\n    This app is intended to be used by a parent or legal guardian to create portraits of their own child. Do not upload photos of any child without the consent of that child's parent or guardian.\n\n    THIRD-PARTY SERVICES\n    We use Firebase (Google) for authentication, storage, and backend functions, Wiro AI for image generation, and RevenueCat for subscription/purchase management. Each processes data only as needed to provide their service to us.\n\n    YOUR CHOICES\n    You can delete your account and all associated data at any time from Profile settings. Deleting your account permanently removes your uploaded photos, generated portraits, and purchase history from our systems.\n\n    DATA RETENTION\n    We retain your photos and generations only for as long as your account exists. We do not sell your data to third parties or use it for advertising.\n\n    CONTACT\n    Questions about this policy can be sent to the support address listed on our App Store page.\n    ": {
+      "extractionState": "manual",
+      "comment": "Privacy Policy full legal body text"
+    },
+    "    By using Newborn Moments, you agree to these terms.\n\n    THE SERVICE\n    Newborn Moments lets you upload a photo and generate AI-created studio-style portrait variations using selected themes or your own custom prompt. Results are AI-generated approximations and may not always be usable — we do our best, but generation can occasionally fail or produce unexpected results.\n\n    CREDITS & SUBSCRIPTIONS\n    Each generation costs credits. Credits are granted through a subscription (recurring, auto-renewing unless cancelled) or one-time coin purchases. Subscriptions are billed through your Apple ID account and renew automatically unless turned off at least 24 hours before the end of the current period, managed via your device's App Store subscription settings. If a generation fails due to a technical error on our end, the credit spent is automatically refunded to your account.\n\n    ACCEPTABLE USE\n    You agree to only upload photos you have the right to use, and only of children whose parent or legal guardian has consented. You agree not to use the app to generate content that is unsafe, exploitative, or otherwise inappropriate involving a minor. We reserve the right to suspend accounts that violate this.\n\n    OWNERSHIP\n    You retain rights to the photos you upload. Portraits generated for you are yours to save and share for personal use.\n\n    NO WARRANTY\n    The app and its AI-generated output are provided \"as is,\" without warranty of any kind. We're not liable for any indirect or consequential damages arising from your use of the app.\n\n    CHANGES\n    We may update these terms as the app evolves; continued use after a change means you accept the updated terms.\n\n    CONTACT\n    Questions about these terms can be sent to the support address listed on our App Store page.\n    ": {
+      "extractionState": "manual",
+      "comment": "Terms of Use full legal body text"
+    }
+  },
+  "version": "1.0"
+}

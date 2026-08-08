@@ -4,10 +4,10 @@ final class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let home = wrap(HomeViewController(), title: "Home", icon: "house.fill")
-        let milestones = wrap(MilestoneListsViewController(), title: "My Collages", icon: "film.stack.fill")
-        let gallery = wrap(GalleryViewController(), title: "Gallery", icon: "photo.on.rectangle")
-        let profile = wrap(ProfileViewController(), title: "Profile", icon: "person.fill")
+        let home = wrap(HomeViewController(), title: NSLocalizedString("Home", comment: "Tab bar item"), icon: "house.fill")
+        let milestones = wrap(MilestoneListsViewController(), title: NSLocalizedString("My Collages", comment: "Tab bar item"), icon: "film.stack.fill")
+        let gallery = wrap(GalleryViewController(), title: NSLocalizedString("Gallery", comment: "Tab bar item"), icon: "photo.on.rectangle")
+        let profile = wrap(ProfileViewController(), title: NSLocalizedString("Profile", comment: "Tab bar item"), icon: "person.fill")
 
         viewControllers = [home, milestones, gallery, profile]
 

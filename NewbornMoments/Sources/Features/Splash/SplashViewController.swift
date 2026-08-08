@@ -44,12 +44,12 @@ final class SplashViewController: UIViewController {
         logoIcon.contentMode = .scaleAspectFit
         logoIcon.translatesAutoresizingMaskIntoConstraints = false
 
-        titleLabel.text = "Newborn Moments"
+        titleLabel.text = NSLocalizedString("Newborn Moments", comment: "App name shown on the splash screen")
         titleLabel.font = Theme.Font.heading(24, weight: 700)
         titleLabel.textColor = Theme.Color.textPrimaryAlt
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        subtitleLabel.text = "AI baby photo studio"
+        subtitleLabel.text = NSLocalizedString("AI baby photo studio", comment: "Splash screen subtitle")
         subtitleLabel.font = Theme.Font.body(14, weight: 600)
         subtitleLabel.textColor = Theme.Color.textSecondary
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false

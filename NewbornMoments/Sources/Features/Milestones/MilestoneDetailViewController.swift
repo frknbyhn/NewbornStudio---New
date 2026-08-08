@@ -89,7 +89,7 @@ final class MilestoneDetailViewController: UIViewController {
         photoContainer.addSubview(spinner)
 
         let changePhoto = PaddedLabel()
-        changePhoto.text = "Tap to change photo"
+        changePhoto.text = NSLocalizedString("Tap to change photo", comment: "Photo overlay label")
         changePhoto.horizontalPadding = 12
         changePhoto.font = Theme.Font.heading(11, weight: 700)
         changePhoto.textColor = .white
@@ -108,7 +108,7 @@ final class MilestoneDetailViewController: UIViewController {
         infoCard.layer.cornerRadius = 18
         infoCard.translatesAutoresizingMaskIntoConstraints = false
 
-        let infoStack = UIStackView(arrangedSubviews: [infoRow(label: "List", value: listName), infoRow(label: "Milestone", value: milestone.title)])
+        let infoStack = UIStackView(arrangedSubviews: [infoRow(label: NSLocalizedString("List", comment: "Milestone detail info label"), value: listName), infoRow(label: NSLocalizedString("Milestone", comment: "Milestone detail info label"), value: milestone.title)])
         infoStack.axis = .vertical
         infoStack.spacing = 14
         infoStack.isLayoutMarginsRelativeArrangement = true
@@ -124,7 +124,7 @@ final class MilestoneDetailViewController: UIViewController {
 
         let changePhotoButton = UIButton(type: .system)
         var changeConfig = UIButton.Configuration.plain()
-        changeConfig.title = "Change Photo"
+        changeConfig.title = NSLocalizedString("Change Photo", comment: "Milestone detail button")
         changeConfig.image = UIImage(systemName: "photo.badge.plus")
         changeConfig.imagePadding = 8
         changeConfig.baseForegroundColor = Theme.Color.accentEnd
@@ -139,7 +139,7 @@ final class MilestoneDetailViewController: UIViewController {
 
         let deleteButton = UIButton(type: .system)
         var deleteConfig = UIButton.Configuration.plain()
-        deleteConfig.title = "Delete Milestone"
+        deleteConfig.title = NSLocalizedString("Delete Milestone", comment: "Milestone detail button")
         deleteConfig.image = UIImage(systemName: "trash")
         deleteConfig.imagePadding = 8
         deleteConfig.baseForegroundColor = UIColor(hex: 0xC24E4E)
@@ -221,14 +221,14 @@ final class MilestoneDetailViewController: UIViewController {
 
     @objc private func changePhotoTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: "Change Photo", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: NSLocalizedString("Change Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .camera)
         })
-        alert.addAction(UIAlertAction(title: "Choose from Gallery", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Choose from Gallery", comment: "Photo source action"), style: .default) { [weak self] _ in
             self?.presentPicker(sourceType: .photoLibrary)
         })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
         present(alert, animated: true)
     }
 
@@ -243,12 +243,12 @@ final class MilestoneDetailViewController: UIViewController {
     @objc private func deleteTapped() {
         HapticFeedback.light()
         let alert = UIAlertController(
-            title: "Delete This Milestone?",
-            message: "\u{201c}\(milestone.title)\u{201d} and its photo will be removed. This can't be undone.",
+            title: NSLocalizedString("Delete This Milestone?", comment: "Delete confirmation title"),
+            message: String(format: NSLocalizedString("\u{201c}%@\u{201d} and its photo will be removed. This can't be undone.", comment: "Delete confirmation message, %@ is a milestone title"), milestone.title),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button"), style: .cancel))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: "Delete button"), style: .destructive) { [weak self] _ in
             guard let self else { return }
             MilestoneStore.shared.deleteCapture(milestoneId: self.milestone.id, fromListId: self.listId)
             HapticFeedback.success()

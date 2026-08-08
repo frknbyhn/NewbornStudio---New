@@ -97,13 +97,15 @@ final class GenerationLoadingViewController: UIViewController {
         statusLabel.font = Theme.Font.heading(17, weight: 600)
         statusLabel.textColor = Theme.Color.purpleAccent
         statusLabel.textAlignment = .center
-        statusLabel.text = "Warming up the studio…"
+        statusLabel.text = NSLocalizedString("Warming up the studio…", comment: "Generation loading status")
 
         let themeLabel = UILabel()
         themeLabel.font = Theme.Font.body(13, weight: 600)
         themeLabel.textColor = Theme.Color.textSecondary
         themeLabel.textAlignment = .center
-        themeLabel.text = editInstruction != nil ? "Applying your edit" : "Crafting the \u{201c}\(theme.name)\u{201d} theme"
+        themeLabel.text = editInstruction != nil
+            ? NSLocalizedString("Applying your edit", comment: "Generation loading subtitle (edit flow)")
+            : String(format: NSLocalizedString("Crafting the \u{201c}%@\u{201d} theme", comment: "Generation loading subtitle, %@ is a theme name"), theme.name)
 
         let stack = UIStackView(arrangedSubviews: [circle, percentLabel, progressTrack, statusLabel, themeLabel])
         stack.axis = .vertical
@@ -137,7 +139,12 @@ final class GenerationLoadingViewController: UIViewController {
         ])
     }
 
-    private let messages = ["Warming up the studio…", "Adding studio lighting…", "Blending the theme…", "Finishing touches…"]
+    private let messages = [
+        NSLocalizedString("Warming up the studio…", comment: "Generation loading status"),
+        NSLocalizedString("Adding studio lighting…", comment: "Generation loading status"),
+        NSLocalizedString("Blending the theme…", comment: "Generation loading status"),
+        NSLocalizedString("Finishing touches…", comment: "Generation loading status")
+    ]
 
     /// Paced to reach progressCap right around the 15s floor. Keeps ticking (and re-checking
     /// the floor) even after reaching the cap, in case the server is slower than 15s.
@@ -195,7 +202,7 @@ final class GenerationLoadingViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }
             percentLabel.text = "100%"
-            statusLabel.text = "Done!"
+            statusLabel.text = NSLocalizedString("Done!", comment: "Generation loading status")
             HapticFeedback.success()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
                 guard let self else { return }
@@ -210,11 +217,11 @@ final class GenerationLoadingViewController: UIViewController {
 
     private func presentGenerationError(_ error: Error) {
         let alert = UIAlertController(
-            title: "Couldn't create your portrait",
-            message: "Something went wrong and your credits were refunded. Please try again.",
+            title: NSLocalizedString("Couldn't create your portrait", comment: "Generation error title"),
+            message: NSLocalizedString("Something went wrong and your credits were refunded. Please try again.", comment: "Generation error message"),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default) { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         })
         present(alert, animated: true)

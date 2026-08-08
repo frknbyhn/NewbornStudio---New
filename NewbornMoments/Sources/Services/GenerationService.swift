@@ -81,7 +81,7 @@ enum GenerationService {
                         let resultUrlString = data["resultUrl"] as? String,
                         let resultUrl = URL(string: resultUrlString)
                     else { return nil }
-                    let styleName = data["styleName"] as? String ?? "Portrait"
+                    let styleName = data["styleName"] as? String ?? NSLocalizedString("Portrait", comment: "Fallback style name when none was recorded")
                     let styleId = data["styleId"] as? String ?? "custom-style"
                     return Generation(id: doc.documentID, styleId: styleId, styleName: styleName, resultUrl: resultUrl)
                 }

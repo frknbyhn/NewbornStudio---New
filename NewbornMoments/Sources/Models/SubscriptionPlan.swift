@@ -1,3 +1,4 @@
+import Foundation
 import RevenueCat
 
 /// Built from a real RevenueCat `Package` — display-only mapping of product id -> credit
@@ -21,21 +22,21 @@ struct SubscriptionPlan {
 
         switch package.packageType {
         case .weekly:
-            title = "Weekly"
-            periodLabel = "per week"
-            creditsLabel = "10 credits / week"
+            title = NSLocalizedString("Weekly", comment: "Subscription plan title")
+            periodLabel = NSLocalizedString("per week", comment: "Subscription plan period")
+            creditsLabel = NSLocalizedString("10 credits / week", comment: "Subscription plan credits")
             badge = nil
             isFeatured = false
         case .monthly:
-            title = "Monthly"
-            periodLabel = "per month"
-            creditsLabel = "50 credits / month"
+            title = NSLocalizedString("Monthly", comment: "Subscription plan title")
+            periodLabel = NSLocalizedString("per month", comment: "Subscription plan period")
+            creditsLabel = NSLocalizedString("50 credits / month", comment: "Subscription plan credits")
             badge = nil
             isFeatured = false
         case .annual:
-            title = "Yearly"
-            periodLabel = product.localizedPricePerWeek.map { "\($0) / week" } ?? "per year"
-            creditsLabel = "500 credits / year"
+            title = NSLocalizedString("Yearly", comment: "Subscription plan title")
+            periodLabel = product.localizedPricePerWeek.map { String(format: NSLocalizedString("%@ / week", comment: "Per-week price breakdown, %@ is a formatted price"), $0) } ?? NSLocalizedString("per year", comment: "Subscription plan period")
+            creditsLabel = NSLocalizedString("500 credits / year", comment: "Subscription plan credits")
             badge = nil
             isFeatured = true
         default:
@@ -48,9 +49,9 @@ struct SubscriptionPlan {
     }
 
     static let benefits: [String] = [
-        "Unlimited studio themes",
-        "Priority AI generation",
-        "Save every portrait to your gallery",
-        "No watermark"
+        NSLocalizedString("Unlimited studio themes", comment: "Paywall benefit"),
+        NSLocalizedString("Priority AI generation", comment: "Paywall benefit"),
+        NSLocalizedString("Save every portrait to your gallery", comment: "Paywall benefit"),
+        NSLocalizedString("No watermark", comment: "Paywall benefit")
     ]
 }
