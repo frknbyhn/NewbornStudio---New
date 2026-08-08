@@ -33,7 +33,9 @@ THEME_TEMPLATE = (
     "portrait. Theme: {name} — {descriptor}. Mood: {mood}. Soft, warm, professional "
     "studio-portrait lighting, photorealistic, high detail, preserve the baby's real face "
     "and likeness from the reference photo, natural baby proportions, no text, no "
-    "watermark, no logos, safe and wholesome, no adult content."
+    "watermark, no logos, no real brand names or trademarks, no real sports team crests "
+    "or jerseys — plain/generic unbranded clothing and props only, safe and wholesome, "
+    "no adult content."
 )
 
 THEMES = [
@@ -51,6 +53,27 @@ THEMES = [
      "bold, energetic, heroic comic-book fun"),
     ("mosaic_snow_angel", "Snow Angel", "wrapped in white fur against a snowflake backdrop",
      "cozy, festive, warm holiday glow"),
+    # Second batch — one distinct theme per screen so no image is reused across screens.
+    ("screen2_champion", "Little Champion", "beside a mini trophy and medal",
+     "energetic, proud, playful athletic spirit"),
+    ("screen2_pilot", "Pilot in Training", "wearing an aviator cap and goggles beside a toy airplane",
+     "cheerful, playful, pretend-career charm"),
+    ("screen4_soccer", "Soccer Star", "in a tiny jersey beside a soccer ball",
+     "energetic, proud, playful athletic spirit"),
+    ("screen4_doctor", "Tiny Doctor", "in a white coat holding a toy stethoscope",
+     "cheerful, playful, pretend-career charm"),
+    ("screen4_police", "Police Officer", "wearing a mini police cap and badge",
+     "cheerful, playful, pretend-career charm"),
+    ("screen5_rockstar", "Rockstar Baby", "in a mini leather jacket beside a toy guitar",
+     "elegant, expressive, artistic performance charm"),
+    ("screen5_pumpkin", "Little Pumpkin", "in a pumpkin onesie against a hay-bale backdrop",
+     "playful, spooky-cute, autumn charm"),
+    ("screen5_peterpan", "Peter Pan", "in a green tunic and feathered cap",
+     "whimsical, classic-storybook charm"),
+    ("screen5_puppy", "Puppy Love", "wearing a puppy-ear hood beside paw-print props",
+     "sweet, cuddly, gentle companionship warmth"),
+    ("screen6_maestro", "Little Maestro", "in a tiny tuxedo holding a conductor's baton",
+     "elegant, expressive, artistic performance charm"),
 ]
 
 
