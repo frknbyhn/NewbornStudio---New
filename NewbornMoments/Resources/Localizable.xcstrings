@@ -118,6 +118,30 @@
             "state": "translated",
             "value": "%@ / tjedan"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / εβδομάδα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / setmana"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / minggu"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / minggu"
+          }
         }
       }
     },
@@ -237,6 +261,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "%d novčića"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d κέρματα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d monedes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d koin"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d syiling"
           }
         }
       }
@@ -358,6 +406,30 @@
             "state": "translated",
             "value": "%d novčića · %@"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d κέρματα · %@"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d monedes · %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d koin · %@"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d syiling · %@"
+          }
         }
       }
     },
@@ -478,6 +550,30 @@
             "state": "translated",
             "value": "%d kredita"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d πιστώσεις"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d crèdits"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d kredit"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d kredit"
+          }
         }
       }
     },
@@ -594,6 +690,30 @@
           }
         },
         "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 kredit"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 πίστωση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 crèdit"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 kredit"
+          }
+        },
+        "ms": {
           "stringUnit": {
             "state": "translated",
             "value": "1 kredit"
@@ -718,6 +838,30 @@
             "state": "translated",
             "value": "10 kredita / tjedan"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 πιστώσεις / εβδομάδα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 crèdits / setmana"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 kredit / minggu"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 kredit / minggu"
+          }
         }
       }
     },
@@ -837,6 +981,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "50 kredita / mjesec"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 πιστώσεις / μήνα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 crèdits / mes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 kredit / bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "50 kredit / bulan"
           }
         }
       }
@@ -958,6 +1126,30 @@
             "state": "translated",
             "value": "500 kredita / godinu"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 πιστώσεις / έτος"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 crèdits / any"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 kredit / tahun"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "500 kredit / tahun"
+          }
         }
       }
     },
@@ -1077,6 +1269,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Posebna ponuda, samo za vas"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μια ειδική προσφορά, μόνο για εσάς"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una oferta especial, només per a tu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran khusus, hanya untuk Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tawaran istimewa, khas untuk anda"
           }
         }
       }
@@ -1198,6 +1414,30 @@
             "state": "translated",
             "value": "AI foto studio za bebe"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Στούντιο φωτογραφίας μωρού με AI"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudi de fotos de nadons amb IA"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studio foto bayi bertenaga AI"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studio foto bayi AI"
+          }
         }
       }
     },
@@ -1317,6 +1557,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Studijski portreti generirani AI-jem u desecima maštovitih tema — stvoreni iz jedne fotografije."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πορτρέτα στούντιο που δημιουργούνται με AI σε δεκάδες ονειρικά θέματα — φτιαγμένα από μία μόνο φωτογραφία."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrats d'estudi amb IA en desenes de temes de somni — creats a partir d'una sola foto."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret studio bertenaga AI dalam puluhan tema penuh mimpi — dibuat dari satu foto."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret studio dijana AI dalam puluhan tema bagai mimpi — dicipta daripada satu gambar sahaja."
           }
         }
       }
@@ -1438,6 +1702,30 @@
             "state": "translated",
             "value": "Dodaj"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah"
+          }
         }
       }
     },
@@ -1557,6 +1845,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodaj popis"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη λίστας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix llista"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah daftar"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah senarai"
           }
         }
       }
@@ -1678,6 +1990,30 @@
             "state": "translated",
             "value": "Dodaj prekretnicu"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη ορόσημου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix fita"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah tonggak"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah pencapaian"
+          }
         }
       }
     },
@@ -1797,6 +2133,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodaj fotografiju"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη φωτογραφίας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix foto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah foto"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah foto"
           }
         }
       }
@@ -1918,6 +2278,30 @@
             "state": "translated",
             "value": "Dodajte fotografiju za ovaj trenutak"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθέστε μια φωτογραφία γι' αυτή τη στιγμή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix una foto per a aquest moment"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambahkan foto untuk momen ini"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah foto untuk detik ini"
+          }
         }
       }
     },
@@ -2037,6 +2421,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodajte fotografiju za početak"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθέστε μια φωτογραφία για να ξεκινήσετε"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix una foto per començar"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambahkan foto untuk memulai"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah foto untuk mula"
           }
         }
       }
@@ -2158,6 +2566,30 @@
             "state": "translated",
             "value": "Dodavanje vaše glazbe"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη της μουσικής σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'està afegint la teva música"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menambahkan musik Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menambah muzik anda"
+          }
         }
       }
     },
@@ -2277,6 +2709,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodavanje glazbe…"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη μουσικής…"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegint música…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menambahkan musik…"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menambah muzik…"
           }
         }
       }
@@ -2398,6 +2854,30 @@
             "state": "translated",
             "value": "Primjena studijskog osvjetljenja…"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εφαρμογή φωτισμού στούντιο…"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicant il·luminació d'estudi…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menerapkan pencahayaan studio…"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menggunakan pencahayaan studio…"
+          }
         }
       }
     },
@@ -2517,6 +2997,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dopustite pristup fototeci u Postavkama za spremanje videozapisa."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιτρέψτε την πρόσβαση στη βιβλιοθήκη φωτογραφιών από τις Ρυθμίσεις για να αποθηκεύσετε το βίντεο."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permet l'accés a la fototeca a Configuració per desar el vídeo."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Izinkan akses ke pustaka foto di Pengaturan untuk menyimpan video."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benarkan akses pustaka foto dalam Tetapan untuk menyimpan video."
           }
         }
       }
@@ -2638,6 +3142,30 @@
             "state": "translated",
             "value": "Animiraj portret"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ζωντάνεψε το πορτρέτο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anima el retrat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animasikan potret"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animasikan potret"
+          }
         }
       }
     },
@@ -2757,6 +3285,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Primjena vaše izmjene"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εφαρμογή της επεξεργασίας σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicant la teva edició"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menerapkan editan Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menggunakan suntingan anda"
           }
         }
       }
@@ -2878,6 +3430,30 @@
             "state": "translated",
             "value": "Astronaut, vila, mali kuhar i još mnogo toga — svaki put potpuno novi studio."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αστροναύτης, νεράιδα, μικρός σεφ και άλλα — ένα εντελώς νέο στούντιο κάθε φορά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronauta, fada, petit xef i molt més — un estudi totalment nou cada vegada."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Astronaut, peri, koki kecil, dan lainnya — studio baru sepenuhnya setiap saat."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Angkasawan, peri, cef kecil dan banyak lagi — studio baharu setiap kali."
+          }
         }
       }
     },
@@ -2997,6 +3573,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Veliki paket"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μεγάλο πακέτο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquet gran"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paket besar"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pek besar"
           }
         }
       }
@@ -3118,6 +3718,30 @@
             "state": "translated",
             "value": "Miješanje teme…"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ανάμειξη θέματος…"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combinant el tema…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menggabungkan tema…"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menggabungkan tema…"
+          }
         }
       }
     },
@@ -3237,6 +3861,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tijelo"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σώμα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tubuh"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Badan"
           }
         }
       }
@@ -3358,6 +4006,30 @@
             "state": "translated",
             "value": "Svijetlo, ravnomjerno osvjetljenje"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Φωτεινός, ομοιόμορφος φωτισμός"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il·luminació brillant i uniforme"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencahayaan terang dan merata"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencahayaan terang dan sekata"
+          }
         }
       }
     },
@@ -3477,6 +4149,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Odustani"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ακύρωση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel·la"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batal"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batal"
           }
         }
       }
@@ -3598,6 +4294,30 @@
             "state": "translated",
             "value": "Zabilježite svaku prekretnicu na jednom mjestu"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποτυπώστε κάθε ορόσημο σε ένα μέρος"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Captura cada fita en un sol lloc"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tangkap setiap tonggak di satu tempat"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rakam setiap pencapaian di satu tempat"
+          }
         }
       }
     },
@@ -3717,6 +4437,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zabilježeno"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποτυπώθηκε"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capturat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terekam"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dirakam"
           }
         }
       }
@@ -3838,6 +4582,30 @@
             "state": "translated",
             "value": "Slavlja"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Γιορτές"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Celebracions"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perayaan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sambutan"
+          }
         }
       }
     },
@@ -3957,6 +4725,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Promijeni fotografiju"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αλλαγή φωτογραφίας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canvia la foto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganti foto"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tukar foto"
           }
         }
       }
@@ -4078,6 +4870,30 @@
             "state": "translated",
             "value": "Odaberi iz galerije"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλογή από τη συλλογή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tria de la galeria"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih dari galeri"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih dari galeri"
+          }
         }
       }
     },
@@ -4197,6 +5013,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preuzmi %d novčića"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διεκδικήστε %d κέρματα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclama %d monedes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klaim %d koin"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tuntut %d syiling"
           }
         }
       }
@@ -4318,6 +5158,30 @@
             "state": "translated",
             "value": "Iskoristi ponudu"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αξιοποιήστε την προσφορά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprofita l'oferta"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manfaatkan penawaran"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manfaatkan tawaran"
+          }
         }
       }
     },
@@ -4437,6 +5301,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zatvorite ovo i nestat će zauvijek."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κλείστε αυτό και θα χαθεί για πάντα."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanca això i desapareixerà per sempre."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutup ini dan akan hilang selamanya."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutup ini dan ia hilang selama-lamanya."
           }
         }
       }
@@ -4558,6 +5446,30 @@
             "state": "translated",
             "value": "Komunikacija"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επικοινωνία"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comunicació"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komunikasi"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komunikasi"
+          }
         }
       }
     },
@@ -4677,6 +5589,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nastavi"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Συνέχεια"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continua"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lanjutkan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teruskan"
           }
         }
       }
@@ -4798,6 +5734,30 @@
             "state": "translated",
             "value": "Gukanje i brbljanje"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Βγαργαρίσματα και μπαμπανίσματα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balbucejos i murmuris"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bergumam dan mengoceh"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dekutan dan bebelan"
+          }
         }
       }
     },
@@ -4917,6 +5877,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ovaj portret nije bilo moguće animirati"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η ζωντάνεψη αυτού του πορτρέτου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut animar aquest retrat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menganimasikan potret ini"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat animasikan potret ini"
           }
         }
       }
@@ -5038,6 +6022,30 @@
             "state": "translated",
             "value": "Nije moguće izbrisati"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η διαγραφή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut suprimir"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menghapus"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memadam"
+          }
         }
       }
     },
@@ -5157,6 +6165,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nije moguće spremiti"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η αποθήκευση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut desar"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menyimpan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menyimpan"
           }
         }
       }
@@ -5278,6 +6310,30 @@
             "state": "translated",
             "value": "Nije moguće pokrenuti glazbu"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η έναρξη της μουσικής"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut iniciar la música"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memulai musik"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memulakan muzik"
+          }
         }
       }
     },
@@ -5397,6 +6453,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nije moguće stvoriti — krediti vraćeni"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η δημιουργία — οι πιστώσεις επιστράφηκαν"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut crear — crèdits reemborsats"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat dibuat — kredit dikembalikan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat dicipta — kredit dikembalikan"
           }
         }
       }
@@ -5518,6 +6598,30 @@
             "state": "translated",
             "value": "Nije moguće provjeriti vaše kredite"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατός ο έλεγχος των πιστώσεών σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'han pogut verificar els teus crèdits"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memeriksa kredit Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menyemak kredit anda"
+          }
         }
       }
     },
@@ -5637,6 +6741,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nije moguće stvoriti vaš portret"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η δημιουργία του πορτρέτου σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut crear el teu retrat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat membuat potret Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat mencipta potret anda"
           }
         }
       }
@@ -5758,6 +6886,30 @@
             "state": "translated",
             "value": "Nije moguće učitati pakete novčića. Provjerite vezu i pokušajte ponovno."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η φόρτωση των πακέτων κερμάτων. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'han pogut carregar els paquets de monedes. Comprova la connexió i torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memuat paket koin. Periksa koneksi Anda dan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memuatkan pek syiling. Semak sambungan anda dan cuba lagi."
+          }
         }
       }
     },
@@ -5877,6 +7029,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nije moguće učitati planove. Provjerite vezu i pokušajte ponovno."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η φόρτωση των συνδρομών. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'han pogut carregar els plans. Comprova la connexió i torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memuat paket langganan. Periksa koneksi Anda dan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memuatkan pelan. Semak sambungan anda dan cuba lagi."
           }
         }
       }
@@ -5998,6 +7174,30 @@
             "state": "translated",
             "value": "Nije moguće vratiti kupnje"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η επαναφορά αγορών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'han pogut restaurar les compres"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memulihkan pembelian"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat memulihkan pembelian"
+          }
         }
       }
     },
@@ -6117,6 +7317,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stvaranje teme „%@”"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία του θέματος «%@»"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creant el tema «%@»"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Membuat tema “%@”"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mencipta tema “%@”"
           }
         }
       }
@@ -6238,6 +7462,30 @@
             "state": "translated",
             "value": "Puže"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μπουσουλάει"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gateja"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merangkak"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merangkak"
+          }
         }
       }
     },
@@ -6357,6 +7605,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stvori"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cipta"
           }
         }
       }
@@ -6478,6 +7750,30 @@
             "state": "translated",
             "value": "Stvori kolaž"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία κολάζ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea un collage"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat kolase"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cipta kolaj"
+          }
         }
       }
     },
@@ -6597,6 +7893,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stvoriti videozapis kolaža?"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία βίντεο κολάζ;"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear el vídeo del collage?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat video kolase?"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cipta video kolaj?"
           }
         }
       }
@@ -6718,6 +8038,30 @@
             "state": "translated",
             "value": "Stvorite svoj stil"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργήστε το δικό σας στιλ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea el teu propi estil"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat gaya Anda sendiri"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cipta gaya anda sendiri"
+          }
         }
       }
     },
@@ -6837,6 +8181,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Krediti nikada ne istječu"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Οι πιστώσεις δεν λήγουν ποτέ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Els crèdits no caduquen mai"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kredit tidak pernah kedaluwarsa"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kredit tidak pernah luput"
           }
         }
       }
@@ -6958,6 +8326,30 @@
             "state": "translated",
             "value": "Prilagođeni stil"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσαρμοσμένο στιλ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estil personalitzat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gaya khusus"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gaya tersuai"
+          }
         }
       }
     },
@@ -7077,6 +8469,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Izbriši"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διαγραφή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suprimeix"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padam"
           }
         }
       }
@@ -7198,6 +8614,30 @@
             "state": "translated",
             "value": "Izbrisati zabilježenu prekretnicu?"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διαγραφή του αποτυπωμένου ορόσημου;"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suprimir la fita capturada?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus tonggak yang terekam?"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padam pencapaian yang dirakam?"
+          }
         }
       }
     },
@@ -7317,6 +8757,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Izbriši prekretnicu"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διαγραφή ορόσημου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suprimeix la fita"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus tonggak"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padam pencapaian"
           }
         }
       }
@@ -7438,6 +8902,30 @@
             "state": "translated",
             "value": "Izbrisati ovaj kolaž?"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διαγραφή αυτού του κολάζ;"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suprimir aquest collage?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus kolase ini?"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padam kolaj ini?"
+          }
         }
       }
     },
@@ -7557,6 +9045,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Izbrisati ovu prekretnicu?"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διαγραφή αυτού του ορόσημου;"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suprimir aquesta fita?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus tonggak ini?"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padam pencapaian ini?"
           }
         }
       }
@@ -7678,6 +9190,30 @@
             "state": "translated",
             "value": "Opišite ideju — oživjet ćemo je"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιγράψτε μια ιδέα — θα τη ζωντανέψουμε"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descriu una idea — la farem realitat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deskripsikan sebuah ide — kami akan mewujudkannya"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terangkan idea — kami akan mewujudkannya"
+          }
         }
       }
     },
@@ -7797,6 +9333,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opiši glazbu"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιγράψτε τη μουσική"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descriu la música"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deskripsikan musik"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terangkan muzik"
           }
         }
       }
@@ -7918,6 +9478,30 @@
             "state": "translated",
             "value": "Opišite glazbu — npr. „nježna, sanjiva uspavanka na klaviru, topla i blaga”"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιγράψτε τη μουσική — π.χ. «απαλό, ονειρικό νανούρισμα πιάνου, ζεστό και τρυφερό»"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descriu la música — p. ex. «cançó de bressol de piano suau i somiadora, càlida i tendra»"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deskripsikan musiknya — mis. “lagu pengantar tidur piano yang lembut dan penuh mimpi, hangat dan lembut”"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terangkan muzik — cth. “lagu buaian piano yang lembut dan bagai mimpi, hangat dan mesra”"
+          }
         }
       }
     },
@@ -8037,6 +9621,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opišite svoju ideju"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιγράψτε την ιδέα σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descriu la teva idea"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deskripsikan ide Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terangkan idea anda"
           }
         }
       }
@@ -8158,6 +9766,30 @@
             "state": "translated",
             "value": "Gotovo!"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έτοιμο!"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fet!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selesai!"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selesai!"
+          }
         }
       }
     },
@@ -8277,6 +9909,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Deseci maštovitih tema za istraživanje"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεκάδες ονειρικά θέματα προς εξερεύνηση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desenes de temes de somni per explorar"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puluhan tema penuh mimpi untuk dijelajahi"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puluhan tema bagai mimpi untuk diterokai"
           }
         }
       }
@@ -8398,6 +10054,30 @@
             "state": "translated",
             "value": "Osam mjeseci"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Οκτώ μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuit mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delapan bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lapan bulan"
+          }
         }
       }
     },
@@ -8517,6 +10197,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jedanaest mjeseci"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έντεκα μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onze mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sebelas bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sebelas bulan"
           }
         }
       }
@@ -8638,6 +10342,30 @@
             "state": "translated",
             "value": "Hrvatski"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ελληνικά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Català"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa Indonesia"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa Melayu"
+          }
         }
       }
     },
@@ -8757,6 +10485,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hrvatski je trenutno jedini dostupni jezik. Uskoro stižu i drugi."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τα ελληνικά είναι προς το παρόν η μόνη διαθέσιμη γλώσσα. Σύντομα θα προστεθούν κι άλλες."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El català és l'únic idioma disponible per ara. Aviat n'hi haurà més."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa Indonesia adalah satu-satunya bahasa yang tersedia saat ini. Lebih banyak lagi akan segera hadir."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa Melayu ialah satu-satunya bahasa yang tersedia buat masa ini. Lebih banyak lagi akan menyusul."
           }
         }
       }
@@ -8878,6 +10630,30 @@
             "state": "translated",
             "value": "Ukratko opišite kako želite da pjesma zvuči."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιγράψτε εν συντομία πώς θέλετε να ακούγεται το κομμάτι."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descriu breument el so que vols per a la pista."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jelaskan secara singkat suara seperti apa yang Anda inginkan untuk trek ini."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terangkan secara ringkas bunyi yang anda mahukan untuk trek ini."
+          }
         }
       }
     },
@@ -8997,6 +10773,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sve što vam treba za stvaranje uspomena zauvijek."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όλα όσα χρειάζεστε για να δημιουργήσετε αναμνήσεις για πάντα."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tot el que necessites per crear records per sempre."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semua yang Anda butuhkan untuk menciptakan kenangan selamanya."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semua yang anda perlukan untuk mencipta kenangan buat selama-lamanya."
           }
         }
       }
@@ -9118,6 +10918,30 @@
             "state": "translated",
             "value": "Lice jasno vidljivo"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το πρόσωπο είναι ευδιάκριτο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rostre clarament visible"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wajah terlihat jelas"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wajah jelas kelihatan"
+          }
         }
       }
     },
@@ -9237,6 +11061,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Favoriti"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αγαπημένα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferits"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorit"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kegemaran"
           }
         }
       }
@@ -9358,6 +11206,30 @@
             "state": "translated",
             "value": "Zadnji dodiri…"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τελευταίες πινελιές…"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Últims retocs…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sentuhan akhir…"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sentuhan akhir…"
+          }
         }
       }
     },
@@ -9477,6 +11349,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prvo kupanje"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτο μπάνιο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer bany"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mandi pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mandi pertama"
           }
         }
       }
@@ -9598,6 +11494,30 @@
             "state": "translated",
             "value": "Prvi rođendan"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτα γενέθλια"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer aniversari"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ulang tahun pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hari lahir pertama"
+          }
         }
       }
     },
@@ -9717,6 +11637,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prvo šišanje"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτο κούρεμα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer tall de cabell"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potong rambut pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gunting rambut pertama"
           }
         }
       }
@@ -9838,6 +11782,30 @@
             "state": "translated",
             "value": "Prvi praznici"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτες γιορτές"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeres festes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musim liburan pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musim perayaan pertama"
+          }
         }
       }
     },
@@ -9957,6 +11925,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prvi smijeh"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτο γέλιο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer riure"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tawa pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketawa pertama"
           }
         }
       }
@@ -10078,6 +12070,30 @@
             "state": "translated",
             "value": "Prvi izlazak"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτη έξοδος"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primera sortida"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jalan-jalan pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keluar pertama"
+          }
         }
       }
     },
@@ -10197,6 +12213,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prvi osmijeh"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτο χαμόγελο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer somriure"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senyum pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senyuman pertama"
           }
         }
       }
@@ -10318,6 +12358,30 @@
             "state": "translated",
             "value": "Prvi koraci"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτα βήματα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeres passes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah pertama"
+          }
         }
       }
     },
@@ -10437,6 +12501,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prvi studijski portret"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτο πορτρέτο στούντιο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primer retrat d'estudi"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret studio pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret studio pertama"
           }
         }
       }
@@ -10558,6 +12646,30 @@
             "state": "translated",
             "value": "Prvi zubić"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτο δοντάκι"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primera dent"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gigi pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gigi pertama"
+          }
         }
       }
     },
@@ -10677,6 +12789,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prvi puta"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρώτες φορές"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeres vegades"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yang pertama kali"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kali pertama"
           }
         }
       }
@@ -10798,6 +12934,30 @@
             "state": "translated",
             "value": "Pet mjeseci"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πέντε μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinc mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lima bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lima bulan"
+          }
         }
       }
     },
@@ -10917,6 +13077,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Za najbolje rezultate"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Για τα καλύτερα αποτελέσματα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per obtenir els millors resultats"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Untuk hasil terbaik"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Untuk hasil terbaik"
           }
         }
       }
@@ -11038,6 +13222,30 @@
             "state": "translated",
             "value": "Četiri mjeseca"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τέσσερις μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quatre mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empat bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empat bulan"
+          }
         }
       }
     },
@@ -11157,6 +13365,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Galerija"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Συλλογή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galeria"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galeri"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Galeri"
           }
         }
       }
@@ -11278,6 +13510,30 @@
             "state": "translated",
             "value": "Generiraj"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jana"
+          }
         }
       }
     },
@@ -11397,6 +13653,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Generiraj i spremi"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία και αποθήκευση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera i desa"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat & Simpan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jana & Simpan"
           }
         }
       }
@@ -11518,6 +13798,30 @@
             "state": "translated",
             "value": "Generiraj glazbu"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία μουσικής"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera música"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat musik"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jana muzik"
+          }
         }
       }
     },
@@ -11637,6 +13941,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Generiraj portret"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία πορτρέτου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera retrat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat potret"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jana potret"
           }
         }
       }
@@ -11758,6 +14086,30 @@
             "state": "translated",
             "value": "Generirajte svoj prvi studijski portret, pojavit će se ovdje."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργήστε το πρώτο σας πορτρέτο στούντιο, θα εμφανιστεί εδώ."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera el teu primer retrat d'estudi i apareixerà aquí."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat potret studio pertama Anda, dan akan muncul di sini."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Janakan potret studio pertama anda, ia akan muncul di sini."
+          }
         }
       }
     },
@@ -11877,6 +14229,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Započni"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ξεκινήστε"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comença"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mulai"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mula"
           }
         }
       }
@@ -11998,6 +14374,30 @@
             "state": "translated",
             "value": "Dajte naziv svom popisu."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δώστε ένα όνομα στη λίστα σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posa un nom a la teva llista."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beri nama daftar Anda."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beri nama untuk senarai anda."
+          }
         }
       }
     },
@@ -12117,6 +14517,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Idi u galeriju prekretnica"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μετάβαση στη συλλογή ορόσημων"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vés a la galeria de fites"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buka Galeri Tonggak"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pergi ke Galeri Pencapaian"
           }
         }
       }
@@ -12238,6 +14662,30 @@
             "state": "translated",
             "value": "Idi u Moje kolaže"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μετάβαση στα Κολάζ μου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vés als Meus collages"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buka Kolase Saya"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pergi ke Kolaj Saya"
+          }
         }
       }
     },
@@ -12357,6 +14805,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preuzmite ovaj paket prije nego što istekne vrijeme."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποκτήστε αυτό το πακέτο πριν λήξει ο χρόνος."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aconsegueix aquest paquet abans que s'acabi el temps."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dapatkan paket ini sebelum waktu habis."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dapatkan pek ini sebelum masa tamat."
           }
         }
       }
@@ -12478,6 +14950,30 @@
             "state": "translated",
             "value": "Rast i motoričke vještine"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ανάπτυξη και κινητικές δεξιότητες"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creixement i habilitats motrius"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pertumbuhan & keterampilan motorik"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pertumbuhan & kemahiran motor"
+          }
         }
       }
     },
@@ -12597,6 +15093,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Povijest"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ιστορικό"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Historial"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riwayat"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sejarah"
           }
         }
       }
@@ -12718,6 +15238,30 @@
             "state": "translated",
             "value": "Drži glavu uspravno"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κρατάει το κεφάλι ψηλά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manté el cap dret"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menegakkan kepala"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menegakkan kepala"
+          }
         }
       }
     },
@@ -12837,6 +15381,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Početna"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αρχική"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inici"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beranda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utama"
           }
         }
       }
@@ -12958,6 +15526,30 @@
             "state": "translated",
             "value": "JPG ili PNG, do 10 MB"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG ή PNG, έως 10 MB"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG o PNG, fins a 10 MB"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG atau PNG, hingga 10 MB"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JPG atau PNG, sehingga 10 MB"
+          }
         }
       }
     },
@@ -13077,6 +15669,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Popis za svaki trenutak vrijedan pamćenja"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μία λίστα για κάθε στιγμή αξέχαστη"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una llista per a cada moment digne de recordar"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daftar untuk setiap momen yang layak dikenang"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satu senarai untuk setiap detik yang bernilai dikenang"
           }
         }
       }
@@ -13198,6 +15814,30 @@
             "state": "translated",
             "value": "POSLJEDNJA PRILIKA"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ΤΕΛΕΥΤΑΙΑ ΕΥΚΑΙΡΙΑ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ÚLTIMA OPORTUNITAT"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KESEMPATAN TERAKHIR"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PELUANG TERAKHIR"
+          }
         }
       }
     },
@@ -13317,6 +15957,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "VREMENSKI OGRANIČENA PONUDA"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ΠΡΟΣΦΟΡΑ ΠΕΡΙΟΡΙΣΜΕΝΟΥ ΧΡΟΝΟΥ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OFERTA PER TEMPS LIMITAT"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PENAWARAN WAKTU TERBATAS"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TAWARAN MASA TERHAD"
           }
         }
       }
@@ -13438,6 +16102,30 @@
             "state": "translated",
             "value": "Jezik"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Γλώσσα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa"
+          }
         }
       }
     },
@@ -13557,6 +16245,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zadnje ažuriranje: kolovoz 2026."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τελευταία ενημέρωση: Αύγουστος 2026"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última actualització: agost de 2026"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terakhir diperbarui: Agustus 2026"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terakhir dikemas kini: Ogos 2026"
           }
         }
       }
@@ -13678,6 +16390,30 @@
             "state": "translated",
             "value": "Vremenski ograničena ponuda"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσφορά περιορισμένου χρόνου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta per temps limitat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran waktu terbatas"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tawaran masa terhad"
+          }
         }
       }
     },
@@ -13797,6 +16533,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Popis"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Λίστα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Llista"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daftar"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senarai"
           }
         }
       }
@@ -13918,6 +16678,30 @@
             "state": "translated",
             "value": "NAJPOPULARNIJE"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ΔΗΜΟΦΙΛΕΣΤΕΡΟ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MÉS POPULAR"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PALING POPULER"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PALING POPULAR"
+          }
         }
       }
     },
@@ -14037,6 +16821,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Srednji paket"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μεσαίο πακέτο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquet mitjà"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paket sedang"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pek sederhana"
           }
         }
       }
@@ -14158,6 +16966,30 @@
             "state": "translated",
             "value": "Prekretnica"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ορόσημο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fita"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonggak"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencapaian"
+          }
         }
       }
     },
@@ -14277,6 +17109,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prekretnica zabilježena!"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το ορόσημο αποτυπώθηκε!"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fita capturada!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonggak terekam!"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencapaian dirakam!"
           }
         }
       }
@@ -14398,6 +17254,30 @@
             "state": "translated",
             "value": "Prekretnice"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ορόσημα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fites"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonggak"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencapaian"
+          }
         }
       }
     },
@@ -14517,6 +17397,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mjesečno"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μηνιαίο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensual"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulanan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulanan"
           }
         }
       }
@@ -14638,6 +17542,30 @@
             "state": "translated",
             "value": "Otkriveno više lica"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εντοπίστηκαν πολλά πρόσωπα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'han detectat diversos rostres"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beberapa wajah terdeteksi"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beberapa wajah dikesan"
+          }
         }
       }
     },
@@ -14757,6 +17685,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Moji kolaži"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τα κολάζ μου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Els meus collages"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolase Saya"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj Saya"
           }
         }
       }
@@ -14878,6 +17830,30 @@
             "state": "translated",
             "value": "Moje kreacije"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Οι δημιουργίες μου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les meves creacions"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kreasi Saya"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ciptaan Saya"
+          }
         }
       }
     },
@@ -14994,6 +17970,30 @@
           }
         },
         "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEWBORN PRO"
+          }
+        },
+        "ms": {
           "stringUnit": {
             "state": "translated",
             "value": "NEWBORN PRO"
@@ -15118,6 +18118,30 @@
             "state": "translated",
             "value": "Novi popis"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Νέα λίστα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova llista"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daftar baru"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senarai baharu"
+          }
         }
       }
     },
@@ -15237,6 +18261,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nova prekretnica"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Νέο ορόσημο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova fita"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonggak baru"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencapaian baharu"
           }
         }
       }
@@ -15358,6 +18406,30 @@
             "state": "translated",
             "value": "Novorođenče"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Νεογέννητο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nadó"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bayi baru lahir"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bayi baharu lahir"
+          }
         }
       }
     },
@@ -15474,6 +18546,30 @@
           }
         },
         "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newborn Moments"
+          }
+        },
+        "ms": {
           "stringUnit": {
             "state": "translated",
             "value": "Newborn Moments"
@@ -15598,6 +18694,30 @@
             "state": "translated",
             "value": "Dalje"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επόμενο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Següent"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berikutnya"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seterusnya"
+          }
         }
       }
     },
@@ -15717,6 +18837,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Devet mjeseci"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εννέα μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nou mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sembilan bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sembilan bulan"
           }
         }
       }
@@ -15838,6 +18982,30 @@
             "state": "translated",
             "value": "Lice nije otkriveno"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν εντοπίστηκε πρόσωπο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha detectat cap rostre"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak ada wajah terdeteksi"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada wajah dikesan"
+          }
         }
       }
     },
@@ -15957,6 +19125,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Za ovaj račun nisu pronađene aktivne kupnje."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν βρέθηκαν ενεργές αγορές για αυτόν τον λογαριασμό."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'han trobat compres actives per a aquest compte."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak ditemukan pembelian aktif untuk akun ini."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada pembelian aktif dijumpai untuk akaun ini."
           }
         }
       }
@@ -16078,6 +19270,30 @@
             "state": "translated",
             "value": "Još nema kolaža — zabilježite barem 5 prekretnica na popisu, zatim dodirnite „Stvori kolaž”."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν ακόμη κολάζ — αποτυπώστε τουλάχιστον 5 ορόσημα σε μια λίστα και μετά πατήστε «Δημιουργία κολάζ»."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no hi ha collages — captura almenys 5 fites en una llista i després toca «Crea un collage»."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada kolase — rekam setidaknya 5 tonggak dalam daftar, lalu ketuk “Buat Kolase”."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada kolaj — rakam sekurang-kurangnya 5 pencapaian dalam senarai, kemudian ketik “Cipta Kolaj”."
+          }
         }
       }
     },
@@ -16197,6 +19413,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Još nema favorita"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν ακόμη αγαπημένα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no hi ha preferits"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada favorit"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada kegemaran"
           }
         }
       }
@@ -16318,6 +19558,30 @@
             "state": "translated",
             "value": "Bez filtara ili teških izmjena"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χωρίς φίλτρα ή έντονες επεξεργασίες"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sense filtres ni edicions fortes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa filter atau editan berat"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada penapis atau suntingan berat"
+          }
         }
       }
     },
@@ -16437,6 +19701,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Još nema prekretnica — dodajte prvu ispod."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν ακόμη ορόσημα — προσθέστε το πρώτο σας παρακάτω."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no hi ha fites — afegeix la primera a continuació."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada tonggak — tambahkan yang pertama di bawah ini."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada pencapaian — tambah yang pertama di bawah."
           }
         }
       }
@@ -16558,6 +19846,30 @@
             "state": "translated",
             "value": "Još nema portreta"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν ακόμη πορτρέτα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no hi ha retrats"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada potret"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada potret"
+          }
         }
       }
     },
@@ -16677,6 +19989,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bez pretplate ili ponavljajuće naknade"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χωρίς συνδρομή ή επαναλαμβανόμενη χρέωση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sense subscripció ni càrrec recurrent"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa langganan atau biaya berulang"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada langganan atau caj berulang"
           }
         }
       }
@@ -16798,6 +20134,30 @@
             "state": "translated",
             "value": "Bez vodenog žiga"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χωρίς υδατογράφημα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sense marca d'aigua"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa watermark"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada tera air"
+          }
         }
       }
     },
@@ -16917,6 +20277,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Još nema dovoljno prekretnica"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν ακόμη αρκετά ορόσημα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no hi ha prou fites"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonggak belum cukup"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencapaian masih tidak mencukupi"
           }
         }
       }
@@ -17038,6 +20422,30 @@
             "state": "translated",
             "value": "Još nije zabilježeno"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν έχει αποτυπωθεί ακόμη"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no capturat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum terekam"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum dirakam"
+          }
         }
       }
     },
@@ -17158,6 +20566,30 @@
             "state": "translated",
             "value": "Nema ničega za vraćanje"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τίποτα προς επαναφορά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Res per restaurar"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak ada yang perlu dipulihkan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada apa untuk dipulihkan"
+          }
         }
       }
     },
@@ -17274,6 +20706,30 @@
           }
         },
         "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ΟΚ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "D'acord"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "ms": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -17398,6 +20854,30 @@
             "state": "translated",
             "value": "Ponuda trenutno nije dostupna"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η προσφορά δεν είναι διαθέσιμη αυτή τη στιγμή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'oferta no està disponible ara mateix"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran saat ini tidak tersedia"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tawaran tidak tersedia buat masa ini"
+          }
         }
       }
     },
@@ -17517,6 +20997,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jedan mjesec"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ένας μήνας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un mes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satu bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sebulan"
           }
         }
       }
@@ -17638,6 +21142,30 @@
             "state": "translated",
             "value": "Jedan tjedan"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μία εβδομάδα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una setmana"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satu minggu"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seminggu"
+          }
         }
       }
     },
@@ -17757,6 +21285,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jedna godina"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ένα έτος"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un any"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satu tahun"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setahun"
           }
         }
       }
@@ -17878,6 +21430,30 @@
             "state": "translated",
             "value": "Jednokratna ponuda — istječe kada tajmer završi."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εφάπαξ προσφορά — λήγει όταν ολοκληρωθεί το χρονόμετρο."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oferta única — caduca quan acabi el temporitzador."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran sekali — berakhir saat pengatur waktu selesai."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tawaran sekali sahaja — tamat apabila pemasa berakhir."
+          }
         }
       }
     },
@@ -17997,6 +21573,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Potreban je pristup fotografijama"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Απαιτείται πρόσβαση στις φωτογραφίες"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cal accedir a les fotos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akses foto diperlukan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akses foto diperlukan"
           }
         }
       }
@@ -18118,6 +21718,30 @@
             "state": "translated",
             "value": "Provjerite vezu i pokušajte ponovno."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprova la connexió i torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Periksa koneksi Anda dan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semak sambungan anda dan cuba lagi."
+          }
         }
       }
     },
@@ -18237,6 +21861,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Portret"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πορτρέτο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret"
           }
         }
       }
@@ -18358,6 +22006,30 @@
             "state": "translated",
             "value": "Priprema… (%d isječaka) preostalo je %@"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προετοιμασία… (%d κλιπ) απομένουν %@"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparant… (%d clips) queden %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menyiapkan… (%d klip) tersisa %@"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menyediakan… (%d klip) %@ berbaki"
+          }
         }
       }
     },
@@ -18477,6 +22149,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prioritetno generiranje AI-a"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δημιουργία AI προτεραιότητας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generació d'IA prioritària"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembuatan AI prioritas"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penjanaan AI keutamaan"
           }
         }
       }
@@ -18598,6 +22294,30 @@
             "state": "translated",
             "value": "Privatnost"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Απόρρητο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacitat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privasi"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privasi"
+          }
         }
       }
     },
@@ -18718,6 +22438,30 @@
             "state": "translated",
             "value": "Pravila privatnosti"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πολιτική απορρήτου"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacitat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kebijakan Privasi"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dasar Privasi"
+          }
         }
       }
     },
@@ -18834,6 +22578,30 @@
           }
         },
         "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profil"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προφίλ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfil"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profil"
+          }
+        },
+        "ms": {
           "stringUnit": {
             "state": "translated",
             "value": "Profil"
@@ -18958,6 +22726,30 @@
             "state": "translated",
             "value": "Diže se oslanjajući se"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σηκώνεται όρθιο κρατώντας κάτι"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'aguanta dret agafant-se"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berdiri sambil berpegangan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berdiri sambil berpaut"
+          }
         }
       }
     },
@@ -19077,6 +22869,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kupnja nije uspjela"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η αγορά απέτυχε"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La compra ha fallat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembelian gagal"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembelian gagal"
           }
         }
       }
@@ -19198,6 +23014,30 @@
             "state": "translated",
             "value": "Ocijenite aplikaciju"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αξιολογήστε την εφαρμογή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valora l'app"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nilai Aplikasi"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nilaikan Aplikasi"
+          }
         }
       }
     },
@@ -19317,6 +23157,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vrati"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επαναφορά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaura"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulihkan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulihkan"
           }
         }
       }
@@ -19438,6 +23302,30 @@
             "state": "translated",
             "value": "Vrati kupnju"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επαναφορά αγοράς"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaura la compra"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulihkan Pembelian"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulihkan Pembelian"
+          }
         }
       }
     },
@@ -19557,6 +23445,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vraćeno"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έγινε επαναφορά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dipulihkan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dipulihkan"
           }
         }
       }
@@ -19678,6 +23590,30 @@
             "state": "translated",
             "value": "Prevrće se"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάνει τούμπες"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es gira"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berguling"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berguling"
+          }
         }
       }
     },
@@ -19797,6 +23733,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spremi"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποθήκευση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desa"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan"
           }
         }
       }
@@ -19918,6 +23878,30 @@
             "state": "translated",
             "value": "Spremi fotografiju"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποθήκευση φωτογραφίας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desa la foto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan Foto"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan Foto"
+          }
         }
       }
     },
@@ -20037,6 +24021,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spremite svaki portret u svoju galeriju"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποθηκεύστε κάθε πορτρέτο στη συλλογή σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desa cada retrat a la teva galeria"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan setiap potret ke galeri Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan setiap potret ke galeri anda"
           }
         }
       }
@@ -20158,6 +24166,30 @@
             "state": "translated",
             "value": "Spremljeni kolaži"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποθηκευμένα κολάζ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collages desats"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolase tersimpan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj disimpan"
+          }
         }
       }
     },
@@ -20277,6 +24309,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spremljeno!"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποθηκεύτηκε!"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desat!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tersimpan!"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disimpan!"
           }
         }
       }
@@ -20398,6 +24454,30 @@
             "state": "translated",
             "value": "Izgovara prvu riječ"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Λέει την πρώτη του λέξη"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diu la primera paraula"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mengucapkan kata pertama"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menyebut kata pertama"
+          }
         }
       }
     },
@@ -20517,6 +24597,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sigurno plaćanje · Apple Pay · Google Pay"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ασφαλής πληρωμή · Apple Pay · Google Pay"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pagament segur · Apple Pay · Google Pay"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembayaran aman · Apple Pay · Google Pay"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bayaran selamat · Apple Pay · Google Pay"
           }
         }
       }
@@ -20638,6 +24742,30 @@
             "state": "translated",
             "value": "Sedam mjeseci"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επτά μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tujuh bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tujuh bulan"
+          }
         }
       }
     },
@@ -20757,6 +24885,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Podijeli"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κοινοποίηση"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparteix"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bagikan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kongsi"
           }
         }
       }
@@ -20878,6 +25030,30 @@
             "state": "translated",
             "value": "Sjedi bez oslonca"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάθεται χωρίς στήριξη"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'asseu sense suport"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duduk tanpa dibantu"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duduk tanpa sokongan"
+          }
         }
       }
     },
@@ -20997,6 +25173,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Šest mjeseci"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έξι μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sis mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enam bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enam bulan"
           }
         }
       }
@@ -21118,6 +25318,30 @@
             "state": "translated",
             "value": "Preskoči"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παράλειψη"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omet"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lewati"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkau"
+          }
         }
       }
     },
@@ -21237,6 +25461,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spava cijelu noć"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κοιμάται όλη τη νύχτα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dorm tota la nit"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidur sepanjang malam"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidur sepanjang malam"
           }
         }
       }
@@ -21358,6 +25606,30 @@
             "state": "translated",
             "value": "Mali paket"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μικρό πακέτο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquet petit"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paket kecil"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pek kecil"
+          }
         }
       }
     },
@@ -21477,6 +25749,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Neke od vaših zabilježenih fotografija još se sinkroniziraju. Pokušajte ponovno za trenutak."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ορισμένες από τις αποτυπωμένες φωτογραφίες σας εξακολουθούν να συγχρονίζονται. Δοκιμάστε ξανά σε λίγο."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algunes de les teves fotos capturades encara s'estan sincronitzant. Torna-ho a provar d'aquí un moment."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beberapa foto Anda yang terekam masih dalam proses sinkronisasi. Coba lagi sesaat lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesetengah foto anda yang dirakam masih disegerakkan. Cuba lagi sebentar lagi."
           }
         }
       }
@@ -21598,6 +25894,30 @@
             "state": "translated",
             "value": "Nešto je pošlo po zlu"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alguna cosa ha anat malament"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terjadi kesalahan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesuatu tidak kena"
+          }
         }
       }
     },
@@ -21717,6 +26037,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nešto je pošlo po zlu"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alguna cosa ha anat malament"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terjadi kesalahan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesuatu tidak kena"
           }
         }
       }
@@ -21838,6 +26182,30 @@
             "state": "translated",
             "value": "Nešto je pošlo po zlu i vaši krediti su vraćeni. Pokušajte ponovno."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά και οι πιστώσεις σας επιστράφηκαν. Δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alguna cosa ha anat malament i els teus crèdits han estat reemborsats. Torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terjadi kesalahan dan kredit Anda telah dikembalikan. Silakan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesuatu tidak kena dan kredit anda telah dikembalikan. Sila cuba lagi."
+          }
         }
       }
     },
@@ -21957,6 +26325,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nešto je pošlo po zlu prilikom brisanja kolaža. Pokušajte ponovno."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά κατά τη διαγραφή του κολάζ. Δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alguna cosa ha anat malament en suprimir el collage. Torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terjadi kesalahan saat menghapus kolase. Silakan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesuatu tidak kena semasa memadam kolaj. Sila cuba lagi."
           }
         }
       }
@@ -22078,6 +26470,30 @@
             "state": "translated",
             "value": "Nešto je pošlo po zlu prilikom spremanja videozapisa. Pokušajte ponovno."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά κατά την αποθήκευση του βίντεο. Δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alguna cosa ha anat malament en desar el vídeo. Torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terjadi kesalahan saat menyimpan video. Silakan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesuatu tidak kena semasa menyimpan video. Sila cuba lagi."
+          }
         }
       }
     },
@@ -22197,6 +26613,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nešto je pošlo po zlu prilikom pokretanja vašeg kolaža. Pokušajte ponovno."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά κατά την έναρξη του κολάζ σας. Δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alguna cosa ha anat malament en iniciar el teu collage. Torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terjadi kesalahan saat memulai kolase Anda. Silakan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesuatu tidak kena semasa memulakan kolaj anda. Sila cuba lagi."
           }
         }
       }
@@ -22318,6 +26758,30 @@
             "state": "translated",
             "value": "Nešto je pošlo po zlu. Ako su krediti potrošeni, vraćeni su. Pokušajte ponovno."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά. Αν ξοδεύτηκαν πιστώσεις, έχουν επιστραφεί. Δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alguna cosa ha anat malament. Si s'han gastat crèdits, s'han reemborsat. Torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terjadi kesalahan. Jika kredit telah digunakan, kredit tersebut telah dikembalikan. Silakan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesuatu tidak kena. Jika kredit telah dibelanjakan, ia telah dikembalikan. Sila cuba lagi."
+          }
         }
       }
     },
@@ -22437,6 +26901,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trošite novčiće za generiranje bilo kojeg portreta — pretplata nije potrebna."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ξοδέψτε κέρματα για να δημιουργήσετε οποιοδήποτε πορτρέτο — δεν απαιτείται συνδρομή."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gasta monedes per generar qualsevol retrat — no cal subscripció."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gunakan koin untuk membuat potret apa pun — tanpa perlu langganan."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belanjakan syiling untuk menjana sebarang potret — tiada langganan diperlukan."
           }
         }
       }
@@ -22558,6 +27046,30 @@
             "state": "translated",
             "value": "Pretplati se sada"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εγγραφή τώρα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscriu-te ara"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berlangganan Sekarang"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langgan Sekarang"
+          }
         }
       }
     },
@@ -22677,6 +27189,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fotografiraj"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Λήψη φωτογραφίας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes una foto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ambil Foto"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ambil Foto"
           }
         }
       }
@@ -22798,6 +27334,30 @@
             "state": "translated",
             "value": "Dodirnite srce bilo kojeg stila da ga spremite ovdje."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πατήστε την καρδιά οποιουδήποτε στιλ για να το αποθηκεύσετε εδώ."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el cor de qualsevol estil per desar-lo aquí."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketuk hati pada gaya mana pun untuk menyimpannya di sini."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketik hati pada mana-mana gaya untuk menyimpannya di sini."
+          }
         }
       }
     },
@@ -22917,6 +27477,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodirnite za promjenu fotografije"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πατήστε για αλλαγή φωτογραφίας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca per canviar la foto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketuk untuk mengganti foto"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketik untuk tukar foto"
           }
         }
       }
@@ -23038,6 +27622,30 @@
             "state": "translated",
             "value": "Deset mjeseci"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δέκα μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deu mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sepuluh bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sepuluh bulan"
+          }
         }
       }
     },
@@ -23157,6 +27765,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uvjeti"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όροι"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketentuan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terma"
           }
         }
       }
@@ -23278,6 +27910,30 @@
             "state": "translated",
             "value": "Uvjeti korištenja"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όροι Χρήσης"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termes d'ús"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketentuan Penggunaan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terma Penggunaan"
+          }
         }
       }
     },
@@ -23397,6 +28053,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Videozapis kolaža „%@” bit će trajno izbrisan. Ova se radnja ne može poništiti."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το βίντεο κολάζ «%@» θα διαγραφεί οριστικά. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El vídeo del collage «%@» s'eliminarà permanentment. Aquesta acció no es pot desfer."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video kolase “%@” akan dihapus secara permanen. Tindakan ini tidak dapat dibatalkan."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video kolaj “%@” akan dipadam secara kekal. Tindakan ini tidak boleh dibuat asal."
           }
         }
       }
@@ -23518,6 +28198,30 @@
             "state": "translated",
             "value": "Animirani videozapis spremljen je u vaše Fotografije."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το ζωντανεμένο βίντεο αποθηκεύτηκε στις Φωτογραφίες σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El vídeo animat s'ha desat a les teves Fotos."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video animasi telah disimpan ke Foto Anda."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video animasi telah disimpan ke Foto anda."
+          }
         }
       }
     },
@@ -23637,6 +28341,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Videozapis kolaža spremljen je u vaše Fotografije."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το βίντεο κολάζ αποθηκεύτηκε στις Φωτογραφίες σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El vídeo del collage s'ha desat a les teves Fotos."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video kolase telah disimpan ke Foto Anda."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video kolaj telah disimpan ke Foto anda."
           }
         }
       }
@@ -23758,6 +28486,30 @@
             "state": "translated",
             "value": "Ovaj ekskluzivni paket neće se ponovno nuditi. Preuzmite ga sada, ili će nestati zauvijek."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αυτό το αποκλειστικό πακέτο δεν θα προσφερθεί ξανά. Αποκτήστε το τώρα, αλλιώς θα χαθεί για πάντα."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquest paquet exclusiu no es tornarà a oferir. Aconsegueix-lo ara, o desapareixerà per sempre."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paket eksklusif ini tidak akan ditawarkan lagi. Dapatkan sekarang, atau akan hilang selamanya."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pek eksklusif ini tidak akan ditawarkan lagi. Dapatkannya sekarang, atau ia akan hilang selama-lamanya."
+          }
         }
       }
     },
@@ -23877,6 +28629,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ova fotografija ima više od jednog lica. Odaberite fotografiju samo s vašom bebom."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αυτή η φωτογραφία έχει περισσότερα από ένα πρόσωπα. Επιλέξτε μια φωτογραφία μόνο με το μωρό σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquesta foto té més d'un rostre. Tria una foto només amb el teu nadó."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto ini memiliki lebih dari satu wajah. Pilih foto yang hanya berisi bayi Anda."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto ini mempunyai lebih daripada satu wajah. Pilih foto dengan hanya bayi anda sahaja."
           }
         }
       }
@@ -23998,6 +28774,30 @@
             "state": "translated",
             "value": "Ovaj portret spremljen je u vašu galeriju prekretnica."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αυτό το πορτρέτο αποθηκεύτηκε στη συλλογή ορόσημων σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquest retrat s'ha desat a la teva galeria de fites."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret ini telah disimpan ke Galeri Tonggak Anda."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potret ini telah disimpan ke Galeri Pencapaian anda."
+          }
         }
       }
     },
@@ -24117,6 +28917,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tri mjeseca"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τρεις μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiga bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiga bulan"
           }
         }
       }
@@ -24238,6 +29062,30 @@
             "state": "translated",
             "value": "Napunite svoje novčiće"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ανανεώστε τα κέρματά σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recarrega les teves monedes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isi ulang koin Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isi semula syiling anda"
+          }
         }
       }
     },
@@ -24357,6 +29205,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pratite prve trenutke svoje bebe i lijepo organizirajte svaku dragocjenu uspomenu."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παρακολουθήστε τις πρώτες φορές του μωρού σας και κρατήστε κάθε πολύτιμη ανάμνηση όμορφα οργανωμένη."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segueix les primeres vegades del teu nadó i mantén cada record preciós ben organitzat."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lacak momen pertama bayi Anda dan simpan setiap kenangan berharga dengan rapi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jejaki detik pertama bayi anda dan simpan setiap kenangan berharga dengan tersusun rapi."
           }
         }
       }
@@ -24478,6 +29350,30 @@
             "state": "translated",
             "value": "Pretvorite fotografije svoje bebe u čarobne uspomene"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μετατρέψτε τις φωτογραφίες του μωρού σας σε μαγικά ενθύμια"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Converteix les fotos del teu nadó en records màgics"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ubah foto bayi Anda menjadi kenangan yang magis"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ubah foto bayi anda menjadi kenangan ajaib"
+          }
         }
       }
     },
@@ -24597,6 +29493,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dva mjeseca"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δύο μηνών"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dos mesos"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dua bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dua bulan"
           }
         }
       }
@@ -24718,6 +29638,30 @@
             "state": "translated",
             "value": "Neograničene studijske teme"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Απεριόριστα θέματα στούντιο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temes d'estudi il·limitats"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema studio tanpa batas"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema studio tanpa had"
+          }
         }
       }
     },
@@ -24837,6 +29781,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Otključajte neograničenu kreativnost"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ξεκλειδώστε απεριόριστη δημιουργικότητα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloqueja creativitat il·limitada"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buka kreativitas tanpa batas"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buka kunci kreativiti tanpa had"
           }
         }
       }
@@ -24958,6 +29926,30 @@
             "state": "translated",
             "value": "Bez naziva"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χωρίς τίτλο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sense títol"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa judul"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada tajuk"
+          }
         }
       }
     },
@@ -25077,6 +30069,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prenesite jasnu fotografiju svoje bebe"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ανεβάστε μια καθαρή φωτογραφία του μωρού σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puja una foto clara del teu nadó"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unggah foto bayi Anda yang jelas"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muat naik foto bayi anda yang jelas"
           }
         }
       }
@@ -25198,6 +30214,30 @@
             "state": "translated",
             "value": "Prenesi fotografiju"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μεταφόρτωση φωτογραφίας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puja una foto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unggah Foto"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muat naik foto"
+          }
         }
       }
     },
@@ -25317,6 +30357,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Koristite s bilo kojom temom ili vlastitim prilagođenim upitom"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χρησιμοποιήστε το με οποιοδήποτε θέμα ή τη δική σας προτροπή"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilitza-ho amb qualsevol tema o el teu propi text personalitzat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gunakan dengan tema apa pun atau perintah khusus Anda sendiri"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gunakan dengan mana-mana tema atau arahan tersuai anda sendiri"
           }
         }
       }
@@ -25438,6 +30502,30 @@
             "state": "translated",
             "value": "Hoda samostalno"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περπατάει ανεξάρτητα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camina de manera independent"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berjalan sendiri"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berjalan sendiri"
+          }
         }
       }
     },
@@ -25557,6 +30645,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Želite promjenu? Opišite izmjenu — npr. „dodaj mekani plavi pokrivač”"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Θέλετε μια αλλαγή; Περιγράψτε μια επεξεργασία — π.χ. «πρόσθεσε μια απαλή γαλάζια κουβέρτα»"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vols un canvi? Descriu una edició — p. ex. «afegeix una manta blava suau»"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingin perubahan? Deskripsikan editan — mis. “tambahkan selimut biru lembut”"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mahukan perubahan? Terangkan suntingan — cth. “tambah selimut biru lembut”"
           }
         }
       }
@@ -25678,6 +30790,30 @@
             "state": "translated",
             "value": "Želite AI dotjerivanje? (neobavezno)"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Θέλετε ρετούς με AI; (προαιρετικό)"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vols un retoc amb IA? (opcional)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingin sentuhan AI? (opsional)"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mahukan sentuhan AI? (pilihan)"
+          }
         }
       }
     },
@@ -25797,6 +30933,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Želite glazbu za ovaj kolaž?"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Θέλετε μουσική για αυτό το κολάζ;"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vols música per a aquest collage?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingin musik untuk kolase ini?"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mahukan muzik untuk kolaj ini?"
           }
         }
       }
@@ -25918,6 +31078,30 @@
             "state": "translated",
             "value": "Priprema studija…"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προετοιμασία του στούντιο…"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparant l'estudi…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menyiapkan studio…"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menyediakan studio…"
+          }
         }
       }
     },
@@ -26037,6 +31221,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Maše za pozdrav"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάνει νόημα αντίο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diu adeu amb la mà"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melambaikan tangan selamat tinggal"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melambai selamat tinggal"
           }
         }
       }
@@ -26158,6 +31366,30 @@
             "state": "translated",
             "value": "Nije moguće stvoriti videozapis kolaža. Pokušajte ponovno."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η δημιουργία του βίντεο κολάζ. Δοκιμάστε ξανά."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut crear el vídeo del collage. Torna-ho a provar."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat membuat video kolase. Silakan coba lagi."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat mencipta video kolaj. Sila cuba lagi."
+          }
         }
       }
     },
@@ -26277,6 +31509,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nismo uspjeli pronaći lice na ovoj fotografiji. Odaberite jasnu, dobro osvijetljenu fotografiju lica svoje bebe."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν μπορέσαμε να βρούμε πρόσωπο σε αυτή τη φωτογραφία. Επιλέξτε μια καθαρή, καλά φωτισμένη φωτογραφία του προσώπου του μωρού σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hem pogut trobar cap rostre en aquesta foto. Tria una foto clara i ben il·luminada del rostre del teu nadó."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami tidak dapat menemukan wajah dalam foto ini. Pilih foto wajah bayi Anda yang jelas dan cukup cahaya."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami tidak dapat menjumpai wajah dalam foto ini. Pilih foto wajah bayi anda yang jelas dan bercahaya baik."
           }
         }
       }
@@ -26398,6 +31654,30 @@
             "state": "translated",
             "value": "Animirat ćemo svaku od vaših %d zabilježenih fotografija i spojiti ih u jedan videozapis. To će koštati %@ i, ovisno o broju dodanih fotografija, može potrajati. Želite li nastaviti?"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Θα ζωντανέψουμε καθεμία από τις %d αποτυπωμένες φωτογραφίες σας και θα τις συνδυάσουμε σε ένα βίντεο. Αυτό θα κοστίσει %@ και, ανάλογα με το πόσες φωτογραφίες έχετε προσθέσει, μπορεί να διαρκέσει αρκετή ώρα. Θέλετε να συνεχίσετε;"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animarem cadascuna de les teves %d fotos capturades i les combinarem en un sol vídeo. Això costarà %@ i, segons quantes fotos hagis afegit, pot trigar una bona estona. Vols continuar?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami akan menganimasikan setiap %d foto Anda yang terekam dan menggabungkannya menjadi satu video. Ini akan menghabiskan biaya %@, dan tergantung berapa banyak foto yang Anda tambahkan, mungkin memerlukan waktu cukup lama. Apakah Anda ingin melanjutkan?"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami akan menganimasikan setiap %d foto anda yang dirakam dan menggabungkannya menjadi satu video. Ini akan berharga %@ dan, bergantung pada berapa banyak foto yang telah anda tambah, ia mungkin mengambil masa yang agak lama. Mahu teruskan?"
+          }
         }
       }
     },
@@ -26517,6 +31797,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Miksamo vašu pjesmu u ovaj kolaž. Napredak možete pratiti na zaslonu Moji kolaži."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αναμειγνύουμε το κομμάτι σας σε αυτό το κολάζ. Μπορείτε να παρακολουθήσετε την πρόοδο από την οθόνη Τα κολάζ μου."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estem barrejant la teva pista en aquest collage. Pots seguir-ne el progrés des de la pantalla Els meus collages."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami sedang mencampurkan trek Anda ke dalam kolase ini. Anda dapat mengikuti perkembangannya dari layar Kolase Saya."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami sedang mencampurkan trek anda ke dalam kolaj ini. Anda boleh mengikuti kemajuannya dari skrin Kolaj Saya."
           }
         }
       }
@@ -26638,6 +31942,30 @@
             "state": "translated",
             "value": "Pripremamo vaš kolaž. Napredak možete pratiti na zaslonu Moji kolaži."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προετοιμάζουμε το κολάζ σας. Μπορείτε να παρακολουθήσετε την πρόοδο από την οθόνη Τα κολάζ μου."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estem preparant el teu collage. Pots seguir-ne el progrés des de la pantalla Els meus collages."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami sedang menyiapkan kolase Anda. Anda dapat mengikuti perkembangannya dari layar Kolase Saya."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami sedang menyediakan kolaj anda. Anda boleh mengikuti kemajuannya dari skrin Kolaj Saya."
+          }
         }
       }
     },
@@ -26757,6 +32085,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tjedno"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εβδομαδιαίο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setmanal"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mingguan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mingguan"
           }
         }
       }
@@ -26878,6 +32230,30 @@
             "state": "translated",
             "value": "Što biste željeli zapamtiti?"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τι θα θέλατε να θυμάστε;"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Què t'agradaria recordar?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apa yang ingin Anda kenang?"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apakah yang anda ingin kenang?"
+          }
         }
       }
     },
@@ -26997,6 +32373,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Godišnje"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ετήσιο"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anual"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tahunan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tahunan"
           }
         }
       }
@@ -27118,6 +32518,30 @@
             "state": "translated",
             "value": "Trebate barem %d zabilježenih prekretnica za stvaranje videozapisa kolaža. Do sada ih imate %d."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χρειάζεστε τουλάχιστον %d αποτυπωμένα ορόσημα για να δημιουργήσετε ένα βίντεο κολάζ. Έχετε %d μέχρι στιγμής."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Necessites almenys %d fites capturades per crear un vídeo de collage. Fins ara en tens %d."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anda memerlukan setidaknya %d tonggak yang terekam untuk membuat video kolase. Anda memiliki %d sejauh ini."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anda memerlukan sekurang-kurangnya %d pencapaian yang dirakam untuk mencipta video kolaj. Anda mempunyai %d setakat ini."
+          }
         }
       }
     },
@@ -27237,6 +32661,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vaša posljednja prilika!"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η τελευταία σας ευκαιρία!"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La teva última oportunitat!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kesempatan terakhir Anda!"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peluang terakhir anda!"
           }
         }
       }
@@ -27358,6 +32806,30 @@
             "state": "translated",
             "value": "Vaš je zahtjev zaprimljen"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το αίτημά σας ελήφθη"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La teva sol·licitud s'ha rebut"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan Anda telah diterima"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan anda telah diterima"
+          }
         }
       }
     },
@@ -27477,6 +32949,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kolaži vaše bebe"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τα κολάζ του μωρού σας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Els collages del teu nadó"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolase bayi Anda"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kolaj bayi anda"
           }
         }
       }
@@ -27598,6 +33094,30 @@
             "state": "translated",
             "value": "Vaše kupnje su vraćene."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Οι αγορές σας έχουν επαναφερθεί."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les teves compres s'han restaurat."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembelian Anda telah dipulihkan."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembelian anda telah dipulihkan."
+          }
         }
       }
     },
@@ -27717,6 +33237,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "„%@” i njezina fotografija bit će uklonjeni. Ova se radnja ne može poništiti."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το «%@» και η φωτογραφία του θα αφαιρεθούν. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» i la seva foto s'eliminaran. Aquesta acció no es pot desfer."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” dan fotonya akan dihapus. Tindakan ini tidak dapat dibatalkan."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” dan fotonya akan dialih keluar. Tindakan ini tidak boleh dibuat asal."
           }
         }
       }
@@ -27838,6 +33382,30 @@
             "state": "translated",
             "value": "„%@” je već zabilježeno. Brisanje također uklanja fotografiju — ova se radnja ne može poništiti."
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το «%@» έχει ήδη αποτυπωθεί. Η διαγραφή του αφαιρεί επίσης τη φωτογραφία — αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» ja s'ha capturat. En suprimir-lo també s'elimina la foto — aquesta acció no es pot desfer."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” sudah terekam. Menghapusnya juga akan menghapus fotonya — tindakan ini tidak dapat dibatalkan."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” sudah pun dirakam. Memadamnya turut mengalih keluar foto — tindakan ini tidak boleh dibuat asal."
+          }
         }
       }
     },
@@ -27957,6 +33525,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "npr. Bakin posjet"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "π.χ. Επίσκεψη της γιαγιάς"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ex. Visita de l'àvia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mis. Kunjungan Nenek"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cth. Lawatan nenek"
           }
         }
       }
@@ -28078,6 +33670,30 @@
             "state": "translated",
             "value": "npr. Upoznao(la) baku"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "π.χ. Γνώρισε τη γιαγιά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ex. Va conèixer l'àvia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mis. Bertemu Nenek"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cth. Berjumpa nenek"
+          }
         }
       }
     },
@@ -28197,6 +33813,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "npr. „dodaj meko zlatno svjetlo i lebdeće iskrice” — ostavite prazno da samo spremite fotografiju"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "π.χ. «πρόσθεσε απαλό χρυσό φως και αιωρούμενες λάμψεις» — αφήστε το κενό για απλή αποθήκευση της φωτογραφίας"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ex. «afegeix una llum daurada suau i espurnes flotants» — deixa-ho en blanc per desar només la foto"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mis. “tambahkan cahaya keemasan lembut dan kilauan melayang” — biarkan kosong untuk hanya menyimpan foto"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cth. “tambah cahaya keemasan lembut dan kilauan terapung” — biarkan kosong untuk sekadar menyimpan foto"
           }
         }
       }
@@ -28318,6 +33958,30 @@
             "state": "translated",
             "value": "npr. „pretvori moju bebu u malog astronauta koji lebdi među zvijezdama”"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "π.χ. «μετέτρεψε το μωρό μου σε έναν μικρό αστροναύτη που αιωρείται ανάμεσα στα αστέρια»"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ex. «converteix el meu nadó en un petit astronauta flotant entre les estrelles»"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mis. “ubah bayi saya menjadi astronaut kecil yang melayang di antara bintang-bintang”"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cth. “ubah bayi saya menjadi angkasawan kecil yang terapung di antara bintang-bintang”"
+          }
         }
       }
     },
@@ -28437,6 +34101,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "mjesečno"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "το μήνα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "al mes"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per bulan"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sebulan"
           }
         }
       }
@@ -28558,6 +34246,30 @@
             "state": "translated",
             "value": "tjedno"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "την εβδομάδα"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "a la setmana"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per minggu"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "seminggu"
+          }
         }
       }
     },
@@ -28677,6 +34389,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "godišnje"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "το έτος"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "a l'any"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per tahun"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "setahun"
           }
         }
       }
@@ -28798,6 +34534,30 @@
             "state": "translated",
             "value": "~%d min"
           }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d λεπτά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d min"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d mnt"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d min"
+          }
         }
       }
     },
@@ -28914,6 +34674,30 @@
           }
         },
         "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d min"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d λεπτά"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d min"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "~%d–%d mnt"
+          }
+        },
+        "ms": {
           "stringUnit": {
             "state": "translated",
             "value": "~%d–%d min"
