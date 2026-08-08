@@ -21,18 +21,21 @@ function authHeaders(apiKey, apiSecret) {
   return { "x-api-key": apiKey, "x-nonce": nonce, "x-signature": signature };
 }
 
-// duration/promptExpansion/steps/scale default to the model's own documented defaults (60,
-// "False", 8, 1.0) so behavior matches the model's baseline unless a caller overrides one.
+// duration/steps/scale default to the model's own documented defaults (60, 8, 1.0) so behavior
+// matches the model's baseline unless a caller overrides one. promptExpansion is the one
+// exception — always sent as "True" (product decision) rather than the model's own documented
+// default ("False"), so Wiro fleshes out short user-typed prompts into a fuller description
+// before generating, regardless of what a caller passes.
 async function submitMusicTask({
   apiKey,
   apiSecret,
   prompt,
   duration = 60,
-  promptExpansion = "False",
   steps = 8,
   scale = 1.0,
   callbackUrl,
 }) {
+  const promptExpansion = "True";
   const form = new FormData();
   form.append("prompt", prompt);
   form.append("duration", String(duration));
