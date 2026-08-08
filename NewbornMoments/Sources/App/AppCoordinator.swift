@@ -33,6 +33,18 @@ final class AppCoordinator {
                 let result = ResultViewController(theme: theme, sourceImage: nil, resultUrl: resultUrl)
                 (tab.viewControllers?[2] as? UINavigationController)?.pushViewController(result, animated: false)
                 return
+            case "milestones-list":
+                MilestoneStore.shared.debugSeedCapturedMilestones(photoUrls: Self.debugMarketingPhotoUrls)
+                let tab = MainTabBarController()
+                tab.loadViewIfNeeded()
+                window.rootViewController = tab
+                tab.selectedIndex = 1
+                return
+            case "milestone-detail":
+                MilestoneStore.shared.debugSeedCapturedMilestones(photoUrls: Self.debugMarketingPhotoUrls)
+                let detail = MilestoneListDetailViewController(list: MilestoneStore.shared.lists[0])
+                window.rootViewController = UINavigationController(rootViewController: detail)
+                return
             case "creditgate":
                 let root = UIViewController()
                 root.view.backgroundColor = .white
@@ -100,4 +112,19 @@ final class AppCoordinator {
             self.window.rootViewController = tabBar
         }
     }
+
+    #if DEBUG
+    /// Screenshot-verification aid only — marketing-set portraits uploaded to Storage for the
+    /// milestones-list/milestone-detail debug screens above. Remove once the marketing
+    /// screenshots are final.
+    private static let debugMarketingPhotoUrls: [String] = [
+        "https://firebasestorage.googleapis.com/v0/b/newborn-moments.firebasestorage.app/o/marketing-screenshots%2Fmosaic_astronaut.png?alt=media&token=b8732d3c-182c-423d-bbd9-44b5bfbe6255",
+        "https://firebasestorage.googleapis.com/v0/b/newborn-moments.firebasestorage.app/o/marketing-screenshots%2Fmosaic_firefighter.png?alt=media&token=4f4eef19-2d85-4883-9ec3-65543d012c68",
+        "https://firebasestorage.googleapis.com/v0/b/newborn-moments.firebasestorage.app/o/marketing-screenshots%2Fhero_wizard.png?alt=media&token=a096b2bf-8dac-49e1-b26b-917696dc2259",
+        "https://firebasestorage.googleapis.com/v0/b/newborn-moments.firebasestorage.app/o/marketing-screenshots%2Fmosaic_lion_cub.png?alt=media&token=4258b7be-4107-45fa-be7c-a5ab49d5f90e",
+        "https://firebasestorage.googleapis.com/v0/b/newborn-moments.firebasestorage.app/o/marketing-screenshots%2Fmosaic_bubble_diver.png?alt=media&token=84e7f489-be3d-4213-b246-c49587a64e49",
+        "https://firebasestorage.googleapis.com/v0/b/newborn-moments.firebasestorage.app/o/marketing-screenshots%2Fmosaic_batman.png?alt=media&token=5c5b7b5a-5f80-4225-bc10-a12f4d4afa56",
+        "https://firebasestorage.googleapis.com/v0/b/newborn-moments.firebasestorage.app/o/marketing-screenshots%2Fmosaic_snow_angel.png?alt=media&token=0e81b05c-601d-4e05-8915-c0e52a365e52"
+    ]
+    #endif
 }

@@ -11,7 +11,11 @@ final class HomeViewController: UIViewController {
         view.backgroundColor = Theme.Color.backgroundCream
         setUpHeader()
         #if DEBUG
-        setUpDebugAddCreditsButton()
+        // Screenshot-verification aid only — keep the debug top-up button out of screenshot
+        // sessions so it never accidentally ends up in a marketing image.
+        if ProcessInfo.processInfo.environment["NS_DEBUG_SCREEN"] == nil {
+            setUpDebugAddCreditsButton()
+        }
         #endif
         setUpGrid()
         loadCategories()
@@ -46,6 +50,11 @@ final class HomeViewController: UIViewController {
     }
 
     private func presentLimitedOfferIfNeeded() {
+        #if DEBUG
+        // Screenshot-verification aid only — a screenshot debug session shouldn't fight a modal
+        // for the screen. Never reachable in a release build.
+        if ProcessInfo.processInfo.environment["NS_DEBUG_SCREEN"] != nil { return }
+        #endif
         guard let state = LimitedOfferService.popupStateForThisLaunch() else { return }
         present(LimitedOfferPopupViewController(state: state), animated: true)
     }

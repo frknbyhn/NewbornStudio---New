@@ -1,0 +1,194 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "52746B15",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "6799516136",
+      "localizations" : [
+        {
+          "description" : "50 credits for AI portraits",
+          "displayName" : "Big Coin Pack",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "com.babycollages.big",
+      "referenceName" : "Big Coin Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "6.99",
+      "familyShareable" : false,
+      "internalID" : "6799516041",
+      "localizations" : [
+        {
+          "description" : "25 credits, limited-time offer",
+          "displayName" : "Limited Time Pack",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "com.babycollages.limited",
+      "referenceName" : "Limited Time Coin Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6799516015",
+      "localizations" : [
+        {
+          "description" : "15 credits for AI portraits",
+          "displayName" : "Medium Coin Pack",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "com.babycollages.medium",
+      "referenceName" : "Medium Coin Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "6799516104",
+      "localizations" : [
+        {
+          "description" : "5 credits for AI portraits",
+          "displayName" : "Small Coin Pack",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "com.babycollages.small",
+      "referenceName" : "Small Coin Pack",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6799130521",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_developerTeamID" : "X4R77QQ25M",
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 807918937.76538801,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "22296324",
+      "localizations" : [
+
+      ],
+      "name" : "Newborn Moments Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "14.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6799515633",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "50 credits/month, auto-renewing",
+              "displayName" : "Monthly Premium",
+              "locale" : "en_GB"
+            }
+          ],
+          "productID" : "com.babycollages.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Premium",
+          "subscriptionGroupID" : "22296324",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6799515885",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "10 credits/week, auto-renewing",
+              "displayName" : "Weekly Premium",
+              "locale" : "en_GB"
+            }
+          ],
+          "productID" : "com.babycollages.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Weekly Premium",
+          "subscriptionGroupID" : "22296324",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "49.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6799515635",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "500 credits/year, auto-renewing",
+              "displayName" : "Yearly Premium",
+              "locale" : "en_GB"
+            }
+          ],
+          "productID" : "com.babycollages.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Yearly Premium",
+          "subscriptionGroupID" : "22296324",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

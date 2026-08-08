@@ -126,4 +126,18 @@ final class MilestoneStore {
         let metas = lists.filter { !$0.isStandard }.map { MilestoneRemoteStore.RemoteListMeta(id: $0.id, name: $0.name) }
         MilestoneRemoteStore.saveCustomLists(metas)
     }
+
+    #if DEBUG
+    /// Screenshot-verification aid only — seeds the standard list's first N milestones as
+    /// captured with the given photo URLs, purely in-memory (no Firestore write, so a debug
+    /// screenshot session never pollutes real data). Never reachable in a release build.
+    func debugSeedCapturedMilestones(photoUrls: [String]) {
+        guard let index = lists.firstIndex(where: { $0.id == "standard" }) else { return }
+        for (i, url) in photoUrls.enumerated() where i < lists[index].milestones.count {
+            lists[index].milestones[i].state = .done
+            lists[index].milestones[i].photoUrl = url
+            lists[index].milestones[i].capturedAt = Date()
+        }
+    }
+    #endif
 }
