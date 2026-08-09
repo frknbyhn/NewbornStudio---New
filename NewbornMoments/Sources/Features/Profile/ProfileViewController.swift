@@ -32,6 +32,7 @@ final class ProfileViewController: UIViewController {
 
         stack.addArrangedSubview(card([
             row(icon: "arrow.counterclockwise", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: NSLocalizedString("Restore Purchase", comment: "Profile menu row"), action: #selector(restoreTapped)),
+            row(icon: "envelope.fill", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: NSLocalizedString("Support", comment: "Profile menu row"), action: #selector(supportTapped)),
             row(icon: "hand.raised.fill", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: NSLocalizedString("Privacy Policy", comment: "Profile menu row"), action: #selector(privacyTapped)),
             row(icon: "doc.text.fill", tint: Theme.Color.textSecondaryAlt, tintBg: Theme.Color.backgroundWarm, title: NSLocalizedString("Terms of Use", comment: "Profile menu row"), action: #selector(termsTapped)),
             row(icon: "star.fill", tint: Theme.Color.coin, tintBg: Theme.Color.coinBackground, title: NSLocalizedString("Rate the App", comment: "Profile menu row"), action: #selector(rateTapped))
@@ -173,18 +174,59 @@ final class ProfileViewController: UIViewController {
         }
     }
 
-    @objc private func privacyTapped() { HapticFeedback.light(); presentLegal(kind: .privacyPolicy) }
-    @objc private func termsTapped() { HapticFeedback.light(); presentLegal(kind: .termsOfUse) }
+    /// Opens the device's own Mail app (not an in-app compose sheet — a plain "mailto:" URL) to
+    /// our support address, prefilled with a subject and a diagnostics footer (uid, app version,
+    /// device/OS) so a support reply doesn't start with "which account is this?". The footer
+    /// explicitly asks the user not to delete it, since without the uid we can't look anything up.
+    @objc private func supportTapped() {
+        HapticFeedback.light()
+        let subject = NSLocalizedString("Support Request — Newborn Moments", comment: "Support email subject")
+
+        let bundle = Bundle.main
+        let appVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String ?? "-"
+        let buildNumber = bundle.infoDictionary?["CFBundleVersion"] as? String ?? "-"
+        let device = UIDevice.current
+        let noteHeader = NSLocalizedString("— Please don't delete the information below, we need it to identify your account —", comment: "Support email footer note asking the user not to delete the diagnostic info")
+        let userIdLabel = NSLocalizedString("User ID", comment: "Support email diagnostic field label")
+        let appVersionLabel = NSLocalizedString("App Version", comment: "Support email diagnostic field label")
+        let deviceLabel = NSLocalizedString("Device", comment: "Support email diagnostic field label")
+
+        let body = """
+
+
+        \(noteHeader)
+        \(userIdLabel): \(AuthService.currentUserId ?? "-")
+        \(appVersionLabel): \(appVersion) (\(buildNumber))
+        \(deviceLabel): \(device.model), iOS \(device.systemVersion)
+        """
+
+        // "&" and "=" have to stay escaped even though .urlQueryAllowed treats them as legal
+        // query characters — they're delimiters in a mailto query string, and the diagnostics
+        // block above is plain text we don't control the shape of.
+        var allowed = CharacterSet.urlQueryAllowed
+        allowed.remove(charactersIn: "&=+")
+        guard let subjectEncoded = subject.addingPercentEncoding(withAllowedCharacters: allowed),
+              let bodyEncoded = body.addingPercentEncoding(withAllowedCharacters: allowed),
+              let url = URL(string: "mailto:\(Self.supportEmail)?subject=\(subjectEncoded)&body=\(bodyEncoded)"),
+              UIApplication.shared.canOpenURL(url) else {
+            presentAlert(
+                title: NSLocalizedString("No Mail App Found", comment: "Support email error alert title"),
+                message: String(format: NSLocalizedString("Please email us at %@.", comment: "Support email error alert message, %@ is the support email address"), Self.supportEmail)
+            )
+            return
+        }
+        UIApplication.shared.open(url)
+    }
+
+    private static let supportEmail = "blitzzlsnsz@gmail.com"
+
+    @objc private func privacyTapped() { HapticFeedback.light(); UIApplication.shared.open(LegalLinks.privacyPolicy) }
+    @objc private func termsTapped() { HapticFeedback.light(); UIApplication.shared.open(LegalLinks.termsOfUse) }
     @objc private func rateTapped() {
         HapticFeedback.light()
         if let scene = view.window?.windowScene {
             SKStoreReviewController.requestReview(in: scene)
         }
-    }
-
-    private func presentLegal(kind: LegalDocumentViewController.Kind) {
-        let legal = LegalDocumentViewController(kind: kind)
-        present(UINavigationController(rootViewController: legal), animated: true)
     }
 
     private func presentAlert(title: String, message: String) {

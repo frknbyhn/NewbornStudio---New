@@ -363,11 +363,11 @@ final class SingleOfferPaywallViewController: UIViewController {
 
     @objc private func termsTapped() {
         HapticFeedback.light()
-        present(UINavigationController(rootViewController: LegalDocumentViewController(kind: .termsOfUse)), animated: true)
+        UIApplication.shared.open(LegalLinks.termsOfUse)
     }
 
     @objc private func privacyTapped() {
         HapticFeedback.light()
-        present(UINavigationController(rootViewController: LegalDocumentViewController(kind: .privacyPolicy)), animated: true)
+        UIApplication.shared.open(LegalLinks.privacyPolicy)
     }
 }

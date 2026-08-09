@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E56D443028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D433028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit */; };
 		02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */; };
 		063ECD3FA8141703C1435B90 /* MilestoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */; };
 		099C77DF63E65C5CE1182B88 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DFDDF69809F17E3A30BCC /* CustomStyleViewController.swift */; };
@@ -19,6 +20,7 @@
 		1A8C9AF8C6F39D22ACE5E063 /* GradientPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758225B9C954C552235CF6A5 /* GradientPillButton.swift */; };
 		1B3D8C8A4B5C01CAC7E08B8E /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B4581C465A1838F53DD09E /* ThemeService.swift */; };
 		2EABA102D62D29A1731004DB /* FaceDetectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F581904B808971F8641D5834 /* FaceDetectionService.swift */; };
+		33A98DE0502B43F60019945B /* LegalLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5958942B6B01D24426EC3716 /* LegalLinks.swift */; };
 		385F7597977F5CDB864983EE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2664D2D01E4139E4CDA43B /* Theme.swift */; };
 		38A898FC7BFD4CDE27B3D429 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0DF4304993EBEF084B4A1F9 /* GoogleService-Info.plist */; };
 		3915ED7820AF01B0EDC9C433 /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11EAE36AA322AFB303AC7F /* CategoryListCell.swift */; };
@@ -65,7 +67,6 @@
 		AFF16A95A50087886E662A71 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 157EAC592D94E34E6BBAC7A6 /* FirebaseFirestore */; };
 		B09B4F6A65BFBBC00BA9FAA9 /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA120F0C471F2249F069FAF /* ThemeCard.swift */; };
 		B704F24B00AD0F67014D1B82 /* Quicksand-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E84E82636FFB1EF3FB22D561 /* Quicksand-Variable.ttf */; };
-		BAAA126E836FFAB6FE6B1F1D /* LegalDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F36A6EB3F2DF6569ED7FCD /* LegalDocumentViewController.swift */; };
 		BDA159C60B95C1FC328051D5 /* GenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4043E09EBE6C71B7866A1 /* GenerationService.swift */; };
 		BFD48D4BA6BEF0153CF6F0E2 /* MilestoneCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C1150AC92A032212DD0BCB /* MilestoneCaptureViewController.swift */; };
 		C0A21B555D27508E86B693D1 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF681C449EB1133B79D60E1 /* PaddedLabel.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00E56D433028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Newborn Moments: Baby Photo AI.storekit"; sourceTree = "<group>"; };
 		0D66A5C08C09C285481E160F /* PassThroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughStackView.swift; sourceTree = "<group>"; };
 		0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		119040D23920402A6D386228 /* MilestoneListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListsViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		43C1150AC92A032212DD0BCB /* MilestoneCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCaptureViewController.swift; sourceTree = "<group>"; };
 		444A95432FFD592628BA3793 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4858B6B010CABA37DF9C84BE /* CollageAnimationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageAnimationService.swift; sourceTree = "<group>"; };
+		5958942B6B01D24426EC3716 /* LegalLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalLinks.swift; sourceTree = "<group>"; };
 		5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneStore.swift; sourceTree = "<group>"; };
 		60E13DA50743F1950597D64B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		613A05B30EAA0D31FB9F482D /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
@@ -159,7 +162,6 @@
 		EBAF50485CC2CD40DF534350 /* LimitedOfferPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedOfferPopupViewController.swift; sourceTree = "<group>"; };
 		EE959EC4B4D654E0F55DFFCE /* RevenueCatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatService.swift; sourceTree = "<group>"; };
 		F0D36383E7463B2945E20A97 /* ZoomableImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageViewController.swift; sourceTree = "<group>"; };
-		F3F36A6EB3F2DF6569ED7FCD /* LegalDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentViewController.swift; sourceTree = "<group>"; };
 		F4FF45AE24E1C0C8B8E2B778 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F581904B808971F8641D5834 /* FaceDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionService.swift; sourceTree = "<group>"; };
 		F687BC58DFD3D3ED48940662 /* MilestoneCollageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageGalleryViewController.swift; sourceTree = "<group>"; };
@@ -357,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				971CAAED5A5A6F535AAAA5A1 /* LanguageListViewController.swift */,
-				F3F36A6EB3F2DF6569ED7FCD /* LegalDocumentViewController.swift */,
 				F4FF45AE24E1C0C8B8E2B778 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -375,6 +376,7 @@
 				3AB3B2CD5D42443811662992 /* FavoritesService.swift */,
 				6AE4043E09EBE6C71B7866A1 /* GenerationService.swift */,
 				F860E0A38B3AD7B9FB5F5990 /* LanguageManager.swift */,
+				5958942B6B01D24426EC3716 /* LegalLinks.swift */,
 				33A10DBE165F8647E227B401 /* LimitedOfferService.swift */,
 				0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */,
 				685067C7053AEEEE40921493 /* MilestoneRemoteStore.swift */,
@@ -429,6 +431,7 @@
 			children = (
 				8BBA6E1ABB064D0DE29C1680 /* Assets.xcassets */,
 				E0DF4304993EBEF084B4A1F9 /* GoogleService-Info.plist */,
+				00E56D433028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit */,
 				96FADCB8E9007F93A5048803 /* loader.json */,
 				39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */,
 				E1002772CB479E6910326CEF /* Fonts */,
@@ -515,6 +518,7 @@
 				8AA85BE0AC10C920B0FF214D /* Assets.xcassets in Resources */,
 				38A898FC7BFD4CDE27B3D429 /* GoogleService-Info.plist in Resources */,
 				5A53E64A235ECFC90EE0E9EA /* Localizable.xcstrings in Resources */,
+				00E56D443028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */,
 				0E5C728A5778C23B62738901 /* Nunito-Variable.ttf in Resources */,
 				B704F24B00AD0F67014D1B82 /* Quicksand-Variable.ttf in Resources */,
 				AE32DF321A6F6A8B695D5461 /* loader.json in Resources */,
@@ -554,7 +558,7 @@
 				68246C64D137059CCEC26B70 /* HomeViewController.swift in Sources */,
 				DD93AF7BB476D964BDA86214 /* LanguageListViewController.swift in Sources */,
 				ED404A5447F7EEEBBCD6740C /* LanguageManager.swift in Sources */,
-				BAAA126E836FFAB6FE6B1F1D /* LegalDocumentViewController.swift in Sources */,
+				33A98DE0502B43F60019945B /* LegalLinks.swift in Sources */,
 				7D04A0039401A9F8F5B4946C /* LimitedOfferPopupViewController.swift in Sources */,
 				17454173B20DFE6CAF4372F8 /* LimitedOfferService.swift in Sources */,
 				CCD3EB25C3329170DA64DE94 /* MainTabBarController.swift in Sources */,
