@@ -31,7 +31,7 @@ final class SingleOfferPaywallViewController: UIViewController {
     private var planInfoView: SinglePlanInfoView?
     private var planInfoContainer: UIView!
     private var plan: SubscriptionPlan?
-    private let cta = GradientPillButton(title: NSLocalizedString("Subscribe Now", comment: "Paywall CTA button"), icon: nil)
+    private let cta = GradientPillButton(title: NSLocalizedString("Continue", comment: "Paywall CTA button"), icon: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,8 +92,7 @@ final class SingleOfferPaywallViewController: UIViewController {
                 info.topAnchor.constraint(equalTo: planInfoContainer.topAnchor),
                 info.leadingAnchor.constraint(equalTo: planInfoContainer.leadingAnchor),
                 info.trailingAnchor.constraint(equalTo: planInfoContainer.trailingAnchor),
-                info.bottomAnchor.constraint(equalTo: planInfoContainer.bottomAnchor),
-                info.heightAnchor.constraint(greaterThanOrEqualToConstant: 40)
+                info.bottomAnchor.constraint(equalTo: planInfoContainer.bottomAnchor)
             ])
             planInfoView = info
             contentContainer.isHidden = false
@@ -212,15 +211,12 @@ final class SingleOfferPaywallViewController: UIViewController {
         subtitle.textAlignment = .center
         subtitle.numberOfLines = 0
 
-        let bullets = UIStackView(arrangedSubviews: SubscriptionPlan.benefits.map(benefitRow))
-        bullets.axis = .vertical
-        bullets.spacing = 9
-
-        let body = UIStackView(arrangedSubviews: [title, subtitle, bullets])
+        // The benefit bullets moved into SinglePlanInfoView — grouped with the price instead of
+        // sitting up here disconnected from what they're describing.
+        let body = UIStackView(arrangedSubviews: [title, subtitle])
         body.axis = .vertical
         body.alignment = .fill
         body.spacing = 8
-        body.setCustomSpacing(16, after: subtitle)
         body.isLayoutMarginsRelativeArrangement = true
         body.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 0, right: 24)
         return body
@@ -251,24 +247,27 @@ final class SingleOfferPaywallViewController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [deck, badge])
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 14
+        stack.spacing = 16
         stack.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(stack)
         NSLayoutConstraint.activate([
-            deck.heightAnchor.constraint(equalToConstant: 96),
-            badge.heightAnchor.constraint(equalToConstant: 26),
+            // Bigger than PaywallViewController's hero on purpose — this screen has no
+            // package-selection stack competing for vertical space, so the deck gets to be the
+            // dominant visual instead of a compact strip above the title.
+            deck.heightAnchor.constraint(equalToConstant: 130),
+            badge.heightAnchor.constraint(equalToConstant: 30),
             stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            stack.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 10),
-            stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -12)
+            stack.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 14),
+            stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16)
         ])
         return container
     }
 
     private func fannedPhotoDeck() -> UIView {
         let specs: [(String, CGSize, CGFloat)] = [
-            ("OnboardingThemedPortraits", CGSize(width: 64, height: 82), -6),
-            ("OnboardingSleepingBaby", CGSize(width: 70, height: 92), 0),
-            ("OnboardingMilestoneAlbum", CGSize(width: 64, height: 82), 6)
+            ("OnboardingThemedPortraits", CGSize(width: 86, height: 110), -6),
+            ("OnboardingSleepingBaby", CGSize(width: 94, height: 124), 0),
+            ("OnboardingMilestoneAlbum", CGSize(width: 86, height: 110), 6)
         ]
         let cardViews: [UIView] = specs.map { imageName, size, rotation in
             let imageView = UIImageView(image: UIImage(named: imageName))
@@ -302,38 +301,6 @@ final class SingleOfferPaywallViewController: UIViewController {
         deck.alignment = .center
         deck.spacing = 8
         return deck
-    }
-
-    private func benefitRow(_ text: String) -> UIView {
-        let iconBackground = UIView()
-        iconBackground.backgroundColor = Theme.Color.successBackground
-        iconBackground.layer.cornerRadius = 12
-        iconBackground.translatesAutoresizingMaskIntoConstraints = false
-        iconBackground.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        iconBackground.heightAnchor.constraint(equalToConstant: 24).isActive = true
-
-        let check = UIImageView(image: UIImage(systemName: "checkmark"))
-        check.tintColor = Theme.Color.success
-        check.contentMode = .scaleAspectFit
-        check.translatesAutoresizingMaskIntoConstraints = false
-        iconBackground.addSubview(check)
-        NSLayoutConstraint.activate([
-            check.centerXAnchor.constraint(equalTo: iconBackground.centerXAnchor),
-            check.centerYAnchor.constraint(equalTo: iconBackground.centerYAnchor),
-            check.widthAnchor.constraint(equalToConstant: 12),
-            check.heightAnchor.constraint(equalToConstant: 12)
-        ])
-
-        let label = UILabel()
-        label.text = text
-        label.font = Theme.Font.body(13.5, weight: 600)
-        label.textColor = Theme.Color.textSecondaryAlt
-
-        let row = UIStackView(arrangedSubviews: [iconBackground, label])
-        row.axis = .horizontal
-        row.spacing = 10
-        row.alignment = .center
-        return row
     }
 
     private func footerLink(_ title: String) -> UIView {
