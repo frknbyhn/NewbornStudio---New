@@ -56,6 +56,14 @@ final class AppCoordinator {
                 let upload = PhotoUploadViewController(theme: theme)
                 window.rootViewController = UINavigationController(rootViewController: upload)
                 return
+            case "milestone-capture":
+                if RecentPhotosStore.recentPhotos().isEmpty, let seed = UIImage(systemName: "photo.fill") {
+                    RecentPhotosStore.add(seed)
+                    RecentPhotosStore.add(seed)
+                }
+                let capture = MilestoneCaptureViewController(milestone: MilestoneList.standard.milestones[0], listId: MilestoneList.standard.id)
+                window.rootViewController = UINavigationController(rootViewController: capture)
+                return
             case "creditgate":
                 let root = UIViewController()
                 root.view.backgroundColor = .white

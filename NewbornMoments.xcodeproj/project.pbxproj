@@ -82,6 +82,7 @@
 		F2E6F07689234FCAC6BC9518 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613A05B30EAA0D31FB9F482D /* HapticFeedback.swift */; };
 		F9CC07416CF647936D9332C9 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 3AEEA9B5373A6401E20B4C0F /* FirebaseFunctions */; };
 		FA193EFA425B7ED8E0379E8E /* ZoomableImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D36383E7463B2945E20A97 /* ZoomableImageViewController.swift */; };
+		FFFFEC0B83179D22EBF13833 /* RecentPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA22F0113FF6C01F123FD69 /* RecentPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,7 @@
 		96FADCB8E9007F93A5048803 /* loader.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		9D174078B76273D37C089667 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9D5AC4479E009A2AE23ABE54 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
+		9EA22F0113FF6C01F123FD69 /* RecentPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotoCell.swift; sourceTree = "<group>"; };
 		9FB6051B8D1FC4FB47F8D001 /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		A12D363FF51F1DF67592CD3F /* GenerationLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationLoadingViewController.swift; sourceTree = "<group>"; };
 		A1E250C2531E33C9B7E5FE85 /* MilestoneCollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				8EF681C449EB1133B79D60E1 /* PaddedLabel.swift */,
 				727AF5AA257FBBD6968ED0B0 /* PageDotsView.swift */,
 				0D66A5C08C09C285481E160F /* PassThroughStackView.swift */,
+				9EA22F0113FF6C01F123FD69 /* RecentPhotoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */,
 				41ADC6222609435E4606F55B /* PlanCardView.swift in Sources */,
 				6AA63994F7CD7016EDAB52CD /* ProfileViewController.swift in Sources */,
+				FFFFEC0B83179D22EBF13833 /* RecentPhotoCell.swift in Sources */,
 				68A62D8622F7FA020390A8DB /* RecentPhotosStore.swift in Sources */,
 				DF8DA5C95B7549485507D171 /* RemoteImageLoader.swift in Sources */,
 				9A213140F20F3BA2FF4AAA0C /* ResultViewController.swift in Sources */,

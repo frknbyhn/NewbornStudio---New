@@ -116,22 +116,14 @@ final class CoinPackageViewController: UIViewController {
             contentContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        let lockIcon = UIImageView(image: UIImage(systemName: "lock.fill"))
-        lockIcon.tintColor = UIColor(hex: 0xB4A6A2)
-        lockIcon.contentMode = .scaleAspectFit
-        lockIcon.translatesAutoresizingMaskIntoConstraints = false
-        lockIcon.widthAnchor.constraint(equalToConstant: 12).isActive = true
-        lockIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
-
-        let secureLabel = UILabel()
-        secureLabel.text = NSLocalizedString("Secure payment · Apple Pay · Google Pay", comment: "Coin package secure payment note")
-        secureLabel.font = Theme.Font.body(11.5, weight: 600)
-        secureLabel.textColor = UIColor(hex: 0xB4A6A2)
-
-        let secureRow = UIStackView(arrangedSubviews: [lockIcon, secureLabel])
+        let termsLink = footerLink(NSLocalizedString("Terms", comment: "Coin package footer link"))
+        (termsLink as? UIButton)?.addTarget(self, action: #selector(termsTapped), for: .touchUpInside)
+        let privacyLink = footerLink(NSLocalizedString("Privacy", comment: "Coin package footer link"))
+        (privacyLink as? UIButton)?.addTarget(self, action: #selector(privacyTapped), for: .touchUpInside)
+        let secureRow = UIStackView(arrangedSubviews: [termsLink, privacyLink])
         secureRow.axis = .horizontal
-        secureRow.spacing = 5
         secureRow.alignment = .center
+        secureRow.distribution = .equalSpacing
         secureRow.translatesAutoresizingMaskIntoConstraints = false
         contentContainer.addSubview(secureRow)
 
@@ -153,7 +145,8 @@ final class CoinPackageViewController: UIViewController {
         contentContainer.addSubview(topStack)
 
         NSLayoutConstraint.activate([
-            secureRow.centerXAnchor.constraint(equalTo: contentContainer.centerXAnchor),
+            secureRow.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 40),
+            secureRow.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -40),
             secureRow.bottomAnchor.constraint(equalTo: contentContainer.safeAreaLayoutGuide.bottomAnchor, constant: -16),
 
             ctaButton.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 24),
@@ -357,5 +350,23 @@ final class CoinPackageViewController: UIViewController {
         } else {
             dismiss(animated: true)
         }
+    }
+
+    private func footerLink(_ title: String) -> UIView {
+        let button = UIButton(type: .system)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(Theme.Color.textSecondary, for: .normal)
+        button.titleLabel?.font = Theme.Font.body(12, weight: 600)
+        return button
+    }
+
+    @objc private func termsTapped() {
+        HapticFeedback.light()
+        present(UINavigationController(rootViewController: LegalDocumentViewController(kind: .termsOfUse)), animated: true)
+    }
+
+    @objc private func privacyTapped() {
+        HapticFeedback.light()
+        present(UINavigationController(rootViewController: LegalDocumentViewController(kind: .privacyPolicy)), animated: true)
     }
 }

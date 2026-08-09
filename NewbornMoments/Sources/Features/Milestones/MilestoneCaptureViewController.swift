@@ -64,6 +64,11 @@ final class MilestoneCaptureViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshRecentPhotosStrip()
+    }
+
     private var navBarBottom: NSLayoutYAxisAnchor!
 
     private func setUpNavBar() {
@@ -183,7 +188,9 @@ final class MilestoneCaptureViewController: UIViewController {
         submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
 
-        var arranged: [UIView] = [dropZone, tips]
+        let recentStrip = makeRecentPhotosStrip()
+
+        var arranged: [UIView] = [dropZone, recentStrip, tips]
         var promptCard: UIView?
         if curatedPrompt == nil {
             let promptTitle = UILabel()
@@ -237,7 +244,7 @@ final class MilestoneCaptureViewController: UIViewController {
         content.axis = .vertical
         content.spacing = 16
         if let promptCard {
-            content.setCustomSpacing(10, after: arranged[1])
+            content.setCustomSpacing(10, after: tips)
             content.setCustomSpacing(26, after: promptCard)
         } else {
             content.setCustomSpacing(26, after: dropZone)
@@ -332,6 +339,76 @@ final class MilestoneCaptureViewController: UIViewController {
         submitButton.alpha = submitButton.isEnabled ? 1 : 0.5
     }
 
+    // MARK: - Recently used photos
+
+    private var recentStripContainer: UIView!
+    private var recentStripStack: UIStackView!
+    private var selectedRecentPhotoId: String?
+
+    private func makeRecentPhotosStrip() -> UIView {
+        let title = UILabel()
+        title.text = NSLocalizedString("Recently Used", comment: "Recently used photos section title")
+        title.font = Theme.Font.heading(14, weight: 700)
+        title.textColor = Theme.Color.textSecondaryAlt
+
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 10
+        stack.alignment = .center
+        recentStripStack = stack
+
+        let scroll = UIScrollView()
+        scroll.showsHorizontalScrollIndicator = false
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        scroll.addSubview(stack)
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stack.topAnchor.constraint(equalTo: scroll.topAnchor),
+            stack.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
+            stack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
+            stack.heightAnchor.constraint(equalTo: scroll.heightAnchor),
+            scroll.heightAnchor.constraint(equalToConstant: 76)
+        ])
+
+        let container = UIStackView(arrangedSubviews: [title, scroll])
+        container.axis = .vertical
+        container.spacing = 10
+        recentStripContainer = container
+        return container
+    }
+
+    private func refreshRecentPhotosStrip() {
+        recentStripStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        let photos = RecentPhotosStore.recentPhotos()
+        recentStripContainer.isHidden = photos.isEmpty
+        for photo in photos {
+            let cell = RecentPhotoCell(photo: photo, isSelected: photo.id == selectedRecentPhotoId)
+            cell.onSelect = { [weak self] in self?.recentPhotoSelected(photo) }
+            cell.onDelete = { [weak self] in self?.recentPhotoDeleted(photo) }
+            recentStripStack.addArrangedSubview(cell)
+        }
+    }
+
+    /// Only puts the photo into the drop zone preview — does NOT submit. The user still has to
+    /// tap Generate/Save, same as a fresh camera/gallery pick.
+    private func recentPhotoSelected(_ photo: RecentPhotosStore.Photo) {
+        HapticFeedback.selection()
+        selectedRecentPhotoId = photo.id
+        pickedImage = photo.image
+        RecentPhotosStore.moveToFront(id: photo.id)
+        refreshRecentPhotosStrip()
+    }
+
+    private func recentPhotoDeleted(_ photo: RecentPhotosStore.Photo) {
+        HapticFeedback.light()
+        RecentPhotosStore.remove(id: photo.id)
+        if selectedRecentPhotoId == photo.id {
+            selectedRecentPhotoId = nil
+        }
+        refreshRecentPhotosStrip()
+    }
+
     @objc private func dismissKeyboard() { view.endEditing(true) }
 
     @objc private func backTapped() {
@@ -390,8 +467,12 @@ extension MilestoneCaptureViewController: UIImagePickerControllerDelegate, UINav
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
+        selectedRecentPhotoId = nil
         FaceCheck.run(on: image, presentingFrom: self) { [weak self] in
-            self?.pickedImage = image
+            guard let self else { return }
+            self.pickedImage = image
+            RecentPhotosStore.add(image)
+            self.refreshRecentPhotosStrip()
         }
     }
 
