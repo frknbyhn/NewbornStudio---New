@@ -62,6 +62,8 @@ targets:
         product: FirebaseStorage
       - package: Firebase
         product: FirebaseFunctions
+      - package: Firebase
+        product: FirebaseRemoteConfig
       - package: GoogleSignIn
         product: GoogleSignIn
       - package: RevenueCat

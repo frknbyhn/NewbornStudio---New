@@ -27,7 +27,7 @@ final class ProfileViewController: UIViewController {
         ]))
 
         stack.addArrangedSubview(card([
-            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: NSLocalizedString("Language", comment: "Profile menu row"), trailingText: NSLocalizedString("English", comment: "Current language value shown in Profile"), action: #selector(languageTapped))
+            row(icon: "globe", tint: Theme.Color.success, tintBg: Theme.Color.successBackground, title: NSLocalizedString("Language", comment: "Profile menu row"), trailingText: LanguageManager.currentDisplayName, action: #selector(languageTapped))
         ]))
 
         stack.addArrangedSubview(card([
@@ -149,9 +149,7 @@ final class ProfileViewController: UIViewController {
 
     @objc private func languageTapped() {
         HapticFeedback.light()
-        let alert = UIAlertController(title: NSLocalizedString("Language", comment: "Language alert title"), message: NSLocalizedString("English is the only language available right now. More are on the way.", comment: "Language alert message"), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button"), style: .default))
-        present(alert, animated: true)
+        navigationController?.pushViewController(LanguageListViewController(), animated: true)
     }
 
     @objc private func restoreTapped() {

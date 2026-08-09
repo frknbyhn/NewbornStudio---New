@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E56D403028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D3F3028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit */; };
 		02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */; };
 		063ECD3FA8141703C1435B90 /* MilestoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */; };
 		099C77DF63E65C5CE1182B88 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DFDDF69809F17E3A30BCC /* CustomStyleViewController.swift */; };
-		0A5D92A2624D14777E8CE4DF /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 60051513C518D89ABE44DCBD /* RevenueCat */; };
+		0A5D92A2624D14777E8CE4DF /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9707E3FDBF5C7D4BD045D225 /* GoogleSignIn */; };
 		0E5C728A5778C23B62738901 /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FB6051B8D1FC4FB47F8D001 /* Nunito-Variable.ttf */; };
+		13F177235385AA4723C5D7B1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5668FD7C01179FA9FA62E6BA /* Lottie */; };
 		148A37BA98C7581E1E0D7E2F /* CategoryStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397F41CB76F88001A3F06648 /* CategoryStylesViewController.swift */; };
 		159DAA535117DBD8CFAF6A63 /* AnimatedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E7703836E103088577F4A /* AnimatedVideoViewController.swift */; };
 		17454173B20DFE6CAF4372F8 /* LimitedOfferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A10DBE165F8647E227B401 /* LimitedOfferService.swift */; };
@@ -25,6 +25,7 @@
 		41ADC6222609435E4606F55B /* PlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AC4479E009A2AE23ABE54 /* PlanCardView.swift */; };
 		50F03519599B99A7062D5300 /* CoinPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAAC39F7C7E333C1B9D9E99 /* CoinPackage.swift */; };
 		557E16B3762B37EE3FF340B8 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC82EF57A3AA2CC64AA16C6 /* GalleryViewController.swift */; };
+		5907A6E87B897A7D1492C40D /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D613467A40823A4235FE919 /* RemoteConfigService.swift */; };
 		591F8326A1FCD0A1BB5B197F /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E13AA36EB6DC5E874ACE /* PaywallViewController.swift */; };
 		5A53E64A235ECFC90EE0E9EA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */; };
 		5C72511AFF0F405271B7AB68 /* SubscriptionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351C2B9535CA5129F9F72496 /* SubscriptionPlan.swift */; };
@@ -32,7 +33,8 @@
 		5E1D41FC9F8A2A20943578A9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444A95432FFD592628BA3793 /* SplashViewController.swift */; };
 		5FE0B15F8D3527011D000AD5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B6585FDE6D281439A32C4 /* AuthService.swift */; };
 		60C4A049E8272EF2D0F32F33 /* ThemeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EBD87C0747346B56BD048A /* ThemeCategory.swift */; };
-		60E18757C6B102D3B3288E16 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9707E3FDBF5C7D4BD045D225 /* GoogleSignIn */; };
+		60E18757C6B102D3B3288E16 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 041E692FFB32493E0700E63B /* FirebaseRemoteConfig */; };
+		6211543782C40E2A5E9BAD53 /* SingleOfferPaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677E8871EE9279D0D0F05B8B /* SingleOfferPaywallViewController.swift */; };
 		64255B41CCB458031A72C72D /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772779D512D8CB2C537158FA /* Generation.swift */; };
 		6514D12AB063D387BC4E3072 /* MilestoneRemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685067C7053AEEEE40921493 /* MilestoneRemoteStore.swift */; };
 		68246C64D137059CCEC26B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14263A12F72FA64E41BBBB7 /* HomeViewController.swift */; };
@@ -54,6 +56,7 @@
 		9A213140F20F3BA2FF4AAA0C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E13DA50743F1950597D64B /* ResultViewController.swift */; };
 		9F4556D09FA8080710C05257 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3CA53BFFE607B03530CA1E49 /* FirebaseCore */; };
 		A53E47DB21E223902F78C268 /* CoinPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF1E549558C89AD18C6504 /* CoinPackageCell.swift */; };
+		A5D7EBDC2E2453ABC629B6F8 /* SinglePlanInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CACD8858A72A8E273814D4 /* SinglePlanInfoView.swift */; };
 		A69F6DAC89A5EB70489F086E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970105EB43DB1025ACD4284 /* OnboardingPageViewController.swift */; };
 		A95695D4D4756A68ACBDE80F /* CreditsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6D27C8FAAF4352BA2CF99 /* CreditsService.swift */; };
 		AB6B31C1F0634299F16D0DF4 /* MilestoneCollageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */; };
@@ -74,12 +77,14 @@
 		D91D9342EF8496753F91ABC0 /* FaceCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904EAA1D1A39F8208045D53B /* FaceCheck.swift */; };
 		DB06E825142DF8F36DDBBD57 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D174078B76273D37C089667 /* AppCoordinator.swift */; };
 		DC8C76864E5367D3DE87EC10 /* CollageAnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4858B6B010CABA37DF9C84BE /* CollageAnimationService.swift */; };
+		DD93AF7BB476D964BDA86214 /* LanguageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971CAAED5A5A6F535AAAA5A1 /* LanguageListViewController.swift */; };
 		DF8DA5C95B7549485507D171 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB5CB643C185A1C1AE7BCE3 /* RemoteImageLoader.swift */; };
 		E25C8FD687FBCA971F390644 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D405D0ED460BDC413CB89320 /* Milestone.swift */; };
 		E4C33F23BA36C0F14AF9FD0E /* MilestoneListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC40E4E7EA81A4D3381C8EA /* MilestoneListDetailViewController.swift */; };
 		E65A92C91ED83DF9D87EC6D0 /* GenerationLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D363FF51F1DF67592CD3F /* GenerationLoadingViewController.swift */; };
 		EB5953B3A717A6E290559EBF /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C971E1F772D9C63C17C1B0 /* OnboardingContainerViewController.swift */; };
-		ED20C1FC4F2EF975B320C0AA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5668FD7C01179FA9FA62E6BA /* Lottie */; };
+		ED20C1FC4F2EF975B320C0AA /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 60051513C518D89ABE44DCBD /* RevenueCat */; };
+		ED404A5447F7EEEBBCD6740C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860E0A38B3AD7B9FB5F5990 /* LanguageManager.swift */; };
 		F2E6F07689234FCAC6BC9518 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613A05B30EAA0D31FB9F482D /* HapticFeedback.swift */; };
 		F9CC07416CF647936D9332C9 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 3AEEA9B5373A6401E20B4C0F /* FirebaseFunctions */; };
 		FA193EFA425B7ED8E0379E8E /* ZoomableImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D36383E7463B2945E20A97 /* ZoomableImageViewController.swift */; };
@@ -87,7 +92,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00E56D3F3028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Newborn Moments: Baby Photo AI.storekit"; sourceTree = "<group>"; };
 		0D66A5C08C09C285481E160F /* PassThroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughStackView.swift; sourceTree = "<group>"; };
 		0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		119040D23920402A6D386228 /* MilestoneListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListsViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneStore.swift; sourceTree = "<group>"; };
 		60E13DA50743F1950597D64B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		613A05B30EAA0D31FB9F482D /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		677E8871EE9279D0D0F05B8B /* SingleOfferPaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOfferPaywallViewController.swift; sourceTree = "<group>"; };
 		685067C7053AEEEE40921493 /* MilestoneRemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneRemoteStore.swift; sourceTree = "<group>"; };
 		6AE4043E09EBE6C71B7866A1 /* GenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationService.swift; sourceTree = "<group>"; };
 		6DB1828CC137CB53641A8CD7 /* NewbornMoments.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NewbornMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,8 +123,10 @@
 		758225B9C954C552235CF6A5 /* GradientPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPillButton.swift; sourceTree = "<group>"; };
 		772779D512D8CB2C537158FA /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		77C971E1F772D9C63C17C1B0 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		77CACD8858A72A8E273814D4 /* SinglePlanInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlanInfoView.swift; sourceTree = "<group>"; };
 		7AAAC39F7C7E333C1B9D9E99 /* CoinPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackage.swift; sourceTree = "<group>"; };
 		7D296286DD62E08220F8D731 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		7D613467A40823A4235FE919 /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		7DC82EF57A3AA2CC64AA16C6 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		87FF1E549558C89AD18C6504 /* CoinPackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPackageCell.swift; sourceTree = "<group>"; };
@@ -130,6 +137,7 @@
 		8F2664D2D01E4139E4CDA43B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		904EAA1D1A39F8208045D53B /* FaceCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCheck.swift; sourceTree = "<group>"; };
 		96FADCB8E9007F93A5048803 /* loader.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		971CAAED5A5A6F535AAAA5A1 /* LanguageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewController.swift; sourceTree = "<group>"; };
 		9D174078B76273D37C089667 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9D5AC4479E009A2AE23ABE54 /* PlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCardView.swift; sourceTree = "<group>"; };
 		9EA22F0113FF6C01F123FD69 /* RecentPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotoCell.swift; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 		F4FF45AE24E1C0C8B8E2B778 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F581904B808971F8641D5834 /* FaceDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionService.swift; sourceTree = "<group>"; };
 		F687BC58DFD3D3ED48940662 /* MilestoneCollageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageGalleryViewController.swift; sourceTree = "<group>"; };
+		F860E0A38B3AD7B9FB5F5990 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		FCC40E4E7EA81A4D3381C8EA /* MilestoneListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListDetailViewController.swift; sourceTree = "<group>"; };
 		FDE2E82680F59CC82C5BA037 /* ThemeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,9 +178,10 @@
 				AFF16A95A50087886E662A71 /* FirebaseFirestore in Frameworks */,
 				76A2246246305C990199A739 /* FirebaseStorage in Frameworks */,
 				F9CC07416CF647936D9332C9 /* FirebaseFunctions in Frameworks */,
-				60E18757C6B102D3B3288E16 /* GoogleSignIn in Frameworks */,
-				0A5D92A2624D14777E8CE4DF /* RevenueCat in Frameworks */,
-				ED20C1FC4F2EF975B320C0AA /* Lottie in Frameworks */,
+				60E18757C6B102D3B3288E16 /* FirebaseRemoteConfig in Frameworks */,
+				0A5D92A2624D14777E8CE4DF /* GoogleSignIn in Frameworks */,
+				ED20C1FC4F2EF975B320C0AA /* RevenueCat in Frameworks */,
+				13F177235385AA4723C5D7B1 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +235,8 @@
 			children = (
 				B401E13AA36EB6DC5E874ACE /* PaywallViewController.swift */,
 				9D5AC4479E009A2AE23ABE54 /* PlanCardView.swift */,
+				677E8871EE9279D0D0F05B8B /* SingleOfferPaywallViewController.swift */,
+				77CACD8858A72A8E273814D4 /* SinglePlanInfoView.swift */,
 			);
 			path = Paywall;
 			sourceTree = "<group>";
@@ -344,6 +356,7 @@
 		C46B2213C394949CD85C1F98 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				971CAAED5A5A6F535AAAA5A1 /* LanguageListViewController.swift */,
 				F3F36A6EB3F2DF6569ED7FCD /* LegalDocumentViewController.swift */,
 				F4FF45AE24E1C0C8B8E2B778 /* ProfileViewController.swift */,
 			);
@@ -361,11 +374,13 @@
 				F581904B808971F8641D5834 /* FaceDetectionService.swift */,
 				3AB3B2CD5D42443811662992 /* FavoritesService.swift */,
 				6AE4043E09EBE6C71B7866A1 /* GenerationService.swift */,
+				F860E0A38B3AD7B9FB5F5990 /* LanguageManager.swift */,
 				33A10DBE165F8647E227B401 /* LimitedOfferService.swift */,
 				0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */,
 				685067C7053AEEEE40921493 /* MilestoneRemoteStore.swift */,
 				5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */,
 				8BB02E08C9C5AA2AD47F4954 /* RecentPhotosStore.swift */,
+				7D613467A40823A4235FE919 /* RemoteConfigService.swift */,
 				AEB5CB643C185A1C1AE7BCE3 /* RemoteImageLoader.swift */,
 				EE959EC4B4D654E0F55DFFCE /* RevenueCatService.swift */,
 				C7B4581C465A1838F53DD09E /* ThemeService.swift */,
@@ -413,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				8BBA6E1ABB064D0DE29C1680 /* Assets.xcassets */,
-				00E56D3F3028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit */,
 				E0DF4304993EBEF084B4A1F9 /* GoogleService-Info.plist */,
 				96FADCB8E9007F93A5048803 /* loader.json */,
 				39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */,
@@ -444,6 +458,7 @@
 				157EAC592D94E34E6BBAC7A6 /* FirebaseFirestore */,
 				A2C6207FCF216F5D6A6D11EE /* FirebaseStorage */,
 				3AEEA9B5373A6401E20B4C0F /* FirebaseFunctions */,
+				041E692FFB32493E0700E63B /* FirebaseRemoteConfig */,
 				9707E3FDBF5C7D4BD045D225 /* GoogleSignIn */,
 				60051513C518D89ABE44DCBD /* RevenueCat */,
 				5668FD7C01179FA9FA62E6BA /* Lottie */,
@@ -500,7 +515,6 @@
 				8AA85BE0AC10C920B0FF214D /* Assets.xcassets in Resources */,
 				38A898FC7BFD4CDE27B3D429 /* GoogleService-Info.plist in Resources */,
 				5A53E64A235ECFC90EE0E9EA /* Localizable.xcstrings in Resources */,
-				00E56D403028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */,
 				0E5C728A5778C23B62738901 /* Nunito-Variable.ttf in Resources */,
 				B704F24B00AD0F67014D1B82 /* Quicksand-Variable.ttf in Resources */,
 				AE32DF321A6F6A8B695D5461 /* loader.json in Resources */,
@@ -538,6 +552,8 @@
 				1A8C9AF8C6F39D22ACE5E063 /* GradientPillButton.swift in Sources */,
 				F2E6F07689234FCAC6BC9518 /* HapticFeedback.swift in Sources */,
 				68246C64D137059CCEC26B70 /* HomeViewController.swift in Sources */,
+				DD93AF7BB476D964BDA86214 /* LanguageListViewController.swift in Sources */,
+				ED404A5447F7EEEBBCD6740C /* LanguageManager.swift in Sources */,
 				BAAA126E836FFAB6FE6B1F1D /* LegalDocumentViewController.swift in Sources */,
 				7D04A0039401A9F8F5B4946C /* LimitedOfferPopupViewController.swift in Sources */,
 				17454173B20DFE6CAF4372F8 /* LimitedOfferService.swift in Sources */,
@@ -564,10 +580,13 @@
 				6AA63994F7CD7016EDAB52CD /* ProfileViewController.swift in Sources */,
 				FFFFEC0B83179D22EBF13833 /* RecentPhotoCell.swift in Sources */,
 				68A62D8622F7FA020390A8DB /* RecentPhotosStore.swift in Sources */,
+				5907A6E87B897A7D1492C40D /* RemoteConfigService.swift in Sources */,
 				DF8DA5C95B7549485507D171 /* RemoteImageLoader.swift in Sources */,
 				9A213140F20F3BA2FF4AAA0C /* ResultViewController.swift in Sources */,
 				AE598B1CAD6A2E81D1FFC9E6 /* RevenueCatService.swift in Sources */,
 				82DC9E423196C6A6D4EFC69B /* SceneDelegate.swift in Sources */,
+				6211543782C40E2A5E9BAD53 /* SingleOfferPaywallViewController.swift in Sources */,
+				A5D7EBDC2E2453ABC629B6F8 /* SinglePlanInfoView.swift in Sources */,
 				5E1D41FC9F8A2A20943578A9 /* SplashViewController.swift in Sources */,
 				5C72511AFF0F405271B7AB68 /* SubscriptionPlan.swift in Sources */,
 				385F7597977F5CDB864983EE /* Theme.swift in Sources */,
@@ -810,6 +829,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		041E692FFB32493E0700E63B /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3D918BF1A59ADE14CF01DD3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
 		157EAC592D94E34E6BBAC7A6 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C3D918BF1A59ADE14CF01DD3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

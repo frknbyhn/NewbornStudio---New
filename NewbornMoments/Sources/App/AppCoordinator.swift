@@ -4,12 +4,17 @@ import UIKit
 /// Anonymous-first: no login wall. Real auth/paywall/home wiring lands in later phases;
 /// this coordinator is the single place that routing decision changes, so nothing else needs to know.
 final class AppCoordinator {
+    /// Set on init, weakly held — lets LanguageManager (and anything else outside the normal
+    /// flow) trigger a full UI rebuild without every caller threading the coordinator through.
+    private(set) static weak var shared: AppCoordinator?
+
     private let window: UIWindow
     private let defaults = UserDefaults.standard
     private let hasOnboardedKey = "hasCompletedOnboarding"
 
     init(window: UIWindow) {
         self.window = window
+        AppCoordinator.shared = self
     }
 
     func start() {
@@ -18,6 +23,10 @@ final class AppCoordinator {
         if let debugScreen = ProcessInfo.processInfo.environment["NS_DEBUG_SCREEN"] {
             switch debugScreen {
             case "paywall": window.rootViewController = UIViewController(); showPaywall(); return
+            case "single-offer-paywall":
+                window.rootViewController = UIViewController()
+                window.rootViewController?.present(SingleOfferPaywallViewController.presented(), animated: false)
+                return
             case "home": showHome(); return
             case "coins":
                 window.rootViewController = CoinPackageViewController.presented()
@@ -95,12 +104,15 @@ final class AppCoordinator {
         window.rootViewController = splash
     }
 
+    /// Returning-session routing: Remote Config's "frun" flag (see RemoteConfigService) decides
+    /// whether the single-offer paywall shows again this session, or the user lands straight on
+    /// Home — checked fresh every launch, not just the first one.
     private func proceedPastSplash() {
-        if defaults.bool(forKey: hasOnboardedKey) {
-            showHome()
-        } else {
+        guard defaults.bool(forKey: hasOnboardedKey) else {
             showOnboarding()
+            return
         }
+        presentSingleOfferPaywallIfNeeded()
     }
 
     private func showOnboarding() {
@@ -108,13 +120,46 @@ final class AppCoordinator {
         onboarding.onFinished = { [weak self] in
             guard let self else { return }
             self.defaults.set(true, forKey: self.hasOnboardedKey)
-            self.showPaywall()
+            self.presentSingleOfferPaywallIfNeeded()
         }
         window.rootViewController = onboarding
     }
 
     private func showPaywall() {
         let paywall = PaywallViewController.presented()
+        paywall.onDismiss = { [weak self] in
+            self?.showHome()
+        }
+        window.rootViewController?.present(paywall, animated: true)
+    }
+
+    /// Gate for the single-offer paywall: "frun" must be on AND the user must not already be
+    /// subscribed (RevenueCatService.isPremium — an already-paying user never needs to see it).
+    /// Whichever screen is currently on screen (onboarding the first time, splash on later
+    /// sessions) stays put while this async check runs, so Home never appears even for a frame
+    /// before the decision is made.
+    private func presentSingleOfferPaywallIfNeeded() {
+        guard RemoteConfigService.showSingleOfferPaywallOnLaunch else {
+            showHome()
+            return
+        }
+        RevenueCatService.isPremium { [weak self] isPremium in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                if isPremium {
+                    self.showHome()
+                } else {
+                    self.showSingleOfferPaywall()
+                }
+            }
+        }
+    }
+
+    /// Presented on top of whatever's currently the root (never swaps to Home first) — closing
+    /// it, purchasing, or restoring all funnel through onDismiss into showHome(), same pattern as
+    /// showPaywall() above.
+    private func showSingleOfferPaywall() {
+        let paywall = SingleOfferPaywallViewController.presented()
         paywall.onDismiss = { [weak self] in
             self?.showHome()
         }
@@ -128,6 +173,18 @@ final class AppCoordinator {
             return
         }
         UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve) {
+            self.window.rootViewController = tabBar
+        }
+    }
+
+    /// Called by LanguageManager right after an in-app language switch — rebuilds the whole tab
+    /// bar (and therefore every screen's labels) from scratch against the new active language,
+    /// landing back on Profile since that's the only place this can be triggered from.
+    func reloadForLanguageChange() {
+        let tabBar = MainTabBarController()
+        tabBar.loadViewIfNeeded()
+        tabBar.selectedIndex = 3
+        UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve) {
             self.window.rootViewController = tabBar
         }
     }

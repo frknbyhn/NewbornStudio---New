@@ -55,6 +55,7 @@ final class HomeViewController: UIViewController {
         // for the screen. Never reachable in a release build.
         if ProcessInfo.processInfo.environment["NS_DEBUG_SCREEN"] != nil { return }
         #endif
+        guard RemoteConfigService.isLimitedTimeOfferEnabled else { return }
         guard let state = LimitedOfferService.popupStateForThisLaunch() else { return }
         present(LimitedOfferPopupViewController(state: state), animated: true)
     }

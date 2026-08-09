@@ -61,6 +61,20 @@ enum RevenueCatService {
         }
     }
 
+    /// Cheap "is this user already subscribed?" check — same definition as restoreTapped's own
+    /// check (a non-empty active entitlement set). Used by AppCoordinator to skip the
+    /// single-offer paywall for anyone who's already subscribed. RevenueCat serves this from its
+    /// local cache when possible, so this rarely if ever hits the network.
+    static func isPremium(completion: @escaping (Bool) -> Void) {
+        Purchases.shared.getCustomerInfo { customerInfo, error in
+            guard let customerInfo, error == nil else {
+                completion(false)
+                return
+            }
+            completion(!customerInfo.entitlements.active.isEmpty)
+        }
+    }
+
     static func restore(completion: @escaping (Result<CustomerInfo, Error>) -> Void) {
         Purchases.shared.restorePurchases { customerInfo, error in
             if let error {
