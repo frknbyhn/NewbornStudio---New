@@ -31,11 +31,11 @@ struct Milestone: Identifiable {
     /// MilestoneCaptureViewController) — nil for custom, user-typed milestones since there's no
     /// curated idea to suggest.
     var aiPrompt: String?
-    /// Set once the milestone is captured — the actual photo (or AI result) the user saved.
-    /// Populated immediately after a local pick/generation (no network round trip needed to
-    /// show it); `photoUrl` is the durable Firebase Storage URL backing it, used to redisplay
-    /// after a relaunch (see MilestoneStore/MilestoneRemoteStore) since UIImage itself is never
-    /// persisted.
+    /// Deliberately unused as a long-term store — `MilestoneStore.capture` seeds
+    /// `RemoteImageLoader`'s cache with the freshly-picked image instead of writing it here, so
+    /// `MilestoneStore.shared` (alive for the whole app session) doesn't accumulate every
+    /// captured milestone's full-resolution UIImage forever. `photoUrl` is the durable Firebase
+    /// Storage URL used to redisplay via RemoteImageLoader (see MilestoneDetailViewController).
     var photo: UIImage?
     var photoUrl: String?
     /// Set once, the moment this milestone is first captured — never overwritten by a later

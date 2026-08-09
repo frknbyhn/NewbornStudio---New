@@ -52,4 +52,16 @@ enum RemoteImageLoader {
         task.resume()
         return task
     }
+
+    /// Seeds the cache with an image the caller already has in memory (e.g. a milestone photo
+    /// right after capture, or a Wiro result right after generation) — so the very first
+    /// `load(url:)` for that URL hits the cache instead of re-fetching bytes we just uploaded.
+    /// The alternative (holding onto the UIImage in whatever long-lived model owns the URL,
+    /// forever, "just in case") is what this exists to avoid — see MilestoneStore.capture.
+    static func store(_ image: UIImage, for url: URL) {
+        memoryCache.setObject(image, forKey: url as NSURL)
+        guard let data = image.jpegData(compressionQuality: 0.9) else { return }
+        let path = diskPath(for: url)
+        ioQueue.async { try? data.write(to: path) }
+    }
 }

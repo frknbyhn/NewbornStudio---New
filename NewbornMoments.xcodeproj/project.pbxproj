@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E56D403028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D3F3028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit */; };
 		02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */; };
 		063ECD3FA8141703C1435B90 /* MilestoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */; };
 		099C77DF63E65C5CE1182B88 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DFDDF69809F17E3A30BCC /* CustomStyleViewController.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00E56D3F3028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Newborn Moments: Baby Photo AI.storekit"; sourceTree = "<group>"; };
 		0D66A5C08C09C285481E160F /* PassThroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughStackView.swift; sourceTree = "<group>"; };
 		0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		119040D23920402A6D386228 /* MilestoneListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListsViewController.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				8BBA6E1ABB064D0DE29C1680 /* Assets.xcassets */,
+				00E56D3F3028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit */,
 				E0DF4304993EBEF084B4A1F9 /* GoogleService-Info.plist */,
 				96FADCB8E9007F93A5048803 /* loader.json */,
 				39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */,
@@ -497,6 +500,7 @@
 				8AA85BE0AC10C920B0FF214D /* Assets.xcassets in Resources */,
 				38A898FC7BFD4CDE27B3D429 /* GoogleService-Info.plist in Resources */,
 				5A53E64A235ECFC90EE0E9EA /* Localizable.xcstrings in Resources */,
+				00E56D403028050500B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */,
 				0E5C728A5778C23B62738901 /* Nunito-Variable.ttf in Resources */,
 				B704F24B00AD0F67014D1B82 /* Quicksand-Variable.ttf in Resources */,
 				AE32DF321A6F6A8B695D5461 /* loader.json in Resources */,

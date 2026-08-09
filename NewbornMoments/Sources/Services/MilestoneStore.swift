@@ -79,17 +79,28 @@ final class MilestoneStore {
         let isFirstCapture = lists[listIndex].milestones[milestoneIndex].capturedAt == nil
         let capturedAt = lists[listIndex].milestones[milestoneIndex].capturedAt ?? Date()
         lists[listIndex].milestones[milestoneIndex].state = .done
-        lists[listIndex].milestones[milestoneIndex].photo = photo
+        // Deliberately NOT storing `photo` here — `MilestoneStore.shared` lives for the whole
+        // app session, so a full-resolution UIImage set on `.photo` and never cleared would
+        // accumulate indefinitely as the user captures more milestones. Instead, seed
+        // RemoteImageLoader's cache with these exact bytes for the eventual URL, so the first
+        // `RemoteImageLoader.load(url:)` for it (MilestoneDetailViewController.loadPhoto) is
+        // still an instant cache hit — same "no flash" UX, bounded/evictable storage.
         lists[listIndex].milestones[milestoneIndex].photoUrl = photoUrl
         lists[listIndex].milestones[milestoneIndex].capturedAt = capturedAt
 
         let title = lists[listIndex].isStandard ? nil : lists[listIndex].milestones[milestoneIndex].title
         let capturedAtToPersist = isFirstCapture ? capturedAt : nil
         if let photoUrl {
+            if let url = URL(string: photoUrl) {
+                RemoteImageLoader.store(photo, for: url)
+            }
             MilestoneRemoteStore.saveMilestone(id: milestoneId, listId: listId, title: title, state: .done, photoUrl: photoUrl, capturedAt: capturedAtToPersist)
         } else {
             MilestoneRemoteStore.uploadPhoto(photo, milestoneId: milestoneId) { [weak self] uploadedUrl in
                 guard let self else { return }
+                if let uploadedUrl, let url = URL(string: uploadedUrl) {
+                    RemoteImageLoader.store(photo, for: url)
+                }
                 if let index = self.lists.firstIndex(where: { $0.id == listId }),
                    let mIndex = self.lists[index].milestones.firstIndex(where: { $0.id == milestoneId }) {
                     self.lists[index].milestones[mIndex].photoUrl = uploadedUrl

@@ -22,9 +22,14 @@ enum FaceCheck {
             overlay.centerYAnchor.constraint(equalTo: viewController.view.centerYAnchor)
         ])
 
-        FaceDetectionService.detectFaceCount(in: image) { outcome in
+        // [weak viewController] — Vision runs in well under a second in practice, but there's
+        // no hard bound on it, and a strong capture here would keep a screen the user already
+        // left alive (liable to try presenting an alert on top of whatever replaced it) until
+        // it resolves.
+        FaceDetectionService.detectFaceCount(in: image) { [weak viewController] outcome in
             dim.removeFromSuperview()
             overlay.removeFromSuperview()
+            guard let viewController else { return }
             switch outcome {
             case .ok:
                 onPassed()

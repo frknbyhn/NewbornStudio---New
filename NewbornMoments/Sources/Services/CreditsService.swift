@@ -66,8 +66,12 @@ enum CreditsService {
     /// button, N credits for N items) and wants to route to the paywall/coin screen itself
     /// instead of letting the user tap through only to have the server reject it.
     static func requireCredits(atLeast amount: Int, presentingFrom viewController: UIViewController, onAllowed: @escaping () -> Void) {
-        fetchStatus { result in
+        // [weak viewController] — this is a network round trip (Firestore), not instant, so a
+        // strong capture here would keep a screen the user already backed out of alive (and
+        // liable to try presenting on top of whatever replaced it) until the fetch resolves.
+        fetchStatus { [weak viewController] result in
             DispatchQueue.main.async {
+                guard let viewController else { return }
                 switch result {
                 case .success(let status):
                     if status.totalCredits >= amount {
