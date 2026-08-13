@@ -48708,6 +48708,402 @@
           }
         }
       }
+    },
+    "Face the camera directly in good lighting so your face is clearly visible. Avoid photos where your face is turned away, covered, or blurry." : {
+      "comment" : "AI consent sheet photo-quality guidance",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واجه الكاميرا مباشرةً في إضاءة جيدة بحيث يظهر وجهك بوضوح. تجنّب الصور التي يكون فيها وجهك ملتفتًا أو مغطى أو غير واضح."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mira directament a la càmera amb bona llum perquè la teva cara es vegi clarament. Evita fotos on la cara estigui girada, tapada o borrosa."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dívejte se přímo do objektivu při dobrém osvětlení, aby byl váš obličej jasně vidět. Vyhněte se fotkám, kde je obličej odvrácený, zakrytý nebo rozmazaný."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se direkte ind i kameraet i god belysning, så dit ansigt er tydeligt synligt. Undgå billeder, hvor ansigtet er vendt væk, dækket til eller sløret."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blicke bei guter Beleuchtung direkt in die Kamera, damit dein Gesicht klar zu sehen ist. Vermeide Fotos, auf denen dein Gesicht abgewandt, verdeckt oder unscharf ist."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κοίτα απευθείας την κάμερα με καλό φωτισμό, ώστε το πρόσωπό σου να φαίνεται καθαρά. Απόφυγε φωτογραφίες όπου το πρόσωπο είναι στραμμένο αλλού, καλυμμένο ή θολό."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mira directamente a la cámara con buena luz para que tu cara se vea con claridad. Evita fotos en las que la cara esté girada, cubierta o borrosa."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katso suoraan kameraan hyvässä valaistuksessa, jotta kasvosi näkyvät selvästi. Vältä kuvia, joissa kasvot ovat poispäin, peitossa tai epäterävät."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regarde directement l'objectif avec un bon éclairage pour que ton visage soit bien visible. Évite les photos où le visage est de côté, masqué ou flou."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הבט ישירות אל המצלמה בתאורה טובה כך שהפנים ייראו בבירור. הימנע מתמונות שבהן הפנים מוסטות, מכוסות או מטושטשות."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अच्छी रोशनी में सीधे कैमरे की ओर देखें ताकि आपका चेहरा साफ़ दिखे। ऐसी तस्वीरों से बचें जिनमें चेहरा दूसरी ओर मुड़ा, ढका या धुंधला हो।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gledaj izravno u kameru uz dobro osvjetljenje tako da ti se lice jasno vidi. Izbjegavaj fotografije na kojima je lice okrenuto, prekriveno ili mutno."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nézz egyenesen a kamerába jó megvilágításban, hogy az arcod tisztán látszódjon. Kerüld az olyan képeket, ahol az arc elfordul, takarva van vagy elmosódott."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hadapkan wajah lurus ke kamera dengan pencahayaan yang baik agar wajah terlihat jelas. Hindari foto yang wajahnya menoleh, tertutup, atau buram."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda dritto nell'obiettivo con una buona illuminazione, così il tuo viso è ben visibile. Evita foto in cui il viso è girato, coperto o sfocato."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "明るい場所でカメラをまっすぐ見て、顔がはっきり写るようにしてください。顔がそむいていたり、隠れていたり、ぼやけている写真は避けてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "밝은 곳에서 카메라를 정면으로 바라보아 얼굴이 또렷하게 보이도록 하세요. 얼굴이 돌아가 있거나 가려지거나 흐릿한 사진은 피하세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hadap kamera secara terus dengan pencahayaan yang baik supaya wajah anda kelihatan jelas. Elakkan foto yang wajahnya berpaling, terlindung atau kabur."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se rett inn i kameraet i godt lys slik at ansiktet vises tydelig. Unngå bilder der ansiktet er vendt bort, dekket til eller uskarpt."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kijk recht in de camera met goed licht, zodat je gezicht duidelijk zichtbaar is. Vermijd foto's waarop het gezicht is afgewend, bedekt of wazig."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patrz prosto w obiektyw przy dobrym oświetleniu, aby twarz była wyraźnie widoczna. Unikaj zdjęć, na których twarz jest odwrócona, zasłonięta lub rozmyta."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olhe diretamente para a câmera com boa iluminação para que o rosto fique bem visível. Evite fotos em que o rosto esteja virado, coberto ou desfocado."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privește direct în obiectiv, cu lumină bună, astfel încât fața să fie clar vizibilă. Evită fotografiile în care fața este întoarsă, acoperită sau neclară."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Смотрите прямо в камеру при хорошем освещении, чтобы лицо было чётко видно. Избегайте фото, где лицо отвёрнуто, закрыто или размыто."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozeraj sa priamo do objektívu pri dobrom osvetlení, aby bola tvár jasne vidieť. Vyhni sa fotkám, na ktorých je tvár odvrátená, zakrytá alebo rozmazaná."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titta rakt in i kameran i bra ljus så att ansiktet syns tydligt. Undvik bilder där ansiktet är bortvänt, dolt eller suddigt."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หันหน้าเข้าหากล้องโดยตรงในที่ที่มีแสงดีเพื่อให้เห็นใบหน้าชัดเจน หลีกเลี่ยงรูปที่ใบหน้าหันไปทางอื่น ถูกบัง หรือเบลอ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yüzünüz net görünecek şekilde iyi ışıkta doğrudan kameraya bakın. Yüzün başka yöne dönük, kapalı veya bulanık olduğu fotoğraflardan kaçının."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дивіться прямо в камеру за доброго освітлення, щоб обличчя було чітко видно. Уникайте фото, де обличчя відвернуте, закрите або розмите."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhìn thẳng vào máy ảnh trong điều kiện đủ sáng để khuôn mặt hiện rõ. Tránh ảnh mà khuôn mặt quay đi, bị che hoặc bị mờ."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在光线充足的环境下正对镜头，让面部清晰可见。避免面部转开、被遮挡或模糊的照片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在光線充足的環境下正對鏡頭，讓臉部清晰可見。避免臉部轉開、被遮擋或模糊的照片。"
+          }
+        }
+      }
+    },
+    "Your photo is sent securely to wiro.ai to generate your portrait, and is permanently deleted from our servers as soon as your result is ready." : {
+      "comment" : "AI consent sheet data-processing disclosure naming the processor (wiro.ai)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تُرسَل صورتك بأمان إلى wiro.ai لإنشاء صورتك الفنية، وتُحذف نهائيًا من خوادمنا بمجرد أن تصبح النتيجة جاهزة."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La teva foto s'envia de manera segura a wiro.ai per generar el teu retrat i s'elimina permanentment dels nostres servidors tan bon punt el resultat està a punt."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše fotka se bezpečně odešle na wiro.ai k vytvoření portrétu a jakmile je výsledek hotový, trvale se z našich serverů smaže."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dit billede sendes sikkert til wiro.ai for at skabe dit portræt og slettes permanent fra vores servere, så snart resultatet er klar."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Foto wird sicher an wiro.ai gesendet, um dein Porträt zu erstellen, und wird dauerhaft von unseren Servern gelöscht, sobald dein Ergebnis fertig ist."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η φωτογραφία σου στέλνεται με ασφάλεια στο wiro.ai για τη δημιουργία του πορτρέτου σου και διαγράφεται οριστικά από τους διακομιστές μας μόλις είναι έτοιμο το αποτέλεσμα."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu foto se envía de forma segura a wiro.ai para generar tu retrato y se elimina permanentemente de nuestros servidores en cuanto el resultado está listo."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvasi lähetetään turvallisesti wiro.ai-palveluun muotokuvasi luomiseksi, ja se poistetaan pysyvästi palvelimiltamme heti, kun tulos on valmis."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta photo est envoyée en toute sécurité à wiro.ai pour générer ton portrait, puis supprimée définitivement de nos serveurs dès que ton résultat est prêt."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התמונה שלך נשלחת באופן מאובטח אל wiro.ai כדי ליצור את הדיוקן שלך, ונמחקת לצמיתות מהשרתים שלנו ברגע שהתוצאה מוכנה."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आपकी फ़ोटो आपका पोर्ट्रेट बनाने के लिए सुरक्षित रूप से wiro.ai को भेजी जाती है, और परिणाम तैयार होते ही हमारे सर्वर से स्थायी रूप से हटा दी जाती है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tvoja se fotografija sigurno šalje na wiro.ai radi izrade portreta i trajno se briše s naših poslužitelja čim je rezultat gotov."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A fotódat biztonságosan elküldjük a wiro.ai szolgáltatásnak a portréd elkészítéséhez, és amint az eredmény elkészül, véglegesen töröljük a szervereinkről."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto Anda dikirim dengan aman ke wiro.ai untuk membuat potret Anda, dan dihapus permanen dari server kami segera setelah hasilnya siap."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tua foto viene inviata in modo sicuro a wiro.ai per generare il tuo ritratto e viene eliminata definitivamente dai nostri server non appena il risultato è pronto."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "あなたの写真はポートレートを生成するために wiro.ai へ安全に送信され、結果ができ次第、当社のサーバーから完全に削除されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "사진은 인물 사진을 생성하기 위해 wiro.ai로 안전하게 전송되며, 결과가 준비되는 즉시 당사 서버에서 영구적으로 삭제됩니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto anda dihantar dengan selamat ke wiro.ai untuk menjana potret anda, dan dipadam secara kekal daripada pelayan kami sebaik sahaja hasilnya sedia."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildet ditt sendes sikkert til wiro.ai for å lage portrettet ditt, og slettes permanent fra serverne våre så snart resultatet er klart."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je foto wordt veilig naar wiro.ai gestuurd om je portret te maken en wordt permanent van onze servers verwijderd zodra je resultaat klaar is."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje zdjęcie jest bezpiecznie wysyłane do wiro.ai w celu utworzenia portretu i trwale usuwane z naszych serwerów, gdy tylko wynik będzie gotowy."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A sua foto é enviada com segurança para o wiro.ai para gerar o seu retrato e é eliminada permanentemente dos nossos servidores assim que o resultado estiver pronto."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografia ta este trimisă în siguranță către wiro.ai pentru a-ți crea portretul și este ștearsă definitiv de pe serverele noastre imediat ce rezultatul este gata."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваше фото безопасно отправляется в wiro.ai для создания портрета и безвозвратно удаляется с наших серверов, как только результат готов."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tvoja fotka sa bezpečne odošle na wiro.ai na vytvorenie portrétu a hneď po dokončení výsledku sa natrvalo odstráni z našich serverov."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ditt foto skickas säkert till wiro.ai för att skapa ditt porträtt och raderas permanent från våra servrar så snart resultatet är klart."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "รูปของคุณจะถูกส่งอย่างปลอดภัยไปยัง wiro.ai เพื่อสร้างภาพพอร์ตเทรตของคุณ และจะถูกลบออกจากเซิร์ฟเวอร์ของเราอย่างถาวรทันทีที่ผลลัพธ์พร้อม"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoğrafınız, portrenizi oluşturmak için wiro.ai'ye güvenli şekilde gönderilir ve sonucunuz hazır olur olmaz sunucularımızdan kalıcı olarak silinir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваше фото безпечно надсилається до wiro.ai для створення портрета й остаточно видаляється з наших серверів, щойно результат готовий."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ảnh của bạn được gửi an toàn đến wiro.ai để tạo chân dung, và bị xóa vĩnh viễn khỏi máy chủ của chúng tôi ngay khi kết quả sẵn sàng."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你的照片会安全地发送到 wiro.ai 以生成你的肖像，并在结果准备就绪后立即从我们的服务器永久删除。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你的相片會安全地傳送至 wiro.ai 以生成你的肖像，並在結果準備就緒後立即從我們的伺服器永久刪除。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

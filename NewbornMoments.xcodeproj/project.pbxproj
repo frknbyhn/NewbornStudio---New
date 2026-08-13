@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E56D443028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D433028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit */; };
 		02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */; };
 		063ECD3FA8141703C1435B90 /* MilestoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */; };
 		099C77DF63E65C5CE1182B88 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DFDDF69809F17E3A30BCC /* CustomStyleViewController.swift */; };
@@ -48,6 +47,7 @@
 		78BC5333F161C42310001AE5 /* PageDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AF5AA257FBBD6968ED0B0 /* PageDotsView.swift */; };
 		7C948EE6119354FFF85FD3BC /* CreateYourOwnStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1990A8483A94FCE7AF8C35A8 /* CreateYourOwnStyleCell.swift */; };
 		7D04A0039401A9F8F5B4946C /* LimitedOfferPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF50485CC2CD40DF534350 /* LimitedOfferPopupViewController.swift */; };
+		7D5C7C963BDBF92A557925FE /* AIConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B893F3FADF4D3413EFBC9 /* AIConsentViewController.swift */; };
 		7D977BD47AC1F98FF2D81931 /* MilestoneCollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E250C2531E33C9B7E5FE85 /* MilestoneCollageViewController.swift */; };
 		82DC9E423196C6A6D4EFC69B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C0B0FDE916547F459E87E /* SceneDelegate.swift */; };
 		8AA85BE0AC10C920B0FF214D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BBA6E1ABB064D0DE29C1680 /* Assets.xcassets */; };
@@ -87,16 +87,17 @@
 		ED20C1FC4F2EF975B320C0AA /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 60051513C518D89ABE44DCBD /* RevenueCat */; };
 		ED404A5447F7EEEBBCD6740C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860E0A38B3AD7B9FB5F5990 /* LanguageManager.swift */; };
 		F2E6F07689234FCAC6BC9518 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613A05B30EAA0D31FB9F482D /* HapticFeedback.swift */; };
+		F47F64C755FCA06E8C72F0FB /* AIConsentGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13854F79E662CA3F1C3AED36 /* AIConsentGate.swift */; };
 		F9CC07416CF647936D9332C9 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 3AEEA9B5373A6401E20B4C0F /* FirebaseFunctions */; };
 		FA193EFA425B7ED8E0379E8E /* ZoomableImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D36383E7463B2945E20A97 /* ZoomableImageViewController.swift */; };
 		FFFFEC0B83179D22EBF13833 /* RecentPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA22F0113FF6C01F123FD69 /* RecentPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00E56D433028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Newborn Moments: Baby Photo AI.storekit"; sourceTree = "<group>"; };
 		0D66A5C08C09C285481E160F /* PassThroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughStackView.swift; sourceTree = "<group>"; };
 		0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		119040D23920402A6D386228 /* MilestoneListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListsViewController.swift; sourceTree = "<group>"; };
+		13854F79E662CA3F1C3AED36 /* AIConsentGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIConsentGate.swift; sourceTree = "<group>"; };
 		16BEAB94B5F178F75C1C0D66 /* AnimationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		1990A8483A94FCE7AF8C35A8 /* CreateYourOwnStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateYourOwnStyleCell.swift; sourceTree = "<group>"; };
 		1BC6D27C8FAAF4352BA2CF99 /* CreditsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsService.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		43C1150AC92A032212DD0BCB /* MilestoneCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCaptureViewController.swift; sourceTree = "<group>"; };
 		444A95432FFD592628BA3793 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4858B6B010CABA37DF9C84BE /* CollageAnimationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageAnimationService.swift; sourceTree = "<group>"; };
+		533B893F3FADF4D3413EFBC9 /* AIConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIConsentViewController.swift; sourceTree = "<group>"; };
 		5958942B6B01D24426EC3716 /* LegalLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalLinks.swift; sourceTree = "<group>"; };
 		5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneStore.swift; sourceTree = "<group>"; };
 		60E13DA50743F1950597D64B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 		677E8871EE9279D0D0F05B8B /* SingleOfferPaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOfferPaywallViewController.swift; sourceTree = "<group>"; };
 		685067C7053AEEEE40921493 /* MilestoneRemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneRemoteStore.swift; sourceTree = "<group>"; };
 		6AE4043E09EBE6C71B7866A1 /* GenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationService.swift; sourceTree = "<group>"; };
-		6DB1828CC137CB53641A8CD7 /* NewbornMoments.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NewbornMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DB1828CC137CB53641A8CD7 /* NewbornMoments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewbornMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		727AF5AA257FBBD6968ED0B0 /* PageDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDotsView.swift; sourceTree = "<group>"; };
 		758225B9C954C552235CF6A5 /* GradientPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPillButton.swift; sourceTree = "<group>"; };
 		772779D512D8CB2C537158FA /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		189E804C67F74496BFB6947C /* PhotoUpload */ = {
 			isa = PBXGroup;
 			children = (
+				533B893F3FADF4D3413EFBC9 /* AIConsentViewController.swift */,
 				84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */,
 			);
 			path = PhotoUpload;
@@ -367,6 +370,7 @@
 		DB44B1D268D842FCF6F3E232 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				13854F79E662CA3F1C3AED36 /* AIConsentGate.swift */,
 				16BEAB94B5F178F75C1C0D66 /* AnimationService.swift */,
 				356B6585FDE6D281439A32C4 /* AuthService.swift */,
 				4858B6B010CABA37DF9C84BE /* CollageAnimationService.swift */,
@@ -431,7 +435,6 @@
 			children = (
 				8BBA6E1ABB064D0DE29C1680 /* Assets.xcassets */,
 				E0DF4304993EBEF084B4A1F9 /* GoogleService-Info.plist */,
-				00E56D433028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit */,
 				96FADCB8E9007F93A5048803 /* loader.json */,
 				39BA00FE3D958BC7D81C7DFE /* Localizable.xcstrings */,
 				E1002772CB479E6910326CEF /* Fonts */,
@@ -478,12 +481,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-					65ED6814FF37A9EE4A5F8A37 = {
-						DevelopmentTeam = X4R77QQ25M;
-						ProvisioningStyle = Automatic;
-					};
-				};
 			};
 			buildConfigurationList = 236331894215E3BEC94513DC /* Build configuration list for PBXProject "NewbornMoments" */;
 			developmentRegion = en;
@@ -518,7 +515,6 @@
 				8AA85BE0AC10C920B0FF214D /* Assets.xcassets in Resources */,
 				38A898FC7BFD4CDE27B3D429 /* GoogleService-Info.plist in Resources */,
 				5A53E64A235ECFC90EE0E9EA /* Localizable.xcstrings in Resources */,
-				00E56D443028A88800B59A9B /* Newborn Moments: Baby Photo AI.storekit in Resources */,
 				0E5C728A5778C23B62738901 /* Nunito-Variable.ttf in Resources */,
 				B704F24B00AD0F67014D1B82 /* Quicksand-Variable.ttf in Resources */,
 				AE32DF321A6F6A8B695D5461 /* loader.json in Resources */,
@@ -532,6 +528,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47F64C755FCA06E8C72F0FB /* AIConsentGate.swift in Sources */,
+				7D5C7C963BDBF92A557925FE /* AIConsentViewController.swift in Sources */,
 				159DAA535117DBD8CFAF6A63 /* AnimatedVideoViewController.swift in Sources */,
 				C9FA90F5CFBE9AC853EC6F60 /* AnimationService.swift in Sources */,
 				DB06E825142DF8F36DDBBD57 /* AppCoordinator.swift in Sources */,
@@ -611,9 +609,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X4R77QQ25M;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X4R77QQ25M;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = NewbornMoments/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -624,6 +624,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BabyCollages;
 				PRODUCT_NAME = NewbornMoments;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = NewbornMoments;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -755,9 +757,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X4R77QQ25M;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X4R77QQ25M;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = NewbornMoments/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -768,6 +772,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BabyCollages;
 				PRODUCT_NAME = NewbornMoments;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = NewbornMoments;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

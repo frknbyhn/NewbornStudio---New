@@ -35,7 +35,8 @@ async function submitVideoTask({
   resolution = "480p",
   ratio = "adaptive",
   duration = 5,
-  generateAudio = "true",
+  generateAudio = "false", // default off — callers (collage + animate) don't pass it, so this wins
+
   watermark = "false",
   seed = 1,
   camerafixed = "false",

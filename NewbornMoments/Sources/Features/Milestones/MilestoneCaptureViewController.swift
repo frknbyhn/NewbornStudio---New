@@ -69,6 +69,13 @@ final class MilestoneCaptureViewController: UIViewController {
         refreshRecentPhotosStrip()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // AI data-consent gate (5.1.1(i)) — the "generate" path here sends the photo to wiro.ai, so
+        // consent must be granted before any upload. No-op once accepted.
+        AIConsentGate.presentIfNeeded(from: self)
+    }
+
     private var navBarBottom: NSLayoutYAxisAnchor!
 
     private func setUpNavBar() {
@@ -393,11 +400,16 @@ final class MilestoneCaptureViewController: UIViewController {
     /// Only puts the photo into the drop zone preview — does NOT submit. The user still has to
     /// tap Generate/Save, same as a fresh camera/gallery pick.
     private func recentPhotoSelected(_ photo: RecentPhotosStore.Photo) {
-        HapticFeedback.selection()
-        selectedRecentPhotoId = photo.id
-        pickedImage = photo.image
-        RecentPhotosStore.moveToFront(id: photo.id)
-        refreshRecentPhotosStrip()
+        // Same consent gate as picking a new photo — reusing a recent one still feeds it into a
+        // wiro.ai generation, so it can't happen before consent either.
+        AIConsentGate.requireConsent(from: self) { [weak self] in
+            guard let self else { return }
+            HapticFeedback.selection()
+            self.selectedRecentPhotoId = photo.id
+            self.pickedImage = photo.image
+            RecentPhotosStore.moveToFront(id: photo.id)
+            self.refreshRecentPhotosStrip()
+        }
     }
 
     private func recentPhotoDeleted(_ photo: RecentPhotosStore.Photo) {
@@ -416,6 +428,14 @@ final class MilestoneCaptureViewController: UIViewController {
     }
 
     @objc private func dropZoneTapped() {
+        // Hard AI-consent gate: no photo source opens until consent is granted; on grant it
+        // continues straight to the picker.
+        AIConsentGate.requireConsent(from: self) { [weak self] in
+            self?.presentPhotoSourceSheet()
+        }
+    }
+
+    private func presentPhotoSourceSheet() {
         HapticFeedback.light()
         let alert = UIAlertController(title: NSLocalizedString("Add a Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: "Photo source action"), style: .default) { [weak self] _ in

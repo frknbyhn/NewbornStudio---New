@@ -39,6 +39,16 @@ final class PhotoUploadViewController: UIViewController {
         refreshRecentPhotosStrip()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // AI data-consent gate (5.1.1(i)): no photo may be sent to wiro.ai until the user has
+        // accepted once. No-op after that. Never gate the debug auto-generate path.
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["NS_DEBUG_AUTO_GENERATE"] != nil { return }
+        #endif
+        AIConsentGate.presentIfNeeded(from: self)
+    }
+
     private func debugAutoGenerateIfNeeded() {
         #if DEBUG
         // Screenshot/E2E-verification aid only — never reachable in a release build. Lets a
@@ -335,11 +345,16 @@ final class PhotoUploadViewController: UIViewController {
     /// still has to tap Create, same as a fresh camera/gallery pick. Already went through
     /// FaceCheck the first time it was added to the strip, so it isn't re-run here.
     private func recentPhotoSelected(_ photo: RecentPhotosStore.Photo) {
-        HapticFeedback.selection()
-        selectedRecentPhotoId = photo.id
-        pickedImage = photo.image
-        RecentPhotosStore.moveToFront(id: photo.id)
-        refreshRecentPhotosStrip()
+        // Same consent gate as picking a new photo — reusing a recent one still feeds it into a
+        // wiro.ai generation, so it can't happen before consent either.
+        AIConsentGate.requireConsent(from: self) { [weak self] in
+            guard let self else { return }
+            HapticFeedback.selection()
+            self.selectedRecentPhotoId = photo.id
+            self.pickedImage = photo.image
+            RecentPhotosStore.moveToFront(id: photo.id)
+            self.refreshRecentPhotosStrip()
+        }
     }
 
     private func recentPhotoDeleted(_ photo: RecentPhotosStore.Photo) {
@@ -372,6 +387,14 @@ final class PhotoUploadViewController: UIViewController {
     #endif
 
     @objc private func dropZoneTapped() {
+        // Hard AI-consent gate: no photo source opens until consent is granted; on grant it
+        // continues straight to the picker.
+        AIConsentGate.requireConsent(from: self) { [weak self] in
+            self?.presentPhotoSourceSheet()
+        }
+    }
+
+    private func presentPhotoSourceSheet() {
         HapticFeedback.light()
         let alert = UIAlertController(title: NSLocalizedString("Add a Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: "Photo source action"), style: .default) { [weak self] _ in

@@ -33,7 +33,21 @@ final class CustomStyleViewController: UIViewController {
         updateGenerateEnabled()
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        // Otherwise this view-level tap cancels touches on the recent-photo cells (UIControls),
+        // so tapping a recent photo would do nothing — same fix as MilestoneCaptureViewController.
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Refresh every appearance — a photo could have been added or removed since last time.
+        refreshRecentPhotosStrip()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AIConsentGate.presentIfNeeded(from: self)
     }
 
     private func setUpNavBar() {
@@ -173,7 +187,9 @@ final class CustomStyleViewController: UIViewController {
         generateButton.addTarget(self, action: #selector(generateTapped), for: .touchUpInside)
         generateButton.translatesAutoresizingMaskIntoConstraints = false
 
-        let content = UIStackView(arrangedSubviews: [dropZone, promptTitle, promptCard, generateButton])
+        let recentStrip = makeRecentPhotosStrip()
+
+        let content = UIStackView(arrangedSubviews: [dropZone, recentStrip, promptTitle, promptCard, generateButton])
         content.axis = .vertical
         content.spacing = 16
         content.setCustomSpacing(10, after: promptTitle)
@@ -225,6 +241,80 @@ final class CustomStyleViewController: UIViewController {
     }
 
     private var changePhotoLabel: UIView!
+    private var recentStripContainer: UIView!
+    private var recentStripStack: UIStackView!
+    private var selectedRecentPhotoId: String?
+
+    /// Identical to PhotoUploadViewController's "Recently Used" strip: a horizontal scroll of the
+    /// on-device recent photos, tap to reuse (already face-checked when added), swipe/delete to remove.
+    private func makeRecentPhotosStrip() -> UIView {
+        let title = UILabel()
+        title.text = NSLocalizedString("Recently Used", comment: "Recently used photos section title")
+        title.font = Theme.Font.heading(14, weight: 700)
+        title.textColor = Theme.Color.textSecondaryAlt
+
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 10
+        stack.alignment = .center
+        recentStripStack = stack
+
+        let scroll = UIScrollView()
+        scroll.showsHorizontalScrollIndicator = false
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        scroll.addSubview(stack)
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stack.topAnchor.constraint(equalTo: scroll.topAnchor),
+            stack.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
+            stack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
+            stack.heightAnchor.constraint(equalTo: scroll.heightAnchor),
+            scroll.heightAnchor.constraint(equalToConstant: 76)
+        ])
+
+        let container = UIStackView(arrangedSubviews: [title, scroll])
+        container.axis = .vertical
+        container.spacing = 10
+        recentStripContainer = container
+        return container
+    }
+
+    private func refreshRecentPhotosStrip() {
+        recentStripStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        let photos = RecentPhotosStore.recentPhotos()
+        recentStripContainer.isHidden = photos.isEmpty
+        for photo in photos {
+            let cell = RecentPhotoCell(photo: photo, isSelected: photo.id == selectedRecentPhotoId)
+            cell.onSelect = { [weak self] in self?.recentPhotoSelected(photo) }
+            cell.onDelete = { [weak self] in self?.recentPhotoDeleted(photo) }
+            recentStripStack.addArrangedSubview(cell)
+        }
+    }
+
+    /// Only puts the photo into the drop zone preview — does NOT start generation. Already went
+    /// through FaceCheck the first time it was added to the strip, so it isn't re-run here.
+    private func recentPhotoSelected(_ photo: RecentPhotosStore.Photo) {
+        // Same consent gate as picking a new photo — reusing a recent one still feeds it into a
+        // wiro.ai generation, so it can't happen before consent either.
+        AIConsentGate.requireConsent(from: self) { [weak self] in
+            guard let self else { return }
+            HapticFeedback.selection()
+            self.selectedRecentPhotoId = photo.id
+            self.pickedImage = photo.image
+            RecentPhotosStore.moveToFront(id: photo.id)
+            self.refreshRecentPhotosStrip()
+        }
+    }
+
+    private func recentPhotoDeleted(_ photo: RecentPhotosStore.Photo) {
+        HapticFeedback.light()
+        RecentPhotosStore.remove(id: photo.id)
+        if selectedRecentPhotoId == photo.id {
+            selectedRecentPhotoId = nil
+        }
+        refreshRecentPhotosStrip()
+    }
 
     private func updatePreview() {
         guard let pickedImage else {
@@ -253,6 +343,14 @@ final class CustomStyleViewController: UIViewController {
     }
 
     @objc private func dropZoneTapped() {
+        // Hard AI-consent gate: no photo source opens until consent is granted; on grant it
+        // continues straight to the picker.
+        AIConsentGate.requireConsent(from: self) { [weak self] in
+            self?.presentPhotoSourceSheet()
+        }
+    }
+
+    private func presentPhotoSourceSheet() {
         HapticFeedback.light()
         let alert = UIAlertController(title: NSLocalizedString("Add a Photo", comment: "Photo source action sheet title"), message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Take Photo", comment: "Photo source action"), style: .default) { [weak self] _ in
@@ -291,8 +389,12 @@ extension CustomStyleViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
+        selectedRecentPhotoId = nil
         FaceCheck.run(on: image, presentingFrom: self) { [weak self] in
-            self?.pickedImage = image
+            guard let self else { return }
+            self.pickedImage = image
+            RecentPhotosStore.add(image)
+            self.refreshRecentPhotosStrip()
         }
     }
 
