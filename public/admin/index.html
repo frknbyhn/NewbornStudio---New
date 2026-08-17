@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Newborn Moments — Admin</title>
+<style>
+  :root {
+    --cream: #FFFBF7;
+    --warm: #F6EFEA;
+    --taupe: #E9E2DA;
+    --text: #463A3F;
+    --text-alt: #4A3F44;
+    --text-secondary: #A38C90;
+    --text-secondary-alt: #8C7D80;
+    --accent-start: #F4A6B3;
+    --accent-end: #E5738D;
+    --success: #4FA07C;
+    --success-bg: #E0F3EA;
+    --danger: #C0554E;
+    --danger-bg: #FBE4E2;
+    --purple: #7A63C4;
+    --purple-bg: #EDE7FB;
+    --coin: #E8A93C;
+    --coin-bg: #FFF3D9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--warm);
+    color: var(--text);
+  }
+  .hidden { display: none !important; }
+
+  /* ---------- Login ---------- */
+  #loginScreen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 20px 50px rgba(70,58,63,0.12);
+  }
+  .login-card h1 {
+    font-size: 20px;
+    margin: 0 0 6px;
+    color: var(--text-alt);
+  }
+  .login-card p {
+    margin: 0 0 24px;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  input[type="email"], input[type="password"], input[type="text"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 11px 13px;
+    border-radius: 12px;
+    border: 1.5px solid var(--taupe);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text-alt);
+    background: var(--cream);
+    margin-bottom: 12px;
+  }
+  input:focus, textarea:focus, select:focus { outline: 2px solid var(--accent-end); }
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    color: white;
+  }
+  .btn-primary:disabled { opacity: 0.6; }
+  .btn-secondary {
+    padding: 9px 14px;
+    background: var(--warm);
+    color: var(--text-alt);
+  }
+  .btn-danger {
+    padding: 9px 14px;
+    background: var(--danger-bg);
+    color: var(--danger);
+  }
+  .btn-small { padding: 6px 12px; font-size: 12px; border-radius: 8px; }
+  #loginError {
+    color: var(--danger);
+    font-size: 12.5px;
+    margin: -4px 0 12px;
+  }
+
+  /* ---------- App shell ---------- */
+  #app { display: flex; min-height: 100vh; }
+  nav.sidebar {
+    width: 220px;
+    background: white;
+    padding: 24px 14px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--taupe);
+  }
+  nav.sidebar h2 {
+    font-size: 15px;
+    margin: 0 10px 22px;
+    color: var(--text-alt);
+  }
+  nav.sidebar .tab {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text-secondary-alt);
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 4px;
+  }
+  nav.sidebar .tab.active { background: var(--warm); color: var(--accent-end); }
+  nav.sidebar .signout {
+    margin-top: 24px;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 12.5px;
+    border-top: 1px solid var(--taupe);
+    padding-top: 16px;
+  }
+  main { flex: 1; padding: 32px 40px; max-width: 1100px; }
+  main h1 { font-size: 22px; margin: 0 0 4px; color: var(--text-alt); }
+  main .subtitle { color: var(--text-secondary); font-size: 13.5px; margin: 0 0 26px; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 30px; }
+  .stat-card { background: white; border-radius: 18px; padding: 18px 20px; }
+  .stat-card .label { font-size: 12px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+  .stat-card .value { font-size: 26px; font-weight: 700; color: var(--text-alt); margin-top: 6px; }
+
+  .card { background: white; border-radius: 18px; padding: 20px; margin-bottom: 18px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; color: var(--text-secondary); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.03em; padding: 8px 10px; border-bottom: 1.5px solid var(--taupe); }
+  td { padding: 10px; border-bottom: 1px solid var(--warm); color: var(--text-alt); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  .mono { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; color: var(--text-secondary-alt); }
+  .pill { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+  .pill.premium { background: var(--coin-bg); color: var(--coin); }
+  .pill.free { background: var(--warm); color: var(--text-secondary); }
+
+  .toolbar { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
+  .toolbar input, .toolbar select { margin-bottom: 0; width: auto; min-width: 200px; }
+  .toolbar .spacer { flex: 1; }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+  .form-grid .full { grid-column: 1 / -1; }
+  .form-grid label { display: block; font-size: 11.5px; font-weight: 700; color: var(--text-secondary-alt); margin-bottom: 4px; }
+
+  .modal-backdrop {
+    position: fixed; inset: 0; background: rgba(70,58,63,0.45);
+    display: flex; align-items: flex-start; justify-content: center;
+    padding: 40px 16px; overflow-y: auto; z-index: 100;
+  }
+  .modal { background: white; border-radius: 20px; padding: 26px; width: 100%; max-width: 520px; }
+  .modal h3 { margin: 0 0 16px; color: var(--text-alt); }
+  .modal .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px; }
+
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: var(--text-alt); color: white; padding: 12px 20px; border-radius: 12px;
+    font-size: 13.5px; z-index: 200; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  .toast.error { background: var(--danger); }
+  .empty-state { color: var(--text-secondary); font-size: 13px; padding: 20px 0; text-align: center; }
+  .row-actions { display: flex; gap: 6px; }
+  .checkbox-row { display: flex; align-items: center; gap: 8px; margin: 6px 0 14px; }
+  .checkbox-row input { width: auto; margin: 0; }
+  .checkbox-row label { font-size: 13px; color: var(--text-alt); font-weight: 600; }
+  .helptext { font-size: 12px; color: var(--text-secondary); margin: -6px 0 14px; }
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+  <form class="login-card" id="loginForm">
+    <h1>Newborn Moments — Admin</h1>
+    <p>Sign in with your admin account.</p>
+    <div id="loginError" class="hidden"></div>
+    <input type="email" id="loginEmail" placeholder="Email" autocomplete="username" required>
+    <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" required>
+    <button type="submit" class="btn-primary" id="loginButton">Sign In</button>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+  <nav class="sidebar">
+    <h2>🐻 Newborn Moments</h2>
+    <button class="tab active" data-tab="dashboard">📊 Dashboard</button>
+    <button class="tab" data-tab="users">👤 Users</button>
+    <button class="tab" data-tab="catalog">🎨 Catalog</button>
+    <button class="tab" data-tab="categories">🗂 Categories</button>
+    <button class="tab" data-tab="remoteconfig">🚩 Remote Config</button>
+    <button class="signout" id="signOutButton">Sign out</button>
+  </nav>
+  <main>
+
+    <div class="panel active" id="panel-dashboard">
+      <h1>Dashboard</h1>
+      <p class="subtitle">Live counts, straight from Firestore.</p>
+      <div class="stat-grid" id="statGrid"></div>
+      <div class="card">
+        <div class="toolbar"><strong style="color:var(--text-alt)">Recent credit ledger</strong></div>
+        <table><thead><tr><th>When</th><th>User</th><th>Amount</th><th>Reason</th></tr></thead>
+        <tbody id="ledgerBody"></tbody></table>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-users">
+      <h1>Users</h1>
+      <p class="subtitle">Search by uid, adjust credits, toggle premium.</p>
+      <div class="toolbar">
+        <input type="text" id="userSearch" placeholder="Paste a uid and press Enter…">
+        <div class="spacer"></div>
+        <button class="btn-secondary btn-small" id="usersLoadMore">Load more</button>
+      </div>
+      <div class="card">
+        <table><thead><tr><th>UID</th><th>Sub. credits</th><th>Purchased</th><th>Status</th><th>Created</th><th></th></tr></thead>
+        <tbody id="usersBody"></tbody></table>
+        <div class="empty-state hidden" id="usersEmpty">No users yet.</div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-catalog">
+      <h1>Catalog</h1>
+      <p class="subtitle">The 300-odd generation styles (ai_models). Edit or add a style — changes go live immediately, no app build needed.</p>
+      <div class="toolbar">
+        <select id="catalogCategoryFilter"><option value="">All categories</option></select>
+        <div class="spacer"></div>
+        <button class="btn-primary btn-small" id="newStyleButton">+ New style</button>
+      </div>
+      <div class="card">
+        <table><thead><tr><th>ID</th><th>Name</th><th>Category</th><th>Credits</th><th>Pos.</th><th></th></tr></thead>
+        <tbody id="catalogBody"></tbody></table>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-categories">
+      <h1>Categories</h1>
+      <p class="subtitle">The category chips shown on Home.</p>
+      <div class="toolbar"><div class="spacer"></div><button class="btn-primary btn-small" id="newCategoryButton">+ New category</button></div>
+      <div class="card">
+        <table><thead><tr><th>ID</th><th>Name</th><th>Mood</th><th>Position</th><th></th></tr></thead>
+        <tbody id="categoriesBody"></tbody></table>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-remoteconfig">
+      <h1>Remote Config</h1>
+      <p class="subtitle">The three flags the app actually reads. Changes publish instantly — no build.</p>
+      <div class="card" style="max-width:480px">
+        <div class="checkbox-row"><input type="checkbox" id="rcLimitedTimeAction"><label for="rcLimitedTimeAction">limitedTimeAction — show the Limited Time Offer popup</label></div>
+        <div class="checkbox-row"><input type="checkbox" id="rcFrun"><label for="rcFrun">frun — show the single-offer paywall after onboarding / each session</label></div>
+        <label style="display:block;font-size:11.5px;font-weight:700;color:var(--text-secondary-alt);margin-bottom:4px">introPackage — product id sold on that single-offer paywall</label>
+        <input type="text" id="rcIntroPackage" placeholder="com.babycollages.weekly">
+        <div class="helptext">Must match a real RevenueCat product id, or the paywall falls back to the yearly plan.</div>
+        <button class="btn-primary" id="rcSaveButton" style="width:auto;padding:11px 22px">Save & publish</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import {
+  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut,
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import {
+  getFirestore, collection, query, orderBy, limit, startAfter, getDocs, getDoc, doc,
+  getCountFromServer, where,
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+import {
+  getFunctions, httpsCallable,
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-functions.js";
+
+const firebaseConfig = {
+  projectId: "newborn-moments",
+  appId: "1:923710561356:web:c900d076c8cb87f9c968e9",
+  storageBucket: "newborn-moments.firebasestorage.app",
+  apiKey: "AIzaSyA3GqRETnwfg-bL3CHeYKJKa98ehKOOX5I",
+  authDomain: "newborn-moments.firebaseapp.com",
+  messagingSenderId: "923710561356",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const fns = getFunctions(app, "us-central1");
+
+// ---------- Toast ----------
+function toast(message, isError = false) {
+  const el = document.createElement("div");
+  el.className = "toast" + (isError ? " error" : "");
+  el.textContent = message;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3200);
+}
+
+// ---------- Auth ----------
+const loginScreen = document.getElementById("loginScreen");
+const appEl = document.getElementById("app");
+const loginForm = document.getElementById("loginForm");
+const loginError = document.getElementById("loginError");
+const loginButton = document.getElementById("loginButton");
+
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  loginError.classList.add("hidden");
+  loginButton.disabled = true;
+  loginButton.textContent = "Signing in…";
+  try {
+    await signInWithEmailAndPassword(auth, document.getElementById("loginEmail").value.trim(), document.getElementById("loginPassword").value);
+  } catch (err) {
+    loginError.textContent = "Couldn't sign in — check the email and password.";
+    loginError.classList.remove("hidden");
+  } finally {
+    loginButton.disabled = false;
+    loginButton.textContent = "Sign In";
+  }
+});
+
+document.getElementById("signOutButton").addEventListener("click", () => signOut(auth));
+
+let adminVerified = false;
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    loginScreen.classList.remove("hidden");
+    appEl.classList.add("hidden");
+    adminVerified = false;
+    return;
+  }
+  // firestore.rules denies reading /admins/{uid} to everyone, including the admin themself — so
+  // "am I an admin?" is proven by whether an admin-gated read succeeds, not by reading that doc.
+  try {
+    await getCountFromServer(collection(db, "users"));
+    adminVerified = true;
+  } catch (err) {
+    loginError.textContent = "Signed in, but this account isn't an admin.";
+    loginError.classList.remove("hidden");
+    await signOut(auth);
+    return;
+  }
+  loginScreen.classList.add("hidden");
+  appEl.classList.remove("hidden");
+  loadDashboard();
+});
+
+// ---------- Tabs ----------
+document.querySelectorAll(".tab").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+    btn.classList.add("active");
+    const panel = document.getElementById("panel-" + btn.dataset.tab);
+    panel.classList.add("active");
+    if (btn.dataset.tab === "users" && !usersLoaded) loadUsers();
+    if (btn.dataset.tab === "catalog" && !catalogLoaded) loadCatalog();
+    if (btn.dataset.tab === "categories" && !categoriesLoaded) loadCategories();
+    if (btn.dataset.tab === "remoteconfig" && !remoteConfigLoaded) loadRemoteConfig();
+  });
+});
+
+// ---------- Dashboard ----------
+async function loadDashboard() {
+  const statGrid = document.getElementById("statGrid");
+  statGrid.innerHTML = "<div class='stat-card'><div class='label'>Loading…</div></div>";
+  const [usersCount, premiumCount, stylesCount, categoriesCount, ledgerCount] = await Promise.all([
+    getCountFromServer(collection(db, "users")),
+    getCountFromServer(query(collection(db, "users"), where("isPremium", "==", true))),
+    getCountFromServer(collection(db, "ai_models")),
+    getCountFromServer(collection(db, "categories")),
+    getCountFromServer(collection(db, "credit_transactions")),
+  ]);
+  const stats = [
+    ["Total users", usersCount.data().count],
+    ["Premium users", premiumCount.data().count],
+    ["Catalog styles", stylesCount.data().count],
+    ["Categories", categoriesCount.data().count],
+    ["Ledger entries", ledgerCount.data().count],
+  ];
+  statGrid.innerHTML = stats.map(([label, value]) =>
+    `<div class="stat-card"><div class="label">${label}</div><div class="value">${value}</div></div>`
+  ).join("");
+
+  const ledgerSnap = await getDocs(query(collection(db, "credit_transactions"), orderBy("createdAt", "desc"), limit(15)));
+  const ledgerBody = document.getElementById("ledgerBody");
+  if (ledgerSnap.empty) {
+    ledgerBody.innerHTML = `<tr><td colspan="4" class="empty-state">No ledger entries yet.</td></tr>`;
+  } else {
+    ledgerBody.innerHTML = ledgerSnap.docs.map((d) => {
+      const t = d.data();
+      const when = t.createdAt && t.createdAt.toDate ? t.createdAt.toDate().toLocaleString() : "—";
+      const amount = (t.amount > 0 ? "+" : "") + t.amount;
+      return `<tr><td>${when}</td><td class="mono">${t.uid || "—"}</td><td>${amount}</td><td>${t.reason || "—"}</td></tr>`;
+    }).join("");
+  }
+}
+
+// ---------- Users ----------
+let usersLoaded = false;
+let usersLastDoc = null;
+const usersBody = document.getElementById("usersBody");
+
+async function loadUsers(append = false) {
+  usersLoaded = true;
+  let q = query(collection(db, "users"), orderBy("createdAt", "desc"), limit(25));
+  if (append && usersLastDoc) q = query(collection(db, "users"), orderBy("createdAt", "desc"), startAfter(usersLastDoc), limit(25));
+  const snap = await getDocs(q);
+  if (!snap.empty) usersLastDoc = snap.docs[snap.docs.length - 1];
+  document.getElementById("usersEmpty").classList.toggle("hidden", !(snap.empty && !append));
+  const rows = snap.docs.map(renderUserRow).join("");
+  usersBody.innerHTML = append ? usersBody.innerHTML + rows : rows;
+}
+document.getElementById("usersLoadMore").addEventListener("click", () => loadUsers(true));
+
+document.getElementById("userSearch").addEventListener("keydown", async (e) => {
+  if (e.key !== "Enter") return;
+  const uid = e.target.value.trim();
+  if (!uid) return loadUsers();
+  const snap = await getDoc(doc(db, "users", uid));
+  usersBody.innerHTML = snap.exists() ? renderUserRow(snap) : "";
+  document.getElementById("usersEmpty").classList.toggle("hidden", snap.exists());
+});
+
+function renderUserRow(d) {
+  const u = d.data();
+  const created = u.createdAt && u.createdAt.toDate ? u.createdAt.toDate().toLocaleDateString() : "—";
+  return `<tr>
+    <td class="mono">${d.id}</td>
+    <td>${u.subscriptionCredits || 0}</td>
+    <td>${u.purchasedCredits || 0}</td>
+    <td><span class="pill ${u.isPremium ? "premium" : "free"}">${u.isPremium ? "Premium" : "Free"}</span></td>
+    <td>${created}</td>
+    <td class="row-actions">
+      <button class="btn-secondary btn-small" onclick="window.__editUser('${d.id}')">Edit</button>
+    </td>
+  </tr>`;
+}
+
+window.__editUser = async (uid) => {
+  const snap = await getDoc(doc(db, "users", uid));
+  const u = snap.data() || {};
+  openModal(`
+    <h3>Edit user</h3>
+    <p class="mono" style="margin:-8px 0 16px">${uid}</p>
+    <label style="font-size:11.5px;font-weight:700;color:var(--text-secondary-alt)">Purchased credits delta (e.g. 50 or -10)</label>
+    <input type="number" id="mCreditsDelta" value="0">
+    <label style="font-size:11.5px;font-weight:700;color:var(--text-secondary-alt)">Subscription credits delta</label>
+    <input type="number" id="mSubDelta" value="0">
+    <div class="checkbox-row"><input type="checkbox" id="mPremium" ${u.isPremium ? "checked" : ""}><label for="mPremium">Premium</label></div>
+    <label style="font-size:11.5px;font-weight:700;color:var(--text-secondary-alt)">Note (for the ledger)</label>
+    <input type="text" id="mNote" placeholder="e.g. support-refund">
+    <div class="actions">
+      <button class="btn-danger" id="mDelete">Delete account</button>
+      <div class="spacer"></div>
+      <button class="btn-secondary" onclick="window.__closeModal()">Cancel</button>
+      <button class="btn-primary" style="width:auto;padding:9px 18px" id="mSave">Save</button>
+    </div>
+  `);
+  document.getElementById("mSave").addEventListener("click", async () => {
+    const purchasedCreditsDelta = Number(document.getElementById("mCreditsDelta").value) || 0;
+    const subscriptionCreditsDelta = Number(document.getElementById("mSubDelta").value) || 0;
+    const isPremium = document.getElementById("mPremium").checked;
+    const note = document.getElementById("mNote").value.trim();
+    try {
+      await httpsCallable(fns, "adminUpdateUser")({ targetUid: uid, purchasedCreditsDelta, subscriptionCreditsDelta, isPremium, note });
+      toast("User updated.");
+      closeModal();
+      loadUsers();
+    } catch (err) { toast(err.message, true); }
+  });
+  document.getElementById("mDelete").addEventListener("click", async () => {
+    if (!confirm("Permanently delete this user's account and all their data? This can't be undone.")) return;
+    try {
+      await httpsCallable(fns, "adminDeleteUser")({ targetUid: uid });
+      toast("User deleted.");
+      closeModal();
+      loadUsers();
+    } catch (err) { toast(err.message, true); }
+  });
+};
+
+// ---------- Catalog ----------
+let catalogLoaded = false;
+let categoriesCache = [];
+
+async function loadCatalog() {
+  catalogLoaded = true;
+  const [stylesSnap, catsSnap] = await Promise.all([
+    getDocs(query(collection(db, "ai_models"), orderBy("categoryId"), orderBy("position"))),
+    getDocs(collection(db, "categories")),
+  ]);
+  categoriesCache = catsSnap.docs.map((d) => ({ id: d.id, ...d.data() }));
+  const filterSelect = document.getElementById("catalogCategoryFilter");
+  filterSelect.innerHTML = `<option value="">All categories</option>` + categoriesCache.map((c) => `<option value="${c.id}">${c.name}</option>`).join("");
+
+  window.__allStyles = stylesSnap.docs.map((d) => ({ id: d.id, ...d.data() }));
+  renderCatalog();
+}
+document.getElementById("catalogCategoryFilter").addEventListener("change", renderCatalog);
+
+function renderCatalog() {
+  const filter = document.getElementById("catalogCategoryFilter").value;
+  const rows = (window.__allStyles || []).filter((s) => !filter || s.categoryId === filter);
+  const body = document.getElementById("catalogBody");
+  if (!rows.length) { body.innerHTML = `<tr><td colspan="6" class="empty-state">No styles.</td></tr>`; return; }
+  body.innerHTML = rows.map((s) => `<tr>
+    <td class="mono">${s.id}</td>
+    <td>${s.name || "—"}</td>
+    <td>${s.categoryName || "—"}</td>
+    <td>${s.creditCost ?? "—"}</td>
+    <td>${s.position ?? "—"}</td>
+    <td class="row-actions">
+      <button class="btn-secondary btn-small" onclick="window.__editStyle('${s.id}')">Edit</button>
+      <button class="btn-danger btn-small" onclick="window.__deleteStyle('${s.id}')">Delete</button>
+    </td>
+  </tr>`).join("");
+}
+
+function styleFormHtml(s = {}) {
+  const catOptions = categoriesCache.map((c) => `<option value="${c.id}" ${s.categoryId === c.id ? "selected" : ""}>${c.name}</option>`).join("");
+  return `
+    <div class="form-grid">
+      <div><label>Style ID (slug)</label><input type="text" id="fId" value="${s.id || ""}" ${s.id ? "readonly" : ""} placeholder="e.g. astronaut-dream"></div>
+      <div><label>Name</label><input type="text" id="fName" value="${s.name || ""}"></div>
+      <div><label>Category</label><select id="fCategoryId">${catOptions}</select></div>
+      <div><label>Credit cost</label><input type="number" id="fCreditCost" value="${s.creditCost ?? 1}"></div>
+      <div><label>Aspect ratio</label><input type="text" id="fAspectRatio" value="${s.aspectRatio || "3:4"}"></div>
+      <div><label>Position</label><input type="number" id="fPosition" value="${s.position ?? 0}"></div>
+      <div class="full"><label>Descriptor</label><input type="text" id="fDescriptor" value="${s.descriptor || ""}"></div>
+      <div class="full"><label>Prompt</label><textarea id="fPrompt" rows="4">${s.prompt || ""}</textarea></div>
+    </div>`;
+}
+
+document.getElementById("newStyleButton").addEventListener("click", () => {
+  openModal(`<h3>New style</h3>${styleFormHtml()}<div class="actions">
+    <button class="btn-secondary" onclick="window.__closeModal()">Cancel</button>
+    <button class="btn-primary" style="width:auto;padding:9px 18px" id="fSave">Create</button>
+  </div>`);
+  wireStyleSave(null);
+});
+
+window.__editStyle = (id) => {
+  const s = (window.__allStyles || []).find((x) => x.id === id);
+  openModal(`<h3>Edit style</h3>${styleFormHtml(s)}<div class="actions">
+    <button class="btn-secondary" onclick="window.__closeModal()">Cancel</button>
+    <button class="btn-primary" style="width:auto;padding:9px 18px" id="fSave">Save</button>
+  </div>`);
+  wireStyleSave(id);
+};
+
+function wireStyleSave(existingId) {
+  document.getElementById("fSave").addEventListener("click", async () => {
+    const styleId = existingId || document.getElementById("fId").value.trim();
+    if (!styleId) return toast("Style ID is required.", true);
+    const categorySelect = document.getElementById("fCategoryId");
+    const categoryName = categorySelect.options[categorySelect.selectedIndex]?.textContent || "";
+    try {
+      await httpsCallable(fns, "adminUpsertStyle")({
+        styleId,
+        name: document.getElementById("fName").value.trim(),
+        categoryId: categorySelect.value,
+        categoryName,
+        descriptor: document.getElementById("fDescriptor").value.trim(),
+        prompt: document.getElementById("fPrompt").value.trim(),
+        creditCost: Number(document.getElementById("fCreditCost").value) || 1,
+        aspectRatio: document.getElementById("fAspectRatio").value.trim() || "3:4",
+        position: Number(document.getElementById("fPosition").value) || 0,
+      });
+      toast("Style saved.");
+      closeModal();
+      loadCatalog();
+    } catch (err) { toast(err.message, true); }
+  });
+}
+
+window.__deleteStyle = async (styleId) => {
+  if (!confirm(`Delete style "${styleId}"? This can't be undone.`)) return;
+  try {
+    await httpsCallable(fns, "adminDeleteStyle")({ styleId });
+    toast("Style deleted.");
+    loadCatalog();
+  } catch (err) { toast(err.message, true); }
+};
+
+// ---------- Categories ----------
+let categoriesLoaded = false;
+
+async function loadCategories() {
+  categoriesLoaded = true;
+  const snap = await getDocs(query(collection(db, "categories"), orderBy("position")));
+  const body = document.getElementById("categoriesBody");
+  if (snap.empty) { body.innerHTML = `<tr><td colspan="5" class="empty-state">No categories.</td></tr>`; return; }
+  body.innerHTML = snap.docs.map((d) => {
+    const c = d.data();
+    return `<tr>
+      <td class="mono">${d.id}</td><td>${c.name || "—"}</td><td>${c.mood || "—"}</td><td>${c.position ?? "—"}</td>
+      <td class="row-actions">
+        <button class="btn-secondary btn-small" onclick='window.__editCategory(${JSON.stringify(d.id)})'>Edit</button>
+        <button class="btn-danger btn-small" onclick='window.__deleteCategory(${JSON.stringify(d.id)})'>Delete</button>
+      </td>
+    </tr>`;
+  }).join("");
+  window.__categoriesData = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+function categoryFormHtml(c = {}) {
+  return `<div class="form-grid">
+    <div><label>Category ID (slug)</label><input type="text" id="gId" value="${c.id || ""}" ${c.id ? "readonly" : ""}></div>
+    <div><label>Name</label><input type="text" id="gName" value="${c.name || ""}"></div>
+    <div><label>Mood</label><input type="text" id="gMood" value="${c.mood || ""}"></div>
+    <div><label>Position</label><input type="number" id="gPosition" value="${c.position ?? 0}"></div>
+  </div>`;
+}
+
+document.getElementById("newCategoryButton").addEventListener("click", () => {
+  openModal(`<h3>New category</h3>${categoryFormHtml()}<div class="actions">
+    <button class="btn-secondary" onclick="window.__closeModal()">Cancel</button>
+    <button class="btn-primary" style="width:auto;padding:9px 18px" id="gSave">Create</button>
+  </div>`);
+  wireCategorySave(null);
+});
+
+window.__editCategory = (id) => {
+  const c = (window.__categoriesData || []).find((x) => x.id === id);
+  openModal(`<h3>Edit category</h3>${categoryFormHtml(c)}<div class="actions">
+    <button class="btn-secondary" onclick="window.__closeModal()">Cancel</button>
+    <button class="btn-primary" style="width:auto;padding:9px 18px" id="gSave">Save</button>
+  </div>`);
+  wireCategorySave(id);
+};
+
+function wireCategorySave(existingId) {
+  document.getElementById("gSave").addEventListener("click", async () => {
+    const categoryId = existingId || document.getElementById("gId").value.trim();
+    if (!categoryId) return toast("Category ID is required.", true);
+    try {
+      await httpsCallable(fns, "adminUpsertCategory")({
+        categoryId,
+        name: document.getElementById("gName").value.trim(),
+        mood: document.getElementById("gMood").value.trim(),
+        position: Number(document.getElementById("gPosition").value) || 0,
+      });
+      toast("Category saved.");
+      closeModal();
+      loadCategories();
+    } catch (err) { toast(err.message, true); }
+  });
+}
+
+window.__deleteCategory = async (categoryId) => {
+  if (!confirm(`Delete category "${categoryId}"? Styles in it won't be deleted, but will lose their category link.`)) return;
+  try {
+    await httpsCallable(fns, "adminDeleteCategory")({ categoryId });
+    toast("Category deleted.");
+    loadCategories();
+  } catch (err) { toast(err.message, true); }
+};
+
+// ---------- Remote Config ----------
+let remoteConfigLoaded = false;
+
+async function loadRemoteConfig() {
+  remoteConfigLoaded = true;
+  try {
+    const result = await httpsCallable(fns, "adminGetRemoteConfig")();
+    const v = result.data || {};
+    document.getElementById("rcLimitedTimeAction").checked = v.limitedTimeAction === "true";
+    document.getElementById("rcFrun").checked = v.frun === "true";
+    document.getElementById("rcIntroPackage").value = v.introPackage || "";
+  } catch (err) { toast(err.message, true); }
+}
+
+document.getElementById("rcSaveButton").addEventListener("click", async () => {
+  try {
+    await httpsCallable(fns, "adminSetRemoteConfig")({
+      limitedTimeAction: document.getElementById("rcLimitedTimeAction").checked,
+      frun: document.getElementById("rcFrun").checked,
+      introPackage: document.getElementById("rcIntroPackage").value.trim(),
+    });
+    toast("Remote Config published.");
+  } catch (err) { toast(err.message, true); }
+});
+
+// ---------- Modal ----------
+function openModal(innerHtml) {
+  closeModal();
+  const backdrop = document.createElement("div");
+  backdrop.className = "modal-backdrop";
+  backdrop.id = "modalBackdrop";
+  backdrop.innerHTML = `<div class="modal">${innerHtml}</div>`;
+  backdrop.addEventListener("click", (e) => { if (e.target === backdrop) closeModal(); });
+  document.body.appendChild(backdrop);
+}
+function closeModal() {
+  const existing = document.getElementById("modalBackdrop");
+  if (existing) existing.remove();
+}
+window.__closeModal = closeModal;
+</script>
+</body>
+</html>

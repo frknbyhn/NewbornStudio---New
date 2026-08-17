@@ -1,6 +1,6 @@
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 
-const WELCOME_CREDITS = 5;
+const WELCOME_CREDITS = 0;
 
 async function ensureUserDoc(uid) {
   const db = getFirestore();
