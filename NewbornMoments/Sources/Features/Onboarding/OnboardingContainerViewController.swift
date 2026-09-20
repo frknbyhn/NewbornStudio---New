@@ -1,4 +1,5 @@
 import UIKit
+import AppTrackingTransparency
 
 final class OnboardingContainerViewController: UIViewController {
     var onFinished: (() -> Void)?
@@ -21,6 +22,7 @@ final class OnboardingContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ATTrackingManager.requestTrackingAuthorization { _ in }
         addChild(pageViewController)
         pageViewController.view.frame = view.bounds
         pageViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

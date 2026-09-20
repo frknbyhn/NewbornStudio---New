@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1B2C3D4E5F60718293A4B03 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */; };
-		A1B2C3D4E5F60718293A4B01 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */; };
 		02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */; };
 		063ECD3FA8141703C1435B90 /* MilestoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */; };
 		099C77DF63E65C5CE1182B88 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DFDDF69809F17E3A30BCC /* CustomStyleViewController.swift */; };
@@ -59,6 +57,8 @@
 		98CAC70510916F869260F4BC /* MilestoneCollageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687BC58DFD3D3ED48940662 /* MilestoneCollageGalleryViewController.swift */; };
 		9A213140F20F3BA2FF4AAA0C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E13DA50743F1950597D64B /* ResultViewController.swift */; };
 		9F4556D09FA8080710C05257 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3CA53BFFE607B03530CA1E49 /* FirebaseCore */; };
+		A1B2C3D4E5F60718293A4B01 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */; };
+		A1B2C3D4E5F60718293A4B03 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */; };
 		A53E47DB21E223902F78C268 /* CoinPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF1E549558C89AD18C6504 /* CoinPackageCell.swift */; };
 		A5D7EBDC2E2453ABC629B6F8 /* SinglePlanInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CACD8858A72A8E273814D4 /* SinglePlanInfoView.swift */; };
 		A69F6DAC89A5EB70489F086E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970105EB43DB1025ACD4284 /* OnboardingPageViewController.swift */; };
@@ -96,8 +96,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		0D66A5C08C09C285481E160F /* PassThroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughStackView.swift; sourceTree = "<group>"; };
 		0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		119040D23920402A6D386228 /* MilestoneListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListsViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +150,8 @@
 		9EA22F0113FF6C01F123FD69 /* RecentPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotoCell.swift; sourceTree = "<group>"; };
 		9FB6051B8D1FC4FB47F8D001 /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		A12D363FF51F1DF67592CD3F /* GenerationLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationLoadingViewController.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
 		A1E250C2531E33C9B7E5FE85 /* MilestoneCollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageViewController.swift; sourceTree = "<group>"; };
 		AC11EAE36AA322AFB303AC7F /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 		AEB5CB643C185A1C1AE7BCE3 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
@@ -196,15 +196,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A1B2C3D4E5F60718293A4B05 /* Rating */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */,
-				A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */,
-			);
-			path = Rating;
-			sourceTree = "<group>";
-		};
 		08D6B3DAF04236ADA5B7B8F5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +361,15 @@
 				A12D363FF51F1DF67592CD3F /* GenerationLoadingViewController.swift */,
 			);
 			path = Generation;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60718293A4B05 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */,
+				A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */,
+			);
+			path = Rating;
 			sourceTree = "<group>";
 		};
 		C46B2213C394949CD85C1F98 /* Profile */ = {
@@ -627,7 +627,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X4R77QQ25M;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -637,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BabyCollages;
 				PRODUCT_NAME = NewbornMoments;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -775,7 +775,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = X4R77QQ25M;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -785,7 +785,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BabyCollages;
 				PRODUCT_NAME = NewbornMoments;
 				PROVISIONING_PROFILE_SPECIFIER = "";

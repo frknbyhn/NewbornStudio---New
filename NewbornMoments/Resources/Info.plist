@@ -64,6 +64,8 @@
 	<string>Newborn Moments needs permission to save your generated portraits to your photo library.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Newborn Moments needs photo library access so you can choose a photo of your baby to create studio-style portraits.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Help us improve! We use data to optimize your app experience and show you better, more relevant content.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Quicksand-Variable.ttf</string>
