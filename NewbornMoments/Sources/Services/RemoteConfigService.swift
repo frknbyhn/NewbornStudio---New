@@ -28,6 +28,7 @@ enum RemoteConfigService {
         remoteConfig.setDefaults([
             "limitedTimeAction": true as NSObject,
             "frun": false as NSObject,
+            "rate": false as NSObject,
             "introPackage": "" as NSObject
         ])
         // Fired at launch, non-blocking — by design this may still be in flight the first time
@@ -46,6 +47,10 @@ enum RemoteConfigService {
 
     static var showSingleOfferPaywallOnLaunch: Bool {
         remoteConfig.configValue(forKey: "frun").boolValue
+    }
+
+    static var showRate: Bool {
+        remoteConfig.configValue(forKey: "rate").boolValue
     }
 
     /// nil when unset/empty — callers fall back to a sensible default plan rather than failing.

@@ -4,8 +4,6 @@
 *.p8
 *.jks
 key.properties
-GoogleService-Info.plist
-**/GoogleService-Info.plist
 
 # Xcode
 build/

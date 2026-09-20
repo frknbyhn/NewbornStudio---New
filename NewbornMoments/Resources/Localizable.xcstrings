@@ -49104,6 +49104,2454 @@
           }
         }
       }
+    },
+    "rating.title" : {
+      "comment" : "Rating screen: rating.title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هل أعجبتك صور طفلك؟ امنحنا 5 نجوم"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T'agraden els retrats del teu nadó? Dona'ns 5 estrelles"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Líbí se vám portréty vašeho miminka? Ohodnoťte nás 5 hvězdičkami"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kan du lide billederne af din baby? Giv os 5 stjerner"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gefallen dir die Porträts deines Babys? Gib uns 5 Sterne"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σας αρέσουν τα πορτρέτα του μωρού σας; Δώστε μας 5 αστέρια"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enjoying your baby's portraits? Rate us 5 stars"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Te gustan los retratos de tu bebé? Danos 5 estrellas"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tykkäätkö vauvasi muotokuvista? Anna meille 5 tähteä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous aimez les portraits de votre bébé ? Donnez-nous 5 étoiles"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אהבתם את התמונות של התינוק שלכם? תנו לנו 5 כוכבים"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्या आपको अपने बच्चे के पोर्ट्रेट पसंद आए? हमें 5 स्टार दें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sviđaju li vam se portreti vaše bebe? Dajte nam 5 zvjezdica"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tetszenek a babád portréi? Adj nekünk 5 csillagot"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suka potret bayimu? Beri kami bintang 5"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ti piacciono i ritratti del tuo bebè? Lasciaci 5 stelle"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "赤ちゃんのポートレートは気に入りましたか？★5つで応援してください"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아기의 인물 사진이 마음에 드셨나요? 별 5개를 남겨 주세요"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suka potret bayi anda? Beri kami 5 bintang"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liker du bildene av babyen din? Gi oss 5 stjerner"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blij met de portretten van je baby? Geef ons 5 sterren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podobają Ci się portrety Twojego maluszka? Daj nam 5 gwiazdek"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gostou dos retratos do seu bebê? Dê 5 estrelas para a gente"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Îți plac portretele bebelușului tău? Oferă-ne 5 stele"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нравятся портреты вашего малыша? Поставьте нам 5 звёзд"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Páčia sa vám portréty vášho bábätka? Ohodnoťte nás 5 hviezdičkami"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gillar du bilderna på din bebis? Ge oss 5 stjärnor"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ชอบภาพพอร์ตเทรตของลูกน้อยไหม? ให้ 5 ดาวเราหน่อยนะ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bebeğinizin portrelerini beğendiniz mi? Bize 5 yıldız verin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подобаються портрети вашого малюка? Поставте нам 5 зірок"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn thích những bức chân dung của bé? Hãy tặng chúng tôi 5 sao"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喜欢宝宝的写真吗？给我们五星好评吧"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喜歡寶寶的寫真嗎？給我們五星好評吧"
+          }
+        }
+      }
+    },
+    "rating.body" : {
+      "comment" : "Rating screen: rating.body",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تقييم 5 نجوم يساعد أولياء أمور آخرين على اكتشاف Newborn Moments، ويتيح لفريقنا الصغير مواصلة تطويره. شكرًا جزيلًا لك!"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una valoració de 5 estrelles ajuda altres famílies a trobar Newborn Moments i permet que el nostre petit equip continuï millorant-la. Moltes gràcies!"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hodnocení 5 hvězdiček pomáhá dalším rodičům najít Newborn Moments a umožňuje našemu malému týmu aplikaci dál vylepšovat. Moc děkujeme!"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En vurdering på 5 stjerner hjælper andre forældre med at finde Newborn Moments og gør det muligt for vores lille team at blive ved med at forbedre appen. Tusind tak!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine 5-Sterne-Bewertung hilft anderen Eltern, Newborn Moments zu finden, und ermöglicht unserem kleinen Team, die App weiterzuentwickeln. Vielen Dank!"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μια βαθμολογία 5 αστέρων βοηθά άλλους γονείς να βρουν το Newborn Moments και επιτρέπει στη μικρή μας ομάδα να συνεχίσει να το βελτιώνει. Σας ευχαριστούμε πολύ!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A 5-star rating helps other parents find Newborn Moments and lets our small team keep improving it. Thank you so much!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una valoración de 5 estrellas ayuda a que otras familias encuentren Newborn Moments y permite que nuestro pequeño equipo siga mejorándola. ¡Mil gracias!"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 tähden arvio auttaa muita vanhempia löytämään Newborn Momentsin ja antaa pienelle tiimillemme mahdollisuuden kehittää sovellusta edelleen. Kiitos paljon!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une note de 5 étoiles aide d'autres parents à découvrir Newborn Moments et permet à notre petite équipe de continuer à l'améliorer. Merci infiniment !"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "דירוג של 5 כוכבים עוזר להורים אחרים למצוא את Newborn Moments ומאפשר לצוות הקטן שלנו להמשיך לשפר את האפליקציה. תודה רבה!"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 स्टार की रेटिंग से दूसरे माता-पिता को Newborn Moments ढूँढने में मदद मिलती है और हमारी छोटी सी टीम ऐप को बेहतर बनाती रह पाती है। बहुत-बहुत धन्यवाद!"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocjena od 5 zvjezdica pomaže drugim roditeljima da pronađu Newborn Moments i omogućuje našem malom timu da nastavi poboljšavati aplikaciju. Hvala vam od srca!"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az 5 csillagos értékelés segít más szülőknek megtalálni a Newborn Momentst, és lehetővé teszi, hogy kis csapatunk tovább fejlessze az alkalmazást. Nagyon köszönjük!"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rating bintang 5 membantu orang tua lain menemukan Newborn Moments dan membuat tim kecil kami terus menyempurnakannya. Terima kasih banyak!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una valutazione a 5 stelle aiuta altri genitori a scoprire Newborn Moments e permette al nostro piccolo team di continuare a migliorarla. Grazie di cuore!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "★5つの評価は、ほかのご家族が Newborn Moments を見つけるきっかけになり、私たち小さなチームが改善を続ける力になります。本当にありがとうございます！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "별점 5개는 다른 부모님들이 Newborn Moments를 찾는 데 도움이 되고, 저희 작은 팀이 앱을 계속 개선할 수 있는 힘이 됩니다. 정말 감사합니다!"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penilaian 5 bintang membantu ibu bapa lain menemui Newborn Moments dan membolehkan pasukan kecil kami terus menambah baik aplikasi ini. Terima kasih banyak!"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En vurdering på 5 stjerner hjelper andre foreldre med å finne Newborn Moments og gjør at det lille teamet vårt kan fortsette å forbedre appen. Tusen takk!"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een beoordeling van 5 sterren helpt andere ouders om Newborn Moments te vinden en laat ons kleine team de app blijven verbeteren. Hartelijk dank!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocena 5 gwiazdek pomaga innym rodzicom znaleźć Newborn Moments i pozwala naszemu małemu zespołowi dalej rozwijać aplikację. Bardzo dziękujemy!"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma avaliação de 5 estrelas ajuda outros pais a encontrar o Newborn Moments e permite que nossa pequena equipe continue melhorando o app. Muito obrigado!"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O evaluare de 5 stele îi ajută pe alți părinți să găsească Newborn Moments și permite echipei noastre mici să continue să îmbunătățească aplicația. Mulțumim frumos!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оценка в 5 звёзд помогает другим родителям найти Newborn Moments, а нашей небольшой команде — продолжать улучшать приложение. Большое спасибо!"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hodnotenie 5 hviezdičiek pomáha ďalším rodičom nájsť Newborn Moments a umožňuje nášmu malému tímu aplikáciu ďalej vylepšovať. Ďakujeme vám!"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ett betyg på 5 stjärnor hjälper andra föräldrar att hitta Newborn Moments och gör att vårt lilla team kan fortsätta förbättra appen. Tusen tack!"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คะแนน 5 ดาวช่วยให้พ่อแม่คนอื่นค้นพบ Newborn Moments และช่วยให้ทีมเล็ก ๆ ของเราพัฒนาแอปต่อไปได้ ขอบคุณมากนะคะ!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 yıldızlı bir puan, diğer ailelerin Newborn Moments'ı bulmasına yardımcı olur ve küçük ekibimizin uygulamayı geliştirmeye devam etmesini sağlar. Çok teşekkürler!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оцінка в 5 зірок допомагає іншим батькам знайти Newborn Moments, а нашій невеликій команді — і далі вдосконалювати застосунок. Щиро дякуємо!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đánh giá 5 sao giúp các bố mẹ khác tìm thấy Newborn Moments và giúp đội ngũ nhỏ của chúng tôi tiếp tục cải thiện ứng dụng. Cảm ơn bạn rất nhiều!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "五星好评能帮助更多家长发现 Newborn Moments，也让我们的小团队有动力持续改进。非常感谢！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "五星好評能幫助更多家長發現 Newborn Moments，也讓我們的小團隊有動力持續改進。非常感謝！"
+          }
+        }
+      }
+    },
+    "rating.review.1.title" : {
+      "comment" : "Rating screen: rating.review.1.title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تبدو كجلسة تصوير حقيقية في استوديو"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembla una sessió d'estudi de veritat"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vypadá to jako opravdové focení ve studiu"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ligner en rigtig studieoptagelse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie ein echtes Studio-Shooting"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μοιάζει με πραγματική φωτογράφιση στούντιο"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Looks like a real studio shoot"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parece una sesión de estudio de verdad"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näyttää oikealta studiokuvaukselta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On dirait une vraie séance en studio"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "נראה כמו צילומי סטודיו אמיתיים"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बिल्कुल असली स्टूडियो शूट जैसा"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izgleda kao pravo studijsko snimanje"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olyan, mintha igazi stúdiófotózás lett volna"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seperti sesi foto studio sungguhan"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembra un vero servizio in studio"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本物のスタジオ撮影みたい"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "진짜 스튜디오 촬영 같아요"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nampak seperti sesi foto studio sebenar"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ser ut som en ekte studioseanse"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lijkt op een echte studiosessie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wygląda jak prawdziwa sesja w studiu"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parece uma sessão de estúdio de verdade"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arată ca o ședință foto reală în studio"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Как настоящая студийная съёмка"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyzerá to ako skutočné fotenie v štúdiu"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ser ut som en riktig studiofotografering"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เหมือนถ่ายที่สตูดิโอจริง ๆ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerçek bir stüdyo çekimi gibi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наче справжня студійна зйомка"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trông như một buổi chụp studio thật sự"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "就像真正的影棚拍摄"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "就像真正的攝影棚拍攝"
+          }
+        }
+      }
+    },
+    "rating.review.1.body" : {
+      "comment" : "Rating screen: rating.review.1.body",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "من صورة واحدة لابنتي خرجت صور ناعمة ودافئة ومليئة بالتفاصيل. ما زلت أعود لأتأملها."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amb una sola foto de la meva filla, els retrats han quedat suaus, càlids i plens de detall. No paro de mirar-los."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z jediné fotky mé dcery vznikly jemné, hřejivé a detailní portréty. Pořád se na ně vracím."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ud fra ét eneste billede af min datter blev portrætterne bløde, varme og fulde af detaljer. Jeg bliver ved med at kigge på dem."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus einem einzigen Foto meiner Tochter wurden weiche, warme und detailreiche Porträts. Ich schaue sie mir immer wieder an."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Από μία μόνο φωτογραφία της κόρης μου βγήκαν απαλά, ζεστά πορτρέτα γεμάτα λεπτομέρειες. Τα βλέπω ξανά και ξανά."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One photo of my daughter and the portraits came out soft, warm and full of detail. I keep going back to look at them."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con una sola foto de mi hija salieron unos retratos suaves, cálidos y llenos de detalle. No paro de mirarlos."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yhdestä tyttäreni kuvasta tuli pehmeitä, lämpimiä ja yksityiskohtaisia muotokuvia. Palaan katsomaan niitä koko ajan."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À partir d'une seule photo de ma fille, les portraits sont doux, chaleureux et pleins de détails. Je ne me lasse pas de les regarder."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מתמונה אחת של הבת שלי יצאו דיוקנאות רכים, חמים ומלאי פרטים. אני כל הזמן חוזרת להסתכל עליהם."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेरी बेटी की सिर्फ़ एक फ़ोटो से नरम, गर्माहट भरे और बारीकियों से भरे पोर्ट्रेट बने। मैं बार-बार उन्हें देखती रहती हूँ।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iz jedne jedine fotografije moje kćeri nastali su nježni, topli i detaljni portreti. Stalno im se vraćam."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A lányomról készült egyetlen fotóból lágy, meleg és részletgazdag portrék lettek. Folyton visszanézem őket."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dari satu foto putriku, potretnya jadi lembut, hangat, dan penuh detail. Aku terus melihatnya berulang kali."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da una sola foto di mia figlia sono usciti ritratti morbidi, caldi e ricchi di dettagli. Continuo a riguardarli."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "娘の写真1枚から、やわらかくて温かみのある、細部まで美しいポートレートができました。何度も見返しています。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "딸 사진 한 장으로 부드럽고 따뜻하며 디테일이 살아 있는 사진이 나왔어요. 자꾸 다시 보게 돼요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daripada satu gambar anak perempuan saya, potret yang terhasil lembut, hangat dan penuh perincian. Saya asyik menatapnya berulang kali."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fra ett eneste bilde av datteren min ble portrettene myke, varme og full av detaljer. Jeg blir stadig sittende og se på dem."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Van één foto van mijn dochter kwamen zachte, warme portretten vol details. Ik blijf ernaar kijken."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z jednego zdjęcia mojej córeczki powstały miękkie, ciepłe i pełne detali portrety. Wciąż do nich wracam."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com uma única foto da minha filha, os retratos ficaram suaves, aconchegantes e cheios de detalhes. Não paro de olhar."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dintr-o singură poză cu fiica mea au ieșit portrete fine, calde și pline de detalii. Mă tot întorc să mă uit la ele."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Из одного фото моей дочки получились мягкие, тёплые и очень детальные портреты. Всё время возвращаюсь, чтобы посмотреть."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z jednej fotky mojej dcéry vznikli jemné, hrejivé a detailné portréty. Stále sa k nim vraciam."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utifrån ett enda foto på min dotter blev porträtten mjuka, varma och fulla av detaljer. Jag fortsätter titta på dem."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "จากรูปเดียวของลูกสาว ภาพพอร์ตเทรตออกมานุ่มนวล อบอุ่น และละเอียดมาก เปิดดูซ้ำแล้วซ้ำอีก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kızımın tek bir fotoğrafından yumuşacık, sıcacık ve ayrıntılı portreler çıktı. Dönüp dönüp bakıyorum."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "З одного фото моєї доньки вийшли м'які, теплі й дуже деталізовані портрети. Постійно до них повертаюся."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỉ từ một tấm ảnh của con gái, những bức chân dung hiện ra mềm mại, ấm áp và đầy chi tiết. Mình cứ xem đi xem lại mãi."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只用了女儿的一张照片，就生成了柔和、温暖又细节丰富的写真。我忍不住一遍遍地看。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只用了女兒的一張照片，就產生了柔和、溫暖又細節豐富的寫真。我忍不住一遍又一遍地看。"
+          }
+        }
+      }
+    },
+    "rating.review.2.title" : {
+      "comment" : "Rating screen: rating.review.2.title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مواضيع كثيرة تختار منها"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tants temes per triar"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tolik motivů na výběr"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Så mange temaer at vælge imellem"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "So viele Themen zur Auswahl"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τόσα πολλά θέματα να διαλέξεις"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "So many themes to choose from"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hay muchísimos temas para elegir"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niin paljon teemoja valittavana"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tellement de thèmes au choix"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "כל כך הרבה עיצובים לבחירה"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चुनने के लिए इतनी सारी थीम"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toliko tema za odabrati"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rengeteg téma közül lehet választani"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banyak sekali tema untuk dipilih"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tantissimi temi tra cui scegliere"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選べるテーマがとにかく豊富"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "고를 수 있는 테마가 정말 많아요"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Begitu banyak tema untuk dipilih"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Så mange temaer å velge mellom"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoveel thema's om uit te kiezen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tyle motywów do wyboru"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tantos temas para escolher"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atât de multe teme din care să alegi"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Столько тем на выбор"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toľko tém na výber"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Så många teman att välja bland"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "มีธีมให้เลือกเยอะมาก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seçilecek o kadar çok tema var ki"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стільки тем на вибір"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhiều chủ đề để lựa chọn quá"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可选的主题太多了"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可選的主題太多了"
+          }
+        }
+      }
+    },
+    "rating.review.2.body" : {
+      "comment" : "Rating screen: rating.review.2.body",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رائد فضاء في يوم، وطاهٍ صغير في اليوم التالي. كل نمط مختلف، وطفلي يبدو رائعًا في جميعها."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un dia astronauta, l'endemà petit xef. Cada estil és diferent i el meu petit està adorable en tots."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeden den astronaut, další malý kuchař. Každý styl je jiný a můj klučina vypadá v každém rozkošně."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astronaut den ene dag, lille kok den næste. Hver stil er forskellig, og min lille dreng er bedårende i dem alle."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heute Astronaut, morgen kleiner Koch. Jeder Stil wirkt anders, und mein Kleiner sieht in allen zuckersüß aus."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μια μέρα αστροναύτης, την επόμενη μικρός σεφ. Κάθε στιλ είναι διαφορετικό και ο μικρός μου είναι αξιολάτρευτος σε όλα."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astronaut one day, tiny chef the next. Every style feels different and my little guy looks adorable in all of them."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un día astronauta, al siguiente pequeño chef. Cada estilo es distinto y mi peque está adorable en todos."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yhtenä päivänä astronautti, seuraavana pieni kokki. Jokainen tyyli tuntuu erilaiselta, ja pikkuinen on ihana niissä kaikissa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astronaute un jour, petit chef le lendemain. Chaque style est différent et mon petit bonhomme est adorable dans tous."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "יום אחד אסטרונאוט, למחרת שף קטן. כל סגנון שונה, והקטן שלי חמוד בכולם."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एक दिन अंतरिक्ष यात्री, अगले दिन नन्हा शेफ़। हर स्टाइल अलग है और मेरा नन्हा हर एक में प्यारा लगता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedan dan astronaut, drugi dan mali kuhar. Svaki stil je drugačiji, a moj mališan je preslatak u svima."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egyik nap űrhajós, másnap kis szakács. Minden stílus más, és a kisfiam mindegyikben elbűvölő."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sehari jadi astronaut, besoknya jadi koki mungil. Setiap gaya terasa berbeda dan si kecilku menggemaskan di semuanya."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astronauta un giorno, piccolo chef il giorno dopo. Ogni stile è diverso e il mio piccolo è adorabile in tutti."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ある日は宇宙飛行士、次の日は小さなシェフ。スタイルごとに雰囲気が違って、うちの子はどれも可愛いです。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "어느 날은 우주비행사, 다음 날은 꼬마 요리사. 스타일마다 느낌이 달라서 우리 아기는 뭘 입혀도 사랑스러워요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sehari jadi angkasawan, esoknya jadi chef kecil. Setiap gaya terasa berbeza dan si kecil saya nampak comel dalam semuanya."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astronaut én dag, liten kokk den neste. Hver stil er annerledes, og lillegutten min er bedårende i alle."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De ene dag astronaut, de volgende dag kleine kok. Elke stijl voelt anders en mijn kleintje is in alle schattig."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednego dnia astronauta, następnego mały kucharz. Każdy styl jest inny, a mój synek wygląda uroczo w każdym."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astronauta num dia, pequeno chef no outro. Cada estilo é diferente e meu pequeno fica lindo em todos."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Într-o zi astronaut, în următoarea bucătar mic. Fiecare stil e diferit, iar băiețelul meu e adorabil în toate."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Один день космонавт, на следующий — маленький повар. Каждый стиль особенный, и мой сынок везде очарователен."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeden deň astronaut, ďalší malý kuchár. Každý štýl je iný a môj synček vyzerá v každom rozkošne."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astronaut en dag, liten kock nästa. Varje stil känns olika och min lilla kille är bedårande i alla."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "วันนี้เป็นนักบินอวกาศ พรุ่งนี้เป็นเชฟตัวน้อย ทุกสไตล์ไม่เหมือนกัน และลูกชายน่ารักในทุกแบบเลย"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir gün astronot, ertesi gün minik aşçı. Her stil bambaşka ve oğlum hepsinde çok tatlı görünüyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Один день космонавт, наступного — маленький кухар. Кожен стиль особливий, а мій синочок усюди чарівний."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hôm nay là phi hành gia, mai là đầu bếp nhí. Phong cách nào cũng khác nhau và bé nhà mình bộ nào cũng đáng yêu."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天是宇航员，明天是小厨师。每种风格都不一样，我家宝贝每一款都超可爱。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天是太空人，明天是小廚師。每種風格都不一樣，我家寶貝每一款都超可愛。"
+          }
+        }
+      }
+    },
+    "rating.review.3.title" : {
+      "comment" : "Rating screen: rating.review.3.title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سريع وسهل حتى وأنا شبه نائم"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ràpida i fàcil, fins i tot mig adormit"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rychlé a jednoduché, i když jsem ospalý"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hurtigt og nemt, selv halvt i søvne"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schnell und einfach, sogar halb im Schlaf"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γρήγορο και εύκολο, ακόμα και μισοκοιμισμένος"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick and easy, even half asleep"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rápida y fácil, incluso medio dormido"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nopea ja helppo, vaikka olisi unessa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapide et simple, même à moitié endormi"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מהיר וקל, גם כשחצי ישנים"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "तेज़ और आसान, आधी नींद में भी"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brzo i jednostavno, čak i napola u snu"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gyors és egyszerű, még félálomban is"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cepat dan mudah, bahkan saat setengah mengantuk"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veloce e semplice, anche mezzo addormentato"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "眠くてもサクッと使える手軽さ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "졸려도 쉽고 빠르게"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cepat dan mudah, walaupun separuh mengantuk"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raskt og enkelt, selv halvsovende"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snel en makkelijk, ook half in slaap"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szybko i łatwo, nawet na pół śpiąc"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rápido e fácil, mesmo com sono"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapid și ușor, chiar și pe jumătate adormit"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Быстро и просто, даже сонным"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rýchle a jednoduché, aj keď som ospalý"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snabbt och enkelt, även halvsovande"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เร็วและง่าย แม้จะง่วงอยู่ก็ทำได้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hızlı ve kolay, yarı uykulu bile olsam"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Швидко й легко, навіть напівсонним"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhanh và dễ, dù đang ngái ngủ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "又快又简单，半梦半醒也能用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "又快又簡單，半夢半醒也能用"
+          }
+        }
+      }
+    },
+    "rating.review.3.body" : {
+      "comment" : "Rating screen: rating.review.3.body",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا خطوات معقدة. اخترت صورة ثم موضوعًا وحصلت على النتيجة في دقائق. وشعرت بالأمان أيضًا."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sense passos complicats. Vaig triar una foto i un tema i en pocs minuts tenia el resultat. A més, em va semblar segura."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádné složité kroky. Vybral jsem fotku, motiv a za pár minut jsem měl výsledek. Připadalo mi to i bezpečné."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen besværlige trin. Jeg valgte et billede og et tema og havde resultatet på få minutter. Det føltes også trygt."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine komplizierten Schritte. Foto ausgewählt, Thema gewählt und nach wenigen Minuten war das Ergebnis da. Es fühlte sich auch sicher an."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χωρίς περίπλοκα βήματα. Διάλεξα μια φωτογραφία, ένα θέμα και σε λίγα λεπτά είχα το αποτέλεσμα. Ένιωσα και ασφάλεια."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No complicated steps. I picked a photo, chose a theme and had my result in minutes. It felt safe to use, too."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin pasos complicados. Elegí una foto, escogí un tema y en minutos tenía el resultado. Además me pareció segura."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei mutkikkaita vaiheita. Valitsin kuvan ja teeman, ja tulos oli valmis muutamassa minuutissa. Tuntui myös turvalliselta."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas d'étapes compliquées. J'ai choisi une photo, un thème, et j'avais le résultat en quelques minutes. Je me suis senti en confiance aussi."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "בלי שלבים מסובכים. בחרתי תמונה, בחרתי עיצוב, ותוך דקות התוצאה הייתה מוכנה. גם הרגשתי בטוחה."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कोई जटिल स्टेप नहीं। फ़ोटो चुनी, थीम चुनी और कुछ ही मिनटों में नतीजा तैयार। इस्तेमाल करना सुरक्षित भी लगा।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez kompliciranih koraka. Odabrao sam fotografiju i temu i za nekoliko minuta imao rezultat. Osjećao sam se i sigurno."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semmi bonyolult lépés. Kiválasztottam egy fotót és egy témát, és percek alatt kész lett az eredmény. Biztonságosnak is éreztem."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanpa langkah rumit. Aku pilih foto, pilih tema, dan hasilnya jadi dalam hitungan menit. Rasanya aman dipakai juga."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun passaggio complicato. Ho scelto una foto, un tema e in pochi minuti avevo il risultato. E mi è sembrata sicura."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "難しい手順はなし。写真を選んでテーマを決めるだけで、数分で完成しました。安心して使えた点もうれしいです。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "복잡한 단계가 없어요. 사진 고르고 테마 정하면 몇 분 만에 결과가 나와요. 안심하고 쓸 수 있다는 느낌도 좋았어요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiada langkah yang rumit. Saya pilih satu gambar, pilih tema dan hasilnya siap dalam beberapa minit. Rasa selamat digunakan juga."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen kompliserte steg. Jeg valgte et bilde og et tema og hadde resultatet på få minutter. Det føltes trygt også."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen ingewikkelde stappen. Ik koos een foto en een thema en had binnen een paar minuten resultaat. Het voelde ook veilig."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Żadnych skomplikowanych kroków. Wybrałem zdjęcie i motyw, a po kilku minutach miałem gotowy efekt. Czułem się też bezpiecznie."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem passos complicados. Escolhi uma foto, um tema e em minutos já tinha o resultado. Também me senti seguro usando."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fără pași complicați. Am ales o poză și o temă și în câteva minute aveam rezultatul. M-am simțit în siguranță folosind-o."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никаких сложных шагов. Выбрал фото, выбрал тему — и через пару минут результат готов. Ещё и спокойно за безопасность."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadne zložité kroky. Vybral som fotku a tému a za pár minút som mal výsledok. Pôsobilo to aj bezpečne."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga krångliga steg. Jag valde ett foto och ett tema och hade resultatet på några minuter. Det kändes tryggt också."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่มีขั้นตอนยุ่งยาก เลือกรูป เลือกธีม แล้วได้ผลลัพธ์ในไม่กี่นาที ใช้แล้วรู้สึกปลอดภัยด้วย"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karmaşık adımlar yok. Bir fotoğraf seçtim, temayı belirledim ve dakikalar içinde sonuç aldım. Kendimi güvende de hissettim."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жодних складних кроків. Обрав фото й тему — і за кілька хвилин результат готовий. Ще й почувався безпечно."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có bước nào phức tạp. Mình chọn ảnh, chọn chủ đề và có kết quả sau vài phút. Dùng cũng thấy yên tâm nữa."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有复杂的步骤。选好照片、选个主题，几分钟就出结果了。用起来也很放心。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有複雜的步驟。選好照片、選個主題，幾分鐘就有結果了。用起來也很放心。"
+          }
+        }
+      }
+    },
+    "rating.review.4.title" : {
+      "comment" : "Rating screen: rating.review.4.title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ذكرى أحبها الأجداد"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un record que van estimar els avis"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Památka, kterou milovali prarodiče"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Et minde, bedsteforældrene elskede"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Andenken, das die Großeltern geliebt haben"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ένα ενθύμιο που λάτρεψαν οι παππούδες"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A keepsake the grandparents loved"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un recuerdo que encantó a los abuelos"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muisto, josta isovanhemmat pitivät kovasti"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un souvenir que les grands-parents ont adoré"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מזכרת שסבים וסבתות אהבו"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ऐसी यादगार जो दादा-दादी को बहुत पसंद आई"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uspomena koju su bake i djedovi obožavali"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emlék, amit a nagyszülők imádtak"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kenang-kenangan yang disukai kakek-nenek"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un ricordo che i nonni hanno adorato"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "祖父母がとても喜んでくれた思い出の品"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "조부모님이 정말 좋아하신 선물"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kenang-kenangan yang disukai datuk dan nenek"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Et minne besteforeldrene elsket"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een aandenken waar de grootouders dol op waren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pamiątka, którą pokochali dziadkowie"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma lembrança que os avós adoraram"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O amintire pe care bunicii au adorat-o"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Память, которая растрогала бабушек и дедушек"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pamiatka, ktorú milovali starí rodičia"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ett minne som morföräldrarna och farföräldrarna älskade"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ของที่ระลึกที่คุณตาคุณยายชอบมาก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Büyükanne ve dedelerin bayıldığı bir hatıra"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пам'ять, яку обожнювали бабусі й дідусі"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Món kỷ niệm ông bà rất thích"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "爷爷奶奶特别喜欢的纪念品"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "爺爺奶奶特別喜歡的紀念品"
+          }
+        }
+      }
+    },
+    "rating.review.4.body" : {
+      "comment" : "Rating screen: rating.review.4.body",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "طبعت بعضها وأهديتها للجدتين. الجميع دمعت عيناه فرحًا. طريقة جميلة لتذكّر هذه الأسابيع الأولى."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N'he imprès uns quants i els he regalat a les dues àvies. Van plorar d'alegria. Una manera preciosa de recordar aquestes primeres setmanes."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pár jsem jich nechal vytisknout a daroval oběma babičkám. Slzy štěstí. Krásný způsob, jak si připomenout první týdny."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeg fik trykt nogle stykker og gav dem til begge bedstemødre. Glædestårer over hele linjen. En dejlig måde at huske de første uger på."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich habe ein paar ausgedruckt und beiden Omas geschenkt. Freudentränen überall. Eine schöne Art, sich an die ersten Wochen zu erinnern."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τύπωσα μερικά και τα έδωσα και στις δύο γιαγιάδες. Δάκρυα χαράς παντού. Ένας υπέροχος τρόπος να θυμόμαστε τις πρώτες εβδομάδες."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I printed a few and gave them to both grandmas. Happy tears all around. A lovely way to remember these first weeks."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimí unos cuantos y se los regalé a las dos abuelas. Lloraron de la emoción. Una forma preciosa de recordar estas primeras semanas."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulostin muutaman ja annoin ne molemmille mummoille. Ilonkyyneleitä kaikkialla. Ihana tapa muistaa nämä ensimmäiset viikot."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J'en ai imprimé quelques-uns pour les deux mamies. Des larmes de joie partout. Une jolie façon de garder ces premières semaines en mémoire."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הדפסתי כמה והענקתי לשתי הסבתות. דמעות של שמחה בכל מקום. דרך יפה לזכור את השבועות הראשונים."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कुछ तस्वीरें प्रिंट करवाकर दोनों दादियों को दे दीं। सबकी आँखों में ख़ुशी के आँसू थे। शुरुआती हफ़्तों को याद रखने का बहुत सुंदर तरीका।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isprintao sam nekoliko i poklonio ih objema bakama. Suze radosnice posvuda. Prekrasan način da zapamtimo prve tjedne."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kinyomtattam párat, és odaadtam mindkét nagymamának. Mindenki könnyezett az örömtől. Gyönyörű módja az első hetek megőrzésének."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aku mencetak beberapa dan memberikannya ke kedua nenek. Semua terharu sampai menangis bahagia. Cara yang manis untuk mengenang minggu-minggu pertama."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ne ho stampati alcuni e li ho regalati a entrambe le nonne. Lacrime di gioia per tutti. Un modo bellissimo per ricordare le prime settimane."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "何枚かプリントして、両方のおばあちゃんにプレゼントしました。みんな嬉し涙。生まれて最初の数週間を残せる素敵な方法です。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "몇 장 인화해서 양가 할머니께 드렸어요. 다들 기쁨의 눈물을 흘리셨죠. 아기의 첫 몇 주를 기억하는 멋진 방법이에요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saya cetak beberapa keping dan hadiahkan kepada kedua-dua nenek. Semua menangis kegembiraan. Cara yang indah untuk mengenang minggu-minggu pertama."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeg skrev ut noen og ga dem til begge bestemødrene. Gledestårer over hele linja. En fin måte å huske de første ukene på."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ik heb er een paar laten afdrukken voor beide oma's. Tranen van geluk. Een mooie manier om deze eerste weken te onthouden."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wydrukowałem kilka i podarowałem obu babciom. Łzy szczęścia wszędzie. Piękny sposób na zapamiętanie pierwszych tygodni."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimi algumas e dei para as duas vovós. Lágrimas de alegria por todo lado. Uma forma linda de lembrar dessas primeiras semanas."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Am printat câteva și le-am dat ambelor bunici. Lacrimi de bucurie peste tot. Un mod minunat de a ne aminti primele săptămâni."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Распечатал несколько штук и подарил обеим бабушкам. Все прослезились от радости. Прекрасный способ сохранить первые недели."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niekoľko som ich dal vytlačiť a daroval som ich obom babkám. Slzy šťastia. Krásny spôsob, ako si pripomenúť prvé týždne."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jag skrev ut några och gav dem till båda mormödrarna. Glädjetårar överallt. Ett fint sätt att minnas de första veckorna."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "พิมพ์ออกมาสองสามใบแล้วให้คุณยายทั้งสองท่าน ทุกคนน้ำตาซึมด้วยความสุข เป็นวิธีที่น่ารักในการจดจำช่วงสัปดาห์แรก ๆ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birkaç tanesini bastırıp iki büyükanneye de hediye ettim. Herkes mutluluktan ağladı. İlk haftaları hatırlamak için çok güzel bir yol."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Роздрукував кілька і подарував обом бабусям. Сльози радості в усіх. Чудовий спосіб зберегти перші тижні."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mình in vài tấm tặng cho cả hai bà. Ai cũng rưng rưng vì vui. Một cách thật đẹp để nhớ về những tuần đầu tiên."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我打印了几张送给两边的奶奶，大家都感动得掉眼泪。这是留住宝宝最初几周的温暖方式。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我印了幾張送給兩邊的奶奶，大家都感動得掉眼淚。這是留住寶寶最初幾週的溫暖方式。"
+          }
+        }
+      }
+    },
+    "rating.review.5.title" : {
+      "comment" : "Rating screen: rating.review.5.title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متابعة المحطات الأولى إضافة رائعة"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El seguiment de fites és un extra genial"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sledování milníků je skvělý bonus"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milepælssporingen er en fin bonus"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Meilenstein-Tracker ist ein tolles Extra"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η καταγραφή ορόσημων είναι ένα ωραίο μπόνους"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The milestone tracker is a bonus"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El seguimiento de hitos es un extra genial"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virstanpylvässeuranta on mukava bonus"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le suivi des étapes est un vrai plus"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מעקב אבני הדרך הוא בונוס נהדר"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "माइलस्टोन ट्रैकर एक शानदार बोनस है"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Praćenje prekretnica je lijep bonus"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A mérföldkőkövetés remek ráadás"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pelacak milestone jadi bonus yang menyenangkan"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il tracker delle tappe è un bonus in più"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成長の記録機能もうれしいおまけ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "성장 기록 기능은 덤이에요"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penjejak pencapaian ialah bonus yang bagus"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milepælssporingen er en fin bonus"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De mijlpaalvolger is een leuke bonus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziennik kamieni milowych to fajny dodatek"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O acompanhamento de marcos é um bônus"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Urmărirea reperelor e un bonus grozav"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Трекер важных моментов — приятный бонус"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sledovanie míľnikov je skvelý bonus"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milstolpsloggen är en härlig bonus"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตัวติดตามพัฒนาการเป็นโบนัสที่ดี"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kilometre taşı takibi de cabası"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Трекер важливих моментів — приємний бонус"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theo dõi cột mốc là một điểm cộng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成长里程碑记录是个惊喜"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成長里程碑記錄是個驚喜"
+          }
+        }
+      }
+    },
+    "rating.review.5.body" : {
+      "comment" : "Rating screen: rating.review.5.body",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحب أن أجد كل «أول مرة» في مكان واحد بجانب الصور. أصبح دفتر ذكرياتنا الصغير المفضل."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "M'encanta tenir cada primera vegada en un sol lloc, al costat dels retrats. S'ha convertit en el nostre àlbum de records preferit."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miluju, že mám každou první chvilku na jednom místě hned vedle portrétů. Je to naše nejoblíbenější malá kronika."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeg elsker at have alle de første gange samlet ét sted lige ved siden af portrætterne. Det er blevet vores yndlingsminde-bog."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich liebe es, jedes erste Mal an einem Ort zu haben, direkt neben den Porträts. Es ist unser liebstes kleines Erinnerungsbuch geworden."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Λατρεύω που έχω κάθε πρώτη φορά σε ένα μέρος, δίπλα στα πορτρέτα. Έγινε το αγαπημένο μας μικρό λεύκωμα αναμνήσεων."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I love having every first in one place, right next to the portraits. It's become our favorite little memory book."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Me encanta tener cada primera vez en un solo lugar, junto a los retratos. Se ha convertido en nuestro álbum de recuerdos favorito."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rakastan sitä, että jokainen ensimmäinen kerta on samassa paikassa muotokuvien vieressä. Siitä on tullut lempimuistokirjamme."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J'adore avoir chaque première fois au même endroit, juste à côté des portraits. C'est devenu notre petit carnet de souvenirs préféré."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אני אוהבת שכל \"פעם ראשונה\" נמצאת במקום אחד, ממש ליד התמונות. זה הפך לספר הזיכרונות הקטן האהוב עלינו."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मुझे अच्छा लगता है कि हर पहली बार एक ही जगह, पोर्ट्रेट के ठीक बगल में है। यह हमारी सबसे प्यारी छोटी यादों की किताब बन गई है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volim što je svaki prvi put na jednom mjestu, odmah uz portrete. Postao je naš omiljeni mali album uspomena."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imádom, hogy minden első alkalom egy helyen van, a portrék mellett. Ez lett a kedvenc kis emlékkönyvünk."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aku suka semua momen pertama ada di satu tempat, tepat di sebelah potret. Ini jadi buku kenangan kecil favorit kami."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adoro avere ogni prima volta in un unico posto, accanto ai ritratti. È diventato il nostro piccolo album dei ricordi preferito."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「初めて」をすべてポートレートのそばにまとめて残せるのが好きです。我が家のお気に入りの思い出アルバムになりました。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 '처음'을 사진 바로 옆에 한곳에 모아 둘 수 있어서 좋아요. 우리 가족이 제일 아끼는 작은 추억 앨범이 됐어요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saya suka semua detik pertama berada di satu tempat, betul-betul di sebelah potret. Ia sudah menjadi buku kenangan kecil kegemaran kami."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeg elsker å ha alle de første gangene samlet på ett sted, rett ved siden av portrettene. Det har blitt vår favoritt minnebok."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ik vind het heerlijk om elke eerste keer op één plek te hebben, naast de portretten. Het is ons favoriete herinneringsboekje geworden."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uwielbiam mieć każdy pierwszy raz w jednym miejscu, tuż obok portretów. To nasza ulubiona mała księga wspomnień."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adoro ter cada primeira vez num só lugar, junto dos retratos. Virou nosso livrinho de memórias favorito."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Îmi place să am fiecare prim moment într-un singur loc, chiar lângă portrete. A devenit caietul nostru preferat de amintiri."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Люблю, что все «первые разы» собраны в одном месте, рядом с портретами. Это стал наш любимый альбом воспоминаний."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milujem, že mám každú prvú chvíľu na jednom mieste, hneď vedľa portrétov. Je to naša obľúbená malá kronika."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jag älskar att ha varje första gång på ett ställe, precis bredvid porträtten. Det har blivit vår favoritminnesbok."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ชอบที่ทุกครั้งแรกอยู่ในที่เดียวกัน ข้าง ๆ ภาพพอร์ตเทรต กลายเป็นสมุดความทรงจำเล่มเล็กที่เราชอบที่สุด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her ilki portrelerin yanında tek bir yerde görmeyi seviyorum. En sevdiğimiz küçük anı defterimiz oldu."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Люблю, що всі «перші рази» зібрані в одному місці поруч із портретами. Це наш улюблений альбом спогадів."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mình thích việc mọi lần đầu tiên đều ở một nơi, ngay cạnh những bức chân dung. Nó đã thành cuốn sổ kỷ niệm nhỏ yêu thích của nhà mình."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我喜欢把每一个“第一次”和写真放在一起。它成了我们最爱的小小回忆册。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我喜歡把每一個「第一次」和寫真放在一起。它成了我們最愛的小小回憶冊。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

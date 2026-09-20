@@ -12,15 +12,15 @@ final class GradientPillButton: UIControl {
         didSet { titleLabel.text = title }
     }
 
-    init(title: String, icon: UIImage? = UIImage(systemName: "arrow.forward")) {
+    init(title: String, icon: UIImage? = UIImage(systemName: "arrow.forward"), height: CGFloat = 56) {
         super.init(frame: .zero)
         self.title = title
-        setUp(icon: icon)
+        setUp(icon: icon, height: height)
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
-    private func setUp(icon: UIImage?) {
+    private func setUp(icon: UIImage?, height: CGFloat) {
         layer.insertSublayer(gradientLayer, at: 0)
         layer.masksToBounds = true
         layer.shadowColor = Theme.Color.accentEnd.cgColor
@@ -57,7 +57,7 @@ final class GradientPillButton: UIControl {
             contentStack.centerYAnchor.constraint(equalTo: centerYAnchor),
             spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
             spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
-            heightAnchor.constraint(equalToConstant: 56)
+            heightAnchor.constraint(equalToConstant: height)
         ])
 
         addTarget(self, action: #selector(touchDown), for: .touchDown)

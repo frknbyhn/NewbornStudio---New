@@ -27,6 +27,7 @@ final class AppCoordinator {
                 window.rootViewController = UIViewController()
                 window.rootViewController?.present(SingleOfferPaywallViewController.presented(), animated: false)
                 return
+            case "rating": window.rootViewController = RatingViewController(); return
             case "home": showHome(); return
             case "coins":
                 window.rootViewController = CoinPackageViewController.presented()
@@ -120,9 +121,23 @@ final class AppCoordinator {
         onboarding.onFinished = { [weak self] in
             guard let self else { return }
             self.defaults.set(true, forKey: self.hasOnboardedKey)
-            self.presentSingleOfferPaywallIfNeeded()
+            if RemoteConfigService.showRate {
+                self.showRating()
+            } else {
+                self.presentSingleOfferPaywallIfNeeded()
+            }
         }
         window.rootViewController = onboarding
+    }
+
+    private func showRating() {
+        let rating = RatingViewController()
+        rating.onFinished = { [weak self] in
+            self?.presentSingleOfferPaywallIfNeeded()
+        }
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve) {
+            self.window.rootViewController = rating
+        }
     }
 
     private func showPaywall() {

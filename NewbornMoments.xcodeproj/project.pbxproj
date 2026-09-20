@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1B2C3D4E5F60718293A4B03 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */; };
+		A1B2C3D4E5F60718293A4B01 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */; };
 		02C3C04FCC29EDE7E25F16BD /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA60B80E7A992290F4B1C /* PhotoUploadViewController.swift */; };
 		063ECD3FA8141703C1435B90 /* MilestoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B859DEF85A863EFC923B7 /* MilestoneStore.swift */; };
 		099C77DF63E65C5CE1182B88 /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DFDDF69809F17E3A30BCC /* CustomStyleViewController.swift */; };
@@ -94,6 +96,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		0D66A5C08C09C285481E160F /* PassThroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughStackView.swift; sourceTree = "<group>"; };
 		0DABA6DC5FE8C538404B2F7A /* MilestoneCollageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollageStore.swift; sourceTree = "<group>"; };
 		119040D23920402A6D386228 /* MilestoneListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListsViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1B2C3D4E5F60718293A4B05 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B02 /* RatingViewController.swift */,
+				A1B2C3D4E5F60718293A4B04 /* ReviewData.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
 		08D6B3DAF04236ADA5B7B8F5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +268,7 @@
 				131A65C60E64679356294534 /* Main */,
 				8852134EFFAADA92E543A40F /* Milestones */,
 				64378D88321606F883904AAC /* Onboarding */,
+				A1B2C3D4E5F60718293A4B05 /* Rating */,
 				346FD07E56A5A8FAF9CF3B30 /* Paywall */,
 				189E804C67F74496BFB6947C /* PhotoUpload */,
 				C46B2213C394949CD85C1F98 /* Profile */,
@@ -572,6 +586,8 @@
 				063ECD3FA8141703C1435B90 /* MilestoneStore.swift in Sources */,
 				EB5953B3A717A6E290559EBF /* OnboardingContainerViewController.swift in Sources */,
 				5E0F964ECBD9319BF3338A9F /* OnboardingPage.swift in Sources */,
+				A1B2C3D4E5F60718293A4B03 /* ReviewData.swift in Sources */,
+				A1B2C3D4E5F60718293A4B01 /* RatingViewController.swift in Sources */,
 				A69F6DAC89A5EB70489F086E /* OnboardingPageViewController.swift in Sources */,
 				C0A21B555D27508E86B693D1 /* PaddedLabel.swift in Sources */,
 				78BC5333F161C42310001AE5 /* PageDotsView.swift in Sources */,
